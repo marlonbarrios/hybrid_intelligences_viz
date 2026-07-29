@@ -25,7 +25,7 @@ Categories: **Program · Premise · Framework · Qualities · Phenomena · Domai
 | **Hover legend** | Highlight one category (crossfade in/out) |
 | **Click node** | Select; detail panel at bottom left |
 | **Drag node** | Reposition temporarily |
-| **A** | Animate — cycle categories every 4 seconds |
+| **A** | Animate — cycle categories every 3 seconds |
 | **R** | Reset layout |
 | **T** | Dark / light theme |
 

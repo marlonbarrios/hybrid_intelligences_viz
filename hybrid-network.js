@@ -106,7 +106,7 @@ let categoryPrev = null;
 let categoryBlend = 1;
 
 const ANIM_SEQUENCE = ["rings", ...RING_ORDER];
-const ANIM_HOLD_SEC = 4;
+const ANIM_HOLD_SEC = 3;
 const CATEGORY_FADE_RATE = 0.014;
 
 const NODES = [
@@ -272,6 +272,8 @@ const NODES = [
   { id: "ecology_d",          label: "Ecology",                       cat: "domain",     weight: 1.1,
     desc: "Interdependence across biological and artificial substrates in shared cognitive ecosystems." },
 
+  { id: "dance",              label: "Dance",                         cat: "domain",     weight: 1.4,
+    desc: "The domain of dance—movement arts, bodily expression, performance, and choreographic cultures as fields of knowledge." },
   { id: "choreography_d",     label: "Choreography",                  cat: "domain",     weight: 1.4,
     desc: "The art of organizing movement in time and space—bodies, relations, and rhythm as forms of thought and world-making." },
   { id: "music",              label: "Music",                         cat: "domain",     weight: 1.3,
@@ -464,6 +466,13 @@ const EDGES = [
   ["cameron", "ai", 0.7],
 
   ["choreography_d", "choreography", 0.95],
+  ["dance", "choreography_d", 0.9],
+  ["dance", "choreography", 0.85],
+  ["dance", "somatics", 0.8],
+  ["dance", "interdisciplinary_art", 0.75],
+  ["dance", "jackie_larson", 0.85],
+  ["dance", "onye", 0.9],
+  ["dance", "marlon", 0.85],
   ["choreography_d", "choreo_knowledge", 0.85],
   ["choreography_d", "choreo_object", 0.8],
   ["choreography_d", "onye", 0.85],
@@ -1011,13 +1020,17 @@ function applyForces() {
   const maxR = layoutRadius + 20;
   const damping = 0.75;
   const interacting = dragging || selected;
-  const floatScale = interacting ? 0.55 : 1.0;
+  const driftBoost = categoryTransitionDrift();
+  const floatScale = (interacting ? 0.55 : 1.0) * driftBoost;
 
   for (const n of nodes) {
     if (n === dragging) continue;
 
     const catFocus = nodeCategoryFocus(n);
-    const focusFloat = catFocus === null ? 1 : 0.55 + catFocus * 0.65;
+    let focusFloat = catFocus === null ? 1 : 0.55 + catFocus * 0.65;
+    if (catFocus !== null && categoryBlend < 1) {
+      focusFloat += sin(categoryBlend * PI) * 0.28 * max(catFocus, 1 - catFocus);
+    }
 
     if (n.id === "coupling") {
       const breathe = sin(time * 0.38 + n.floatPhase) * 4.5 * floatScale;
@@ -1186,6 +1199,36 @@ function easeSmooth(t) {
   return t * t * (3 - 2 * t);
 }
 
+function nudgeNodesForCategory(cat, prevCat) {
+  if (!cat) return;
+  const { x: cx, y: cy } = layoutCenter;
+  for (const n of nodes) {
+    if (n.id === "coupling" || n.pinned) continue;
+    const dx = n.x - cx;
+    const dy = n.y - cy;
+    const dist = sqrt(dx * dx + dy * dy) || 0.001;
+    const angle = atan2(dy, dx);
+    const seed = nodeFloatSeed(n.id);
+
+    if (n.cat === cat) {
+      const push = 0.9 + seed * 0.7;
+      n.vx = (n.vx || 0) + cos(angle) * push;
+      n.vy = (n.vy || 0) + sin(angle) * push;
+      n.vx += -sin(angle) * (seed - 0.5) * 0.55;
+      n.vy += cos(angle) * (seed - 0.5) * 0.55;
+      n.bounceUntil = time + 2.8;
+    } else if (prevCat && n.cat === prevCat) {
+      n.vx = (n.vx || 0) - cos(angle) * 0.4;
+      n.vy = (n.vy || 0) - sin(angle) * 0.4;
+    }
+  }
+}
+
+function categoryTransitionDrift() {
+  if (!categoryHighlightActive() || categoryBlend >= 1) return 1;
+  return 1 + sin(categoryBlend * PI) * 0.38;
+}
+
 function updateCategoryTransition() {
   const active = categoryHighlightActive();
   const target = active ? activeCategory() : null;
@@ -1203,6 +1246,7 @@ function updateCategoryTransition() {
   }
 
   if (target !== categoryDisplay) {
+    nudgeNodesForCategory(target, categoryDisplay);
     categoryPrev = categoryDisplay;
     categoryDisplay = target;
     categoryBlend = 0;
