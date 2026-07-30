@@ -105,9 +105,15 @@ let categoryDisplay = null;
 let categoryPrev = null;
 let categoryBlend = 1;
 
-const ANIM_SEQUENCE = ["rings", ...RING_ORDER];
+const ANIM_SEQUENCE = ["rings", ...RING_ORDER, "theme"];
 const ANIM_HOLD_SEC = 3;
+const THEME_CROSSFADE_SEC = 2.4;
 const CATEGORY_FADE_RATE = 0.011;
+
+let themeCrossfadeActive = false;
+let themeCrossfadeFrom = "dark";
+let themeCrossfadeTo = "light";
+let themeCrossfadeStart = 0;
 
 let audioCtx = null;
 
@@ -267,6 +273,19 @@ const RING_SOUNDS = {
     dur: 1.4,
     peak: 0.048,
     pan: [-0.2, 0.72],
+  },
+  theme: {
+    label: "Theme",
+    hz: [110, 165, 220, 330],
+    wave: "sine",
+    detune: 6,
+    brightness: 0.55,
+    space: 0.78,
+    warmth: 0.65,
+    drift: 0.16,
+    dur: 2.2,
+    peak: 0.044,
+    pan: [-0.72, 0.72],
   },
 };
 
@@ -2235,8 +2254,44 @@ let time = 0;
 let layoutCenter = { x: 0, y: 0 };
 let layoutRadius = 0;
 
+function blendThemeValue(a, b, t) {
+  if (Array.isArray(a)) return a.map((v, i) => lerp(v, b[i], t));
+  return lerp(a, b, t);
+}
+
+function blendThemes(fromKey, toKey, t) {
+  const from = THEMES[fromKey];
+  const to = THEMES[toKey];
+  const out = {};
+  for (const key of Object.keys(from)) {
+    if (key === "label") {
+      out[key] = t < 0.5 ? from[key] : to[key];
+    } else {
+      out[key] = blendThemeValue(from[key], to[key], t);
+    }
+  }
+  return out;
+}
+
+function themeCrossfadeT() {
+  if (!themeCrossfadeActive) return 1;
+  return easeSmooth(min(1, (time - themeCrossfadeStart) / THEME_CROSSFADE_SEC));
+}
+
+function themeDarkness() {
+  const from = themeCrossfadeActive
+    ? (themeCrossfadeFrom === "dark" ? 1 : 0)
+    : (themeMode === "dark" ? 1 : 0);
+  const to = themeCrossfadeActive
+    ? (themeCrossfadeTo === "dark" ? 1 : 0)
+    : from;
+  if (!themeCrossfadeActive) return from;
+  return lerp(from, to, themeCrossfadeT());
+}
+
 function theme() {
-  return THEMES[themeMode];
+  if (!themeCrossfadeActive) return THEMES[themeMode];
+  return blendThemes(themeCrossfadeFrom, themeCrossfadeTo, themeCrossfadeT());
 }
 
 function ringColor(cat) {
@@ -2244,18 +2299,54 @@ function ringColor(cat) {
 }
 
 function setTextFill(alpha = 255) {
-  if (themeMode === "dark") {
-    fill(255, 255, 255, alpha);
-  } else {
-    fill(32, 36, 48, alpha);
-  }
+  const d = themeDarkness();
+  fill(lerp(32, 255, d), lerp(36, 255, d), lerp(48, 255, d), alpha);
 }
 
-function setTheme(mode) {
-  if (!THEMES[mode]) return;
-  themeMode = mode;
+function setThemeBody(mode) {
   document.body.style.background = mode === "dark" ? "#0e1018" : "#fffdf8";
   document.body.classList.toggle("light-mode", mode === "light");
+}
+
+function applyThemeBodyBlend(fromKey, toKey, t) {
+  const fromBg = THEMES[fromKey].bg;
+  const toBg = THEMES[toKey].bg;
+  const bg = fromBg.map((v, i) => Math.round(lerp(v, toBg[i], t)));
+  document.body.style.background = `rgb(${bg[0]}, ${bg[1]}, ${bg[2]})`;
+  document.body.classList.toggle("light-mode", t >= 0.5 ? toKey === "light" : fromKey === "light");
+}
+
+function beginThemeCrossfade(toMode) {
+  if (!THEMES[toMode]) return;
+  themeCrossfadeFrom = themeCrossfadeActive ? themeCrossfadeTo : themeMode;
+  themeCrossfadeTo = toMode;
+  themeCrossfadeStart = time;
+  themeCrossfadeActive = true;
+}
+
+function finishThemeCrossfade() {
+  if (!themeCrossfadeActive) return;
+  themeMode = themeCrossfadeTo;
+  themeCrossfadeActive = false;
+  setThemeBody(themeMode);
+}
+
+function updateThemeCrossfade() {
+  if (!themeCrossfadeActive) return;
+  const t = themeCrossfadeT();
+  applyThemeBodyBlend(themeCrossfadeFrom, themeCrossfadeTo, t);
+  if (t >= 1) finishThemeCrossfade();
+}
+
+function setTheme(mode, instant = true) {
+  if (!THEMES[mode]) return;
+  if (!instant && mode !== themeMode) {
+    beginThemeCrossfade(mode);
+    return;
+  }
+  themeCrossfadeActive = false;
+  themeMode = mode;
+  setThemeBody(mode);
 }
 
 function setup() {
@@ -2372,6 +2463,7 @@ function draw() {
   time += 0.016;
   updateAnimate();
   updateCategoryTransition();
+  updateThemeCrossfade();
   const t = theme();
   background(...t.bg);
 
@@ -2400,7 +2492,7 @@ function drawCircularField() {
       const [cr, cg, cb] = ringColor(cat);
 
       noStroke();
-      fill(cr, cg, cb, themeMode === "dark" ? 22 : 28);
+      fill(cr, cg, cb, lerp(28, 22, themeDarkness()));
       ellipse(cx, cy, r * 2);
 
       noFill();
@@ -2409,7 +2501,7 @@ function drawCircularField() {
       ellipse(cx, cy, r * 2);
 
       if (innerR > 0) {
-        stroke(...t.bg, themeMode === "dark" ? 200 : 230);
+        stroke(...t.bg, lerp(230, 200, themeDarkness()));
         strokeWeight(1.5);
         noFill();
         ellipse(cx, cy, innerR * 2 + 3);
@@ -2432,7 +2524,7 @@ function drawCircularField() {
       const padY = 4;
 
       noStroke();
-      fill(...t.bg, themeMode === "dark" ? 235 : 245);
+      fill(...t.bg, lerp(245, 235, themeDarkness()));
       rect(ox - tw / 2 - padX, oy - 7 - padY, tw + padX * 2, 14 + padY * 2, 5);
 
       stroke(cr, cg, cb, 200);
@@ -2458,7 +2550,7 @@ function drawCircularField() {
       ? t.ringLine + ringFocus * t.ringLine * 1.4
       : t.ringLine;
     stroke(cr, cg, cb, ringAlpha);
-    strokeWeight(1 + ringFocus * 1.2 + (ringHot ? 0.4 : themeMode === "light" ? 0.2 : 0));
+    strokeWeight(1 + ringFocus * 1.2 + (ringHot ? 0.4 : lerp(0.2, 0, themeDarkness())));
     ellipse(cx, cy, r * 2);
 
     noStroke();
@@ -2682,6 +2774,9 @@ function updateAnimate() {
   if (phase === "rings") {
     nudgeNodesForRings();
   }
+  if (phase === "theme") {
+    beginThemeCrossfade(themeMode === "dark" ? "light" : "dark");
+  }
 }
 
 function easeSmooth(t) {
@@ -2809,6 +2904,7 @@ function toggleAnimate() {
     categoryPrev = null;
     categoryBlend = 0;
   } else {
+    if (themeCrossfadeActive) finishThemeCrossfade();
     animateStep = 0;
     animateUntil = 0;
     categoryDisplay = null;
@@ -2953,7 +3049,7 @@ function drawNodeCircles() {
     const isNeighbor = catFocus === null && nodeNeighbor(n);
     const dim = catFocus === null ? nodeDimmed(n) : catFocus < 0.2;
     const focus = catFocus === null
-      ? (isActive ? 1 : isNeighbor ? 0.75 : dim ? 0.08 : themeMode === "light" ? 0.15 : 0.25)
+      ? (isActive ? 1 : isNeighbor ? 0.75 : dim ? 0.08 : lerp(0.15, 0.25, themeDarkness()))
       : catFocus;
 
     const pulse = catFocus !== null && focus > 0.35
@@ -2966,7 +3062,7 @@ function drawNodeCircles() {
 
     noStroke();
     for (let i = 4; i >= 0; i--) {
-      fill(r, g, b, glow * (themeMode === "light" ? 12 : 16) * (5 - i));
+      fill(r, g, b, glow * lerp(12, 16, themeDarkness()) * (5 - i));
       ellipse(n.x, n.y, drawR * 2 + i * 6);
     }
 
@@ -3083,6 +3179,8 @@ function drawUI() {
     const phase = getAnimatePhase();
     const phaseLabel = phase === "rings"
       ? "RINGS · CATEGORIES"
+      : phase === "theme"
+      ? `THEME · ${themeCrossfadeTo === "light" ? "LIGHT" : "DARK"}`
       : CATEGORY_META[phase].label.toUpperCase();
     fill(...t.title, 220);
     text(`ANIMATE · ${phaseLabel}`, width - 16, height - 24);
@@ -3121,7 +3219,8 @@ function drawThemeToggle() {
 
   modes.forEach((mode, i) => {
     const bx = x + i * (btnW + gap);
-    const active = themeMode === mode;
+    const displayMode = themeCrossfadeActive ? themeCrossfadeTo : themeMode;
+    const active = displayMode === mode;
     if (active) {
       fill(...t.toggleActive, 40);
       rect(bx, y, btnW, btnH, 6);
@@ -3207,7 +3306,7 @@ function drawLegend() {
     fill(...ringColor(key));
     noStroke();
     ellipse(x + 18, ly + 7, 10);
-    stroke(...ringColor(key), isHot ? 180 : themeMode === "light" ? 100 : 60);
+    stroke(...ringColor(key), isHot ? 180 : lerp(100, 60, themeDarkness()));
     strokeWeight(isHot ? 1.5 : 1);
     noFill();
     ellipse(x + 18, ly + 7, 18);
@@ -3281,7 +3380,7 @@ function drawDetailPanel(n) {
     ty += 14;
   }
 
-  const linkCol = themeMode === "dark" ? [130, 195, 255] : [18, 85, 155];
+  const linkCol = [18, 85, 155].map((v, i) => lerp(v, [130, 195, 255][i], themeDarkness()));
   let linkY = y + panelH - 14 - ((primaryUrl ? 1 : 0) + (wikiUrl ? 1 : 0)) * 20;
 
   function drawPanelLink(url, label) {
@@ -3353,7 +3452,7 @@ function mousePressed() {
 
   const toggled = hitThemeToggle(mouseX, mouseY);
   if (toggled) {
-    setTheme(toggled);
+    setTheme(toggled, false);
     return;
   }
 
@@ -3411,6 +3510,6 @@ function keyPressed() {
     initGraph();
   }
   if (key === "t" || key === "T") {
-    setTheme(themeMode === "dark" ? "light" : "dark");
+    setTheme(themeMode === "dark" ? "light" : "dark", false);
   }
 }
