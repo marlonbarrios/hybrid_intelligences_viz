@@ -61,8 +61,8 @@ const THEMES = {
   },
   light: {
     label: "Light",
-    bg: [248, 246, 241],
-    uiBar: [248, 246, 241, 245],
+    bg: [255, 253, 248],
+    uiBar: [255, 253, 248, 248],
     panel: [255, 255, 255],
     nodeFill: [255, 255, 255],
     border: [210, 214, 224],
@@ -74,7 +74,7 @@ const THEMES = {
     panelTitle: [28, 32, 42],
     panelBody: [70, 76, 92],
     panelMuted: [130, 136, 152],
-    toggleBg: [232, 234, 240],
+    toggleBg: [245, 243, 238],
     toggleActive: [168, 118, 12],
     toggleInactive: [140, 146, 162],
     ringLine: 55,
@@ -1827,7 +1827,7 @@ function setTextFill(alpha = 255) {
 function setTheme(mode) {
   if (!THEMES[mode]) return;
   themeMode = mode;
-  document.body.style.background = mode === "dark" ? "#0e1018" : "#f8f6f1";
+  document.body.style.background = mode === "dark" ? "#0e1018" : "#fffdf8";
   document.body.classList.toggle("light-mode", mode === "light");
 }
 
