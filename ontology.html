@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hybrid Intelligences — Ontology</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e1018;
+      --panel: #12141e;
+      --border: #323848;
+      --title: #f4c430;
+      --text: #e8eaef;
+      --muted: #969eb0;
+      --link: #82c3ff;
+      --hover: #1a1e2a;
+      --accent: rgba(244, 196, 48, 0.12);
+    }
+    body.light-mode {
+      --bg: #fffdf8;
+      --panel: #ffffff;
+      --border: #d2d6e0;
+      --title: #a8760c;
+      --text: #202430;
+      --muted: #5a6070;
+      --link: #125599;
+      --hover: #f5f3ee;
+      --accent: rgba(168, 118, 12, 0.1);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      line-height: 1.5;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      padding: 1.25rem 1.5rem 1rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--panel);
+    }
+    header h1 {
+      margin: 0 0 0.35rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 300;
+      font-size: 1rem;
+      color: var(--title);
+    }
+    header p {
+      margin: 0;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    .intro {
+      margin: 0.85rem 0 0;
+      max-width: 52rem;
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.55;
+    }
+    .intro strong {
+      color: var(--title);
+      font-weight: 500;
+    }
+    .header-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 0.75rem;
+    }
+    .header-links, .format-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      min-height: calc(100vh - 120px);
+    }
+    @media (max-width: 800px) {
+      .layout { grid-template-columns: 1fr; }
+      aside { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+    aside {
+      padding: 1rem 0.85rem 1.5rem;
+      border-right: 1px solid var(--border);
+      background: var(--panel);
+      overflow-y: auto;
+      max-height: calc(100vh - 8rem);
+      position: sticky;
+      top: 0;
+    }
+    aside h2, main h2 {
+      margin: 0 0 0.75rem;
+      padding: 0 0.15rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .cat-list { list-style: none; padding: 0 0.15rem; margin: 0 0 0.85rem; }
+    .cat-list button {
+      width: 100%;
+      text-align: left;
+      border: none;
+      background: transparent;
+      color: var(--text);
+      font: inherit;
+      font-size: 0.85rem;
+      padding: 0.45rem 0.55rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .cat-list button:hover { background: var(--hover); }
+    .cat-list button.active {
+      background: var(--accent);
+      color: var(--title);
+      font-weight: 500;
+    }
+    .cat-group {
+      margin-bottom: 0.65rem;
+      padding: 0 0.15rem;
+    }
+    .cat-group-head {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      text-align: left;
+      border: none;
+      background: transparent;
+      color: var(--text);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.45rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .cat-group-head:hover { background: var(--hover); }
+    .cat-group-head.active {
+      background: var(--accent);
+      color: var(--title);
+    }
+    .cat-chevron {
+      width: 0.65rem;
+      flex-shrink: 0;
+      color: var(--muted);
+      font-size: 0.62rem;
+      line-height: 1;
+      transition: transform 0.15s ease;
+    }
+    .cat-group-head.expanded .cat-chevron {
+      transform: rotate(90deg);
+    }
+    .cat-group-body {
+      margin-top: 0.15rem;
+    }
+    .cat-group-desc {
+      margin: 0.15rem 0 0 1.65rem;
+      font-size: 0.72rem;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+    .category-banner {
+      margin-bottom: 1rem;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+    .category-banner-head {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+    }
+    .category-banner h2 {
+      margin: 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--title);
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .category-banner p {
+      margin: 0;
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .category-banner-actions {
+      margin-top: 0.65rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+    }
+    .cat-network-link {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      white-space: nowrap;
+    }
+    .cat-group-desc .cat-network-link {
+      display: inline-block;
+      margin-left: 0.35rem;
+    }
+    .cat-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .cat-concepts {
+      list-style: none;
+      padding: 0.15rem 0 0 1.15rem;
+      margin: 0;
+      border-left: 1px solid var(--border);
+      margin-left: 0.65rem;
+    }
+    .cat-concepts li { margin: 0; }
+    .concept-link {
+      width: 100%;
+      text-align: left;
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      font-size: 0.78rem;
+      line-height: 1.35;
+      padding: 0.28rem 0.45rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .concept-link:hover {
+      color: var(--text);
+      background: var(--hover);
+    }
+    .concept-link.active {
+      color: var(--title);
+      background: var(--accent);
+      font-weight: 500;
+    }
+    .cat-count {
+      margin-left: auto;
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      flex-shrink: 0;
+    }
+    .cat-list .cat-count {
+      float: right;
+      margin-left: 0;
+    }
+    main { padding: 1rem 1.25rem 2rem; }
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      align-items: center;
+    }
+    input[type="search"] {
+      flex: 1 1 220px;
+      min-width: 180px;
+      padding: 0.55rem 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--panel);
+      color: var(--text);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.82rem;
+    }
+    input[type="search"]:focus {
+      outline: 2px solid var(--title);
+      outline-offset: 1px;
+    }
+    .stats {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .concept-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 0.75rem;
+    }
+    .concept-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.85rem 0.95rem;
+      background: var(--panel);
+      cursor: pointer;
+      transition: border-color 0.15s ease;
+    }
+    .concept-card:hover, .concept-card.active {
+      border-color: var(--title);
+    }
+    .concept-card h3 {
+      margin: 0 0 0.35rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .concept-card .meta {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.45rem;
+    }
+    .concept-card p {
+      margin: 0;
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .detail {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.1rem 1.2rem;
+      background: var(--panel);
+      max-width: 720px;
+    }
+    .detail h3 {
+      margin: 0 0 0.25rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+    .detail .meta {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      color: var(--title);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.85rem;
+    }
+    .detail p.desc {
+      margin: 0 0 1rem;
+      font-size: 0.92rem;
+    }
+    .detail .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+    }
+    .related h4 {
+      margin: 0 0 0.5rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+    }
+    .related ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      columns: 2;
+      column-gap: 1.5rem;
+    }
+    @media (max-width: 600px) {
+      .related ul { columns: 1; }
+    }
+    .related li {
+      break-inside: avoid;
+      margin-bottom: 0.35rem;
+      font-size: 0.82rem;
+    }
+    .related button {
+      border: none;
+      background: none;
+      color: var(--link);
+      font: inherit;
+      cursor: pointer;
+      padding: 0;
+    }
+    .related button:hover { text-decoration: underline; }
+    .strength {
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+    }
+    .empty {
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.85rem;
+      padding: 2rem 0;
+    }
+    .loading, .error {
+      padding: 2rem 1.5rem;
+      font-family: "IBM Plex Mono", monospace;
+      color: var(--muted);
+    }
+    .error { color: #e07070; }
+    .theme-btn {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      padding: 0.35rem 0.55rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .theme-btn:hover { color: var(--title); border-color: var(--title); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hybrid Intelligences Ontology</h1>
+    <p id="ontologyStats">Loading concept scheme…</p>
+    <p class="intro">
+      <strong>What is an ontology?</strong>
+      An ontology is a structured map of concepts and the relations between them—a shared vocabulary
+      with definitions that both people and software can read. Here, the interactive network is exported
+      into standard formats so you can browse, search, and link ideas across the program: frameworks,
+      authors, practices, domains, and how strongly they connect.
+    </p>
+    <div class="header-row">
+      <div class="header-links">
+        <a href="index.html">← Network visualization</a>
+      </div>
+      <div class="header-row" style="margin-top:0; gap:0.75rem;">
+        <div class="format-links">
+          <a href="ontology.jsonld" download>JSON-LD ↓</a>
+          <a href="ontology.ttl" download>Turtle ↓</a>
+        </div>
+        <button type="button" class="theme-btn" id="themeBtn" aria-label="Toggle theme">Theme</button>
+      </div>
+    </div>
+  </header>
+
+  <div id="app" class="loading">Loading ontology…</div>
+
+  <script>
+    const ONTOLOGY_URI = "ontology.jsonld";
+    const RING_ORDER = [
+      "program", "premise", "facilitator", "practice", "tension", "quality",
+      "phenomenon", "domain", "framework", "author",
+    ];
+    const RING_COLORS = {
+      program: "#ffb860",
+      premise: "#f4c430",
+      framework: "#4ec4c4",
+      tension: "#828a9e",
+      quality: "#6ec682",
+      phenomenon: "#a88ce4",
+      domain: "#e48294",
+      practice: "#f09e60",
+      author: "#baa880",
+      facilitator: "#78b2e4",
+    };
+    const CATEGORY_DEFS = {
+      program:     { label: "Program",      desc: "Sessions, tracks, hosts, and public events of the Hybrid Intelligences program." },
+      premise:     { label: "Premise",      desc: "Core starting ideas—intelligence as coupling across bodies, tools, and worlds." },
+      framework:   { label: "Framework",    desc: "Conceptual models for cognition, AI, embodiment, and world-making." },
+      tension:     { label: "Tensions",     desc: "Inadequate or contested positions the network holds open to critique." },
+      quality:     { label: "Qualities",    desc: "Traits of hybrid cognition—embodied, situated, distributed, critical." },
+      phenomenon:  { label: "Phenomena",    desc: "Observable dynamics—mediation, symbiosis, community, theory of mind." },
+      domain:      { label: "Domains",      desc: "Fields of practice and inquiry—art, law, ecology, AI, choreography." },
+      practice:    { label: "Practices",    desc: "Methods and habits—rehearsal, somatics, pedagogy, cultural critique." },
+      author:      { label: "Authors/Artists", desc: "Thinkers, artists, and researchers linked to concepts in the network." },
+      facilitator: { label: "Facilitators", desc: "Hybrid Intelligences session leaders and guest facilitators." },
+    };
+
+    let concepts = [];
+    let categories = {};
+    let conceptById = {};
+    let relatedById = {};
+    let meta = {};
+    let activeCategory = "all";
+    let expandedCategories = new Set();
+    let selectedId = null;
+    let searchQuery = "";
+    let appReady = false;
+
+    function localId(uri) {
+      if (!uri) return "";
+      const hash = uri.split("#").pop();
+      return hash.includes("/") ? hash.split("/").pop() : hash;
+    }
+
+    function categoryKeyFromUri(uri) {
+      if (!uri) return "";
+      const match = uri.match(/category\/([^/?#]+)/);
+      return match ? match[1] : localId(uri);
+    }
+
+    function isCategoryEntry(entry) {
+      const id = entry["@id"] || "";
+      const types = typesOf(entry);
+      return types.includes("hi:Category") || /category\//.test(id);
+    }
+
+    function networkCategoryUrl(catId) {
+      return `index.html#cat/${catId}`;
+    }
+
+    function ensureCategories() {
+      for (const id of RING_ORDER) {
+        const base = CATEGORY_DEFS[id];
+        if (!base) continue;
+        categories[id] = {
+          id,
+          label: categories[id]?.label || base.label,
+          desc: categories[id]?.desc || base.desc,
+          ringOrder: categories[id]?.ringOrder ?? RING_ORDER.indexOf(id),
+        };
+      }
+    }
+
+    function updateHeaderStats() {
+      const el = document.getElementById("ontologyStats");
+      if (!el) return;
+      el.textContent = `SKOS concept scheme — ${meta.nodeCount || concepts.length} concepts, ${meta.edgeCount || ""} relations · ${RING_ORDER.length} categories`;
+    }
+
+    function typesOf(entry) {
+      const t = entry["@type"];
+      return Array.isArray(t) ? t : t ? [t] : [];
+    }
+
+    function parseOntology(data) {
+      const graph = data["@graph"] || [];
+      categories = {};
+      concepts = [];
+      conceptById = {};
+      relatedById = {};
+      meta = {};
+
+      for (const entry of graph) {
+        const id = entry["@id"];
+        const types = typesOf(entry);
+
+        if (types.includes("owl:Ontology")) {
+          meta = {
+            label: entry["rdfs:label"] || entry["dc:title"],
+            description: entry["dc:description"],
+            nodeCount: entry["hi:nodeCount"],
+            edgeCount: entry["hi:edgeCount"],
+            date: entry["dc:date"],
+          };
+          continue;
+        }
+
+        if (isCategoryEntry(entry)) {
+          const catId = categoryKeyFromUri(id);
+          categories[catId] = {
+            id: catId,
+            label: entry["skos:prefLabel"] || CATEGORY_DEFS[catId]?.label || catId,
+            desc: entry["skos:definition"] || CATEGORY_DEFS[catId]?.desc || "",
+            ringOrder: entry["hi:ringOrder"] ?? RING_ORDER.indexOf(catId),
+          };
+          continue;
+        }
+
+        if (types.includes("hi:NetworkNode") || entry["skos:definition"]) {
+          const nodeId = localId(id);
+          const concept = {
+            id: nodeId,
+            label: entry["skos:prefLabel"] || nodeId,
+            definition: entry["skos:definition"] || "",
+            category: entry["hi:category"] || localId(entry["skos:broader"]?.["@id"] || ""),
+            weight: entry["hi:weight"] ?? null,
+            url: entry["schema:url"] || null,
+            wikiUrl: entry["schema:sameAs"] || null,
+          };
+          concepts.push(concept);
+          conceptById[nodeId] = concept;
+
+          const related = entry["skos:related"] || [];
+          relatedById[nodeId] = related.map((r) => ({
+            id: localId(r["@id"]),
+            strength: r["hi:strength"] ?? null,
+          }));
+        }
+      }
+
+      concepts.sort((a, b) => a.label.localeCompare(b.label));
+      ensureCategories();
+      updateHeaderStats();
+    }
+
+    function applyTheme(mode) {
+      document.body.classList.toggle("light-mode", mode === "light");
+      localStorage.setItem("hi-theme", mode);
+    }
+
+    function initTheme() {
+      const saved = localStorage.getItem("hi-theme");
+      const mode = saved || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      applyTheme(mode);
+      document.getElementById("themeBtn").addEventListener("click", () => {
+        applyTheme(document.body.classList.contains("light-mode") ? "dark" : "light");
+      });
+    }
+
+    function filteredConcepts() {
+      const q = searchQuery.trim().toLowerCase();
+      return concepts.filter((c) => {
+        if (activeCategory !== "all" && c.category !== activeCategory) return false;
+        if (!q) return true;
+        return (
+          c.label.toLowerCase().includes(q) ||
+          c.definition.toLowerCase().includes(q) ||
+          c.id.toLowerCase().includes(q) ||
+          (categories[c.category]?.label || "").toLowerCase().includes(q)
+        );
+      });
+    }
+
+    function conceptsInCategory(catId) {
+      const q = searchQuery.trim().toLowerCase();
+      return concepts
+        .filter((c) => {
+          if (c.category !== catId) return false;
+          if (!q) return true;
+          return (
+            c.label.toLowerCase().includes(q) ||
+            c.definition.toLowerCase().includes(q) ||
+            c.id.toLowerCase().includes(q)
+          );
+        })
+        .sort((a, b) => a.label.localeCompare(b.label));
+    }
+
+    function syncExpandedForSearch() {
+      if (!searchQuery.trim()) return;
+      for (const id of RING_ORDER) {
+        if (conceptsInCategory(id).length) expandedCategories.add(id);
+      }
+    }
+
+    function toggleCategoryExpand(catId) {
+      if (expandedCategories.has(catId)) expandedCategories.delete(catId);
+      else expandedCategories.add(catId);
+    }
+
+    function renderSidebar() {
+      syncExpandedForSearch();
+      const sidebar = document.getElementById("sidebar");
+      if (!sidebar) return;
+
+      const visibleCount = searchQuery.trim()
+        ? RING_ORDER.reduce((n, id) => n + conceptsInCategory(id).length, 0)
+        : concepts.length;
+
+      const allBtn = `<li><button type="button" data-cat="all" class="${activeCategory === "all" ? "active" : ""}">All concepts<span class="cat-count">${visibleCount}</span></button></li>`;
+
+      const groups = RING_ORDER.map((id) => {
+          const cat = categories[id];
+          if (!cat) return "";
+          const items = conceptsInCategory(id);
+          if (!items.length && searchQuery.trim()) return "";
+          const isExpanded = expandedCategories.has(id);
+          const conceptsHtml = items
+            .map(
+              (c) =>
+                `<li><button type="button" data-select="${c.id}" class="concept-link ${selectedId === c.id ? "active" : ""}">${c.label}</button></li>`
+            )
+            .join("");
+
+          return `
+            <section class="cat-group">
+              <button type="button" data-cat="${id}" class="cat-group-head ${isExpanded ? "expanded" : ""} ${activeCategory === id ? "active" : ""}" aria-expanded="${isExpanded}">
+                <span class="cat-chevron" aria-hidden="true">▸</span>
+                <span class="cat-dot" style="background:${RING_COLORS[id] || "var(--muted)"}"></span>
+                <span>${cat.label}</span>
+                <span class="cat-count">${items.length}</span>
+              </button>
+              ${
+                isExpanded
+                  ? `<div class="cat-group-body">
+                      ${cat.desc ? `<p class="cat-group-desc">${cat.desc} <a class="cat-network-link" href="${networkCategoryUrl(id)}">View in network ↗</a></p>` : ""}
+                      ${items.length ? `<ul class="cat-concepts">${conceptsHtml}</ul>` : '<p class="cat-group-desc">No concepts match.</p>'}
+                    </div>`
+                  : ""
+              }
+            </section>`;
+        })
+        .join("");
+
+      sidebar.innerHTML = `<h2>Browse by category</h2><ul class="cat-list">${allBtn}</ul>${groups}`;
+    }
+
+    function renderResults() {
+      const results = document.getElementById("results");
+      const stats = document.getElementById("stats");
+      if (!results || !stats) return;
+
+      const list = filteredConcepts();
+      const selected = selectedId ? conceptById[selectedId] : null;
+
+      stats.textContent = `${list.length} shown · ${meta.nodeCount || concepts.length} total · ${meta.edgeCount || ""} relations`;
+
+      if (selected) {
+        results.innerHTML = renderDetail(selected);
+        return;
+      }
+
+      if (!list.length) {
+        results.innerHTML = '<p class="empty">No concepts match your search.</p>';
+        return;
+      }
+
+      const banner =
+        activeCategory !== "all" && categories[activeCategory] && !selected
+          ? `<div class="category-banner">
+              <div class="category-banner-head">
+                <span class="cat-dot" style="background:${RING_COLORS[activeCategory]}"></span>
+                <h2>${categories[activeCategory].label}</h2>
+              </div>
+              <p>${categories[activeCategory].desc || ""}</p>
+              <div class="category-banner-actions">
+                <a href="${networkCategoryUrl(activeCategory)}">View in network ↗</a>
+              </div>
+            </div>`
+          : "";
+
+      results.innerHTML = `${banner}<div class="concept-grid">${list
+        .map(
+          (c) => `
+          <article class="concept-card" data-select="${c.id}">
+            <div class="meta">${categories[c.category]?.label || c.category}</div>
+            <h3>${c.label}</h3>
+            <p>${c.definition}</p>
+          </article>`
+        )
+        .join("")}</div>`;
+    }
+
+    function renderShell() {
+      const app = document.getElementById("app");
+      app.innerHTML = `
+        <div class="layout">
+          <aside id="sidebar"></aside>
+          <main>
+            <div class="toolbar">
+              <input type="search" id="search" placeholder="Search concepts, definitions, categories…" autocomplete="off" spellcheck="false">
+              <span class="stats" id="stats"></span>
+            </div>
+            <div id="results"></div>
+          </main>
+        </div>`;
+
+      document.getElementById("search").value = searchQuery;
+      document.getElementById("search").addEventListener("input", (e) => {
+        searchQuery = e.target.value;
+        selectedId = null;
+        renderSidebar();
+        renderResults();
+      });
+
+      app.addEventListener("click", (e) => {
+        const catBtn = e.target.closest("[data-cat]");
+        if (catBtn) {
+          const cat = catBtn.dataset.cat;
+          if (cat === "all") {
+            activeCategory = "all";
+          } else if (catBtn.classList.contains("cat-group-head")) {
+            toggleCategoryExpand(cat);
+            activeCategory = cat;
+          }
+          selectedId = null;
+          render();
+          return;
+        }
+        const selectEl = e.target.closest("[data-select]");
+        if (selectEl) {
+          selectedId = selectEl.dataset.select;
+          history.replaceState(null, "", `#${selectedId}`);
+          renderSidebar();
+          renderResults();
+        }
+      });
+
+      appReady = true;
+    }
+
+    function render() {
+      if (!appReady) {
+        renderShell();
+      }
+      renderSidebar();
+      renderResults();
+    }
+
+    function renderDetail(concept) {
+      const related = (relatedById[concept.id] || [])
+        .map((r) => ({ ...r, concept: conceptById[r.id] }))
+        .filter((r) => r.concept)
+        .sort((a, b) => (b.strength ?? 0) - (a.strength ?? 0));
+
+      const catLabel = categories[concept.category]?.label || concept.category;
+      const external = [];
+      if (concept.url && concept.url !== concept.wikiUrl) {
+        external.push(`<a href="${concept.url}" target="_blank" rel="noopener noreferrer">External link ↗</a>`);
+      }
+      if (concept.wikiUrl) {
+        external.push(`<a href="${concept.wikiUrl}" target="_blank" rel="noopener noreferrer">Wikipedia ↗</a>`);
+      }
+
+      return `
+        <div class="detail">
+          <div class="meta">${catLabel}${concept.weight != null ? ` · weight ${concept.weight}` : ""}</div>
+          <h3>${concept.label}</h3>
+          <p class="desc">${concept.definition}</p>
+          <div class="actions">
+            <a href="index.html#${concept.id}">View in network ↗</a>
+            ${external.join(" · ")}
+          </div>
+          <div class="related">
+            <h4>Related concepts (${related.length})</h4>
+            ${
+              related.length
+                ? `<ul>${related
+                    .slice(0, 40)
+                    .map(
+                      (r) =>
+                        `<li><button type="button" data-select="${r.id}">${r.concept.label}</button>
+                         <span class="strength">${r.strength != null ? r.strength.toFixed(2) : ""}</span></li>`
+                    )
+                    .join("")}${related.length > 40 ? `<li class="strength">…and ${related.length - 40} more</li>` : ""}</ul>`
+                : "<p class='empty'>No relations listed.</p>"
+            }
+          </div>
+        </div>`;
+    }
+
+    function applyHash() {
+      const raw = location.hash.replace(/^#/, "");
+      if (!raw) return;
+
+      if (raw.startsWith("cat/")) {
+        const catId = raw.slice(4);
+        if (categories[catId] || CATEGORY_DEFS[catId]) {
+          activeCategory = catId;
+          expandedCategories.add(catId);
+          selectedId = null;
+          searchQuery = "";
+          const search = document.getElementById("search");
+          if (search) search.value = "";
+        }
+        return;
+      }
+
+      const id = raw;
+      if (id && conceptById[id]) {
+        selectedId = id;
+        activeCategory = "all";
+        expandedCategories.clear();
+        if (conceptById[id].category) {
+          expandedCategories.add(conceptById[id].category);
+          activeCategory = conceptById[id].category;
+        }
+        searchQuery = "";
+        const search = document.getElementById("search");
+        if (search) search.value = "";
+      }
+    }
+
+    async function boot() {
+      initTheme();
+      try {
+        const res = await fetch(ONTOLOGY_URI);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        parseOntology(data);
+        applyHash();
+        render();
+      } catch (err) {
+        document.getElementById("app").innerHTML =
+          `<p class="error">Could not load ontology.jsonld. Serve this folder over HTTP (e.g. python3 -m http.server 8000).<br>${err.message}</p>`;
+      }
+    }
+
+    window.addEventListener("hashchange", () => {
+      applyHash();
+      render();
+    });
+
+    boot();
+  </script>
+</body>
+</html>
