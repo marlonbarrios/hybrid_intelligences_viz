@@ -54,7 +54,7 @@
       "dc:date": "2026-08-02",
       "owl:versionInfo": "1.0.0",
       "hi:nodeCount": 192,
-      "hi:edgeCount": 1987
+      "hi:edgeCount": 1988
     },
     {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme",
@@ -3861,6 +3861,10 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#nagarjuna",
           "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#merleau_ponty",
+          "hi:strength": 0.9
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#friston",

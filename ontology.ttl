@@ -12,7 +12,7 @@
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   owl:versionInfo "1.0.0" ;
   hi:nodeCount "192"^^xsd:integer ;
-  hi:edgeCount "1987"^^xsd:integer .
+  hi:edgeCount "1988"^^xsd:integer .
 
 hi:scheme a skos:ConceptScheme ;
   skos:prefLabel "Hybrid Intelligences Concept Scheme" ;
@@ -8637,6 +8637,12 @@ hi:rel-thompson-nagarjuna a hi:Relation ;
   hi:target hi:nagarjuna ;
   hi:strength "0.8"^^xsd:decimal ;
   skos:relatedMatch hi:nagarjuna .
+
+hi:rel-thompson-merleau_ponty a hi:Relation ;
+  hi:source hi:thompson ;
+  hi:target hi:merleau_ponty ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:merleau_ponty .
 
 hi:rel-varela-enactivism a hi:Relation ;
   hi:source hi:varela ;

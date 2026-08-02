@@ -17,7 +17,7 @@ Interactive map for **Hybrid Intelligences: Embodied Leadership and Creativity i
 This repository holds two linked views of the same knowledge graph:
 
 1. **Network visualization** (`index.html`) — a radial, physics-based map of ~**192 concepts** connected by ~**1,987 weighted relations**. Concepts sit on concentric rings by category; edges show conceptual proximity, influence, and program structure.
-2. **Ontology browser** (`ontology.html`) — a searchable, collapsible browse interface over the same data, exported as standard **[JSON-LD](ontology.jsonld)** and **[Turtle](ontology.ttl)** (SKOS + custom `hi:` vocabulary).
+2. **Ontology browser** (`ontology.html`) — a searchable, collapsible browse interface over the same data, exported as **[JSON-LD](ontology.jsonld)**, **[Turtle](ontology.ttl)** (SKOS), and **[OWL 2 Turtle](ontology.owl.ttl)** (classes, properties, individuals).
 
 The network is both a **pedagogical instrument** for the Hybrid Intelligences program and a **formal vocabulary** for intelligence, embodiment, AI, and creative practice as *coupling* across bodies, tools, institutions, and worlds.
 
@@ -141,7 +141,31 @@ Links between network and ontology are wired from concept detail panels and cate
 
 ### What is an ontology?
 
-An **ontology** is a structured map of concepts and the relations between them—a shared vocabulary with definitions that both people and software can read. This project exports the network into **SKOS** (Simple Knowledge Organization System) with a small extension vocabulary (`hi:`) for network-specific fields (category, weight, edge strength, ring order).
+An **ontology** is a structured map of concepts and the relations between them—a shared vocabulary with definitions that both people and software can read. This project exports the network in three formats:
+
+| Format | File | Purpose |
+|--------|------|---------|
+| **JSON-LD** | `ontology.jsonld` | SKOS concept scheme; loaded by the ontology browser |
+| **Turtle (SKOS)** | `ontology.ttl` | SKOS + reified relations; general RDF tooling |
+| **OWL 2 Turtle** | `ontology.owl.ttl` | Full OWL class/property model; reasoners, Protégé, LLM/RAG pipelines |
+
+The SKOS export uses a custom `hi:` vocabulary for network-specific fields (category, weight, edge strength, ring order). The OWL export adds explicit **TBox** (schema) and **ABox** (instances) semantics on top of the same IRIs.
+
+### OWL class and property model
+
+**Classes**
+- `hi:Concept` — root class for all network concepts
+- `hi:CategoryConcept` — meta-class for ring categories
+- Ten category subclasses: `hi:ProgramConcept`, `hi:PremiseConcept`, `hi:FacilitatorConcept`, `hi:PracticeConcept`, `hi:TensionConcept`, `hi:QualityConcept`, `hi:PhenomenonConcept`, `hi:DomainConcept`, `hi:FrameworkConcept`, `hi:AuthorConcept` (pairwise disjoint)
+- `hi:NetworkRelation` — reified weighted edges
+
+**Object properties:** `hi:relatedTo` (symmetric), `hi:inCategory`, `hi:schemeMember`, `hi:relationSource`, `hi:relationTarget`
+
+**Datatype properties:** `hi:networkWeight`, `hi:relationStrength`, `hi:ringFraction`, `hi:ringOrder`
+
+Each of the ~192 concept nodes is an `owl:NamedIndividual` typed with its category class. Edges appear both as direct `hi:relatedTo` assertions and as reified `hi:NetworkRelation` individuals with strength values.
+
+Compatible with [Protégé](https://protege.stanford.edu/), Apache Jena, rdflib, and OWL-aware SPARQL endpoints.
 
 ### Building the ontology
 
@@ -151,7 +175,7 @@ Source of truth for all concepts and edges is **`hybrid-network.js`**. After edi
 node build-ontology.js
 ```
 
-This writes `ontology.jsonld` and `ontology.ttl`. The ontology browser loads JSON-LD at runtime.
+This writes `ontology.jsonld`, `ontology.ttl`, and `ontology.owl.ttl`. The ontology browser loads JSON-LD at runtime.
 
 ### Ontology browser features
 
@@ -160,7 +184,7 @@ This writes `ontology.jsonld` and `ontology.ttl`. The ontology browser loads JSO
 - **Concept detail** with related concepts, category, and link to network node
 - **Category banners** with definitions and network deep links
 - Dark / light theme toggle
-- Download links for JSON-LD and Turtle
+- Download links for JSON-LD, Turtle, and OWL (Turtle)
 
 ---
 
@@ -193,9 +217,10 @@ node build-ontology.js
 | `index.html` | Network page shell, fonts, theme background |
 | `hybrid-network.js` | Nodes, edges, categories, layout, draw loop, interaction, animation |
 | `ontology.html` | Ontology browser UI (loads `ontology.jsonld`) |
-| `build-ontology.js` | Export script: `hybrid-network.js` → JSON-LD + Turtle |
+| `build-ontology.js` | Export script: `hybrid-network.js` → JSON-LD + Turtle + OWL |
 | `ontology.jsonld` | JSON-LD concept scheme (generated) |
-| `ontology.ttl` | Turtle RDF export (generated) |
+| `ontology.ttl` | Turtle SKOS export (generated) |
+| `ontology.owl.ttl` | OWL 2 Turtle export with classes, properties, individuals (generated) |
 | `hybrid-network-screenshot.png` | README preview image |
 
 ---
@@ -206,7 +231,7 @@ node build-ontology.js
 - **Program co-director:** Erika Moore
 - **Hosts:** Center for Arts, Migration + Entrepreneurship (CAME) · Center for Arts in Medicine (CAM) · IGNITE Engineering · College of the Arts, University of Florida
 - **Venue:** Herbert Wertheim Laboratory for Engineering Excellence
-- **Built with:** [p5.js](https://p5js.org/) · SKOS / JSON-LD / Turtle
+- **Built with:** [p5.js](https://p5js.org/) · SKOS / JSON-LD / Turtle / OWL 2
 
 ---
 

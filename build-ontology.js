@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Export Hybrid Intelligences conceptual network to JSON-LD and Turtle.
+ * Export Hybrid Intelligences conceptual network to JSON-LD, Turtle, and OWL.
  * Source of truth: hybrid-network.js (NODES, EDGES, CATEGORY_META, WIKIPEDIA)
  *
  * Usage: node build-ontology.js
@@ -14,6 +14,7 @@ const ROOT = __dirname;
 const SOURCE = path.join(ROOT, "hybrid-network.js");
 const OUT_JSONLD = path.join(ROOT, "ontology.jsonld");
 const OUT_TTL = path.join(ROOT, "ontology.ttl");
+const OUT_OWL = path.join(ROOT, "ontology.owl.ttl");
 
 const BASE = "https://marlonbarrios.github.io/hybrid-intelligences/ontology#";
 const DOC = "https://marlonbarrios.github.io/hybrid-intelligences/ontology";
@@ -29,6 +30,19 @@ const CATEGORY_DESCS = {
   practice: "Methods and habits—rehearsal, somatics, pedagogy, cultural critique.",
   author: "Thinkers, artists, and researchers linked to concepts in the network.",
   facilitator: "Hybrid Intelligences session leaders and guest facilitators.",
+};
+
+const CAT_CLASS = {
+  program: "ProgramConcept",
+  premise: "PremiseConcept",
+  facilitator: "FacilitatorConcept",
+  practice: "PracticeConcept",
+  tension: "TensionConcept",
+  quality: "QualityConcept",
+  phenomenon: "PhenomenonConcept",
+  domain: "DomainConcept",
+  framework: "FrameworkConcept",
+  author: "AuthorConcept",
 };
 
 function loadNetwork() {
@@ -236,16 +250,211 @@ function buildTurtle({ NODES, EDGES, CATEGORY_META, RING_ORDER }) {
   return lines.join("\n");
 }
 
+function buildOwlTurtle({ NODES, EDGES, CATEGORY_META, RING_ORDER }) {
+  const lines = [];
+  const categoryClasses = RING_ORDER.map((cat) => CAT_CLASS[cat]);
+
+  lines.push(`@prefix hi: <${BASE}> .`);
+  lines.push(`@prefix owl: <http://www.w3.org/2002/07/owl#> .`);
+  lines.push(`@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .`);
+  lines.push(`@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .`);
+  lines.push(`@prefix skos: <http://www.w3.org/2004/02/skos/core#> .`);
+  lines.push(`@prefix schema: <https://schema.org/> .`);
+  lines.push(`@prefix dc: <http://purl.org/dc/terms/> .`);
+  lines.push(`@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .`);
+  lines.push("");
+
+  // --- Ontology document ---
+  lines.push(`<${DOC}> a owl:Ontology ;`);
+  lines.push(`  rdfs:label "Hybrid Intelligences Ontology" ;`);
+  lines.push(`  dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;`);
+  lines.push(`  dc:description "OWL 2 ontology of concepts, categories, and weighted relations from the Hybrid Intelligences program." ;`);
+  lines.push(`  owl:versionInfo "1.0.0" ;`);
+  lines.push(`  owl:imports <http://www.w3.org/2004/02/skos/core> ;`);
+  lines.push(`  hi:nodeCount "${NODES.length}"^^xsd:integer ;`);
+  lines.push(`  hi:edgeCount "${EDGES.length}"^^xsd:integer .`);
+  lines.push("");
+
+  // --- TBox: classes ---
+  lines.push(`hi:Concept a owl:Class ;`);
+  lines.push(`  rdfs:label "Concept"@en ;`);
+  lines.push(`  rdfs:comment "Any concept node in the Hybrid Intelligences network."@en .`);
+  lines.push("");
+
+  lines.push(`hi:CategoryConcept a owl:Class ;`);
+  lines.push(`  rdfs:label "Category concept"@en ;`);
+  lines.push(`  rdfs:subClassOf hi:Concept ;`);
+  lines.push(`  rdfs:comment "A ring category in the conceptual network visualization."@en .`);
+  lines.push("");
+
+  for (const cat of RING_ORDER) {
+    const cls = CAT_CLASS[cat];
+    const meta = CATEGORY_META[cat];
+    lines.push(`hi:${cls} a owl:Class ;`);
+    lines.push(`  rdfs:label "${turtleEscape(meta.label)}"@en ;`);
+    if (CATEGORY_DESCS[cat]) {
+      lines.push(`  rdfs:comment "${turtleEscape(CATEGORY_DESCS[cat])}"@en ;`);
+    }
+    lines.push(`  rdfs:subClassOf hi:Concept .`);
+    lines.push("");
+  }
+
+  for (let i = 0; i < categoryClasses.length; i++) {
+    for (let j = i + 1; j < categoryClasses.length; j++) {
+      lines.push(`hi:${categoryClasses[i]} owl:disjointWith hi:${categoryClasses[j]} .`);
+    }
+  }
+  lines.push("");
+
+  lines.push(`hi:NetworkRelation a owl:Class ;`);
+  lines.push(`  rdfs:label "Network relation"@en ;`);
+  lines.push(`  rdfs:comment "A reified weighted edge between two concept individuals."@en .`);
+  lines.push("");
+
+  // --- TBox: object properties ---
+  lines.push(`hi:relatedTo a owl:ObjectProperty ;`);
+  lines.push(`  rdfs:label "related to"@en ;`);
+  lines.push(`  rdfs:domain hi:Concept ;`);
+  lines.push(`  rdfs:range hi:Concept ;`);
+  lines.push(`  owl:propertyType owl:SymmetricProperty .`);
+  lines.push("");
+
+  lines.push(`hi:inCategory a owl:ObjectProperty ;`);
+  lines.push(`  rdfs:label "in category"@en ;`);
+  lines.push(`  rdfs:domain hi:Concept ;`);
+  lines.push(`  rdfs:range hi:CategoryConcept .`);
+  lines.push("");
+
+  lines.push(`hi:schemeMember a owl:ObjectProperty ;`);
+  lines.push(`  rdfs:label "scheme member"@en ;`);
+  lines.push(`  rdfs:domain hi:Concept ;`);
+  lines.push(`  rdfs:range skos:ConceptScheme .`);
+  lines.push("");
+
+  lines.push(`hi:relationSource a owl:ObjectProperty ;`);
+  lines.push(`  rdfs:label "relation source"@en ;`);
+  lines.push(`  rdfs:domain hi:NetworkRelation ;`);
+  lines.push(`  rdfs:range hi:Concept .`);
+  lines.push("");
+
+  lines.push(`hi:relationTarget a owl:ObjectProperty ;`);
+  lines.push(`  rdfs:label "relation target"@en ;`);
+  lines.push(`  rdfs:domain hi:NetworkRelation ;`);
+  lines.push(`  rdfs:range hi:Concept .`);
+  lines.push("");
+
+  // --- TBox: datatype properties ---
+  lines.push(`hi:networkWeight a owl:DatatypeProperty ;`);
+  lines.push(`  rdfs:label "network weight"@en ;`);
+  lines.push(`  rdfs:domain hi:Concept ;`);
+  lines.push(`  rdfs:range xsd:decimal .`);
+  lines.push("");
+
+  lines.push(`hi:relationStrength a owl:DatatypeProperty ;`);
+  lines.push(`  rdfs:label "relation strength"@en ;`);
+  lines.push(`  rdfs:domain hi:NetworkRelation ;`);
+  lines.push(`  rdfs:range xsd:decimal .`);
+  lines.push("");
+
+  lines.push(`hi:ringFraction a owl:DatatypeProperty ;`);
+  lines.push(`  rdfs:label "ring fraction"@en ;`);
+  lines.push(`  rdfs:domain hi:CategoryConcept ;`);
+  lines.push(`  rdfs:range xsd:decimal .`);
+  lines.push("");
+
+  lines.push(`hi:ringOrder a owl:DatatypeProperty ;`);
+  lines.push(`  rdfs:label "ring order"@en ;`);
+  lines.push(`  rdfs:domain hi:CategoryConcept ;`);
+  lines.push(`  rdfs:range xsd:integer .`);
+  lines.push("");
+
+  lines.push(`hi:nodeCount a owl:DatatypeProperty ;`);
+  lines.push(`  rdfs:range xsd:integer .`);
+  lines.push("");
+
+  lines.push(`hi:edgeCount a owl:DatatypeProperty ;`);
+  lines.push(`  rdfs:range xsd:integer .`);
+  lines.push("");
+
+  // --- ABox: concept scheme ---
+  lines.push(`hi:scheme a owl:NamedIndividual, skos:ConceptScheme ;`);
+  lines.push(`  rdfs:label "Hybrid Intelligences Concept Scheme"@en ;`);
+  lines.push(`  skos:prefLabel "Hybrid Intelligences Concept Scheme"@en ;`);
+  lines.push(
+    `  skos:hasTopConcept ${RING_ORDER.map((c) => `hi:category/${c}`).join(", ")} .`
+  );
+  lines.push("");
+
+  // --- ABox: category individuals ---
+  RING_ORDER.forEach((cat, i) => {
+    const meta = CATEGORY_META[cat];
+    const cls = CAT_CLASS[cat];
+    lines.push(`hi:category/${cat} a owl:NamedIndividual, hi:CategoryConcept, hi:${cls} ;`);
+    lines.push(`  rdfs:label "${turtleEscape(meta.label)}"@en ;`);
+    lines.push(`  skos:prefLabel "${turtleEscape(meta.label)}"@en ;`);
+    if (CATEGORY_DESCS[cat]) {
+      lines.push(`  skos:definition "${turtleEscape(CATEGORY_DESCS[cat])}"@en ;`);
+    }
+    lines.push(`  skos:inScheme hi:scheme ;`);
+    lines.push(`  skos:topConceptOf hi:scheme ;`);
+    lines.push(`  hi:ringFraction "${meta.ring}"^^xsd:decimal ;`);
+    lines.push(`  hi:ringOrder "${i}"^^xsd:integer .`);
+    lines.push("");
+  });
+
+  // --- ABox: concept individuals ---
+  for (const n of NODES) {
+    const cls = CAT_CLASS[n.cat];
+    const extras = [];
+    if (n.url) extras.push(`schema:url <${n.url}>`);
+    if (n.wikiUrl) extras.push(`schema:sameAs <${n.wikiUrl}>`);
+
+    lines.push(`hi:${n.id} a owl:NamedIndividual, hi:${cls} ;`);
+    lines.push(`  rdfs:label "${turtleEscape(cleanLabel(n.label))}"@en ;`);
+    lines.push(`  skos:prefLabel "${turtleEscape(cleanLabel(n.label))}"@en ;`);
+    lines.push(`  skos:definition "${turtleEscape(n.desc)}"@en ;`);
+    lines.push(`  skos:broader hi:category/${n.cat} ;`);
+    lines.push(`  hi:inCategory hi:category/${n.cat} ;`);
+    lines.push(`  hi:schemeMember hi:scheme ;`);
+    lines.push(`  skos:inScheme hi:scheme ;`);
+    lines.push(`  hi:networkWeight "${n.weight}"^^xsd:decimal`);
+    if (extras.length) lines.push(` ;\n  ${extras.join(" ;\n  ")}`);
+    lines.push(" .");
+    lines.push("");
+  }
+
+  // --- ABox: direct relatedTo assertions ---
+  for (const [a, b, strength] of EDGES) {
+    lines.push(`hi:${a} hi:relatedTo hi:${b} .`);
+  }
+  lines.push("");
+
+  // --- ABox: reified network relations ---
+  for (const [a, b, strength] of EDGES) {
+    const relId = `rel-${a}-${b}`.replace(/[^a-zA-Z0-9_-]/g, "_");
+    lines.push(`hi:${relId} a owl:NamedIndividual, hi:NetworkRelation ;`);
+    lines.push(`  hi:relationSource hi:${a} ;`);
+    lines.push(`  hi:relationTarget hi:${b} ;`);
+    lines.push(`  hi:relationStrength "${strength}"^^xsd:decimal .`);
+    lines.push("");
+  }
+
+  return lines.join("\n");
+}
+
 function main() {
   const network = loadNetwork();
   const jsonld = buildJsonLd(network);
   const ttl = buildTurtle(network);
+  const owl = buildOwlTurtle(network);
 
   fs.writeFileSync(OUT_JSONLD, JSON.stringify(jsonld, null, 2) + "\n");
   fs.writeFileSync(OUT_TTL, ttl);
+  fs.writeFileSync(OUT_OWL, owl);
 
   console.log(`Wrote ${path.basename(OUT_JSONLD)} (${network.NODES.length} concepts, ${network.EDGES.length} relations)`);
   console.log(`Wrote ${path.basename(OUT_TTL)}`);
+  console.log(`Wrote ${path.basename(OUT_OWL)}`);
 }
 
 main();
