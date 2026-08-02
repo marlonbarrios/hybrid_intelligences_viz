@@ -4374,7 +4374,7 @@ function drawUI() {
   textSize(8.5);
   fill(...t.subtitle);
   text(
-    "Center for Arts, Migration + Entrepreneurship \u2022 Center for Arts in Medicine \u2022 College of the Arts",
+    "University of Florida \u2022 Center for Arts, Migration + Entrepreneurship \u2022 IGNITE Engineering \u2022 Center for Arts in Medicine \u2022 College of the Arts",
     20,
     30
   );
@@ -4427,7 +4427,7 @@ function drawUI() {
 
   fill(...t.muted);
   textSize(9);
-  text("CAME \u00b7 CAM \u00b7 IGNITE \u00b7 Wertheim Lab \u00b7 Jul 13\u201330, 2026 \u2014 click legend to focus \u00b7 drag nodes \u00b7 A animate \u00b7 R reset \u00b7 T theme", 20, 58);
+  text("Jul 13\u201330, 2026 \u00b7 click legend to focus \u00b7 A animate \u00b7 R reset \u00b7 T theme", 20, 58);
 
   drawLegend();
 
