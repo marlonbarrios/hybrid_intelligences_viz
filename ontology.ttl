@@ -11,8 +11,8 @@
   rdfs:label "Hybrid Intelligences Ontology" ;
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   owl:versionInfo "1.0.0" ;
-  hi:nodeCount "221"^^xsd:integer ;
-  hi:edgeCount "2172"^^xsd:integer .
+  hi:nodeCount "222"^^xsd:integer ;
+  hi:edgeCount "2188"^^xsd:integer .
 
 hi:scheme a skos:ConceptScheme ;
   skos:prefLabel "Hybrid Intelligences Concept Scheme" ;
@@ -550,6 +550,18 @@ hi:llm a skos:Concept, hi:NetworkNode ;
  ;
   schema:url <essay-2.html> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Large_language_model>
+ .
+
+hi:latent_space a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Latent Space" ;
+  skos:definition "The high-dimensional continuous representation learned by neural models—where meanings, images, and trajectories live as coordinates and neighborhoods rather than symbols. A mathematical embedding that also functions as an ecological niche of possible meanings: navigable, generative, and co-constitutive of how models and humans couple through prompts, sampling, and interpretation." ;
+  skos:broader hi:category/framework ;
+  skos:inScheme hi:scheme ;
+  hi:category "framework" ;
+  hi:weight "1.55"^^xsd:decimal
+ ;
+  schema:url <essay-2.html> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Latent_space>
  .
 
 hi:agi a skos:Concept, hi:NetworkNode ;
@@ -4898,6 +4910,102 @@ hi:rel-llm-literacies a hi:Relation ;
   hi:target hi:literacies ;
   hi:strength "0.7"^^xsd:decimal ;
   skos:relatedMatch hi:literacies .
+
+hi:rel-latent_space-llm a hi:Relation ;
+  hi:source hi:latent_space ;
+  hi:target hi:llm ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:llm .
+
+hi:rel-latent_space-gen_ai a hi:Relation ;
+  hi:source hi:latent_space ;
+  hi:target hi:gen_ai ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:gen_ai .
+
+hi:rel-latent_space-neural_networks a hi:Relation ;
+  hi:source hi:latent_space ;
+  hi:target hi:neural_networks ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:neural_networks .
+
+hi:rel-latent_space-machine_learning a hi:Relation ;
+  hi:source hi:latent_space ;
+  hi:target hi:machine_learning ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:machine_learning .
+
+hi:rel-latent_space-transformers a hi:Relation ;
+  hi:source hi:latent_space ;
+  hi:target hi:transformers ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:transformers .
+
+hi:rel-latent_space-gpt a hi:Relation ;
+  hi:source hi:latent_space ;
+  hi:target hi:gpt ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:gpt .
+
+hi:rel-latent_space-umwelt a hi:Relation ;
+  hi:source hi:latent_space ;
+  hi:target hi:umwelt ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:umwelt .
+
+hi:rel-latent_space-affordances a hi:Relation ;
+  hi:source hi:latent_space ;
+  hi:target hi:affordances ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:affordances .
+
+hi:rel-latent_space-ai_interpretability a hi:Relation ;
+  hi:source hi:latent_space ;
+  hi:target hi:ai_interpretability ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_interpretability .
+
+hi:rel-latent_space-model_introspection a hi:Relation ;
+  hi:source hi:latent_space ;
+  hi:target hi:model_introspection ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:model_introspection .
+
+hi:rel-latent_space-creative_ai a hi:Relation ;
+  hi:source hi:latent_space ;
+  hi:target hi:creative_ai ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:creative_ai .
+
+hi:rel-latent_space-possible_minds a hi:Relation ;
+  hi:source hi:latent_space ;
+  hi:target hi:possible_minds ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:possible_minds .
+
+hi:rel-latent_space-cognition a hi:Relation ;
+  hi:source hi:latent_space ;
+  hi:target hi:cognition ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:cognition .
+
+hi:rel-latent_space-mediation a hi:Relation ;
+  hi:source hi:latent_space ;
+  hi:target hi:mediation ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:mediation .
+
+hi:rel-latent_space-synthetic_cognition a hi:Relation ;
+  hi:source hi:latent_space ;
+  hi:target hi:synthetic_cognition ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:synthetic_cognition .
+
+hi:rel-latent_space-ai_impact_epistemic a hi:Relation ;
+  hi:source hi:latent_space ;
+  hi:target hi:ai_impact_epistemic ;
+  hi:strength "0.7"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_impact_epistemic .
 
 hi:rel-agi-possible_minds a hi:Relation ;
   hi:source hi:agi ;

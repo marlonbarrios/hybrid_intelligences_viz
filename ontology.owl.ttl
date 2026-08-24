@@ -13,8 +13,8 @@
   dc:description "OWL 2 ontology of concepts, categories, and weighted relations from the Hybrid Intelligences program." ;
   owl:versionInfo "1.0.0" ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  hi:nodeCount "221"^^xsd:integer ;
-  hi:edgeCount "2172"^^xsd:integer .
+  hi:nodeCount "222"^^xsd:integer ;
+  hi:edgeCount "2188"^^xsd:integer .
 
 hi:Concept a owl:Class ;
   rdfs:label "Concept"@en ;
@@ -847,6 +847,20 @@ hi:llm a owl:NamedIndividual, hi:FrameworkConcept ;
  ;
   schema:url <essay-2.html> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Large_language_model>
+ .
+
+hi:latent_space a owl:NamedIndividual, hi:FrameworkConcept ;
+  rdfs:label "Latent Space"@en ;
+  skos:prefLabel "Latent Space"@en ;
+  skos:definition "The high-dimensional continuous representation learned by neural models—where meanings, images, and trajectories live as coordinates and neighborhoods rather than symbols. A mathematical embedding that also functions as an ecological niche of possible meanings: navigable, generative, and co-constitutive of how models and humans couple through prompts, sampling, and interpretation."@en ;
+  skos:broader hi:category/framework ;
+  hi:inCategory hi:category/framework ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.55"^^xsd:decimal
+ ;
+  schema:url <essay-2.html> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Latent_space>
  .
 
 hi:agi a owl:NamedIndividual, hi:FrameworkConcept ;
@@ -3716,6 +3730,22 @@ hi:llm hi:relatedTo hi:gpt .
 hi:llm hi:relatedTo hi:mediation .
 hi:llm hi:relatedTo hi:perception_politics .
 hi:llm hi:relatedTo hi:literacies .
+hi:latent_space hi:relatedTo hi:llm .
+hi:latent_space hi:relatedTo hi:gen_ai .
+hi:latent_space hi:relatedTo hi:neural_networks .
+hi:latent_space hi:relatedTo hi:machine_learning .
+hi:latent_space hi:relatedTo hi:transformers .
+hi:latent_space hi:relatedTo hi:gpt .
+hi:latent_space hi:relatedTo hi:umwelt .
+hi:latent_space hi:relatedTo hi:affordances .
+hi:latent_space hi:relatedTo hi:ai_interpretability .
+hi:latent_space hi:relatedTo hi:model_introspection .
+hi:latent_space hi:relatedTo hi:creative_ai .
+hi:latent_space hi:relatedTo hi:possible_minds .
+hi:latent_space hi:relatedTo hi:cognition .
+hi:latent_space hi:relatedTo hi:mediation .
+hi:latent_space hi:relatedTo hi:synthetic_cognition .
+hi:latent_space hi:relatedTo hi:ai_impact_epistemic .
 hi:agi hi:relatedTo hi:possible_minds .
 hi:agi hi:relatedTo hi:philosophy .
 hi:agi hi:relatedTo hi:shanahan .
@@ -7367,6 +7397,86 @@ hi:rel-llm-perception_politics a owl:NamedIndividual, hi:NetworkRelation ;
 hi:rel-llm-literacies a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:llm ;
   hi:relationTarget hi:literacies ;
+  hi:relationStrength "0.7"^^xsd:decimal .
+
+hi:rel-latent_space-llm a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:latent_space ;
+  hi:relationTarget hi:llm ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-latent_space-gen_ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:latent_space ;
+  hi:relationTarget hi:gen_ai ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-latent_space-neural_networks a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:latent_space ;
+  hi:relationTarget hi:neural_networks ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-latent_space-machine_learning a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:latent_space ;
+  hi:relationTarget hi:machine_learning ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-latent_space-transformers a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:latent_space ;
+  hi:relationTarget hi:transformers ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-latent_space-gpt a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:latent_space ;
+  hi:relationTarget hi:gpt ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-latent_space-umwelt a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:latent_space ;
+  hi:relationTarget hi:umwelt ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-latent_space-affordances a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:latent_space ;
+  hi:relationTarget hi:affordances ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-latent_space-ai_interpretability a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:latent_space ;
+  hi:relationTarget hi:ai_interpretability ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-latent_space-model_introspection a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:latent_space ;
+  hi:relationTarget hi:model_introspection ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-latent_space-creative_ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:latent_space ;
+  hi:relationTarget hi:creative_ai ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-latent_space-possible_minds a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:latent_space ;
+  hi:relationTarget hi:possible_minds ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-latent_space-cognition a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:latent_space ;
+  hi:relationTarget hi:cognition ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-latent_space-mediation a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:latent_space ;
+  hi:relationTarget hi:mediation ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-latent_space-synthetic_cognition a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:latent_space ;
+  hi:relationTarget hi:synthetic_cognition ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-latent_space-ai_impact_epistemic a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:latent_space ;
+  hi:relationTarget hi:ai_impact_epistemic ;
   hi:relationStrength "0.7"^^xsd:decimal .
 
 hi:rel-agi-possible_minds a owl:NamedIndividual, hi:NetworkRelation ;
