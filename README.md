@@ -163,6 +163,29 @@ Links between network and ontology are wired from concept detail panels and cate
 
 Both essays use the same visual language as the ontology browser (IBM Plex, shared CSS theme variables, sticky header nav, theme toggle). Key terms in the essay body are inline **concept links** into the **Network** (`network.html#conceptId`). Matching network nodes deep-link back with **Read Essay 1 →** / **Read Essay 2 →**. Downloadable PDFs include a project cover masthead.
 
+**Source of truth:** edit [`essay-1.md`](essay-1.md) or [`essay-2.md`](essay-2.md), then rebuild:
+
+```bash
+node build-essays.js          # regenerate essay.html + essay-2.html
+node build-essays.js --pdf    # also export PDFs (Chrome headless)
+```
+
+Markdown syntax:
+
+| In markdown | Becomes |
+|-------------|---------|
+| Blank line between paragraphs | `<p>` |
+| `[coupling](concept:coupling)` | Network concept link |
+| `*italic*` / `**bold**` | `<em>` / `<strong>` |
+| `## Bibliography` + numbered list | Bibliography section (Essay 1) |
+| `## Space` | Topic section with `<h2>` (Essay 2) |
+| `::: term-list` … `:::` | Bulleted term list (Essay 2) |
+| `::: cluster` … `:::` | Concept cluster list (Essay 2) |
+| `::: closing` … `:::` | Closing block (Essay 2) |
+| `::: credit` … `:::` | Credit line (Essay 2) |
+
+Frontmatter at the top of each `.md` file sets title, author, date, and footer. Do not edit `essay.html` / `essay-2.html` directly—they are generated.
+
 | Page | Title | Author / credit |
 |------|-------|-----------------|
 | [`essay.html`](essay.html) · [PDF](essay-1-hybrid-intelligences-cognitive-assemblages.pdf) | Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI | Marlon Barrios Solano · July 10, 2026 |
@@ -264,6 +287,12 @@ To update the ontology after editing `hybrid-network.js`:
 node build-ontology.js
 ```
 
+To update essays after editing `essay-1.md` or `essay-2.md`:
+
+```bash
+node build-essays.js --pdf
+```
+
 ---
 
 ## Files
@@ -274,8 +303,11 @@ node build-ontology.js
 | `network.html` | Network visualization page shell (loads `hybrid-network.js`) |
 | `hybrid-network.js` | Nodes, edges, categories, layout, draw loop, interaction, animation |
 | `ontology.html` | Ontology browser UI (loads `ontology.jsonld`) |
-| `essay.html` | Essay 1 full text with concept → network links and shared light/dark theme |
-| `essay-2.html` | Essay 2 (*My Umwelt*) with concept → network links and shared light/dark theme |
+| `essay.html` | Essay 1 page (generated from `essay-1.md`) |
+| `essay-2.html` | Essay 2 page (generated from `essay-2.md`) |
+| `essay-1.md` | Essay 1 source — edit this, then `node build-essays.js` |
+| `essay-2.md` | Essay 2 source — edit this, then `node build-essays.js` |
+| `build-essays.js` | Essay build script: markdown → HTML (+ optional PDF) |
 | `essay-1-hybrid-intelligences-cognitive-assemblages.pdf` | Essay 1 PDF download |
 | `essay-2-my-umwelt.pdf` | Essay 2 PDF download |
 | `video.html` | Hybrid Intelligences Highlights video page |
