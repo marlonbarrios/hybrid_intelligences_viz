@@ -132,6 +132,7 @@ const ONTOLOGY_URL = "ontology.html";
 const ESSAY1_URL = "essay.html";
 const ESSAY2_URL = "essay-2.html";
 const VIDEO_URL = "video.html";
+const SCAN_QR_URL = "scan-qr.html";
 const PODCAST_URL = "podcast.html";
 const SLIDES_URL = "slides.html";
 const CANVAS_URL = "https://ufl.instructure.com/courses/574408";
@@ -4996,6 +4997,7 @@ function drawMobileMenu() {
     { id: "link", label: "Synthetic Podcast", url: PODCAST_URL },
     { id: "link", label: "Slides", url: SLIDES_URL },
     { id: "link", label: "Video", url: VIDEO_URL },
+    { id: "link", label: "Scan QR Code", url: SCAN_QR_URL },
     { id: "theme_dark", label: "Theme: Dark" },
     { id: "theme_light", label: "Theme: Light" },
   ];
@@ -5157,6 +5159,7 @@ function drawUI() {
     { url: PENDULAR_UMWELT_URL, label: "My Pendular Umwelt \u2197" },
     { url: SLIDES_URL, label: "Slides" },
     { url: VIDEO_URL, label: "Video" },
+    { url: SCAN_QR_URL, label: "Scan QR Code" },
   ];
   for (const link of creditNavLinks) {
     text(creditSep, creditCursorX, creditY);
