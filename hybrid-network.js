@@ -189,6 +189,8 @@ function resetNetworkView() {
   selected = null;
   hovered = null;
   dragging = null;
+  relationLinger = null;
+  relationLingerUntil = 0;
   selectedCategory = null;
   mobileMenuOpen = false;
   initGraph();
@@ -3709,6 +3711,8 @@ let edges = [];
 let hovered = null;
 let selected = null;
 let dragging = null;
+let relationLinger = null;
+let relationLingerUntil = 0;
 let panelAlpha = 0;
 let time = 0;
 let layoutCenter = { x: 0, y: 0 };
@@ -3979,6 +3983,14 @@ function windowResized() {
 
 function draw() {
   time += 0.016;
+  if (
+    relationLinger &&
+    time >= relationLingerUntil &&
+    !hovered &&
+    !(selected && activeCategory() && selected.cat !== activeCategory())
+  ) {
+    relationLinger = null;
+  }
   updateAnimate();
   updateCategoryTransition();
   updateThemeCrossfade();
@@ -4250,8 +4262,17 @@ function getActiveNode() {
   return selected || hovered;
 }
 
+function relationFocusNode() {
+  if (!categoryHighlightActive()) return null;
+  const cat = activeCategory();
+  if (hovered) return hovered;
+  if (selected && cat && selected.cat !== cat) return selected;
+  if (relationLinger && time < relationLingerUntil) return relationLinger;
+  return null;
+}
+
 function nodeFocusHighlightActive() {
-  if (categoryExploreActive() && getActiveNode()) return true;
+  if (categoryExploreActive() && relationFocusNode()) return true;
   return getActiveNode() && !categoryHighlightActive();
 }
 
@@ -4453,7 +4474,7 @@ function updateCategoryTransition() {
 }
 
 function nodeCategoryFocus(n) {
-  if (categoryExploreActive() && getActiveNode()) return null;
+  if (categoryExploreActive() && relationFocusNode()) return null;
   if (!categoryHighlightActive() || categoryDisplay === null) return null;
   if (n.cat === categoryDisplay) return categoryFocusIn();
   if (n.cat === categoryPrev && categoryPrev !== null) return categoryFocusOut();
@@ -4535,6 +4556,8 @@ function legendCategoryAt(mx, my) {
 function setSelectedCategory(cat) {
   if (cat === selectedCategory) {
     selectedCategory = null;
+    relationLinger = null;
+    relationLingerUntil = 0;
     return;
   }
   pinCategory(cat);
@@ -4559,6 +4582,13 @@ function stepCategory(delta) {
 function pinCategory(cat) {
   if (!CATEGORY_META[cat]) return;
   selectedCategory = cat;
+  if (selected && selected.cat !== cat) selected = null;
+  if (hovered && hovered.cat !== cat) hovered = null;
+  if (dragging && dragging.cat !== cat) dragging = null;
+  if (relationLinger && relationLinger.cat !== cat) {
+    relationLinger = null;
+    relationLingerUntil = 0;
+  }
   if (!animateMode) {
     const idx = RING_ORDER.indexOf(cat);
     if (idx >= 0) {
@@ -4609,15 +4639,16 @@ function categoryHighlightActive() {
   return mouseOnLegend && hoveredCategory !== null;
 }
 
+function nodeKeptInCategoryFocus(n) {
+  const cat = activeCategory();
+  if (cat && n.cat === cat) return true;
+  const focus = relationFocusNode();
+  return !!(focus && (n === focus || isConnected(focus, n)));
+}
+
 function nodeDimmed(n) {
   if (categoryHighlightActive()) {
-    const cat = activeCategory();
-    const active = categoryExploreActive() ? getActiveNode() : null;
-    if (active) {
-      return n !== active && !isConnected(active, n);
-    }
-    if (n.cat !== cat) return true;
-    return false;
+    return !nodeKeptInCategoryFocus(n);
   }
   const active = getActiveNode();
   if (active) {
@@ -4627,27 +4658,34 @@ function nodeDimmed(n) {
 }
 
 function nodeHighlighted(n) {
-  if (categoryExploreActive()) {
-    const active = getActiveNode();
-    if (active) return n === active || isConnected(active, n);
+  if (categoryExploreActive() || categoryHighlightActive()) {
+    const focus = relationFocusNode();
+    if (focus) return n === focus || isConnected(focus, n);
     return n.cat === activeCategory();
   }
-  if (categoryHighlightActive()) return n.cat === activeCategory();
   const active = getActiveNode();
   if (active) return n === active;
   return false;
 }
 
 function nodeNeighbor(n) {
-  if (categoryHighlightActive() && !categoryExploreActive()) return false;
-  const active = getActiveNode();
+  if (categoryHighlightActive() && !relationFocusNode()) return false;
+  const active = relationFocusNode() || getActiveNode();
   if (active) return isConnected(active, n);
   return false;
+}
+
+function nodeAcceptsPointer(n) {
+  if (!n) return false;
+  if (ringsOnlyMode()) return false;
+  if (!categoryHighlightActive()) return true;
+  return nodeKeptInCategoryFocus(n);
 }
 
 function nodeAt(mx, my) {
   for (let i = nodes.length - 1; i >= 0; i--) {
     const n = nodes[i];
+    if (!nodeAcceptsPointer(n)) continue;
     if (dist(mx, my, n.x, n.y) < n.radius + 8) return n;
   }
   return null;
@@ -4684,14 +4722,15 @@ function drawEdges() {
     const edgeFocus = catHL
       ? min(nodeCategoryFocus(e.a) ?? 0, nodeCategoryFocus(e.b) ?? 0)
       : null;
+    const rel = relationFocusNode();
     const highlight = catHL
-      ? (categoryExploreActive() && active
-        ? (e.a === active || e.b === active)
+      ? (rel
+        ? (e.a === rel || e.b === rel)
         : edgeFocus > 0.45)
       : active && (e.a === active || e.b === active);
     const dim = catHL
-      ? (categoryExploreActive() && active
-        ? !highlight
+      ? (rel
+        ? !(highlight || (activeCategory() && e.a.cat === activeCategory() && e.b.cat === activeCategory()))
         : edgeFocus < 0.2)
       : active && !highlight;
     const col = edgeColor(e, highlight, dim);
@@ -5460,7 +5499,16 @@ function mouseMoved() {
   if (!dragging) {
     if (!isMobileLayout()) updateLegendHover(mouseX, mouseY);
     const prevHovered = hovered;
-    hovered = ringsOnlyMode() ? null : nodeAt(mouseX, mouseY);
+    hovered = nodeAt(mouseX, mouseY);
+    if (hovered) {
+      relationLinger = hovered;
+      relationLingerUntil = time + 0.45;
+    } else if (!(selected && activeCategory() && selected.cat !== activeCategory())) {
+      if (time >= relationLingerUntil) relationLinger = null;
+    }
+    if (selected && !nodeAcceptsPointer(selected) && !(activeCategory() && selected.cat === activeCategory())) {
+      selected = null;
+    }
 
     if (animateMode && !ringsOnlyMode()) {
       if (hovered) pauseAnimateForHover();
@@ -5471,6 +5519,7 @@ function mouseMoved() {
       hitUiLink(mouseX, mouseY) ||
       hitDetailPanelLink(mouseX, mouseY) ||
       hitMobileAction(mouseX, mouseY) ||
+      hovered ||
       (!isMobileLayout() && (legendCategoryAt(mouseX, mouseY) || legendHeaderHit(mouseX, mouseY)))
     ) {
       cursor("pointer");
@@ -5554,7 +5603,7 @@ function mousePressed() {
     const mobileHit = hitMobileAction(mouseX, mouseY);
     if (handleMobileChromePress(mobileHit)) return;
 
-    const n = ringsOnlyMode() ? null : nodeAt(mouseX, mouseY);
+    const n = nodeAt(mouseX, mouseY);
     if (animateMode) {
       pauseAnimateForHover();
       if (n) {
@@ -5570,6 +5619,8 @@ function mousePressed() {
       if (n.id !== "coupling") n.pinned = false;
     } else {
       selected = null;
+      relationLinger = null;
+      relationLingerUntil = 0;
       if (mobileMenuOpen) mobileMenuOpen = false;
     }
     return;
@@ -5596,6 +5647,8 @@ function mousePressed() {
     if (n.id !== "coupling") n.pinned = false;
   } else {
     selected = null;
+    relationLinger = null;
+    relationLingerUntil = 0;
   }
 }
 
