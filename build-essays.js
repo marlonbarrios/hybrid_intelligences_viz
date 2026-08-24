@@ -54,7 +54,7 @@ const ESSAYS = [
   },
 ];
 
-const SLIDES_URL = "https://uflorida.sharepoint.com/:p:/r/teams/UF-CAME/Shared%20Documents/EVENTS%20and%20PROGRAMMING/Creative%20B%20Summer/Hybrid%20Intelligences%20(2026)/Program%20Materials/Creative%20B%20Symposium%20-%20Hybrid%20Intel.pptx?d=w4549d9142c9b45be860730dabc042349&csf=1&web=1&e=G9NWdm&nav=eyJzSWQiOjI4NSwiY0lkIjozNDU3MzA2ODkyfQ";
+const SLIDES_URL = "slides.html";
 
 function read(file) {
   return fs.readFileSync(path.join(ROOT, file), "utf8");
@@ -355,7 +355,7 @@ function printCoverHtml(cover) {
   <section class="print-cover" aria-hidden="true">
     <p class="project">Hybrid Intelligences</p>
     <p class="tagline">Embodied Leadership and Creativity in the Era of AI</p>
-    <p class="impact">A living map of concepts, essays, and program materials for embodied leadership and creativity in the era of AI.</p>
+    <p class="impact">A hybrid dynamic knowledge architecture of concepts, essays, documentation, visualization, and program materials for embodied leadership and creativity in the era of AI.</p>
     <p class="essay-label">${cover.essayLabel}</p>
     <h1>${cover.title}</h1>
     <p class="byline">${cover.byline}</p>

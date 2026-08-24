@@ -16,10 +16,32 @@
             font-family: "IBM Plex Mono", "Courier New", monospace;
         }
         body.light-mode { background: #fffdf8; }
-        canvas { display: block; }
+        canvas { display: block; position: relative; z-index: 1; }
+        .site-logo {
+            position: fixed;
+            z-index: 8;
+            top: 8px;
+            left: 10px;
+            line-height: 0;
+            text-decoration: none;
+        }
+        .site-logo:hover { opacity: 0.9; }
+        .site-logo img {
+            display: block;
+            height: 96px;
+            width: auto;
+        }
+        @media (max-width: 720px) {
+            .site-logo { top: 6px; left: 8px; }
+            .site-logo img { height: 80px; }
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400&display=swap" rel="stylesheet">
 </head>
-<body></body>
+<body>
+    <a class="site-logo" href="index.html" aria-label="Hybrid Intelligences home">
+        <img src="logo.png" alt="Hybrid Intelligences">
+    </a>
+</body>
 </html>

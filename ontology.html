@@ -52,6 +52,24 @@
       font-size: 1rem;
       color: var(--title);
     }
+    .brand-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+    .site-logo {
+      flex-shrink: 0;
+      display: block;
+      line-height: 0;
+      text-decoration: none;
+    }
+    .site-logo:hover { opacity: 0.88; text-decoration: none; }
+    .site-logo img {
+      display: block;
+      height: 88px;
+      width: auto;
+    }
+    .brand-copy { min-width: 0; }
     header .org-line {
       margin: 0 0 0.35rem;
       font-family: "IBM Plex Mono", monospace;
@@ -447,15 +465,22 @@
 </head>
 <body>
   <header>
-    <h1>Hybrid Intelligences Ontology</h1>
-    <p class="org-line">
-      <a href="https://www.ufl.edu/" target="_blank" rel="noopener noreferrer">University of Florida</a>
-      • <a href="https://arts.ufl.edu/came/" target="_blank" rel="noopener noreferrer">Center for Arts, Migration + Entrepreneurship</a>
-      • <a href="https://www.eng.ufl.edu/innovation/" target="_blank" rel="noopener noreferrer">IGNITE Engineering</a>
-      • <a href="https://arts.ufl.edu/programs-schools/center-for-arts-in-medicine/" target="_blank" rel="noopener noreferrer">Center for Arts in Medicine</a>
-      • <a href="https://arts.ufl.edu/" target="_blank" rel="noopener noreferrer">College of the Arts</a>
-    </p>
-    <p id="ontologyStats">Loading concept scheme…</p>
+    <div class="brand-row">
+      <a class="site-logo" href="index.html" aria-label="Hybrid Intelligences home">
+        <img src="logo.png" alt="Hybrid Intelligences">
+      </a>
+      <div class="brand-copy">
+        <h1>Hybrid Intelligences Ontology</h1>
+        <p class="org-line">
+          <a href="https://www.ufl.edu/" target="_blank" rel="noopener noreferrer">University of Florida</a>
+          • <a href="https://arts.ufl.edu/came/" target="_blank" rel="noopener noreferrer">Center for Arts, Migration + Entrepreneurship</a>
+          • <a href="https://www.eng.ufl.edu/innovation/" target="_blank" rel="noopener noreferrer">IGNITE Engineering</a>
+          • <a href="https://arts.ufl.edu/programs-schools/center-for-arts-in-medicine/" target="_blank" rel="noopener noreferrer">Center for Arts in Medicine</a>
+          • <a href="https://arts.ufl.edu/" target="_blank" rel="noopener noreferrer">College of the Arts</a>
+        </p>
+        <p id="ontologyStats">Loading concept scheme…</p>
+      </div>
+    </div>
     <p class="intro">
       <strong>What is an ontology?</strong>
       An ontology is a structured map of concepts and the relations between them—a shared vocabulary
@@ -469,12 +494,12 @@
         <a href="network.html">Network</a>
         <a href="essay.html">Essay 1</a>
         <a href="essay-2.html">Essay 2</a>
-        <a href="https://uflorida.sharepoint.com/:p:/r/teams/UF-CAME/Shared%20Documents/EVENTS%20and%20PROGRAMMING/Creative%20B%20Summer/Hybrid%20Intelligences%20(2026)/Program%20Materials/Creative%20B%20Symposium%20-%20Hybrid%20Intel.pptx?d=w4549d9142c9b45be860730dabc042349&csf=1&web=1&e=G9NWdm&nav=eyJzSWQiOjI4NSwiY0lkIjozNDU3MzA2ODkyfQ" target="_blank" rel="noopener noreferrer">Slides ↗</a>
-        <a href="video.html">Video</a>
-        <a href="podcast.html">Podcast</a>
         <a href="https://ufl.instructure.com/courses/574408" target="_blank" rel="noopener noreferrer">Canvas ↗</a>
         <a href="https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1" target="_blank" rel="noopener noreferrer">NotebookLM ↗</a>
+        <a href="podcast.html">Synthetic Podcast</a>
         <a href="https://my-pendular-umwelt.vercel.app/" target="_blank" rel="noopener noreferrer">My Pendular Umwelt ↗</a>
+        <a href="slides.html">Slides</a>
+        <a href="video.html">Video</a>
       </div>
       <div class="header-row" style="margin-top:0; gap:0.75rem;">
         <div class="format-links">

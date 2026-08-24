@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hybrid Intelligences — Home</title>
-  <meta name="description" content="A living map of concepts, essays, and program materials for embodied leadership and creativity in the era of AI.">
+  <meta name="description" content="A hybrid dynamic knowledge architecture of concepts, essays, documentation, visualization, and program materials for embodied leadership and creativity in the era of AI.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <style>
@@ -52,7 +52,7 @@
       --theme-btn-border: var(--border);
       --theme-btn-color: var(--muted);
     }
-    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       min-height: 100vh;
@@ -96,8 +96,19 @@
       z-index: 5;
       display: flex;
       align-items: center;
-      justify-content: flex-end;
-      padding: 0.85rem 1.5rem;
+      justify-content: space-between;
+      padding: 0.75rem 1.5rem;
+    }
+    .site-logo {
+      display: block;
+      line-height: 0;
+      text-decoration: none;
+    }
+    .site-logo:hover { opacity: 0.88; text-decoration: none; }
+    .site-logo img {
+      display: block;
+      height: 92px;
+      width: auto;
     }
     .theme-btn {
       border: 1px solid var(--theme-btn-border);
@@ -123,7 +134,7 @@
       width: 100%;
       max-width: 72rem;
       margin: 0 auto;
-      padding: 0.5rem 1.5rem 2.25rem;
+      padding: 0.5rem 1.5rem 4.5rem;
       animation: heroRise 1s ease-out both;
     }
 
@@ -143,14 +154,6 @@
       line-height: 1.35;
       color: var(--hero-text);
       max-width: 28rem;
-    }
-    .intro .impact-label {
-      margin: 0 0 0.35rem;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--title);
     }
     .intro .support {
       margin: 0 0 1.35rem;
@@ -241,6 +244,46 @@
       color: var(--hero-enter-desc);
     }
 
+    .scroll-cue {
+      position: fixed;
+      z-index: 8;
+      left: 50%;
+      bottom: 0.9rem;
+      transform: translateX(-50%);
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.42rem 0.8rem 0.42rem 0.9rem;
+      border: 1px solid color-mix(in srgb, var(--title) 40%, transparent);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--bg) 78%, transparent);
+      backdrop-filter: blur(10px);
+      color: var(--title);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      opacity: 1;
+      transition: opacity 0.25s ease, color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+    .scroll-cue:hover {
+      color: var(--title);
+      border-color: var(--title);
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      text-decoration: none;
+    }
+    .scroll-cue.is-hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .scroll-cue svg {
+      display: block;
+      flex-shrink: 0;
+      animation: scrollBounce 1.8s ease-in-out infinite;
+    }
+
     .below {
       padding: 3.5rem 1.5rem 2rem;
       border-top: 1px solid var(--border);
@@ -253,6 +296,7 @@
     }
     .below h2 {
       margin: 0 0 0.75rem;
+      scroll-margin-top: 1.5rem;
       font-family: "IBM Plex Mono", monospace;
       font-weight: 400;
       font-size: 0.75rem;
@@ -324,8 +368,14 @@
       from { opacity: 0; transform: translateY(14px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(5px); }
+    }
     @media (prefers-reduced-motion: reduce) {
       .hero-media, .hero-body { animation: none; }
+      .scroll-cue svg { animation: none; }
+      html { scroll-behavior: auto; }
     }
 
     @media (max-width: 860px) {
@@ -334,7 +384,7 @@
         gap: 1.5rem;
         align-items: start;
         padding-top: 0.25rem;
-        padding-bottom: 1.5rem;
+        padding-bottom: 3.25rem;
       }
       .intro .brand { font-size: clamp(1.6rem, 8vw, 2.4rem); }
       .enter-list a {
@@ -357,6 +407,9 @@
     <div class="hero-shade" aria-hidden="true"></div>
 
     <div class="topbar">
+      <a class="site-logo" href="index.html" aria-label="Hybrid Intelligences home">
+        <img src="logo.png" alt="Hybrid Intelligences">
+      </a>
       <button type="button" class="theme-btn" id="themeBtn" aria-label="Toggle theme">Theme</button>
     </div>
 
@@ -364,9 +417,8 @@
       <div class="intro">
         <h1 class="brand">Hybrid Intelligences</h1>
         <p class="line">Intelligence as coupling across bodies, tools, institutions, and worlds.</p>
-        <p class="impact-label">Impact</p>
         <p class="support">
-          A living map of concepts, essays, and program materials for embodied leadership and creativity in the era of AI.
+          A hybrid dynamic knowledge architecture of concepts, essays, documentation, visualization, and program materials for embodied leadership and creativity in the era of AI.
         </p>
         <a class="cta-primary" href="network.html">Enter the network</a>
         <p class="meta">
@@ -409,24 +461,6 @@
             </a>
           </li>
           <li>
-            <a href="https://uflorida.sharepoint.com/:p:/r/teams/UF-CAME/Shared%20Documents/EVENTS%20and%20PROGRAMMING/Creative%20B%20Summer/Hybrid%20Intelligences%20(2026)/Program%20Materials/Creative%20B%20Symposium%20-%20Hybrid%20Intel.pptx?d=w4549d9142c9b45be860730dabc042349&csf=1&web=1&e=G9NWdm&nav=eyJzSWQiOjI4NSwiY0lkIjozNDU3MzA2ODkyfQ" target="_blank" rel="noopener noreferrer">
-              <span class="label">Slides ↗</span>
-              <span class="desc">Creative B Symposium presentation</span>
-            </a>
-          </li>
-          <li>
-            <a href="video.html">
-              <span class="label">Video</span>
-              <span class="desc">Hybrid Intelligences Highlights</span>
-            </a>
-          </li>
-          <li>
-            <a href="podcast.html">
-              <span class="label">Podcast</span>
-              <span class="desc">Sample from NotebookLM · open notebook with UF login</span>
-            </a>
-          </li>
-          <li>
             <a href="https://ufl.instructure.com/courses/574408" target="_blank" rel="noopener noreferrer">
               <span class="label">Canvas ↗</span>
               <span class="desc">Course site</span>
@@ -439,14 +473,39 @@
             </a>
           </li>
           <li>
+            <a href="podcast.html">
+              <span class="label">Synthetic Podcast</span>
+              <span class="desc">Sample from NotebookLM · open notebook with UF login</span>
+            </a>
+          </li>
+          <li>
             <a href="https://my-pendular-umwelt.vercel.app/" target="_blank" rel="noopener noreferrer">
               <span class="label">My Pendular Umwelt ↗</span>
               <span class="desc">Interactive umwelt sketch · OpenAI · p5.js</span>
             </a>
           </li>
+          <li>
+            <a href="slides.html">
+              <span class="label">Slides</span>
+              <span class="desc">Creative B Symposium presentation</span>
+            </a>
+          </li>
+          <li>
+            <a href="video.html">
+              <span class="label">Video</span>
+              <span class="desc">Hybrid Intelligences Highlights</span>
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
+
+    <a class="scroll-cue" id="scrollCue" href="#framework-heading" aria-label="Scroll to Framework quote">
+      Framework
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
   </header>
 
   <section class="below" aria-labelledby="framework-heading">
@@ -487,6 +546,13 @@
     }
 
     initTheme();
+
+    const scrollCue = document.getElementById("scrollCue");
+    function updateScrollCue() {
+      scrollCue.classList.toggle("is-hidden", window.scrollY > window.innerHeight * 0.18);
+    }
+    window.addEventListener("scroll", updateScrollCue, { passive: true });
+    updateScrollCue();
   </script>
 </body>
 </html>

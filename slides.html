@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hybrid Intelligences — Slides</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e1018;
+      --panel: #12141e;
+      --border: #323848;
+      --title: #f4c430;
+      --text: #e8eaef;
+      --muted: #969eb0;
+      --link: #82c3ff;
+      --hover: #1a1e2a;
+    }
+    body.light-mode {
+      --bg: #fffdf8;
+      --panel: #ffffff;
+      --border: #d2d6e0;
+      --title: #a8760c;
+      --text: #202430;
+      --muted: #5a6070;
+      --link: #125599;
+      --hover: #f5f3ee;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse 90% 55% at 12% -10%, rgba(244, 196, 48, 0.07), transparent 55%),
+        radial-gradient(ellipse 70% 45% at 100% 0%, rgba(78, 196, 196, 0.05), transparent 50%),
+        var(--bg);
+      color: var(--text);
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      line-height: 1.5;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      padding: 1.25rem 1.5rem 1rem;
+      border-bottom: 1px solid var(--border);
+      background: color-mix(in srgb, var(--panel) 88%, transparent);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header .eyebrow {
+      margin: 0 0 0.4rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    header h1 {
+      margin: 0 0 0.45rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 300;
+      font-size: clamp(0.95rem, 2.4vw, 1.15rem);
+      line-height: 1.4;
+      color: var(--title);
+      max-width: 52rem;
+    }
+    header .meta {
+      margin: 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .brand-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+    .site-logo {
+      flex-shrink: 0;
+      display: block;
+      line-height: 0;
+      text-decoration: none;
+    }
+    .site-logo:hover { opacity: 0.88; text-decoration: none; }
+    .site-logo img {
+      display: block;
+      height: 88px;
+      width: auto;
+    }
+    .brand-copy { min-width: 0; }
+    .header-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 0.85rem;
+    }
+    .header-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+    }
+    .theme-btn, .deck-btn {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      padding: 0.35rem 0.55rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .theme-btn:hover, .deck-btn:hover { color: var(--title); border-color: var(--title); }
+    .toolbar-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      align-items: center;
+    }
+    main {
+      max-width: 64rem;
+      margin: 0 auto;
+      padding: 1.5rem 1.5rem 3.5rem;
+    }
+    .stage {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .stage img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #000;
+      user-select: none;
+    }
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2.4rem;
+      height: 2.4rem;
+      border: 1px solid color-mix(in srgb, var(--title) 45%, transparent);
+      background: color-mix(in srgb, var(--bg) 72%, transparent);
+      color: var(--title);
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      line-height: 1;
+      backdrop-filter: blur(8px);
+    }
+    .nav-btn:hover { border-color: var(--title); }
+    .nav-btn.prev { left: 0.7rem; }
+    .nav-btn.next { right: 0.7rem; }
+    .stage-full-btn {
+      position: absolute;
+      right: 0.7rem;
+      bottom: 0.7rem;
+      z-index: 2;
+    }
+    .deck:fullscreen,
+    .deck:-webkit-full-screen,
+    .deck.is-full {
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      background: #000;
+      display: flex;
+      flex-direction: column;
+    }
+    .deck.is-full {
+      position: fixed;
+      inset: 0;
+      z-index: 40;
+      padding: 0;
+    }
+    body.deck-full { overflow: hidden; }
+    .deck:fullscreen .stage,
+    .deck:-webkit-full-screen .stage,
+    .deck.is-full .stage {
+      flex: 1;
+      aspect-ratio: auto;
+      width: 100%;
+      height: auto;
+      border: 0;
+      min-height: 0;
+    }
+    .deck:fullscreen .toolbar,
+    .deck:-webkit-full-screen .toolbar,
+    .deck.is-full .toolbar {
+      margin: 0;
+      padding: 0.65rem 1rem 0.85rem;
+      background: #0a0c12;
+      color: #969eb0;
+    }
+    .deck:fullscreen .dots button,
+    .deck:-webkit-full-screen .dots button,
+    .deck.is-full .dots button { background: #323848; }
+    .deck:fullscreen .dots button.is-on,
+    .deck:-webkit-full-screen .dots button.is-on,
+    .deck.is-full .dots button.is-on { background: #f4c430; }
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.7rem 1rem;
+      margin-top: 0.85rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .dots {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      justify-content: center;
+      flex: 1;
+    }
+    .dots button {
+      width: 0.55rem;
+      height: 0.55rem;
+      padding: 0;
+      border: 0;
+      border-radius: 999px;
+      background: var(--border);
+      cursor: pointer;
+    }
+    .dots button.is-on { background: var(--title); }
+    .caption {
+      margin: 1rem 0 0;
+      max-width: 46rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    footer.page-foot {
+      max-width: 64rem;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    @media (max-width: 640px) {
+      .nav-btn { width: 2rem; height: 2rem; font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand-row">
+      <a class="site-logo" href="index.html" aria-label="Hybrid Intelligences home">
+        <img src="logo.png" alt="Hybrid Intelligences">
+      </a>
+      <div class="brand-copy">
+        <p class="eyebrow">Slides</p>
+        <h1>Creative B Symposium — Hybrid Intelligences</h1>
+        <p class="meta"><a href="https://www.ufl.edu/" target="_blank" rel="noopener noreferrer">University of Florida</a> · <a href="https://arts.ufl.edu/" target="_blank" rel="noopener noreferrer">College of the Arts</a> · Creative B program</p>
+      </div>
+    </div>
+    <div class="header-row">
+      <div class="header-links">
+        <a href="index.html">← Home</a>
+        <a href="network.html">Network</a>
+        <a href="ontology.html">Ontology</a>
+        <a href="essay.html">Essay 1</a>
+        <a href="essay-2.html">Essay 2</a>
+        <a href="https://ufl.instructure.com/courses/574408" target="_blank" rel="noopener noreferrer">Canvas ↗</a>
+        <a href="https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1" target="_blank" rel="noopener noreferrer">NotebookLM ↗</a>
+        <a href="podcast.html">Synthetic Podcast</a>
+        <a href="https://my-pendular-umwelt.vercel.app/" target="_blank" rel="noopener noreferrer">My Pendular Umwelt ↗</a>
+        <a href="video.html">Video</a>
+      </div>
+      <button type="button" class="theme-btn" id="themeBtn" aria-label="Toggle theme">Theme</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="deck" id="deck">
+      <div class="stage" id="stage">
+        <img id="slideImg" alt="Symposium slide">
+        <button type="button" class="nav-btn prev" id="prevBtn" aria-label="Previous slide">‹</button>
+        <button type="button" class="nav-btn next" id="nextBtn" aria-label="Next slide">›</button>
+        <button type="button" class="deck-btn stage-full-btn" id="stageFullBtn" aria-label="Toggle fullscreen">Fullscreen</button>
+      </div>
+      <div class="toolbar">
+        <span id="counter">1 / 16</span>
+        <div class="dots" id="dots" role="tablist" aria-label="Slides"></div>
+        <div class="toolbar-actions">
+          <button type="button" class="deck-btn" id="fullBtn">Fullscreen</button>
+          <a class="deck-btn" href="https://uflorida.sharepoint.com/:p:/r/teams/UF-CAME/Shared%20Documents/EVENTS%20and%20PROGRAMMING/Creative%20B%20Summer/Hybrid%20Intelligences%20(2026)/Program%20Materials/Creative%20B%20Symposium%20-%20Hybrid%20Intel.pptx?d=w4549d9142c9b45be860730dabc042349&csf=1&web=1&e=G9NWdm&nav=eyJzSWQiOjI4NSwiY0lkIjozNDU3MzA2ODkyfQ" target="_blank" rel="noopener noreferrer">Original deck ↗</a>
+        </div>
+      </div>
+    </div>
+    <p class="caption">
+      Internal slideshow of the Creative B Symposium deck. Use the arrows, keyboard ← →, F for fullscreen, or the dots. Esc exits fullscreen. Original PowerPoint remains on UF SharePoint.
+    </p>
+  </main>
+
+  <footer class="page-foot">
+    Hybrid Intelligences · University of Florida · Slides
+  </footer>
+
+  <script>
+    const SLIDES = Array.from({ length: 16 }, (_, i) => `slides/slide-${String(i + 1).padStart(2, "0")}.jpg`);
+    let index = 0;
+    const img = document.getElementById("slideImg");
+    const counter = document.getElementById("counter");
+    const dots = document.getElementById("dots");
+    const deck = document.getElementById("deck");
+    const fullBtn = document.getElementById("fullBtn");
+    const stageFullBtn = document.getElementById("stageFullBtn");
+
+    function nativeFullscreenEl() {
+      return document.fullscreenElement || document.webkitFullscreenElement || null;
+    }
+
+    function isFullscreen() {
+      return nativeFullscreenEl() === deck || deck.classList.contains("is-full");
+    }
+
+    function syncFullscreenLabel() {
+      const on = isFullscreen();
+      const label = on ? "Exit" : "Fullscreen";
+      fullBtn.textContent = label;
+      stageFullBtn.textContent = label;
+      fullBtn.setAttribute("aria-pressed", on ? "true" : "false");
+      stageFullBtn.setAttribute("aria-pressed", on ? "true" : "false");
+    }
+
+    async function enterFullscreen() {
+      try {
+        if (deck.requestFullscreen) {
+          await deck.requestFullscreen();
+          return;
+        }
+        if (deck.webkitRequestFullscreen) {
+          deck.webkitRequestFullscreen();
+          return;
+        }
+      } catch (_) { /* fall through to CSS mode */ }
+      deck.classList.add("is-full");
+      document.body.classList.add("deck-full");
+      syncFullscreenLabel();
+    }
+
+    async function exitFullscreen() {
+      const native = nativeFullscreenEl();
+      if (native) {
+        try {
+          if (document.exitFullscreen) await document.exitFullscreen();
+          else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+        } catch (_) { /* ignore */ }
+      }
+      deck.classList.remove("is-full");
+      document.body.classList.remove("deck-full");
+      syncFullscreenLabel();
+    }
+
+    function toggleFullscreen() {
+      if (isFullscreen()) exitFullscreen();
+      else enterFullscreen();
+    }
+
+    function applyTheme(mode) {
+      document.body.classList.toggle("light-mode", mode === "light");
+      localStorage.setItem("hi-theme", mode);
+    }
+
+    function go(n) {
+      index = (n + SLIDES.length) % SLIDES.length;
+      img.src = SLIDES[index];
+      img.alt = `Slide ${index + 1} of ${SLIDES.length}`;
+      counter.textContent = `${index + 1} / ${SLIDES.length}`;
+      [...dots.children].forEach((d, i) => d.classList.toggle("is-on", i === index));
+      history.replaceState(null, "", `#${index + 1}`);
+    }
+
+    function init() {
+      const saved = localStorage.getItem("hi-theme");
+      const mode = saved || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      applyTheme(mode);
+      document.getElementById("themeBtn").addEventListener("click", () => {
+        applyTheme(document.body.classList.contains("light-mode") ? "dark" : "light");
+      });
+
+      SLIDES.forEach((_, i) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.setAttribute("aria-label", `Go to slide ${i + 1}`);
+        b.addEventListener("click", () => go(i));
+        dots.appendChild(b);
+      });
+
+      document.getElementById("prevBtn").addEventListener("click", () => go(index - 1));
+      document.getElementById("nextBtn").addEventListener("click", () => go(index + 1));
+      fullBtn.addEventListener("click", toggleFullscreen);
+      stageFullBtn.addEventListener("click", toggleFullscreen);
+      document.addEventListener("fullscreenchange", syncFullscreenLabel);
+      document.addEventListener("webkitfullscreenchange", syncFullscreenLabel);
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight" || e.key === " ") { e.preventDefault(); go(index + 1); }
+        if (e.key === "ArrowLeft") { e.preventDefault(); go(index - 1); }
+        if (e.key === "Home") { e.preventDefault(); go(0); }
+        if (e.key === "End") { e.preventDefault(); go(SLIDES.length - 1); }
+        if (e.key === "f" || e.key === "F") {
+          if (e.target.closest("input, textarea, [contenteditable]")) return;
+          e.preventDefault();
+          toggleFullscreen();
+        }
+        if (e.key === "Escape" && deck.classList.contains("is-full")) {
+          e.preventDefault();
+          exitFullscreen();
+        }
+      });
+
+      let startX = 0;
+      document.getElementById("stage").addEventListener("touchstart", (e) => {
+        startX = e.changedTouches[0].clientX;
+      }, { passive: true });
+      document.getElementById("stage").addEventListener("touchend", (e) => {
+        const dx = e.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 40) go(index + (dx < 0 ? 1 : -1));
+      }, { passive: true });
+
+      const fromHash = parseInt(location.hash.replace("#", ""), 10);
+      go(Number.isFinite(fromHash) && fromHash >= 1 ? fromHash - 1 : 0);
+    }
+
+    init();
+  </script>
+</body>
+</html>

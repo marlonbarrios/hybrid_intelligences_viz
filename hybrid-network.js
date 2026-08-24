@@ -133,7 +133,7 @@ const ESSAY1_URL = "essay.html";
 const ESSAY2_URL = "essay-2.html";
 const VIDEO_URL = "video.html";
 const PODCAST_URL = "podcast.html";
-const SLIDES_URL = "https://uflorida.sharepoint.com/:p:/r/teams/UF-CAME/Shared%20Documents/EVENTS%20and%20PROGRAMMING/Creative%20B%20Summer/Hybrid%20Intelligences%20(2026)/Program%20Materials/Creative%20B%20Symposium%20-%20Hybrid%20Intel.pptx?d=w4549d9142c9b45be860730dabc042349&csf=1&web=1&e=G9NWdm&nav=eyJzSWQiOjI4NSwiY0lkIjozNDU3MzA2ODkyfQ";
+const SLIDES_URL = "slides.html";
 const CANVAS_URL = "https://ufl.instructure.com/courses/574408";
 const NOTEBOOK_LM_URL = "https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1";
 const PENDULAR_UMWELT_URL = "https://my-pendular-umwelt.vercel.app/";
@@ -173,7 +173,7 @@ function isMobileLayout() {
 }
 
 function mobileBarH() {
-  return 58;
+  return 92;
 }
 
 function mobileBottomH() {
@@ -3876,7 +3876,7 @@ function getCenter() {
 
 function getMaxRadius() {
   const mobile = isMobileLayout();
-  const topPad = mobile ? mobileBarH() + 8 : 92;
+  const topPad = mobile ? mobileBarH() + 8 : 120;
   const toggleH = mobile ? mobileBottomH() + 8 : 54;
   const focus = getActiveNode();
   const panelH = focus && focus.url ? 128 : 108;
@@ -3915,7 +3915,7 @@ function initGraph() {
     y: layoutCenter.y,
     targetR: 0,
     targetAngle: 0,
-    radius: 14,
+    radius: 12.6,
     pinned: true,
     floatPhase: couplingSeed * TWO_PI,
     floatSpeed: 0.45,
@@ -3945,7 +3945,7 @@ function initGraph() {
         y: layoutCenter.y + sin(angle + jitter) * ringR,
         targetR: ringR,
         targetAngle: angle + jitter,
-        radius: 7 + n.weight * 4,
+        radius: (7 + n.weight * 4) * 0.9,
         pinned: false,
         vx: 0,
         vy: 0,
@@ -4850,7 +4850,7 @@ function drawMobileUI() {
   textAlign(LEFT, CENTER);
   textSize(12);
   drawingContext.font = '300 12px "IBM Plex Mono", monospace';
-  text("Hybrid Intelligences", 14, 18);
+  text("Hybrid Intelligences", 98, 36);
   drawingContext.font = '400 11px "IBM Plex Mono", monospace';
 
   textSize(8);
@@ -4867,7 +4867,7 @@ function drawMobileUI() {
   } else if (selectedCategory) {
     status = `Focus · ${CATEGORY_META[selectedCategory].label}`;
   }
-  text(status, 14, 38);
+  text(status, 98, 56);
 
   const focus = getActiveNode();
   if (focus && !ringsOnlyMode()) drawDetailPanel(focus);
@@ -4953,10 +4953,10 @@ function drawMobileMenu() {
     { id: "link", label: "Ontology", url: ONTOLOGY_URL },
     { id: "link", label: "Essay 1", url: ESSAY1_URL },
     { id: "link", label: "Essay 2", url: ESSAY2_URL },
-    { id: "link", label: "Slides \u2197", url: SLIDES_URL },
-    { id: "link", label: "Video", url: VIDEO_URL },
-    { id: "link", label: "Podcast", url: PODCAST_URL },
     { id: "link", label: "NotebookLM \u2197", url: NOTEBOOK_LM_URL },
+    { id: "link", label: "Synthetic Podcast", url: PODCAST_URL },
+    { id: "link", label: "Slides", url: SLIDES_URL },
+    { id: "link", label: "Video", url: VIDEO_URL },
     { id: "theme_dark", label: "Theme: Dark" },
     { id: "theme_light", label: "Theme: Light" },
   ];
@@ -5020,7 +5020,8 @@ function drawUI() {
     return;
   }
 
-  const barH = 86;
+  const barH = 112;
+  const headerTextX = 118;
   fill(...t.uiBar);
   noStroke();
   rect(0, 0, width, barH);
@@ -5031,19 +5032,19 @@ function drawUI() {
   textStyle(NORMAL);
   fill(...t.title);
   drawingContext.font = '300 11px "IBM Plex Mono", monospace';
-  text("Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI", 20, 14);
+  text("Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI", headerTextX, 27);
   drawingContext.font = '400 11px "IBM Plex Mono", monospace';
 
   textSize(8);
   fill(...t.subtitle);
   text(
-    "Impact \u2014 A living map of concepts, essays, and program materials for embodied leadership and creativity in the era of AI.",
-    20,
-    28
+    "A hybrid dynamic knowledge architecture of concepts, essays, documentation, visualization, and program materials for embodied leadership and creativity in the era of AI.",
+    headerTextX,
+    41
   );
 
   textSize(8.5);
-  const orgY = 42;
+  const orgY = 55;
   const orgSep = " \u2022 ";
   const orgLinks = [
     { label: "University of Florida", url: "https://www.ufl.edu/" },
@@ -5052,7 +5053,7 @@ function drawUI() {
     { label: "Center for Arts in Medicine", url: "https://arts.ufl.edu/programs-schools/center-for-arts-in-medicine/" },
     { label: "College of the Arts", url: "https://arts.ufl.edu/" },
   ];
-  let orgX = 20;
+  let orgX = headerTextX;
   for (let i = 0; i < orgLinks.length; i++) {
     if (i > 0) {
       fill(...t.subtitle);
@@ -5078,13 +5079,13 @@ function drawUI() {
     orgX += orgW;
   }
 
-  const creditY = 56;
+  const creditY = 69;
   const subtitlePrefix = "Conceptual network visualization by ";
   const subtitleName = "Marlon Barrios Solano";
   textSize(8);
   fill(...t.subtitle);
-  text(subtitlePrefix, 20, creditY);
-  const nameX = 20 + textWidth(subtitlePrefix);
+  text(subtitlePrefix, headerTextX, creditY);
+  const nameX = headerTextX + textWidth(subtitlePrefix);
   const nameW = textWidth(subtitleName);
   uiLinks.push({
     url: PORTFOLIO_URL,
@@ -5111,12 +5112,12 @@ function drawUI() {
     { url: ONTOLOGY_URL, label: "Ontology \u2197" },
     { url: ESSAY1_URL, label: "Essay 1" },
     { url: ESSAY2_URL, label: "Essay 2" },
-    { url: SLIDES_URL, label: "Slides \u2197" },
-    { url: VIDEO_URL, label: "Video" },
-    { url: PODCAST_URL, label: "Podcast" },
     { url: CANVAS_URL, label: "Canvas \u2197" },
     { url: NOTEBOOK_LM_URL, label: "NotebookLM \u2197" },
+    { url: PODCAST_URL, label: "Synthetic Podcast" },
     { url: PENDULAR_UMWELT_URL, label: "My Pendular Umwelt \u2197" },
+    { url: SLIDES_URL, label: "Slides" },
+    { url: VIDEO_URL, label: "Video" },
   ];
   for (const link of creditNavLinks) {
     text(creditSep, creditCursorX, creditY);
@@ -5142,7 +5143,7 @@ function drawUI() {
 
   fill(...t.muted);
   textSize(9);
-  text("Jul 13\u201330, 2026 \u00b7 click legend / \u2191\u2193 categories \u00b7 A animate \u00b7 R reset \u00b7 T theme", 20, 74);
+  text("Jul 13\u201330, 2026 \u00b7 click legend / \u2191\u2193 categories \u00b7 A animate \u00b7 R reset \u00b7 T theme", headerTextX, 87);
 
   drawLegend();
 

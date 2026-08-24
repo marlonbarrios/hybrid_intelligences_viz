@@ -4,11 +4,11 @@
 
 Interactive map for **Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI** — a modular interdisciplinary program at the University of Florida, July 13–30, 2026.
 
-**Impact:** A living map of concepts, essays, and program materials for embodied leadership and creativity in the era of AI.
+**Impact:** A hybrid dynamic knowledge architecture of concepts, essays, documentation, visualization, and program materials for embodied leadership and creativity in the era of AI.
 
 **[University of Florida](https://www.ufl.edu/) · [College of the Arts](https://arts.ufl.edu/) · [CAME](https://arts.ufl.edu/came/) · [CAM](https://arts.ufl.edu/programs-schools/center-for-arts-in-medicine/) · [IGNITE](https://www.eng.ufl.edu/innovation/) · [Wertheim Laboratory](https://www.eng.ufl.edu/wertheim/)**
 
-**[Home →](index.html)** · **[Network →](network.html)** · **[Browse ontology →](ontology.html)** · **[Essay 1 →](essay.html)** · **[Essay 2 →](essay-2.html)** · **[Slides ↗](https://uflorida.sharepoint.com/:p:/r/teams/UF-CAME/Shared%20Documents/EVENTS%20and%20PROGRAMMING/Creative%20B%20Summer/Hybrid%20Intelligences%20(2026)/Program%20Materials/Creative%20B%20Symposium%20-%20Hybrid%20Intel.pptx?d=w4549d9142c9b45be860730dabc042349&csf=1&web=1&e=G9NWdm&nav=eyJzSWQiOjI4NSwiY0lkIjozNDU3MzA2ODkyfQ)** · **[Video →](video.html)** · **[Podcast →](podcast.html)** · **[Canvas ↗](https://ufl.instructure.com/courses/574408)** · **[NotebookLM ↗](https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1)** · **[My Pendular Umwelt ↗](https://my-pendular-umwelt.vercel.app/)**
+**[Home →](index.html)** · **[Network →](network.html)** · **[Browse ontology →](ontology.html)** · **[Essay 1 →](essay.html)** · **[Essay 2 →](essay-2.html)** · **[Slides →](slides.html)** · **[Video →](video.html)** · **[Synthetic Podcast →](podcast.html)** · **[Canvas ↗](https://ufl.instructure.com/courses/574408)** · **[NotebookLM ↗](https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1)** · **[My Pendular Umwelt ↗](https://my-pendular-umwelt.vercel.app/)**
 
 ![Hybrid Intelligences conceptual network — dark theme, node detail panel](hybrid-network-screenshot.png)
 
@@ -23,10 +23,11 @@ This repository holds linked views of the same program knowledge:
 3. **Ontology browser** (`ontology.html`) — a searchable, collapsible browse interface over the same data, exported as **[JSON-LD](ontology.jsonld)**, **[Turtle](ontology.ttl)** (SKOS), and **[OWL 2 Turtle](ontology.owl.ttl)** (classes, properties, individuals).
 4. **Essay 1** (`essay.html`) — *Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI* by Marlon Barrios Solano ([PDF](essay-1-hybrid-intelligences-cognitive-assemblages.pdf)).
 5. **Essay 2** (`essay-2.html`) — *My Umwelt* by GPT-5.5, in conversation with Marlon Barrios Solano ([PDF](essay-2-my-umwelt.pdf)).
-6. **Video** (`video.html`) — Hybrid Intelligences Highlights reel.
-7. **Podcast** (`podcast.html`) — sample Synthetic Podcast (*Your Mind Is Not in Your Head*) from NotebookLM; link through to the program notebook (UF login) to research, generate another podcast, or interact with Audio Overviews.
+6. **Slides** (`slides.html`) — internal Creative B Symposium slideshow (arrow keys, dots, swipe).
+7. **Video** (`video.html`) — Hybrid Intelligences Highlights reel.
+8. **Podcast** (`podcast.html`) — sample Synthetic Podcast (*Your Mind Is Not in Your Head*) from NotebookLM; link through to the program notebook (UF login) to research, generate another podcast, or interact with Audio Overviews.
 
-Shared navigation links Home, Network, Ontology, Essays, **[Slides](https://uflorida.sharepoint.com/:p:/r/teams/UF-CAME/Shared%20Documents/EVENTS%20and%20PROGRAMMING/Creative%20B%20Summer/Hybrid%20Intelligences%20(2026)/Program%20Materials/Creative%20B%20Symposium%20-%20Hybrid%20Intel.pptx?d=w4549d9142c9b45be860730dabc042349&csf=1&web=1&e=G9NWdm&nav=eyJzSWQiOjI4NSwiY0lkIjozNDU3MzA2ODkyfQ)**, Video, Podcast, **[Canvas](https://ufl.instructure.com/courses/574408)**, **[NotebookLM](https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1)**, and **[My Pendular Umwelt](https://my-pendular-umwelt.vercel.app/)**. Institution credits (UF, College of the Arts, CAME, CAM, IGNITE, Wertheim) are linked on Home, Ontology, and the Network header. Pages share a light/dark theme preference (`hi-theme`). On narrow screens the **Network** switches to a mobile chrome (↑ / Play|Pause|Resume / ↓ / Reset / Menu) while the desktop layout stays unchanged.
+Shared navigation links Home, Network, Ontology, Essays, **[Slides](slides.html)**, Video, Synthetic Podcast, **[Canvas](https://ufl.instructure.com/courses/574408)**, **[NotebookLM](https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1)**, and **[My Pendular Umwelt](https://my-pendular-umwelt.vercel.app/)**. Institution credits (UF, College of the Arts, CAME, CAM, IGNITE, Wertheim) are linked on Home, Ontology, and the Network header. Pages share a light/dark theme preference (`hi-theme`). On narrow screens the **Network** switches to a mobile chrome (↑ / Play|Pause|Resume / ↓ / Reset / Menu) while the desktop layout stays unchanged.
 
 The network is both a **pedagogical instrument** for the Hybrid Intelligences program and a **formal vocabulary** for intelligence, embodiment, AI, and creative practice as *coupling* across bodies, tools, institutions, and worlds.
 
@@ -197,7 +198,7 @@ Frontmatter at the top of each `.md` file sets title, author, date, and footer. 
 
 | Link | Destination |
 |------|-------------|
-| **Slides** | Creative B Symposium PowerPoint on UF SharePoint (opens externally; requires UF access) |
+| **Slides** | [`slides.html`](slides.html) — internal Creative B Symposium slideshow; original PowerPoint remains on UF SharePoint |
 | **Video** | [`video.html`](video.html) — Hybrid Intelligences Highlights (`hybrid-intelligences-highlight.mp4`) |
 | **Podcast** | [`podcast.html`](podcast.html) — sample episode *Your Mind Is Not in Your Head* (`your-mind-is-not-in-your-head.m4a`); continue in [NotebookLM](https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1) with UF credentials to research, create another podcast, or interact with Audio Overviews |
 | **Canvas** | [Hybrid Intelligences - Creative B](https://ufl.instructure.com/courses/574408) course site |
@@ -276,6 +277,7 @@ Open [http://localhost:8000/](http://localhost:8000/)
 | Ontology | http://localhost:8000/ontology.html |
 | Essay 1 | http://localhost:8000/essay.html |
 | Essay 2 | http://localhost:8000/essay-2.html |
+| Slides | http://localhost:8000/slides.html |
 | Video | http://localhost:8000/video.html |
 | Podcast | http://localhost:8000/podcast.html |
 
@@ -310,7 +312,8 @@ node build-essays.js --pdf
 | `build-essays.js` | Essay build script: markdown → HTML (+ optional PDF) |
 | `essay-1-hybrid-intelligences-cognitive-assemblages.pdf` | Essay 1 PDF download |
 | `essay-2-my-umwelt.pdf` | Essay 2 PDF download |
-| `video.html` | Hybrid Intelligences Highlights video page |
+| `slides.html` | Creative B Symposium internal slideshow |
+| `slides/` | JPEG frames for the slideshow |
 | `podcast.html` | Synthetic Podcast page (NotebookLM sample + CTA) |
 | `your-mind-is-not-in-your-head.m4a` | Synthetic Podcast episode audio |
 | `hybrid-intelligences-highlight.mp4` | Hybrid Intelligences Highlights video file |
