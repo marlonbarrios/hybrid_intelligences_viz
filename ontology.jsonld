@@ -143,7 +143,7 @@
         "hi:Category"
       ],
       "skos:prefLabel": "Premise",
-      "skos:definition": "Core starting ideas—intelligence as coupling across bodies, tools, and worlds.",
+      "skos:definition": "Core starting ideas—intelligence as coupling, hybrid intelligences, and complex emergent embodiment across bodies, tools, and worlds.",
       "skos:inScheme": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
       },

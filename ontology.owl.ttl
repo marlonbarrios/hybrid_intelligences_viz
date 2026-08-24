@@ -37,7 +37,7 @@ hi:OrganizationConcept a owl:Class ;
 
 hi:PremiseConcept a owl:Class ;
   rdfs:label "Premise"@en ;
-  rdfs:comment "Core starting ideas—intelligence as coupling across bodies, tools, and worlds."@en ;
+  rdfs:comment "Core starting ideas—intelligence as coupling, hybrid intelligences, and complex emergent embodiment across bodies, tools, and worlds."@en ;
   rdfs:subClassOf hi:Concept .
 
 hi:ParticipantConcept a owl:Class ;
@@ -251,7 +251,7 @@ hi:category/organization a owl:NamedIndividual, hi:CategoryConcept, hi:Organizat
 hi:category/premise a owl:NamedIndividual, hi:CategoryConcept, hi:PremiseConcept ;
   rdfs:label "Premise"@en ;
   skos:prefLabel "Premise"@en ;
-  skos:definition "Core starting ideas—intelligence as coupling across bodies, tools, and worlds."@en ;
+  skos:definition "Core starting ideas—intelligence as coupling, hybrid intelligences, and complex emergent embodiment across bodies, tools, and worlds."@en ;
   skos:inScheme hi:scheme ;
   skos:topConceptOf hi:scheme ;
   hi:ringFraction "0.23"^^xsd:decimal ;

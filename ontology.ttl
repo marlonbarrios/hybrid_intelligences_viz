@@ -36,7 +36,7 @@ hi:category/organization a skos:Concept, hi:Category ;
 
 hi:category/premise a skos:Concept, hi:Category ;
   skos:prefLabel "Premise" ;
-  skos:definition "Core starting ideas—intelligence as coupling across bodies, tools, and worlds." ;
+  skos:definition "Core starting ideas—intelligence as coupling, hybrid intelligences, and complex emergent embodiment across bodies, tools, and worlds." ;
   skos:inScheme hi:scheme ;
   skos:topConceptOf hi:scheme ;
   hi:ringFraction "0.23"^^xsd:decimal ;

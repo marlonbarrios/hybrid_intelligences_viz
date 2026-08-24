@@ -4468,8 +4468,8 @@ function ringCategoryFocus(cat) {
 }
 
 function toggleAnimate() {
-  animateMode = !animateMode;
-  if (animateMode) {
+  if (!animateMode) {
+    animateMode = true;
     ensureAudio();
     selected = null;
     hovered = null;
@@ -4477,19 +4477,40 @@ function toggleAnimate() {
     hoveredCategory = null;
     selectedCategory = null;
     hoveredLegendHeader = false;
-    animateStep = 0;
-    animateUntil = time + ANIM_HOLD_SEC;
     animatePaused = false;
+    const holdLeft = animatePauseRemaining > 0 ? animatePauseRemaining : ANIM_HOLD_SEC;
+    animateUntil = time + holdLeft;
     animatePauseRemaining = 0;
-    categoryDisplay = null;
-    categoryPrev = null;
-    categoryBlend = 0;
+
+    const phase = ANIM_SEQUENCE[animateStep];
+    if (RING_ORDER.includes(phase)) {
+      if (categoryDisplay !== phase) {
+        categoryPrev = categoryDisplay;
+        categoryDisplay = phase;
+        categoryBlend = 0;
+      } else if (categoryBlend >= 1) {
+        categoryBlend = 1;
+      }
+    } else {
+      categoryDisplay = null;
+      categoryPrev = null;
+      categoryBlend = 1;
+    }
+    return;
+  }
+
+  animateMode = false;
+  if (themeCrossfadeActive) finishThemeCrossfade();
+  const phase = ANIM_SEQUENCE[animateStep];
+  animatePauseRemaining = animatePaused
+    ? animatePauseRemaining
+    : max(0, animateUntil - time);
+  animateUntil = 0;
+  animatePaused = false;
+  if (RING_ORDER.includes(phase)) {
+    pinCategory(phase);
   } else {
-    if (themeCrossfadeActive) finishThemeCrossfade();
-    animateStep = 0;
-    animateUntil = 0;
-    animatePaused = false;
-    animatePauseRemaining = 0;
+    selectedCategory = null;
     categoryDisplay = null;
     categoryPrev = null;
     categoryBlend = 1;
@@ -4538,6 +4559,16 @@ function stepCategory(delta) {
 function pinCategory(cat) {
   if (!CATEGORY_META[cat]) return;
   selectedCategory = cat;
+  if (!animateMode) {
+    const idx = RING_ORDER.indexOf(cat);
+    if (idx >= 0) {
+      const nextStep = 1 + idx;
+      if (animateStep !== nextStep) {
+        animateStep = nextStep;
+        animatePauseRemaining = ANIM_HOLD_SEC;
+      }
+    }
+  }
   if (cat !== categoryDisplay) {
     nudgeNodesForCategory(cat, categoryDisplay);
     categoryPrev = categoryDisplay;

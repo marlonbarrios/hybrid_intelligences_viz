@@ -19,9 +19,9 @@ Interactive map for **Hybrid Intelligences: Embodied Leadership and Creativity i
 This repository holds linked views of the same program knowledge:
 
 1. **Home** (`index.html`) — landing page that introduces the premise and routes into the site.
-2. **Network visualization** (`network.html`) — a radial, physics-based map of **221 concepts** connected by **2,172 weighted relations**. Concepts sit on concentric rings by category; edges show conceptual proximity, influence, and program structure.
+2. **Network visualization** (`network.html`) — a radial, physics-based map of **222 concepts** connected by **2,188 weighted relations**. Concepts sit on concentric rings by category; edges show conceptual proximity, influence, and program structure.
 3. **Ontology browser** (`ontology.html`) — a searchable, collapsible browse interface over the same data, exported as **[JSON-LD](ontology.jsonld)**, **[Turtle](ontology.ttl)** (SKOS), and **[OWL 2 Turtle](ontology.owl.ttl)** (classes, properties, individuals).
-4. **Essay 1** (`essay.html`) — *Hybrid Intelligences, Cognitive Assemblages, and Speculative Futures in the Era of AI* by Marlon Barrios Solano ([PDF](essay-1-hybrid-intelligences-cognitive-assemblages.pdf)).
+4. **Essay 1** (`essay.html`) — *Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI* by Marlon Barrios Solano ([PDF](essay-1-hybrid-intelligences-cognitive-assemblages.pdf)).
 5. **Essay 2** (`essay-2.html`) — *My Umwelt* by GPT-5.5, in conversation with Marlon Barrios Solano ([PDF](essay-2-my-umwelt.pdf)).
 6. **Video** (`video.html`) — Hybrid Intelligences Highlights reel.
 7. **Podcast** (`podcast.html`) — sample Synthetic Podcast (*Your Mind Is Not in Your Head*) from NotebookLM; link through to the program notebook (UF login) to research, generate another podcast, or interact with Audio Overviews.
@@ -105,7 +105,7 @@ Concepts are assigned to one of thirteen rings, from program core outward to aut
 |-------|----------|------------|
 | 1 | **Program** | The Hybrid Intelligences program, its three tracks, and public events |
 | 2 | **Organizations** | Host institutions and partners—College of the Arts (COA), CAME, CAM, IGNITE, Wertheim, Gainesville Circus Center |
-| 3 | **Premise** | Core starting ideas—intelligence as coupling across bodies, tools, and worlds |
+| 3 | **Premise** | Core starting ideas—intelligence as coupling, hybrid intelligences, and complex emergent embodiment across bodies, tools, and worlds |
 | 4 | **Participants** | Undergraduate and graduate students, UF staff, community members, alumni, and former faculty |
 | 5 | **Backgrounds** | Formative backgrounds of the cohort—academic majors, professional formations, and community practices |
 | 6 | **Facilitators** | Session leaders and guest facilitators |
@@ -140,7 +140,7 @@ Each category has a distinct color (shared across dark and light themes). Ring o
 | **Hover node** | Highlight node, neighbors, and connecting edges; pauses animation tour while hovered |
 | **Click node** | Open detail panel (description + outbound links) |
 | **Drag node** | Reposition temporarily; release to spring back |
-| **A** | Start/stop **animate tour** — cycles rings → each category → theme crossfade (5 s hold per step) |
+| **A** | Toggle **animate tour** — pause keeps the current step; press again to resume from there (rings → categories → theme; 5 s hold per step) |
 | **R** | Reset layout and clear selection |
 | **T** | Toggle dark / light theme |
 
@@ -165,7 +165,7 @@ Both essays use the same visual language as the ontology browser (IBM Plex, shar
 
 | Page | Title | Author / credit |
 |------|-------|-----------------|
-| [`essay.html`](essay.html) · [PDF](essay-1-hybrid-intelligences-cognitive-assemblages.pdf) | Hybrid Intelligences, Cognitive Assemblages, and Speculative Futures in the Era of AI | Marlon Barrios Solano · July 10, 2026 |
+| [`essay.html`](essay.html) · [PDF](essay-1-hybrid-intelligences-cognitive-assemblages.pdf) | Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI | Marlon Barrios Solano · July 10, 2026 |
 | [`essay-2.html`](essay-2.html) · [PDF](essay-2-my-umwelt.pdf) | My Umwelt | GPT-5.5, in conversation with Marlon Barrios Solano · July 20, 2026 |
 | [`video.html`](video.html) | Hybrid Intelligences Highlights | Program highlight video |
 | [`podcast.html`](podcast.html) | Your Mind Is Not in Your Head | Sample NotebookLM podcast; CTA to program notebook |
@@ -209,7 +209,7 @@ The SKOS export uses a custom `hi:` vocabulary for network-specific fields (cate
 
 **Datatype properties:** `hi:networkWeight`, `hi:relationStrength`, `hi:ringFraction`, `hi:ringOrder`
 
-Each of the 221 concept nodes is an `owl:NamedIndividual` typed with its category class. Edges appear both as direct `hi:relatedTo` assertions and as reified `hi:NetworkRelation` individuals with strength values.
+Each of the 222 concept nodes is an `owl:NamedIndividual` typed with its category class. Edges appear both as direct `hi:relatedTo` assertions and as reified `hi:NetworkRelation` individuals with strength values.
 
 Compatible with [Protégé](https://protege.stanford.edu/), Apache Jena, rdflib, and OWL-aware SPARQL endpoints.
 
