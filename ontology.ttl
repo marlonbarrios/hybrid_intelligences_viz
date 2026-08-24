@@ -35,8 +35,8 @@ hi:category/organization a skos:Concept, hi:Category ;
   hi:ringOrder "1"^^xsd:integer .
 
 hi:category/premise a skos:Concept, hi:Category ;
-  skos:prefLabel "Premise" ;
-  skos:definition "Core starting ideas—intelligence as coupling, hybrid intelligences, and complex emergent embodiment across bodies, tools, and worlds." ;
+  skos:prefLabel "Framework" ;
+  skos:definition "Core starting ideas—intelligence as coupling, hybrid intelligences, complex emergent embodiment, and leadership across bodies, tools, and worlds." ;
   skos:inScheme hi:scheme ;
   skos:topConceptOf hi:scheme ;
   hi:ringFraction "0.23"^^xsd:decimal ;
@@ -107,8 +107,8 @@ hi:category/domain a skos:Concept, hi:Category ;
   hi:ringOrder "10"^^xsd:integer .
 
 hi:category/framework a skos:Concept, hi:Category ;
-  skos:prefLabel "Framework" ;
-  skos:definition "Conceptual models for cognition, AI, embodiment, and world-making." ;
+  skos:prefLabel "Conceptual Models" ;
+  skos:definition "Extended conceptual models for cognition, AI, embodiment, and world-making." ;
   skos:inScheme hi:scheme ;
   skos:topConceptOf hi:scheme ;
   hi:ringFraction "0.87"^^xsd:decimal ;
@@ -1968,9 +1968,9 @@ hi:entrepreneurship_vision a skos:Concept, hi:NetworkNode ;
 hi:leadership a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Leadership" ;
   skos:definition "The practice of orienting collective action—cultivating trust, direction, and conditions where others can think, feel, and create together. In this program: embodied presence, ethical imagination, and strategic vision inseparable from somatic awareness and hybrid coupling." ;
-  skos:broader hi:category/domain ;
+  skos:broader hi:category/premise ;
   skos:inScheme hi:scheme ;
-  hi:category "domain" ;
+  hi:category "premise" ;
   hi:weight "1.5"^^xsd:decimal
  ;
   schema:url <https://en.wikipedia.org/wiki/Leadership> ;

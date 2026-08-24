@@ -18,7 +18,7 @@ Interactive map for **Hybrid Intelligences: Embodied Leadership and Creativity i
 
 This repository holds linked views of the same program knowledge:
 
-1. **Home** (`index.html`) — landing page that introduces the premise and routes into the site.
+1. **Home** (`index.html`) — landing page that introduces the framework and routes into the site.
 2. **Network visualization** (`network.html`) — a radial, physics-based map of **222 concepts** connected by **2,188 weighted relations**. Concepts sit on concentric rings by category; edges show conceptual proximity, influence, and program structure.
 3. **Ontology browser** (`ontology.html`) — a searchable, collapsible browse interface over the same data, exported as **[JSON-LD](ontology.jsonld)**, **[Turtle](ontology.ttl)** (SKOS), and **[OWL 2 Turtle](ontology.owl.ttl)** (classes, properties, individuals).
 4. **Essay 1** (`essay.html`) — *Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI* by Marlon Barrios Solano ([PDF](essay-1-hybrid-intelligences-cognitive-assemblages.pdf)).
@@ -34,13 +34,13 @@ The network is both a **pedagogical instrument** for the Hybrid Intelligences pr
 
 ## Conceptual framework
 
-### Core premise
+### Core framework
 
 The graph is organized around a single starting claim:
 
 > **Intelligence is not located in a skull or machine—it is a relational event happening through bodies, tools, architectures, and co-presence.**
 
-From this premise follow core anchor concepts:
+From this claim follow core anchor concepts on the **Framework** ring:
 
 | Concept | Role |
 |---------|------|
@@ -53,11 +53,11 @@ From this premise follow core anchor concepts:
 | **Cognition** | Knowing, perceiving, remembering, imagining, deciding—as world-involving practice, not skull-bound computation |
 | **4E Cognition** | Embodied, Embedded, Enacted, Extended—the four claims of embodied cognition against brain-bound mind |
 
-Supporting premise nodes include **Intelligence**, **Embodiment**, **Body**, and **Hybrid** (mixing across substrates and ecologies). The four E *qualities* (Embodied, Embedded, Enacted, Extended) remain on the Qualities ring and stay tightly linked to **4E Cognition**. **N. Katherine Hayles** remains on the Authors ring, tightly linked to Cognitive Assemblages, Assemblage, and Techno-symbiosis.
+Supporting **Framework** nodes include **Intelligence**, **Embodiment**, **Body**, **Hybrid** (mixing across substrates and ecologies), and **Leadership** (orienting collective action through embodied presence and ethical imagination). The four E *qualities* (Embodied, Embedded, Enacted, Extended) remain on the Qualities ring and stay tightly linked to **4E Cognition**. **N. Katherine Hayles** remains on the Authors ring, tightly linked to Cognitive Assemblages, Assemblage, and Techno-symbiosis.
 
 ### Cognitive assemblages
 
-Drawing on Katherine Hayles, Andy Clark, 4E/enactivist traditions, and contemporary AI critique, the network treats cognition as **distributed**—spanning brains, bodies, tools, datasets, interfaces, institutions, and publics. Alongside premise-level cognitive assemblages, techno-symbiosis, and 4E cognition, framework nodes include:
+Drawing on Katherine Hayles, Andy Clark, 4E/enactivist traditions, and contemporary AI critique, the network treats cognition as **distributed**—spanning brains, bodies, tools, datasets, interfaces, institutions, and publics. Alongside framework-level cognitive assemblages, techno-symbiosis, and 4E cognition, **Conceptual Models** nodes include:
 
 - **Enactivism**, **Extended Mind**, **Natural-Born Cyborg**
 - **Holobiont**, **Affordances**, **Umwelt**
@@ -93,7 +93,7 @@ The innermost **Program** ring anchors the July 2026 intensive:
 
 The next ring, **Organizations**, holds the host institutions and partners: [College of the Arts](https://arts.ufl.edu/) (COA; includes [CAME](https://arts.ufl.edu/came/) and [CAM](https://arts.ufl.edu/programs-schools/center-for-arts-in-medicine/)), [IGNITE](https://www.eng.ufl.edu/innovation/), [Wertheim Laboratory](https://www.eng.ufl.edu/wertheim/), and Gainesville Circus Center.
 
-After **Premise**, **Participants** names who was in the room; the next ring, **Backgrounds**, holds their formative fields (majors, professions, community practices)—immediately inward of **Facilitators**.
+After **Framework**, **Participants** names who was in the room; the next ring, **Backgrounds**, holds their formative fields (majors, professions, community practices)—immediately inward of **Facilitators**.
 
 ---
 
@@ -105,7 +105,7 @@ Concepts are assigned to one of thirteen rings, from program core outward to aut
 |-------|----------|------------|
 | 1 | **Program** | The Hybrid Intelligences program, its three tracks, and public events |
 | 2 | **Organizations** | Host institutions and partners—College of the Arts (COA), CAME, CAM, IGNITE, Wertheim, Gainesville Circus Center |
-| 3 | **Premise** | Core starting ideas—intelligence as coupling, hybrid intelligences, and complex emergent embodiment across bodies, tools, and worlds |
+| 3 | **Framework** | Core starting ideas—intelligence as coupling, hybrid intelligences, complex emergent embodiment, and leadership across bodies, tools, and worlds |
 | 4 | **Participants** | Undergraduate and graduate students, UF staff, community members, alumni, and former faculty |
 | 5 | **Backgrounds** | Formative backgrounds of the cohort—academic majors, professional formations, and community practices |
 | 6 | **Facilitators** | Session leaders and guest facilitators |
@@ -114,7 +114,7 @@ Concepts are assigned to one of thirteen rings, from program core outward to aut
 | 9 | **Qualities** | Traits of hybrid cognition—embodied, situated, distributed, critical |
 | 10 | **Phenomena** | Observable dynamics—mediation, symbiosis, community, theory of mind |
 | 11 | **Domains** | Fields of practice and inquiry—art, law, ecology, AI, choreography |
-| 12 | **Framework** | Conceptual models for cognition, AI, embodiment, and world-making |
+| 12 | **Conceptual Models** | Extended conceptual models for cognition, AI, embodiment, and world-making |
 | 13 | **Authors/Artists** | Thinkers, artists, and researchers linked to concepts in the network |
 
 Each category has a distinct color (shared across dark and light themes). Ring order reflects pedagogical layering: from *what the program is* and *who hosts it*, through *starting claims*, to *who participates, from which backgrounds, and who facilitates*, then outward to practices and ideas.
@@ -151,11 +151,11 @@ During animation, each ring/category step plays a **generative ambient tone** (W
 | URL pattern | Effect |
 |-------------|--------|
 | `network.html#coupling` | Select concept node by id |
-| `network.html#cat/premise` | Pin **Premise** category in the network |
+| `network.html#cat/premise` | Pin **Framework** category in the network |
 | `ontology.html#coupling` | Open concept detail in ontology browser |
-| `ontology.html#cat/premise` | Filter ontology to **Premise** category |
+| `ontology.html#cat/premise` | Filter ontology to **Framework** category |
 
-Links between network and ontology are wired from concept detail panels and category banners (“View in network ↗”). Premise and framework nodes such as **Intelligence as Coupling**, **Hybrid Intelligences**, **Cognitive Assemblages**, **4E Cognition**, **Umwelt**, and **LLM** deep-link to Essay 1 or Essay 2 (Wikipedia and institutional URLs remain available where mapped).
+Links between network and ontology are wired from concept detail panels and category banners (“View in network ↗”). Framework and conceptual-model nodes such as **Intelligence as Coupling**, **Hybrid Intelligences**, **Cognitive Assemblages**, **4E Cognition**, **Umwelt**, and **LLM** deep-link to Essay 1 or Essay 2 (Wikipedia and institutional URLs remain available where mapped).
 
 ---
 
@@ -225,7 +225,7 @@ The SKOS export uses a custom `hi:` vocabulary for network-specific fields (cate
 **Classes**
 - `hi:Concept` — root class for all network concepts
 - `hi:CategoryConcept` — meta-class for ring categories
-- Thirteen category subclasses: `hi:ProgramConcept`, `hi:OrganizationConcept`, `hi:ParticipantConcept`, `hi:BackgroundConcept`, `hi:PremiseConcept`, `hi:FacilitatorConcept`, `hi:PracticeConcept`, `hi:TensionConcept`, `hi:QualityConcept`, `hi:PhenomenonConcept`, `hi:DomainConcept`, `hi:FrameworkConcept`, `hi:AuthorConcept` (pairwise disjoint)
+- Thirteen category subclasses: `hi:ProgramConcept`, `hi:OrganizationConcept`, `hi:ParticipantConcept`, `hi:BackgroundConcept`, `hi:PremiseConcept` (display label **Framework**), `hi:FacilitatorConcept`, `hi:PracticeConcept`, `hi:TensionConcept`, `hi:QualityConcept`, `hi:PhenomenonConcept`, `hi:DomainConcept`, `hi:FrameworkConcept` (display label **Conceptual Models**), `hi:AuthorConcept` (pairwise disjoint)
 - `hi:NetworkRelation` — reified weighted edges
 
 **Object properties:** `hi:relatedTo` (symmetric), `hi:inCategory`, `hi:schemeMember`, `hi:relationSource`, `hi:relationTarget`

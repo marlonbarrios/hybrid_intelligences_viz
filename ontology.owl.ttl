@@ -36,8 +36,8 @@ hi:OrganizationConcept a owl:Class ;
   rdfs:subClassOf hi:Concept .
 
 hi:PremiseConcept a owl:Class ;
-  rdfs:label "Premise"@en ;
-  rdfs:comment "Core starting ideas—intelligence as coupling, hybrid intelligences, and complex emergent embodiment across bodies, tools, and worlds."@en ;
+  rdfs:label "Framework"@en ;
+  rdfs:comment "Core starting ideas—intelligence as coupling, hybrid intelligences, complex emergent embodiment, and leadership across bodies, tools, and worlds."@en ;
   rdfs:subClassOf hi:Concept .
 
 hi:ParticipantConcept a owl:Class ;
@@ -81,8 +81,8 @@ hi:DomainConcept a owl:Class ;
   rdfs:subClassOf hi:Concept .
 
 hi:FrameworkConcept a owl:Class ;
-  rdfs:label "Framework"@en ;
-  rdfs:comment "Conceptual models for cognition, AI, embodiment, and world-making."@en ;
+  rdfs:label "Conceptual Models"@en ;
+  rdfs:comment "Extended conceptual models for cognition, AI, embodiment, and world-making."@en ;
   rdfs:subClassOf hi:Concept .
 
 hi:AuthorConcept a owl:Class ;
@@ -249,9 +249,9 @@ hi:category/organization a owl:NamedIndividual, hi:CategoryConcept, hi:Organizat
   hi:ringOrder "1"^^xsd:integer .
 
 hi:category/premise a owl:NamedIndividual, hi:CategoryConcept, hi:PremiseConcept ;
-  rdfs:label "Premise"@en ;
-  skos:prefLabel "Premise"@en ;
-  skos:definition "Core starting ideas—intelligence as coupling, hybrid intelligences, and complex emergent embodiment across bodies, tools, and worlds."@en ;
+  rdfs:label "Framework"@en ;
+  skos:prefLabel "Framework"@en ;
+  skos:definition "Core starting ideas—intelligence as coupling, hybrid intelligences, complex emergent embodiment, and leadership across bodies, tools, and worlds."@en ;
   skos:inScheme hi:scheme ;
   skos:topConceptOf hi:scheme ;
   hi:ringFraction "0.23"^^xsd:decimal ;
@@ -330,9 +330,9 @@ hi:category/domain a owl:NamedIndividual, hi:CategoryConcept, hi:DomainConcept ;
   hi:ringOrder "10"^^xsd:integer .
 
 hi:category/framework a owl:NamedIndividual, hi:CategoryConcept, hi:FrameworkConcept ;
-  rdfs:label "Framework"@en ;
-  skos:prefLabel "Framework"@en ;
-  skos:definition "Conceptual models for cognition, AI, embodiment, and world-making."@en ;
+  rdfs:label "Conceptual Models"@en ;
+  skos:prefLabel "Conceptual Models"@en ;
+  skos:definition "Extended conceptual models for cognition, AI, embodiment, and world-making."@en ;
   skos:inScheme hi:scheme ;
   skos:topConceptOf hi:scheme ;
   hi:ringFraction "0.87"^^xsd:decimal ;
@@ -2506,12 +2506,12 @@ hi:entrepreneurship_vision a owl:NamedIndividual, hi:DomainConcept ;
   schema:sameAs <https://en.wikipedia.org/wiki/Entrepreneurship>
  .
 
-hi:leadership a owl:NamedIndividual, hi:DomainConcept ;
+hi:leadership a owl:NamedIndividual, hi:PremiseConcept ;
   rdfs:label "Leadership"@en ;
   skos:prefLabel "Leadership"@en ;
   skos:definition "The practice of orienting collective action—cultivating trust, direction, and conditions where others can think, feel, and create together. In this program: embodied presence, ethical imagination, and strategic vision inseparable from somatic awareness and hybrid coupling."@en ;
-  skos:broader hi:category/domain ;
-  hi:inCategory hi:category/domain ;
+  skos:broader hi:category/premise ;
+  hi:inCategory hi:category/premise ;
   hi:schemeMember hi:scheme ;
   skos:inScheme hi:scheme ;
   hi:networkWeight "1.5"^^xsd:decimal

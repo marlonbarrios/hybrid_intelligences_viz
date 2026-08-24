@@ -4,7 +4,7 @@
 const CATEGORY_META = {
   program:      { label: "Program",        ring: 0.09 },
   organization: { label: "Organizations",  ring: 0.16 },
-  premise:      { label: "Premise",        ring: 0.23 },
+  premise:      { label: "Framework",        ring: 0.23 },
   participant:  { label: "Participants",   ring: 0.30 },
   background:   { label: "Backgrounds",    ring: 0.37 },
   facilitator:  { label: "Facilitators",   ring: 0.44 },
@@ -13,7 +13,7 @@ const CATEGORY_META = {
   quality:      { label: "Qualities",      ring: 0.65 },
   phenomenon:   { label: "Phenomena",      ring: 0.72 },
   domain:       { label: "Domains",        ring: 0.80 },
-  framework:    { label: "Framework",      ring: 0.87 },
+  framework:    { label: "Conceptual Models", ring: 0.87 },
   author:       { label: "Authors/Artists", ring: 0.95 },
 };
 
@@ -302,7 +302,7 @@ const RING_SOUNDS = {
     pan: [-0.36, 0.5],
   },
   premise: {
-    label: "Premise",
+    label: "Framework",
     hz: [131, 165, 262],
     wave: "sine",
     detune: 9,
@@ -315,7 +315,7 @@ const RING_SOUNDS = {
     pan: [-0.5, 0.35],
   },
   framework: {
-    label: "Framework",
+    label: "Conceptual Models",
     hz: [175, 220, 349, 440],
     wave: "sine",
     detune: 5,
@@ -1002,7 +1002,7 @@ const NODES = [
     url: "https://en.wikipedia.org/wiki/Design_thinking", linkLabel: "Wikipedia ↗" },
   { id: "entrepreneurship_vision", label: "Entrepreneurship &\nStrategic Vision", cat: "domain", weight: 1.4,
     desc: "Entrepreneurial imagination joined to long-range strategic vision—designing institutions, programs, and couplings that can sustain creative inquiry, migration, arts, and hybrid intelligence across scales of time and impact." },
-  { id: "leadership",         label: "Leadership",                    cat: "domain",     weight: 1.5,
+  { id: "leadership",         label: "Leadership",                    cat: "premise",     weight: 1.5,
     desc: "The practice of orienting collective action—cultivating trust, direction, and conditions where others can think, feel, and create together. In this program: embodied presence, ethical imagination, and strategic vision inseparable from somatic awareness and hybrid coupling.",
     url: "https://en.wikipedia.org/wiki/Leadership", linkLabel: "Wikipedia ↗" },
 
