@@ -2,32 +2,41 @@
 // Radial layout with Dark / Light theme modes
 
 const CATEGORY_META = {
-  program:    { label: "Program",      ring: 0.13 },
-  premise:    { label: "Premise",      ring: 0.22 },
-  facilitator:{ label: "Facilitators", ring: 0.31 },
-  practice:   { label: "Practices",    ring: 0.40 },
-  tension:    { label: "Tensions",     ring: 0.49 },
-  quality:    { label: "Qualities",    ring: 0.58 },
-  phenomenon: { label: "Phenomena",    ring: 0.67 },
-  domain:     { label: "Domains",      ring: 0.76 },
-  framework:  { label: "Framework",    ring: 0.85 },
-  author:     { label: "Authors/Artists", ring: 0.94 },
+  program:      { label: "Program",        ring: 0.09 },
+  organization: { label: "Organizations",  ring: 0.16 },
+  premise:      { label: "Premise",        ring: 0.23 },
+  participant:  { label: "Participants",   ring: 0.30 },
+  background:   { label: "Backgrounds",    ring: 0.37 },
+  facilitator:  { label: "Facilitators",   ring: 0.44 },
+  practice:     { label: "Practices",      ring: 0.51 },
+  tension:      { label: "Tensions",       ring: 0.58 },
+  quality:      { label: "Qualities",      ring: 0.65 },
+  phenomenon:   { label: "Phenomena",      ring: 0.72 },
+  domain:       { label: "Domains",        ring: 0.80 },
+  framework:    { label: "Framework",      ring: 0.87 },
+  author:       { label: "Authors/Artists", ring: 0.95 },
 };
 
-const RING_ORDER = ["program", "premise", "facilitator", "practice", "tension", "quality", "phenomenon", "domain", "framework", "author"];
+const RING_ORDER = [
+  "program", "organization", "premise", "participant", "background", "facilitator",
+  "practice", "tension", "quality", "phenomenon", "domain", "framework", "author",
+];
 
 // Shared ring palette — identical in dark and light mode
 const RING_COLORS = {
-  premise:    [244, 196,  48],
-  author:     [186, 168, 128],
-  framework:  [ 78, 196, 196],
-  quality:    [110, 198, 130],
-  phenomenon: [168, 140, 228],
-  domain:     [228, 130, 148],
-  practice:   [240, 158,  96],
-  program:    [255, 178,  96],
-  facilitator:[120, 178, 228],
-  tension:    [130, 138, 158],
+  premise:      [244, 196,  48],
+  author:       [186, 168, 128],
+  framework:    [ 78, 196, 196],
+  quality:      [110, 198, 130],
+  phenomenon:   [168, 140, 228],
+  domain:       [228, 130, 148],
+  practice:     [240, 158,  96],
+  program:      [255, 178,  96],
+  organization: [255, 140, 110],
+  participant:  [255, 196, 140],
+  background:   [220, 160, 170],
+  facilitator:  [120, 178, 228],
+  tension:      [130, 138, 158],
 };
 
 const THEMES = {
@@ -113,13 +122,21 @@ let mouseOnLegend = false;
 let hoveredLegendHeader = false;
 let detailPanelLinks = [];
 let uiLinks = [];
+let mobileMenuOpen = false;
+let mobileHits = [];
 
+const MOBILE_BREAKPOINT = 720;
 const PORTFOLIO_URL = "https://marlonbarrios.github.io/";
+const HOME_URL = "index.html";
 const ONTOLOGY_URL = "ontology.html";
 const ESSAY1_URL = "essay.html";
 const ESSAY2_URL = "essay-2.html";
+const VIDEO_URL = "video.html";
+const PODCAST_URL = "podcast.html";
 const SLIDES_URL = "https://uflorida.sharepoint.com/:p:/r/teams/UF-CAME/Shared%20Documents/EVENTS%20and%20PROGRAMMING/Creative%20B%20Summer/Hybrid%20Intelligences%20(2026)/Program%20Materials/Creative%20B%20Symposium%20-%20Hybrid%20Intel.pptx?d=w4549d9142c9b45be860730dabc042349&csf=1&web=1&e=G9NWdm&nav=eyJzSWQiOjI4NSwiY0lkIjozNDU3MzA2ODkyfQ";
 const CANVAS_URL = "https://ufl.instructure.com/courses/574408";
+const NOTEBOOK_LM_URL = "https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1";
+const PENDULAR_UMWELT_URL = "https://my-pendular-umwelt.vercel.app/";
 let animateMode = false;
 let animateStep = 0;
 let animateUntil = 0;
@@ -148,6 +165,63 @@ let themeCrossfadeTo = "light";
 let themeCrossfadeStart = 0;
 
 let audioCtx = null;
+
+function isMobileLayout() {
+  return typeof width === "number" && width > 0
+    ? width < MOBILE_BREAKPOINT
+    : (typeof window !== "undefined" && window.innerWidth < MOBILE_BREAKPOINT);
+}
+
+function mobileBarH() {
+  return 58;
+}
+
+function mobileBottomH() {
+  return 64;
+}
+
+function resetNetworkView() {
+  animateMode = false;
+  animateStep = 0;
+  animateUntil = 0;
+  animatePaused = false;
+  animatePauseRemaining = 0;
+  selected = null;
+  hovered = null;
+  dragging = null;
+  selectedCategory = null;
+  mobileMenuOpen = false;
+  initGraph();
+}
+
+function mobilePlayLabel() {
+  if (!animateMode) return "Play";
+  if (animatePaused) return "Resume";
+  return "Pause";
+}
+
+function handleMobilePlay() {
+  ensureAudio();
+  if (!animateMode) {
+    toggleAnimate();
+    return;
+  }
+  if (animatePaused) resumeAnimateFromHover();
+  else pauseAnimateForHover();
+}
+
+function hitMobileAction(mx, my) {
+  for (const hit of mobileHits) {
+    if (mx >= hit.x && mx <= hit.x + hit.w && my >= hit.y && my <= hit.y + hit.h) {
+      return hit;
+    }
+  }
+  return null;
+}
+
+function pushMobileHit(id, x, y, w, h, meta = null) {
+  mobileHits.push({ id, x, y, w, h, meta });
+}
 
 function ensureAudio() {
   try {
@@ -187,6 +261,45 @@ const RING_SOUNDS = {
     dur: 1.22,
     peak: 0.052,
     pan: [-0.35, 0.45],
+  },
+  organization: {
+    label: "Organizations",
+    hz: [138, 174, 207, 277],
+    wave: "triangle",
+    detune: 8,
+    brightness: 0.45,
+    space: 0.4,
+    warmth: 0.86,
+    drift: 0.24,
+    dur: 1.24,
+    peak: 0.05,
+    pan: [-0.4, 0.42],
+  },
+  participant: {
+    label: "Participants",
+    hz: [156, 196, 233, 294],
+    wave: "sine",
+    detune: 9,
+    brightness: 0.5,
+    space: 0.48,
+    warmth: 0.8,
+    drift: 0.22,
+    dur: 1.26,
+    peak: 0.05,
+    pan: [-0.38, 0.48],
+  },
+  background: {
+    label: "Backgrounds",
+    hz: [147, 185, 220, 277],
+    wave: "sine",
+    detune: 8,
+    brightness: 0.52,
+    space: 0.46,
+    warmth: 0.72,
+    drift: 0.2,
+    dur: 1.24,
+    peak: 0.05,
+    pan: [-0.36, 0.5],
   },
   premise: {
     label: "Premise",
@@ -460,12 +573,14 @@ function playSwish(phase) {
 
 const NODES = [
   { id: "coupling",           label: "Intelligence\nas Coupling",     cat: "premise",    weight: 2.2,
-    desc: "Intelligence is not located in a skull or machine—it is a relational event happening through bodies, tools, architectures, and co-presence." },
+    desc: "Intelligence is not located in a skull or machine—it is a relational event happening through bodies, tools, architectures, and co-presence.",
+    url: "essay.html", linkLabel: "Read Essay 1 →" },
   { id: "hybrid",             label: "Hybrid\nIntelligences",         cat: "premise",    weight: 2.0,
     desc: "Assemblages of biological, technical, social, spatial, legal, and affective processes that co-produce cognition.",
-    url: "essay.html", linkLabel: "Read essay →" },
+    url: "essay.html", linkLabel: "Read Essay 1 →" },
   { id: "creative_embodiment", label: "Creative\nEmbodiment",       cat: "premise",    weight: 1.9,
-    desc: "The project's embodiment framework: AI-mediated creative process is already embodied, situated, and relational—not a body added after the fact. The artist designs conditions of encounter; prompt, model, interface, dataset, institution, and audience form a cognitive assemblage. Necessary epistemology: the body is where abstraction becomes consequential; space situates cognition; movement temporalizes thought." },
+    desc: "The project's embodiment framework: AI-mediated creative process is already embodied, situated, and relational—not a body added after the fact. The artist designs conditions of encounter; prompt, model, interface, dataset, institution, and audience form a cognitive assemblage. Necessary epistemology: the body is where abstraction becomes consequential; space situates cognition; movement temporalizes thought.",
+    url: "essay.html", linkLabel: "Read Essay 1 →" },
   { id: "intelligence",       label: "Intelligence",                  cat: "premise",    weight: 1.9,
     desc: "The capacity to perceive, infer, learn, adapt, and act in relation to an environment—not a substance locked in a skull or chip, but a capacity enacted through coupling among bodies, tools, symbols, institutions, and ecologies.",
     url: "https://en.wikipedia.org/wiki/Intelligence", linkLabel: "Wikipedia ↗" },
@@ -478,33 +593,39 @@ const NODES = [
   { id: "hybrid_coupling",    label: "Hybrid",                        cat: "premise",    weight: 1.7,
     desc: "The mixing of biological, technical, social, and institutional processes within a single field of action—neither purely human nor purely machine, but co-produced across coupled agents, infrastructures, and ecologies.",
     url: "https://en.wikipedia.org/wiki/Hybrid", linkLabel: "Wikipedia ↗" },
+  { id: "assemblage",         label: "Cognitive\nAssemblages",        cat: "premise",    weight: 2.05,
+    desc: "N. Katherine Hayles: cognition as interpretation of information within contexts that connect it with meaning—networked arrangements in which human and nonhuman cognizers exchange, process, select, and transform information, producing emergent meaning and action. Intelligence does not belong to one sovereign subject; it circulates through bodies, sensors, interfaces, datasets, institutions, and environments.",
+    url: "essay.html", linkLabel: "Read Essay 1 →" },
+  { id: "assemblage_form",    label: "Assemblage",                    cat: "premise",    weight: 1.85,
+    desc: "A composition of heterogeneous parts—bodies, tools, institutions, laws, media, atmospheres—whose relations co-produce capacities and meaning. Not a collection of fixed objects, but a dynamic arrangement; related to Hayles’s cognitive assemblages and to broader assemblage thinking (Latour, Deleuze & Guattari).",
+    url: "https://en.wikipedia.org/wiki/Assemblage_(philosophy)", linkLabel: "Wikipedia ↗" },
+  { id: "technosymbiosis",    label: "Techno-symbiosis",              cat: "premise",    weight: 1.95,
+    desc: "N. Katherine Hayles: human futures with nonhuman symbionts—biological, technical, and mixed couplings that co-evolve across substrates, institutions, and AI systems. Techno-symbiosis names interdependence without sameness: humans and machines do not collapse into one another, yet their metabolisms of information, energy, and action become mutually constitutive.",
+    url: "essay.html", linkLabel: "Read Essay 1 →" },
+  { id: "cognition",          label: "Cognition",                     cat: "premise",    weight: 1.95,
+    desc: "Processes of knowing, perceiving, remembering, imagining, and deciding—historically located in brains, now understood as spanning bodies, environments, tools, and collectives. In this program, cognition is a world-involving practice, not an abstract operation floating above situation.",
+    url: "essay.html", linkLabel: "Read Essay 1 →" },
+  { id: "4e",                 label: "4E Cognition",                  cat: "premise",    weight: 2.0,
+    desc: "Embodied cognition as four coupled claims: Embodied (depends on sensorimotor capacities of living bodies), Embedded (emerges within environments that constrain and enable action), Enacted (organisms bring forth meaningful worlds through interaction histories), and Extended (tools, inscriptions, devices, media, and social structures can participate in cognitive processes). Challenges the classical image of mind as internal representation in a brain-computer.",
+    url: "essay.html", linkLabel: "Read Essay 1 →" },
 
-  { id: "cognition",          label: "Cognition",                     cat: "framework",  weight: 1.9,
-    desc: "Processes of knowing, perceiving, remembering, imagining, and deciding—historically located in brains, now understood as spanning bodies, environments, tools, and collectives.",
-    url: "https://en.wikipedia.org/wiki/Cognition", linkLabel: "Wikipedia ↗" },
   { id: "creativity",         label: "Creativity",                    cat: "framework",  weight: 1.8,
     desc: "Margaret Boden: an idea or artifact counts as creative only when it is both novel (surprising, not obvious or routine) and valuable (worthwhile in its domain—useful, interesting, beautiful, or apt). She distinguishes combinational creativity (new combinations of familiar elements), exploratory creativity (moving within a structured conceptual space), and transformational creativity (altering the space's rules or dimensions).",
     url: "https://en.wikipedia.org/wiki/Creativity", linkLabel: "Wikipedia ↗" },
-  { id: "4e",                 label: "4E Cognition",                  cat: "framework",  weight: 1.9,
-    desc: "Embodied, Embedded, Enacted, Extended—cognition as world-involving practice, not internal representation.",
-    url: "https://en.wikipedia.org/wiki/Embodied_cognition", linkLabel: "Wikipedia ↗" },
   { id: "enactivism",         label: "Enactivism",                    cat: "framework",  weight: 1.7,
     desc: "Organisms bring forth meaningful worlds through histories of interaction; cognition and world are co-emergent.",
-    url: "https://en.wikipedia.org/wiki/Enactivism", linkLabel: "Wikipedia ↗" },
+    url: "essay.html", linkLabel: "Read Essay 1 →" },
   { id: "buddhism",           label: "Buddhism",                      cat: "framework",  weight: 1.5,
     desc: "Tradition of practice and philosophy centered on suffering, interdependence, impermanence, and liberation—mindfulness, emptiness (śūnyatā), and non-self (anattā) as frameworks for understanding cognition, ethics, and embodied experience; foundational for enactivism via phenomenology and contemplative science.",
     url: "https://en.wikipedia.org/wiki/Buddhism", linkLabel: "Wikipedia ↗" },
   { id: "active_inference",   label: "Active\nInference",             cat: "framework",  weight: 1.5,
     desc: "Karl Friston's framework—perception, action, and planning as Bayesian inference minimizing free energy; minds predict and act to reduce surprise through embodied coupling with the world." },
-  { id: "assemblage",         label: "Cognitive\nAssemblages",      cat: "framework",  weight: 2.0,
-    desc: "Hayles: networked arrangements where human and nonhuman cognizers exchange information, producing emergent meaning.",
-    url: "https://en.wikipedia.org/wiki/Katherine_Hayles", linkLabel: "Wikipedia ↗" },
   { id: "extended",           label: "Extended Mind",                 cat: "framework",  weight: 1.4,
     desc: "Cognitive processes include tools, inscriptions, devices, media, and social structures beyond the organism.",
-    url: "https://en.wikipedia.org/wiki/Extended_mind_thesis", linkLabel: "Wikipedia ↗" },
+    url: "essay.html", linkLabel: "Read Essay 1 →" },
   { id: "cyborg",             label: "Natural-Born\nCyborg",          cat: "framework",  weight: 1.5,
     desc: "Clark: humans have always been technologically plastic, incorporating tools into the fabric of thought.",
-    url: "https://en.wikipedia.org/wiki/Andy_Clark", linkLabel: "Wikipedia ↗" },
+    url: "essay.html", linkLabel: "Read Essay 1 →" },
   { id: "cyberfeminism",      label: "Cyber-\nfeminism",              cat: "framework",  weight: 1.4,
     desc: "Feminist critique and practice at the intersection of gender, technology, and cyberspace—from 1990s net activism through Haraway's cyborg politics to contemporary feminist AI critique; technologies are never neutral, and liberation requires reworking gender, labor, and embodiment in digital infrastructures.",
     url: "https://en.wikipedia.org/wiki/Cyberfeminism", linkLabel: "Wikipedia ↗" },
@@ -513,19 +634,16 @@ const NODES = [
     url: "https://en.wikipedia.org/wiki/Queer_theory", linkLabel: "Wikipedia ↗" },
   { id: "possible_minds",     label: "Space of\nPossible Minds",      cat: "framework",  weight: 1.4,
     desc: "Intelligence as a vast landscape of cognitive organizations—not a ladder with humans at the top.",
-    url: "https://en.wikipedia.org/wiki/Murray_Shanahan", linkLabel: "Wikipedia ↗" },
-  { id: "technosymbiosis",    label: "Techno-symbiosis",              cat: "framework",  weight: 1.6,
-    desc: "Hayles: human futures with nonhuman symbionts—biological, technical, and mixed couplings that co-evolve across substrates, institutions, and AI systems.",
-    url: "https://en.wikipedia.org/wiki/Katherine_Hayles", linkLabel: "Wikipedia ↗" },
+    url: "essay.html", linkLabel: "Read Essay 1 →" },
   { id: "holobiont",          label: "Holobiont",                     cat: "framework",  weight: 1.5,
     desc: "A host organism together with its associated microorganisms as a functional unit—evolution, metabolism, immunity, and behavior distributed across symbiotic partners. A biological framework for hybrid life: the individual is already an ecology.",
     url: "https://en.wikipedia.org/wiki/Holobiont", linkLabel: "Wikipedia ↗" },
   { id: "affordances",        label: "Affordances",                   cat: "framework",  weight: 1.5,
     desc: "Gibson: environments offer possibilities for action—what a situation allows, invites, or constrains for a particular organism or assemblage.",
-    url: "https://en.wikipedia.org/wiki/Affordance", linkLabel: "Wikipedia ↗" },
+    url: "essay-2.html", linkLabel: "Read Essay 2 →" },
   { id: "umwelt",             label: "Umwelt",                        cat: "framework",  weight: 1.4,
     desc: "von Uexküll: the organism's lived meaningful environment—the world as selectively enacted through sensing, action, and coupling, not a pre-given objective space.",
-    url: "essay-2.html", linkLabel: "Read essay →" },
+    url: "essay-2.html", linkLabel: "Read Essay 2 →" },
 
   { id: "ai",                 label: "Artificial\nIntelligence",      cat: "framework",  weight: 1.8,
     desc: "Computational systems that infer, classify, generate, and act within human-designed environments—participants in cognitive assemblages, not minds in boxes.",
@@ -539,6 +657,12 @@ const NODES = [
   { id: "perceptron",         label: "Perceptron",                    cat: "framework",  weight: 1.4,
     desc: "Foundational unit of artificial neural networks—a weighted threshold classifier proposed by Frank Rosenblatt (1958); the historical bridge from cybernetics to modern machine learning.",
     url: "https://en.wikipedia.org/wiki/Perceptron", linkLabel: "Wikipedia ↗" },
+  { id: "linear_transform",   label: "z = Wx + b",                     cat: "framework",  weight: 1.55,
+    desc: "The affine transform at the heart of every dense layer: each output unit j computes zⱼ = Σᵢ wⱼᵢ xᵢ + bⱼ (matrix form z = Wx + b)—a weighted sum of inputs plus bias—before a nonlinear activation. The elementary operation of artificial neurons, shared by perceptrons, deep nets, and transformers.",
+    url: "https://en.wikipedia.org/wiki/Artificial_neuron", linkLabel: "Wikipedia ↗" },
+  { id: "rnn_update",         label: "σ(Wₓx + Wₕh + b)",               cat: "framework",  weight: 1.5,
+    desc: "Recurrent update (and LSTM/GRU gate form): σ(Wₓxₜ + Wₕhₜ₋₁ + b)—combine current input xₜ with previous hidden state hₜ₋₁ through separate weight matrices, add bias, then apply nonlinearity σ. Memory through time via recurrence; the sequential counterpart to the feedforward affine layer z = Wx + b. Foundational for sequence modeling; largely succeeded for long context by transformers.",
+    url: "https://en.wikipedia.org/wiki/Recurrent_neural_network", linkLabel: "Wikipedia ↗" },
   { id: "convolutional_networks", label: "Convolutional\nNeural Networks", cat: "framework", weight: 1.5,
     desc: "Neural architectures that learn spatial hierarchies through local receptive fields and shared weights—dominant in computer vision, image generation, and perceptual classification; central to how machines learn to see.",
     url: "https://en.wikipedia.org/wiki/Convolutional_neural_network", linkLabel: "Wikipedia ↗" },
@@ -555,7 +679,7 @@ const NODES = [
     desc: "AI in artistic, choreographic, architectural, and speculative practice—where prompts, interfaces, and institutions co-compose what can be made and felt." },
   { id: "llm",                label: "Large Language\nModels",        cat: "framework",  weight: 1.6,
     desc: "Language models at scale—statistical engines of prediction and paraphrase that mediate writing, reasoning, memory, and social coupling through text.",
-    url: "https://en.wikipedia.org/wiki/Large_language_model", linkLabel: "Wikipedia ↗" },
+    url: "essay-2.html", linkLabel: "Read Essay 2 →" },
   { id: "agi",                label: "AGI",                           cat: "framework",  weight: 1.5,
     desc: "Artificial General Intelligence—hypothetical systems with flexible, domain-spanning capability; a horizon concept for comparing minds, agency, and coupling." },
   { id: "asi",                label: "ASI",                           cat: "framework",  weight: 1.4,
@@ -608,10 +732,10 @@ const NODES = [
 
   { id: "clark",              label: "Andy Clark",                    cat: "author",     weight: 1.5,
     desc: "Extended mind, natural-born cyborgs, predictive processing—cognition as deeply entangled with body, world, and tools.",
-    url: "https://en.wikipedia.org/wiki/Andy_Clark", linkLabel: "Wikipedia ↗" },
+    url: "essay.html", linkLabel: "Read Essay 1 →" },
   { id: "hayles",             label: "Katherine\nHayles",             cat: "author",     weight: 1.4,
     desc: "Posthuman cognition, cognitive assemblages, technosymbiosis—the nonconscious and human-AI couplings.",
-    url: "https://en.wikipedia.org/wiki/Katherine_Hayles", linkLabel: "Wikipedia ↗" },
+    url: "essay.html", linkLabel: "Read Essay 1 →" },
   { id: "thompson",           label: "Evan\nThompson",                cat: "author",     weight: 1.3,
     desc: "Mind in Life and enactivism—bridging biology, phenomenology, and cognitive science.",
     url: "https://en.wikipedia.org/wiki/Evan_Thompson", linkLabel: "Wikipedia ↗" },
@@ -780,7 +904,8 @@ const NODES = [
   { id: "ecology",            label: "Cognitive\nEcology",          cat: "phenomenon", weight: 1.6,
     desc: "AI becomes part of an expanded cognitive environment—prosthesis and weather, not merely instrument." },
   { id: "mediation",          label: "Cognitive\nMediation",        cat: "phenomenon", weight: 1.8,
-    desc: "Mediation has become cognitive—tools now participate in perception, memory, imagination, decision, and future-making." },
+    desc: "Mediation has become cognitive—tools now participate in perception, memory, imagination, decision, and future-making.",
+    url: "essay.html", linkLabel: "Read Essay 1 →" },
   { id: "coregulation",       label: "Co-regulation",                 cat: "phenomenon", weight: 1.3,
     desc: "Bodies co-regulate across human-human, human-machine, body-space, and body-law couplings." },
   { id: "abstraction",        label: "Abstraction",                   cat: "phenomenon", weight: 1.3,
@@ -899,30 +1024,87 @@ const NODES = [
     desc: "Every interface is a small rehearsal of a world—futures enacted through present habits and tools." },
   { id: "literacies",         label: "Literacies\nof Coupling",     cat: "practice",   weight: 1.3,
     desc: "Sensory, technical, legal, spatial, poetic, and ethical skills for participating in expanded ecologies." },
+  { id: "arch_design",        label: "Architecture &\nDesign",        cat: "practice",   weight: 1.45,
+    desc: "Spatial and material practice—shaping rooms, interfaces, prototypes, and infrastructures that choreograph attention, movement, and encounter. Design here is not styling after the fact; it is composing conditions under which hybrid cognition can happen." },
+  { id: "philosophical_practice", label: "Philosophical\nPractice", cat: "practice",   weight: 1.4,
+    desc: "Philosophical thinking as a lived method—questioning concepts, testing distinctions, staying with ambivalence, and refining vocabulary through dialogue, reading, and writing. Not only a domain of theory, but a practice of inquiry that clarifies agency, embodiment, and world-making in the era of AI." },
 
-  { id: "hi_program",         label: "Hybrid Intelligences\nProgram", cat: "program",  weight: 2.0,
+  { id: "hi_program",         label: "Hybrid Intelligences\nProgram", cat: "program",  weight: 2.2,
     desc: "Modular interdisciplinary program co-led by Marlon Barrios Solano and Erika Moore, hosted by CAME and CAM, in partnership with IGNITE at Wertheim Laboratory. July 13–30, 2026.",
     url: "https://ufl.instructure.com/courses/574408", linkLabel: "Canvas course ↗" },
-  { id: "came",               label: "CAME",                          cat: "program",  weight: 1.2,
-    desc: "Center for Arts, Migration and Entrepreneurship — lead host institution for Hybrid Intelligences; entrepreneurship and strategic vision across arts, migration, and interdisciplinary innovation.",
+  { id: "track_space",        label: "Track 1\nSpace & Memory",       cat: "program",  weight: 1.5,
+    desc: "Mondays 12:30–3:15 — AI, space, memory, and embodiment. Jul 13: Karla Saldaña Ochoa · Jul 20: Onye Ozuzu · Jul 27: Corey Cheval." },
+  { id: "track_future",       label: "Track 2\nFuture Lab",           cat: "program",  weight: 1.5,
+    desc: "Wednesdays 5:30–7:30 — Speculation, prototyping, and imagining alternative human–AI futures. Jul 15: Jackie Larson · Jul 22: Andrew Hix · Jul 29: Turbado Marabou — with Erika Moore." },
+  { id: "track_ethics",       label: "Track 3\nEthics & Leadership",  cat: "program",  weight: 1.5,
+    desc: "Thursdays 12:30–3:15 — AI ethics, authorship, law, and embodied leadership. Jul 16, 23, 30 with Erika Moore, Buckner, McNealy, White." },
+  { id: "reception",          label: "Public\nReception",           cat: "program",  weight: 1.15,
+    desc: "Thursday July 30 — public networking gathering to share experiments and process-based outcomes with the campus and Gainesville community." },
+
+  { id: "cota",               label: "College of\nthe Arts",          cat: "organization",  weight: 1.5,
+    desc: "University of Florida College of the Arts (COA / COTA)—home college for Hybrid Intelligences; includes CAME and CAM among its centers and programs.",
+    url: "https://arts.ufl.edu/", linkLabel: "UF College of the Arts ↗" },
+  { id: "came",               label: "CAME",                          cat: "organization",  weight: 1.35,
+    desc: "Center for Arts, Migration and Entrepreneurship — lead host institution for Hybrid Intelligences within the College of the Arts; entrepreneurship and strategic vision across arts, migration, and interdisciplinary innovation.",
     url: "https://arts.ufl.edu/came/", linkLabel: "CAME at UF ↗" },
-  { id: "cam",                label: "CAM",                           cat: "program",  weight: 1.2,
-    desc: "Center for Arts in Medicine — advancing education, research, and practice at the intersections of the arts and health.",
+  { id: "cam",                label: "CAM",                           cat: "organization",  weight: 1.35,
+    desc: "Center for Arts in Medicine — within the College of the Arts; advancing education, research, and practice at the intersections of the arts and health.",
     url: "https://arts.ufl.edu/programs-schools/center-for-arts-in-medicine/", linkLabel: "Center for Arts in Medicine ↗" },
-  { id: "ignite",             label: "IGNITE\nProgram",               cat: "program",  weight: 1.2,
+  { id: "ignite",             label: "IGNITE\nProgram",               cat: "organization",  weight: 1.3,
     desc: "Engineering Innovation Institute partnership integrating innovation leadership into the program.",
     url: "https://www.eng.ufl.edu/innovation/", linkLabel: "IGNITE at UF ↗" },
-  { id: "wertheim",           label: "Wertheim\nLaboratory",          cat: "program",  weight: 1.2,
+  { id: "wertheim",           label: "Wertheim\nLaboratory",          cat: "organization",  weight: 1.3,
     desc: "Herbert Wertheim Laboratory for Engineering Excellence—Leadership Studio 370, all program activities.",
     url: "https://www.eng.ufl.edu/wertheim/", linkLabel: "Wertheim Laboratory ↗" },
-  { id: "track_space",        label: "Track 1\nSpace & Memory",       cat: "program",  weight: 1.4,
-    desc: "Mondays 12:30–3:15 — AI, space, memory, and embodiment. Jul 13: Karla Saldaña Ochoa · Jul 20: Onye Ozuzu · Jul 27: Corey Cheval." },
-  { id: "track_future",       label: "Track 2\nFuture Lab",           cat: "program",  weight: 1.4,
-    desc: "Wednesdays 5:30–7:30 — Speculation, prototyping, and imagining alternative human–AI futures. Jul 15: Jackie Larson · Jul 22: Andrew Hix · Jul 29: Turbado Marabou — with Erika Moore." },
-  { id: "track_ethics",       label: "Track 3\nEthics & Leadership",  cat: "program",  weight: 1.4,
-    desc: "Thursdays 12:30–3:15 — AI ethics, authorship, law, and embodied leadership. Jul 16, 23, 30 with Erika Moore, Buckner, McNealy, White." },
-  { id: "reception",          label: "Public\nReception",           cat: "program",  weight: 1.1,
-    desc: "Thursday July 30 — public networking gathering to share experiments and process-based outcomes with the campus and Gainesville community." },
+  { id: "gainesville_circus", label: "Gainesville\nCircus Center",    cat: "organization",  weight: 1.2,
+    desc: "External partner organization for embodied circus practice—partner acrobatics, object manipulation, and ensemble training in community with Hybrid Intelligences.",
+    url: "https://www.gainesvillecircus.com/", linkLabel: "Gainesville Circus Center ↗" },
+
+  { id: "undergrad_participants", label: "Undergraduate\nStudents", cat: "participant", weight: 1.45,
+    desc: "Undergraduate students in Art and Art History, Industrial Systems Engineering, Dance and Museum Studies, Computer Science, Industrial Systems and Political Science—bringing studio, engineering, and civic lenses into hybrid coupling." },
+  { id: "grad_participants", label: "Graduate\nStudents",         cat: "participant", weight: 1.4,
+    desc: "Graduate students in Human-Centered Computing, Art History, Chemical Engineering, Machine Learning and Health Outcomes—research and practice at the intersections of computation, culture, learning systems, and care." },
+  { id: "staff_participants", label: "UF Staff",                  cat: "participant", weight: 1.3,
+    desc: "Current and retired UF staff in Lighting Design, Nursing, Public Health and Dance Therapy—institutional knowledge meeting embodied and clinical practice." },
+  { id: "community_participants", label: "Community &\nAlumni",   cat: "participant", weight: 1.35,
+    desc: "Community members, alumnae and former faculty in IT, Digital Media and AI, Choreography and Film, Library Sciences and Digital Art—extending the program beyond campus into local and alumni ecologies." },
+
+  { id: "bg_art_history",      label: "Art &\nArt History",           cat: "background", weight: 1.25,
+    desc: "Background of undergraduate and graduate participants—studio practice, visual culture, and historical inquiry into art." },
+  { id: "bg_ise",              label: "Industrial Systems\nEngineering", cat: "background", weight: 1.2,
+    desc: "Undergraduate background—systems design, optimization, and socio-technical process across industrial and organizational settings." },
+  { id: "bg_dance_museum",     label: "Dance &\nMuseum Studies",      cat: "background", weight: 1.2,
+    desc: "Undergraduate background—embodied performance joined with curation, collections, and public cultural institutions." },
+  { id: "bg_cs",               label: "Computer\nScience",            cat: "background", weight: 1.25,
+    desc: "Undergraduate background—algorithms, systems, and computational thinking as a formative background distinct from the conceptual Domains ring." },
+  { id: "bg_ise_polisci",      label: "Industrial Systems &\nPolitical Science", cat: "background", weight: 1.15,
+    desc: "Undergraduate double lens—industrial systems with civic and political analysis of institutions, power, and public life." },
+  { id: "bg_hcc",              label: "Human-Centered\nComputing",    cat: "background", weight: 1.25,
+    desc: "Graduate background—interaction, usability, and computing designed around human practices, bodies, and contexts." },
+  { id: "bg_chem_eng",         label: "Chemical\nEngineering",        cat: "background", weight: 1.15,
+    desc: "Graduate background—process, materials, and molecular-scale engineering meeting hybrid cognition and care." },
+  { id: "bg_ml",               label: "Machine\nLearning",            cat: "background", weight: 1.25,
+    desc: "Graduate background—statistical learning and model-building as institutional training, linked to the Machine Learning framework concept." },
+  { id: "bg_health_outcomes",  label: "Health\nOutcomes",             cat: "background", weight: 1.2,
+    desc: "Graduate background—measuring and improving health, care pathways, and wellbeing at clinical and population scales." },
+  { id: "bg_lighting",         label: "Lighting\nDesign",             cat: "background", weight: 1.15,
+    desc: "UF staff background—theatrical and spatial light as compositional practice shaping attention, atmosphere, and stage ecology." },
+  { id: "bg_nursing",          label: "Nursing",                      cat: "background", weight: 1.15,
+    desc: "UF staff background—clinical care, embodiment, and relational knowledge in health systems." },
+  { id: "bg_public_health",    label: "Public\nHealth",               cat: "background", weight: 1.15,
+    desc: "UF staff background—population health, prevention, and community wellbeing beyond the individual clinic." },
+  { id: "bg_dance_therapy",    label: "Dance\nTherapy",               cat: "background", weight: 1.15,
+    desc: "UF staff background—dance/movement as therapeutic practice coupling body, psyche, and care." },
+  { id: "bg_it",               label: "Information\nTechnology",      cat: "background", weight: 1.15,
+    desc: "Community / alumni background—systems, networks, and infrastructure that keep institutions and media running." },
+  { id: "bg_digital_media_ai", label: "Digital Media\n& AI",          cat: "background", weight: 1.2,
+    desc: "Community / alumni background—digital media practice intersecting generative and machine-learning systems." },
+  { id: "bg_choreo_film",      label: "Choreography\n& Film",         cat: "background", weight: 1.2,
+    desc: "Community / alumni background—moving-image and choreographic composition across stage and screen." },
+  { id: "bg_library",          label: "Library\nSciences",            cat: "background", weight: 1.15,
+    desc: "Community / alumni background—archives, information organization, access, and cultural memory institutions." },
+  { id: "bg_digital_art",      label: "Digital\nArt",                 cat: "background", weight: 1.2,
+    desc: "Community / alumni background—art practice through code, screens, networks, and computational media." },
 
   { id: "marlon",             label: "Marlon Barrios\nSolano",        cat: "facilitator", weight: 1.6,
     desc: "Co-director and co-facilitator across all Hybrid Intelligences sessions, affiliated with CAME. Embodied practice, choreography, and hybrid cognition.",
@@ -959,9 +1141,11 @@ const NODES = [
     url: "https://www.eng.ufl.edu/innovation/about/meet-the-team/melissa-white/", linkLabel: "IGNITE team profile ↗" },
 
   { id: "techno_dualism",     label: "Techno-\nDualism",             cat: "tension",    weight: 0.9,
-    desc: "Inadequate position: intelligence cleanly detached from bodies, histories, ecologies, and politics." },
+    desc: "Inadequate position: intelligence cleanly detached from bodies, histories, ecologies, and politics.",
+    url: "essay.html", linkLabel: "Read Essay 1 →" },
   { id: "bio_exception",      label: "Biological\nExceptionalism",  cat: "tension",    weight: 0.9,
-    desc: "Inadequate position: only organic life can participate meaningfully in cognitive processes." },
+    desc: "Inadequate position: only organic life can participate meaningfully in cognitive processes.",
+    url: "essay.html", linkLabel: "Read Essay 1 →" },
   { id: "humanism",           label: "Humanism",                      cat: "tension",    weight: 0.9,
     desc: "Inadequate position: the human treated as a fixed center of value, reason, and history—closed to hybrid, more-than-human, and situated couplings." },
   { id: "anthropocentrism",   label: "Anthropo-\ncentrism",           cat: "tension",    weight: 0.9,
@@ -990,13 +1174,14 @@ const WIKIPEDIA = {
   enactivism: "Enactivism",
   buddhism: "Buddhism",
   active_inference: "Active_inference",
-  assemblage: "Assemblage_(philosophy)",
+  assemblage: "N._Katherine_Hayles",
+  assemblage_form: "Assemblage_(philosophy)",
   extended: "Extended_mind_thesis",
   cyborg: "Cyborg",
   cyberfeminism: "Cyberfeminism",
   queer_theory: "Queer_theory",
   possible_minds: "Philosophy_of_artificial_intelligence",
-  technosymbiosis: "Symbiogenesis",
+  technosymbiosis: "N._Katherine_Hayles",
   holobiont: "Holobiont",
   affordances: "Affordance",
   umwelt: "Umwelt",
@@ -1004,6 +1189,8 @@ const WIKIPEDIA = {
   machine_learning: "Machine_learning",
   neural_networks: "Neural_network_(machine_learning)",
   perceptron: "Perceptron",
+  linear_transform: "Artificial_neuron",
+  rnn_update: "Recurrent_neural_network",
   convolutional_networks: "Convolutional_neural_network",
   transformers: "Transformer_(deep_learning_architecture)",
   gpt: "Generative_pre-trained_transformer",
@@ -1029,7 +1216,7 @@ const WIKIPEDIA = {
   motion_bank: "William_Forsythe_(choreographer)",
   choreo_object: "Choreography",
   clark: "Andy_Clark",
-  hayles: "Katherine_Hayles",
+  hayles: "N._Katherine_Hayles",
   thompson: "Evan_Thompson",
   varela: "Francisco_Varela",
   merleau_ponty: "Maurice_Merleau-Ponty",
@@ -1139,9 +1326,35 @@ const WIKIPEDIA = {
   creative: "Creativity",
   rehearsal: "Rehearsal",
   literacies: "Literacy",
+  arch_design: "Architectural_design",
+  philosophical_practice: "Philosophy",
   hi_program: "Cognitive_science",
   came: "Entrepreneurship",
   cam: "Arts_in_health",
+  cota: "University_of_Florida_College_of_the_Arts",
+  gainesville_circus: "Circus",
+  undergrad_participants: "Undergraduate_education",
+  grad_participants: "Postgraduate_education",
+  staff_participants: "University_of_Florida",
+  community_participants: "Community",
+  bg_art_history: "Art_history",
+  bg_ise: "Industrial_engineering",
+  bg_dance_museum: "Museum_studies",
+  bg_cs: "Computer_science",
+  bg_ise_polisci: "Political_science",
+  bg_hcc: "Human%E2%80%93computer_interaction",
+  bg_chem_eng: "Chemical_engineering",
+  bg_ml: "Machine_learning",
+  bg_health_outcomes: "Health_outcome",
+  bg_lighting: "Lighting_designer",
+  bg_nursing: "Nursing",
+  bg_public_health: "Public_health",
+  bg_dance_therapy: "Dance_therapy",
+  bg_it: "Information_technology",
+  bg_digital_media_ai: "Digital_media",
+  bg_choreo_film: "Choreography",
+  bg_library: "Library_science",
+  bg_digital_art: "Digital_art",
   ignite: "Innovation",
   wertheim: "University_of_Florida",
   track_space: "Spatial_memory",
@@ -1192,9 +1405,35 @@ const EDGES = [
   ["coupling", "body", 0.85],
   ["coupling", "hybrid_coupling", 0.9],
   ["coupling", "mediation", 0.9],
+  ["coupling", "assemblage", 0.95],
+  ["coupling", "assemblage_form", 0.9],
   ["hybrid", "hybrid_coupling", 0.95],
   ["hybrid", "intelligence", 0.9],
   ["hybrid", "embodiment", 0.85],
+  ["hybrid", "assemblage", 1.0],
+  ["hybrid", "assemblage_form", 0.95],
+  ["creative_embodiment", "assemblage", 0.95],
+  ["creative_embodiment", "assemblage_form", 0.85],
+  ["assemblage", "assemblage_form", 0.95],
+  ["assemblage", "hayles", 0.98],
+  ["assemblage_form", "hayles", 0.9],
+  ["assemblage_form", "latour", 0.9],
+  ["assemblage_form", "hybrid_coupling", 0.85],
+  ["technosymbiosis", "assemblage", 0.95],
+  ["technosymbiosis", "assemblage_form", 0.85],
+  ["technosymbiosis", "hayles", 0.98],
+  ["technosymbiosis", "hybrid", 0.95],
+  ["technosymbiosis", "coupling", 0.9],
+  ["technosymbiosis", "creative_embodiment", 0.85],
+  ["4e", "coupling", 0.95],
+  ["4e", "embodiment", 0.95],
+  ["4e", "cognition", 0.95],
+  ["4e", "hybrid", 0.85],
+  ["4e", "creative_embodiment", 0.9],
+  ["4e", "body", 0.85],
+  ["4e", "intelligence", 0.9],
+  ["cognition", "embodiment", 0.9],
+  ["cognition", "coupling", 0.9],
   ["hybrid", "cognition", 0.9],
   ["intelligence", "cognition", 0.95],
   ["intelligence", "embodiment", 0.85],
@@ -1279,7 +1518,6 @@ const EDGES = [
   ["leadership", "came", 0.75],
   ["leadership", "cognition", 0.75],
   ["leadership", "intelligence", 0.7],
-  ["hybrid", "assemblage", 1.0],
   ["hybrid", "creative_embodiment", 0.95],
   ["hybrid", "ecology", 0.9],
   ["hybrid", "literacies", 0.8],
@@ -1338,21 +1576,15 @@ const EDGES = [
   ["assemblage", "distributed", 0.95],
   ["assemblage", "technical_agency", 0.9],
   ["assemblage", "creative", 0.85],
-  ["assemblage", "creative_embodiment", 0.95],
-  ["assemblage", "hayles", 0.95],
   ["possible_minds", "ecology", 0.8],
   ["possible_minds", "hybrid", 0.75],
   ["possible_minds", "shanahan", 0.9],
-  ["technosymbiosis", "assemblage", 0.95],
   ["technosymbiosis", "symbiosis", 0.9],
   ["technosymbiosis", "margulis", 0.85],
-  ["technosymbiosis", "hybrid", 0.9],
   ["technosymbiosis", "cyborg", 0.8],
   ["technosymbiosis", "ecology", 0.85],
-  ["technosymbiosis", "hayles", 0.95],
   ["technosymbiosis", "ai", 0.85],
   ["technosymbiosis", "gen_ai", 0.8],
-  ["technosymbiosis", "creative_embodiment", 0.8],
   ["technosymbiosis", "active_inference", 0.75],
   ["technosymbiosis", "physical_ai", 0.75],
   ["technosymbiosis", "synthetic_cognition", 0.8],
@@ -1461,6 +1693,34 @@ const EDGES = [
   ["perceptron", "cybernetics", 0.85],
   ["perceptron", "possible_minds", 0.7],
   ["perceptron", "synthetic_cognition", 0.75],
+  ["linear_transform", "neural_networks", 0.98],
+  ["linear_transform", "perceptron", 0.95],
+  ["linear_transform", "machine_learning", 0.9],
+  ["linear_transform", "convolutional_networks", 0.85],
+  ["linear_transform", "transformers", 0.85],
+  ["linear_transform", "ai_ml", 0.9],
+  ["linear_transform", "cs", 0.9],
+  ["linear_transform", "ai", 0.8],
+  ["linear_transform", "synthetic_cognition", 0.75],
+  ["linear_transform", "ai_interpretability", 0.8],
+  ["linear_transform", "model_introspection", 0.7],
+  ["linear_transform", "cybernetics", 0.7],
+  ["rnn_update", "linear_transform", 0.95],
+  ["rnn_update", "neural_networks", 0.95],
+  ["rnn_update", "machine_learning", 0.9],
+  ["rnn_update", "transformers", 0.85],
+  ["rnn_update", "llm", 0.75],
+  ["rnn_update", "gen_ai", 0.7],
+  ["rnn_update", "ai_ml", 0.9],
+  ["rnn_update", "cs", 0.85],
+  ["rnn_update", "ai", 0.8],
+  ["rnn_update", "synthetic_cognition", 0.75],
+  ["rnn_update", "mediation", 0.7],
+  ["rnn_update", "cybernetics", 0.8],
+  ["rnn_update", "distributed", 0.7],
+  ["rnn_update", "storytelling", 0.65],
+  ["rnn_update", "music", 0.65],
+  ["rnn_update", "choreography_d", 0.6],
   ["convolutional_networks", "neural_networks", 0.95],
   ["convolutional_networks", "machine_learning", 0.9],
   ["convolutional_networks", "gen_ai", 0.85],
@@ -2791,6 +3051,17 @@ const EDGES = [
   ["architecture", "choreography", 0.8],
   ["architecture", "choreography_d", 0.75],
   ["architecture", "mediation", 0.7],
+  ["architecture", "arch_design", 0.95],
+  ["arch_design", "design_thinking", 0.9],
+  ["arch_design", "creative", 0.85],
+  ["arch_design", "creative_embodiment", 0.85],
+  ["arch_design", "affordances", 0.9],
+  ["arch_design", "track_space", 0.9],
+  ["arch_design", "karla", 0.9],
+  ["arch_design", "wertheim", 0.75],
+  ["arch_design", "rehearsal", 0.75],
+  ["arch_design", "hybrid", 0.8],
+  ["arch_design", "literacies", 0.75],
   ["choreography", "juggling", 0.85],
   ["choreography", "hybrid", 0.7],
   ["somatics", "coupling", 0.65],
@@ -2816,6 +3087,20 @@ const EDGES = [
 
   ["philosophy", "4e", 0.7],
   ["philosophy", "possible_minds", 0.65],
+  ["philosophy", "philosophical_practice", 0.95],
+  ["philosophical_practice", "epistemology", 0.9],
+  ["philosophical_practice", "4e", 0.85],
+  ["philosophical_practice", "cognition", 0.85],
+  ["philosophical_practice", "coupling", 0.8],
+  ["philosophical_practice", "assemblage", 0.8],
+  ["philosophical_practice", "cultural_critical", 0.85],
+  ["philosophical_practice", "track_ethics", 0.85],
+  ["philosophical_practice", "complexity", 0.8],
+  ["philosophical_practice", "creative_embodiment", 0.75],
+  ["philosophical_practice", "clark", 0.8],
+  ["philosophical_practice", "hayles", 0.85],
+  ["philosophical_practice", "merleau_ponty", 0.85],
+  ["philosophical_practice", "cameron", 0.75],
   ["epistemology", "philosophy", 0.95],
   ["epistemology", "ai_impact_epistemic", 0.9],
   ["epistemology", "critical", 0.85],
@@ -3108,17 +3393,29 @@ const EDGES = [
 
   ["hi_program", "hybrid", 1.0],
   ["hi_program", "coupling", 0.9],
+  ["hi_program", "cota", 0.95],
   ["hi_program", "came", 0.95],
   ["hi_program", "cam", 0.9],
   ["hi_program", "ignite", 0.9],
   ["hi_program", "wertheim", 0.9],
+  ["hi_program", "gainesville_circus", 0.8],
+  ["hi_program", "undergrad_participants", 0.95],
+  ["hi_program", "grad_participants", 0.95],
+  ["hi_program", "staff_participants", 0.9],
+  ["hi_program", "community_participants", 0.9],
   ["hi_program", "track_space", 0.85],
   ["hi_program", "track_future", 0.85],
   ["hi_program", "track_ethics", 0.85],
   ["hi_program", "reception", 0.85],
   ["hi_program", "marlon", 0.95],
   ["marlon", "came", 0.95],
+  ["marlon", "cota", 0.9],
   ["hi_program", "erika", 0.9],
+  ["cota", "came", 0.95],
+  ["cota", "cam", 0.95],
+  ["cota", "art", 0.85],
+  ["cota", "interdisciplinary_art", 0.85],
+  ["cota", "onye", 0.85],
   ["came", "cam", 0.9],
   ["came", "art_medicine", 0.85],
   ["came", "interdisciplinary_art", 0.85],
@@ -3131,6 +3428,11 @@ const EDGES = [
   ["ignite", "track_ethics", 0.75],
   ["ignite", "melissa", 0.85],
   ["wertheim", "architecture", 0.7],
+  ["gainesville_circus", "cheval_bailie", 0.95],
+  ["gainesville_circus", "circus_arts", 0.95],
+  ["gainesville_circus", "track_space", 0.85],
+  ["gainesville_circus", "juggling", 0.85],
+  ["gainesville_circus", "embodiment", 0.75],
   ["track_space", "architecture", 0.9],
   ["track_space", "choreography", 0.85],
   ["track_space", "embodied", 0.8],
@@ -3172,6 +3474,101 @@ const EDGES = [
   ["track_ethics", "melissa", 0.85],
   ["reception", "literacies", 0.8],
   ["reception", "hybrid", 0.7],
+  ["undergrad_participants", "grad_participants", 0.85],
+  ["undergrad_participants", "art", 0.85],
+  ["undergrad_participants", "dance", 0.85],
+  ["undergrad_participants", "cs", 0.8],
+  ["undergrad_participants", "ai_ml", 0.75],
+  ["undergrad_participants", "pedagogy", 0.85],
+  ["undergrad_participants", "reception", 0.8],
+  ["undergrad_participants", "cota", 0.8],
+  ["grad_participants", "cs", 0.85],
+  ["grad_participants", "art_medicine", 0.8],
+  ["grad_participants", "ai_ml", 0.8],
+  ["grad_participants", "machine_learning", 0.9],
+  ["grad_participants", "neural_networks", 0.75],
+  ["grad_participants", "pedagogy", 0.85],
+  ["grad_participants", "reception", 0.8],
+  ["grad_participants", "epistemology", 0.7],
+  ["staff_participants", "art_medicine", 0.85],
+  ["staff_participants", "dance", 0.8],
+  ["staff_participants", "somatics", 0.75],
+  ["staff_participants", "community", 0.8],
+  ["staff_participants", "reception", 0.85],
+  ["community_participants", "community", 0.95],
+  ["community_participants", "generative_arts", 0.8],
+  ["community_participants", "choreography", 0.85],
+  ["community_participants", "ai_art", 0.75],
+  ["community_participants", "ai", 0.8],
+  ["community_participants", "ai_ml", 0.8],
+  ["community_participants", "reception", 0.9],
+  ["community_participants", "interdisciplinary_art", 0.8],
+  ["community_participants", "staff_participants", 0.75],
+  ["grad_participants", "staff_participants", 0.7],
+  ["undergrad_participants", "community_participants", 0.75],
+  ["undergrad_participants", "bg_art_history", 0.95],
+  ["undergrad_participants", "bg_ise", 0.95],
+  ["undergrad_participants", "bg_dance_museum", 0.95],
+  ["undergrad_participants", "bg_cs", 0.95],
+  ["undergrad_participants", "bg_ise_polisci", 0.95],
+  ["grad_participants", "bg_hcc", 0.95],
+  ["grad_participants", "bg_art_history", 0.9],
+  ["grad_participants", "bg_chem_eng", 0.95],
+  ["grad_participants", "bg_ml", 0.95],
+  ["grad_participants", "bg_health_outcomes", 0.95],
+  ["staff_participants", "bg_lighting", 0.95],
+  ["staff_participants", "bg_nursing", 0.95],
+  ["staff_participants", "bg_public_health", 0.95],
+  ["staff_participants", "bg_dance_therapy", 0.95],
+  ["community_participants", "bg_it", 0.95],
+  ["community_participants", "bg_digital_media_ai", 0.95],
+  ["community_participants", "bg_choreo_film", 0.95],
+  ["community_participants", "bg_library", 0.95],
+  ["community_participants", "bg_digital_art", 0.95],
+  ["bg_art_history", "art", 0.9],
+  ["bg_ise", "cs", 0.7],
+  ["bg_ise", "design_thinking", 0.75],
+  ["bg_dance_museum", "dance", 0.9],
+  ["bg_dance_museum", "curation", 0.85],
+  ["bg_cs", "cs", 0.95],
+  ["bg_cs", "ai_ml", 0.8],
+  ["bg_ise_polisci", "bg_ise", 0.8],
+  ["bg_ise_polisci", "law", 0.7],
+  ["bg_hcc", "cs", 0.85],
+  ["bg_hcc", "ai_ml", 0.8],
+  ["bg_hcc", "affordances", 0.7],
+  ["bg_chem_eng", "cs", 0.6],
+  ["bg_chem_eng", "art_medicine", 0.65],
+  ["bg_ml", "machine_learning", 0.98],
+  ["bg_ml", "neural_networks", 0.9],
+  ["bg_ml", "ai_ml", 0.95],
+  ["bg_health_outcomes", "art_medicine", 0.9],
+  ["bg_lighting", "art", 0.75],
+  ["bg_lighting", "architecture", 0.7],
+  ["bg_nursing", "art_medicine", 0.9],
+  ["bg_public_health", "art_medicine", 0.85],
+  ["bg_public_health", "community", 0.8],
+  ["bg_dance_therapy", "dance", 0.9],
+  ["bg_dance_therapy", "somatics", 0.9],
+  ["bg_dance_therapy", "art_medicine", 0.85],
+  ["bg_it", "cs", 0.85],
+  ["bg_digital_media_ai", "ai", 0.9],
+  ["bg_digital_media_ai", "ai_ml", 0.9],
+  ["bg_digital_media_ai", "generative_arts", 0.85],
+  ["bg_choreo_film", "choreography", 0.95],
+  ["bg_choreo_film", "choreography_d", 0.9],
+  ["bg_choreo_film", "storytelling", 0.8],
+  ["bg_library", "epistemology", 0.7],
+  ["bg_library", "curation", 0.85],
+  ["bg_digital_art", "ai_art", 0.9],
+  ["bg_digital_art", "generative_arts", 0.9],
+  ["bg_digital_art", "interdisciplinary_art", 0.8],
+  ["bg_art_history", "bg_digital_art", 0.7],
+  ["bg_ml", "bg_digital_media_ai", 0.8],
+  ["bg_cs", "bg_hcc", 0.8],
+  ["bg_dance_museum", "bg_dance_therapy", 0.75],
+  ["bg_health_outcomes", "bg_nursing", 0.8],
+  ["bg_health_outcomes", "bg_public_health", 0.85],
 
   ["marlon", "choreography", 0.9],
   ["marlon", "creative", 0.85],
@@ -3451,17 +3848,23 @@ function applyHashSelection() {
 }
 
 function getCenter() {
+  if (isMobileLayout()) {
+    return { x: width / 2, y: height / 2 + (mobileBarH() - mobileBottomH()) * 0.25 };
+  }
   return { x: width / 2, y: height / 2 + 10 };
 }
 
 function getMaxRadius() {
-  const topPad = 62;
-  const toggleH = 54;
+  const mobile = isMobileLayout();
+  const topPad = mobile ? mobileBarH() + 8 : 92;
+  const toggleH = mobile ? mobileBottomH() + 8 : 54;
   const focus = getActiveNode();
   const panelH = focus && focus.url ? 128 : 108;
-  const bottomPad = focus ? toggleH + panelH + 18 : toggleH + 16;
-  const sidePad = 98;
-  const layoutScale = 1.08;
+  const bottomPad = focus
+    ? toggleH + (mobile ? min(panelH, 120) : panelH) + 18
+    : toggleH + 16;
+  const sidePad = mobile ? 28 : 98;
+  const layoutScale = mobile ? 0.98 : 1.08;
   return min(width / 2 - sidePad, height / 2 - max(topPad, bottomPad) - 12) * layoutScale;
 }
 
@@ -3550,6 +3953,7 @@ function initGraph() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+  if (!isMobileLayout()) mobileMenuOpen = false;
   initGraph();
 }
 
@@ -4095,6 +4499,22 @@ function setSelectedCategory(cat) {
   pinCategory(cat);
 }
 
+function stepCategory(delta) {
+  if (animateMode) return;
+  const n = RING_ORDER.length;
+  if (n === 0) return;
+
+  let idx;
+  if (selectedCategory == null) {
+    idx = delta > 0 ? 0 : n - 1;
+  } else {
+    idx = RING_ORDER.indexOf(selectedCategory);
+    if (idx < 0) idx = 0;
+    idx = (idx + delta + n * 10) % n;
+  }
+  pinCategory(RING_ORDER[idx]);
+}
+
 function pinCategory(cat) {
   if (!CATEGORY_META[cat]) return;
   selectedCategory = cat;
@@ -4341,6 +4761,14 @@ function drawNodeLabels() {
     const isActive = catFocus === null ? nodeHighlighted(n) : catFocus > 0.65;
     const dim = catFocus === null ? nodeDimmed(n) : catFocus < 0.2;
     const catDim = catFocus !== null && catFocus < 0.2;
+    if (
+      isMobileLayout() &&
+      !isActive &&
+      !nodeHighlighted(n) &&
+      !(catFocus !== null && catFocus >= 0.45)
+    ) {
+      continue;
+    }
     const { lines, lineH, lx, startY } = nodeLabelLayout(n, isActive);
     const labelAlpha = scaleNodeAlpha(catFocus === null
       ? (dim ? (hoverFocus ? t.labelDimHover : t.labelDim) : 255)
@@ -4358,13 +4786,193 @@ function drawNodeLabels() {
   }
 }
 
-function drawUI() {
+function drawMobileUI() {
   const t = theme();
-  uiLinks = [];
+  const topH = mobileBarH();
+  const bottomH = mobileBottomH();
 
   fill(...t.uiBar);
   noStroke();
-  rect(0, 0, width, 72);
+  rect(0, 0, width, topH);
+
+  fill(...t.title);
+  textAlign(LEFT, CENTER);
+  textSize(12);
+  drawingContext.font = '300 12px "IBM Plex Mono", monospace';
+  text("Hybrid Intelligences", 14, 18);
+  drawingContext.font = '400 11px "IBM Plex Mono", monospace';
+
+  textSize(8);
+  fill(...t.subtitle);
+  let status = "Tap a node · Play for tour";
+  if (animateMode) {
+    const phase = getAnimatePhase();
+    const phaseLabel = phase === "rings"
+      ? "Rings"
+      : phase === "theme"
+      ? "Theme"
+      : (CATEGORY_META[phase]?.label || "");
+    status = `Tour · ${phaseLabel}${animatePaused ? " · Paused" : ""}`;
+  } else if (selectedCategory) {
+    status = `Focus · ${CATEGORY_META[selectedCategory].label}`;
+  }
+  text(status, 14, 38);
+
+  const focus = getActiveNode();
+  if (focus && !ringsOnlyMode()) drawDetailPanel(focus);
+
+  // Bottom control bar
+  const by = height - bottomH;
+  fill(...t.uiBar);
+  noStroke();
+  rect(0, by, width, bottomH);
+  stroke(...t.border);
+  strokeWeight(1);
+  line(0, by, width, by);
+  noStroke();
+
+  const pad = 8;
+  const gap = 6;
+  const btnH = 36;
+  const btnY = by + (bottomH - btnH) / 2;
+  const labels = [
+    { id: "prev", label: "\u2191" },
+    { id: "play", label: mobilePlayLabel() },
+    { id: "next", label: "\u2193" },
+    { id: "reset", label: "Reset" },
+    { id: "menu", label: mobileMenuOpen ? "Close" : "Menu" },
+  ];
+  const widths = labels.map((b) => {
+    if (b.id === "prev" || b.id === "next") return 40;
+    if (b.id === "play") return max(64, textWidth(b.label) + 22);
+    if (b.id === "reset") return 58;
+    return 58;
+  });
+  const totalW = widths.reduce((a, b) => a + b, 0) + gap * (labels.length - 1);
+  let bx = max(pad, (width - totalW) / 2);
+
+  textAlign(CENTER, CENTER);
+  textSize(11);
+  for (let i = 0; i < labels.length; i++) {
+    const b = labels[i];
+    const bw = widths[i];
+    const hot = hitMobileAction(mouseX, mouseY)?.id === b.id;
+    fill(...t.toggleBg);
+    stroke(...t.border);
+    strokeWeight(1);
+    rect(bx, btnY, bw, btnH, 8);
+    noStroke();
+    fill(...(hot || (b.id === "play" && animateMode && !animatePaused) ? t.title : t.subtitle));
+    text(b.label, bx + bw / 2, btnY + btnH / 2 + 1);
+    pushMobileHit(b.id, bx, btnY, bw, btnH);
+    bx += bw + gap;
+  }
+
+  if (mobileMenuOpen) drawMobileMenu();
+}
+
+function drawMobileMenu() {
+  const t = theme();
+  const bottomH = mobileBottomH();
+  const sheetH = min(height * 0.62, 420);
+  const y = height - bottomH - sheetH;
+
+  fill(t.bg[0], t.bg[1], t.bg[2], 160);
+  noStroke();
+  rect(0, 0, width, y);
+  pushMobileHit("menu_backdrop", 0, 0, width, y);
+
+  fill(...t.panel);
+  stroke(...t.border);
+  strokeWeight(1);
+  rect(0, y, width, sheetH);
+
+  noStroke();
+  fill(...t.title);
+  textAlign(LEFT, TOP);
+  textSize(11);
+  text("MENU", 16, y + 14);
+
+  fill(...t.muted);
+  textSize(9);
+  text("Browse on phone · categories · theme · links", 16, y + 32);
+
+  const items = [
+    { id: "link", label: "Home", url: HOME_URL },
+    { id: "link", label: "Ontology", url: ONTOLOGY_URL },
+    { id: "link", label: "Essay 1", url: ESSAY1_URL },
+    { id: "link", label: "Essay 2", url: ESSAY2_URL },
+    { id: "link", label: "Slides \u2197", url: SLIDES_URL },
+    { id: "link", label: "Video", url: VIDEO_URL },
+    { id: "link", label: "Podcast", url: PODCAST_URL },
+    { id: "link", label: "NotebookLM \u2197", url: NOTEBOOK_LM_URL },
+    { id: "theme_dark", label: "Theme: Dark" },
+    { id: "theme_light", label: "Theme: Light" },
+  ];
+
+  let rowY = y + 54;
+  textSize(12);
+  for (const item of items) {
+    const hot = hitMobileAction(mouseX, mouseY)?.meta === item.label
+      || (hitMobileAction(mouseX, mouseY)?.id === item.id && item.id.startsWith("theme"));
+    fill(hot ? t.title[0] : t.panelTitle[0], hot ? t.title[1] : t.panelTitle[1], hot ? t.title[2] : t.panelTitle[2]);
+    textAlign(LEFT, CENTER);
+    text(item.label, 16, rowY + 14);
+    pushMobileHit(item.id, 0, rowY, width, 28, item.url || item.label);
+    stroke(...t.border);
+    strokeWeight(0.5);
+    line(16, rowY + 28, width - 16, rowY + 28);
+    noStroke();
+    rowY += 30;
+  }
+
+  // Compact category chips
+  fill(...t.muted);
+  textAlign(LEFT, TOP);
+  textSize(9);
+  text("CATEGORIES — tap to focus", 16, rowY + 8);
+  rowY += 28;
+  textSize(10);
+  let chipX = 16;
+  const chipY = rowY;
+  const chipH = 26;
+  for (const cat of RING_ORDER) {
+    const label = CATEGORY_META[cat].label;
+    const chipW = textWidth(label) + 16;
+    if (chipX + chipW > width - 16) {
+      chipX = 16;
+      rowY += chipH + 6;
+    }
+    const active = selectedCategory === cat;
+    fill(...(active ? t.title : t.toggleBg));
+    if (!active) {
+      stroke(...t.border);
+      strokeWeight(1);
+    } else noStroke();
+    rect(chipX, rowY, chipW, chipH, 6);
+    noStroke();
+    fill(...(active ? t.bg : t.subtitle));
+    textAlign(CENTER, CENTER);
+    text(label, chipX + chipW / 2, rowY + chipH / 2 + 1);
+    pushMobileHit("category", chipX, rowY, chipW, chipH, cat);
+    chipX += chipW + 6;
+  }
+}
+
+function drawUI() {
+  const t = theme();
+  uiLinks = [];
+  mobileHits = [];
+
+  if (isMobileLayout()) {
+    drawMobileUI();
+    return;
+  }
+
+  const barH = 86;
+  fill(...t.uiBar);
+  noStroke();
+  rect(0, 0, width, barH);
 
   setTextFill();
   textAlign(LEFT, CENTER);
@@ -4375,15 +4983,51 @@ function drawUI() {
   text("Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI", 20, 14);
   drawingContext.font = '400 11px "IBM Plex Mono", monospace';
 
-  textSize(8.5);
+  textSize(8);
   fill(...t.subtitle);
   text(
-    "University of Florida \u2022 Center for Arts, Migration + Entrepreneurship \u2022 IGNITE Engineering \u2022 Center for Arts in Medicine \u2022 College of the Arts",
+    "Impact \u2014 A living map of concepts, essays, and program materials for embodied leadership and creativity in the era of AI.",
     20,
-    30
+    28
   );
 
-  const creditY = 44;
+  textSize(8.5);
+  const orgY = 42;
+  const orgSep = " \u2022 ";
+  const orgLinks = [
+    { label: "University of Florida", url: "https://www.ufl.edu/" },
+    { label: "Center for Arts, Migration + Entrepreneurship", url: "https://arts.ufl.edu/came/" },
+    { label: "IGNITE Engineering", url: "https://www.eng.ufl.edu/innovation/" },
+    { label: "Center for Arts in Medicine", url: "https://arts.ufl.edu/programs-schools/center-for-arts-in-medicine/" },
+    { label: "College of the Arts", url: "https://arts.ufl.edu/" },
+  ];
+  let orgX = 20;
+  for (let i = 0; i < orgLinks.length; i++) {
+    if (i > 0) {
+      fill(...t.subtitle);
+      text(orgSep, orgX, orgY);
+      orgX += textWidth(orgSep);
+    }
+    const org = orgLinks[i];
+    const orgW = textWidth(org.label);
+    uiLinks.push({
+      url: org.url,
+      x: orgX,
+      y: orgY - 6,
+      w: orgW,
+      h: 12,
+    });
+    const orgHover = hitUiLink(mouseX, mouseY) === org.url;
+    fill(...t.title, orgHover ? 255 : 200);
+    text(org.label, orgX, orgY);
+    stroke(...t.title, orgHover ? 220 : 120);
+    strokeWeight(0.5);
+    line(orgX, orgY + 5, orgX + orgW, orgY + 5);
+    noStroke();
+    orgX += orgW;
+  }
+
+  const creditY = 56;
   const subtitlePrefix = "Conceptual network visualization by ";
   const subtitleName = "Marlon Barrios Solano";
   textSize(8);
@@ -4412,11 +5056,16 @@ function drawUI() {
   let creditCursorX = nameX + nameW;
 
   const creditNavLinks = [
+    { url: HOME_URL, label: "Home" },
     { url: ONTOLOGY_URL, label: "Ontology \u2197" },
     { url: ESSAY1_URL, label: "Essay 1" },
     { url: ESSAY2_URL, label: "Essay 2" },
     { url: SLIDES_URL, label: "Slides \u2197" },
+    { url: VIDEO_URL, label: "Video" },
+    { url: PODCAST_URL, label: "Podcast" },
     { url: CANVAS_URL, label: "Canvas \u2197" },
+    { url: NOTEBOOK_LM_URL, label: "NotebookLM \u2197" },
+    { url: PENDULAR_UMWELT_URL, label: "My Pendular Umwelt \u2197" },
   ];
   for (const link of creditNavLinks) {
     text(creditSep, creditCursorX, creditY);
@@ -4442,7 +5091,7 @@ function drawUI() {
 
   fill(...t.muted);
   textSize(9);
-  text("Jul 13\u201330, 2026 \u00b7 click legend to focus \u00b7 A animate \u00b7 R reset \u00b7 T theme", 20, 58);
+  text("Jul 13\u201330, 2026 \u00b7 click legend / \u2191\u2193 categories \u00b7 A animate \u00b7 R reset \u00b7 T theme", 20, 74);
 
   drawLegend();
 
@@ -4467,7 +5116,7 @@ function drawUI() {
     fill(...t.muted, 180);
   } else if (selectedCategory) {
     fill(...t.title, 220);
-    text(`FOCUSED · ${CATEGORY_META[selectedCategory].label.toUpperCase()} · Esc to clear`, width - 16, height - 24);
+    text(`FOCUSED · ${CATEGORY_META[selectedCategory].label.toUpperCase()} · \u2191\u2193 move \u00b7 Esc clear`, width - 16, height - 24);
     fill(...t.muted, 180);
   }
   const footerStats = `${nodes.length} concepts \u00b7 ${edges.length} relations \u00b7 `;
@@ -4645,12 +5294,15 @@ function drawLegend() {
 
 function detailPanelLayout(n) {
   const panelW = min(360, width - 32);
-  const toggleH = toggleLayout().bottom + toggleLayout().btnH + toggleLayout().padY * 2 + 12;
+  const mobile = isMobileLayout();
+  const toggleH = mobile
+    ? mobileBottomH() + 10
+    : toggleLayout().bottom + toggleLayout().btnH + toggleLayout().padY * 2 + 12;
   const wikiUrl = n?.wikiUrl || (n?.url?.includes("wikipedia.org") ? n.url : null);
   const primaryUrl = n?.url && n.url !== wikiUrl ? n.url : null;
   const linkCount = (primaryUrl ? 1 : 0) + (wikiUrl ? 1 : 0) + 1;
   const hasLink = linkCount > 0;
-  const panelH = 108 + linkCount * 20;
+  const panelH = mobile ? min(108 + linkCount * 18, 150) : 108 + linkCount * 20;
   return { panelW, x: 16, y: height - toggleH - panelH, panelH, hasLink, linkCount, wikiUrl, primaryUrl };
 }
 
@@ -4754,18 +5406,21 @@ function wrapText(str, maxW, sz) {
 
 function mouseMoved() {
   if (!dragging) {
-    updateLegendHover(mouseX, mouseY);
+    if (!isMobileLayout()) updateLegendHover(mouseX, mouseY);
     const prevHovered = hovered;
     hovered = ringsOnlyMode() ? null : nodeAt(mouseX, mouseY);
 
     if (animateMode && !ringsOnlyMode()) {
       if (hovered) pauseAnimateForHover();
-      else if (prevHovered) resumeAnimateFromHover();
+      else if (prevHovered && !isMobileLayout()) resumeAnimateFromHover();
     }
 
-    if (hitUiLink(mouseX, mouseY) || hitDetailPanelLink(mouseX, mouseY)) {
-      cursor("pointer");
-    } else if (legendCategoryAt(mouseX, mouseY) || legendHeaderHit(mouseX, mouseY)) {
+    if (
+      hitUiLink(mouseX, mouseY) ||
+      hitDetailPanelLink(mouseX, mouseY) ||
+      hitMobileAction(mouseX, mouseY) ||
+      (!isMobileLayout() && (legendCategoryAt(mouseX, mouseY) || legendHeaderHit(mouseX, mouseY)))
+    ) {
       cursor("pointer");
     } else {
       cursor("default");
@@ -4773,10 +5428,98 @@ function mouseMoved() {
   }
 }
 
+function handleMobileChromePress(hit) {
+  if (!hit) return false;
+  if (hit.id === "menu_backdrop") {
+    mobileMenuOpen = false;
+    return true;
+  }
+  if (hit.id === "play") {
+    mobileMenuOpen = false;
+    handleMobilePlay();
+    return true;
+  }
+  if (hit.id === "reset") {
+    resetNetworkView();
+    return true;
+  }
+  if (hit.id === "menu") {
+    mobileMenuOpen = !mobileMenuOpen;
+    return true;
+  }
+  if (hit.id === "prev") {
+    mobileMenuOpen = false;
+    if (animateMode) {
+      animateMode = false;
+      animatePaused = false;
+      animatePauseRemaining = 0;
+    }
+    stepCategory(-1);
+    return true;
+  }
+  if (hit.id === "next") {
+    mobileMenuOpen = false;
+    if (animateMode) {
+      animateMode = false;
+      animatePaused = false;
+      animatePauseRemaining = 0;
+    }
+    stepCategory(1);
+    return true;
+  }
+  if (hit.id === "link" && hit.meta) {
+    mobileMenuOpen = false;
+    window.open(hit.meta, "_blank", "noopener,noreferrer");
+    return true;
+  }
+  if (hit.id === "theme_dark") {
+    setTheme("dark", false);
+    return true;
+  }
+  if (hit.id === "theme_light") {
+    setTheme("light", false);
+    return true;
+  }
+  if (hit.id === "category" && hit.meta) {
+    if (animateMode) {
+      animateMode = false;
+      animatePaused = false;
+    }
+    setSelectedCategory(hit.meta);
+    return true;
+  }
+  return false;
+}
+
 function mousePressed() {
   const link = hitUiLink(mouseX, mouseY) || hitDetailPanelLink(mouseX, mouseY);
   if (link) {
     window.open(link, "_blank", "noopener,noreferrer");
+    return;
+  }
+
+  if (isMobileLayout()) {
+    const mobileHit = hitMobileAction(mouseX, mouseY);
+    if (handleMobileChromePress(mobileHit)) return;
+
+    const n = ringsOnlyMode() ? null : nodeAt(mouseX, mouseY);
+    if (animateMode) {
+      pauseAnimateForHover();
+      if (n) {
+        selected = n;
+        hovered = n;
+      }
+      return;
+    }
+
+    if (n) {
+      dragging = n;
+      selected = n;
+      if (n.id !== "coupling") n.pinned = false;
+    } else {
+      selected = null;
+      if (mobileMenuOpen) mobileMenuOpen = false;
+    }
     return;
   }
 
@@ -4839,21 +5582,20 @@ function keyPressed() {
     toggleAnimate();
   }
   if (key === "r" || key === "R") {
-    animateMode = false;
-    animateStep = 0;
-    animateUntil = 0;
-    animatePaused = false;
-    animatePauseRemaining = 0;
-    selected = null;
-    hovered = null;
-    dragging = null;
-    selectedCategory = null;
-    initGraph();
+    resetNetworkView();
   }
   if (key === "t" || key === "T") {
     setTheme(themeMode === "dark" ? "light" : "dark", false);
   }
   if (keyCode === ESCAPE) {
     selectedCategory = null;
+  }
+  if (keyCode === UP_ARROW) {
+    stepCategory(-1);
+    return false;
+  }
+  if (keyCode === DOWN_ARROW) {
+    stepCategory(1);
+    return false;
   }
 }

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hybrid Intelligences — Highlights</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e1018;
+      --panel: #12141e;
+      --border: #323848;
+      --title: #f4c430;
+      --text: #e8eaef;
+      --muted: #969eb0;
+      --link: #82c3ff;
+      --hover: #1a1e2a;
+      --accent: rgba(244, 196, 48, 0.12);
+    }
+    body.light-mode {
+      --bg: #fffdf8;
+      --panel: #ffffff;
+      --border: #d2d6e0;
+      --title: #a8760c;
+      --text: #202430;
+      --muted: #5a6070;
+      --link: #125599;
+      --hover: #f5f3ee;
+      --accent: rgba(168, 118, 12, 0.1);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse 90% 55% at 12% -10%, rgba(244, 196, 48, 0.07), transparent 55%),
+        radial-gradient(ellipse 70% 45% at 100% 0%, rgba(78, 196, 196, 0.05), transparent 50%),
+        var(--bg);
+      color: var(--text);
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      line-height: 1.5;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      padding: 1.25rem 1.5rem 1rem;
+      border-bottom: 1px solid var(--border);
+      background: color-mix(in srgb, var(--panel) 88%, transparent);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header .eyebrow {
+      margin: 0 0 0.4rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    header h1 {
+      margin: 0 0 0.45rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 300;
+      font-size: clamp(0.95rem, 2.4vw, 1.15rem);
+      line-height: 1.4;
+      color: var(--title);
+      max-width: 48rem;
+    }
+    header .meta {
+      margin: 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .header-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 0.85rem;
+    }
+    .header-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+    }
+    .theme-btn {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      padding: 0.35rem 0.55rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .theme-btn:hover { color: var(--title); border-color: var(--title); }
+    main {
+      max-width: 56rem;
+      margin: 0 auto;
+      padding: 1.75rem 1.5rem 3.5rem;
+    }
+    .player {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .player video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #000;
+    }
+    .caption {
+      margin: 1rem 0 0;
+      max-width: 42rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    footer.page-foot {
+      max-width: 56rem;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">Video</p>
+    <h1>Hybrid Intelligences Highlights</h1>
+    <p class="meta"><a href="https://www.ufl.edu/" target="_blank" rel="noopener noreferrer">University of Florida</a> · <a href="https://arts.ufl.edu/" target="_blank" rel="noopener noreferrer">College of the Arts</a> · Creative B program</p>
+    <div class="header-row">
+      <div class="header-links">
+        <a href="index.html">← Home</a>
+        <a href="network.html">Network</a>
+        <a href="ontology.html">Ontology</a>
+        <a href="essay.html">Essay 1</a>
+        <a href="essay-2.html">Essay 2</a>
+        <a href="https://uflorida.sharepoint.com/:p:/r/teams/UF-CAME/Shared%20Documents/EVENTS%20and%20PROGRAMMING/Creative%20B%20Summer/Hybrid%20Intelligences%20(2026)/Program%20Materials/Creative%20B%20Symposium%20-%20Hybrid%20Intel.pptx?d=w4549d9142c9b45be860730dabc042349&csf=1&web=1&e=G9NWdm&nav=eyJzSWQiOjI4NSwiY0lkIjozNDU3MzA2ODkyfQ" target="_blank" rel="noopener noreferrer">Slides ↗</a>
+        <a href="podcast.html">Podcast</a>
+        <a href="https://ufl.instructure.com/courses/574408" target="_blank" rel="noopener noreferrer">Canvas ↗</a>
+        <a href="https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1" target="_blank" rel="noopener noreferrer">NotebookLM ↗</a>
+        <a href="https://my-pendular-umwelt.vercel.app/" target="_blank" rel="noopener noreferrer">My Pendular Umwelt ↗</a>
+      </div>
+      <button type="button" class="theme-btn" id="themeBtn" aria-label="Toggle theme">Theme</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="player">
+      <video controls playsinline preload="metadata">
+        <source src="hybrid-intelligences-highlight.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        <a href="hybrid-intelligences-highlight.mp4">Download Hybrid Intelligences Highlights</a>
+      </video>
+    </div>
+    <p class="caption">
+      Highlight reel from the Hybrid Intelligences program at the University of Florida.
+    </p>
+  </main>
+
+  <footer class="page-foot">
+    Hybrid Intelligences · University of Florida · Highlights
+  </footer>
+
+  <script>
+    function applyTheme(mode) {
+      document.body.classList.toggle("light-mode", mode === "light");
+      localStorage.setItem("hi-theme", mode);
+    }
+
+    function initTheme() {
+      const saved = localStorage.getItem("hi-theme");
+      const mode = saved || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      applyTheme(mode);
+      document.getElementById("themeBtn").addEventListener("click", () => {
+        applyTheme(document.body.classList.contains("light-mode") ? "dark" : "light");
+      });
+    }
+
+    initTheme();
+  </script>
+</body>
+</html>

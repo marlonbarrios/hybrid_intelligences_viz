@@ -51,10 +51,10 @@
         "foaf:name": "Marlon Barrios Solano",
         "foaf:homepage": "https://marlonbarrios.github.io/"
       },
-      "dc:date": "2026-08-23",
+      "dc:date": "2026-08-24",
       "owl:versionInfo": "1.0.0",
-      "hi:nodeCount": 192,
-      "hi:edgeCount": 1988
+      "hi:nodeCount": 221,
+      "hi:edgeCount": 2172
     },
     {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme",
@@ -65,7 +65,16 @@
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/program"
         },
         {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/organization"
+        },
+        {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/premise"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/participant"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/background"
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/facilitator"
@@ -100,15 +109,32 @@
         "hi:Category"
       ],
       "skos:prefLabel": "Program",
-      "skos:definition": "Sessions, tracks, hosts, and public events of the Hybrid Intelligences program.",
+      "skos:definition": "The Hybrid Intelligences program, its three tracks, and public events.",
       "skos:inScheme": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
       },
       "skos:topConceptOf": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
       },
-      "hi:ringFraction": 0.13,
+      "hi:ringFraction": 0.09,
       "hi:ringOrder": 0
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/organization",
+      "@type": [
+        "skos:Concept",
+        "hi:Category"
+      ],
+      "skos:prefLabel": "Organizations",
+      "skos:definition": "Host institutions and partners—College of the Arts (COA), CAME, CAM, IGNITE, Wertheim Laboratory, and Gainesville Circus Center.",
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:ringFraction": 0.16,
+      "hi:ringOrder": 1
     },
     {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/premise",
@@ -124,8 +150,42 @@
       "skos:topConceptOf": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
       },
-      "hi:ringFraction": 0.22,
-      "hi:ringOrder": 1
+      "hi:ringFraction": 0.23,
+      "hi:ringOrder": 2
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/participant",
+      "@type": [
+        "skos:Concept",
+        "hi:Category"
+      ],
+      "skos:prefLabel": "Participants",
+      "skos:definition": "Cohort of the Hybrid Intelligences program—undergraduate and graduate students, UF staff, community members, alumni, and former faculty across arts, engineering, health, and media.",
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:ringFraction": 0.3,
+      "hi:ringOrder": 3
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/background",
+      "@type": [
+        "skos:Concept",
+        "hi:Category"
+      ],
+      "skos:prefLabel": "Backgrounds",
+      "skos:definition": "Formative backgrounds of the Hybrid Intelligences cohort—academic majors, professional formations, and community practices that participants bring into the room.",
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "skos:topConceptOf": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:ringFraction": 0.37,
+      "hi:ringOrder": 4
     },
     {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/facilitator",
@@ -141,8 +201,8 @@
       "skos:topConceptOf": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
       },
-      "hi:ringFraction": 0.31,
-      "hi:ringOrder": 2
+      "hi:ringFraction": 0.44,
+      "hi:ringOrder": 5
     },
     {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice",
@@ -158,8 +218,8 @@
       "skos:topConceptOf": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
       },
-      "hi:ringFraction": 0.4,
-      "hi:ringOrder": 3
+      "hi:ringFraction": 0.51,
+      "hi:ringOrder": 6
     },
     {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/tension",
@@ -175,8 +235,8 @@
       "skos:topConceptOf": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
       },
-      "hi:ringFraction": 0.49,
-      "hi:ringOrder": 4
+      "hi:ringFraction": 0.58,
+      "hi:ringOrder": 7
     },
     {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/quality",
@@ -192,8 +252,8 @@
       "skos:topConceptOf": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
       },
-      "hi:ringFraction": 0.58,
-      "hi:ringOrder": 5
+      "hi:ringFraction": 0.65,
+      "hi:ringOrder": 8
     },
     {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/phenomenon",
@@ -209,8 +269,8 @@
       "skos:topConceptOf": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
       },
-      "hi:ringFraction": 0.67,
-      "hi:ringOrder": 6
+      "hi:ringFraction": 0.72,
+      "hi:ringOrder": 9
     },
     {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/domain",
@@ -226,8 +286,8 @@
       "skos:topConceptOf": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
       },
-      "hi:ringFraction": 0.76,
-      "hi:ringOrder": 7
+      "hi:ringFraction": 0.8,
+      "hi:ringOrder": 10
     },
     {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/framework",
@@ -243,8 +303,8 @@
       "skos:topConceptOf": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
       },
-      "hi:ringFraction": 0.85,
-      "hi:ringOrder": 8
+      "hi:ringFraction": 0.87,
+      "hi:ringOrder": 11
     },
     {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/author",
@@ -260,8 +320,8 @@
       "skos:topConceptOf": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
       },
-      "hi:ringFraction": 0.94,
-      "hi:ringOrder": 9
+      "hi:ringFraction": 0.95,
+      "hi:ringOrder": 12
     },
     {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
@@ -279,6 +339,7 @@
       },
       "hi:category": "premise",
       "hi:weight": 2.2,
+      "schema:url": "essay.html",
       "schema:sameAs": "https://en.wikipedia.org/wiki/Distributed_cognition",
       "skos:related": [
         {
@@ -307,6 +368,14 @@
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#mediation",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage_form",
           "hi:strength": 0.9
         }
       ]
@@ -343,12 +412,16 @@
           "hi:strength": 0.85
         },
         {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cognition",
-          "hi:strength": 0.9
-        },
-        {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
           "hi:strength": 1
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage_form",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cognition",
+          "hi:strength": 0.9
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative_embodiment",
@@ -380,8 +453,17 @@
       },
       "hi:category": "premise",
       "hi:weight": 1.9,
+      "schema:url": "essay.html",
       "schema:sameAs": "https://en.wikipedia.org/wiki/Embodied_cognition",
       "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage_form",
+          "hi:strength": 0.85
+        },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative",
           "hi:strength": 0.95
@@ -653,24 +735,187 @@
       ]
     },
     {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Cognitive Assemblages",
+      "skos:definition": "N. Katherine Hayles: cognition as interpretation of information within contexts that connect it with meaning—networked arrangements in which human and nonhuman cognizers exchange, process, select, and transform information, producing emergent meaning and action. Intelligence does not belong to one sovereign subject; it circulates through bodies, sensors, interfaces, datasets, institutions, and environments.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/premise"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "premise",
+      "hi:weight": 2.05,
+      "schema:url": "essay.html",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/N._Katherine_Hayles",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage_form",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hayles",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#distributed",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#technical_agency",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative",
+          "hi:strength": 0.85
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage_form",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Assemblage",
+      "skos:definition": "A composition of heterogeneous parts—bodies, tools, institutions, laws, media, atmospheres—whose relations co-produce capacities and meaning. Not a collection of fixed objects, but a dynamic arrangement; related to Hayles’s cognitive assemblages and to broader assemblage thinking (Latour, Deleuze & Guattari).",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/premise"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "premise",
+      "hi:weight": 1.85,
+      "schema:url": "https://en.wikipedia.org/wiki/Assemblage_(philosophy)",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Assemblage_(philosophy)",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hayles",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#latour",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hybrid_coupling",
+          "hi:strength": 0.85
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#technosymbiosis",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Techno-symbiosis",
+      "skos:definition": "N. Katherine Hayles: human futures with nonhuman symbionts—biological, technical, and mixed couplings that co-evolve across substrates, institutions, and AI systems. Techno-symbiosis names interdependence without sameness: humans and machines do not collapse into one another, yet their metabolisms of information, energy, and action become mutually constitutive.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/premise"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "premise",
+      "hi:weight": 1.95,
+      "schema:url": "essay.html",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/N._Katherine_Hayles",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage_form",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hayles",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hybrid",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative_embodiment",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#symbiosis",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#margulis",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cyborg",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ecology",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#gen_ai",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#active_inference",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#physical_ai",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#synthetic_cognition",
+          "hi:strength": 0.8
+        }
+      ]
+    },
+    {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cognition",
       "@type": [
         "skos:Concept",
         "hi:NetworkNode"
       ],
       "skos:prefLabel": "Cognition",
-      "skos:definition": "Processes of knowing, perceiving, remembering, imagining, and deciding—historically located in brains, now understood as spanning bodies, environments, tools, and collectives.",
+      "skos:definition": "Processes of knowing, perceiving, remembering, imagining, and deciding—historically located in brains, now understood as spanning bodies, environments, tools, and collectives. In this program, cognition is a world-involving practice, not an abstract operation floating above situation.",
       "skos:broader": {
-        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/framework"
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/premise"
       },
       "skos:inScheme": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
       },
-      "hi:category": "framework",
-      "hi:weight": 1.9,
-      "schema:url": "https://en.wikipedia.org/wiki/Cognition",
+      "hi:category": "premise",
+      "hi:weight": 1.95,
+      "schema:url": "essay.html",
       "schema:sameAs": "https://en.wikipedia.org/wiki/Cognition",
       "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embodiment",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
+          "hi:strength": 0.9
+        },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#4e",
           "hi:strength": 0.95
@@ -706,6 +951,75 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#active_inference",
           "hi:strength": 0.8
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#4e",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "4E Cognition",
+      "skos:definition": "Embodied cognition as four coupled claims: Embodied (depends on sensorimotor capacities of living bodies), Embedded (emerges within environments that constrain and enable action), Enacted (organisms bring forth meaningful worlds through interaction histories), and Extended (tools, inscriptions, devices, media, and social structures can participate in cognitive processes). Challenges the classical image of mind as internal representation in a brain-computer.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/premise"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "premise",
+      "hi:weight": 2,
+      "schema:url": "essay.html",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Embodied_cognition",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embodiment",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cognition",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hybrid",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative_embodiment",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#body",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#intelligence",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#enactivism",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embodied",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embedded",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#enacted",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#extended_q",
+          "hi:strength": 0.9
         }
       ]
     },
@@ -815,47 +1129,6 @@
       ]
     },
     {
-      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#4e",
-      "@type": [
-        "skos:Concept",
-        "hi:NetworkNode"
-      ],
-      "skos:prefLabel": "4E Cognition",
-      "skos:definition": "Embodied, Embedded, Enacted, Extended—cognition as world-involving practice, not internal representation.",
-      "skos:broader": {
-        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/framework"
-      },
-      "skos:inScheme": {
-        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
-      },
-      "hi:category": "framework",
-      "hi:weight": 1.9,
-      "schema:url": "https://en.wikipedia.org/wiki/Embodied_cognition",
-      "schema:sameAs": "https://en.wikipedia.org/wiki/Embodied_cognition",
-      "skos:related": [
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#enactivism",
-          "hi:strength": 0.95
-        },
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embodied",
-          "hi:strength": 0.9
-        },
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embedded",
-          "hi:strength": 0.9
-        },
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#enacted",
-          "hi:strength": 0.9
-        },
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#extended_q",
-          "hi:strength": 0.9
-        }
-      ]
-    },
-    {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#enactivism",
       "@type": [
         "skos:Concept",
@@ -871,7 +1144,7 @@
       },
       "hi:category": "framework",
       "hi:weight": 1.7,
-      "schema:url": "https://en.wikipedia.org/wiki/Enactivism",
+      "schema:url": "essay.html",
       "schema:sameAs": "https://en.wikipedia.org/wiki/Enactivism",
       "skos:related": [
         {
@@ -1066,47 +1339,6 @@
       ]
     },
     {
-      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
-      "@type": [
-        "skos:Concept",
-        "hi:NetworkNode"
-      ],
-      "skos:prefLabel": "Cognitive Assemblages",
-      "skos:definition": "Hayles: networked arrangements where human and nonhuman cognizers exchange information, producing emergent meaning.",
-      "skos:broader": {
-        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/framework"
-      },
-      "skos:inScheme": {
-        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
-      },
-      "hi:category": "framework",
-      "hi:weight": 2,
-      "schema:url": "https://en.wikipedia.org/wiki/Katherine_Hayles",
-      "schema:sameAs": "https://en.wikipedia.org/wiki/Assemblage_(philosophy)",
-      "skos:related": [
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#distributed",
-          "hi:strength": 0.95
-        },
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#technical_agency",
-          "hi:strength": 0.9
-        },
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative",
-          "hi:strength": 0.85
-        },
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative_embodiment",
-          "hi:strength": 0.95
-        },
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hayles",
-          "hi:strength": 0.95
-        }
-      ]
-    },
-    {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#extended",
       "@type": [
         "skos:Concept",
@@ -1122,7 +1354,7 @@
       },
       "hi:category": "framework",
       "hi:weight": 1.4,
-      "schema:url": "https://en.wikipedia.org/wiki/Extended_mind_thesis",
+      "schema:url": "essay.html",
       "schema:sameAs": "https://en.wikipedia.org/wiki/Extended_mind_thesis",
       "skos:related": [
         {
@@ -1151,7 +1383,7 @@
       },
       "hi:category": "framework",
       "hi:weight": 1.5,
-      "schema:url": "https://en.wikipedia.org/wiki/Andy_Clark",
+      "schema:url": "essay.html",
       "schema:sameAs": "https://en.wikipedia.org/wiki/Cyborg",
       "skos:related": [
         {
@@ -1358,7 +1590,7 @@
       },
       "hi:category": "framework",
       "hi:weight": 1.4,
-      "schema:url": "https://en.wikipedia.org/wiki/Murray_Shanahan",
+      "schema:url": "essay.html",
       "schema:sameAs": "https://en.wikipedia.org/wiki/Philosophy_of_artificial_intelligence",
       "skos:related": [
         {
@@ -1372,79 +1604,6 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#shanahan",
           "hi:strength": 0.9
-        }
-      ]
-    },
-    {
-      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#technosymbiosis",
-      "@type": [
-        "skos:Concept",
-        "hi:NetworkNode"
-      ],
-      "skos:prefLabel": "Techno-symbiosis",
-      "skos:definition": "Hayles: human futures with nonhuman symbionts—biological, technical, and mixed couplings that co-evolve across substrates, institutions, and AI systems.",
-      "skos:broader": {
-        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/framework"
-      },
-      "skos:inScheme": {
-        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
-      },
-      "hi:category": "framework",
-      "hi:weight": 1.6,
-      "schema:url": "https://en.wikipedia.org/wiki/Katherine_Hayles",
-      "schema:sameAs": "https://en.wikipedia.org/wiki/Symbiogenesis",
-      "skos:related": [
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
-          "hi:strength": 0.95
-        },
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#symbiosis",
-          "hi:strength": 0.9
-        },
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#margulis",
-          "hi:strength": 0.85
-        },
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hybrid",
-          "hi:strength": 0.9
-        },
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cyborg",
-          "hi:strength": 0.8
-        },
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ecology",
-          "hi:strength": 0.85
-        },
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hayles",
-          "hi:strength": 0.95
-        },
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai",
-          "hi:strength": 0.85
-        },
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#gen_ai",
-          "hi:strength": 0.8
-        },
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative_embodiment",
-          "hi:strength": 0.8
-        },
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#active_inference",
-          "hi:strength": 0.75
-        },
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#physical_ai",
-          "hi:strength": 0.75
-        },
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#synthetic_cognition",
-          "hi:strength": 0.8
         }
       ]
     },
@@ -1561,7 +1720,7 @@
       },
       "hi:category": "framework",
       "hi:weight": 1.5,
-      "schema:url": "https://en.wikipedia.org/wiki/Affordance",
+      "schema:url": "essay-2.html",
       "schema:sameAs": "https://en.wikipedia.org/wiki/Affordance",
       "skos:related": [
         {
@@ -1976,6 +2135,160 @@
       ]
     },
     {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#linear_transform",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "z = Wx + b",
+      "skos:definition": "The affine transform at the heart of every dense layer: each output unit j computes zⱼ = Σᵢ wⱼᵢ xᵢ + bⱼ (matrix form z = Wx + b)—a weighted sum of inputs plus bias—before a nonlinear activation. The elementary operation of artificial neurons, shared by perceptrons, deep nets, and transformers.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/framework"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "framework",
+      "hi:weight": 1.55,
+      "schema:url": "https://en.wikipedia.org/wiki/Artificial_neuron",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Artificial_neuron",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#neural_networks",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#perceptron",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#machine_learning",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#convolutional_networks",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#transformers",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_ml",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cs",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#synthetic_cognition",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_interpretability",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#model_introspection",
+          "hi:strength": 0.7
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cybernetics",
+          "hi:strength": 0.7
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#rnn_update",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "σ(Wₓx + Wₕh + b)",
+      "skos:definition": "Recurrent update (and LSTM/GRU gate form): σ(Wₓxₜ + Wₕhₜ₋₁ + b)—combine current input xₜ with previous hidden state hₜ₋₁ through separate weight matrices, add bias, then apply nonlinearity σ. Memory through time via recurrence; the sequential counterpart to the feedforward affine layer z = Wx + b. Foundational for sequence modeling; largely succeeded for long context by transformers.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/framework"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "framework",
+      "hi:weight": 1.5,
+      "schema:url": "https://en.wikipedia.org/wiki/Recurrent_neural_network",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Recurrent_neural_network",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#linear_transform",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#neural_networks",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#machine_learning",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#transformers",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#llm",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#gen_ai",
+          "hi:strength": 0.7
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_ml",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cs",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#synthetic_cognition",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#mediation",
+          "hi:strength": 0.7
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cybernetics",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#distributed",
+          "hi:strength": 0.7
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#storytelling",
+          "hi:strength": 0.65
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#music",
+          "hi:strength": 0.65
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#choreography_d",
+          "hi:strength": 0.6
+        }
+      ]
+    },
+    {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#convolutional_networks",
       "@type": [
         "skos:Concept",
@@ -2283,7 +2596,7 @@
       },
       "hi:category": "framework",
       "hi:weight": 1.6,
-      "schema:url": "https://en.wikipedia.org/wiki/Large_language_model",
+      "schema:url": "essay-2.html",
       "schema:sameAs": "https://en.wikipedia.org/wiki/Large_language_model",
       "skos:related": [
         {
@@ -3741,7 +4054,7 @@
       },
       "hi:category": "author",
       "hi:weight": 1.5,
-      "schema:url": "https://en.wikipedia.org/wiki/Andy_Clark",
+      "schema:url": "essay.html",
       "schema:sameAs": "https://en.wikipedia.org/wiki/Andy_Clark",
       "skos:related": [
         {
@@ -3786,8 +4099,8 @@
       },
       "hi:category": "author",
       "hi:weight": 1.4,
-      "schema:url": "https://en.wikipedia.org/wiki/Katherine_Hayles",
-      "schema:sameAs": "https://en.wikipedia.org/wiki/Katherine_Hayles",
+      "schema:url": "essay.html",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/N._Katherine_Hayles",
       "skos:related": [
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai",
@@ -7600,6 +7913,7 @@
       },
       "hi:category": "phenomenon",
       "hi:weight": 1.8,
+      "schema:url": "essay.html",
       "schema:sameAs": "https://en.wikipedia.org/wiki/Mediation",
       "skos:related": [
         {
@@ -8360,6 +8674,10 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#mediation",
           "hi:strength": 0.7
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#arch_design",
+          "hi:strength": 0.95
         }
       ]
     },
@@ -8501,6 +8819,10 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#possible_minds",
           "hi:strength": 0.65
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#philosophical_practice",
+          "hi:strength": 0.95
         }
       ]
     },
@@ -10908,6 +11230,138 @@
       ]
     },
     {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#arch_design",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Architecture & Design",
+      "skos:definition": "Spatial and material practice—shaping rooms, interfaces, prototypes, and infrastructures that choreograph attention, movement, and encounter. Design here is not styling after the fact; it is composing conditions under which hybrid cognition can happen.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "practice",
+      "hi:weight": 1.45,
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Architectural_design",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#design_thinking",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative_embodiment",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#affordances",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#track_space",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#karla",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#wertheim",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#rehearsal",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hybrid",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#literacies",
+          "hi:strength": 0.75
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#philosophical_practice",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Philosophical Practice",
+      "skos:definition": "Philosophical thinking as a lived method—questioning concepts, testing distinctions, staying with ambivalence, and refining vocabulary through dialogue, reading, and writing. Not only a domain of theory, but a practice of inquiry that clarifies agency, embodiment, and world-making in the era of AI.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "practice",
+      "hi:weight": 1.4,
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Philosophy",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#epistemology",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#4e",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cognition",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cultural_critical",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#track_ethics",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#complexity",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative_embodiment",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#clark",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hayles",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#merleau_ponty",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cameron",
+          "hi:strength": 0.75
+        }
+      ]
+    },
+    {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_program",
       "@type": [
         "skos:Concept",
@@ -10922,7 +11376,7 @@
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
       },
       "hi:category": "program",
-      "hi:weight": 2,
+      "hi:weight": 2.2,
       "schema:url": "https://ufl.instructure.com/courses/574408",
       "schema:sameAs": "https://en.wikipedia.org/wiki/Cognitive_science",
       "skos:related": [
@@ -10933,6 +11387,10 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
           "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cota",
+          "hi:strength": 0.95
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#came",
@@ -10948,6 +11406,26 @@
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#wertheim",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#gainesville_circus",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#undergrad_participants",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#grad_participants",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#staff_participants",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#community_participants",
           "hi:strength": 0.9
         },
         {
@@ -10977,138 +11455,6 @@
       ]
     },
     {
-      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#came",
-      "@type": [
-        "skos:Concept",
-        "hi:NetworkNode"
-      ],
-      "skos:prefLabel": "CAME",
-      "skos:definition": "Center for Arts, Migration and Entrepreneurship — lead host institution for Hybrid Intelligences; entrepreneurship and strategic vision across arts, migration, and interdisciplinary innovation.",
-      "skos:broader": {
-        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/program"
-      },
-      "skos:inScheme": {
-        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
-      },
-      "hi:category": "program",
-      "hi:weight": 1.2,
-      "schema:url": "https://arts.ufl.edu/came/",
-      "schema:sameAs": "https://en.wikipedia.org/wiki/Entrepreneurship",
-      "skos:related": [
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cam",
-          "hi:strength": 0.9
-        },
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#art_medicine",
-          "hi:strength": 0.85
-        },
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#interdisciplinary_art",
-          "hi:strength": 0.85
-        },
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#art",
-          "hi:strength": 0.7
-        },
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative",
-          "hi:strength": 0.75
-        }
-      ]
-    },
-    {
-      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cam",
-      "@type": [
-        "skos:Concept",
-        "hi:NetworkNode"
-      ],
-      "skos:prefLabel": "CAM",
-      "skos:definition": "Center for Arts in Medicine — advancing education, research, and practice at the intersections of the arts and health.",
-      "skos:broader": {
-        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/program"
-      },
-      "skos:inScheme": {
-        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
-      },
-      "hi:category": "program",
-      "hi:weight": 1.2,
-      "schema:url": "https://arts.ufl.edu/programs-schools/center-for-arts-in-medicine/",
-      "schema:sameAs": "https://en.wikipedia.org/wiki/Arts_in_health",
-      "skos:related": [
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#art",
-          "hi:strength": 0.8
-        },
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#somatics",
-          "hi:strength": 0.75
-        },
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#erika",
-          "hi:strength": 0.85
-        }
-      ]
-    },
-    {
-      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ignite",
-      "@type": [
-        "skos:Concept",
-        "hi:NetworkNode"
-      ],
-      "skos:prefLabel": "IGNITE Program",
-      "skos:definition": "Engineering Innovation Institute partnership integrating innovation leadership into the program.",
-      "skos:broader": {
-        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/program"
-      },
-      "skos:inScheme": {
-        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
-      },
-      "hi:category": "program",
-      "hi:weight": 1.2,
-      "schema:url": "https://www.eng.ufl.edu/innovation/",
-      "schema:sameAs": "https://en.wikipedia.org/wiki/Innovation",
-      "skos:related": [
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#track_ethics",
-          "hi:strength": 0.75
-        },
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#melissa",
-          "hi:strength": 0.85
-        }
-      ]
-    },
-    {
-      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#wertheim",
-      "@type": [
-        "skos:Concept",
-        "hi:NetworkNode"
-      ],
-      "skos:prefLabel": "Wertheim Laboratory",
-      "skos:definition": "Herbert Wertheim Laboratory for Engineering Excellence—Leadership Studio 370, all program activities.",
-      "skos:broader": {
-        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/program"
-      },
-      "skos:inScheme": {
-        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
-      },
-      "hi:category": "program",
-      "hi:weight": 1.2,
-      "schema:url": "https://www.eng.ufl.edu/wertheim/",
-      "schema:sameAs": "https://en.wikipedia.org/wiki/University_of_Florida",
-      "skos:related": [
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#architecture",
-          "hi:strength": 0.7
-        },
-        {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ignite",
-          "hi:strength": 0.7
-        }
-      ]
-    },
-    {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#track_space",
       "@type": [
         "skos:Concept",
@@ -11123,7 +11469,7 @@
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
       },
       "hi:category": "program",
-      "hi:weight": 1.4,
+      "hi:weight": 1.5,
       "schema:sameAs": "https://en.wikipedia.org/wiki/Spatial_memory",
       "skos:related": [
         {
@@ -11171,7 +11517,7 @@
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
       },
       "hi:category": "program",
-      "hi:weight": 1.4,
+      "hi:weight": 1.5,
       "schema:sameAs": "https://en.wikipedia.org/wiki/Futures_studies",
       "skos:related": [
         {
@@ -11231,7 +11577,7 @@
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
       },
       "hi:category": "program",
-      "hi:weight": 1.4,
+      "hi:weight": 1.5,
       "schema:sameAs": "https://en.wikipedia.org/wiki/Ethics",
       "skos:related": [
         {
@@ -11283,7 +11629,7 @@
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
       },
       "hi:category": "program",
-      "hi:weight": 1.1,
+      "hi:weight": 1.15,
       "schema:sameAs": "https://en.wikipedia.org/wiki/Art_exhibition",
       "skos:related": [
         {
@@ -11293,6 +11639,1040 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hybrid",
           "hi:strength": 0.7
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cota",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "College of the Arts",
+      "skos:definition": "University of Florida College of the Arts (COA / COTA)—home college for Hybrid Intelligences; includes CAME and CAM among its centers and programs.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/organization"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "organization",
+      "hi:weight": 1.5,
+      "schema:url": "https://arts.ufl.edu/",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/University_of_Florida_College_of_the_Arts",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#came",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cam",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#art",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#interdisciplinary_art",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#onye",
+          "hi:strength": 0.85
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#came",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "CAME",
+      "skos:definition": "Center for Arts, Migration and Entrepreneurship — lead host institution for Hybrid Intelligences within the College of the Arts; entrepreneurship and strategic vision across arts, migration, and interdisciplinary innovation.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/organization"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "organization",
+      "hi:weight": 1.35,
+      "schema:url": "https://arts.ufl.edu/came/",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Entrepreneurship",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cam",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#art_medicine",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#interdisciplinary_art",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#art",
+          "hi:strength": 0.7
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative",
+          "hi:strength": 0.75
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cam",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "CAM",
+      "skos:definition": "Center for Arts in Medicine — within the College of the Arts; advancing education, research, and practice at the intersections of the arts and health.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/organization"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "organization",
+      "hi:weight": 1.35,
+      "schema:url": "https://arts.ufl.edu/programs-schools/center-for-arts-in-medicine/",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Arts_in_health",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#art",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#somatics",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#erika",
+          "hi:strength": 0.85
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ignite",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "IGNITE Program",
+      "skos:definition": "Engineering Innovation Institute partnership integrating innovation leadership into the program.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/organization"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "organization",
+      "hi:weight": 1.3,
+      "schema:url": "https://www.eng.ufl.edu/innovation/",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Innovation",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#track_ethics",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#melissa",
+          "hi:strength": 0.85
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#wertheim",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Wertheim Laboratory",
+      "skos:definition": "Herbert Wertheim Laboratory for Engineering Excellence—Leadership Studio 370, all program activities.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/organization"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "organization",
+      "hi:weight": 1.3,
+      "schema:url": "https://www.eng.ufl.edu/wertheim/",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/University_of_Florida",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#architecture",
+          "hi:strength": 0.7
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ignite",
+          "hi:strength": 0.7
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#gainesville_circus",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Gainesville Circus Center",
+      "skos:definition": "External partner organization for embodied circus practice—partner acrobatics, object manipulation, and ensemble training in community with Hybrid Intelligences.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/organization"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "organization",
+      "hi:weight": 1.2,
+      "schema:url": "https://www.gainesvillecircus.com/",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Circus",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cheval_bailie",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#circus_arts",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#track_space",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#juggling",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embodiment",
+          "hi:strength": 0.75
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#undergrad_participants",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Undergraduate Students",
+      "skos:definition": "Undergraduate students in Art and Art History, Industrial Systems Engineering, Dance and Museum Studies, Computer Science, Industrial Systems and Political Science—bringing studio, engineering, and civic lenses into hybrid coupling.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/participant"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "participant",
+      "hi:weight": 1.45,
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Undergraduate_education",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#grad_participants",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#art",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#dance",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cs",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_ml",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#pedagogy",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#reception",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cota",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#community_participants",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_art_history",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_ise",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_dance_museum",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_cs",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_ise_polisci",
+          "hi:strength": 0.95
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#grad_participants",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Graduate Students",
+      "skos:definition": "Graduate students in Human-Centered Computing, Art History, Chemical Engineering, Machine Learning and Health Outcomes—research and practice at the intersections of computation, culture, learning systems, and care.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/participant"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "participant",
+      "hi:weight": 1.4,
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Postgraduate_education",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cs",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#art_medicine",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_ml",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#machine_learning",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#neural_networks",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#pedagogy",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#reception",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#epistemology",
+          "hi:strength": 0.7
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#staff_participants",
+          "hi:strength": 0.7
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_hcc",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_art_history",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_chem_eng",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_ml",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_health_outcomes",
+          "hi:strength": 0.95
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#staff_participants",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "UF Staff",
+      "skos:definition": "Current and retired UF staff in Lighting Design, Nursing, Public Health and Dance Therapy—institutional knowledge meeting embodied and clinical practice.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/participant"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "participant",
+      "hi:weight": 1.3,
+      "schema:sameAs": "https://en.wikipedia.org/wiki/University_of_Florida",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#art_medicine",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#dance",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#somatics",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#community",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#reception",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_lighting",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_nursing",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_public_health",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_dance_therapy",
+          "hi:strength": 0.95
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#community_participants",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Community & Alumni",
+      "skos:definition": "Community members, alumnae and former faculty in IT, Digital Media and AI, Choreography and Film, Library Sciences and Digital Art—extending the program beyond campus into local and alumni ecologies.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/participant"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "participant",
+      "hi:weight": 1.35,
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Community",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#community",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#generative_arts",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#choreography",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_art",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_ml",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#reception",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#interdisciplinary_art",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#staff_participants",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_it",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_digital_media_ai",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_choreo_film",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_library",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_digital_art",
+          "hi:strength": 0.95
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_art_history",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Art & Art History",
+      "skos:definition": "Background of undergraduate and graduate participants—studio practice, visual culture, and historical inquiry into art.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/background"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "background",
+      "hi:weight": 1.25,
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Art_history",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#art",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_digital_art",
+          "hi:strength": 0.7
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_ise",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Industrial Systems Engineering",
+      "skos:definition": "Undergraduate background—systems design, optimization, and socio-technical process across industrial and organizational settings.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/background"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "background",
+      "hi:weight": 1.2,
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Industrial_engineering",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cs",
+          "hi:strength": 0.7
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#design_thinking",
+          "hi:strength": 0.75
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_dance_museum",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Dance & Museum Studies",
+      "skos:definition": "Undergraduate background—embodied performance joined with curation, collections, and public cultural institutions.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/background"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "background",
+      "hi:weight": 1.2,
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Museum_studies",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#dance",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#curation",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_dance_therapy",
+          "hi:strength": 0.75
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_cs",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Computer Science",
+      "skos:definition": "Undergraduate background—algorithms, systems, and computational thinking as a formative background distinct from the conceptual Domains ring.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/background"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "background",
+      "hi:weight": 1.25,
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Computer_science",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cs",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_ml",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_hcc",
+          "hi:strength": 0.8
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_ise_polisci",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Industrial Systems & Political Science",
+      "skos:definition": "Undergraduate double lens—industrial systems with civic and political analysis of institutions, power, and public life.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/background"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "background",
+      "hi:weight": 1.15,
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Political_science",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_ise",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#law",
+          "hi:strength": 0.7
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_hcc",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Human-Centered Computing",
+      "skos:definition": "Graduate background—interaction, usability, and computing designed around human practices, bodies, and contexts.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/background"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "background",
+      "hi:weight": 1.25,
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cs",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_ml",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#affordances",
+          "hi:strength": 0.7
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_chem_eng",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Chemical Engineering",
+      "skos:definition": "Graduate background—process, materials, and molecular-scale engineering meeting hybrid cognition and care.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/background"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "background",
+      "hi:weight": 1.15,
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Chemical_engineering",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cs",
+          "hi:strength": 0.6
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#art_medicine",
+          "hi:strength": 0.65
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_ml",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Machine Learning",
+      "skos:definition": "Graduate background—statistical learning and model-building as institutional training, linked to the Machine Learning framework concept.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/background"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "background",
+      "hi:weight": 1.25,
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Machine_learning",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#machine_learning",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#neural_networks",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_ml",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_digital_media_ai",
+          "hi:strength": 0.8
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_health_outcomes",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Health Outcomes",
+      "skos:definition": "Graduate background—measuring and improving health, care pathways, and wellbeing at clinical and population scales.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/background"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "background",
+      "hi:weight": 1.2,
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Health_outcome",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#art_medicine",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_nursing",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_public_health",
+          "hi:strength": 0.85
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_lighting",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Lighting Design",
+      "skos:definition": "UF staff background—theatrical and spatial light as compositional practice shaping attention, atmosphere, and stage ecology.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/background"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "background",
+      "hi:weight": 1.15,
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Lighting_designer",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#art",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#architecture",
+          "hi:strength": 0.7
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_nursing",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Nursing",
+      "skos:definition": "UF staff background—clinical care, embodiment, and relational knowledge in health systems.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/background"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "background",
+      "hi:weight": 1.15,
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Nursing",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#art_medicine",
+          "hi:strength": 0.9
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_public_health",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Public Health",
+      "skos:definition": "UF staff background—population health, prevention, and community wellbeing beyond the individual clinic.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/background"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "background",
+      "hi:weight": 1.15,
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Public_health",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#art_medicine",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#community",
+          "hi:strength": 0.8
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_dance_therapy",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Dance Therapy",
+      "skos:definition": "UF staff background—dance/movement as therapeutic practice coupling body, psyche, and care.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/background"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "background",
+      "hi:weight": 1.15,
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Dance_therapy",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#dance",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#somatics",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#art_medicine",
+          "hi:strength": 0.85
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_it",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Information Technology",
+      "skos:definition": "Community / alumni background—systems, networks, and infrastructure that keep institutions and media running.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/background"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "background",
+      "hi:weight": 1.15,
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Information_technology",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cs",
+          "hi:strength": 0.85
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_digital_media_ai",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Digital Media & AI",
+      "skos:definition": "Community / alumni background—digital media practice intersecting generative and machine-learning systems.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/background"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "background",
+      "hi:weight": 1.2,
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Digital_media",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_ml",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#generative_arts",
+          "hi:strength": 0.85
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_choreo_film",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Choreography & Film",
+      "skos:definition": "Community / alumni background—moving-image and choreographic composition across stage and screen.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/background"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "background",
+      "hi:weight": 1.2,
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Choreography",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#choreography",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#choreography_d",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#storytelling",
+          "hi:strength": 0.8
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_library",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Library Sciences",
+      "skos:definition": "Community / alumni background—archives, information organization, access, and cultural memory institutions.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/background"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "background",
+      "hi:weight": 1.15,
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Library_science",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#epistemology",
+          "hi:strength": 0.7
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#curation",
+          "hi:strength": 0.85
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bg_digital_art",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Digital Art",
+      "skos:definition": "Community / alumni background—art practice through code, screens, networks, and computational media.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/background"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "background",
+      "hi:weight": 1.2,
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Digital_art",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_art",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#generative_arts",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#interdisciplinary_art",
+          "hi:strength": 0.8
         }
       ]
     },
@@ -11338,6 +12718,10 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#came",
           "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cota",
+          "hi:strength": 0.9
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#choreography",
@@ -11771,6 +13155,7 @@
       },
       "hi:category": "tension",
       "hi:weight": 0.9,
+      "schema:url": "essay.html",
       "schema:sameAs": "https://en.wikipedia.org/wiki/Mind%E2%80%93body_dualism",
       "skos:related": [
         {
@@ -11823,6 +13208,7 @@
       },
       "hi:category": "tension",
       "hi:weight": 0.9,
+      "schema:url": "essay.html",
       "schema:sameAs": "https://en.wikipedia.org/wiki/Biological_essentialism",
       "skos:related": [
         {

@@ -20,7 +20,10 @@ const BASE = "https://marlonbarrios.github.io/hybrid-intelligences/ontology#";
 const DOC = "https://marlonbarrios.github.io/hybrid-intelligences/ontology";
 
 const CATEGORY_DESCS = {
-  program: "Sessions, tracks, hosts, and public events of the Hybrid Intelligences program.",
+  program: "The Hybrid Intelligences program, its three tracks, and public events.",
+  organization: "Host institutions and partners—College of the Arts (COA), CAME, CAM, IGNITE, Wertheim Laboratory, and Gainesville Circus Center.",
+  participant: "Cohort of the Hybrid Intelligences program—undergraduate and graduate students, UF staff, community members, alumni, and former faculty across arts, engineering, health, and media.",
+  background: "Formative backgrounds of the Hybrid Intelligences cohort—academic majors, professional formations, and community practices that participants bring into the room.",
   premise: "Core starting ideas—intelligence as coupling across bodies, tools, and worlds.",
   framework: "Conceptual models for cognition, AI, embodiment, and world-making.",
   tension: "Inadequate or contested positions the network holds open to critique.",
@@ -34,6 +37,9 @@ const CATEGORY_DESCS = {
 
 const CAT_CLASS = {
   program: "ProgramConcept",
+  organization: "OrganizationConcept",
+  participant: "ParticipantConcept",
+  background: "BackgroundConcept",
   premise: "PremiseConcept",
   facilitator: "FacilitatorConcept",
   practice: "PracticeConcept",

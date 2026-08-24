@@ -13,8 +13,8 @@
   dc:description "OWL 2 ontology of concepts, categories, and weighted relations from the Hybrid Intelligences program." ;
   owl:versionInfo "1.0.0" ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  hi:nodeCount "192"^^xsd:integer ;
-  hi:edgeCount "1988"^^xsd:integer .
+  hi:nodeCount "221"^^xsd:integer ;
+  hi:edgeCount "2172"^^xsd:integer .
 
 hi:Concept a owl:Class ;
   rdfs:label "Concept"@en ;
@@ -27,12 +27,27 @@ hi:CategoryConcept a owl:Class ;
 
 hi:ProgramConcept a owl:Class ;
   rdfs:label "Program"@en ;
-  rdfs:comment "Sessions, tracks, hosts, and public events of the Hybrid Intelligences program."@en ;
+  rdfs:comment "The Hybrid Intelligences program, its three tracks, and public events."@en ;
+  rdfs:subClassOf hi:Concept .
+
+hi:OrganizationConcept a owl:Class ;
+  rdfs:label "Organizations"@en ;
+  rdfs:comment "Host institutions and partners—College of the Arts (COA), CAME, CAM, IGNITE, Wertheim Laboratory, and Gainesville Circus Center."@en ;
   rdfs:subClassOf hi:Concept .
 
 hi:PremiseConcept a owl:Class ;
   rdfs:label "Premise"@en ;
   rdfs:comment "Core starting ideas—intelligence as coupling across bodies, tools, and worlds."@en ;
+  rdfs:subClassOf hi:Concept .
+
+hi:ParticipantConcept a owl:Class ;
+  rdfs:label "Participants"@en ;
+  rdfs:comment "Cohort of the Hybrid Intelligences program—undergraduate and graduate students, UF staff, community members, alumni, and former faculty across arts, engineering, health, and media."@en ;
+  rdfs:subClassOf hi:Concept .
+
+hi:BackgroundConcept a owl:Class ;
+  rdfs:label "Backgrounds"@en ;
+  rdfs:comment "Formative backgrounds of the Hybrid Intelligences cohort—academic majors, professional formations, and community practices that participants bring into the room."@en ;
   rdfs:subClassOf hi:Concept .
 
 hi:FacilitatorConcept a owl:Class ;
@@ -75,7 +90,10 @@ hi:AuthorConcept a owl:Class ;
   rdfs:comment "Thinkers, artists, and researchers linked to concepts in the network."@en ;
   rdfs:subClassOf hi:Concept .
 
+hi:ProgramConcept owl:disjointWith hi:OrganizationConcept .
 hi:ProgramConcept owl:disjointWith hi:PremiseConcept .
+hi:ProgramConcept owl:disjointWith hi:ParticipantConcept .
+hi:ProgramConcept owl:disjointWith hi:BackgroundConcept .
 hi:ProgramConcept owl:disjointWith hi:FacilitatorConcept .
 hi:ProgramConcept owl:disjointWith hi:PracticeConcept .
 hi:ProgramConcept owl:disjointWith hi:TensionConcept .
@@ -84,6 +102,19 @@ hi:ProgramConcept owl:disjointWith hi:PhenomenonConcept .
 hi:ProgramConcept owl:disjointWith hi:DomainConcept .
 hi:ProgramConcept owl:disjointWith hi:FrameworkConcept .
 hi:ProgramConcept owl:disjointWith hi:AuthorConcept .
+hi:OrganizationConcept owl:disjointWith hi:PremiseConcept .
+hi:OrganizationConcept owl:disjointWith hi:ParticipantConcept .
+hi:OrganizationConcept owl:disjointWith hi:BackgroundConcept .
+hi:OrganizationConcept owl:disjointWith hi:FacilitatorConcept .
+hi:OrganizationConcept owl:disjointWith hi:PracticeConcept .
+hi:OrganizationConcept owl:disjointWith hi:TensionConcept .
+hi:OrganizationConcept owl:disjointWith hi:QualityConcept .
+hi:OrganizationConcept owl:disjointWith hi:PhenomenonConcept .
+hi:OrganizationConcept owl:disjointWith hi:DomainConcept .
+hi:OrganizationConcept owl:disjointWith hi:FrameworkConcept .
+hi:OrganizationConcept owl:disjointWith hi:AuthorConcept .
+hi:PremiseConcept owl:disjointWith hi:ParticipantConcept .
+hi:PremiseConcept owl:disjointWith hi:BackgroundConcept .
 hi:PremiseConcept owl:disjointWith hi:FacilitatorConcept .
 hi:PremiseConcept owl:disjointWith hi:PracticeConcept .
 hi:PremiseConcept owl:disjointWith hi:TensionConcept .
@@ -92,6 +123,23 @@ hi:PremiseConcept owl:disjointWith hi:PhenomenonConcept .
 hi:PremiseConcept owl:disjointWith hi:DomainConcept .
 hi:PremiseConcept owl:disjointWith hi:FrameworkConcept .
 hi:PremiseConcept owl:disjointWith hi:AuthorConcept .
+hi:ParticipantConcept owl:disjointWith hi:BackgroundConcept .
+hi:ParticipantConcept owl:disjointWith hi:FacilitatorConcept .
+hi:ParticipantConcept owl:disjointWith hi:PracticeConcept .
+hi:ParticipantConcept owl:disjointWith hi:TensionConcept .
+hi:ParticipantConcept owl:disjointWith hi:QualityConcept .
+hi:ParticipantConcept owl:disjointWith hi:PhenomenonConcept .
+hi:ParticipantConcept owl:disjointWith hi:DomainConcept .
+hi:ParticipantConcept owl:disjointWith hi:FrameworkConcept .
+hi:ParticipantConcept owl:disjointWith hi:AuthorConcept .
+hi:BackgroundConcept owl:disjointWith hi:FacilitatorConcept .
+hi:BackgroundConcept owl:disjointWith hi:PracticeConcept .
+hi:BackgroundConcept owl:disjointWith hi:TensionConcept .
+hi:BackgroundConcept owl:disjointWith hi:QualityConcept .
+hi:BackgroundConcept owl:disjointWith hi:PhenomenonConcept .
+hi:BackgroundConcept owl:disjointWith hi:DomainConcept .
+hi:BackgroundConcept owl:disjointWith hi:FrameworkConcept .
+hi:BackgroundConcept owl:disjointWith hi:AuthorConcept .
 hi:FacilitatorConcept owl:disjointWith hi:PracticeConcept .
 hi:FacilitatorConcept owl:disjointWith hi:TensionConcept .
 hi:FacilitatorConcept owl:disjointWith hi:QualityConcept .
@@ -180,16 +228,25 @@ hi:edgeCount a owl:DatatypeProperty ;
 hi:scheme a owl:NamedIndividual, skos:ConceptScheme ;
   rdfs:label "Hybrid Intelligences Concept Scheme"@en ;
   skos:prefLabel "Hybrid Intelligences Concept Scheme"@en ;
-  skos:hasTopConcept hi:category/program, hi:category/premise, hi:category/facilitator, hi:category/practice, hi:category/tension, hi:category/quality, hi:category/phenomenon, hi:category/domain, hi:category/framework, hi:category/author .
+  skos:hasTopConcept hi:category/program, hi:category/organization, hi:category/premise, hi:category/participant, hi:category/background, hi:category/facilitator, hi:category/practice, hi:category/tension, hi:category/quality, hi:category/phenomenon, hi:category/domain, hi:category/framework, hi:category/author .
 
 hi:category/program a owl:NamedIndividual, hi:CategoryConcept, hi:ProgramConcept ;
   rdfs:label "Program"@en ;
   skos:prefLabel "Program"@en ;
-  skos:definition "Sessions, tracks, hosts, and public events of the Hybrid Intelligences program."@en ;
+  skos:definition "The Hybrid Intelligences program, its three tracks, and public events."@en ;
   skos:inScheme hi:scheme ;
   skos:topConceptOf hi:scheme ;
-  hi:ringFraction "0.13"^^xsd:decimal ;
+  hi:ringFraction "0.09"^^xsd:decimal ;
   hi:ringOrder "0"^^xsd:integer .
+
+hi:category/organization a owl:NamedIndividual, hi:CategoryConcept, hi:OrganizationConcept ;
+  rdfs:label "Organizations"@en ;
+  skos:prefLabel "Organizations"@en ;
+  skos:definition "Host institutions and partners—College of the Arts (COA), CAME, CAM, IGNITE, Wertheim Laboratory, and Gainesville Circus Center."@en ;
+  skos:inScheme hi:scheme ;
+  skos:topConceptOf hi:scheme ;
+  hi:ringFraction "0.16"^^xsd:decimal ;
+  hi:ringOrder "1"^^xsd:integer .
 
 hi:category/premise a owl:NamedIndividual, hi:CategoryConcept, hi:PremiseConcept ;
   rdfs:label "Premise"@en ;
@@ -197,8 +254,26 @@ hi:category/premise a owl:NamedIndividual, hi:CategoryConcept, hi:PremiseConcept
   skos:definition "Core starting ideas—intelligence as coupling across bodies, tools, and worlds."@en ;
   skos:inScheme hi:scheme ;
   skos:topConceptOf hi:scheme ;
-  hi:ringFraction "0.22"^^xsd:decimal ;
-  hi:ringOrder "1"^^xsd:integer .
+  hi:ringFraction "0.23"^^xsd:decimal ;
+  hi:ringOrder "2"^^xsd:integer .
+
+hi:category/participant a owl:NamedIndividual, hi:CategoryConcept, hi:ParticipantConcept ;
+  rdfs:label "Participants"@en ;
+  skos:prefLabel "Participants"@en ;
+  skos:definition "Cohort of the Hybrid Intelligences program—undergraduate and graduate students, UF staff, community members, alumni, and former faculty across arts, engineering, health, and media."@en ;
+  skos:inScheme hi:scheme ;
+  skos:topConceptOf hi:scheme ;
+  hi:ringFraction "0.3"^^xsd:decimal ;
+  hi:ringOrder "3"^^xsd:integer .
+
+hi:category/background a owl:NamedIndividual, hi:CategoryConcept, hi:BackgroundConcept ;
+  rdfs:label "Backgrounds"@en ;
+  skos:prefLabel "Backgrounds"@en ;
+  skos:definition "Formative backgrounds of the Hybrid Intelligences cohort—academic majors, professional formations, and community practices that participants bring into the room."@en ;
+  skos:inScheme hi:scheme ;
+  skos:topConceptOf hi:scheme ;
+  hi:ringFraction "0.37"^^xsd:decimal ;
+  hi:ringOrder "4"^^xsd:integer .
 
 hi:category/facilitator a owl:NamedIndividual, hi:CategoryConcept, hi:FacilitatorConcept ;
   rdfs:label "Facilitators"@en ;
@@ -206,8 +281,8 @@ hi:category/facilitator a owl:NamedIndividual, hi:CategoryConcept, hi:Facilitato
   skos:definition "Hybrid Intelligences session leaders and guest facilitators."@en ;
   skos:inScheme hi:scheme ;
   skos:topConceptOf hi:scheme ;
-  hi:ringFraction "0.31"^^xsd:decimal ;
-  hi:ringOrder "2"^^xsd:integer .
+  hi:ringFraction "0.44"^^xsd:decimal ;
+  hi:ringOrder "5"^^xsd:integer .
 
 hi:category/practice a owl:NamedIndividual, hi:CategoryConcept, hi:PracticeConcept ;
   rdfs:label "Practices"@en ;
@@ -215,8 +290,8 @@ hi:category/practice a owl:NamedIndividual, hi:CategoryConcept, hi:PracticeConce
   skos:definition "Methods and habits—rehearsal, somatics, pedagogy, cultural critique."@en ;
   skos:inScheme hi:scheme ;
   skos:topConceptOf hi:scheme ;
-  hi:ringFraction "0.4"^^xsd:decimal ;
-  hi:ringOrder "3"^^xsd:integer .
+  hi:ringFraction "0.51"^^xsd:decimal ;
+  hi:ringOrder "6"^^xsd:integer .
 
 hi:category/tension a owl:NamedIndividual, hi:CategoryConcept, hi:TensionConcept ;
   rdfs:label "Tensions"@en ;
@@ -224,8 +299,8 @@ hi:category/tension a owl:NamedIndividual, hi:CategoryConcept, hi:TensionConcept
   skos:definition "Inadequate or contested positions the network holds open to critique."@en ;
   skos:inScheme hi:scheme ;
   skos:topConceptOf hi:scheme ;
-  hi:ringFraction "0.49"^^xsd:decimal ;
-  hi:ringOrder "4"^^xsd:integer .
+  hi:ringFraction "0.58"^^xsd:decimal ;
+  hi:ringOrder "7"^^xsd:integer .
 
 hi:category/quality a owl:NamedIndividual, hi:CategoryConcept, hi:QualityConcept ;
   rdfs:label "Qualities"@en ;
@@ -233,8 +308,8 @@ hi:category/quality a owl:NamedIndividual, hi:CategoryConcept, hi:QualityConcept
   skos:definition "Traits of hybrid cognition—embodied, situated, distributed, critical."@en ;
   skos:inScheme hi:scheme ;
   skos:topConceptOf hi:scheme ;
-  hi:ringFraction "0.58"^^xsd:decimal ;
-  hi:ringOrder "5"^^xsd:integer .
+  hi:ringFraction "0.65"^^xsd:decimal ;
+  hi:ringOrder "8"^^xsd:integer .
 
 hi:category/phenomenon a owl:NamedIndividual, hi:CategoryConcept, hi:PhenomenonConcept ;
   rdfs:label "Phenomena"@en ;
@@ -242,8 +317,8 @@ hi:category/phenomenon a owl:NamedIndividual, hi:CategoryConcept, hi:PhenomenonC
   skos:definition "Observable dynamics—mediation, symbiosis, community, theory of mind."@en ;
   skos:inScheme hi:scheme ;
   skos:topConceptOf hi:scheme ;
-  hi:ringFraction "0.67"^^xsd:decimal ;
-  hi:ringOrder "6"^^xsd:integer .
+  hi:ringFraction "0.72"^^xsd:decimal ;
+  hi:ringOrder "9"^^xsd:integer .
 
 hi:category/domain a owl:NamedIndividual, hi:CategoryConcept, hi:DomainConcept ;
   rdfs:label "Domains"@en ;
@@ -251,8 +326,8 @@ hi:category/domain a owl:NamedIndividual, hi:CategoryConcept, hi:DomainConcept ;
   skos:definition "Fields of practice and inquiry—art, law, ecology, AI, choreography."@en ;
   skos:inScheme hi:scheme ;
   skos:topConceptOf hi:scheme ;
-  hi:ringFraction "0.76"^^xsd:decimal ;
-  hi:ringOrder "7"^^xsd:integer .
+  hi:ringFraction "0.8"^^xsd:decimal ;
+  hi:ringOrder "10"^^xsd:integer .
 
 hi:category/framework a owl:NamedIndividual, hi:CategoryConcept, hi:FrameworkConcept ;
   rdfs:label "Framework"@en ;
@@ -260,8 +335,8 @@ hi:category/framework a owl:NamedIndividual, hi:CategoryConcept, hi:FrameworkCon
   skos:definition "Conceptual models for cognition, AI, embodiment, and world-making."@en ;
   skos:inScheme hi:scheme ;
   skos:topConceptOf hi:scheme ;
-  hi:ringFraction "0.85"^^xsd:decimal ;
-  hi:ringOrder "8"^^xsd:integer .
+  hi:ringFraction "0.87"^^xsd:decimal ;
+  hi:ringOrder "11"^^xsd:integer .
 
 hi:category/author a owl:NamedIndividual, hi:CategoryConcept, hi:AuthorConcept ;
   rdfs:label "Authors/Artists"@en ;
@@ -269,8 +344,8 @@ hi:category/author a owl:NamedIndividual, hi:CategoryConcept, hi:AuthorConcept ;
   skos:definition "Thinkers, artists, and researchers linked to concepts in the network."@en ;
   skos:inScheme hi:scheme ;
   skos:topConceptOf hi:scheme ;
-  hi:ringFraction "0.94"^^xsd:decimal ;
-  hi:ringOrder "9"^^xsd:integer .
+  hi:ringFraction "0.95"^^xsd:decimal ;
+  hi:ringOrder "12"^^xsd:integer .
 
 hi:coupling a owl:NamedIndividual, hi:PremiseConcept ;
   rdfs:label "Intelligence as Coupling"@en ;
@@ -282,6 +357,7 @@ hi:coupling a owl:NamedIndividual, hi:PremiseConcept ;
   skos:inScheme hi:scheme ;
   hi:networkWeight "2.2"^^xsd:decimal
  ;
+  schema:url <essay.html> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Distributed_cognition>
  .
 
@@ -309,6 +385,7 @@ hi:creative_embodiment a owl:NamedIndividual, hi:PremiseConcept ;
   skos:inScheme hi:scheme ;
   hi:networkWeight "1.9"^^xsd:decimal
  ;
+  schema:url <essay.html> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Embodied_cognition>
  .
 
@@ -368,18 +445,74 @@ hi:hybrid_coupling a owl:NamedIndividual, hi:PremiseConcept ;
   schema:sameAs <https://en.wikipedia.org/wiki/Hybrid>
  .
 
-hi:cognition a owl:NamedIndividual, hi:FrameworkConcept ;
-  rdfs:label "Cognition"@en ;
-  skos:prefLabel "Cognition"@en ;
-  skos:definition "Processes of knowing, perceiving, remembering, imagining, and deciding—historically located in brains, now understood as spanning bodies, environments, tools, and collectives."@en ;
-  skos:broader hi:category/framework ;
-  hi:inCategory hi:category/framework ;
+hi:assemblage a owl:NamedIndividual, hi:PremiseConcept ;
+  rdfs:label "Cognitive Assemblages"@en ;
+  skos:prefLabel "Cognitive Assemblages"@en ;
+  skos:definition "N. Katherine Hayles: cognition as interpretation of information within contexts that connect it with meaning—networked arrangements in which human and nonhuman cognizers exchange, process, select, and transform information, producing emergent meaning and action. Intelligence does not belong to one sovereign subject; it circulates through bodies, sensors, interfaces, datasets, institutions, and environments."@en ;
+  skos:broader hi:category/premise ;
+  hi:inCategory hi:category/premise ;
   hi:schemeMember hi:scheme ;
   skos:inScheme hi:scheme ;
-  hi:networkWeight "1.9"^^xsd:decimal
+  hi:networkWeight "2.05"^^xsd:decimal
  ;
-  schema:url <https://en.wikipedia.org/wiki/Cognition> ;
+  schema:url <essay.html> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/N._Katherine_Hayles>
+ .
+
+hi:assemblage_form a owl:NamedIndividual, hi:PremiseConcept ;
+  rdfs:label "Assemblage"@en ;
+  skos:prefLabel "Assemblage"@en ;
+  skos:definition "A composition of heterogeneous parts—bodies, tools, institutions, laws, media, atmospheres—whose relations co-produce capacities and meaning. Not a collection of fixed objects, but a dynamic arrangement; related to Hayles’s cognitive assemblages and to broader assemblage thinking (Latour, Deleuze & Guattari)."@en ;
+  skos:broader hi:category/premise ;
+  hi:inCategory hi:category/premise ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.85"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Assemblage_(philosophy)> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Assemblage_(philosophy)>
+ .
+
+hi:technosymbiosis a owl:NamedIndividual, hi:PremiseConcept ;
+  rdfs:label "Techno-symbiosis"@en ;
+  skos:prefLabel "Techno-symbiosis"@en ;
+  skos:definition "N. Katherine Hayles: human futures with nonhuman symbionts—biological, technical, and mixed couplings that co-evolve across substrates, institutions, and AI systems. Techno-symbiosis names interdependence without sameness: humans and machines do not collapse into one another, yet their metabolisms of information, energy, and action become mutually constitutive."@en ;
+  skos:broader hi:category/premise ;
+  hi:inCategory hi:category/premise ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.95"^^xsd:decimal
+ ;
+  schema:url <essay.html> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/N._Katherine_Hayles>
+ .
+
+hi:cognition a owl:NamedIndividual, hi:PremiseConcept ;
+  rdfs:label "Cognition"@en ;
+  skos:prefLabel "Cognition"@en ;
+  skos:definition "Processes of knowing, perceiving, remembering, imagining, and deciding—historically located in brains, now understood as spanning bodies, environments, tools, and collectives. In this program, cognition is a world-involving practice, not an abstract operation floating above situation."@en ;
+  skos:broader hi:category/premise ;
+  hi:inCategory hi:category/premise ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.95"^^xsd:decimal
+ ;
+  schema:url <essay.html> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Cognition>
+ .
+
+hi:4e a owl:NamedIndividual, hi:PremiseConcept ;
+  rdfs:label "4E Cognition"@en ;
+  skos:prefLabel "4E Cognition"@en ;
+  skos:definition "Embodied cognition as four coupled claims: Embodied (depends on sensorimotor capacities of living bodies), Embedded (emerges within environments that constrain and enable action), Enacted (organisms bring forth meaningful worlds through interaction histories), and Extended (tools, inscriptions, devices, media, and social structures can participate in cognitive processes). Challenges the classical image of mind as internal representation in a brain-computer."@en ;
+  skos:broader hi:category/premise ;
+  hi:inCategory hi:category/premise ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "2"^^xsd:decimal
+ ;
+  schema:url <essay.html> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Embodied_cognition>
  .
 
 hi:creativity a owl:NamedIndividual, hi:FrameworkConcept ;
@@ -396,20 +529,6 @@ hi:creativity a owl:NamedIndividual, hi:FrameworkConcept ;
   schema:sameAs <https://en.wikipedia.org/wiki/Creativity>
  .
 
-hi:4e a owl:NamedIndividual, hi:FrameworkConcept ;
-  rdfs:label "4E Cognition"@en ;
-  skos:prefLabel "4E Cognition"@en ;
-  skos:definition "Embodied, Embedded, Enacted, Extended—cognition as world-involving practice, not internal representation."@en ;
-  skos:broader hi:category/framework ;
-  hi:inCategory hi:category/framework ;
-  hi:schemeMember hi:scheme ;
-  skos:inScheme hi:scheme ;
-  hi:networkWeight "1.9"^^xsd:decimal
- ;
-  schema:url <https://en.wikipedia.org/wiki/Embodied_cognition> ;
-  schema:sameAs <https://en.wikipedia.org/wiki/Embodied_cognition>
- .
-
 hi:enactivism a owl:NamedIndividual, hi:FrameworkConcept ;
   rdfs:label "Enactivism"@en ;
   skos:prefLabel "Enactivism"@en ;
@@ -420,7 +539,7 @@ hi:enactivism a owl:NamedIndividual, hi:FrameworkConcept ;
   skos:inScheme hi:scheme ;
   hi:networkWeight "1.7"^^xsd:decimal
  ;
-  schema:url <https://en.wikipedia.org/wiki/Enactivism> ;
+  schema:url <essay.html> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Enactivism>
  .
 
@@ -451,20 +570,6 @@ hi:active_inference a owl:NamedIndividual, hi:FrameworkConcept ;
   schema:sameAs <https://en.wikipedia.org/wiki/Active_inference>
  .
 
-hi:assemblage a owl:NamedIndividual, hi:FrameworkConcept ;
-  rdfs:label "Cognitive Assemblages"@en ;
-  skos:prefLabel "Cognitive Assemblages"@en ;
-  skos:definition "Hayles: networked arrangements where human and nonhuman cognizers exchange information, producing emergent meaning."@en ;
-  skos:broader hi:category/framework ;
-  hi:inCategory hi:category/framework ;
-  hi:schemeMember hi:scheme ;
-  skos:inScheme hi:scheme ;
-  hi:networkWeight "2"^^xsd:decimal
- ;
-  schema:url <https://en.wikipedia.org/wiki/Katherine_Hayles> ;
-  schema:sameAs <https://en.wikipedia.org/wiki/Assemblage_(philosophy)>
- .
-
 hi:extended a owl:NamedIndividual, hi:FrameworkConcept ;
   rdfs:label "Extended Mind"@en ;
   skos:prefLabel "Extended Mind"@en ;
@@ -475,7 +580,7 @@ hi:extended a owl:NamedIndividual, hi:FrameworkConcept ;
   skos:inScheme hi:scheme ;
   hi:networkWeight "1.4"^^xsd:decimal
  ;
-  schema:url <https://en.wikipedia.org/wiki/Extended_mind_thesis> ;
+  schema:url <essay.html> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Extended_mind_thesis>
  .
 
@@ -489,7 +594,7 @@ hi:cyborg a owl:NamedIndividual, hi:FrameworkConcept ;
   skos:inScheme hi:scheme ;
   hi:networkWeight "1.5"^^xsd:decimal
  ;
-  schema:url <https://en.wikipedia.org/wiki/Andy_Clark> ;
+  schema:url <essay.html> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Cyborg>
  .
 
@@ -531,22 +636,8 @@ hi:possible_minds a owl:NamedIndividual, hi:FrameworkConcept ;
   skos:inScheme hi:scheme ;
   hi:networkWeight "1.4"^^xsd:decimal
  ;
-  schema:url <https://en.wikipedia.org/wiki/Murray_Shanahan> ;
+  schema:url <essay.html> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Philosophy_of_artificial_intelligence>
- .
-
-hi:technosymbiosis a owl:NamedIndividual, hi:FrameworkConcept ;
-  rdfs:label "Techno-symbiosis"@en ;
-  skos:prefLabel "Techno-symbiosis"@en ;
-  skos:definition "Hayles: human futures with nonhuman symbionts—biological, technical, and mixed couplings that co-evolve across substrates, institutions, and AI systems."@en ;
-  skos:broader hi:category/framework ;
-  hi:inCategory hi:category/framework ;
-  hi:schemeMember hi:scheme ;
-  skos:inScheme hi:scheme ;
-  hi:networkWeight "1.6"^^xsd:decimal
- ;
-  schema:url <https://en.wikipedia.org/wiki/Katherine_Hayles> ;
-  schema:sameAs <https://en.wikipedia.org/wiki/Symbiogenesis>
  .
 
 hi:holobiont a owl:NamedIndividual, hi:FrameworkConcept ;
@@ -573,7 +664,7 @@ hi:affordances a owl:NamedIndividual, hi:FrameworkConcept ;
   skos:inScheme hi:scheme ;
   hi:networkWeight "1.5"^^xsd:decimal
  ;
-  schema:url <https://en.wikipedia.org/wiki/Affordance> ;
+  schema:url <essay-2.html> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Affordance>
  .
 
@@ -645,6 +736,34 @@ hi:perceptron a owl:NamedIndividual, hi:FrameworkConcept ;
  ;
   schema:url <https://en.wikipedia.org/wiki/Perceptron> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Perceptron>
+ .
+
+hi:linear_transform a owl:NamedIndividual, hi:FrameworkConcept ;
+  rdfs:label "z = Wx + b"@en ;
+  skos:prefLabel "z = Wx + b"@en ;
+  skos:definition "The affine transform at the heart of every dense layer: each output unit j computes zⱼ = Σᵢ wⱼᵢ xᵢ + bⱼ (matrix form z = Wx + b)—a weighted sum of inputs plus bias—before a nonlinear activation. The elementary operation of artificial neurons, shared by perceptrons, deep nets, and transformers."@en ;
+  skos:broader hi:category/framework ;
+  hi:inCategory hi:category/framework ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.55"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Artificial_neuron> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Artificial_neuron>
+ .
+
+hi:rnn_update a owl:NamedIndividual, hi:FrameworkConcept ;
+  rdfs:label "σ(Wₓx + Wₕh + b)"@en ;
+  skos:prefLabel "σ(Wₓx + Wₕh + b)"@en ;
+  skos:definition "Recurrent update (and LSTM/GRU gate form): σ(Wₓxₜ + Wₕhₜ₋₁ + b)—combine current input xₜ with previous hidden state hₜ₋₁ through separate weight matrices, add bias, then apply nonlinearity σ. Memory through time via recurrence; the sequential counterpart to the feedforward affine layer z = Wx + b. Foundational for sequence modeling; largely succeeded for long context by transformers."@en ;
+  skos:broader hi:category/framework ;
+  hi:inCategory hi:category/framework ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.5"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Recurrent_neural_network> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Recurrent_neural_network>
  .
 
 hi:convolutional_networks a owl:NamedIndividual, hi:FrameworkConcept ;
@@ -726,7 +845,7 @@ hi:llm a owl:NamedIndividual, hi:FrameworkConcept ;
   skos:inScheme hi:scheme ;
   hi:networkWeight "1.6"^^xsd:decimal
  ;
-  schema:url <https://en.wikipedia.org/wiki/Large_language_model> ;
+  schema:url <essay-2.html> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Large_language_model>
  .
 
@@ -996,7 +1115,7 @@ hi:clark a owl:NamedIndividual, hi:AuthorConcept ;
   skos:inScheme hi:scheme ;
   hi:networkWeight "1.5"^^xsd:decimal
  ;
-  schema:url <https://en.wikipedia.org/wiki/Andy_Clark> ;
+  schema:url <essay.html> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Andy_Clark>
  .
 
@@ -1010,8 +1129,8 @@ hi:hayles a owl:NamedIndividual, hi:AuthorConcept ;
   skos:inScheme hi:scheme ;
   hi:networkWeight "1.4"^^xsd:decimal
  ;
-  schema:url <https://en.wikipedia.org/wiki/Katherine_Hayles> ;
-  schema:sameAs <https://en.wikipedia.org/wiki/Katherine_Hayles>
+  schema:url <essay.html> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/N._Katherine_Hayles>
  .
 
 hi:thompson a owl:NamedIndividual, hi:AuthorConcept ;
@@ -1827,6 +1946,7 @@ hi:mediation a owl:NamedIndividual, hi:PhenomenonConcept ;
   skos:inScheme hi:scheme ;
   hi:networkWeight "1.8"^^xsd:decimal
  ;
+  schema:url <essay.html> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Mediation>
  .
 
@@ -2517,6 +2637,32 @@ hi:literacies a owl:NamedIndividual, hi:PracticeConcept ;
   schema:sameAs <https://en.wikipedia.org/wiki/Literacy>
  .
 
+hi:arch_design a owl:NamedIndividual, hi:PracticeConcept ;
+  rdfs:label "Architecture & Design"@en ;
+  skos:prefLabel "Architecture & Design"@en ;
+  skos:definition "Spatial and material practice—shaping rooms, interfaces, prototypes, and infrastructures that choreograph attention, movement, and encounter. Design here is not styling after the fact; it is composing conditions under which hybrid cognition can happen."@en ;
+  skos:broader hi:category/practice ;
+  hi:inCategory hi:category/practice ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.45"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Architectural_design>
+ .
+
+hi:philosophical_practice a owl:NamedIndividual, hi:PracticeConcept ;
+  rdfs:label "Philosophical Practice"@en ;
+  skos:prefLabel "Philosophical Practice"@en ;
+  skos:definition "Philosophical thinking as a lived method—questioning concepts, testing distinctions, staying with ambivalence, and refining vocabulary through dialogue, reading, and writing. Not only a domain of theory, but a practice of inquiry that clarifies agency, embodiment, and world-making in the era of AI."@en ;
+  skos:broader hi:category/practice ;
+  hi:inCategory hi:category/practice ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Philosophy>
+ .
+
 hi:hi_program a owl:NamedIndividual, hi:ProgramConcept ;
   rdfs:label "Hybrid Intelligences Program"@en ;
   skos:prefLabel "Hybrid Intelligences Program"@en ;
@@ -2525,66 +2671,10 @@ hi:hi_program a owl:NamedIndividual, hi:ProgramConcept ;
   hi:inCategory hi:category/program ;
   hi:schemeMember hi:scheme ;
   skos:inScheme hi:scheme ;
-  hi:networkWeight "2"^^xsd:decimal
+  hi:networkWeight "2.2"^^xsd:decimal
  ;
   schema:url <https://ufl.instructure.com/courses/574408> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Cognitive_science>
- .
-
-hi:came a owl:NamedIndividual, hi:ProgramConcept ;
-  rdfs:label "CAME"@en ;
-  skos:prefLabel "CAME"@en ;
-  skos:definition "Center for Arts, Migration and Entrepreneurship — lead host institution for Hybrid Intelligences; entrepreneurship and strategic vision across arts, migration, and interdisciplinary innovation."@en ;
-  skos:broader hi:category/program ;
-  hi:inCategory hi:category/program ;
-  hi:schemeMember hi:scheme ;
-  skos:inScheme hi:scheme ;
-  hi:networkWeight "1.2"^^xsd:decimal
- ;
-  schema:url <https://arts.ufl.edu/came/> ;
-  schema:sameAs <https://en.wikipedia.org/wiki/Entrepreneurship>
- .
-
-hi:cam a owl:NamedIndividual, hi:ProgramConcept ;
-  rdfs:label "CAM"@en ;
-  skos:prefLabel "CAM"@en ;
-  skos:definition "Center for Arts in Medicine — advancing education, research, and practice at the intersections of the arts and health."@en ;
-  skos:broader hi:category/program ;
-  hi:inCategory hi:category/program ;
-  hi:schemeMember hi:scheme ;
-  skos:inScheme hi:scheme ;
-  hi:networkWeight "1.2"^^xsd:decimal
- ;
-  schema:url <https://arts.ufl.edu/programs-schools/center-for-arts-in-medicine/> ;
-  schema:sameAs <https://en.wikipedia.org/wiki/Arts_in_health>
- .
-
-hi:ignite a owl:NamedIndividual, hi:ProgramConcept ;
-  rdfs:label "IGNITE Program"@en ;
-  skos:prefLabel "IGNITE Program"@en ;
-  skos:definition "Engineering Innovation Institute partnership integrating innovation leadership into the program."@en ;
-  skos:broader hi:category/program ;
-  hi:inCategory hi:category/program ;
-  hi:schemeMember hi:scheme ;
-  skos:inScheme hi:scheme ;
-  hi:networkWeight "1.2"^^xsd:decimal
- ;
-  schema:url <https://www.eng.ufl.edu/innovation/> ;
-  schema:sameAs <https://en.wikipedia.org/wiki/Innovation>
- .
-
-hi:wertheim a owl:NamedIndividual, hi:ProgramConcept ;
-  rdfs:label "Wertheim Laboratory"@en ;
-  skos:prefLabel "Wertheim Laboratory"@en ;
-  skos:definition "Herbert Wertheim Laboratory for Engineering Excellence—Leadership Studio 370, all program activities."@en ;
-  skos:broader hi:category/program ;
-  hi:inCategory hi:category/program ;
-  hi:schemeMember hi:scheme ;
-  skos:inScheme hi:scheme ;
-  hi:networkWeight "1.2"^^xsd:decimal
- ;
-  schema:url <https://www.eng.ufl.edu/wertheim/> ;
-  schema:sameAs <https://en.wikipedia.org/wiki/University_of_Florida>
  .
 
 hi:track_space a owl:NamedIndividual, hi:ProgramConcept ;
@@ -2595,7 +2685,7 @@ hi:track_space a owl:NamedIndividual, hi:ProgramConcept ;
   hi:inCategory hi:category/program ;
   hi:schemeMember hi:scheme ;
   skos:inScheme hi:scheme ;
-  hi:networkWeight "1.4"^^xsd:decimal
+  hi:networkWeight "1.5"^^xsd:decimal
  ;
   schema:sameAs <https://en.wikipedia.org/wiki/Spatial_memory>
  .
@@ -2608,7 +2698,7 @@ hi:track_future a owl:NamedIndividual, hi:ProgramConcept ;
   hi:inCategory hi:category/program ;
   hi:schemeMember hi:scheme ;
   skos:inScheme hi:scheme ;
-  hi:networkWeight "1.4"^^xsd:decimal
+  hi:networkWeight "1.5"^^xsd:decimal
  ;
   schema:sameAs <https://en.wikipedia.org/wiki/Futures_studies>
  .
@@ -2621,7 +2711,7 @@ hi:track_ethics a owl:NamedIndividual, hi:ProgramConcept ;
   hi:inCategory hi:category/program ;
   hi:schemeMember hi:scheme ;
   skos:inScheme hi:scheme ;
-  hi:networkWeight "1.4"^^xsd:decimal
+  hi:networkWeight "1.5"^^xsd:decimal
  ;
   schema:sameAs <https://en.wikipedia.org/wiki/Ethics>
  .
@@ -2634,9 +2724,379 @@ hi:reception a owl:NamedIndividual, hi:ProgramConcept ;
   hi:inCategory hi:category/program ;
   hi:schemeMember hi:scheme ;
   skos:inScheme hi:scheme ;
-  hi:networkWeight "1.1"^^xsd:decimal
+  hi:networkWeight "1.15"^^xsd:decimal
  ;
   schema:sameAs <https://en.wikipedia.org/wiki/Art_exhibition>
+ .
+
+hi:cota a owl:NamedIndividual, hi:OrganizationConcept ;
+  rdfs:label "College of the Arts"@en ;
+  skos:prefLabel "College of the Arts"@en ;
+  skos:definition "University of Florida College of the Arts (COA / COTA)—home college for Hybrid Intelligences; includes CAME and CAM among its centers and programs."@en ;
+  skos:broader hi:category/organization ;
+  hi:inCategory hi:category/organization ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.5"^^xsd:decimal
+ ;
+  schema:url <https://arts.ufl.edu/> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/University_of_Florida_College_of_the_Arts>
+ .
+
+hi:came a owl:NamedIndividual, hi:OrganizationConcept ;
+  rdfs:label "CAME"@en ;
+  skos:prefLabel "CAME"@en ;
+  skos:definition "Center for Arts, Migration and Entrepreneurship — lead host institution for Hybrid Intelligences within the College of the Arts; entrepreneurship and strategic vision across arts, migration, and interdisciplinary innovation."@en ;
+  skos:broader hi:category/organization ;
+  hi:inCategory hi:category/organization ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.35"^^xsd:decimal
+ ;
+  schema:url <https://arts.ufl.edu/came/> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Entrepreneurship>
+ .
+
+hi:cam a owl:NamedIndividual, hi:OrganizationConcept ;
+  rdfs:label "CAM"@en ;
+  skos:prefLabel "CAM"@en ;
+  skos:definition "Center for Arts in Medicine — within the College of the Arts; advancing education, research, and practice at the intersections of the arts and health."@en ;
+  skos:broader hi:category/organization ;
+  hi:inCategory hi:category/organization ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.35"^^xsd:decimal
+ ;
+  schema:url <https://arts.ufl.edu/programs-schools/center-for-arts-in-medicine/> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Arts_in_health>
+ .
+
+hi:ignite a owl:NamedIndividual, hi:OrganizationConcept ;
+  rdfs:label "IGNITE Program"@en ;
+  skos:prefLabel "IGNITE Program"@en ;
+  skos:definition "Engineering Innovation Institute partnership integrating innovation leadership into the program."@en ;
+  skos:broader hi:category/organization ;
+  hi:inCategory hi:category/organization ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.3"^^xsd:decimal
+ ;
+  schema:url <https://www.eng.ufl.edu/innovation/> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Innovation>
+ .
+
+hi:wertheim a owl:NamedIndividual, hi:OrganizationConcept ;
+  rdfs:label "Wertheim Laboratory"@en ;
+  skos:prefLabel "Wertheim Laboratory"@en ;
+  skos:definition "Herbert Wertheim Laboratory for Engineering Excellence—Leadership Studio 370, all program activities."@en ;
+  skos:broader hi:category/organization ;
+  hi:inCategory hi:category/organization ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.3"^^xsd:decimal
+ ;
+  schema:url <https://www.eng.ufl.edu/wertheim/> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/University_of_Florida>
+ .
+
+hi:gainesville_circus a owl:NamedIndividual, hi:OrganizationConcept ;
+  rdfs:label "Gainesville Circus Center"@en ;
+  skos:prefLabel "Gainesville Circus Center"@en ;
+  skos:definition "External partner organization for embodied circus practice—partner acrobatics, object manipulation, and ensemble training in community with Hybrid Intelligences."@en ;
+  skos:broader hi:category/organization ;
+  hi:inCategory hi:category/organization ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.2"^^xsd:decimal
+ ;
+  schema:url <https://www.gainesvillecircus.com/> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Circus>
+ .
+
+hi:undergrad_participants a owl:NamedIndividual, hi:ParticipantConcept ;
+  rdfs:label "Undergraduate Students"@en ;
+  skos:prefLabel "Undergraduate Students"@en ;
+  skos:definition "Undergraduate students in Art and Art History, Industrial Systems Engineering, Dance and Museum Studies, Computer Science, Industrial Systems and Political Science—bringing studio, engineering, and civic lenses into hybrid coupling."@en ;
+  skos:broader hi:category/participant ;
+  hi:inCategory hi:category/participant ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.45"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Undergraduate_education>
+ .
+
+hi:grad_participants a owl:NamedIndividual, hi:ParticipantConcept ;
+  rdfs:label "Graduate Students"@en ;
+  skos:prefLabel "Graduate Students"@en ;
+  skos:definition "Graduate students in Human-Centered Computing, Art History, Chemical Engineering, Machine Learning and Health Outcomes—research and practice at the intersections of computation, culture, learning systems, and care."@en ;
+  skos:broader hi:category/participant ;
+  hi:inCategory hi:category/participant ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Postgraduate_education>
+ .
+
+hi:staff_participants a owl:NamedIndividual, hi:ParticipantConcept ;
+  rdfs:label "UF Staff"@en ;
+  skos:prefLabel "UF Staff"@en ;
+  skos:definition "Current and retired UF staff in Lighting Design, Nursing, Public Health and Dance Therapy—institutional knowledge meeting embodied and clinical practice."@en ;
+  skos:broader hi:category/participant ;
+  hi:inCategory hi:category/participant ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.3"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/University_of_Florida>
+ .
+
+hi:community_participants a owl:NamedIndividual, hi:ParticipantConcept ;
+  rdfs:label "Community & Alumni"@en ;
+  skos:prefLabel "Community & Alumni"@en ;
+  skos:definition "Community members, alumnae and former faculty in IT, Digital Media and AI, Choreography and Film, Library Sciences and Digital Art—extending the program beyond campus into local and alumni ecologies."@en ;
+  skos:broader hi:category/participant ;
+  hi:inCategory hi:category/participant ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.35"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Community>
+ .
+
+hi:bg_art_history a owl:NamedIndividual, hi:BackgroundConcept ;
+  rdfs:label "Art & Art History"@en ;
+  skos:prefLabel "Art & Art History"@en ;
+  skos:definition "Background of undergraduate and graduate participants—studio practice, visual culture, and historical inquiry into art."@en ;
+  skos:broader hi:category/background ;
+  hi:inCategory hi:category/background ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.25"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Art_history>
+ .
+
+hi:bg_ise a owl:NamedIndividual, hi:BackgroundConcept ;
+  rdfs:label "Industrial Systems Engineering"@en ;
+  skos:prefLabel "Industrial Systems Engineering"@en ;
+  skos:definition "Undergraduate background—systems design, optimization, and socio-technical process across industrial and organizational settings."@en ;
+  skos:broader hi:category/background ;
+  hi:inCategory hi:category/background ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.2"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Industrial_engineering>
+ .
+
+hi:bg_dance_museum a owl:NamedIndividual, hi:BackgroundConcept ;
+  rdfs:label "Dance & Museum Studies"@en ;
+  skos:prefLabel "Dance & Museum Studies"@en ;
+  skos:definition "Undergraduate background—embodied performance joined with curation, collections, and public cultural institutions."@en ;
+  skos:broader hi:category/background ;
+  hi:inCategory hi:category/background ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.2"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Museum_studies>
+ .
+
+hi:bg_cs a owl:NamedIndividual, hi:BackgroundConcept ;
+  rdfs:label "Computer Science"@en ;
+  skos:prefLabel "Computer Science"@en ;
+  skos:definition "Undergraduate background—algorithms, systems, and computational thinking as a formative background distinct from the conceptual Domains ring."@en ;
+  skos:broader hi:category/background ;
+  hi:inCategory hi:category/background ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.25"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Computer_science>
+ .
+
+hi:bg_ise_polisci a owl:NamedIndividual, hi:BackgroundConcept ;
+  rdfs:label "Industrial Systems & Political Science"@en ;
+  skos:prefLabel "Industrial Systems & Political Science"@en ;
+  skos:definition "Undergraduate double lens—industrial systems with civic and political analysis of institutions, power, and public life."@en ;
+  skos:broader hi:category/background ;
+  hi:inCategory hi:category/background ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.15"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Political_science>
+ .
+
+hi:bg_hcc a owl:NamedIndividual, hi:BackgroundConcept ;
+  rdfs:label "Human-Centered Computing"@en ;
+  skos:prefLabel "Human-Centered Computing"@en ;
+  skos:definition "Graduate background—interaction, usability, and computing designed around human practices, bodies, and contexts."@en ;
+  skos:broader hi:category/background ;
+  hi:inCategory hi:category/background ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.25"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction>
+ .
+
+hi:bg_chem_eng a owl:NamedIndividual, hi:BackgroundConcept ;
+  rdfs:label "Chemical Engineering"@en ;
+  skos:prefLabel "Chemical Engineering"@en ;
+  skos:definition "Graduate background—process, materials, and molecular-scale engineering meeting hybrid cognition and care."@en ;
+  skos:broader hi:category/background ;
+  hi:inCategory hi:category/background ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.15"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Chemical_engineering>
+ .
+
+hi:bg_ml a owl:NamedIndividual, hi:BackgroundConcept ;
+  rdfs:label "Machine Learning"@en ;
+  skos:prefLabel "Machine Learning"@en ;
+  skos:definition "Graduate background—statistical learning and model-building as institutional training, linked to the Machine Learning framework concept."@en ;
+  skos:broader hi:category/background ;
+  hi:inCategory hi:category/background ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.25"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Machine_learning>
+ .
+
+hi:bg_health_outcomes a owl:NamedIndividual, hi:BackgroundConcept ;
+  rdfs:label "Health Outcomes"@en ;
+  skos:prefLabel "Health Outcomes"@en ;
+  skos:definition "Graduate background—measuring and improving health, care pathways, and wellbeing at clinical and population scales."@en ;
+  skos:broader hi:category/background ;
+  hi:inCategory hi:category/background ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.2"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Health_outcome>
+ .
+
+hi:bg_lighting a owl:NamedIndividual, hi:BackgroundConcept ;
+  rdfs:label "Lighting Design"@en ;
+  skos:prefLabel "Lighting Design"@en ;
+  skos:definition "UF staff background—theatrical and spatial light as compositional practice shaping attention, atmosphere, and stage ecology."@en ;
+  skos:broader hi:category/background ;
+  hi:inCategory hi:category/background ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.15"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Lighting_designer>
+ .
+
+hi:bg_nursing a owl:NamedIndividual, hi:BackgroundConcept ;
+  rdfs:label "Nursing"@en ;
+  skos:prefLabel "Nursing"@en ;
+  skos:definition "UF staff background—clinical care, embodiment, and relational knowledge in health systems."@en ;
+  skos:broader hi:category/background ;
+  hi:inCategory hi:category/background ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.15"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Nursing>
+ .
+
+hi:bg_public_health a owl:NamedIndividual, hi:BackgroundConcept ;
+  rdfs:label "Public Health"@en ;
+  skos:prefLabel "Public Health"@en ;
+  skos:definition "UF staff background—population health, prevention, and community wellbeing beyond the individual clinic."@en ;
+  skos:broader hi:category/background ;
+  hi:inCategory hi:category/background ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.15"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Public_health>
+ .
+
+hi:bg_dance_therapy a owl:NamedIndividual, hi:BackgroundConcept ;
+  rdfs:label "Dance Therapy"@en ;
+  skos:prefLabel "Dance Therapy"@en ;
+  skos:definition "UF staff background—dance/movement as therapeutic practice coupling body, psyche, and care."@en ;
+  skos:broader hi:category/background ;
+  hi:inCategory hi:category/background ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.15"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Dance_therapy>
+ .
+
+hi:bg_it a owl:NamedIndividual, hi:BackgroundConcept ;
+  rdfs:label "Information Technology"@en ;
+  skos:prefLabel "Information Technology"@en ;
+  skos:definition "Community / alumni background—systems, networks, and infrastructure that keep institutions and media running."@en ;
+  skos:broader hi:category/background ;
+  hi:inCategory hi:category/background ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.15"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Information_technology>
+ .
+
+hi:bg_digital_media_ai a owl:NamedIndividual, hi:BackgroundConcept ;
+  rdfs:label "Digital Media & AI"@en ;
+  skos:prefLabel "Digital Media & AI"@en ;
+  skos:definition "Community / alumni background—digital media practice intersecting generative and machine-learning systems."@en ;
+  skos:broader hi:category/background ;
+  hi:inCategory hi:category/background ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.2"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Digital_media>
+ .
+
+hi:bg_choreo_film a owl:NamedIndividual, hi:BackgroundConcept ;
+  rdfs:label "Choreography & Film"@en ;
+  skos:prefLabel "Choreography & Film"@en ;
+  skos:definition "Community / alumni background—moving-image and choreographic composition across stage and screen."@en ;
+  skos:broader hi:category/background ;
+  hi:inCategory hi:category/background ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.2"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Choreography>
+ .
+
+hi:bg_library a owl:NamedIndividual, hi:BackgroundConcept ;
+  rdfs:label "Library Sciences"@en ;
+  skos:prefLabel "Library Sciences"@en ;
+  skos:definition "Community / alumni background—archives, information organization, access, and cultural memory institutions."@en ;
+  skos:broader hi:category/background ;
+  hi:inCategory hi:category/background ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.15"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Library_science>
+ .
+
+hi:bg_digital_art a owl:NamedIndividual, hi:BackgroundConcept ;
+  rdfs:label "Digital Art"@en ;
+  skos:prefLabel "Digital Art"@en ;
+  skos:definition "Community / alumni background—art practice through code, screens, networks, and computational media."@en ;
+  skos:broader hi:category/background ;
+  hi:inCategory hi:category/background ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.2"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Digital_art>
  .
 
 hi:marlon a owl:NamedIndividual, hi:FacilitatorConcept ;
@@ -2803,6 +3263,7 @@ hi:techno_dualism a owl:NamedIndividual, hi:TensionConcept ;
   skos:inScheme hi:scheme ;
   hi:networkWeight "0.9"^^xsd:decimal
  ;
+  schema:url <essay.html> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Mind%E2%80%93body_dualism>
  .
 
@@ -2816,6 +3277,7 @@ hi:bio_exception a owl:NamedIndividual, hi:TensionConcept ;
   skos:inScheme hi:scheme ;
   hi:networkWeight "0.9"^^xsd:decimal
  ;
+  schema:url <essay.html> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Biological_essentialism>
  .
 
@@ -2891,9 +3353,35 @@ hi:coupling hi:relatedTo hi:embodiment .
 hi:coupling hi:relatedTo hi:body .
 hi:coupling hi:relatedTo hi:hybrid_coupling .
 hi:coupling hi:relatedTo hi:mediation .
+hi:coupling hi:relatedTo hi:assemblage .
+hi:coupling hi:relatedTo hi:assemblage_form .
 hi:hybrid hi:relatedTo hi:hybrid_coupling .
 hi:hybrid hi:relatedTo hi:intelligence .
 hi:hybrid hi:relatedTo hi:embodiment .
+hi:hybrid hi:relatedTo hi:assemblage .
+hi:hybrid hi:relatedTo hi:assemblage_form .
+hi:creative_embodiment hi:relatedTo hi:assemblage .
+hi:creative_embodiment hi:relatedTo hi:assemblage_form .
+hi:assemblage hi:relatedTo hi:assemblage_form .
+hi:assemblage hi:relatedTo hi:hayles .
+hi:assemblage_form hi:relatedTo hi:hayles .
+hi:assemblage_form hi:relatedTo hi:latour .
+hi:assemblage_form hi:relatedTo hi:hybrid_coupling .
+hi:technosymbiosis hi:relatedTo hi:assemblage .
+hi:technosymbiosis hi:relatedTo hi:assemblage_form .
+hi:technosymbiosis hi:relatedTo hi:hayles .
+hi:technosymbiosis hi:relatedTo hi:hybrid .
+hi:technosymbiosis hi:relatedTo hi:coupling .
+hi:technosymbiosis hi:relatedTo hi:creative_embodiment .
+hi:4e hi:relatedTo hi:coupling .
+hi:4e hi:relatedTo hi:embodiment .
+hi:4e hi:relatedTo hi:cognition .
+hi:4e hi:relatedTo hi:hybrid .
+hi:4e hi:relatedTo hi:creative_embodiment .
+hi:4e hi:relatedTo hi:body .
+hi:4e hi:relatedTo hi:intelligence .
+hi:cognition hi:relatedTo hi:embodiment .
+hi:cognition hi:relatedTo hi:coupling .
 hi:hybrid hi:relatedTo hi:cognition .
 hi:intelligence hi:relatedTo hi:cognition .
 hi:intelligence hi:relatedTo hi:embodiment .
@@ -2978,7 +3466,6 @@ hi:leadership hi:relatedTo hi:ignite .
 hi:leadership hi:relatedTo hi:came .
 hi:leadership hi:relatedTo hi:cognition .
 hi:leadership hi:relatedTo hi:intelligence .
-hi:hybrid hi:relatedTo hi:assemblage .
 hi:hybrid hi:relatedTo hi:creative_embodiment .
 hi:hybrid hi:relatedTo hi:ecology .
 hi:hybrid hi:relatedTo hi:literacies .
@@ -3033,21 +3520,15 @@ hi:cyborg hi:relatedTo hi:hybrid .
 hi:assemblage hi:relatedTo hi:distributed .
 hi:assemblage hi:relatedTo hi:technical_agency .
 hi:assemblage hi:relatedTo hi:creative .
-hi:assemblage hi:relatedTo hi:creative_embodiment .
-hi:assemblage hi:relatedTo hi:hayles .
 hi:possible_minds hi:relatedTo hi:ecology .
 hi:possible_minds hi:relatedTo hi:hybrid .
 hi:possible_minds hi:relatedTo hi:shanahan .
-hi:technosymbiosis hi:relatedTo hi:assemblage .
 hi:technosymbiosis hi:relatedTo hi:symbiosis .
 hi:technosymbiosis hi:relatedTo hi:margulis .
-hi:technosymbiosis hi:relatedTo hi:hybrid .
 hi:technosymbiosis hi:relatedTo hi:cyborg .
 hi:technosymbiosis hi:relatedTo hi:ecology .
-hi:technosymbiosis hi:relatedTo hi:hayles .
 hi:technosymbiosis hi:relatedTo hi:ai .
 hi:technosymbiosis hi:relatedTo hi:gen_ai .
-hi:technosymbiosis hi:relatedTo hi:creative_embodiment .
 hi:technosymbiosis hi:relatedTo hi:active_inference .
 hi:technosymbiosis hi:relatedTo hi:physical_ai .
 hi:technosymbiosis hi:relatedTo hi:synthetic_cognition .
@@ -3154,6 +3635,34 @@ hi:perceptron hi:relatedTo hi:cs .
 hi:perceptron hi:relatedTo hi:cybernetics .
 hi:perceptron hi:relatedTo hi:possible_minds .
 hi:perceptron hi:relatedTo hi:synthetic_cognition .
+hi:linear_transform hi:relatedTo hi:neural_networks .
+hi:linear_transform hi:relatedTo hi:perceptron .
+hi:linear_transform hi:relatedTo hi:machine_learning .
+hi:linear_transform hi:relatedTo hi:convolutional_networks .
+hi:linear_transform hi:relatedTo hi:transformers .
+hi:linear_transform hi:relatedTo hi:ai_ml .
+hi:linear_transform hi:relatedTo hi:cs .
+hi:linear_transform hi:relatedTo hi:ai .
+hi:linear_transform hi:relatedTo hi:synthetic_cognition .
+hi:linear_transform hi:relatedTo hi:ai_interpretability .
+hi:linear_transform hi:relatedTo hi:model_introspection .
+hi:linear_transform hi:relatedTo hi:cybernetics .
+hi:rnn_update hi:relatedTo hi:linear_transform .
+hi:rnn_update hi:relatedTo hi:neural_networks .
+hi:rnn_update hi:relatedTo hi:machine_learning .
+hi:rnn_update hi:relatedTo hi:transformers .
+hi:rnn_update hi:relatedTo hi:llm .
+hi:rnn_update hi:relatedTo hi:gen_ai .
+hi:rnn_update hi:relatedTo hi:ai_ml .
+hi:rnn_update hi:relatedTo hi:cs .
+hi:rnn_update hi:relatedTo hi:ai .
+hi:rnn_update hi:relatedTo hi:synthetic_cognition .
+hi:rnn_update hi:relatedTo hi:mediation .
+hi:rnn_update hi:relatedTo hi:cybernetics .
+hi:rnn_update hi:relatedTo hi:distributed .
+hi:rnn_update hi:relatedTo hi:storytelling .
+hi:rnn_update hi:relatedTo hi:music .
+hi:rnn_update hi:relatedTo hi:choreography_d .
 hi:convolutional_networks hi:relatedTo hi:neural_networks .
 hi:convolutional_networks hi:relatedTo hi:machine_learning .
 hi:convolutional_networks hi:relatedTo hi:gen_ai .
@@ -4416,6 +4925,17 @@ hi:perception_politics hi:relatedTo hi:critical .
 hi:architecture hi:relatedTo hi:choreography .
 hi:architecture hi:relatedTo hi:choreography_d .
 hi:architecture hi:relatedTo hi:mediation .
+hi:architecture hi:relatedTo hi:arch_design .
+hi:arch_design hi:relatedTo hi:design_thinking .
+hi:arch_design hi:relatedTo hi:creative .
+hi:arch_design hi:relatedTo hi:creative_embodiment .
+hi:arch_design hi:relatedTo hi:affordances .
+hi:arch_design hi:relatedTo hi:track_space .
+hi:arch_design hi:relatedTo hi:karla .
+hi:arch_design hi:relatedTo hi:wertheim .
+hi:arch_design hi:relatedTo hi:rehearsal .
+hi:arch_design hi:relatedTo hi:hybrid .
+hi:arch_design hi:relatedTo hi:literacies .
 hi:choreography hi:relatedTo hi:juggling .
 hi:choreography hi:relatedTo hi:hybrid .
 hi:somatics hi:relatedTo hi:coupling .
@@ -4439,6 +4959,20 @@ hi:intellectual_property hi:relatedTo hi:curation .
 hi:intellectual_property hi:relatedTo hi:perception_politics .
 hi:philosophy hi:relatedTo hi:4e .
 hi:philosophy hi:relatedTo hi:possible_minds .
+hi:philosophy hi:relatedTo hi:philosophical_practice .
+hi:philosophical_practice hi:relatedTo hi:epistemology .
+hi:philosophical_practice hi:relatedTo hi:4e .
+hi:philosophical_practice hi:relatedTo hi:cognition .
+hi:philosophical_practice hi:relatedTo hi:coupling .
+hi:philosophical_practice hi:relatedTo hi:assemblage .
+hi:philosophical_practice hi:relatedTo hi:cultural_critical .
+hi:philosophical_practice hi:relatedTo hi:track_ethics .
+hi:philosophical_practice hi:relatedTo hi:complexity .
+hi:philosophical_practice hi:relatedTo hi:creative_embodiment .
+hi:philosophical_practice hi:relatedTo hi:clark .
+hi:philosophical_practice hi:relatedTo hi:hayles .
+hi:philosophical_practice hi:relatedTo hi:merleau_ponty .
+hi:philosophical_practice hi:relatedTo hi:cameron .
 hi:epistemology hi:relatedTo hi:philosophy .
 hi:epistemology hi:relatedTo hi:ai_impact_epistemic .
 hi:epistemology hi:relatedTo hi:critical .
@@ -4710,17 +5244,29 @@ hi:posthumanism hi:relatedTo hi:margulis .
 hi:posthumanism hi:relatedTo hi:futurity .
 hi:hi_program hi:relatedTo hi:hybrid .
 hi:hi_program hi:relatedTo hi:coupling .
+hi:hi_program hi:relatedTo hi:cota .
 hi:hi_program hi:relatedTo hi:came .
 hi:hi_program hi:relatedTo hi:cam .
 hi:hi_program hi:relatedTo hi:ignite .
 hi:hi_program hi:relatedTo hi:wertheim .
+hi:hi_program hi:relatedTo hi:gainesville_circus .
+hi:hi_program hi:relatedTo hi:undergrad_participants .
+hi:hi_program hi:relatedTo hi:grad_participants .
+hi:hi_program hi:relatedTo hi:staff_participants .
+hi:hi_program hi:relatedTo hi:community_participants .
 hi:hi_program hi:relatedTo hi:track_space .
 hi:hi_program hi:relatedTo hi:track_future .
 hi:hi_program hi:relatedTo hi:track_ethics .
 hi:hi_program hi:relatedTo hi:reception .
 hi:hi_program hi:relatedTo hi:marlon .
 hi:marlon hi:relatedTo hi:came .
+hi:marlon hi:relatedTo hi:cota .
 hi:hi_program hi:relatedTo hi:erika .
+hi:cota hi:relatedTo hi:came .
+hi:cota hi:relatedTo hi:cam .
+hi:cota hi:relatedTo hi:art .
+hi:cota hi:relatedTo hi:interdisciplinary_art .
+hi:cota hi:relatedTo hi:onye .
 hi:came hi:relatedTo hi:cam .
 hi:came hi:relatedTo hi:art_medicine .
 hi:came hi:relatedTo hi:interdisciplinary_art .
@@ -4733,6 +5279,11 @@ hi:creative_embodiment hi:relatedTo hi:cam .
 hi:ignite hi:relatedTo hi:track_ethics .
 hi:ignite hi:relatedTo hi:melissa .
 hi:wertheim hi:relatedTo hi:architecture .
+hi:gainesville_circus hi:relatedTo hi:cheval_bailie .
+hi:gainesville_circus hi:relatedTo hi:circus_arts .
+hi:gainesville_circus hi:relatedTo hi:track_space .
+hi:gainesville_circus hi:relatedTo hi:juggling .
+hi:gainesville_circus hi:relatedTo hi:embodiment .
 hi:track_space hi:relatedTo hi:architecture .
 hi:track_space hi:relatedTo hi:choreography .
 hi:track_space hi:relatedTo hi:embodied .
@@ -4774,6 +5325,101 @@ hi:track_ethics hi:relatedTo hi:jasmine .
 hi:track_ethics hi:relatedTo hi:melissa .
 hi:reception hi:relatedTo hi:literacies .
 hi:reception hi:relatedTo hi:hybrid .
+hi:undergrad_participants hi:relatedTo hi:grad_participants .
+hi:undergrad_participants hi:relatedTo hi:art .
+hi:undergrad_participants hi:relatedTo hi:dance .
+hi:undergrad_participants hi:relatedTo hi:cs .
+hi:undergrad_participants hi:relatedTo hi:ai_ml .
+hi:undergrad_participants hi:relatedTo hi:pedagogy .
+hi:undergrad_participants hi:relatedTo hi:reception .
+hi:undergrad_participants hi:relatedTo hi:cota .
+hi:grad_participants hi:relatedTo hi:cs .
+hi:grad_participants hi:relatedTo hi:art_medicine .
+hi:grad_participants hi:relatedTo hi:ai_ml .
+hi:grad_participants hi:relatedTo hi:machine_learning .
+hi:grad_participants hi:relatedTo hi:neural_networks .
+hi:grad_participants hi:relatedTo hi:pedagogy .
+hi:grad_participants hi:relatedTo hi:reception .
+hi:grad_participants hi:relatedTo hi:epistemology .
+hi:staff_participants hi:relatedTo hi:art_medicine .
+hi:staff_participants hi:relatedTo hi:dance .
+hi:staff_participants hi:relatedTo hi:somatics .
+hi:staff_participants hi:relatedTo hi:community .
+hi:staff_participants hi:relatedTo hi:reception .
+hi:community_participants hi:relatedTo hi:community .
+hi:community_participants hi:relatedTo hi:generative_arts .
+hi:community_participants hi:relatedTo hi:choreography .
+hi:community_participants hi:relatedTo hi:ai_art .
+hi:community_participants hi:relatedTo hi:ai .
+hi:community_participants hi:relatedTo hi:ai_ml .
+hi:community_participants hi:relatedTo hi:reception .
+hi:community_participants hi:relatedTo hi:interdisciplinary_art .
+hi:community_participants hi:relatedTo hi:staff_participants .
+hi:grad_participants hi:relatedTo hi:staff_participants .
+hi:undergrad_participants hi:relatedTo hi:community_participants .
+hi:undergrad_participants hi:relatedTo hi:bg_art_history .
+hi:undergrad_participants hi:relatedTo hi:bg_ise .
+hi:undergrad_participants hi:relatedTo hi:bg_dance_museum .
+hi:undergrad_participants hi:relatedTo hi:bg_cs .
+hi:undergrad_participants hi:relatedTo hi:bg_ise_polisci .
+hi:grad_participants hi:relatedTo hi:bg_hcc .
+hi:grad_participants hi:relatedTo hi:bg_art_history .
+hi:grad_participants hi:relatedTo hi:bg_chem_eng .
+hi:grad_participants hi:relatedTo hi:bg_ml .
+hi:grad_participants hi:relatedTo hi:bg_health_outcomes .
+hi:staff_participants hi:relatedTo hi:bg_lighting .
+hi:staff_participants hi:relatedTo hi:bg_nursing .
+hi:staff_participants hi:relatedTo hi:bg_public_health .
+hi:staff_participants hi:relatedTo hi:bg_dance_therapy .
+hi:community_participants hi:relatedTo hi:bg_it .
+hi:community_participants hi:relatedTo hi:bg_digital_media_ai .
+hi:community_participants hi:relatedTo hi:bg_choreo_film .
+hi:community_participants hi:relatedTo hi:bg_library .
+hi:community_participants hi:relatedTo hi:bg_digital_art .
+hi:bg_art_history hi:relatedTo hi:art .
+hi:bg_ise hi:relatedTo hi:cs .
+hi:bg_ise hi:relatedTo hi:design_thinking .
+hi:bg_dance_museum hi:relatedTo hi:dance .
+hi:bg_dance_museum hi:relatedTo hi:curation .
+hi:bg_cs hi:relatedTo hi:cs .
+hi:bg_cs hi:relatedTo hi:ai_ml .
+hi:bg_ise_polisci hi:relatedTo hi:bg_ise .
+hi:bg_ise_polisci hi:relatedTo hi:law .
+hi:bg_hcc hi:relatedTo hi:cs .
+hi:bg_hcc hi:relatedTo hi:ai_ml .
+hi:bg_hcc hi:relatedTo hi:affordances .
+hi:bg_chem_eng hi:relatedTo hi:cs .
+hi:bg_chem_eng hi:relatedTo hi:art_medicine .
+hi:bg_ml hi:relatedTo hi:machine_learning .
+hi:bg_ml hi:relatedTo hi:neural_networks .
+hi:bg_ml hi:relatedTo hi:ai_ml .
+hi:bg_health_outcomes hi:relatedTo hi:art_medicine .
+hi:bg_lighting hi:relatedTo hi:art .
+hi:bg_lighting hi:relatedTo hi:architecture .
+hi:bg_nursing hi:relatedTo hi:art_medicine .
+hi:bg_public_health hi:relatedTo hi:art_medicine .
+hi:bg_public_health hi:relatedTo hi:community .
+hi:bg_dance_therapy hi:relatedTo hi:dance .
+hi:bg_dance_therapy hi:relatedTo hi:somatics .
+hi:bg_dance_therapy hi:relatedTo hi:art_medicine .
+hi:bg_it hi:relatedTo hi:cs .
+hi:bg_digital_media_ai hi:relatedTo hi:ai .
+hi:bg_digital_media_ai hi:relatedTo hi:ai_ml .
+hi:bg_digital_media_ai hi:relatedTo hi:generative_arts .
+hi:bg_choreo_film hi:relatedTo hi:choreography .
+hi:bg_choreo_film hi:relatedTo hi:choreography_d .
+hi:bg_choreo_film hi:relatedTo hi:storytelling .
+hi:bg_library hi:relatedTo hi:epistemology .
+hi:bg_library hi:relatedTo hi:curation .
+hi:bg_digital_art hi:relatedTo hi:ai_art .
+hi:bg_digital_art hi:relatedTo hi:generative_arts .
+hi:bg_digital_art hi:relatedTo hi:interdisciplinary_art .
+hi:bg_art_history hi:relatedTo hi:bg_digital_art .
+hi:bg_ml hi:relatedTo hi:bg_digital_media_ai .
+hi:bg_cs hi:relatedTo hi:bg_hcc .
+hi:bg_dance_museum hi:relatedTo hi:bg_dance_therapy .
+hi:bg_health_outcomes hi:relatedTo hi:bg_nursing .
+hi:bg_health_outcomes hi:relatedTo hi:bg_public_health .
 hi:marlon hi:relatedTo hi:choreography .
 hi:marlon hi:relatedTo hi:creative .
 hi:marlon hi:relatedTo hi:track_space .
@@ -4908,6 +5554,16 @@ hi:rel-coupling-mediation a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationTarget hi:mediation ;
   hi:relationStrength "0.9"^^xsd:decimal .
 
+hi:rel-coupling-assemblage a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:coupling ;
+  hi:relationTarget hi:assemblage ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-coupling-assemblage_form a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:coupling ;
+  hi:relationTarget hi:assemblage_form ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
 hi:rel-hybrid-hybrid_coupling a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:hybrid ;
   hi:relationTarget hi:hybrid_coupling ;
@@ -4922,6 +5578,126 @@ hi:rel-hybrid-embodiment a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:hybrid ;
   hi:relationTarget hi:embodiment ;
   hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-hybrid-assemblage a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:hybrid ;
+  hi:relationTarget hi:assemblage ;
+  hi:relationStrength "1"^^xsd:decimal .
+
+hi:rel-hybrid-assemblage_form a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:hybrid ;
+  hi:relationTarget hi:assemblage_form ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-creative_embodiment-assemblage a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:creative_embodiment ;
+  hi:relationTarget hi:assemblage ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-creative_embodiment-assemblage_form a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:creative_embodiment ;
+  hi:relationTarget hi:assemblage_form ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-assemblage-assemblage_form a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:assemblage ;
+  hi:relationTarget hi:assemblage_form ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-assemblage-hayles a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:assemblage ;
+  hi:relationTarget hi:hayles ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-assemblage_form-hayles a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:assemblage_form ;
+  hi:relationTarget hi:hayles ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-assemblage_form-latour a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:assemblage_form ;
+  hi:relationTarget hi:latour ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-assemblage_form-hybrid_coupling a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:assemblage_form ;
+  hi:relationTarget hi:hybrid_coupling ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-technosymbiosis-assemblage a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:technosymbiosis ;
+  hi:relationTarget hi:assemblage ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-technosymbiosis-assemblage_form a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:technosymbiosis ;
+  hi:relationTarget hi:assemblage_form ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-technosymbiosis-hayles a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:technosymbiosis ;
+  hi:relationTarget hi:hayles ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-technosymbiosis-hybrid a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:technosymbiosis ;
+  hi:relationTarget hi:hybrid ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-technosymbiosis-coupling a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:technosymbiosis ;
+  hi:relationTarget hi:coupling ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-technosymbiosis-creative_embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:technosymbiosis ;
+  hi:relationTarget hi:creative_embodiment ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-4e-coupling a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:4e ;
+  hi:relationTarget hi:coupling ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-4e-embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:4e ;
+  hi:relationTarget hi:embodiment ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-4e-cognition a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:4e ;
+  hi:relationTarget hi:cognition ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-4e-hybrid a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:4e ;
+  hi:relationTarget hi:hybrid ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-4e-creative_embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:4e ;
+  hi:relationTarget hi:creative_embodiment ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-4e-body a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:4e ;
+  hi:relationTarget hi:body ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-4e-intelligence a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:4e ;
+  hi:relationTarget hi:intelligence ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-cognition-embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cognition ;
+  hi:relationTarget hi:embodiment ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-cognition-coupling a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cognition ;
+  hi:relationTarget hi:coupling ;
+  hi:relationStrength "0.9"^^xsd:decimal .
 
 hi:rel-hybrid-cognition a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:hybrid ;
@@ -5343,11 +6119,6 @@ hi:rel-leadership-intelligence a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationTarget hi:intelligence ;
   hi:relationStrength "0.7"^^xsd:decimal .
 
-hi:rel-hybrid-assemblage a owl:NamedIndividual, hi:NetworkRelation ;
-  hi:relationSource hi:hybrid ;
-  hi:relationTarget hi:assemblage ;
-  hi:relationStrength "1"^^xsd:decimal .
-
 hi:rel-hybrid-creative_embodiment a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:hybrid ;
   hi:relationTarget hi:creative_embodiment ;
@@ -5618,16 +6389,6 @@ hi:rel-assemblage-creative a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationTarget hi:creative ;
   hi:relationStrength "0.85"^^xsd:decimal .
 
-hi:rel-assemblage-creative_embodiment a owl:NamedIndividual, hi:NetworkRelation ;
-  hi:relationSource hi:assemblage ;
-  hi:relationTarget hi:creative_embodiment ;
-  hi:relationStrength "0.95"^^xsd:decimal .
-
-hi:rel-assemblage-hayles a owl:NamedIndividual, hi:NetworkRelation ;
-  hi:relationSource hi:assemblage ;
-  hi:relationTarget hi:hayles ;
-  hi:relationStrength "0.95"^^xsd:decimal .
-
 hi:rel-possible_minds-ecology a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:possible_minds ;
   hi:relationTarget hi:ecology ;
@@ -5643,11 +6404,6 @@ hi:rel-possible_minds-shanahan a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationTarget hi:shanahan ;
   hi:relationStrength "0.9"^^xsd:decimal .
 
-hi:rel-technosymbiosis-assemblage a owl:NamedIndividual, hi:NetworkRelation ;
-  hi:relationSource hi:technosymbiosis ;
-  hi:relationTarget hi:assemblage ;
-  hi:relationStrength "0.95"^^xsd:decimal .
-
 hi:rel-technosymbiosis-symbiosis a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:technosymbiosis ;
   hi:relationTarget hi:symbiosis ;
@@ -5657,11 +6413,6 @@ hi:rel-technosymbiosis-margulis a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:technosymbiosis ;
   hi:relationTarget hi:margulis ;
   hi:relationStrength "0.85"^^xsd:decimal .
-
-hi:rel-technosymbiosis-hybrid a owl:NamedIndividual, hi:NetworkRelation ;
-  hi:relationSource hi:technosymbiosis ;
-  hi:relationTarget hi:hybrid ;
-  hi:relationStrength "0.9"^^xsd:decimal .
 
 hi:rel-technosymbiosis-cyborg a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:technosymbiosis ;
@@ -5673,11 +6424,6 @@ hi:rel-technosymbiosis-ecology a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationTarget hi:ecology ;
   hi:relationStrength "0.85"^^xsd:decimal .
 
-hi:rel-technosymbiosis-hayles a owl:NamedIndividual, hi:NetworkRelation ;
-  hi:relationSource hi:technosymbiosis ;
-  hi:relationTarget hi:hayles ;
-  hi:relationStrength "0.95"^^xsd:decimal .
-
 hi:rel-technosymbiosis-ai a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:technosymbiosis ;
   hi:relationTarget hi:ai ;
@@ -5686,11 +6432,6 @@ hi:rel-technosymbiosis-ai a owl:NamedIndividual, hi:NetworkRelation ;
 hi:rel-technosymbiosis-gen_ai a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:technosymbiosis ;
   hi:relationTarget hi:gen_ai ;
-  hi:relationStrength "0.8"^^xsd:decimal .
-
-hi:rel-technosymbiosis-creative_embodiment a owl:NamedIndividual, hi:NetworkRelation ;
-  hi:relationSource hi:technosymbiosis ;
-  hi:relationTarget hi:creative_embodiment ;
   hi:relationStrength "0.8"^^xsd:decimal .
 
 hi:rel-technosymbiosis-active_inference a owl:NamedIndividual, hi:NetworkRelation ;
@@ -6222,6 +6963,146 @@ hi:rel-perceptron-synthetic_cognition a owl:NamedIndividual, hi:NetworkRelation 
   hi:relationSource hi:perceptron ;
   hi:relationTarget hi:synthetic_cognition ;
   hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-linear_transform-neural_networks a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:linear_transform ;
+  hi:relationTarget hi:neural_networks ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-linear_transform-perceptron a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:linear_transform ;
+  hi:relationTarget hi:perceptron ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-linear_transform-machine_learning a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:linear_transform ;
+  hi:relationTarget hi:machine_learning ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-linear_transform-convolutional_networks a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:linear_transform ;
+  hi:relationTarget hi:convolutional_networks ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-linear_transform-transformers a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:linear_transform ;
+  hi:relationTarget hi:transformers ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-linear_transform-ai_ml a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:linear_transform ;
+  hi:relationTarget hi:ai_ml ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-linear_transform-cs a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:linear_transform ;
+  hi:relationTarget hi:cs ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-linear_transform-ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:linear_transform ;
+  hi:relationTarget hi:ai ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-linear_transform-synthetic_cognition a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:linear_transform ;
+  hi:relationTarget hi:synthetic_cognition ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-linear_transform-ai_interpretability a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:linear_transform ;
+  hi:relationTarget hi:ai_interpretability ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-linear_transform-model_introspection a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:linear_transform ;
+  hi:relationTarget hi:model_introspection ;
+  hi:relationStrength "0.7"^^xsd:decimal .
+
+hi:rel-linear_transform-cybernetics a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:linear_transform ;
+  hi:relationTarget hi:cybernetics ;
+  hi:relationStrength "0.7"^^xsd:decimal .
+
+hi:rel-rnn_update-linear_transform a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:rnn_update ;
+  hi:relationTarget hi:linear_transform ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-rnn_update-neural_networks a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:rnn_update ;
+  hi:relationTarget hi:neural_networks ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-rnn_update-machine_learning a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:rnn_update ;
+  hi:relationTarget hi:machine_learning ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-rnn_update-transformers a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:rnn_update ;
+  hi:relationTarget hi:transformers ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-rnn_update-llm a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:rnn_update ;
+  hi:relationTarget hi:llm ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-rnn_update-gen_ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:rnn_update ;
+  hi:relationTarget hi:gen_ai ;
+  hi:relationStrength "0.7"^^xsd:decimal .
+
+hi:rel-rnn_update-ai_ml a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:rnn_update ;
+  hi:relationTarget hi:ai_ml ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-rnn_update-cs a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:rnn_update ;
+  hi:relationTarget hi:cs ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-rnn_update-ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:rnn_update ;
+  hi:relationTarget hi:ai ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-rnn_update-synthetic_cognition a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:rnn_update ;
+  hi:relationTarget hi:synthetic_cognition ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-rnn_update-mediation a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:rnn_update ;
+  hi:relationTarget hi:mediation ;
+  hi:relationStrength "0.7"^^xsd:decimal .
+
+hi:rel-rnn_update-cybernetics a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:rnn_update ;
+  hi:relationTarget hi:cybernetics ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-rnn_update-distributed a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:rnn_update ;
+  hi:relationTarget hi:distributed ;
+  hi:relationStrength "0.7"^^xsd:decimal .
+
+hi:rel-rnn_update-storytelling a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:rnn_update ;
+  hi:relationTarget hi:storytelling ;
+  hi:relationStrength "0.65"^^xsd:decimal .
+
+hi:rel-rnn_update-music a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:rnn_update ;
+  hi:relationTarget hi:music ;
+  hi:relationStrength "0.65"^^xsd:decimal .
+
+hi:rel-rnn_update-choreography_d a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:rnn_update ;
+  hi:relationTarget hi:choreography_d ;
+  hi:relationStrength "0.6"^^xsd:decimal .
 
 hi:rel-convolutional_networks-neural_networks a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:convolutional_networks ;
@@ -12533,6 +13414,61 @@ hi:rel-architecture-mediation a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationTarget hi:mediation ;
   hi:relationStrength "0.7"^^xsd:decimal .
 
+hi:rel-architecture-arch_design a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:architecture ;
+  hi:relationTarget hi:arch_design ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-arch_design-design_thinking a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:arch_design ;
+  hi:relationTarget hi:design_thinking ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-arch_design-creative a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:arch_design ;
+  hi:relationTarget hi:creative ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-arch_design-creative_embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:arch_design ;
+  hi:relationTarget hi:creative_embodiment ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-arch_design-affordances a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:arch_design ;
+  hi:relationTarget hi:affordances ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-arch_design-track_space a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:arch_design ;
+  hi:relationTarget hi:track_space ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-arch_design-karla a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:arch_design ;
+  hi:relationTarget hi:karla ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-arch_design-wertheim a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:arch_design ;
+  hi:relationTarget hi:wertheim ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-arch_design-rehearsal a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:arch_design ;
+  hi:relationTarget hi:rehearsal ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-arch_design-hybrid a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:arch_design ;
+  hi:relationTarget hi:hybrid ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-arch_design-literacies a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:arch_design ;
+  hi:relationTarget hi:literacies ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
 hi:rel-choreography-juggling a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:choreography ;
   hi:relationTarget hi:juggling ;
@@ -12647,6 +13583,76 @@ hi:rel-philosophy-possible_minds a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:philosophy ;
   hi:relationTarget hi:possible_minds ;
   hi:relationStrength "0.65"^^xsd:decimal .
+
+hi:rel-philosophy-philosophical_practice a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:philosophy ;
+  hi:relationTarget hi:philosophical_practice ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-philosophical_practice-epistemology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:philosophical_practice ;
+  hi:relationTarget hi:epistemology ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-philosophical_practice-4e a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:philosophical_practice ;
+  hi:relationTarget hi:4e ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-philosophical_practice-cognition a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:philosophical_practice ;
+  hi:relationTarget hi:cognition ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-philosophical_practice-coupling a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:philosophical_practice ;
+  hi:relationTarget hi:coupling ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-philosophical_practice-assemblage a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:philosophical_practice ;
+  hi:relationTarget hi:assemblage ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-philosophical_practice-cultural_critical a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:philosophical_practice ;
+  hi:relationTarget hi:cultural_critical ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-philosophical_practice-track_ethics a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:philosophical_practice ;
+  hi:relationTarget hi:track_ethics ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-philosophical_practice-complexity a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:philosophical_practice ;
+  hi:relationTarget hi:complexity ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-philosophical_practice-creative_embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:philosophical_practice ;
+  hi:relationTarget hi:creative_embodiment ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-philosophical_practice-clark a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:philosophical_practice ;
+  hi:relationTarget hi:clark ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-philosophical_practice-hayles a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:philosophical_practice ;
+  hi:relationTarget hi:hayles ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-philosophical_practice-merleau_ponty a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:philosophical_practice ;
+  hi:relationTarget hi:merleau_ponty ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-philosophical_practice-cameron a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:philosophical_practice ;
+  hi:relationTarget hi:cameron ;
+  hi:relationStrength "0.75"^^xsd:decimal .
 
 hi:rel-epistemology-philosophy a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:epistemology ;
@@ -14003,6 +15009,11 @@ hi:rel-hi_program-coupling a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationTarget hi:coupling ;
   hi:relationStrength "0.9"^^xsd:decimal .
 
+hi:rel-hi_program-cota a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:hi_program ;
+  hi:relationTarget hi:cota ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
 hi:rel-hi_program-came a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:hi_program ;
   hi:relationTarget hi:came ;
@@ -14021,6 +15032,31 @@ hi:rel-hi_program-ignite a owl:NamedIndividual, hi:NetworkRelation ;
 hi:rel-hi_program-wertheim a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:hi_program ;
   hi:relationTarget hi:wertheim ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-hi_program-gainesville_circus a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:hi_program ;
+  hi:relationTarget hi:gainesville_circus ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-hi_program-undergrad_participants a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:hi_program ;
+  hi:relationTarget hi:undergrad_participants ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-hi_program-grad_participants a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:hi_program ;
+  hi:relationTarget hi:grad_participants ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-hi_program-staff_participants a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:hi_program ;
+  hi:relationTarget hi:staff_participants ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-hi_program-community_participants a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:hi_program ;
+  hi:relationTarget hi:community_participants ;
   hi:relationStrength "0.9"^^xsd:decimal .
 
 hi:rel-hi_program-track_space a owl:NamedIndividual, hi:NetworkRelation ;
@@ -14053,10 +15089,40 @@ hi:rel-marlon-came a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationTarget hi:came ;
   hi:relationStrength "0.95"^^xsd:decimal .
 
+hi:rel-marlon-cota a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:marlon ;
+  hi:relationTarget hi:cota ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
 hi:rel-hi_program-erika a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:hi_program ;
   hi:relationTarget hi:erika ;
   hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-cota-came a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cota ;
+  hi:relationTarget hi:came ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-cota-cam a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cota ;
+  hi:relationTarget hi:cam ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-cota-art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cota ;
+  hi:relationTarget hi:art ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-cota-interdisciplinary_art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cota ;
+  hi:relationTarget hi:interdisciplinary_art ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-cota-onye a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cota ;
+  hi:relationTarget hi:onye ;
+  hi:relationStrength "0.85"^^xsd:decimal .
 
 hi:rel-came-cam a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:came ;
@@ -14117,6 +15183,31 @@ hi:rel-wertheim-architecture a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:wertheim ;
   hi:relationTarget hi:architecture ;
   hi:relationStrength "0.7"^^xsd:decimal .
+
+hi:rel-gainesville_circus-cheval_bailie a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:gainesville_circus ;
+  hi:relationTarget hi:cheval_bailie ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-gainesville_circus-circus_arts a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:gainesville_circus ;
+  hi:relationTarget hi:circus_arts ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-gainesville_circus-track_space a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:gainesville_circus ;
+  hi:relationTarget hi:track_space ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-gainesville_circus-juggling a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:gainesville_circus ;
+  hi:relationTarget hi:juggling ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-gainesville_circus-embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:gainesville_circus ;
+  hi:relationTarget hi:embodiment ;
+  hi:relationStrength "0.75"^^xsd:decimal .
 
 hi:rel-track_space-architecture a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:track_space ;
@@ -14322,6 +15413,481 @@ hi:rel-reception-hybrid a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:reception ;
   hi:relationTarget hi:hybrid ;
   hi:relationStrength "0.7"^^xsd:decimal .
+
+hi:rel-undergrad_participants-grad_participants a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:undergrad_participants ;
+  hi:relationTarget hi:grad_participants ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-undergrad_participants-art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:undergrad_participants ;
+  hi:relationTarget hi:art ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-undergrad_participants-dance a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:undergrad_participants ;
+  hi:relationTarget hi:dance ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-undergrad_participants-cs a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:undergrad_participants ;
+  hi:relationTarget hi:cs ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-undergrad_participants-ai_ml a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:undergrad_participants ;
+  hi:relationTarget hi:ai_ml ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-undergrad_participants-pedagogy a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:undergrad_participants ;
+  hi:relationTarget hi:pedagogy ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-undergrad_participants-reception a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:undergrad_participants ;
+  hi:relationTarget hi:reception ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-undergrad_participants-cota a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:undergrad_participants ;
+  hi:relationTarget hi:cota ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-grad_participants-cs a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:grad_participants ;
+  hi:relationTarget hi:cs ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-grad_participants-art_medicine a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:grad_participants ;
+  hi:relationTarget hi:art_medicine ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-grad_participants-ai_ml a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:grad_participants ;
+  hi:relationTarget hi:ai_ml ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-grad_participants-machine_learning a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:grad_participants ;
+  hi:relationTarget hi:machine_learning ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-grad_participants-neural_networks a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:grad_participants ;
+  hi:relationTarget hi:neural_networks ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-grad_participants-pedagogy a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:grad_participants ;
+  hi:relationTarget hi:pedagogy ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-grad_participants-reception a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:grad_participants ;
+  hi:relationTarget hi:reception ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-grad_participants-epistemology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:grad_participants ;
+  hi:relationTarget hi:epistemology ;
+  hi:relationStrength "0.7"^^xsd:decimal .
+
+hi:rel-staff_participants-art_medicine a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:staff_participants ;
+  hi:relationTarget hi:art_medicine ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-staff_participants-dance a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:staff_participants ;
+  hi:relationTarget hi:dance ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-staff_participants-somatics a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:staff_participants ;
+  hi:relationTarget hi:somatics ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-staff_participants-community a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:staff_participants ;
+  hi:relationTarget hi:community ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-staff_participants-reception a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:staff_participants ;
+  hi:relationTarget hi:reception ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-community_participants-community a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:community_participants ;
+  hi:relationTarget hi:community ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-community_participants-generative_arts a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:community_participants ;
+  hi:relationTarget hi:generative_arts ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-community_participants-choreography a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:community_participants ;
+  hi:relationTarget hi:choreography ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-community_participants-ai_art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:community_participants ;
+  hi:relationTarget hi:ai_art ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-community_participants-ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:community_participants ;
+  hi:relationTarget hi:ai ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-community_participants-ai_ml a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:community_participants ;
+  hi:relationTarget hi:ai_ml ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-community_participants-reception a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:community_participants ;
+  hi:relationTarget hi:reception ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-community_participants-interdisciplinary_art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:community_participants ;
+  hi:relationTarget hi:interdisciplinary_art ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-community_participants-staff_participants a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:community_participants ;
+  hi:relationTarget hi:staff_participants ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-grad_participants-staff_participants a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:grad_participants ;
+  hi:relationTarget hi:staff_participants ;
+  hi:relationStrength "0.7"^^xsd:decimal .
+
+hi:rel-undergrad_participants-community_participants a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:undergrad_participants ;
+  hi:relationTarget hi:community_participants ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-undergrad_participants-bg_art_history a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:undergrad_participants ;
+  hi:relationTarget hi:bg_art_history ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-undergrad_participants-bg_ise a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:undergrad_participants ;
+  hi:relationTarget hi:bg_ise ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-undergrad_participants-bg_dance_museum a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:undergrad_participants ;
+  hi:relationTarget hi:bg_dance_museum ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-undergrad_participants-bg_cs a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:undergrad_participants ;
+  hi:relationTarget hi:bg_cs ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-undergrad_participants-bg_ise_polisci a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:undergrad_participants ;
+  hi:relationTarget hi:bg_ise_polisci ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-grad_participants-bg_hcc a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:grad_participants ;
+  hi:relationTarget hi:bg_hcc ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-grad_participants-bg_art_history a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:grad_participants ;
+  hi:relationTarget hi:bg_art_history ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-grad_participants-bg_chem_eng a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:grad_participants ;
+  hi:relationTarget hi:bg_chem_eng ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-grad_participants-bg_ml a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:grad_participants ;
+  hi:relationTarget hi:bg_ml ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-grad_participants-bg_health_outcomes a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:grad_participants ;
+  hi:relationTarget hi:bg_health_outcomes ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-staff_participants-bg_lighting a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:staff_participants ;
+  hi:relationTarget hi:bg_lighting ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-staff_participants-bg_nursing a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:staff_participants ;
+  hi:relationTarget hi:bg_nursing ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-staff_participants-bg_public_health a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:staff_participants ;
+  hi:relationTarget hi:bg_public_health ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-staff_participants-bg_dance_therapy a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:staff_participants ;
+  hi:relationTarget hi:bg_dance_therapy ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-community_participants-bg_it a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:community_participants ;
+  hi:relationTarget hi:bg_it ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-community_participants-bg_digital_media_ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:community_participants ;
+  hi:relationTarget hi:bg_digital_media_ai ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-community_participants-bg_choreo_film a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:community_participants ;
+  hi:relationTarget hi:bg_choreo_film ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-community_participants-bg_library a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:community_participants ;
+  hi:relationTarget hi:bg_library ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-community_participants-bg_digital_art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:community_participants ;
+  hi:relationTarget hi:bg_digital_art ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-bg_art_history-art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_art_history ;
+  hi:relationTarget hi:art ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-bg_ise-cs a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_ise ;
+  hi:relationTarget hi:cs ;
+  hi:relationStrength "0.7"^^xsd:decimal .
+
+hi:rel-bg_ise-design_thinking a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_ise ;
+  hi:relationTarget hi:design_thinking ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-bg_dance_museum-dance a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_dance_museum ;
+  hi:relationTarget hi:dance ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-bg_dance_museum-curation a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_dance_museum ;
+  hi:relationTarget hi:curation ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-bg_cs-cs a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_cs ;
+  hi:relationTarget hi:cs ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-bg_cs-ai_ml a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_cs ;
+  hi:relationTarget hi:ai_ml ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-bg_ise_polisci-bg_ise a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_ise_polisci ;
+  hi:relationTarget hi:bg_ise ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-bg_ise_polisci-law a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_ise_polisci ;
+  hi:relationTarget hi:law ;
+  hi:relationStrength "0.7"^^xsd:decimal .
+
+hi:rel-bg_hcc-cs a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_hcc ;
+  hi:relationTarget hi:cs ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-bg_hcc-ai_ml a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_hcc ;
+  hi:relationTarget hi:ai_ml ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-bg_hcc-affordances a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_hcc ;
+  hi:relationTarget hi:affordances ;
+  hi:relationStrength "0.7"^^xsd:decimal .
+
+hi:rel-bg_chem_eng-cs a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_chem_eng ;
+  hi:relationTarget hi:cs ;
+  hi:relationStrength "0.6"^^xsd:decimal .
+
+hi:rel-bg_chem_eng-art_medicine a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_chem_eng ;
+  hi:relationTarget hi:art_medicine ;
+  hi:relationStrength "0.65"^^xsd:decimal .
+
+hi:rel-bg_ml-machine_learning a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_ml ;
+  hi:relationTarget hi:machine_learning ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-bg_ml-neural_networks a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_ml ;
+  hi:relationTarget hi:neural_networks ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-bg_ml-ai_ml a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_ml ;
+  hi:relationTarget hi:ai_ml ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-bg_health_outcomes-art_medicine a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_health_outcomes ;
+  hi:relationTarget hi:art_medicine ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-bg_lighting-art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_lighting ;
+  hi:relationTarget hi:art ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-bg_lighting-architecture a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_lighting ;
+  hi:relationTarget hi:architecture ;
+  hi:relationStrength "0.7"^^xsd:decimal .
+
+hi:rel-bg_nursing-art_medicine a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_nursing ;
+  hi:relationTarget hi:art_medicine ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-bg_public_health-art_medicine a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_public_health ;
+  hi:relationTarget hi:art_medicine ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-bg_public_health-community a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_public_health ;
+  hi:relationTarget hi:community ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-bg_dance_therapy-dance a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_dance_therapy ;
+  hi:relationTarget hi:dance ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-bg_dance_therapy-somatics a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_dance_therapy ;
+  hi:relationTarget hi:somatics ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-bg_dance_therapy-art_medicine a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_dance_therapy ;
+  hi:relationTarget hi:art_medicine ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-bg_it-cs a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_it ;
+  hi:relationTarget hi:cs ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-bg_digital_media_ai-ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_digital_media_ai ;
+  hi:relationTarget hi:ai ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-bg_digital_media_ai-ai_ml a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_digital_media_ai ;
+  hi:relationTarget hi:ai_ml ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-bg_digital_media_ai-generative_arts a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_digital_media_ai ;
+  hi:relationTarget hi:generative_arts ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-bg_choreo_film-choreography a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_choreo_film ;
+  hi:relationTarget hi:choreography ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-bg_choreo_film-choreography_d a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_choreo_film ;
+  hi:relationTarget hi:choreography_d ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-bg_choreo_film-storytelling a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_choreo_film ;
+  hi:relationTarget hi:storytelling ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-bg_library-epistemology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_library ;
+  hi:relationTarget hi:epistemology ;
+  hi:relationStrength "0.7"^^xsd:decimal .
+
+hi:rel-bg_library-curation a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_library ;
+  hi:relationTarget hi:curation ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-bg_digital_art-ai_art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_digital_art ;
+  hi:relationTarget hi:ai_art ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-bg_digital_art-generative_arts a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_digital_art ;
+  hi:relationTarget hi:generative_arts ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-bg_digital_art-interdisciplinary_art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_digital_art ;
+  hi:relationTarget hi:interdisciplinary_art ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-bg_art_history-bg_digital_art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_art_history ;
+  hi:relationTarget hi:bg_digital_art ;
+  hi:relationStrength "0.7"^^xsd:decimal .
+
+hi:rel-bg_ml-bg_digital_media_ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_ml ;
+  hi:relationTarget hi:bg_digital_media_ai ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-bg_cs-bg_hcc a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_cs ;
+  hi:relationTarget hi:bg_hcc ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-bg_dance_museum-bg_dance_therapy a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_dance_museum ;
+  hi:relationTarget hi:bg_dance_therapy ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-bg_health_outcomes-bg_nursing a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_health_outcomes ;
+  hi:relationTarget hi:bg_nursing ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-bg_health_outcomes-bg_public_health a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bg_health_outcomes ;
+  hi:relationTarget hi:bg_public_health ;
+  hi:relationStrength "0.85"^^xsd:decimal .
 
 hi:rel-marlon-choreography a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:marlon ;

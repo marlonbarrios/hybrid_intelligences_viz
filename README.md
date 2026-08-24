@@ -4,9 +4,11 @@
 
 Interactive map for **Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI** — a modular interdisciplinary program at the University of Florida, July 13–30, 2026.
 
-**University of Florida · Center for Arts, Migration + Entrepreneurship · IGNITE Engineering · Center for Arts in Medicine · College of the Arts**
+**Impact:** A living map of concepts, essays, and program materials for embodied leadership and creativity in the era of AI.
 
-**[Open network visualization →](index.html)** · **[Browse ontology →](ontology.html)** · **[Essay 1 →](essay.html)** · **[Essay 2 →](essay-2.html)** · **[Slides ↗](https://uflorida.sharepoint.com/:p:/r/teams/UF-CAME/Shared%20Documents/EVENTS%20and%20PROGRAMMING/Creative%20B%20Summer/Hybrid%20Intelligences%20(2026)/Program%20Materials/Creative%20B%20Symposium%20-%20Hybrid%20Intel.pptx?d=w4549d9142c9b45be860730dabc042349&csf=1&web=1&e=G9NWdm&nav=eyJzSWQiOjI4NSwiY0lkIjozNDU3MzA2ODkyfQ)** · **[Canvas ↗](https://ufl.instructure.com/courses/574408)**
+**[University of Florida](https://www.ufl.edu/) · [College of the Arts](https://arts.ufl.edu/) · [CAME](https://arts.ufl.edu/came/) · [CAM](https://arts.ufl.edu/programs-schools/center-for-arts-in-medicine/) · [IGNITE](https://www.eng.ufl.edu/innovation/) · [Wertheim Laboratory](https://www.eng.ufl.edu/wertheim/)**
+
+**[Home →](index.html)** · **[Network →](network.html)** · **[Browse ontology →](ontology.html)** · **[Essay 1 →](essay.html)** · **[Essay 2 →](essay-2.html)** · **[Slides ↗](https://uflorida.sharepoint.com/:p:/r/teams/UF-CAME/Shared%20Documents/EVENTS%20and%20PROGRAMMING/Creative%20B%20Summer/Hybrid%20Intelligences%20(2026)/Program%20Materials/Creative%20B%20Symposium%20-%20Hybrid%20Intel.pptx?d=w4549d9142c9b45be860730dabc042349&csf=1&web=1&e=G9NWdm&nav=eyJzSWQiOjI4NSwiY0lkIjozNDU3MzA2ODkyfQ)** · **[Video →](video.html)** · **[Podcast →](podcast.html)** · **[Canvas ↗](https://ufl.instructure.com/courses/574408)** · **[NotebookLM ↗](https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1)** · **[My Pendular Umwelt ↗](https://my-pendular-umwelt.vercel.app/)**
 
 ![Hybrid Intelligences conceptual network — dark theme, node detail panel](hybrid-network-screenshot.png)
 
@@ -16,12 +18,15 @@ Interactive map for **Hybrid Intelligences: Embodied Leadership and Creativity i
 
 This repository holds linked views of the same program knowledge:
 
-1. **Network visualization** (`index.html`) — a radial, physics-based map of ~**192 concepts** connected by ~**1,987 weighted relations**. Concepts sit on concentric rings by category; edges show conceptual proximity, influence, and program structure.
-2. **Ontology browser** (`ontology.html`) — a searchable, collapsible browse interface over the same data, exported as **[JSON-LD](ontology.jsonld)**, **[Turtle](ontology.ttl)** (SKOS), and **[OWL 2 Turtle](ontology.owl.ttl)** (classes, properties, individuals).
-3. **Essay 1** (`essay.html`) — *Hybrid Intelligences, Cognitive Assemblages, and Speculative Futures in the Era of AI* by Marlon Barrios Solano.
-4. **Essay 2** (`essay-2.html`) — *My Umwelt* by GPT-5.5, in conversation with Marlon Barrios Solano.
+1. **Home** (`index.html`) — landing page that introduces the premise and routes into the site.
+2. **Network visualization** (`network.html`) — a radial, physics-based map of **221 concepts** connected by **2,172 weighted relations**. Concepts sit on concentric rings by category; edges show conceptual proximity, influence, and program structure.
+3. **Ontology browser** (`ontology.html`) — a searchable, collapsible browse interface over the same data, exported as **[JSON-LD](ontology.jsonld)**, **[Turtle](ontology.ttl)** (SKOS), and **[OWL 2 Turtle](ontology.owl.ttl)** (classes, properties, individuals).
+4. **Essay 1** (`essay.html`) — *Hybrid Intelligences, Cognitive Assemblages, and Speculative Futures in the Era of AI* by Marlon Barrios Solano ([PDF](essay-1-hybrid-intelligences-cognitive-assemblages.pdf)).
+5. **Essay 2** (`essay-2.html`) — *My Umwelt* by GPT-5.5, in conversation with Marlon Barrios Solano ([PDF](essay-2-my-umwelt.pdf)).
+6. **Video** (`video.html`) — Hybrid Intelligences Highlights reel.
+7. **Podcast** (`podcast.html`) — sample Synthetic Podcast (*Your Mind Is Not in Your Head*) from NotebookLM; link through to the program notebook (UF login) to research, generate another podcast, or interact with Audio Overviews.
 
-Shared header navigation links Network, Ontology, Essays, program **[Slides](https://uflorida.sharepoint.com/:p:/r/teams/UF-CAME/Shared%20Documents/EVENTS%20and%20PROGRAMMING/Creative%20B%20Summer/Hybrid%20Intelligences%20(2026)/Program%20Materials/Creative%20B%20Symposium%20-%20Hybrid%20Intel.pptx?d=w4549d9142c9b45be860730dabc042349&csf=1&web=1&e=G9NWdm&nav=eyJzSWQiOjI4NSwiY0lkIjozNDU3MzA2ODkyfQ)**, and **[Canvas](https://ufl.instructure.com/courses/574408)**. Essay and ontology pages share a light/dark theme preference (`hi-theme`).
+Shared navigation links Home, Network, Ontology, Essays, **[Slides](https://uflorida.sharepoint.com/:p:/r/teams/UF-CAME/Shared%20Documents/EVENTS%20and%20PROGRAMMING/Creative%20B%20Summer/Hybrid%20Intelligences%20(2026)/Program%20Materials/Creative%20B%20Symposium%20-%20Hybrid%20Intel.pptx?d=w4549d9142c9b45be860730dabc042349&csf=1&web=1&e=G9NWdm&nav=eyJzSWQiOjI4NSwiY0lkIjozNDU3MzA2ODkyfQ)**, Video, Podcast, **[Canvas](https://ufl.instructure.com/courses/574408)**, **[NotebookLM](https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1)**, and **[My Pendular Umwelt](https://my-pendular-umwelt.vercel.app/)**. Institution credits (UF, College of the Arts, CAME, CAM, IGNITE, Wertheim) are linked on Home, Ontology, and the Network header. Pages share a light/dark theme preference (`hi-theme`). On narrow screens the **Network** switches to a mobile chrome (↑ / Play|Pause|Resume / ↓ / Reset / Menu) while the desktop layout stays unchanged.
 
 The network is both a **pedagogical instrument** for the Hybrid Intelligences program and a **formal vocabulary** for intelligence, embodiment, AI, and creative practice as *coupling* across bodies, tools, institutions, and worlds.
 
@@ -35,23 +40,28 @@ The graph is organized around a single starting claim:
 
 > **Intelligence is not located in a skull or machine—it is a relational event happening through bodies, tools, architectures, and co-presence.**
 
-From this premise follow three anchor concepts:
+From this premise follow core anchor concepts:
 
 | Concept | Role |
 |---------|------|
 | **Intelligence as Coupling** | Cognition as enacted relation, not inner substance |
 | **Hybrid Intelligences** | Assemblages of biological, technical, social, spatial, legal, and affective processes that co-produce meaning |
 | **Creative Embodiment** | AI-mediated creative process is already embodied, situated, and relational—the artist designs *conditions of encounter*; prompt, model, interface, dataset, institution, and audience form a **cognitive assemblage** |
+| **Cognitive Assemblages** (Hayles) | Networked arrangements where human and nonhuman cognizers exchange information and produce emergent meaning |
+| **Assemblage** | Heterogeneous compositions of bodies, tools, institutions, and media whose relations co-produce capacities |
+| **Techno-symbiosis** (Hayles) | Interdependence of biological and technical systems that co-evolve without collapsing into sameness |
+| **Cognition** | Knowing, perceiving, remembering, imagining, deciding—as world-involving practice, not skull-bound computation |
+| **4E Cognition** | Embodied, Embedded, Enacted, Extended—the four claims of embodied cognition against brain-bound mind |
 
-Supporting premise nodes include **Intelligence**, **Embodiment**, **Body**, and **Hybrid** (mixing across substrates and ecologies).
+Supporting premise nodes include **Intelligence**, **Embodiment**, **Body**, and **Hybrid** (mixing across substrates and ecologies). The four E *qualities* (Embodied, Embedded, Enacted, Extended) remain on the Qualities ring and stay tightly linked to **4E Cognition**. **N. Katherine Hayles** remains on the Authors ring, tightly linked to Cognitive Assemblages, Assemblage, and Techno-symbiosis.
 
 ### Cognitive assemblages
 
-Drawing on Katherine Hayles, Andy Clark, 4E/enactivist traditions, and contemporary AI critique, the network treats cognition as **distributed**—spanning brains, bodies, tools, datasets, interfaces, institutions, and publics. Framework nodes include:
+Drawing on Katherine Hayles, Andy Clark, 4E/enactivist traditions, and contemporary AI critique, the network treats cognition as **distributed**—spanning brains, bodies, tools, datasets, interfaces, institutions, and publics. Alongside premise-level cognitive assemblages, techno-symbiosis, and 4E cognition, framework nodes include:
 
-- **4E Cognition**, **Enactivism**, **Extended Mind**, **Natural-Born Cyborg**
-- **Cognitive Assemblages**, **Techno-symbiosis**, **Holobiont**, **Affordances**, **Umwelt**
-- **Active Inference**, **Machine Learning**, **Neural Networks**, and related AI architectures
+- **Enactivism**, **Extended Mind**, **Natural-Born Cyborg**
+- **Holobiont**, **Affordances**, **Umwelt**
+- **Active Inference**, **Machine Learning**, **Neural Networks**, and related AI architectures (including formula nodes **z = Wx + b** and the RNN update **σ(Wₓx + Wₕh + b)**)
 - **Cyberfeminism**, **Queer Theory**, **Buddhism**, decolonial and critical frameworks
 - Authors and artists linked to these ideas (Merleau-Ponty, Hayles, Clark, Haraway, Latour, Nāgārjuna, Mendieta, Bowery, and many others)
 
@@ -71,36 +81,43 @@ These are not errors to dismiss quickly; they are **live problems** that structu
 | **Qualities** | Traits of hybrid cognition—embodied, situated, distributed, critical, speculative… |
 | **Phenomena** | Observable dynamics—mediation, symbiosis, community, theory of mind… |
 | **Domains** | Fields of inquiry and practice—choreography, law, ecology, architecture, medicine, AI… |
-| **Practices** | Methods and habits—rehearsal, somatics, pedagogy, cultural critique, literacies of coupling… |
+| **Practices** | Methods and habits—rehearsal, somatics, pedagogy, cultural critique, architecture & design, philosophical practice… |
 
 ### Program layer
 
-The inner **Program** ring anchors the July 2026 intensive:
+The innermost **Program** ring anchors the July 2026 intensive:
 
-- **Hybrid Intelligences Program** — co-led by Marlon Barrios Solano and Erika Moore (CAME + CAM, partnership with IGNITE at Wertheim Laboratory)
+- **Hybrid Intelligences Program** — co-led by Marlon Barrios Solano and Erika Moore
 - **Three tracks:** Space & Memory (Mondays) · Future Lab (Wednesdays) · Ethics & Leadership (Thursdays)
-- Host institutions, facilitators, guest leaders, and public reception (July 30)
+- **Public Reception** (July 30)
+
+The next ring, **Organizations**, holds the host institutions and partners: [College of the Arts](https://arts.ufl.edu/) (COA; includes [CAME](https://arts.ufl.edu/came/) and [CAM](https://arts.ufl.edu/programs-schools/center-for-arts-in-medicine/)), [IGNITE](https://www.eng.ufl.edu/innovation/), [Wertheim Laboratory](https://www.eng.ufl.edu/wertheim/), and Gainesville Circus Center.
+
+After **Premise**, **Participants** names who was in the room; the next ring, **Backgrounds**, holds their formative fields (majors, professions, community practices)—immediately inward of **Facilitators**.
 
 ---
 
 ## Ring categories
 
-Concepts are assigned to one of ten rings, from program core outward to authors/artists:
+Concepts are assigned to one of thirteen rings, from program core outward to authors/artists:
 
 | Order | Category | Definition |
 |-------|----------|------------|
-| 1 | **Program** | Sessions, tracks, hosts, and public events of the Hybrid Intelligences program |
-| 2 | **Premise** | Core starting ideas—intelligence as coupling across bodies, tools, and worlds |
-| 3 | **Facilitators** | Session leaders and guest facilitators |
-| 4 | **Practices** | Methods and habits—rehearsal, somatics, pedagogy, cultural critique |
-| 5 | **Tensions** | Inadequate or contested positions the network holds open to critique |
-| 6 | **Qualities** | Traits of hybrid cognition—embodied, situated, distributed, critical |
-| 7 | **Phenomena** | Observable dynamics—mediation, symbiosis, community, theory of mind |
-| 8 | **Domains** | Fields of practice and inquiry—art, law, ecology, AI, choreography |
-| 9 | **Framework** | Conceptual models for cognition, AI, embodiment, and world-making |
-| 10 | **Authors/Artists** | Thinkers, artists, and researchers linked to concepts in the network |
+| 1 | **Program** | The Hybrid Intelligences program, its three tracks, and public events |
+| 2 | **Organizations** | Host institutions and partners—College of the Arts (COA), CAME, CAM, IGNITE, Wertheim, Gainesville Circus Center |
+| 3 | **Premise** | Core starting ideas—intelligence as coupling across bodies, tools, and worlds |
+| 4 | **Participants** | Undergraduate and graduate students, UF staff, community members, alumni, and former faculty |
+| 5 | **Backgrounds** | Formative backgrounds of the cohort—academic majors, professional formations, and community practices |
+| 6 | **Facilitators** | Session leaders and guest facilitators |
+| 7 | **Practices** | Methods and habits—rehearsal, somatics, architecture & design, philosophical practice, cultural critique |
+| 8 | **Tensions** | Inadequate or contested positions the network holds open to critique |
+| 9 | **Qualities** | Traits of hybrid cognition—embodied, situated, distributed, critical |
+| 10 | **Phenomena** | Observable dynamics—mediation, symbiosis, community, theory of mind |
+| 11 | **Domains** | Fields of practice and inquiry—art, law, ecology, AI, choreography |
+| 12 | **Framework** | Conceptual models for cognition, AI, embodiment, and world-making |
+| 13 | **Authors/Artists** | Thinkers, artists, and researchers linked to concepts in the network |
 
-Each category has a distinct color (shared across dark and light themes). Ring order reflects pedagogical layering: from *what the program is*, through *starting claims*, to *people and ideas* at the outer edge.
+Each category has a distinct color (shared across dark and light themes). Ring order reflects pedagogical layering: from *what the program is* and *who hosts it*, through *starting claims*, to *who participates, from which backgrounds, and who facilitates*, then outward to practices and ideas.
 
 ---
 
@@ -119,6 +136,7 @@ Each category has a distinct color (shared across dark and light themes). Ring o
 |-------|--------|
 | **Hover legend category** | Preview focus—dims other rings and highlights matching nodes/edges |
 | **Click legend category** | Pin category filter; click again to clear; **Esc** clears pinned focus |
+| **↑ / ↓** | Step through categories (Program → … → Authors) |
 | **Hover node** | Highlight node, neighbors, and connecting edges; pauses animation tour while hovered |
 | **Click node** | Open detail panel (description + outbound links) |
 | **Drag node** | Reposition temporarily; release to spring back |
@@ -132,30 +150,36 @@ During animation, each ring/category step plays a **generative ambient tone** (W
 
 | URL pattern | Effect |
 |-------------|--------|
-| `index.html#coupling` | Select concept node by id |
-| `index.html#cat/premise` | Pin **Premise** category in the network |
+| `network.html#coupling` | Select concept node by id |
+| `network.html#cat/premise` | Pin **Premise** category in the network |
 | `ontology.html#coupling` | Open concept detail in ontology browser |
 | `ontology.html#cat/premise` | Filter ontology to **Premise** category |
 
-Links between network and ontology are wired from concept detail panels and category banners (“View in network ↗”). Premise node **Hybrid Intelligences** deep-links to Essay 1; framework node **Umwelt** deep-links to Essay 2 (Wikipedia remains available where mapped).
+Links between network and ontology are wired from concept detail panels and category banners (“View in network ↗”). Premise and framework nodes such as **Intelligence as Coupling**, **Hybrid Intelligences**, **Cognitive Assemblages**, **4E Cognition**, **Umwelt**, and **LLM** deep-link to Essay 1 or Essay 2 (Wikipedia and institutional URLs remain available where mapped).
 
 ---
 
 ## Essays
 
-Both essays use the same visual language as the ontology browser (IBM Plex, shared CSS theme variables, sticky header nav, theme toggle).
+Both essays use the same visual language as the ontology browser (IBM Plex, shared CSS theme variables, sticky header nav, theme toggle). Key terms in the essay body are inline **concept links** into the **Network** (`network.html#conceptId`). Matching network nodes deep-link back with **Read Essay 1 →** / **Read Essay 2 →**. Downloadable PDFs include a project cover masthead.
 
 | Page | Title | Author / credit |
 |------|-------|-----------------|
-| [`essay.html`](essay.html) | Hybrid Intelligences, Cognitive Assemblages, and Speculative Futures in the Era of AI | Marlon Barrios Solano · July 10, 2026 |
-| [`essay-2.html`](essay-2.html) | My Umwelt | GPT-5.5, in conversation with Marlon Barrios Solano · July 20, 2026 |
+| [`essay.html`](essay.html) · [PDF](essay-1-hybrid-intelligences-cognitive-assemblages.pdf) | Hybrid Intelligences, Cognitive Assemblages, and Speculative Futures in the Era of AI | Marlon Barrios Solano · July 10, 2026 |
+| [`essay-2.html`](essay-2.html) · [PDF](essay-2-my-umwelt.pdf) | My Umwelt | GPT-5.5, in conversation with Marlon Barrios Solano · July 20, 2026 |
+| [`video.html`](video.html) | Hybrid Intelligences Highlights | Program highlight video |
+| [`podcast.html`](podcast.html) | Your Mind Is Not in Your Head | Sample NotebookLM podcast; CTA to program notebook |
 
 ### Program links
 
 | Link | Destination |
 |------|-------------|
 | **Slides** | Creative B Symposium PowerPoint on UF SharePoint (opens externally; requires UF access) |
+| **Video** | [`video.html`](video.html) — Hybrid Intelligences Highlights (`hybrid-intelligences-highlight.mp4`) |
+| **Podcast** | [`podcast.html`](podcast.html) — sample episode *Your Mind Is Not in Your Head* (`your-mind-is-not-in-your-head.m4a`); continue in [NotebookLM](https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1) with UF credentials to research, create another podcast, or interact with Audio Overviews |
 | **Canvas** | [Hybrid Intelligences - Creative B](https://ufl.instructure.com/courses/574408) course site |
+| **NotebookLM** | [Program notebook](https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1) — research tool built from Hybrid Intelligences resources and essays; **UF login required** to play and use |
+| **My Pendular Umwelt** | [Interactive umwelt](https://my-pendular-umwelt.vercel.app/) — OpenAI · p5.js |
 
 ---
 
@@ -178,14 +202,14 @@ The SKOS export uses a custom `hi:` vocabulary for network-specific fields (cate
 **Classes**
 - `hi:Concept` — root class for all network concepts
 - `hi:CategoryConcept` — meta-class for ring categories
-- Ten category subclasses: `hi:ProgramConcept`, `hi:PremiseConcept`, `hi:FacilitatorConcept`, `hi:PracticeConcept`, `hi:TensionConcept`, `hi:QualityConcept`, `hi:PhenomenonConcept`, `hi:DomainConcept`, `hi:FrameworkConcept`, `hi:AuthorConcept` (pairwise disjoint)
+- Thirteen category subclasses: `hi:ProgramConcept`, `hi:OrganizationConcept`, `hi:ParticipantConcept`, `hi:BackgroundConcept`, `hi:PremiseConcept`, `hi:FacilitatorConcept`, `hi:PracticeConcept`, `hi:TensionConcept`, `hi:QualityConcept`, `hi:PhenomenonConcept`, `hi:DomainConcept`, `hi:FrameworkConcept`, `hi:AuthorConcept` (pairwise disjoint)
 - `hi:NetworkRelation` — reified weighted edges
 
 **Object properties:** `hi:relatedTo` (symmetric), `hi:inCategory`, `hi:schemeMember`, `hi:relationSource`, `hi:relationTarget`
 
 **Datatype properties:** `hi:networkWeight`, `hi:relationStrength`, `hi:ringFraction`, `hi:ringOrder`
 
-Each of the ~192 concept nodes is an `owl:NamedIndividual` typed with its category class. Edges appear both as direct `hi:relatedTo` assertions and as reified `hi:NetworkRelation` individuals with strength values.
+Each of the 221 concept nodes is an `owl:NamedIndividual` typed with its category class. Edges appear both as direct `hi:relatedTo` assertions and as reified `hi:NetworkRelation` individuals with strength values.
 
 Compatible with [Protégé](https://protege.stanford.edu/), Apache Jena, rdflib, and OWL-aware SPARQL endpoints.
 
@@ -224,10 +248,13 @@ Open [http://localhost:8000/](http://localhost:8000/)
 
 | Page | URL |
 |------|-----|
-| Network | http://localhost:8000/index.html |
+| Home | http://localhost:8000/ |
+| Network | http://localhost:8000/network.html |
 | Ontology | http://localhost:8000/ontology.html |
 | Essay 1 | http://localhost:8000/essay.html |
 | Essay 2 | http://localhost:8000/essay-2.html |
+| Video | http://localhost:8000/video.html |
+| Podcast | http://localhost:8000/podcast.html |
 
 Or use the **Live Server** extension in VS Code / Cursor on `index.html`.
 
@@ -243,11 +270,18 @@ node build-ontology.js
 
 | File | Role |
 |------|------|
-| `index.html` | Network page shell, fonts, theme background |
+| `index.html` | Home / landing page |
+| `network.html` | Network visualization page shell (loads `hybrid-network.js`) |
 | `hybrid-network.js` | Nodes, edges, categories, layout, draw loop, interaction, animation |
 | `ontology.html` | Ontology browser UI (loads `ontology.jsonld`) |
-| `essay.html` | Essay 1 full text with shared light/dark theme |
-| `essay-2.html` | Essay 2 (*My Umwelt*) with shared light/dark theme |
+| `essay.html` | Essay 1 full text with concept → network links and shared light/dark theme |
+| `essay-2.html` | Essay 2 (*My Umwelt*) with concept → network links and shared light/dark theme |
+| `essay-1-hybrid-intelligences-cognitive-assemblages.pdf` | Essay 1 PDF download |
+| `essay-2-my-umwelt.pdf` | Essay 2 PDF download |
+| `video.html` | Hybrid Intelligences Highlights video page |
+| `podcast.html` | Synthetic Podcast page (NotebookLM sample + CTA) |
+| `your-mind-is-not-in-your-head.m4a` | Synthetic Podcast episode audio |
+| `hybrid-intelligences-highlight.mp4` | Hybrid Intelligences Highlights video file |
 | `build-ontology.js` | Export script: `hybrid-network.js` → JSON-LD + Turtle + OWL |
 | `ontology.jsonld` | JSON-LD concept scheme (generated) |
 | `ontology.ttl` | Turtle SKOS export (generated) |
@@ -260,8 +294,8 @@ node build-ontology.js
 
 - **Conceptual network & ontology:** [Marlon Barrios Solano](https://marlonbarrios.github.io/)
 - **Program co-director:** Erika Moore
-- **Hosts:** Center for Arts, Migration + Entrepreneurship (CAME) · Center for Arts in Medicine (CAM) · IGNITE Engineering · College of the Arts, University of Florida
-- **Venue:** Herbert Wertheim Laboratory for Engineering Excellence
+- **Hosts:** [University of Florida](https://www.ufl.edu/) · [College of the Arts](https://arts.ufl.edu/) · [CAME](https://arts.ufl.edu/came/) · [CAM](https://arts.ufl.edu/programs-schools/center-for-arts-in-medicine/) · [IGNITE](https://www.eng.ufl.edu/innovation/)
+- **Venue:** [Herbert Wertheim Laboratory for Engineering Excellence](https://www.eng.ufl.edu/wertheim/)
 - **Built with:** [p5.js](https://p5js.org/) · SKOS / JSON-LD / Turtle / OWL 2
 - **Essay 2 (*My Umwelt*):** GPT-5.5, in conversation with Marlon Barrios Solano
 
@@ -271,7 +305,7 @@ node build-ontology.js
 
 MIT License
 
-Copyright (c) 2024 Marlon Barrios Solano
+Copyright (c) 2026 Marlon Barrios Solano
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

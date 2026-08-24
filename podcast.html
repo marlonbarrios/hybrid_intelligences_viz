@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hybrid Intelligences — Synthetic Podcast</title>
+  <meta name="description" content="Sample Synthetic Podcast from Hybrid Intelligences NotebookLM. Sign in with UF credentials to research, create another podcast, or interact with Audio Overviews.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e1018;
+      --panel: #12141e;
+      --border: #323848;
+      --title: #f4c430;
+      --text: #e8eaef;
+      --muted: #969eb0;
+      --link: #82c3ff;
+      --hover: #1a1e2a;
+      --accent: rgba(244, 196, 48, 0.12);
+    }
+    body.light-mode {
+      --bg: #fffdf8;
+      --panel: #ffffff;
+      --border: #d2d6e0;
+      --title: #a8760c;
+      --text: #202430;
+      --muted: #5a6070;
+      --link: #125599;
+      --hover: #f5f3ee;
+      --accent: rgba(168, 118, 12, 0.1);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse 90% 55% at 12% -10%, rgba(244, 196, 48, 0.07), transparent 55%),
+        radial-gradient(ellipse 70% 45% at 100% 0%, rgba(168, 140, 228, 0.06), transparent 50%),
+        var(--bg);
+      color: var(--text);
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      line-height: 1.5;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      padding: 1.25rem 1.5rem 1rem;
+      border-bottom: 1px solid var(--border);
+      background: color-mix(in srgb, var(--panel) 88%, transparent);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header .eyebrow {
+      margin: 0 0 0.4rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    header h1 {
+      margin: 0 0 0.45rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 300;
+      font-size: clamp(0.95rem, 2.4vw, 1.15rem);
+      line-height: 1.4;
+      color: var(--title);
+      max-width: 48rem;
+    }
+    header .meta {
+      margin: 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .header-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 0.85rem;
+    }
+    .header-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+    }
+    .theme-btn {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      padding: 0.35rem 0.55rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .theme-btn:hover { color: var(--title); border-color: var(--title); }
+    main {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 2.25rem 1.5rem 3.5rem;
+    }
+    .episode {
+      padding: 1.5rem 1.35rem 1.35rem;
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(165deg, var(--accent), transparent 42%),
+        var(--panel);
+    }
+    .episode .show {
+      margin: 0 0 0.55rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--title);
+    }
+    .episode h2 {
+      margin: 0 0 0.85rem;
+      font-family: "IBM Plex Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.35rem, 3.5vw, 1.75rem);
+      line-height: 1.25;
+      color: var(--text);
+    }
+    .episode audio {
+      display: block;
+      width: 100%;
+      margin: 0 0 1rem;
+      height: 2.75rem;
+    }
+    .episode .download {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+    }
+    .notebook-cta {
+      margin: 1.5rem 0 0;
+      padding: 1.15rem 1.2rem;
+      border: 1px solid var(--border);
+      background: var(--panel);
+    }
+    .notebook-cta h3 {
+      margin: 0 0 0.55rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 400;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--title);
+    }
+    .notebook-cta p {
+      margin: 0 0 0.85rem;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+    .notebook-cta p:last-child { margin-bottom: 0; }
+    .notebook-cta a.cta {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 0.15rem;
+      padding: 0.55rem 0.9rem;
+      border: 1px solid var(--title);
+      background: var(--title);
+      color: var(--bg);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      text-decoration: none;
+    }
+    .notebook-cta a.cta:hover {
+      background: transparent;
+      color: var(--title);
+      text-decoration: none;
+    }
+    .caption {
+      margin: 1.25rem 0 0;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    footer.page-foot {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">Synthetic Podcast</p>
+    <h1>Your Mind Is Not in Your Head</h1>
+    <p class="meta">Hybrid Intelligences · <a href="https://www.ufl.edu/" target="_blank" rel="noopener noreferrer">University of Florida</a> · <a href="https://arts.ufl.edu/" target="_blank" rel="noopener noreferrer">College of the Arts</a></p>
+    <div class="header-row">
+      <div class="header-links">
+        <a href="index.html">← Home</a>
+        <a href="network.html">Network</a>
+        <a href="ontology.html">Ontology</a>
+        <a href="essay.html">Essay 1</a>
+        <a href="essay-2.html">Essay 2</a>
+        <a href="https://uflorida.sharepoint.com/:p:/r/teams/UF-CAME/Shared%20Documents/EVENTS%20and%20PROGRAMMING/Creative%20B%20Summer/Hybrid%20Intelligences%20(2026)/Program%20Materials/Creative%20B%20Symposium%20-%20Hybrid%20Intel.pptx?d=w4549d9142c9b45be860730dabc042349&csf=1&web=1&e=G9NWdm&nav=eyJzSWQiOjI4NSwiY0lkIjozNDU3MzA2ODkyfQ" target="_blank" rel="noopener noreferrer">Slides ↗</a>
+        <a href="video.html">Video</a>
+        <a href="https://ufl.instructure.com/courses/574408" target="_blank" rel="noopener noreferrer">Canvas ↗</a>
+        <a href="https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1" target="_blank" rel="noopener noreferrer">NotebookLM ↗</a>
+        <a href="https://my-pendular-umwelt.vercel.app/" target="_blank" rel="noopener noreferrer">My Pendular Umwelt ↗</a>
+      </div>
+      <button type="button" class="theme-btn" id="themeBtn" aria-label="Toggle theme">Theme</button>
+    </div>
+  </header>
+
+  <main>
+    <article class="episode">
+      <p class="show">Sample episode · NotebookLM</p>
+      <h2>Your Mind Is Not in Your Head</h2>
+      <audio controls preload="metadata">
+        <source src="your-mind-is-not-in-your-head.m4a" type="audio/mp4">
+        Your browser does not support the audio element.
+        <a href="your-mind-is-not-in-your-head.m4a">Download the episode</a>
+      </audio>
+      <a class="download" href="your-mind-is-not-in-your-head.m4a" download>Download sample ↓</a>
+    </article>
+    <p class="caption">
+      This is one sample podcast generated in NotebookLM from Hybrid Intelligences program resources and essays—not the full notebook experience.
+    </p>
+    <aside class="notebook-cta">
+      <h3>Open NotebookLM</h3>
+      <p>
+        Go to the program NotebookLM notebook to use it as a research tool: ask questions, generate another podcast, or interact with Audio Overviews built from the same materials.
+      </p>
+      <p>
+        Sign in with your <strong>UF credentials</strong> to play and use the notebook.
+      </p>
+      <a class="cta" href="https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1" target="_blank" rel="noopener noreferrer">Open NotebookLM ↗</a>
+    </aside>
+  </main>
+
+  <footer class="page-foot">
+    Hybrid Intelligences · University of Florida · Synthetic Podcast
+  </footer>
+
+  <script>
+    function applyTheme(mode) {
+      document.body.classList.toggle("light-mode", mode === "light");
+      localStorage.setItem("hi-theme", mode);
+    }
+
+    function initTheme() {
+      const saved = localStorage.getItem("hi-theme");
+      const mode = saved || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      applyTheme(mode);
+      document.getElementById("themeBtn").addEventListener("click", () => {
+        applyTheme(document.body.classList.contains("light-mode") ? "dark" : "light");
+      });
+    }
+
+    initTheme();
+  </script>
+</body>
+</html>

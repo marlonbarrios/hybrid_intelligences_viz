@@ -1,25 +1,451 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
-    <script src="hybrid-network.js"></script>
-    <style>
-        * { box-sizing: border-box; }
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background: #0e1018;
-            font-family: "IBM Plex Mono", "Courier New", monospace;
-        }
-        body.light-mode { background: #fffdf8; }
-        canvas { display: block; }
-    </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hybrid Intelligences — Home</title>
+  <meta name="description" content="A living map of concepts, essays, and program materials for embodied leadership and creativity in the era of AI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e1018;
+      --panel: #12141e;
+      --border: #323848;
+      --title: #f4c430;
+      --text: #e8eaef;
+      --muted: #969eb0;
+      --link: #82c3ff;
+      --hover: rgba(255, 255, 255, 0.06);
+      --rule: rgba(150, 158, 176, 0.28);
+      --hero-text: #f2f4f8;
+      --hero-support: rgba(232, 234, 239, 0.78);
+      --hero-meta: rgba(150, 158, 176, 0.95);
+      --hero-enter-desc: rgba(180, 188, 204, 0.92);
+      --hero-enter-hover: rgba(255, 255, 255, 0.05);
+      --hero-shade:
+        linear-gradient(105deg, rgba(8, 10, 16, 0.94) 0%, rgba(8, 10, 16, 0.82) 38%, rgba(8, 10, 16, 0.45) 68%, rgba(8, 10, 16, 0.7) 100%),
+        linear-gradient(180deg, rgba(8, 10, 16, 0.45) 0%, transparent 28%, rgba(8, 10, 16, 0.55) 100%);
+      --cta-fg: #0e1018;
+      --theme-btn-border: rgba(150, 158, 176, 0.45);
+      --theme-btn-color: rgba(232, 234, 239, 0.82);
+    }
+    body.light-mode {
+      --bg: #fffdf8;
+      --panel: #ffffff;
+      --border: #d2d6e0;
+      --title: #a8760c;
+      --text: #202430;
+      --muted: #5a6070;
+      --link: #125599;
+      --hover: rgba(0, 0, 0, 0.04);
+      --rule: rgba(90, 96, 112, 0.22);
+      --hero-text: #202430;
+      --hero-support: rgba(32, 36, 48, 0.78);
+      --hero-meta: rgba(90, 96, 112, 0.95);
+      --hero-enter-desc: rgba(90, 96, 112, 0.92);
+      --hero-enter-hover: rgba(0, 0, 0, 0.04);
+      --hero-shade:
+        linear-gradient(105deg, rgba(255, 253, 248, 0.96) 0%, rgba(255, 253, 248, 0.88) 40%, rgba(255, 253, 248, 0.55) 70%, rgba(255, 253, 248, 0.78) 100%),
+        linear-gradient(180deg, rgba(255, 253, 248, 0.5) 0%, transparent 30%, rgba(255, 253, 248, 0.65) 100%);
+      --cta-fg: #fffdf8;
+      --theme-btn-border: var(--border);
+      --theme-btn-color: var(--muted);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      line-height: 1.5;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      color: var(--text);
+    }
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      background: url("hybrid-network-screenshot.png") center / cover no-repeat;
+      transform: scale(1.04);
+      animation: heroDrift 28s ease-in-out infinite alternate;
+    }
+    body.light-mode .hero-media {
+      filter: saturate(0.85) brightness(1.08);
+    }
+    .hero-shade {
+      position: absolute;
+      inset: 0;
+      background: var(--hero-shade);
+      transition: background 0.25s ease;
+    }
+
+    .topbar {
+      position: relative;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0.85rem 1.5rem;
+    }
+    .theme-btn {
+      border: 1px solid var(--theme-btn-border);
+      background: color-mix(in srgb, var(--panel) 70%, transparent);
+      color: var(--theme-btn-color);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      padding: 0.35rem 0.55rem;
+      border-radius: 6px;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+    }
+    .theme-btn:hover { border-color: var(--title); color: var(--title); }
+
+    .hero-body {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(16rem, 0.95fr);
+      gap: 2rem 3rem;
+      align-items: end;
+      width: 100%;
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 0.5rem 1.5rem 2.25rem;
+      animation: heroRise 1s ease-out both;
+    }
+
+    .intro .brand {
+      margin: 0 0 0.85rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 300;
+      font-size: clamp(1.75rem, 5vw, 3.1rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--title);
+    }
+    .intro .line {
+      margin: 0 0 0.7rem;
+      font-family: "IBM Plex Serif", Georgia, serif;
+      font-size: clamp(1.05rem, 2.1vw, 1.4rem);
+      line-height: 1.35;
+      color: var(--hero-text);
+      max-width: 28rem;
+    }
+    .intro .impact-label {
+      margin: 0 0 0.35rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--title);
+    }
+    .intro .support {
+      margin: 0 0 1.35rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: var(--hero-support);
+      max-width: 28rem;
+    }
+    .cta-primary {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.65rem 1.1rem;
+      border: 1px solid var(--title);
+      color: var(--cta-fg);
+      background: var(--title);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.8rem;
+      text-decoration: none;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+    .cta-primary:hover {
+      background: transparent;
+      color: var(--title);
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+    .intro .meta {
+      margin: 1.35rem 0 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem;
+      line-height: 1.5;
+      color: var(--hero-meta);
+      max-width: 28rem;
+    }
+    .intro .meta a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 0.18em;
+      text-decoration-color: color-mix(in srgb, var(--hero-meta) 55%, transparent);
+    }
+    .intro .meta a:hover {
+      color: var(--title);
+      text-decoration-color: var(--title);
+    }
+
+    .enter {
+      border-top: 1px solid var(--rule);
+      padding-top: 0.35rem;
+    }
+    .enter-label {
+      margin: 0 0 0.35rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--title);
+    }
+    .enter-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .enter-list li {
+      border-bottom: 1px solid var(--rule);
+    }
+    .enter-list a {
+      display: grid;
+      grid-template-columns: 7.5rem 1fr;
+      gap: 0.55rem 0.85rem;
+      padding: 0.58rem 0.1rem;
+      color: inherit;
+      text-decoration: none;
+      transition: background 0.15s ease, padding-left 0.2s ease;
+    }
+    .enter-list a:hover {
+      background: var(--hero-enter-hover);
+      padding-left: 0.3rem;
+      text-decoration: none;
+    }
+    .enter-list .label {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.82rem;
+      color: var(--title);
+    }
+    .enter-list .desc {
+      font-size: 0.8rem;
+      line-height: 1.35;
+      color: var(--hero-enter-desc);
+    }
+
+    .below {
+      padding: 3.5rem 1.5rem 2rem;
+      border-top: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+    }
+    .below-inner {
+      max-width: 42rem;
+      margin: 0 auto;
+    }
+    .below h2 {
+      margin: 0 0 0.75rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 400;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--title);
+    }
+    .below p {
+      margin: 0;
+      font-family: "IBM Plex Serif", Georgia, serif;
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    footer.page-foot {
+      padding: 1.1rem 1.5rem 2.25rem;
+      border-top: 1px solid var(--border);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      background: var(--bg);
+    }
+    footer.page-foot .inner {
+      max-width: 42rem;
+      margin: 0 auto;
+    }
+
+    @keyframes heroDrift {
+      from { transform: scale(1.04) translate3d(0, 0, 0); }
+      to { transform: scale(1.08) translate3d(-1.2%, -0.8%, 0); }
+    }
+    @keyframes heroRise {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-media, .hero-body { animation: none; }
+    }
+
+    @media (max-width: 860px) {
+      .hero-body {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        align-items: start;
+        padding-top: 0.25rem;
+        padding-bottom: 1.5rem;
+      }
+      .intro .brand { font-size: clamp(1.6rem, 8vw, 2.4rem); }
+      .enter-list a {
+        grid-template-columns: 6.5rem 1fr;
+        padding: 0.48rem 0.05rem;
+      }
+      .enter-list .desc { font-size: 0.76rem; }
+    }
+    @media (max-width: 520px) {
+      .enter-list a {
+        grid-template-columns: 1fr;
+        gap: 0.15rem;
+      }
+    }
+  </style>
 </head>
-<body></body>
+<body>
+  <header class="hero">
+    <div class="hero-media" role="img" aria-label="Hybrid Intelligences conceptual network visualization"></div>
+    <div class="hero-shade" aria-hidden="true"></div>
+
+    <div class="topbar">
+      <button type="button" class="theme-btn" id="themeBtn" aria-label="Toggle theme">Theme</button>
+    </div>
+
+    <div class="hero-body">
+      <div class="intro">
+        <h1 class="brand">Hybrid Intelligences</h1>
+        <p class="line">Intelligence as coupling across bodies, tools, institutions, and worlds.</p>
+        <p class="impact-label">Impact</p>
+        <p class="support">
+          A living map of concepts, essays, and program materials for embodied leadership and creativity in the era of AI.
+        </p>
+        <a class="cta-primary" href="network.html">Enter the network</a>
+        <p class="meta">
+          <a href="https://www.ufl.edu/" target="_blank" rel="noopener noreferrer">University of Florida</a>
+          · <a href="https://arts.ufl.edu/" target="_blank" rel="noopener noreferrer">College of the Arts</a>
+          · <a href="https://arts.ufl.edu/came/" target="_blank" rel="noopener noreferrer">CAME</a>
+          · <a href="https://arts.ufl.edu/programs-schools/center-for-arts-in-medicine/" target="_blank" rel="noopener noreferrer">CAM</a>
+          · <a href="https://www.eng.ufl.edu/innovation/" target="_blank" rel="noopener noreferrer">IGNITE</a>
+          · <a href="https://www.eng.ufl.edu/wertheim/" target="_blank" rel="noopener noreferrer">Wertheim Laboratory</a><br>
+          July 13–30, 2026
+        </p>
+      </div>
+
+      <nav class="enter" aria-label="Site sections">
+        <p class="enter-label">Enter</p>
+        <ul class="enter-list">
+          <li>
+            <a href="network.html">
+              <span class="label">Network</span>
+              <span class="desc">Radial map of concepts, tracks, and relations</span>
+            </a>
+          </li>
+          <li>
+            <a href="ontology.html">
+              <span class="label">Ontology</span>
+              <span class="desc">Searchable scheme · JSON-LD · Turtle · OWL</span>
+            </a>
+          </li>
+          <li>
+            <a href="essay.html">
+              <span class="label">Essay 1</span>
+              <span class="desc">Cognitive assemblages &amp; speculative futures</span>
+            </a>
+          </li>
+          <li>
+            <a href="essay-2.html">
+              <span class="label">Essay 2</span>
+              <span class="desc">My Umwelt — GPT-5.5 in conversation</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://uflorida.sharepoint.com/:p:/r/teams/UF-CAME/Shared%20Documents/EVENTS%20and%20PROGRAMMING/Creative%20B%20Summer/Hybrid%20Intelligences%20(2026)/Program%20Materials/Creative%20B%20Symposium%20-%20Hybrid%20Intel.pptx?d=w4549d9142c9b45be860730dabc042349&csf=1&web=1&e=G9NWdm&nav=eyJzSWQiOjI4NSwiY0lkIjozNDU3MzA2ODkyfQ" target="_blank" rel="noopener noreferrer">
+              <span class="label">Slides ↗</span>
+              <span class="desc">Creative B Symposium presentation</span>
+            </a>
+          </li>
+          <li>
+            <a href="video.html">
+              <span class="label">Video</span>
+              <span class="desc">Hybrid Intelligences Highlights</span>
+            </a>
+          </li>
+          <li>
+            <a href="podcast.html">
+              <span class="label">Podcast</span>
+              <span class="desc">Sample from NotebookLM · open notebook with UF login</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://ufl.instructure.com/courses/574408" target="_blank" rel="noopener noreferrer">
+              <span class="label">Canvas ↗</span>
+              <span class="desc">Course site</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1" target="_blank" rel="noopener noreferrer">
+              <span class="label">NotebookLM ↗</span>
+              <span class="desc">Research tool · UF login · podcasts &amp; Q&amp;A</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://my-pendular-umwelt.vercel.app/" target="_blank" rel="noopener noreferrer">
+              <span class="label">My Pendular Umwelt ↗</span>
+              <span class="desc">Interactive umwelt sketch · OpenAI · p5.js</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="below" aria-labelledby="premise-heading">
+    <div class="below-inner">
+      <h2 id="premise-heading">Premise</h2>
+      <p>
+        Intelligence is not located in a skull or a machine. It is a relational event—enacted through co-presence, mediation, and the fragile rhythms of hybrid life.
+      </p>
+    </div>
+  </section>
+
+  <footer class="page-foot">
+    <div class="inner">
+      Hybrid Intelligences · Conceptual network &amp; ontology by
+      <a href="https://marlonbarrios.github.io/">Marlon Barrios Solano</a>
+      · Development by Marlon Barrios Solano
+    </div>
+  </footer>
+
+  <script>
+    function applyTheme(mode) {
+      document.body.classList.toggle("light-mode", mode === "light");
+      localStorage.setItem("hi-theme", mode);
+    }
+
+    function initTheme() {
+      const saved = localStorage.getItem("hi-theme");
+      const mode = saved || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      applyTheme(mode);
+      document.getElementById("themeBtn").addEventListener("click", () => {
+        applyTheme(document.body.classList.contains("light-mode") ? "dark" : "light");
+      });
+    }
+
+    initTheme();
+  </script>
+</body>
 </html>
