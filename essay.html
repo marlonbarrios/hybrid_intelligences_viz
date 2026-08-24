@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hybrid Intelligences — Essay 1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e1018;
+      --panel: #12141e;
+      --border: #323848;
+      --title: #f4c430;
+      --text: #e8eaef;
+      --muted: #969eb0;
+      --link: #82c3ff;
+      --hover: #1a1e2a;
+      --accent: rgba(244, 196, 48, 0.12);
+      --rule: rgba(150, 158, 176, 0.28);
+    }
+    body.light-mode {
+      --bg: #fffdf8;
+      --panel: #ffffff;
+      --border: #d2d6e0;
+      --title: #a8760c;
+      --text: #202430;
+      --muted: #5a6070;
+      --link: #125599;
+      --hover: #f5f3ee;
+      --accent: rgba(168, 118, 12, 0.1);
+      --rule: rgba(90, 96, 112, 0.22);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse 90% 55% at 12% -10%, rgba(244, 196, 48, 0.07), transparent 55%),
+        radial-gradient(ellipse 70% 45% at 100% 0%, rgba(78, 196, 196, 0.05), transparent 50%),
+        var(--bg);
+      color: var(--text);
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      line-height: 1.5;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      padding: 1.25rem 1.5rem 1rem;
+      border-bottom: 1px solid var(--border);
+      background: color-mix(in srgb, var(--panel) 88%, transparent);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header .eyebrow {
+      margin: 0 0 0.4rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    header h1 {
+      margin: 0 0 0.45rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 300;
+      font-size: clamp(0.95rem, 2.4vw, 1.15rem);
+      line-height: 1.4;
+      color: var(--title);
+      max-width: 48rem;
+    }
+    header .meta {
+      margin: 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .header-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 0.85rem;
+    }
+    .header-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+    }
+    .theme-btn {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      padding: 0.35rem 0.55rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .theme-btn:hover { color: var(--title); border-color: var(--title); }
+    article {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 2.25rem 1.5rem 4rem;
+    }
+    article p {
+      margin: 0 0 1.35rem;
+      font-family: "IBM Plex Serif", "IBM Plex Sans", Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.72;
+      color: var(--text);
+    }
+    article p:first-of-type::first-letter {
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 300;
+      font-size: 3.1rem;
+      float: left;
+      line-height: 0.85;
+      padding: 0.12rem 0.55rem 0 0;
+      color: var(--title);
+    }
+    .bibliography {
+      margin-top: 3rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--rule);
+    }
+    .bibliography h2 {
+      margin: 0 0 1.25rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 400;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--title);
+    }
+    .bibliography ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .bibliography li {
+      margin: 0 0 0.85rem;
+      padding-left: 1.1rem;
+      text-indent: -1.1rem;
+      font-family: "IBM Plex Serif", "IBM Plex Sans", Georgia, serif;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+    .bibliography li em { color: var(--text); font-style: italic; }
+    footer.page-foot {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">Essay 1</p>
+    <h1>Hybrid Intelligences, Cognitive Assemblages, and Speculative Futures in the Era of AI</h1>
+    <p class="meta">Marlon Barrios Solano · July 10, 2026</p>
+    <div class="header-row">
+      <div class="header-links">
+        <a href="index.html">← Network</a>
+        <a href="ontology.html">Ontology</a>
+        <a href="essay-2.html">Essay 2</a>
+        <a href="https://uflorida.sharepoint.com/:p:/r/teams/UF-CAME/Shared%20Documents/EVENTS%20and%20PROGRAMMING/Creative%20B%20Summer/Hybrid%20Intelligences%20(2026)/Program%20Materials/Creative%20B%20Symposium%20-%20Hybrid%20Intel.pptx?d=w4549d9142c9b45be860730dabc042349&csf=1&web=1&e=G9NWdm&nav=eyJzSWQiOjI4NSwiY0lkIjozNDU3MzA2ODkyfQ" target="_blank" rel="noopener noreferrer">Slides ↗</a>
+        <a href="https://ufl.instructure.com/courses/574408" target="_blank" rel="noopener noreferrer">Canvas ↗</a>
+      </div>
+      <button type="button" class="theme-btn" id="themeBtn" aria-label="Toggle theme">Theme</button>
+    </div>
+  </header>
+
+  <article>
+    <p>I begin from the premise that intelligence is not a thing located inside a skull, a machine, a server, or a sovereign individual. Intelligence is an activity of coupling. It is a relational event. It happens through bodies, tools, architectures, histories, gestures, laws, media, atmospheres, and the fragile rhythms of co-presence. In the era of artificial intelligence, this premise becomes not only philosophical but urgent. We are entering a time in which mediation is no longer simply communicational, symbolic, or technical. Mediation has become cognitive. The tools that once transmitted messages now participate in the production of perception, memory, imagination, decision, orientation, and future-making.</p>
+
+    <p>This shift requires a vocabulary that is more complex than the opposition between human and machine. It asks us to think in terms of hybrid intelligences: assemblages of biological, technical, social, spatial, legal, and affective processes that co-produce cognition. The question is not whether AI “thinks” like a human. The more interesting question is: what kinds of thinking become possible when humans, machines, bodies, environments, institutions, and histories enter into new forms of coupling? What kinds of subjectivities, responsibilities, choreographies, abstractions, and worlds are enacted through these couplings?</p>
+
+    <p>Enactivism and the broader framework of 4E cognition offer a powerful point of departure. The four Es—embodied, embedded, enacted, and extended—challenge the classical image of cognition as internal representation processed by a brain-computer. Cognition is embodied because it depends on the sensorimotor capacities of living bodies. It is embedded because it emerges within environments that constrain and enable action. It is enacted because organisms bring forth meaningful worlds through their histories of interaction. It is extended because cognitive processes can include tools, inscriptions, devices, media, and social structures beyond the biological organism.</p>
+
+    <p>This framework matters profoundly for thinking about AI because it allows us to avoid two inadequate positions. The first is techno-dualism: the fantasy that intelligence can be cleanly detached from bodies, histories, ecologies, and politics. The second is biological exceptionalism: the assumption that only organic life can participate meaningfully in cognitive processes. Between these positions lies a more complex terrain: an ecosystem of intelligences in which biological and artificial systems do not collapse into sameness, but neither remain entirely separate. They form continuities, frictions, dependencies, asymmetries, and new relational forms across different substrates.</p>
+
+    <p>In this sense, cognition is not only embodied; it is also critical and situated. It is critical because every cognitive system participates in the production, filtering, and organization of what can be known, felt, imagined, and acted upon. Cognition is never innocent. It is shaped by infrastructures, histories, disciplines, interfaces, institutions, colonial inheritances, legal systems, economic pressures, and asymmetries of power. It is situated because thinking always happens somewhere: in a body, in a room, in a language, in a technical platform, in an archive, in a legal regime, in a choreography of access, in an economy of attention, in an ecology of other bodies and other intelligences. From an enactive and 4E perspective, cognition is not an abstract universal operation floating above the world. It is a world-involving practice. This is why hybrid intelligence must be approached not only as a technical phenomenon but as a critical, spatial, somatic, choreographic, philosophical, and political condition.</p>
+
+    <p>N. Katherine Hayles’s notion of cognitive assemblages gives this argument another crucial vocabulary. For Hayles, cognition should not be restricted to conscious human thought. Cognition can be understood more broadly as the interpretation of information within contexts that connect it with meaning. This allows us to recognize cognitive activity across biological systems, technical systems, and mixed human-machine configurations. A cognitive assemblage is not simply a collection of parts. It is a networked arrangement in which human and nonhuman cognizers exchange, process, select, and transform information in ways that produce emergent meaning and action.</p>
+
+    <p>This concept is essential for thinking hybrid intelligences because it shifts the center of gravity away from the individual subject. In a cognitive assemblage, intelligence does not belong exclusively to the human user or the technical device. It circulates through the relations among bodies, sensors, interfaces, datasets, habits, institutions, and environments. A dancer using motion capture, an architect designing with generative models, a lawyer interpreting algorithmic risk, a writer composing with a language model, a city managed through traffic sensors, and a performer improvising with real-time AI are all participating in different forms of cognitive assemblage. Meaning and decision arise from the whole configuration, not from one sovereign point of origin.</p>
+
+    <p>Hayles’s work also helps clarify why technical agency matters. Technical systems do not need to be conscious in order to participate in cognition. A machine learning model, a recommendation system, a surveillance device, or an AI assistant may not possess lived experience, but it can still sort, infer, classify, prioritize, and act within contexts that have meaning for human and institutional worlds. This is precisely what makes AI politically and philosophically significant. Its cognition is not human cognition, but it enters into human worlds. It changes the field of possibility. It reorganizes attention, distributes agency, and participates in the conditions under which meaning is produced.</p>
+
+    <p>The notion of the “space of possible minds” is useful here. It invites us to imagine intelligence not as a single ladder with humans at the top, but as a vast landscape of possible cognitive organizations. Biological intelligence occupies only one region of this space. Human linguistic consciousness, animal navigation, fungal communication, cellular problem-solving, collective swarm behavior, machine learning systems, and human-AI assemblages may all be understood as different configurations of sensing, memory, adaptation, action, and world-making. The arrival of generative AI does not simply add a new tool to culture. It makes visible that mind itself has always been distributed, scaffolded, ecological, and relational.</p>
+
+    <p>From this perspective, AI is not merely an external instrument. It becomes part of a cognitive ecology. When I write with a language model, search through a dataset, generate an image, compose code, rehearse a concept, or enter into dialogue with an artificial interlocutor, I am not outsourcing thought in a simple way. I am entering a hybrid process in which my attention, memory, language, rhythm, and imagination are reorganized. The AI does not replace my cognition; it perturbs it, extends it, accelerates it, sometimes flattens it, sometimes opens it. It becomes a cognitive prosthesis, but also a cognitive environment. It is not only a hammer in the hand. It is also weather.</p>
+
+    <p>Andy Clark’s work is especially important here. In <em>Being There</em>, <em>Natural-Born Cyborgs</em>, <em>Supersizing the Mind</em>, <em>Surfing Uncertainty</em>, and <em>The Experience Machine</em>, Clark develops a vision of mind as deeply entangled with body, world, tools, and predictive action. Human beings are not sealed cognitive units; we are organisms that think by incorporating notebooks, gestures, language, diagrams, smartphones, architectural cues, social routines, and now AI systems into the very fabric of thought. Clark’s idea of the “natural-born cyborg” does not mean that technology is foreign to the human. It means that the human has always been technologically plastic, always already open to cognitive extension. In the era of AI, this insight becomes crucial: generative systems are not merely instruments we use after thought has occurred. They are becoming part of the situated environments through which thought is composed, rehearsed, externalized, contested, and transformed.</p>
+
+    <p>This is why embodiment remains central, even when dealing with apparently disembodied systems. Contemporary AI models may not have flesh, proprioception, pain, breath, hunger, or mortality, but they are not outside embodiment in a broader sense. They are embodied in infrastructures: data centers, extraction economies, labor systems, electrical grids, interfaces, datasets, laws, and patterns of use. They inhabit different substrates, but they are not immaterial. Their bodies are distributed, planetary, and often hidden. To think hybrid intelligence responsibly is to make those bodies perceptible.</p>
+
+    <p>Here architecture becomes a crucial field of inquiry. Space is not a neutral container for cognition. It is an active participant in the formation of perception, attention, movement, and behavior. A corridor invites movement differently from a plaza. A studio invites improvisation differently from a courtroom. A classroom organizes speech, authority, and attention differently from a dance floor or a meditation hall. A screen-based interface organizes the body differently from a circle of people sitting on the floor. Architecture choreographs cognition through affordances: openings, thresholds, distances, acoustics, light, texture, orientation, and the politics of access.</p>
+
+    <p>In hybrid intelligence, architecture expands to include digital platforms, databases, algorithmic interfaces, immersive environments, and institutional protocols. We inhabit not only rooms but cognitive architectures. A platform is an architecture of attention. A database is an architecture of memory. A prompt interface is an architecture of desire and command. A recommendation system is an architecture of anticipation. A legal form is an architecture of responsibility. The built environment and the computational environment increasingly interpenetrate, producing spaces where bodies, abstractions, images, data, and decisions co-compose each other.</p>
+
+    <p>Choreography, then, is not only the art of arranging bodies in space. It becomes a method for studying distributed cognition. Choreography understands that thought is temporal, relational, rhythmic, and situated. A gesture is not merely an expression of an already-formed idea; it can be the condition through which an idea becomes thinkable. Improvisation demonstrates that intelligence can happen before explicit representation. The dancer does not first plan every movement and then execute it. The dancer listens through the muscles, skin, vestibular system, breath, floor, partner, and atmosphere. The body thinks by moving.</p>
+
+    <p>This choreographic understanding is essential for AI futures. If we treat AI only as a symbolic or computational system, we will design futures of disembodied command: prompts, outputs, optimization, prediction. But if we approach AI through choreography, we ask different questions. What are the rhythms of interaction? Who leads and who follows? What kinds of attention are being trained? What gestures become possible or impossible? How does the interface shape the posture of the user? What forms of dependence, improvisation, resistance, and co-creation emerge? A human-AI system is not just a workflow. It is a duet, sometimes graceful, sometimes coercive, sometimes opaque.</p>
+
+    <p>Somatics adds another layer by insisting on interiority—not as a private essence sealed inside the individual, but as lived bodily awareness. Somatic practices train attention to sensation, breath, tone, weight, impulse, and the subtle transitions between activation and rest. They teach that cognition is not only problem-solving but self-regulation, attunement, and presence. In a world of accelerated cognitive mediation, somatics becomes a political and epistemic practice. It asks: can I feel what the system is doing to my attention? Can I sense when my body contracts around speed, persuasion, novelty, fear, or the pressure to respond? Can I notice the difference between an idea that emerges from deep listening and an idea produced by algorithmic momentum?</p>
+
+    <p>This is not a nostalgic return to the “natural” body. The body itself is already hybrid, historical, trained, wounded, augmented, and mediated. Somatics does not purify cognition; it thickens it. It reminds us that interiority is not opposed to relationality. My nervous system is shaped by other nervous systems. Bodies co-regulate. A room can calm or agitate. A voice can organize breath. A group can produce a shared field of attention. A technological interface can accelerate, fragment, or stabilize perception. In this sense, intelligence is not only individual capacity but relational atmosphere. Hybrid intelligence must therefore include the study of co-regulating bodies: human-human, human-machine, machine-institution, body-space, body-law.</p>
+
+    <p>Law may seem distant from embodiment, but it is one of the most powerful architectures of action. Law choreographs what bodies may do, what systems may deploy, what risks are acceptable, what harms are recognized, and whose vulnerability counts. In the era of AI, law cannot be understood only as external regulation applied after innovation. It is part of the cognitive ecology itself. Legal frameworks shape the design of systems, the distribution of accountability, the visibility of harm, and the limits of automation. If mediation has become cognitive, then governance must also become cognitive: not in the sense of automated control, but in the sense of understanding how sociotechnical systems shape attention, agency, rights, and futures.</p>
+
+    <p>A hybrid intelligence framework therefore needs ethics and law, but also more than ethics and law. It needs choreography to understand movement and relation. It needs architecture to understand spatial cognition. It needs philosophy to question subjectivity, agency, abstraction, and world-making. It needs somatics to cultivate awareness of interiority and co-regulation. It needs computer science to understand technical systems. It needs ecology to understand interdependence. It needs art because speculative futures are not only predicted; they are rehearsed, staged, prototyped, felt, and contested.</p>
+
+    <p>Juggling offers a deceptively simple example. To juggle is to train a body to inhabit a dynamic system of gravity, rhythm, anticipation, failure, and correction. The juggler does not control each ball through abstract calculation. Instead, the body learns patterns of timing, peripheral vision, release, catch, and recovery. Intelligence appears as a loop between hand, eye, object, air, and expectation. The balls are not passive objects; they participate in the cognitive system by demanding response. Gravity becomes a collaborator. Error becomes information. Skill emerges not as domination but as attunement.</p>
+
+    <p>This makes juggling a model for hybrid cognition. In working with AI, we are also juggling trajectories. Prompts, outputs, memories, biases, interfaces, hallucinations, regulations, desires, and institutional pressures are constantly in motion. The task is not to master the system from outside, but to train reflexes within the coupling. We need cognitive reflexes: when to trust, when to pause, when to verify, when to ask differently, when to refuse, when to bring the body back into the loop. We need artistic reflexes: how to turn uncertainty into form, how to work with surprise, how to remain porous without becoming passive. We need ethical reflexes: how to sense asymmetry, extraction, manipulation, and harm before they harden into infrastructure.</p>
+
+    <p>Speculative futures in AI should therefore not be imagined only as scenarios of technological progress or catastrophe. They should be approached as embodied rehearsals. What kinds of bodies do these futures require? What kinds of spaces do they produce? What kinds of attention do they reward? What forms of relationality do they make possible? What forms of interiority do they erode? The future is not simply ahead of us. It is enacted through present practices, habits, tools, regulations, and desires. Every interface is a small rehearsal of a world.</p>
+
+    <p>To think hybrid intelligences through enactivism is to insist that cognition and world are co-emergent. We do not first have a world and then represent it. We bring forth worlds through action. AI systems now participate in that bringing forth. They generate images, categories, recommendations, simulations, decisions, bureaucratic classifications, aesthetic styles, legal risks, and speculative horizons. They do not merely describe reality; they help organize what can appear as real, plausible, valuable, or actionable. This is why the politics of AI is also a politics of perception.</p>
+
+    <p>This is also why abstraction must be reconsidered. Abstraction is often treated as a movement away from the body, away from the concrete, away from the situated. But from an embodied and enactive perspective, abstraction is not disembodiment. It is a trained operation of movement across scales. A diagram, a legal category, a choreographic score, an architectural plan, a machine learning model, and a philosophical concept are all abstractions that reorganize perception and action. They do not float above the world; they intervene in it. They shape what can be noticed, measured, designed, governed, or imagined. In hybrid intelligence, abstraction becomes spatial, procedural, and performative.</p>
+
+    <p>This has consequences for creative practice. The artist working with AI is not simply producing outputs. The artist is designing conditions of encounter. The prompt becomes a choreographic proposition. The model becomes a partner, archive, mirror, alien surface, and unstable collaborator. The interface becomes a studio. The dataset becomes a ghostly social body. The output becomes evidence of a negotiation between human intention, statistical memory, technical constraint, cultural residue, and speculative projection. Creative embodiment in AI is therefore not about adding the body after the technology. It is about recognizing that the entire process is already embodied, situated, and relational, even when the body is missing from the image.</p>
+
+    <p>Hayles’s cognitive assemblages allow us to name this condition with precision. The artist, the model, the interface, the dataset, the institution, the audience, the law, the energy infrastructure, and the historical archive are not external contexts around the artwork. They are participants in the assemblage through which the work thinks. The work is not only an object but a distributed cognitive event. It emerges from interactions among human and technical cognizers, each with different capacities, temporalities, and modes of selection. This does not mean that all agents are equivalent. It means that agency is distributed unevenly and must be analyzed relationally.</p>
+
+    <p>The challenge is to cultivate forms of hybrid intelligence that do not reduce the human to a prompt operator or the machine to a magical oracle. We need practices that preserve friction, embodiment, plurality, and accountability. We need to design systems that support not only efficiency but discernment; not only automation but awareness; not only prediction but imagination; not only scale but situated responsibility. The question is not how to become more machine-like, nor how to keep machines outside the sacred circle of human thought. The question is how to compose cognitive assemblages that expand our capacity to sense, care, imagine, and act.</p>
+
+    <p>In this sense, creative embodiment is not a decorative addition to AI research. It is a necessary epistemology. The body is where abstraction becomes consequential. Space is where cognition becomes situated. Movement is where thought becomes temporal. Law is where technological possibility becomes collective obligation. Somatics is where mediation becomes felt. Choreography is where relations become legible. Architecture is where worlds become inhabitable. AI is where our old assumptions about mind, agency, and mediation are forced into mutation.</p>
+
+    <p>Hybrid intelligence names this mutation. Cognitive assemblage names its structure. Together they describe the emergence of cognitive ecosystems in which biological and artificial processes meet without becoming identical. They ask us to develop new literacies of coupling: sensory, technical, legal, spatial, poetic, and ethical. They ask us to inhabit the space of possible minds not as conquerors, but as careful choreographers of relation. The future of AI may depend less on whether machines become like us than on whether we can become more skillful participants in the expanded ecologies of intelligence we are already creating.</p>
+
+    <section class="bibliography" aria-labelledby="bib-heading">
+      <h2 id="bib-heading">Bibliography</h2>
+      <ol>
+        <li>Carney, James. “Thinking avant la lettre: A Review of 4E Cognition.” <em>Evolutionary Studies in Imaginative Culture</em> / PMC, 2020.</li>
+        <li>Clark, Andy. <em>Being There: Putting Brain, Body, and World Together Again</em>. Cambridge, MA: MIT Press, 1997.</li>
+        <li>Clark, Andy. <em>Natural-Born Cyborgs: Minds, Technologies, and the Future of Human Intelligence</em>. Oxford: Oxford University Press, 2003.</li>
+        <li>Clark, Andy. <em>Supersizing the Mind: Embodiment, Action, and Cognitive Extension</em>. Oxford: Oxford University Press, 2008.</li>
+        <li>Clark, Andy. <em>Surfing Uncertainty: Prediction, Action, and the Embodied Mind</em>. Oxford: Oxford University Press, 2016.</li>
+        <li>Clark, Andy. <em>The Experience Machine: How Our Minds Predict and Shape Reality</em>. New York: Pantheon, 2023.</li>
+        <li>Clark, Andy, and David Chalmers. “The Extended Mind.” <em>Analysis</em> 58, no. 1, 1998: 7–19.</li>
+        <li>Di Paolo, Ezequiel, Elena Clare Cuffari, and Hanne De Jaegher. <em>Linguistic Bodies: The Continuity Between Life and Language</em>. Cambridge, MA: MIT Press, 2018.</li>
+        <li>Draganski, Bogdan, Christian Gaser, Volker Busch, Gerhard Schuierer, Ulrich Bogdahn, and Arne May. “Neuroplasticity: Changes in Grey Matter Induced by Training.” <em>Nature</em> 427, 2004: 311–312.</li>
+        <li>Gallagher, Shaun. <em>How the Body Shapes the Mind</em>. Oxford: Oxford University Press, 2005.</li>
+        <li>Gibson, James J. <em>The Ecological Approach to Visual Perception</em>. Boston: Houghton Mifflin, 1979.</li>
+        <li>Hayles, N. Katherine. <em>How We Became Posthuman: Virtual Bodies in Cybernetics, Literature, and Informatics</em>. Chicago: University of Chicago Press, 1999.</li>
+        <li>Hayles, N. Katherine. “Cognitive Assemblages: Technical Agency and Human Interactions.” <em>Critical Inquiry</em> 43, no. 1, 2016: 32–55.</li>
+        <li>Hayles, N. Katherine. <em>Unthought: The Power of the Cognitive Nonconscious</em>. Chicago: University of Chicago Press, 2017.</li>
+        <li>Hayles, N. Katherine. <em>Bacteria to AI: Human Futures with Our Nonhuman Symbionts</em>. Chicago: University of Chicago Press, 2025.</li>
+        <li>Kirsh, David. “Thinking with the Body.” <em>Proceedings of the Annual Meeting of the Cognitive Science Society</em>, 2010.</li>
+        <li>Malafouris, Lambros. <em>How Things Shape the Mind: A Theory of Material Engagement</em>. Cambridge, MA: MIT Press, 2013.</li>
+        <li>NIST. <em>Artificial Intelligence Risk Management Framework (AI RMF 1.0)</em>. National Institute of Standards and Technology, 2023.</li>
+        <li>Noë, Alva. <em>Action in Perception</em>. Cambridge, MA: MIT Press, 2004.</li>
+        <li>Parliament of the European Union and Council of the European Union. <em>Artificial Intelligence Act</em>. Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence, 2024.</li>
+        <li>Shanahan, Murray. “The Space of Possible Minds.” <em>Edge</em>, 2018.</li>
+        <li>Shapiro, Lawrence. “Embodied Cognition.” <em>Stanford Encyclopedia of Philosophy</em>, 2021.</li>
+        <li>Thompson, Evan. <em>Mind in Life: Biology, Phenomenology, and the Sciences of Mind</em>. Cambridge, MA: Harvard University Press, 2007.</li>
+        <li>Varela, Francisco J., Evan Thompson, and Eleanor Rosch. <em>The Embodied Mind: Cognitive Science and Human Experience</em>. Cambridge, MA: MIT Press, 1991; revised edition, 2017.</li>
+        <li>Wilson, Robert A., and Andy Clark. “How to Situate Cognition: Letting Nature Take Its Course.” In <em>The Cambridge Handbook of Situated Cognition</em>, edited by Philip Robbins and Murat Aydede. Cambridge: Cambridge University Press, 2009.</li>
+      </ol>
+    </section>
+  </article>
+
+  <footer class="page-foot">
+    Hybrid Intelligences · University of Florida · Essay 1
+  </footer>
+
+  <script>
+    function applyTheme(mode) {
+      document.body.classList.toggle("light-mode", mode === "light");
+      localStorage.setItem("hi-theme", mode);
+    }
+
+    function initTheme() {
+      const saved = localStorage.getItem("hi-theme");
+      const mode = saved || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      applyTheme(mode);
+      document.getElementById("themeBtn").addEventListener("click", () => {
+        applyTheme(document.body.classList.contains("light-mode") ? "dark" : "light");
+      });
+    }
+
+    initTheme();
+  </script>
+</body>
+</html>

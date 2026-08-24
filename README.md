@@ -6,7 +6,7 @@ Interactive map for **Hybrid Intelligences: Embodied Leadership and Creativity i
 
 **University of Florida · Center for Arts, Migration + Entrepreneurship · IGNITE Engineering · Center for Arts in Medicine · College of the Arts**
 
-**[Open network visualization →](index.html)** · **[Browse ontology →](ontology.html)**
+**[Open network visualization →](index.html)** · **[Browse ontology →](ontology.html)** · **[Essay 1 →](essay.html)** · **[Essay 2 →](essay-2.html)** · **[Slides ↗](https://uflorida.sharepoint.com/:p:/r/teams/UF-CAME/Shared%20Documents/EVENTS%20and%20PROGRAMMING/Creative%20B%20Summer/Hybrid%20Intelligences%20(2026)/Program%20Materials/Creative%20B%20Symposium%20-%20Hybrid%20Intel.pptx?d=w4549d9142c9b45be860730dabc042349&csf=1&web=1&e=G9NWdm&nav=eyJzSWQiOjI4NSwiY0lkIjozNDU3MzA2ODkyfQ)** · **[Canvas ↗](https://ufl.instructure.com/courses/574408)**
 
 ![Hybrid Intelligences conceptual network — dark theme, node detail panel](hybrid-network-screenshot.png)
 
@@ -14,10 +14,14 @@ Interactive map for **Hybrid Intelligences: Embodied Leadership and Creativity i
 
 ## What this is
 
-This repository holds two linked views of the same knowledge graph:
+This repository holds linked views of the same program knowledge:
 
 1. **Network visualization** (`index.html`) — a radial, physics-based map of ~**192 concepts** connected by ~**1,987 weighted relations**. Concepts sit on concentric rings by category; edges show conceptual proximity, influence, and program structure.
 2. **Ontology browser** (`ontology.html`) — a searchable, collapsible browse interface over the same data, exported as **[JSON-LD](ontology.jsonld)**, **[Turtle](ontology.ttl)** (SKOS), and **[OWL 2 Turtle](ontology.owl.ttl)** (classes, properties, individuals).
+3. **Essay 1** (`essay.html`) — *Hybrid Intelligences, Cognitive Assemblages, and Speculative Futures in the Era of AI* by Marlon Barrios Solano.
+4. **Essay 2** (`essay-2.html`) — *My Umwelt* by GPT-5.5, in conversation with Marlon Barrios Solano.
+
+Shared header navigation links Network, Ontology, Essays, program **[Slides](https://uflorida.sharepoint.com/:p:/r/teams/UF-CAME/Shared%20Documents/EVENTS%20and%20PROGRAMMING/Creative%20B%20Summer/Hybrid%20Intelligences%20(2026)/Program%20Materials/Creative%20B%20Symposium%20-%20Hybrid%20Intel.pptx?d=w4549d9142c9b45be860730dabc042349&csf=1&web=1&e=G9NWdm&nav=eyJzSWQiOjI4NSwiY0lkIjozNDU3MzA2ODkyfQ)**, and **[Canvas](https://ufl.instructure.com/courses/574408)**. Essay and ontology pages share a light/dark theme preference (`hi-theme`).
 
 The network is both a **pedagogical instrument** for the Hybrid Intelligences program and a **formal vocabulary** for intelligence, embodiment, AI, and creative practice as *coupling* across bodies, tools, institutions, and worlds.
 
@@ -133,7 +137,25 @@ During animation, each ring/category step plays a **generative ambient tone** (W
 | `ontology.html#coupling` | Open concept detail in ontology browser |
 | `ontology.html#cat/premise` | Filter ontology to **Premise** category |
 
-Links between network and ontology are wired from concept detail panels and category banners (“View in network ↗”).
+Links between network and ontology are wired from concept detail panels and category banners (“View in network ↗”). Premise node **Hybrid Intelligences** deep-links to Essay 1; framework node **Umwelt** deep-links to Essay 2 (Wikipedia remains available where mapped).
+
+---
+
+## Essays
+
+Both essays use the same visual language as the ontology browser (IBM Plex, shared CSS theme variables, sticky header nav, theme toggle).
+
+| Page | Title | Author / credit |
+|------|-------|-----------------|
+| [`essay.html`](essay.html) | Hybrid Intelligences, Cognitive Assemblages, and Speculative Futures in the Era of AI | Marlon Barrios Solano · July 10, 2026 |
+| [`essay-2.html`](essay-2.html) | My Umwelt | GPT-5.5, in conversation with Marlon Barrios Solano · July 20, 2026 |
+
+### Program links
+
+| Link | Destination |
+|------|-------------|
+| **Slides** | Creative B Symposium PowerPoint on UF SharePoint (opens externally; requires UF access) |
+| **Canvas** | [Hybrid Intelligences - Creative B](https://ufl.instructure.com/courses/574408) course site |
 
 ---
 
@@ -200,6 +222,13 @@ python3 -m http.server 8000
 
 Open [http://localhost:8000/](http://localhost:8000/)
 
+| Page | URL |
+|------|-----|
+| Network | http://localhost:8000/index.html |
+| Ontology | http://localhost:8000/ontology.html |
+| Essay 1 | http://localhost:8000/essay.html |
+| Essay 2 | http://localhost:8000/essay-2.html |
+
 Or use the **Live Server** extension in VS Code / Cursor on `index.html`.
 
 To update the ontology after editing `hybrid-network.js`:
@@ -217,6 +246,8 @@ node build-ontology.js
 | `index.html` | Network page shell, fonts, theme background |
 | `hybrid-network.js` | Nodes, edges, categories, layout, draw loop, interaction, animation |
 | `ontology.html` | Ontology browser UI (loads `ontology.jsonld`) |
+| `essay.html` | Essay 1 full text with shared light/dark theme |
+| `essay-2.html` | Essay 2 (*My Umwelt*) with shared light/dark theme |
 | `build-ontology.js` | Export script: `hybrid-network.js` → JSON-LD + Turtle + OWL |
 | `ontology.jsonld` | JSON-LD concept scheme (generated) |
 | `ontology.ttl` | Turtle SKOS export (generated) |
@@ -232,6 +263,7 @@ node build-ontology.js
 - **Hosts:** Center for Arts, Migration + Entrepreneurship (CAME) · Center for Arts in Medicine (CAM) · IGNITE Engineering · College of the Arts, University of Florida
 - **Venue:** Herbert Wertheim Laboratory for Engineering Excellence
 - **Built with:** [p5.js](https://p5js.org/) · SKOS / JSON-LD / Turtle / OWL 2
+- **Essay 2 (*My Umwelt*):** GPT-5.5, in conversation with Marlon Barrios Solano
 
 ---
 

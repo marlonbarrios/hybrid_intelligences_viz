@@ -117,7 +117,7 @@ hi:hybrid a skos:Concept, hi:NetworkNode ;
   hi:category "premise" ;
   hi:weight "2"^^xsd:decimal
  ;
-  schema:url <https://ufl.instructure.com/courses/574408/pages/hybrid-intelligences-cognitive-assemblages-and-speculative-futures-in-the-era-of-ai-essay?module_item_id=13030950> ;
+  schema:url <essay.html> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Cognitive_architecture>
  .
 
@@ -367,7 +367,7 @@ hi:umwelt a skos:Concept, hi:NetworkNode ;
   hi:category "framework" ;
   hi:weight "1.4"^^xsd:decimal
  ;
-  schema:url <https://en.wikipedia.org/wiki/Umwelt> ;
+  schema:url <essay-2.html> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Umwelt>
  .
 

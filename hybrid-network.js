@@ -116,6 +116,10 @@ let uiLinks = [];
 
 const PORTFOLIO_URL = "https://marlonbarrios.github.io/";
 const ONTOLOGY_URL = "ontology.html";
+const ESSAY1_URL = "essay.html";
+const ESSAY2_URL = "essay-2.html";
+const SLIDES_URL = "https://uflorida.sharepoint.com/:p:/r/teams/UF-CAME/Shared%20Documents/EVENTS%20and%20PROGRAMMING/Creative%20B%20Summer/Hybrid%20Intelligences%20(2026)/Program%20Materials/Creative%20B%20Symposium%20-%20Hybrid%20Intel.pptx?d=w4549d9142c9b45be860730dabc042349&csf=1&web=1&e=G9NWdm&nav=eyJzSWQiOjI4NSwiY0lkIjozNDU3MzA2ODkyfQ";
+const CANVAS_URL = "https://ufl.instructure.com/courses/574408";
 let animateMode = false;
 let animateStep = 0;
 let animateUntil = 0;
@@ -459,7 +463,7 @@ const NODES = [
     desc: "Intelligence is not located in a skull or machine—it is a relational event happening through bodies, tools, architectures, and co-presence." },
   { id: "hybrid",             label: "Hybrid\nIntelligences",         cat: "premise",    weight: 2.0,
     desc: "Assemblages of biological, technical, social, spatial, legal, and affective processes that co-produce cognition.",
-    url: "https://ufl.instructure.com/courses/574408/pages/hybrid-intelligences-cognitive-assemblages-and-speculative-futures-in-the-era-of-ai-essay?module_item_id=13030950", linkLabel: "Read essay ↗" },
+    url: "essay.html", linkLabel: "Read essay →" },
   { id: "creative_embodiment", label: "Creative\nEmbodiment",       cat: "premise",    weight: 1.9,
     desc: "The project's embodiment framework: AI-mediated creative process is already embodied, situated, and relational—not a body added after the fact. The artist designs conditions of encounter; prompt, model, interface, dataset, institution, and audience form a cognitive assemblage. Necessary epistemology: the body is where abstraction becomes consequential; space situates cognition; movement temporalizes thought." },
   { id: "intelligence",       label: "Intelligence",                  cat: "premise",    weight: 1.9,
@@ -521,7 +525,7 @@ const NODES = [
     url: "https://en.wikipedia.org/wiki/Affordance", linkLabel: "Wikipedia ↗" },
   { id: "umwelt",             label: "Umwelt",                        cat: "framework",  weight: 1.4,
     desc: "von Uexküll: the organism's lived meaningful environment—the world as selectively enacted through sensing, action, and coupling, not a pre-given objective space.",
-    url: "https://en.wikipedia.org/wiki/Umwelt", linkLabel: "Wikipedia ↗" },
+    url: "essay-2.html", linkLabel: "Read essay →" },
 
   { id: "ai",                 label: "Artificial\nIntelligence",      cat: "framework",  weight: 1.8,
     desc: "Computational systems that infer, classify, generate, and act within human-designed environments—participants in cognitive assemblages, not minds in boxes.",
@@ -4402,28 +4406,39 @@ function drawUI() {
   line(nameX, creditY + 5, nameX + nameW, creditY + 5);
   noStroke();
 
-  const ontologySep = " \u00b7 ";
-  const ontologyLabel = "Ontology \u2197";
+  const creditSep = " \u00b7 ";
   textSize(8);
   fill(...t.subtitle);
-  const sepX = nameX + nameW;
-  text(ontologySep, sepX, creditY);
-  const ontologyX = sepX + textWidth(ontologySep);
-  const ontologyW = textWidth(ontologyLabel);
-  uiLinks.push({
-    url: ONTOLOGY_URL,
-    x: ontologyX,
-    y: creditY - 6,
-    w: ontologyW,
-    h: 12,
-  });
-  const ontologyHover = hitUiLink(mouseX, mouseY) === ONTOLOGY_URL;
-  fill(...t.title, ontologyHover ? 255 : 220);
-  text(ontologyLabel, ontologyX, creditY);
-  stroke(...t.title, ontologyHover ? 220 : 140);
-  strokeWeight(0.5);
-  line(ontologyX, creditY + 5, ontologyX + ontologyW, creditY + 5);
-  noStroke();
+  let creditCursorX = nameX + nameW;
+
+  const creditNavLinks = [
+    { url: ONTOLOGY_URL, label: "Ontology \u2197" },
+    { url: ESSAY1_URL, label: "Essay 1" },
+    { url: ESSAY2_URL, label: "Essay 2" },
+    { url: SLIDES_URL, label: "Slides \u2197" },
+    { url: CANVAS_URL, label: "Canvas \u2197" },
+  ];
+  for (const link of creditNavLinks) {
+    text(creditSep, creditCursorX, creditY);
+    creditCursorX += textWidth(creditSep);
+    const linkW = textWidth(link.label);
+    uiLinks.push({
+      url: link.url,
+      x: creditCursorX,
+      y: creditY - 6,
+      w: linkW,
+      h: 12,
+    });
+    const linkHover = hitUiLink(mouseX, mouseY) === link.url;
+    fill(...t.title, linkHover ? 255 : 220);
+    text(link.label, creditCursorX, creditY);
+    stroke(...t.title, linkHover ? 220 : 140);
+    strokeWeight(0.5);
+    line(creditCursorX, creditY + 5, creditCursorX + linkW, creditY + 5);
+    noStroke();
+    fill(...t.subtitle);
+    creditCursorX += linkW;
+  }
 
   fill(...t.muted);
   textSize(9);

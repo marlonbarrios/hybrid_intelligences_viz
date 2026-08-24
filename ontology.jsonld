@@ -51,7 +51,7 @@
         "foaf:name": "Marlon Barrios Solano",
         "foaf:homepage": "https://marlonbarrios.github.io/"
       },
-      "dc:date": "2026-08-02",
+      "dc:date": "2026-08-23",
       "owl:versionInfo": "1.0.0",
       "hi:nodeCount": 192,
       "hi:edgeCount": 1988
@@ -327,7 +327,7 @@
       },
       "hi:category": "premise",
       "hi:weight": 2,
-      "schema:url": "https://ufl.instructure.com/courses/574408/pages/hybrid-intelligences-cognitive-assemblages-and-speculative-futures-in-the-era-of-ai-essay?module_item_id=13030950",
+      "schema:url": "essay.html",
       "schema:sameAs": "https://en.wikipedia.org/wiki/Cognitive_architecture",
       "skos:related": [
         {
@@ -1610,7 +1610,7 @@
       },
       "hi:category": "framework",
       "hi:weight": 1.4,
-      "schema:url": "https://en.wikipedia.org/wiki/Umwelt",
+      "schema:url": "essay-2.html",
       "schema:sameAs": "https://en.wikipedia.org/wiki/Umwelt",
       "skos:related": [
         {
