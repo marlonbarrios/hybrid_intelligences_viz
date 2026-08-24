@@ -248,7 +248,7 @@
       color: var(--text);
     }
     .below-inner {
-      max-width: 42rem;
+      max-width: 44rem;
       margin: 0 auto;
     }
     .below h2 {
@@ -260,12 +260,47 @@
       text-transform: uppercase;
       color: var(--title);
     }
-    .below p {
+    .below blockquote {
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+    .below blockquote p {
       margin: 0;
       font-family: "IBM Plex Serif", Georgia, serif;
-      font-size: 1.15rem;
-      line-height: 1.6;
+      font-size: 1.12rem;
+      font-style: italic;
+      line-height: 1.7;
       color: var(--text);
+    }
+    .below .quote-cite {
+      display: block;
+      margin: 1.15rem 0 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      font-style: normal;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+    .below .quote-cite a {
+      color: var(--title);
+      text-decoration: none;
+      border-bottom: 1px solid color-mix(in srgb, var(--title) 45%, transparent);
+    }
+    .below .quote-cite a:hover {
+      border-bottom-color: var(--title);
+      text-decoration: none;
+    }
+    a.concept {
+      color: var(--title);
+      font-style: italic;
+      text-decoration: none;
+      border-bottom: 1px solid color-mix(in srgb, var(--title) 45%, transparent);
+      transition: border-color 0.15s ease, color 0.15s ease;
+    }
+    a.concept:hover {
+      border-bottom-color: var(--title);
+      text-decoration: none;
     }
 
     footer.page-foot {
@@ -277,7 +312,7 @@
       background: var(--bg);
     }
     footer.page-foot .inner {
-      max-width: 42rem;
+      max-width: 44rem;
       margin: 0 auto;
     }
 
@@ -417,9 +452,15 @@
   <section class="below" aria-labelledby="framework-heading">
     <div class="below-inner">
       <h2 id="framework-heading">Framework</h2>
-      <p>
-        Intelligence is not located in a skull or a machine. It is a relational event—enacted through co-presence, mediation, and the fragile rhythms of hybrid life.
-      </p>
+      <blockquote cite="essay.html">
+        <p>
+          <a class="concept" href="network.html#embodiment">Embodiment</a> is <a class="concept" href="network.html#complexity_theory">complex</a> because it is never one layer. A living <a class="concept" href="network.html#body">body</a> is already a nested <a class="concept" href="network.html#ecology">ecology</a>: nerves, breath, posture, affect, memory, training, injury, culture, language, <a class="concept" href="network.html#extended">tools</a>, rooms, <a class="concept" href="network.html#law">laws</a>, and other bodies. It is complex because scales interfere with one another—cellular metabolism with social habit, proprioception with institutional protocol, <a class="concept" href="network.html#choreography">gesture</a> with <a class="concept" href="network.html#arch_design">interface</a>, attention with <a class="concept" href="network.html#architecture">architecture</a>. No single level explains <a class="concept" href="network.html#cognition">cognition</a>. Embodiment is <a class="concept" href="network.html#systems_thinking">emergent</a> because capacities appear from relations that none of the parts possess alone. Balance, meaning, skill, <a class="concept" href="network.html#community">care</a>, refusal, and <a class="concept" href="network.html#cultural_imagination">imagination</a> do not sit inside a substance waiting to be expressed; they arise through ongoing <a class="concept" href="network.html#coupling">coupling</a>. The <a class="concept" href="network.html#juggling">juggler</a>’s timing, the <a class="concept" href="network.html#dance">dancer</a>’s <a class="concept" href="network.html#somatics">listening</a>, the writer’s rhythm with a <a class="concept" href="network.html#llm">language model</a>, the city’s ambient <a class="concept" href="network.html#intelligence">intelligence</a> through sensors and law—these are not properties of an isolated subject. They are <a class="concept" href="network.html#distributed">patterns</a> that form when bodies, worlds, and <a class="concept" href="network.html#technical_agency">technical systems</a> enter into mutual constraint and mutual enablement. Complex embodiment names this condition: <a class="concept" href="network.html#consciousness">mind</a> as <a class="concept" href="network.html#enactivism">world-involving</a> process, always more than biological presence, always more than technical <a class="concept" href="network.html#mediation">mediation</a>, always becoming through <a class="concept" href="network.html#assemblage">relation</a>.
+        </p>
+        <footer class="quote-cite">
+          — <a href="essay.html">Essay 1: Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI</a><br>
+          Marlon Barrios Solano
+        </footer>
+      </blockquote>
     </div>
   </section>
 

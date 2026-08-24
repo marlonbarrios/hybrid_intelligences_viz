@@ -18,7 +18,7 @@ Interactive map for **Hybrid Intelligences: Embodied Leadership and Creativity i
 
 This repository holds linked views of the same program knowledge:
 
-1. **Home** (`index.html`) — landing page that introduces the framework and routes into the site.
+1. **Home** (`index.html`) — landing page that introduces the framework and routes into the site. The Framework section quotes Essay 1 on complex embodiment, with a cite link to the essay and inline concept links into the network.
 2. **Network visualization** (`network.html`) — a radial, physics-based map of **222 concepts** connected by **2,188 weighted relations**. Concepts sit on concentric rings by category; edges show conceptual proximity, influence, and program structure.
 3. **Ontology browser** (`ontology.html`) — a searchable, collapsible browse interface over the same data, exported as **[JSON-LD](ontology.jsonld)**, **[Turtle](ontology.ttl)** (SKOS), and **[OWL 2 Turtle](ontology.owl.ttl)** (classes, properties, individuals).
 4. **Essay 1** (`essay.html`) — *Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI* by Marlon Barrios Solano ([PDF](essay-1-hybrid-intelligences-cognitive-assemblages.pdf)).
