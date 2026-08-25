@@ -184,11 +184,11 @@
       color: var(--cta-fg);
     }
     #talkBtn:hover { filter: brightness(1.05); }
-    #talkBtn[disabled], #stopBtn[disabled] {
+    #talkBtn[disabled], #stopBtn[disabled], #pdfBtn[disabled] {
       opacity: 0.45;
       cursor: not-allowed;
     }
-    #stopBtn {
+    #stopBtn, #pdfBtn {
       background: transparent;
       color: var(--title);
     }
@@ -326,6 +326,7 @@
       <div class="controls">
         <button type="button" id="talkBtn">Talk</button>
         <button type="button" id="stopBtn" disabled>Stop</button>
+        <button type="button" id="pdfBtn" disabled>PDF ↓</button>
       </div>
       <p class="status" id="status">Ready. Allow the microphone when the browser asks.</p>
       <div class="log" id="log" aria-live="polite">
@@ -339,6 +340,7 @@
     <p class="caption">
       Press <strong>Talk</strong> and allow the microphone. The voice is grounded in the Hybrid Intelligences ontology.
       Your API key stays on the server; this page only receives a short-lived token.
+      Use <strong>PDF ↓</strong> to save the transcript.
     </p>
   </main>
 
@@ -369,6 +371,7 @@
     const textForm = document.getElementById("textForm");
     const textInput = document.getElementById("textInput");
     const sendBtn = document.getElementById("sendBtn");
+    const pdfBtn = document.getElementById("pdfBtn");
 
     let pc = null;
     let dc = null;
@@ -412,8 +415,10 @@
       who.textContent = role;
       wrap.appendChild(who);
       wrap.appendChild(document.createTextNode(text));
+      wrap.dataset.body = text;
       logEl.appendChild(wrap);
       logEl.scrollTop = logEl.scrollHeight;
+      pdfBtn.disabled = false;
       return wrap;
     }
 
@@ -542,11 +547,111 @@
       sendBtn.disabled = true;
     }
 
+    function conversationTurns() {
+      return [...logEl.querySelectorAll(".turn")].map((el) => {
+        const who = (el.querySelector(".who") && el.querySelector(".who").textContent) || "";
+        const body = (el.dataset.body || "").trim();
+        return { who, body };
+      }).filter((turn) => turn.body);
+    }
+
+    function loadJsPdf() {
+      if (window.jspdf && window.jspdf.jsPDF) return Promise.resolve(window.jspdf.jsPDF);
+      return new Promise((resolve, reject) => {
+        const script = document.createElement("script");
+        script.src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js";
+        script.onload = () => resolve(window.jspdf.jsPDF);
+        script.onerror = () => reject(new Error("Could not load the PDF library."));
+        document.head.appendChild(script);
+      });
+    }
+
+    async function downloadTranscriptPdf() {
+      const turns = conversationTurns();
+      if (!turns.length) {
+        setStatus("Talk first, then save the transcript as PDF.", true);
+        return;
+      }
+      try {
+        const JsPDF = await loadJsPdf();
+        const doc = new JsPDF({ unit: "pt", format: "letter" });
+        const left = 54;
+        const right = 558;
+        const width = right - left;
+        let y = 64;
+        const when = new Date();
+        const stamp = when.toLocaleString(undefined, {
+          dateStyle: "long",
+          timeStyle: "short",
+        });
+        const fileStamp = when.toISOString().slice(0, 10);
+
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(16);
+        doc.text("Hybrid Intelligences", left, y);
+        y += 22;
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(11);
+        doc.text("Voice conversation", left, y);
+        y += 18;
+        doc.setFontSize(9);
+        doc.setTextColor(90);
+        doc.text(stamp, left, y);
+        y += 16;
+        doc.setDrawColor(180);
+        doc.line(left, y, right, y);
+        y += 22;
+        doc.setTextColor(20);
+
+        for (const turn of turns) {
+          if (y > 720) {
+            doc.addPage();
+            y = 64;
+          }
+          doc.setFont("helvetica", "bold");
+          doc.setFontSize(10);
+          doc.text(turn.who, left, y);
+          y += 14;
+          doc.setFont("helvetica", "normal");
+          doc.setFontSize(11);
+          const lines = doc.splitTextToSize(turn.body, width);
+          for (const line of lines) {
+            if (y > 730) {
+              doc.addPage();
+              y = 64;
+            }
+            doc.text(line, left, y);
+            y += 15;
+          }
+          y += 12;
+        }
+
+        const pages = doc.getNumberOfPages();
+        for (let i = 1; i <= pages; i++) {
+          doc.setPage(i);
+          doc.setFontSize(8);
+          doc.setTextColor(120);
+          doc.text(
+            "Hybrid Intelligences · University of Florida · Voice",
+            left,
+            750
+          );
+          doc.text(String(i) + " / " + String(pages), right, 750, { align: "right" });
+        }
+
+        doc.save("hybrid-intelligences-voice-" + fileStamp + ".pdf");
+        setStatus("Saved PDF.");
+      } catch (err) {
+        setStatus(err.message || "Could not save the PDF.", true);
+      }
+    }
+
     talkBtn.addEventListener("click", startSession);
     stopBtn.addEventListener("click", () => {
       stopSession();
       setStatus("Stopped.");
     });
+    pdfBtn.addEventListener("click", downloadTranscriptPdf);
 
     textForm.addEventListener("submit", (e) => {
       e.preventDefault();
