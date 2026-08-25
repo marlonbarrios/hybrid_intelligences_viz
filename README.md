@@ -286,7 +286,7 @@ Open [http://localhost:8000/](http://localhost:8000/) — not the file from Find
 
 ### Voice (OpenAI Realtime)
 
-Voice needs a token server. The API key must not sit in the HTML.
+Voice needs a token server. The API key must not sit in the HTML. Each session is given the full ontology (every concept, definition, and key relations) from `ontology.jsonld`.
 
 **Local Talk**
 
@@ -352,6 +352,7 @@ node build-essays.js --pdf
 | `podcast.html` | Synthetic Podcast page (NotebookLM sample + CTA) |
 | `voice.html` | Realtime voice conversation page |
 | `api/token.js` | Vercel function: mint OpenAI Realtime ephemeral token |
+| `api/ontology-context.js` | Loads `ontology.jsonld` into the Voice session instructions |
 | `local-server.js` | Local static server plus `/api/token` for Voice |
 | `vercel.json` | CORS headers for the token function |
 | `your-mind-is-not-in-your-head.m4a` | Synthetic Podcast episode audio |

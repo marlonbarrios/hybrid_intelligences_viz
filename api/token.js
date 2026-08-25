@@ -1,19 +1,22 @@
-const SESSION = {
-  session: {
-    type: "realtime",
-    model: "gpt-realtime-2.1",
-    instructions:
-      "You are a spoken companion for Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI, a University of Florida Creative B program. Speak clearly, warmly, and in short turns. Intelligence is coupling across bodies, tools, institutions, and worlds — not a thing inside a skull or a model. Draw on Umwelt, cognitive assemblages, 4E cognition, and complex embodiment when they help. Invite the listener to think with the site: the conceptual network, the ontology, and the essays. If you do not know something, say so.",
-    audio: {
-      input: {
-        transcription: { model: "gpt-4o-mini-transcribe" },
-      },
-      output: {
-        voice: "marin",
+const { ontologyInstructions } = require("./ontology-context");
+
+function sessionPayload() {
+  return {
+    session: {
+      type: "realtime",
+      model: "gpt-realtime-2.1",
+      instructions: ontologyInstructions(),
+      audio: {
+        input: {
+          transcription: { model: "gpt-4o-mini-transcribe" },
+        },
+        output: {
+          voice: "marin",
+        },
       },
     },
-  },
-};
+  };
+}
 
 function applyCors(res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -48,7 +51,7 @@ module.exports = async function handler(req, res) {
         "Content-Type": "application/json",
         "OpenAI-Safety-Identifier": "hybrid-intelligences-viz",
       },
-      body: JSON.stringify(SESSION),
+      body: JSON.stringify(sessionPayload()),
     });
 
     const data = await response.json();
