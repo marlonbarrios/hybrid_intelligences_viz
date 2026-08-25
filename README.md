@@ -8,9 +8,17 @@ Interactive map for **Hybrid Intelligences: Embodied Leadership and Creativity i
 
 **[University of Florida](https://www.ufl.edu/) · [College of the Arts](https://arts.ufl.edu/) · [CAME](https://arts.ufl.edu/came/) · [CAM](https://arts.ufl.edu/programs-schools/center-for-arts-in-medicine/) · [IGNITE](https://www.eng.ufl.edu/innovation/) · [Wertheim Laboratory](https://www.eng.ufl.edu/wertheim/)**
 
-**[Home →](index.html)** · **[Network →](network.html)** · **[Browse ontology →](ontology.html)** · **[Essay 1 →](essay.html)** · **[Essay 2 →](essay-2.html)** · **[Slides →](slides.html)** · **[Video →](video.html)** · **[Synthetic Podcast →](podcast.html)** · **[Canvas ↗](https://ufl.instructure.com/courses/574408)** · **[NotebookLM ↗](https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1)** · **[My Pendular Umwelt ↗](https://my-pendular-umwelt.vercel.app/)**
+**[Home →](index.html)** · **[Network →](network.html)** · **[Browse ontology →](ontology.html)** · **[Essay 1 →](essay.html)** · **[Essay 2 →](essay-2.html)** · **[Slides →](slides.html)** · **[Video →](video.html)** · **[Synthetic Podcast →](podcast.html)** · **[Canvas ↗](https://ufl.instructure.com/courses/574408)** · **[NotebookLM ↗](https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1)** · **[My Pendular Umwelt ↗](https://my-pendular-umwelt.vercel.app/)** · **[Scan QR Code →](scan-qr.html)**
 
-![Hybrid Intelligences conceptual network — dark theme, node detail panel](hybrid-network-screenshot.png)
+## Screenshots
+
+| [Home](index.html) | [Network](network.html) |
+|:--:|:--:|
+| ![Home](screenshots/home.jpg) | ![Network visualization](screenshots/network.jpg) |
+
+| [Ontology](ontology.html) | [Slides](slides.html) |
+|:--:|:--:|
+| ![Ontology browser](screenshots/ontology.jpg) | ![Internal slideshow](screenshots/slides.jpg) |
 
 ---
 
@@ -321,7 +329,8 @@ node build-essays.js --pdf
 | `ontology.jsonld` | JSON-LD concept scheme (generated) |
 | `ontology.ttl` | Turtle SKOS export (generated) |
 | `ontology.owl.ttl` | OWL 2 Turtle export with classes, properties, individuals (generated) |
-| `hybrid-network-screenshot.png` | README preview image |
+| `screenshots/` | README page captures (Home, Network, Ontology, Slides) |
+| `hybrid-network-screenshot.png` | Home hero / network preview image |
 
 ---
 

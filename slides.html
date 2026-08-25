@@ -302,7 +302,7 @@
         <button type="button" class="deck-btn stage-full-btn" id="stageFullBtn" aria-label="Toggle fullscreen">Fullscreen</button>
       </div>
       <div class="toolbar">
-        <span id="counter">1 / 16</span>
+        <span id="counter">1 / 17</span>
         <div class="dots" id="dots" role="tablist" aria-label="Slides"></div>
         <div class="toolbar-actions">
           <button type="button" class="deck-btn" id="fullBtn">Fullscreen</button>
@@ -321,7 +321,7 @@
   </footer>
 
   <script>
-    const SLIDES = Array.from({ length: 16 }, (_, i) => `slides/slide-${String(i + 1).padStart(2, "0")}.jpg`);
+    const SLIDES = Array.from({ length: 17 }, (_, i) => `slides/slide-${String(i + 1).padStart(2, "0")}.jpg`);
     let index = 0;
     const img = document.getElementById("slideImg");
     const counter = document.getElementById("counter");
