@@ -237,6 +237,18 @@
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.82rem;
       color: var(--title);
+      display: inline-flex;
+      align-items: center;
+    }
+    .gh-icon {
+      display: inline-block;
+      width: 0.92em;
+      height: 0.92em;
+      margin-right: 0.28em;
+      vertical-align: -0.12em;
+      background: currentColor;
+      -webkit-mask: url("github-mark.svg") center / contain no-repeat;
+      mask: url("github-mark.svg") center / contain no-repeat;
     }
     .enter-list .desc {
       font-size: 0.8rem;
@@ -500,6 +512,12 @@
             <a href="scan-qr.html">
               <span class="label">Scan QR Code</span>
               <span class="desc">Open the site from a phone camera</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/marlonbarrios/hybrid_intelligences_viz" target="_blank" rel="noopener noreferrer">
+              <span class="label"><span class="gh-icon" aria-hidden="true"></span>GitHub ↗</span>
+              <span class="desc">Source repository</span>
             </a>
           </li>
         </ul>

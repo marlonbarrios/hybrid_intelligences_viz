@@ -10,15 +10,15 @@ Interactive map for **Hybrid Intelligences: Embodied Leadership and Creativity i
 
 **[University of Florida](https://www.ufl.edu/) · [College of the Arts](https://arts.ufl.edu/) · [CAME](https://arts.ufl.edu/came/) · [CAM](https://arts.ufl.edu/programs-schools/center-for-arts-in-medicine/) · [IGNITE](https://www.eng.ufl.edu/innovation/) · [Wertheim Laboratory](https://www.eng.ufl.edu/wertheim/)**
 
-**[Home →](index.html)** · **[Network →](network.html)** · **[Browse ontology →](ontology.html)** · **[Essay 1 →](essay.html)** · **[Essay 2 →](essay-2.html)** · **[Slides →](slides.html)** · **[Video →](video.html)** · **[Synthetic Podcast →](podcast.html)** · **[Canvas ↗](https://ufl.instructure.com/courses/574408)** · **[NotebookLM ↗](https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1)** · **[My Pendular Umwelt ↗](https://my-pendular-umwelt.vercel.app/)** · **[Scan QR Code →](scan-qr.html)**
+**[Home →](https://marlonbarrios.github.io/hybrid_intelligences_viz/)** · **[Network →](https://marlonbarrios.github.io/hybrid_intelligences_viz/network.html)** · **[Browse ontology →](https://marlonbarrios.github.io/hybrid_intelligences_viz/ontology.html)** · **[Essay 1 →](https://marlonbarrios.github.io/hybrid_intelligences_viz/essay.html)** · **[Essay 2 →](https://marlonbarrios.github.io/hybrid_intelligences_viz/essay-2.html)** · **[Slides →](https://marlonbarrios.github.io/hybrid_intelligences_viz/slides.html#1)** · **[Video →](https://marlonbarrios.github.io/hybrid_intelligences_viz/video.html)** · **[Synthetic Podcast →](https://marlonbarrios.github.io/hybrid_intelligences_viz/podcast.html)** · **[Canvas ↗](https://ufl.instructure.com/courses/574408)** · **[NotebookLM ↗](https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1)** · **[My Pendular Umwelt ↗](https://my-pendular-umwelt.vercel.app/)** · **[Scan QR Code →](https://marlonbarrios.github.io/hybrid_intelligences_viz/scan-qr.html)** · **[GitHub ↗](https://github.com/marlonbarrios/hybrid_intelligences_viz)**
 
 ## Screenshots
 
-| [Home](index.html) | [Network](network.html) |
+| [Home](https://marlonbarrios.github.io/hybrid_intelligences_viz/) | [Network](https://marlonbarrios.github.io/hybrid_intelligences_viz/network.html) |
 |:--:|:--:|
 | ![Home](screenshots/home.jpg) | ![Network visualization](screenshots/network.jpg) |
 
-| [Ontology](ontology.html) | [Slides](slides.html) |
+| [Ontology](https://marlonbarrios.github.io/hybrid_intelligences_viz/ontology.html) | [Slides](https://marlonbarrios.github.io/hybrid_intelligences_viz/slides.html#1) |
 |:--:|:--:|
 | ![Ontology browser](screenshots/ontology.jpg) | ![Internal slideshow](screenshots/slides.jpg) |
 
@@ -28,16 +28,16 @@ Interactive map for **Hybrid Intelligences: Embodied Leadership and Creativity i
 
 This repository holds linked views of the same program knowledge:
 
-1. **Home** (`index.html`) — landing page that introduces the framework and routes into the site. The Framework section quotes Essay 1 on complex embodiment, with a cite link to the essay and inline concept links into the network.
-2. **Network visualization** (`network.html`) — a radial, physics-based map of **222 concepts** connected by **2,188 weighted relations**. Concepts sit on concentric rings by category; edges show conceptual proximity, influence, and program structure.
-3. **Ontology browser** (`ontology.html`) — a searchable, collapsible browse interface over the same data, exported as **[JSON-LD](ontology.jsonld)**, **[Turtle](ontology.ttl)** (SKOS), and **[OWL 2 Turtle](ontology.owl.ttl)** (classes, properties, individuals).
+1. **[Home](https://marlonbarrios.github.io/hybrid_intelligences_viz/)** (`index.html`) — landing page that introduces the framework and routes into the site. The Framework section quotes Essay 1 on complex embodiment, with a cite link to the essay and inline concept links into the network.
+2. **[Network visualization](https://marlonbarrios.github.io/hybrid_intelligences_viz/network.html)** (`network.html`) — a radial, physics-based map of **222 concepts** connected by **2,188 weighted relations**. Concepts sit on concentric rings by category; edges show conceptual proximity, influence, and program structure.
+3. **[Ontology browser](https://marlonbarrios.github.io/hybrid_intelligences_viz/ontology.html)** (`ontology.html`) — a searchable, collapsible browse interface over the same data, exported as **[JSON-LD](ontology.jsonld)**, **[Turtle](ontology.ttl)** (SKOS), and **[OWL 2 Turtle](ontology.owl.ttl)** (classes, properties, individuals).
 4. **Essay 1** (`essay.html`) — *Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI* by Marlon Barrios Solano ([PDF](essay-1-hybrid-intelligences-cognitive-assemblages.pdf)).
 5. **Essay 2** (`essay-2.html`) — *My Umwelt* by GPT-5.5, in conversation with Marlon Barrios Solano ([PDF](essay-2-my-umwelt.pdf)).
-6. **Slides** (`slides.html`) — internal Creative B Symposium slideshow (arrow keys, dots, swipe).
+6. **[Slides](https://marlonbarrios.github.io/hybrid_intelligences_viz/slides.html#1)** (`slides.html`) — internal Creative B Symposium slideshow (arrow keys, dots, swipe).
 7. **Video** (`video.html`) — Hybrid Intelligences Highlights reel.
 8. **Podcast** (`podcast.html`) — sample Synthetic Podcast (*Your Mind Is Not in Your Head*) from NotebookLM; link through to the program notebook (UF login) to research, generate another podcast, or interact with Audio Overviews.
 
-Shared navigation links Home, Network, Ontology, Essays, **[Slides](slides.html)**, Video, Synthetic Podcast, **[Canvas](https://ufl.instructure.com/courses/574408)**, **[NotebookLM](https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1)**, and **[My Pendular Umwelt](https://my-pendular-umwelt.vercel.app/)**. Institution credits (UF, College of the Arts, CAME, CAM, IGNITE, Wertheim) are linked on Home, Ontology, and the Network header. Pages share a light/dark theme preference (`hi-theme`). On narrow screens the **Network** switches to a mobile chrome (↑ / Play|Pause|Resume / ↓ / Reset / Menu) while the desktop layout stays unchanged.
+Shared navigation links [Home](https://marlonbarrios.github.io/hybrid_intelligences_viz/), [Network](https://marlonbarrios.github.io/hybrid_intelligences_viz/network.html), [Ontology](https://marlonbarrios.github.io/hybrid_intelligences_viz/ontology.html), Essays, **[Slides](https://marlonbarrios.github.io/hybrid_intelligences_viz/slides.html#1)**, Video, Synthetic Podcast, **[Canvas](https://ufl.instructure.com/courses/574408)**, **[NotebookLM](https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1)**, **[My Pendular Umwelt](https://my-pendular-umwelt.vercel.app/)**, Scan QR Code, and **[GitHub](https://github.com/marlonbarrios/hybrid_intelligences_viz)**. Institution credits (UF, College of the Arts, CAME, CAM, IGNITE, Wertheim) are linked on Home, Ontology, and the Network header. Pages share a light/dark theme preference (`hi-theme`). On narrow screens the **Network** switches to a mobile chrome (↑ / Play|Pause|Resume / ↓ / Reset / Menu) while the desktop layout stays unchanged.
 
 The network is both a **pedagogical instrument** for the Hybrid Intelligences program and a **formal vocabulary** for intelligence, embodiment, AI, and creative practice as *coupling* across bodies, tools, institutions, and worlds.
 
@@ -208,7 +208,7 @@ Frontmatter at the top of each `.md` file sets title, author, date, and footer. 
 
 | Link | Destination |
 |------|-------------|
-| **Slides** | [`slides.html`](slides.html) — internal Creative B Symposium slideshow; original PowerPoint remains on UF SharePoint |
+| **[Slides](https://marlonbarrios.github.io/hybrid_intelligences_viz/slides.html#1)** | [`slides.html`](https://marlonbarrios.github.io/hybrid_intelligences_viz/slides.html#1) — internal Creative B Symposium slideshow; original PowerPoint remains on UF SharePoint |
 | **Video** | [`video.html`](video.html) — Hybrid Intelligences Highlights (`hybrid-intelligences-highlight.mp4`) |
 | **Podcast** | [`podcast.html`](podcast.html) — sample episode *Your Mind Is Not in Your Head* (`your-mind-is-not-in-your-head.m4a`); continue in [NotebookLM](https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1) with UF credentials to research, create another podcast, or interact with Audio Overviews |
 | **Canvas** | [Hybrid Intelligences - Creative B](https://ufl.instructure.com/courses/574408) course site |
