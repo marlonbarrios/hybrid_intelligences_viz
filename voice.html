@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hybrid Intelligences — Voice</title>
+  <meta name="description" content="Realtime voice conversation with Hybrid Intelligences, using an OpenAI Realtime model.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e1018;
+      --panel: #12141e;
+      --border: #323848;
+      --title: #f4c430;
+      --text: #e8eaef;
+      --muted: #969eb0;
+      --link: #82c3ff;
+      --hover: #1a1e2a;
+      --accent: rgba(244, 196, 48, 0.12);
+      --cta-fg: #0e1018;
+    }
+    body.light-mode {
+      --bg: #fffdf8;
+      --panel: #ffffff;
+      --border: #d2d6e0;
+      --title: #a8760c;
+      --text: #202430;
+      --muted: #5a6070;
+      --link: #125599;
+      --hover: #f5f3ee;
+      --accent: rgba(168, 118, 12, 0.1);
+      --cta-fg: #fffdf8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse 90% 55% at 12% -10%, rgba(244, 196, 48, 0.07), transparent 55%),
+        radial-gradient(ellipse 70% 45% at 100% 0%, rgba(168, 140, 228, 0.06), transparent 50%),
+        var(--bg);
+      color: var(--text);
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      line-height: 1.5;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      padding: 1.25rem 1.5rem 1rem;
+      border-bottom: 1px solid var(--border);
+      background: color-mix(in srgb, var(--panel) 88%, transparent);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header .eyebrow {
+      margin: 0 0 0.4rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    header h1 {
+      margin: 0 0 0.45rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 300;
+      font-size: clamp(0.95rem, 2.4vw, 1.15rem);
+      line-height: 1.4;
+      color: var(--title);
+      max-width: 48rem;
+    }
+    header .meta {
+      margin: 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .brand-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+    .site-logo {
+      flex-shrink: 0;
+      display: block;
+      line-height: 0;
+      text-decoration: none;
+    }
+    .site-logo:hover { opacity: 0.88; text-decoration: none; }
+    .site-logo img {
+      display: block;
+      height: 88px;
+      width: auto;
+    }
+    .brand-copy { min-width: 0; }
+    .header-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 0.85rem;
+    }
+    .header-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      align-items: center;
+    }
+    .header-links a {
+      display: inline-flex;
+      align-items: center;
+    }
+    .gh-icon {
+      display: inline-block;
+      width: 0.92em;
+      height: 0.92em;
+      margin-right: 0.28em;
+      vertical-align: -0.12em;
+      background: currentColor;
+      -webkit-mask: url("github-mark.svg") center / contain no-repeat;
+      mask: url("github-mark.svg") center / contain no-repeat;
+    }
+    .theme-btn {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      padding: 0.35rem 0.55rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .theme-btn:hover { color: var(--title); border-color: var(--title); }
+    main {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 2.25rem 1.5rem 3.5rem;
+    }
+    .panel {
+      padding: 1.5rem 1.35rem 1.35rem;
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(165deg, var(--accent), transparent 42%),
+        var(--panel);
+    }
+    .panel .show {
+      margin: 0 0 0.55rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--title);
+    }
+    .panel h2 {
+      margin: 0 0 0.85rem;
+      font-family: "IBM Plex Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.35rem, 3.5vw, 1.75rem);
+      line-height: 1.25;
+      color: var(--text);
+    }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin: 0 0 1rem;
+    }
+    .controls button {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      padding: 0.55rem 0.9rem;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 1px solid var(--title);
+    }
+    #talkBtn {
+      background: var(--title);
+      color: var(--cta-fg);
+    }
+    #talkBtn:hover { filter: brightness(1.05); }
+    #talkBtn[disabled], #stopBtn[disabled] {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+    #stopBtn {
+      background: transparent;
+      color: var(--title);
+    }
+    .status {
+      margin: 0 0 1rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .status.error { color: #e07070; }
+    .log {
+      min-height: 12rem;
+      max-height: 22rem;
+      overflow: auto;
+      padding: 0.85rem 0.95rem;
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--bg) 55%, var(--panel));
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+    .log .turn { margin: 0 0 0.75rem; }
+    .log .turn:last-child { margin-bottom: 0; }
+    .log .who {
+      display: block;
+      margin-bottom: 0.15rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--title);
+    }
+    .log .empty {
+      color: var(--muted);
+      font-style: italic;
+    }
+    .text-row {
+      display: flex;
+      gap: 0.45rem;
+      margin-top: 0.9rem;
+    }
+    .text-row input {
+      flex: 1;
+      min-width: 0;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.92rem;
+      padding: 0.5rem 0.7rem;
+    }
+    .text-row button {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--text);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      padding: 0.5rem 0.7rem;
+      cursor: pointer;
+    }
+    .setup {
+      margin-top: 1.1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+    .setup label {
+      display: block;
+      margin: 0 0 0.35rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .setup input {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      padding: 0.5rem 0.7rem;
+    }
+    .caption {
+      margin: 1.25rem 0 0;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    footer.page-foot {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand-row">
+      <a class="site-logo" href="index.html" aria-label="Hybrid Intelligences home">
+        <img src="logo.png" alt="Hybrid Intelligences">
+      </a>
+      <div class="brand-copy">
+        <p class="eyebrow">Voice</p>
+        <h1>Realtime conversation</h1>
+        <p class="meta">Hybrid Intelligences · OpenAI Realtime · microphone in the browser</p>
+      </div>
+    </div>
+    <div class="header-row">
+      <div class="header-links">
+        <a href="index.html">← Home</a>
+        <a href="network.html">Network</a>
+        <a href="ontology.html">Ontology</a>
+        <a href="essay.html">Essay 1</a>
+        <a href="essay-2.html">Essay 2</a>
+        <a href="https://ufl.instructure.com/courses/574408" target="_blank" rel="noopener noreferrer">Canvas ↗</a>
+        <a href="https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1" target="_blank" rel="noopener noreferrer">NotebookLM ↗</a>
+        <a href="podcast.html">Synthetic Podcast</a>
+        <a href="https://my-pendular-umwelt.vercel.app/" target="_blank" rel="noopener noreferrer">My Pendular Umwelt ↗</a>
+        <a href="slides.html">Slides</a>
+        <a href="video.html">Video</a>
+        <a href="scan-qr.html">Scan QR Code</a>
+        <a href="https://github.com/marlonbarrios/hybrid_intelligences_viz" target="_blank" rel="noopener noreferrer"><span class="gh-icon" aria-hidden="true"></span>GitHub ↗</a>
+      </div>
+      <button type="button" class="theme-btn" id="themeBtn" aria-label="Toggle theme">Theme</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <p class="show">Speak with the program</p>
+      <h2>Talk with Hybrid Intelligences</h2>
+      <div class="controls">
+        <button type="button" id="talkBtn">Talk</button>
+        <button type="button" id="stopBtn" disabled>Stop</button>
+      </div>
+      <p class="status" id="status">Ready. Allow the microphone when the browser asks.</p>
+      <div class="log" id="log" aria-live="polite">
+        <p class="empty">Transcript will appear here.</p>
+      </div>
+      <form class="text-row" id="textForm">
+        <input type="text" id="textInput" placeholder="Or type a line…" autocomplete="off" disabled>
+        <button type="submit" id="sendBtn" disabled>Send</button>
+      </form>
+      <div class="setup">
+        <label for="originInput">Vercel project URL</label>
+        <input type="url" id="originInput" placeholder="https://your-project.vercel.app" spellcheck="false">
+      </div>
+    </section>
+    <p class="caption">
+      Do not open this file directly. Serve the folder, then use <code>http://localhost:8000/voice.html</code>.
+      Local Talk needs <code>node local-server.js</code> with <code>OPENAI_API_KEY</code> in a gitignored <code>.env</code> file,
+      or a deployed Vercel URL pasted below.
+    </p>
+  </main>
+
+  <footer class="page-foot">
+    Hybrid Intelligences · University of Florida · Voice
+  </footer>
+
+  <script src="realtime-config.js"></script>
+  <script>
+    function applyTheme(mode) {
+      document.body.classList.toggle("light-mode", mode === "light");
+      localStorage.setItem("hi-theme", mode);
+    }
+
+    function initTheme() {
+      const saved = localStorage.getItem("hi-theme");
+      const mode = saved || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      applyTheme(mode);
+      document.getElementById("themeBtn").addEventListener("click", () => {
+        applyTheme(document.body.classList.contains("light-mode") ? "dark" : "light");
+      });
+    }
+
+    const talkBtn = document.getElementById("talkBtn");
+    const stopBtn = document.getElementById("stopBtn");
+    const statusEl = document.getElementById("status");
+    const logEl = document.getElementById("log");
+    const textForm = document.getElementById("textForm");
+    const textInput = document.getElementById("textInput");
+    const sendBtn = document.getElementById("sendBtn");
+    const originInput = document.getElementById("originInput");
+
+    let pc = null;
+    let dc = null;
+    let localStream = null;
+    let remoteAudio = null;
+    let assistantTurn = null;
+
+    function setStatus(text, isError) {
+      statusEl.textContent = text;
+      statusEl.classList.toggle("error", Boolean(isError));
+    }
+
+    function normalizeOrigin(raw) {
+      const value = (raw || "").trim().replace(/\/+$/, "");
+      return value;
+    }
+
+    function isLocalHost() {
+      const host = window.location.hostname;
+      return host === "localhost" || host === "127.0.0.1" || host === "[::1]";
+    }
+
+    function tokenUrl() {
+      if (window.location.protocol === "file:") return "";
+      const fromInput = normalizeOrigin(originInput.value);
+      if (fromInput) {
+        if (/\/api\/token\/?$/.test(fromInput)) return fromInput;
+        return fromInput + "/api/token";
+      }
+      if (window.location.hostname.endsWith("vercel.app") || isLocalHost()) return "/api/token";
+      return "";
+    }
+
+    originInput.value = localStorage.getItem("hi-realtime-origin")
+      || window.HI_REALTIME_ORIGIN
+      || "";
+    originInput.addEventListener("change", () => {
+      localStorage.setItem("hi-realtime-origin", normalizeOrigin(originInput.value));
+    });
+
+    function clearLogPlaceholder() {
+      const empty = logEl.querySelector(".empty");
+      if (empty) empty.remove();
+    }
+
+    function addTurn(role, text) {
+      clearLogPlaceholder();
+      const wrap = document.createElement("p");
+      wrap.className = "turn";
+      const who = document.createElement("span");
+      who.className = "who";
+      who.textContent = role;
+      wrap.appendChild(who);
+      wrap.appendChild(document.createTextNode(text));
+      logEl.appendChild(wrap);
+      logEl.scrollTop = logEl.scrollHeight;
+      return wrap;
+    }
+
+    function appendAssistant(text) {
+      if (!assistantTurn) {
+        assistantTurn = addTurn("Hybrid Intelligences", text);
+        assistantTurn.dataset.body = text;
+        return;
+      }
+      const next = (assistantTurn.dataset.body || "") + text;
+      assistantTurn.dataset.body = next;
+      assistantTurn.lastChild.textContent = next;
+      logEl.scrollTop = logEl.scrollHeight;
+    }
+
+    function handleRealtimeEvent(event) {
+      if (event.type === "conversation.item.input_audio_transcription.completed" && event.transcript) {
+        addTurn("You", event.transcript);
+        assistantTurn = null;
+      } else if (event.type === "response.output_audio_transcript.delta" && event.delta) {
+        appendAssistant(event.delta);
+      } else if (event.type === "response.audio_transcript.delta" && event.delta) {
+        appendAssistant(event.delta);
+      } else if (event.type === "response.output_audio_transcript.done" && event.transcript && !assistantTurn) {
+        addTurn("Hybrid Intelligences", event.transcript);
+      } else if (event.type === "error") {
+        const msg = (event.error && event.error.message) || "Realtime session error.";
+        setStatus(msg, true);
+      }
+    }
+
+    async function startSession() {
+      if (window.location.protocol === "file:") {
+        setStatus("This cannot run as a file. In Terminal run: node local-server.js  then open http://localhost:8000/voice.html", true);
+        return;
+      }
+      const url = tokenUrl();
+      if (!url) {
+        setStatus("Paste your Vercel project URL below, then press Talk.", true);
+        originInput.focus();
+        return;
+      }
+      localStorage.setItem("hi-realtime-origin", normalizeOrigin(originInput.value));
+
+      talkBtn.disabled = true;
+      setStatus("Connecting…");
+
+      try {
+        const tokenRes = await fetch(url);
+        const raw = await tokenRes.text();
+        let tokenData = {};
+        try {
+          tokenData = JSON.parse(raw);
+        } catch (_) {
+          throw new Error("No token server at that address. Run node local-server.js, or deploy Vercel and paste that URL.");
+        }
+        if (!tokenRes.ok || !tokenData.value) {
+          throw new Error(tokenData.error || "Could not get a realtime token.");
+        }
+
+        localStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        pc = new RTCPeerConnection();
+        remoteAudio = document.createElement("audio");
+        remoteAudio.autoplay = true;
+        pc.ontrack = (e) => {
+          remoteAudio.srcObject = e.streams[0];
+        };
+        localStream.getTracks().forEach((track) => pc.addTrack(track, localStream));
+
+        dc = pc.createDataChannel("oai-events");
+        dc.addEventListener("message", (e) => {
+          try {
+            handleRealtimeEvent(JSON.parse(e.data));
+          } catch (_) {}
+        });
+
+        const offer = await pc.createOffer();
+        await pc.setLocalDescription(offer);
+
+        const sdpResponse = await fetch("https://api.openai.com/v1/realtime/calls", {
+          method: "POST",
+          body: offer.sdp,
+          headers: {
+            Authorization: "Bearer " + tokenData.value,
+            "Content-Type": "application/sdp",
+          },
+        });
+        if (!sdpResponse.ok) {
+          throw new Error("OpenAI did not accept the voice session.");
+        }
+
+        await pc.setRemoteDescription({
+          type: "answer",
+          sdp: await sdpResponse.text(),
+        });
+
+        stopBtn.disabled = false;
+        textInput.disabled = false;
+        sendBtn.disabled = false;
+        setStatus("Listening. Speak, or type a line.");
+      } catch (err) {
+        stopSession();
+        setStatus(err.message || "Could not start the voice session.", true);
+      }
+    }
+
+    function stopSession() {
+      if (dc) {
+        try { dc.close(); } catch (_) {}
+      }
+      if (pc) {
+        try { pc.close(); } catch (_) {}
+      }
+      if (localStream) {
+        localStream.getTracks().forEach((track) => track.stop());
+      }
+      if (remoteAudio) {
+        remoteAudio.srcObject = null;
+      }
+      pc = null;
+      dc = null;
+      localStream = null;
+      remoteAudio = null;
+      assistantTurn = null;
+      talkBtn.disabled = false;
+      stopBtn.disabled = true;
+      textInput.disabled = true;
+      sendBtn.disabled = true;
+    }
+
+    talkBtn.addEventListener("click", startSession);
+    stopBtn.addEventListener("click", () => {
+      stopSession();
+      setStatus("Stopped.");
+    });
+
+    textForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const text = textInput.value.trim();
+      if (!text || !dc || dc.readyState !== "open") return;
+      addTurn("You", text);
+      assistantTurn = null;
+      dc.send(JSON.stringify({
+        type: "conversation.item.create",
+        item: {
+          type: "message",
+          role: "user",
+          content: [{ type: "input_text", text }],
+        },
+      }));
+      dc.send(JSON.stringify({ type: "response.create" }));
+      textInput.value = "";
+    });
+
+    window.addEventListener("beforeunload", stopSession);
+    initTheme();
+    if (window.location.protocol === "file:") {
+      talkBtn.disabled = true;
+      setStatus("This cannot run as a file. In Terminal: node local-server.js  then open http://localhost:8000/voice.html", true);
+    } else if (isLocalHost() && !normalizeOrigin(originInput.value)) {
+      setStatus("Local: run node local-server.js with OPENAI_API_KEY in .env, then press Talk. Or paste a deployed Vercel URL below.");
+    }
+  </script>
+</body>
+</html>

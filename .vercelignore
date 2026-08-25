@@ -1,0 +1,9 @@
+*.mp4
+*.m4a
+*.pdf
+slides/
+screenshots/
+logo 2@2x 1.png
+.DS_Store
+.env
+.env.*

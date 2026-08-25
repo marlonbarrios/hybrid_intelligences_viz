@@ -135,6 +135,7 @@ const VIDEO_URL = "video.html";
 const SCAN_QR_URL = "scan-qr.html";
 const GITHUB_URL = "https://github.com/marlonbarrios/hybrid_intelligences_viz";
 const PODCAST_URL = "podcast.html";
+const VOICE_URL = "voice.html";
 const SLIDES_URL = "slides.html";
 const CANVAS_URL = "https://ufl.instructure.com/courses/574408";
 const NOTEBOOK_LM_URL = "https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1";
@@ -4996,6 +4997,7 @@ function drawMobileMenu() {
     { id: "link", label: "Essay 2", url: ESSAY2_URL },
     { id: "link", label: "NotebookLM \u2197", url: NOTEBOOK_LM_URL },
     { id: "link", label: "Synthetic Podcast", url: PODCAST_URL },
+    { id: "link", label: "Voice", url: VOICE_URL },
     { id: "link", label: "Slides", url: SLIDES_URL },
     { id: "link", label: "Video", url: VIDEO_URL },
     { id: "link", label: "Scan QR Code", url: SCAN_QR_URL },
@@ -5158,6 +5160,7 @@ function drawUI() {
     { url: CANVAS_URL, label: "Canvas \u2197" },
     { url: NOTEBOOK_LM_URL, label: "NotebookLM \u2197" },
     { url: PODCAST_URL, label: "Synthetic Podcast" },
+    { url: VOICE_URL, label: "Voice" },
     { url: PENDULAR_UMWELT_URL, label: "My Pendular Umwelt \u2197" },
     { url: SLIDES_URL, label: "Slides" },
     { url: VIDEO_URL, label: "Video" },
