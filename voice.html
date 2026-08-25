@@ -335,15 +335,10 @@
         <input type="text" id="textInput" placeholder="Or type a line…" autocomplete="off" disabled>
         <button type="submit" id="sendBtn" disabled>Send</button>
       </form>
-      <div class="setup">
-        <label for="originInput">Vercel project URL</label>
-        <input type="url" id="originInput" placeholder="https://your-project.vercel.app" spellcheck="false">
-      </div>
     </section>
     <p class="caption">
-      Do not open this file directly. Serve the folder, then use <code>http://localhost:8000/voice.html</code>.
-      Local Talk needs <code>node local-server.js</code> with <code>OPENAI_API_KEY</code> in a gitignored <code>.env</code> file,
-      or a deployed Vercel URL pasted below. The voice is grounded in the Hybrid Intelligences ontology.
+      Press <strong>Talk</strong> and allow the microphone. The voice is grounded in the Hybrid Intelligences ontology.
+      Your API key stays on the server; this page only receives a short-lived token.
     </p>
   </main>
 
@@ -374,7 +369,6 @@
     const textForm = document.getElementById("textForm");
     const textInput = document.getElementById("textInput");
     const sendBtn = document.getElementById("sendBtn");
-    const originInput = document.getElementById("originInput");
 
     let pc = null;
     let dc = null;
@@ -399,21 +393,10 @@
 
     function tokenUrl() {
       if (window.location.protocol === "file:") return "";
-      const fromInput = normalizeOrigin(originInput.value);
-      if (fromInput) {
-        if (/\/api\/token\/?$/.test(fromInput)) return fromInput;
-        return fromInput + "/api/token";
-      }
-      if (window.location.hostname.endsWith("vercel.app") || isLocalHost()) return "/api/token";
-      return "";
+      if (isLocalHost() || window.location.hostname.endsWith("vercel.app")) return "/api/token";
+      const origin = normalizeOrigin(window.HI_REALTIME_ORIGIN || "https://project-s4uzk.vercel.app");
+      return origin + "/api/token";
     }
-
-    originInput.value = localStorage.getItem("hi-realtime-origin")
-      || window.HI_REALTIME_ORIGIN
-      || "";
-    originInput.addEventListener("change", () => {
-      localStorage.setItem("hi-realtime-origin", normalizeOrigin(originInput.value));
-    });
 
     function clearLogPlaceholder() {
       const empty = logEl.querySelector(".empty");
@@ -469,11 +452,9 @@
       }
       const url = tokenUrl();
       if (!url) {
-        setStatus("Paste your Vercel project URL below, then press Talk.", true);
-        originInput.focus();
+        setStatus("This cannot run as a file. Open http://localhost:8000/voice.html after node local-server.js", true);
         return;
       }
-      localStorage.setItem("hi-realtime-origin", normalizeOrigin(originInput.value));
 
       talkBtn.disabled = true;
       setStatus("Connecting…");
@@ -485,7 +466,7 @@
         try {
           tokenData = JSON.parse(raw);
         } catch (_) {
-          throw new Error("No token server at that address. Run node local-server.js, or deploy Vercel and paste that URL.");
+          throw new Error("No token server yet. Redeploy the Vercel project from the latest GitHub main, then press Talk again.");
         }
         if (!tokenRes.ok || !tokenData.value) {
           throw new Error(tokenData.error || "Could not get a realtime token.");
@@ -590,8 +571,8 @@
     if (window.location.protocol === "file:") {
       talkBtn.disabled = true;
       setStatus("This cannot run as a file. In Terminal: node local-server.js  then open http://localhost:8000/voice.html", true);
-    } else if (isLocalHost() && !normalizeOrigin(originInput.value)) {
-      setStatus("Local: run node local-server.js with OPENAI_API_KEY in .env, then press Talk. Or paste a deployed Vercel URL below.");
+    } else {
+      setStatus("Ready. Allow the microphone when the browser asks.");
     }
   </script>
 </body>

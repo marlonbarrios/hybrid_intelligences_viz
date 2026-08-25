@@ -299,10 +299,7 @@ Then open [http://localhost:8000/voice.html](http://localhost:8000/voice.html) a
 
 **Live Talk (Vercel)**
 
-1. Connect this GitHub repository to the Vercel project (or deploy the folder).
-2. Confirm `OPENAI_API_KEY` is set for Production.
-3. Deploy.
-4. On Voice, paste the Vercel URL (for example `https://your-project.vercel.app`) and press **Talk**.
+The Voice page on GitHub Pages calls [https://project-s4uzk.vercel.app](https://project-s4uzk.vercel.app) for tokens. Visitors only press **Talk**. Redeploy that Vercel project from `main` whenever `api/token.js` changes.
 
 | Page | URL |
 |------|-----|

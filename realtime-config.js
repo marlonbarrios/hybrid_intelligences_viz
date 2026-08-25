@@ -1,3 +1,2 @@
-// Paste your Vercel origin here, then the page will call /api/token on that host.
-// Example: "https://your-project.vercel.app"
-window.HI_REALTIME_ORIGIN = "";
+// Token server for Voice (GitHub Pages calls this origin).
+window.HI_REALTIME_ORIGIN = "https://project-s4uzk.vercel.app";
