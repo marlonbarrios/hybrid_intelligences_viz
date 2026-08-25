@@ -555,129 +555,153 @@
       }).filter((turn) => turn.body);
     }
 
-    function loadJsPdf() {
-      if (window.jspdf && window.jspdf.jsPDF) return Promise.resolve(window.jspdf.jsPDF);
-      return new Promise((resolve, reject) => {
-        const script = document.createElement("script");
-        script.src = "jspdf.umd.min.js";
-        script.onload = () => {
-          const JsPDF = window.jspdf && window.jspdf.jsPDF;
-          if (!JsPDF) reject(new Error("PDF library loaded but jsPDF was missing."));
-          else resolve(JsPDF);
-        };
-        script.onerror = () => reject(new Error("Could not load the PDF library."));
-        document.head.appendChild(script);
-      });
+    function pdfSafe(text) {
+      return String(text)
+        .replace(/[\u2018\u2019]/g, "'")
+        .replace(/[\u201C\u201D]/g, '"')
+        .replace(/\u2013/g, "-")
+        .replace(/\u2014/g, "--")
+        .replace(/\u2026/g, "...")
+        .replace(/\u00A0/g, " ")
+        .replace(/\u00B7/g, "-")
+        .replace(/[^\x20-\x7E]/g, "?");
     }
 
-    async function downloadTranscriptPdf() {
+    function pdfString(text) {
+      return "(" + pdfSafe(text).replace(/\\/g, "\\\\").replace(/\(/g, "\\(").replace(/\)/g, "\\)") + ")";
+    }
+
+    function wrapWords(text, maxChars) {
+      const raw = pdfSafe(text).replace(/\s+/g, " ").trim();
+      if (!raw) return [""];
+      const words = raw.split(" ");
+      const lines = [];
+      let cur = "";
+      for (const word of words) {
+        const next = cur ? cur + " " + word : word;
+        if (next.length > maxChars && cur) {
+          lines.push(cur);
+          cur = word;
+        } else {
+          cur = next;
+        }
+        while (cur.length > maxChars) {
+          lines.push(cur.slice(0, maxChars));
+          cur = cur.slice(maxChars);
+        }
+      }
+      if (cur) lines.push(cur);
+      return lines;
+    }
+
+    function buildTranscriptPdf(turns, stamp) {
+      const left = 54;
+      const floor = 56;
+      const startY = 730;
+      const pages = [];
+      let ops = [];
+      let y = startY;
+
+      function flushPage() {
+        if (ops.length) pages.push(ops);
+        ops = [];
+        y = startY;
+      }
+
+      function writeLine(text, size, bold, gap) {
+        if (y - gap < floor) flushPage();
+        ops.push("BT");
+        ops.push("/" + (bold ? "F2" : "F1") + " " + size + " Tf");
+        ops.push(left + " " + y + " Td");
+        ops.push(pdfString(text) + " Tj");
+        ops.push("ET");
+        y -= gap;
+      }
+
+      writeLine("Hybrid Intelligences", 16, true, 20);
+      writeLine("Voice conversation", 11, false, 16);
+      writeLine(stamp, 9, false, 14);
+      ops.push(left + " " + y + " m");
+      ops.push("558 " + y + " l S");
+      y -= 20;
+
+      for (const turn of turns) {
+        if (y < floor + 40) flushPage();
+        writeLine(turn.who, 10, true, 14);
+        wrapWords(turn.body, 90).forEach((line) => writeLine(line, 11, false, 15));
+        y -= 8;
+      }
+      flushPage();
+
+      const count = pages.length;
+      const streams = pages.map((pageOps, i) => pageOps.concat([
+        "BT",
+        "/F1 8 Tf",
+        left + " 40 Td",
+        pdfString("Hybrid Intelligences · University of Florida · Voice") + " Tj",
+        "ET",
+        "BT",
+        "/F1 8 Tf",
+        "520 40 Td",
+        pdfString((i + 1) + " / " + count) + " Tj",
+        "ET",
+      ]).join("\n"));
+
+      const obj = [];
+      obj[1] = "<< /Type /Catalog /Pages 2 0 R >>";
+      obj[3] = "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>";
+      obj[4] = "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>";
+      let next = 5;
+      const kids = [];
+      streams.forEach((stream) => {
+        const pageNum = next;
+        const contentNum = next + 1;
+        kids.push(pageNum + " 0 R");
+        obj[pageNum] = "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents " + contentNum + " 0 R >>";
+        obj[contentNum] = "<< /Length " + stream.length + " >>\nstream\n" + stream + "\nendstream";
+        next += 2;
+      });
+      obj[2] = "<< /Type /Pages /Kids [" + kids.join(" ") + "] /Count " + streams.length + " >>";
+
+      let out = "%PDF-1.4\n";
+      const offsets = [0];
+      for (let i = 1; i < next; i++) {
+        offsets[i] = out.length;
+        out += i + " 0 obj\n" + obj[i] + "\nendobj\n";
+      }
+      const xrefPos = out.length;
+      out += "xref\n0 " + next + "\n0000000000 65535 f \n";
+      for (let i = 1; i < next; i++) {
+        out += String(offsets[i]).padStart(10, "0") + " 00000 n \n";
+      }
+      out += "trailer\n<< /Size " + next + " /Root 1 0 R >>\nstartxref\n" + xrefPos + "\n%%EOF\n";
+      return out;
+    }
+
+    function downloadTranscriptPdf() {
       const turns = conversationTurns();
       if (!turns.length) {
         setStatus("Talk first, then save the transcript as PDF.", true);
         return;
       }
       try {
-        const JsPDF = await loadJsPdf();
-        const doc = new JsPDF({ unit: "pt", format: "letter" });
-        const left = 54;
-        const right = 558;
-        const width = right - left;
-        let y = 64;
         const when = new Date();
-        const stamp = when.toLocaleString(undefined, {
-          dateStyle: "long",
-          timeStyle: "short",
-        });
+        const stamp = when.toLocaleString(undefined, { dateStyle: "long", timeStyle: "short" });
         const fileStamp = when.toISOString().slice(0, 10);
-
-        doc.setFont("helvetica", "bold");
-        doc.setFontSize(16);
-        doc.text("Hybrid Intelligences", left, y);
-        y += 22;
-        doc.setFont("helvetica", "normal");
-        doc.setFontSize(11);
-        doc.text("Voice conversation", left, y);
-        y += 18;
-        doc.setFontSize(9);
-        doc.setTextColor(90);
-        doc.text(stamp, left, y);
-        y += 16;
-        doc.setDrawColor(180);
-        doc.line(left, y, right, y);
-        y += 22;
-        doc.setTextColor(20);
-
-        for (const turn of turns) {
-          if (y > 720) {
-            doc.addPage();
-            y = 64;
-          }
-          doc.setFont("helvetica", "bold");
-          doc.setFontSize(10);
-          doc.text(turn.who, left, y);
-          y += 14;
-          doc.setFont("helvetica", "normal");
-          doc.setFontSize(11);
-          const lines = doc.splitTextToSize(turn.body, width);
-          for (const line of lines) {
-            if (y > 730) {
-              doc.addPage();
-              y = 64;
-            }
-            doc.text(line, left, y);
-            y += 15;
-          }
-          y += 12;
-        }
-
-        const pages = doc.getNumberOfPages();
-        for (let i = 1; i <= pages; i++) {
-          doc.setPage(i);
-          doc.setFontSize(8);
-          doc.setTextColor(120);
-          doc.text(
-            "Hybrid Intelligences · University of Florida · Voice",
-            left,
-            750
-          );
-          doc.text(String(i) + " / " + String(pages), right, 750, { align: "right" });
-        }
-
-        doc.save("hybrid-intelligences-voice-" + fileStamp + ".pdf");
+        const pdf = buildTranscriptPdf(turns, stamp);
+        const blob = new Blob([pdf], { type: "application/pdf" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "hybrid-intelligences-voice-" + fileStamp + ".pdf";
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        setTimeout(function () { URL.revokeObjectURL(url); }, 1500);
         setStatus("Saved PDF.");
       } catch (err) {
-        try {
-          printTranscriptFallback(turns);
-          setStatus("Use the print dialog and choose Save as PDF.");
-        } catch (_) {
-          setStatus(err.message || "Could not save the PDF.", true);
-        }
+        setStatus(err.message || "Could not save the PDF.", true);
       }
-    }
-
-    function printTranscriptFallback(turns) {
-      const stamp = new Date().toLocaleString(undefined, { dateStyle: "long", timeStyle: "short" });
-      const body = turns.map((turn) => {
-        const who = String(turn.who).replace(/</g, "&lt;");
-        const text = String(turn.body).replace(/</g, "&lt;");
-        return "<p><strong>" + who + "</strong><br>" + text.replace(/\n/g, "<br>") + "</p>";
-      }).join("");
-      const frame = document.createElement("iframe");
-      frame.setAttribute("aria-hidden", "true");
-      frame.style.position = "fixed";
-      frame.style.right = "0";
-      frame.style.bottom = "0";
-      frame.style.width = "0";
-      frame.style.height = "0";
-      frame.style.border = "0";
-      document.body.appendChild(frame);
-      const doc = frame.contentDocument;
-      doc.open();
-      doc.write("<!DOCTYPE html><html><head><title>Hybrid Intelligences Voice</title><style>body{font-family:Georgia,serif;padding:1.5rem;color:#202430}h1{font-size:1.2rem;margin:0 0 .3rem}p{line-height:1.5}</style></head><body><h1>Hybrid Intelligences</h1><p>Voice conversation · " + stamp.replace(/</g, "") + "</p>" + body + "</body></html>");
-      doc.close();
-      frame.contentWindow.focus();
-      frame.contentWindow.print();
-      setTimeout(() => frame.remove(), 1000);
     }
 
     talkBtn.addEventListener("click", startSession);
