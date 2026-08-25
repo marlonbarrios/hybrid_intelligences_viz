@@ -6,6 +6,8 @@ Interactive map for **Hybrid Intelligences: Embodied Leadership and Creativity i
 
 **Impact:** A hybrid dynamic knowledge architecture of concepts, essays, documentation, visualization, and program materials for embodied leadership and creativity in the era of AI.
 
+**Live site:** [https://marlonbarrios.github.io/hybrid_intelligences_viz/](https://marlonbarrios.github.io/hybrid_intelligences_viz/)
+
 **[University of Florida](https://www.ufl.edu/) · [College of the Arts](https://arts.ufl.edu/) · [CAME](https://arts.ufl.edu/came/) · [CAM](https://arts.ufl.edu/programs-schools/center-for-arts-in-medicine/) · [IGNITE](https://www.eng.ufl.edu/innovation/) · [Wertheim Laboratory](https://www.eng.ufl.edu/wertheim/)**
 
 **[Home →](index.html)** · **[Network →](network.html)** · **[Browse ontology →](ontology.html)** · **[Essay 1 →](essay.html)** · **[Essay 2 →](essay-2.html)** · **[Slides →](slides.html)** · **[Video →](video.html)** · **[Synthetic Podcast →](podcast.html)** · **[Canvas ↗](https://ufl.instructure.com/courses/574408)** · **[NotebookLM ↗](https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1)** · **[My Pendular Umwelt ↗](https://my-pendular-umwelt.vercel.app/)** · **[Scan QR Code →](scan-qr.html)**
@@ -268,7 +270,9 @@ This writes `ontology.jsonld`, `ontology.ttl`, and `ontology.owl.ttl`. The ontol
 
 ## Local development
 
-Serve the folder over HTTP (required for ontology JSON fetch and hash routing):
+The public site is at **[https://marlonbarrios.github.io/hybrid_intelligences_viz/](https://marlonbarrios.github.io/hybrid_intelligences_viz/)**.
+
+To work locally, serve the folder over HTTP (required for ontology JSON fetch and hash routing):
 
 ```bash
 git clone https://github.com/marlonbarrios/hybrid_intelligences_viz.git
