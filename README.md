@@ -20,7 +20,7 @@ Interactive map for **Hybrid Intelligences: Embodied Leadership and Creativity i
 
 | [Ontology](https://marlonbarrios.github.io/hybrid_intelligences_viz/ontology.html) | [Slides](https://marlonbarrios.github.io/hybrid_intelligences_viz/slides.html#1) |
 |:--:|:--:|
-| ![Ontology browser](screenshots/ontology.jpg) | ![Internal slideshow](screenshots/slides.jpg) |
+| ![Ontology browser](screenshots/ontology.jpg) | ![Slides from the Creative B sessions, summer 2026](screenshots/slides.jpg) |
 
 ---
 
@@ -34,7 +34,7 @@ This repository holds linked views of the same program knowledge:
 4. **[Voice](https://marlonbarrios.github.io/hybrid_intelligences_viz/voice.html)** (`voice.html`) — browser microphone conversation with an OpenAI Realtime model. The API key stays on Vercel; the page only receives a short-lived token.
 5. **Essay 1** (`essay.html`) — *Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI* by Marlon Barrios Solano ([PDF](essay-1-hybrid-intelligences-cognitive-assemblages.pdf)).
 6. **Essay 2** (`essay-2.html`) — *My Umwelt* by GPT-5.5, in conversation with Marlon Barrios Solano ([PDF](essay-2-my-umwelt.pdf)).
-7. **[Slides](https://marlonbarrios.github.io/hybrid_intelligences_viz/slides.html#1)** (`slides.html`) — internal Creative B Symposium slideshow (arrow keys, dots, swipe).
+7. **[Slides](https://marlonbarrios.github.io/hybrid_intelligences_viz/slides.html#1)** (`slides.html`) — from the Creative B sessions, summer 2026 (arrow keys, dots, swipe).
 8. **Video** (`video.html`) — Hybrid Intelligences Highlights reel.
 9. **Podcast** (`podcast.html`) — sample Synthetic Podcast (*Your Mind Is Not in Your Head*) from NotebookLM; link through to the program notebook (UF login) to research, generate another podcast, or interact with Audio Overviews.
 
@@ -209,7 +209,7 @@ Frontmatter at the top of each `.md` file sets title, author, date, and footer. 
 
 | Link | Destination |
 |------|-------------|
-| **[Slides](https://marlonbarrios.github.io/hybrid_intelligences_viz/slides.html#1)** | [`slides.html`](https://marlonbarrios.github.io/hybrid_intelligences_viz/slides.html#1) — internal Creative B Symposium slideshow; original PowerPoint remains on UF SharePoint |
+| **[Slides](https://marlonbarrios.github.io/hybrid_intelligences_viz/slides.html#1)** | [`slides.html`](https://marlonbarrios.github.io/hybrid_intelligences_viz/slides.html#1) — from the Creative B sessions, summer 2026; original PowerPoint remains on UF SharePoint |
 | **Video** | [`video.html`](video.html) — Hybrid Intelligences Highlights (`hybrid-intelligences-highlight.mp4`) |
 | **Podcast** | [`podcast.html`](podcast.html) — sample episode *Your Mind Is Not in Your Head* (`your-mind-is-not-in-your-head.m4a`); continue in [NotebookLM](https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1) with UF credentials to research, create another podcast, or interact with Audio Overviews |
 | **Voice** | [`voice.html`](voice.html) — OpenAI Realtime voice conversation; token minting via Vercel `api/token.js` |
@@ -344,7 +344,7 @@ node build-essays.js --pdf
 | `build-essays.js` | Essay build script: markdown → HTML (+ optional PDF) |
 | `essay-1-hybrid-intelligences-cognitive-assemblages.pdf` | Essay 1 PDF download |
 | `essay-2-my-umwelt.pdf` | Essay 2 PDF download |
-| `slides.html` | Creative B Symposium internal slideshow |
+| `slides.html` | Slideshow from the Creative B sessions, summer 2026 |
 | `slides/` | JPEG frames for the slideshow |
 | `podcast.html` | Synthetic Podcast page (NotebookLM sample + CTA) |
 | `voice.html` | Realtime voice conversation page |
