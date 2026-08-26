@@ -11,8 +11,8 @@
   rdfs:label "Hybrid Intelligences Ontology" ;
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   owl:versionInfo "1.0.0" ;
-  hi:nodeCount "224"^^xsd:integer ;
-  hi:edgeCount "2239"^^xsd:integer .
+  hi:nodeCount "225"^^xsd:integer ;
+  hi:edgeCount "2262"^^xsd:integer .
 
 hi:scheme a skos:ConceptScheme ;
   skos:prefLabel "Hybrid Intelligences Concept Scheme" ;
@@ -304,13 +304,13 @@ hi:autopoiesis a skos:Concept, hi:NetworkNode ;
 
 hi:buddhism a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Buddhism" ;
-  skos:definition "Tradition of practice and philosophy centered on suffering, interdependence, impermanence, and liberation—mindfulness, emptiness (śūnyatā), and non-self (anattā) as frameworks for understanding cognition, ethics, and embodied experience; foundational for enactivism via phenomenology and contemplative science." ;
+  skos:definition "Tradition of practice and philosophy centered on suffering, interdependence, impermanence, and liberation—mindfulness, emptiness (śūnyatā), and non-self (anattā) as frameworks for understanding cognition, ethics, and embodied experience; foundational for enactivism via phenomenology and contemplative science. Vipassana (insight) is a core method of this tradition: first-person training of attention that later informed Varela’s neurophenomenology." ;
   skos:broader hi:category/framework ;
   skos:inScheme hi:scheme ;
   hi:category "framework" ;
   hi:weight "1.5"^^xsd:decimal
  ;
-  schema:url <https://en.wikipedia.org/wiki/Buddhism> ;
+  schema:url <essay.html> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Buddhism>
  .
 
@@ -2046,6 +2046,18 @@ hi:somatics a skos:Concept, hi:NetworkNode ;
   schema:sameAs <https://en.wikipedia.org/wiki/Somatics>
  .
 
+hi:vipassana a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Vipassana" ;
+  skos:definition "Buddhist contemplative practice of insight and mindfulness—disciplined attention to sensation, arising, and passing as a way of knowing. A practice-level tool supporting enactive and embodied approaches: first-person training of awareness rather than theory about mind from the outside. In Varela’s neurophenomenology, such practice becomes a method for coupling lived experience with the sciences of mind. In hybrid intelligence, Vipassana is also a literacy of coupling—sensing how attention is already assembled with body, tradition, room, and technical mediation." ;
+  skos:broader hi:category/practice ;
+  skos:inScheme hi:scheme ;
+  hi:category "practice" ;
+  hi:weight "1.35"^^xsd:decimal
+ ;
+  schema:url <essay.html> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Vipassan%C4%81>
+ .
+
 hi:complexity a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Conceptual Complexity" ;
   skos:definition "Awareness of overlapping frameworks, scales, and couplings—holding multiplicity without collapsing ideas into false simplicity." ;
@@ -3680,6 +3692,12 @@ hi:rel-buddhism-enactivism a hi:Relation ;
   hi:target hi:enactivism ;
   hi:strength "0.95"^^xsd:decimal ;
   skos:relatedMatch hi:enactivism .
+
+hi:rel-buddhism-vipassana a hi:Relation ;
+  hi:source hi:buddhism ;
+  hi:target hi:vipassana ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:vipassana .
 
 hi:rel-buddhism-nagarjuna a hi:Relation ;
   hi:source hi:buddhism ;
@@ -9423,6 +9441,120 @@ hi:rel-somatics-coregulation a hi:Relation ;
   hi:strength "0.9"^^xsd:decimal ;
   skos:relatedMatch hi:coregulation .
 
+hi:rel-somatics-vipassana a hi:Relation ;
+  hi:source hi:somatics ;
+  hi:target hi:vipassana ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:vipassana .
+
+hi:rel-vipassana-buddhism a hi:Relation ;
+  hi:source hi:vipassana ;
+  hi:target hi:buddhism ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:buddhism .
+
+hi:rel-vipassana-enactivism a hi:Relation ;
+  hi:source hi:vipassana ;
+  hi:target hi:enactivism ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:enactivism .
+
+hi:rel-vipassana-embodiment a hi:Relation ;
+  hi:source hi:vipassana ;
+  hi:target hi:embodiment ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:embodiment .
+
+hi:rel-vipassana-cognition a hi:Relation ;
+  hi:source hi:vipassana ;
+  hi:target hi:cognition ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:cognition .
+
+hi:rel-vipassana-varela a hi:Relation ;
+  hi:source hi:vipassana ;
+  hi:target hi:varela ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:varela .
+
+hi:rel-vipassana-thompson a hi:Relation ;
+  hi:source hi:vipassana ;
+  hi:target hi:thompson ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:thompson .
+
+hi:rel-vipassana-rosch a hi:Relation ;
+  hi:source hi:vipassana ;
+  hi:target hi:rosch ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:rosch .
+
+hi:rel-vipassana-somatics a hi:Relation ;
+  hi:source hi:vipassana ;
+  hi:target hi:somatics ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:somatics .
+
+hi:rel-vipassana-assemblage a hi:Relation ;
+  hi:source hi:vipassana ;
+  hi:target hi:assemblage ;
+  hi:strength "0.78"^^xsd:decimal ;
+  skos:relatedMatch hi:assemblage .
+
+hi:rel-vipassana-coupling a hi:Relation ;
+  hi:source hi:vipassana ;
+  hi:target hi:coupling ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:coupling .
+
+hi:rel-vipassana-4e a hi:Relation ;
+  hi:source hi:vipassana ;
+  hi:target hi:4e ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:4e .
+
+hi:rel-vipassana-embodied a hi:Relation ;
+  hi:source hi:vipassana ;
+  hi:target hi:embodied ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:embodied .
+
+hi:rel-vipassana-consciousness a hi:Relation ;
+  hi:source hi:vipassana ;
+  hi:target hi:consciousness ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:consciousness .
+
+hi:rel-vipassana-technologies_of_self a hi:Relation ;
+  hi:source hi:vipassana ;
+  hi:target hi:technologies_of_self ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:technologies_of_self .
+
+hi:rel-vipassana-autopoiesis a hi:Relation ;
+  hi:source hi:vipassana ;
+  hi:target hi:autopoiesis ;
+  hi:strength "0.72"^^xsd:decimal ;
+  skos:relatedMatch hi:autopoiesis .
+
+hi:rel-vipassana-nagarjuna a hi:Relation ;
+  hi:source hi:vipassana ;
+  hi:target hi:nagarjuna ;
+  hi:strength "0.7"^^xsd:decimal ;
+  skos:relatedMatch hi:nagarjuna .
+
+hi:rel-vipassana-creative_embodiment a hi:Relation ;
+  hi:source hi:vipassana ;
+  hi:target hi:creative_embodiment ;
+  hi:strength "0.72"^^xsd:decimal ;
+  skos:relatedMatch hi:creative_embodiment .
+
+hi:rel-vipassana-rehearsal a hi:Relation ;
+  hi:source hi:vipassana ;
+  hi:target hi:rehearsal ;
+  hi:strength "0.7"^^xsd:decimal ;
+  skos:relatedMatch hi:rehearsal .
+
 hi:rel-complexity-choreo_knowledge a hi:Relation ;
   hi:source hi:complexity ;
   hi:target hi:choreo_knowledge ;
@@ -9597,6 +9729,12 @@ hi:rel-thompson-buddhism a hi:Relation ;
   hi:strength "0.85"^^xsd:decimal ;
   skos:relatedMatch hi:buddhism .
 
+hi:rel-thompson-vipassana a hi:Relation ;
+  hi:source hi:thompson ;
+  hi:target hi:vipassana ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:vipassana .
+
 hi:rel-thompson-nagarjuna a hi:Relation ;
   hi:source hi:thompson ;
   hi:target hi:nagarjuna ;
@@ -9710,6 +9848,12 @@ hi:rel-varela-buddhism a hi:Relation ;
   hi:target hi:buddhism ;
   hi:strength "0.9"^^xsd:decimal ;
   skos:relatedMatch hi:buddhism .
+
+hi:rel-varela-vipassana a hi:Relation ;
+  hi:source hi:varela ;
+  hi:target hi:vipassana ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:vipassana .
 
 hi:rel-varela-nagarjuna a hi:Relation ;
   hi:source hi:varela ;
@@ -10502,6 +10646,12 @@ hi:rel-rosch-buddhism a hi:Relation ;
   hi:target hi:buddhism ;
   hi:strength "0.9"^^xsd:decimal ;
   skos:relatedMatch hi:buddhism .
+
+hi:rel-rosch-vipassana a hi:Relation ;
+  hi:source hi:rosch ;
+  hi:target hi:vipassana ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:vipassana .
 
 hi:rel-nagarjuna-buddhism a hi:Relation ;
   hi:source hi:nagarjuna ;

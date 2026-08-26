@@ -53,8 +53,8 @@
       },
       "dc:date": "2026-08-26",
       "owl:versionInfo": "1.0.0",
-      "hi:nodeCount": 224,
-      "hi:edgeCount": 2239
+      "hi:nodeCount": 225,
+      "hi:edgeCount": 2262
     },
     {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme",
@@ -1297,7 +1297,7 @@
         "hi:NetworkNode"
       ],
       "skos:prefLabel": "Buddhism",
-      "skos:definition": "Tradition of practice and philosophy centered on suffering, interdependence, impermanence, and liberation—mindfulness, emptiness (śūnyatā), and non-self (anattā) as frameworks for understanding cognition, ethics, and embodied experience; foundational for enactivism via phenomenology and contemplative science.",
+      "skos:definition": "Tradition of practice and philosophy centered on suffering, interdependence, impermanence, and liberation—mindfulness, emptiness (śūnyatā), and non-self (anattā) as frameworks for understanding cognition, ethics, and embodied experience; foundational for enactivism via phenomenology and contemplative science. Vipassana (insight) is a core method of this tradition: first-person training of attention that later informed Varela’s neurophenomenology.",
       "skos:broader": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/framework"
       },
@@ -1306,12 +1306,16 @@
       },
       "hi:category": "framework",
       "hi:weight": 1.5,
-      "schema:url": "https://en.wikipedia.org/wiki/Buddhism",
+      "schema:url": "essay.html",
       "schema:sameAs": "https://en.wikipedia.org/wiki/Buddhism",
       "skos:related": [
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#enactivism",
           "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#vipassana",
+          "hi:strength": 0.98
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#nagarjuna",
@@ -4410,6 +4414,10 @@
           "hi:strength": 0.85
         },
         {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#vipassana",
+          "hi:strength": 0.8
+        },
+        {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#nagarjuna",
           "hi:strength": 0.8
         },
@@ -4529,6 +4537,10 @@
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#buddhism",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#vipassana",
           "hi:strength": 0.9
         },
         {
@@ -6358,6 +6370,10 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#buddhism",
           "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#vipassana",
+          "hi:strength": 0.85
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#enacted",
@@ -11359,8 +11375,105 @@
           "hi:strength": 0.9
         },
         {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#vipassana",
+          "hi:strength": 0.9
+        },
+        {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
           "hi:strength": 0.65
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#vipassana",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Vipassana",
+      "skos:definition": "Buddhist contemplative practice of insight and mindfulness—disciplined attention to sensation, arising, and passing as a way of knowing. A practice-level tool supporting enactive and embodied approaches: first-person training of awareness rather than theory about mind from the outside. In Varela’s neurophenomenology, such practice becomes a method for coupling lived experience with the sciences of mind. In hybrid intelligence, Vipassana is also a literacy of coupling—sensing how attention is already assembled with body, tradition, room, and technical mediation.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "practice",
+      "hi:weight": 1.35,
+      "schema:url": "essay.html",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Vipassan%C4%81",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#buddhism",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#enactivism",
+          "hi:strength": 0.92
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embodiment",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cognition",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#varela",
+          "hi:strength": 0.92
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#thompson",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#rosch",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#somatics",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
+          "hi:strength": 0.78
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#4e",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embodied",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#consciousness",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#technologies_of_self",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#autopoiesis",
+          "hi:strength": 0.72
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#nagarjuna",
+          "hi:strength": 0.7
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative_embodiment",
+          "hi:strength": 0.72
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#rehearsal",
+          "hi:strength": 0.7
         }
       ]
     },

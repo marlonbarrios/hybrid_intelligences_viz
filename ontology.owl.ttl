@@ -13,8 +13,8 @@
   dc:description "OWL 2 ontology of concepts, categories, and weighted relations from the Hybrid Intelligences program." ;
   owl:versionInfo "1.0.0" ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  hi:nodeCount "224"^^xsd:integer ;
-  hi:edgeCount "2239"^^xsd:integer .
+  hi:nodeCount "225"^^xsd:integer ;
+  hi:edgeCount "2262"^^xsd:integer .
 
 hi:Concept a owl:Class ;
   rdfs:label "Concept"@en ;
@@ -560,14 +560,14 @@ hi:autopoiesis a owl:NamedIndividual, hi:FrameworkConcept ;
 hi:buddhism a owl:NamedIndividual, hi:FrameworkConcept ;
   rdfs:label "Buddhism"@en ;
   skos:prefLabel "Buddhism"@en ;
-  skos:definition "Tradition of practice and philosophy centered on suffering, interdependence, impermanence, and liberation—mindfulness, emptiness (śūnyatā), and non-self (anattā) as frameworks for understanding cognition, ethics, and embodied experience; foundational for enactivism via phenomenology and contemplative science."@en ;
+  skos:definition "Tradition of practice and philosophy centered on suffering, interdependence, impermanence, and liberation—mindfulness, emptiness (śūnyatā), and non-self (anattā) as frameworks for understanding cognition, ethics, and embodied experience; foundational for enactivism via phenomenology and contemplative science. Vipassana (insight) is a core method of this tradition: first-person training of attention that later informed Varela’s neurophenomenology."@en ;
   skos:broader hi:category/framework ;
   hi:inCategory hi:category/framework ;
   hi:schemeMember hi:scheme ;
   skos:inScheme hi:scheme ;
   hi:networkWeight "1.5"^^xsd:decimal
  ;
-  schema:url <https://en.wikipedia.org/wiki/Buddhism> ;
+  schema:url <essay.html> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Buddhism>
  .
 
@@ -2601,6 +2601,20 @@ hi:somatics a owl:NamedIndividual, hi:PracticeConcept ;
   schema:sameAs <https://en.wikipedia.org/wiki/Somatics>
  .
 
+hi:vipassana a owl:NamedIndividual, hi:PracticeConcept ;
+  rdfs:label "Vipassana"@en ;
+  skos:prefLabel "Vipassana"@en ;
+  skos:definition "Buddhist contemplative practice of insight and mindfulness—disciplined attention to sensation, arising, and passing as a way of knowing. A practice-level tool supporting enactive and embodied approaches: first-person training of awareness rather than theory about mind from the outside. In Varela’s neurophenomenology, such practice becomes a method for coupling lived experience with the sciences of mind. In hybrid intelligence, Vipassana is also a literacy of coupling—sensing how attention is already assembled with body, tradition, room, and technical mediation."@en ;
+  skos:broader hi:category/practice ;
+  hi:inCategory hi:category/practice ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.35"^^xsd:decimal
+ ;
+  schema:url <essay.html> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Vipassan%C4%81>
+ .
+
 hi:complexity a owl:NamedIndividual, hi:PracticeConcept ;
   rdfs:label "Conceptual Complexity"@en ;
   skos:prefLabel "Conceptual Complexity"@en ;
@@ -3549,6 +3563,7 @@ hi:autopoiesis hi:relatedTo hi:technosymbiosis .
 hi:autopoiesis hi:relatedTo hi:coregulation .
 hi:autopoiesis hi:relatedTo hi:intelligence .
 hi:buddhism hi:relatedTo hi:enactivism .
+hi:buddhism hi:relatedTo hi:vipassana .
 hi:buddhism hi:relatedTo hi:nagarjuna .
 hi:buddhism hi:relatedTo hi:varela .
 hi:buddhism hi:relatedTo hi:rosch .
@@ -4506,6 +4521,25 @@ hi:cultural_critical hi:relatedTo hi:jasmine .
 hi:choreo_knowledge hi:relatedTo hi:choreography .
 hi:choreo_knowledge hi:relatedTo hi:somatics .
 hi:somatics hi:relatedTo hi:coregulation .
+hi:somatics hi:relatedTo hi:vipassana .
+hi:vipassana hi:relatedTo hi:buddhism .
+hi:vipassana hi:relatedTo hi:enactivism .
+hi:vipassana hi:relatedTo hi:embodiment .
+hi:vipassana hi:relatedTo hi:cognition .
+hi:vipassana hi:relatedTo hi:varela .
+hi:vipassana hi:relatedTo hi:thompson .
+hi:vipassana hi:relatedTo hi:rosch .
+hi:vipassana hi:relatedTo hi:somatics .
+hi:vipassana hi:relatedTo hi:assemblage .
+hi:vipassana hi:relatedTo hi:coupling .
+hi:vipassana hi:relatedTo hi:4e .
+hi:vipassana hi:relatedTo hi:embodied .
+hi:vipassana hi:relatedTo hi:consciousness .
+hi:vipassana hi:relatedTo hi:technologies_of_self .
+hi:vipassana hi:relatedTo hi:autopoiesis .
+hi:vipassana hi:relatedTo hi:nagarjuna .
+hi:vipassana hi:relatedTo hi:creative_embodiment .
+hi:vipassana hi:relatedTo hi:rehearsal .
 hi:complexity hi:relatedTo hi:choreo_knowledge .
 hi:cultural_critical hi:relatedTo hi:somatics .
 hi:marlon hi:relatedTo hi:choreo_knowledge .
@@ -4535,6 +4569,7 @@ hi:thompson hi:relatedTo hi:embodied .
 hi:thompson hi:relatedTo hi:varela .
 hi:thompson hi:relatedTo hi:rosch .
 hi:thompson hi:relatedTo hi:buddhism .
+hi:thompson hi:relatedTo hi:vipassana .
 hi:thompson hi:relatedTo hi:nagarjuna .
 hi:thompson hi:relatedTo hi:merleau_ponty .
 hi:thompson hi:relatedTo hi:autopoiesis .
@@ -4554,6 +4589,7 @@ hi:varela hi:relatedTo hi:4e .
 hi:varela hi:relatedTo hi:embodied .
 hi:varela hi:relatedTo hi:rosch .
 hi:varela hi:relatedTo hi:buddhism .
+hi:varela hi:relatedTo hi:vipassana .
 hi:varela hi:relatedTo hi:nagarjuna .
 hi:varela hi:relatedTo hi:merleau_ponty .
 hi:varela hi:relatedTo hi:coupling .
@@ -4686,6 +4722,7 @@ hi:wilson hi:relatedTo hi:4e .
 hi:rosch hi:relatedTo hi:enactivism .
 hi:rosch hi:relatedTo hi:embodied .
 hi:rosch hi:relatedTo hi:buddhism .
+hi:rosch hi:relatedTo hi:vipassana .
 hi:nagarjuna hi:relatedTo hi:buddhism .
 hi:nagarjuna hi:relatedTo hi:philosophy .
 hi:nagarjuna hi:relatedTo hi:epistemology .
@@ -6432,6 +6469,11 @@ hi:rel-buddhism-enactivism a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:buddhism ;
   hi:relationTarget hi:enactivism ;
   hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-buddhism-vipassana a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:buddhism ;
+  hi:relationTarget hi:vipassana ;
+  hi:relationStrength "0.98"^^xsd:decimal .
 
 hi:rel-buddhism-nagarjuna a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:buddhism ;
@@ -11218,6 +11260,101 @@ hi:rel-somatics-coregulation a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationTarget hi:coregulation ;
   hi:relationStrength "0.9"^^xsd:decimal .
 
+hi:rel-somatics-vipassana a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:somatics ;
+  hi:relationTarget hi:vipassana ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-vipassana-buddhism a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:vipassana ;
+  hi:relationTarget hi:buddhism ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-vipassana-enactivism a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:vipassana ;
+  hi:relationTarget hi:enactivism ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-vipassana-embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:vipassana ;
+  hi:relationTarget hi:embodiment ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-vipassana-cognition a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:vipassana ;
+  hi:relationTarget hi:cognition ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-vipassana-varela a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:vipassana ;
+  hi:relationTarget hi:varela ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-vipassana-thompson a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:vipassana ;
+  hi:relationTarget hi:thompson ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-vipassana-rosch a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:vipassana ;
+  hi:relationTarget hi:rosch ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-vipassana-somatics a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:vipassana ;
+  hi:relationTarget hi:somatics ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-vipassana-assemblage a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:vipassana ;
+  hi:relationTarget hi:assemblage ;
+  hi:relationStrength "0.78"^^xsd:decimal .
+
+hi:rel-vipassana-coupling a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:vipassana ;
+  hi:relationTarget hi:coupling ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-vipassana-4e a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:vipassana ;
+  hi:relationTarget hi:4e ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-vipassana-embodied a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:vipassana ;
+  hi:relationTarget hi:embodied ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-vipassana-consciousness a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:vipassana ;
+  hi:relationTarget hi:consciousness ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-vipassana-technologies_of_self a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:vipassana ;
+  hi:relationTarget hi:technologies_of_self ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-vipassana-autopoiesis a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:vipassana ;
+  hi:relationTarget hi:autopoiesis ;
+  hi:relationStrength "0.72"^^xsd:decimal .
+
+hi:rel-vipassana-nagarjuna a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:vipassana ;
+  hi:relationTarget hi:nagarjuna ;
+  hi:relationStrength "0.7"^^xsd:decimal .
+
+hi:rel-vipassana-creative_embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:vipassana ;
+  hi:relationTarget hi:creative_embodiment ;
+  hi:relationStrength "0.72"^^xsd:decimal .
+
+hi:rel-vipassana-rehearsal a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:vipassana ;
+  hi:relationTarget hi:rehearsal ;
+  hi:relationStrength "0.7"^^xsd:decimal .
+
 hi:rel-complexity-choreo_knowledge a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:complexity ;
   hi:relationTarget hi:choreo_knowledge ;
@@ -11363,6 +11500,11 @@ hi:rel-thompson-buddhism a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationTarget hi:buddhism ;
   hi:relationStrength "0.85"^^xsd:decimal .
 
+hi:rel-thompson-vipassana a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:thompson ;
+  hi:relationTarget hi:vipassana ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
 hi:rel-thompson-nagarjuna a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:thompson ;
   hi:relationTarget hi:nagarjuna ;
@@ -11456,6 +11598,11 @@ hi:rel-varela-rosch a owl:NamedIndividual, hi:NetworkRelation ;
 hi:rel-varela-buddhism a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:varela ;
   hi:relationTarget hi:buddhism ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-varela-vipassana a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:varela ;
+  hi:relationTarget hi:vipassana ;
   hi:relationStrength "0.9"^^xsd:decimal .
 
 hi:rel-varela-nagarjuna a owl:NamedIndividual, hi:NetworkRelation ;
@@ -12117,6 +12264,11 @@ hi:rel-rosch-buddhism a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:rosch ;
   hi:relationTarget hi:buddhism ;
   hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-rosch-vipassana a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:rosch ;
+  hi:relationTarget hi:vipassana ;
+  hi:relationStrength "0.85"^^xsd:decimal .
 
 hi:rel-nagarjuna-buddhism a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:nagarjuna ;

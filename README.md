@@ -93,7 +93,7 @@ These are not errors to dismiss quickly; they are **live problems** that structu
 | **Qualities** | Traits of hybrid cognition—embodied, situated, distributed, critical, speculative… |
 | **Phenomena** | Observable dynamics—mediation, symbiosis, community, theory of mind… |
 | **Domains** | Fields of inquiry and practice—choreography, law, ecology, architecture, medicine, AI… |
-| **Practices** | Methods and habits—rehearsal, somatics, pedagogy, cultural critique, architecture & design, philosophical practice… |
+| **Practices** | Methods and habits—rehearsal, somatics, vipassana, pedagogy, cultural critique, architecture & design, philosophical practice… |
 
 ### Program layer
 
@@ -121,7 +121,7 @@ Concepts are assigned to one of thirteen rings, from program core outward to aut
 | 4 | **Participants** | Undergraduate and graduate students, UF staff, community members, alumni, and former faculty |
 | 5 | **Backgrounds** | Formative backgrounds of the cohort—academic majors, professional formations, and community practices |
 | 6 | **Facilitators** | Session leaders and guest facilitators |
-| 7 | **Practices** | Methods and habits—rehearsal, somatics, architecture & design, philosophical practice, cultural critique |
+| 7 | **Practices** | Methods and habits—rehearsal, somatics, vipassana, architecture & design, philosophical practice, cultural critique |
 | 8 | **Tensions** | Inadequate or contested positions the network holds open to critique |
 | 9 | **Qualities** | Traits of hybrid cognition—embodied, situated, distributed, critical |
 | 10 | **Phenomena** | Observable dynamics—mediation, symbiosis, community, theory of mind |
