@@ -2518,7 +2518,7 @@ hi:bg_digital_art a skos:Concept, hi:NetworkNode ;
 
 hi:marlon a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Marlon Barrios Solano" ;
-  skos:definition "Co-director and co-facilitator across all Hybrid Intelligences sessions, affiliated with CAME. Embodied practice, choreography, and hybrid cognition." ;
+  skos:definition "Co-director of Hybrid Intelligences and Maker-in-Residence at CAME, focused on AI, arts, and diasporas. Venezuelan-American interdisciplinary artist, creative technologist, and researcher with a background in dance, software engineering, and cognitive science; MFA in Dance and Technology (Ohio State). Founder of dance-tech.net; work combines generative AI, creative coding, and performance. Certified in Vipassana/mindfulness (Spirit Rock), Embodyoga, and Somatic Experiencing." ;
   skos:broader hi:category/facilitator ;
   skos:inScheme hi:scheme ;
   hi:category "facilitator" ;
@@ -2530,7 +2530,7 @@ hi:marlon a skos:Concept, hi:NetworkNode ;
 
 hi:erika a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Erika Moore" ;
-  skos:definition "Co-director and co-facilitator — Future Lab (Wednesdays) and Ethics & Leadership (Thursdays); AI, art, and medicine." ;
+  skos:definition "Co-director of Hybrid Intelligences—Future Lab (Wednesdays) and Ethics & Leadership (Thursdays). Assistant Professor in UF’s Center for Arts in Medicine; educator, facilitator, and arts strategist with an MFA in Dance (Arizona State) and a B.S. in Nonprofit Leadership and Management. Classically trained dancer and certified Pilates instructor; research at the crossroads of arts, AI, human performance, and community engagement. Teaches arts in health and leads Moore Arts." ;
   skos:broader hi:category/facilitator ;
   skos:inScheme hi:scheme ;
   hi:category "facilitator" ;
@@ -2542,7 +2542,7 @@ hi:erika a skos:Concept, hi:NetworkNode ;
 
 hi:jackie_larson a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Jackie Larson" ;
-  skos:definition "Wednesday July 15 — Future Lab: movement and mapping possible futures; dancer in residence, UF Health Shands Arts in Medicine." ;
+  skos:definition "Wednesday July 15 — Future Lab: movement and mapping possible futures. Dancer in residence at UF Health Shands Arts in Medicine; head ballet instructor and former hospital nurse (UF Health and Haven Hospice). Trained at Ballet Florida and South Florida Ballet Academy; longtime Gainesville resident who returned to UF Health to combine dance, nursing, and arts in medicine as movement for healing, reflection, and connection." ;
   skos:broader hi:category/facilitator ;
   skos:inScheme hi:scheme ;
   hi:category "facilitator" ;
@@ -2554,7 +2554,7 @@ hi:jackie_larson a skos:Concept, hi:NetworkNode ;
 
 hi:andrew_hix a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Andrew Hix" ;
-  skos:definition "Wednesday July 22 — Future Lab: sound and listening; writer, storyteller, and integrative therapies practitioner, UF Health Shands Arts in Medicine." ;
+  skos:definition "Wednesday July 22 — Future Lab: sound and listening. Writer, storyteller, and integrative therapies practitioner at UF Health Shands Arts in Medicine; licensed massage therapist who teaches tai chi, qigong, and mindfulness meditation to hospital patients. University of Florida graduate (2009) and Florida School of Massage (2011); co-principal investigator on integrative-medicine studies. Practices tai chi as a martial art; attention and listening as method." ;
   skos:broader hi:category/facilitator ;
   skos:inScheme hi:scheme ;
   hi:category "facilitator" ;
@@ -2566,7 +2566,7 @@ hi:andrew_hix a skos:Concept, hi:NetworkNode ;
 
 hi:turbado_marabou a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Turbado Marabou" ;
-  skos:definition "Wednesday July 29 — Future Lab: themes, insights, and artifacts; visual artist, muralist, folklorist, Deeproots Arts & Culture." ;
+  skos:definition "Wednesday July 29 — Future Lab: themes, insights, and artifacts. Gainesville visual artist, muralist, folklorist, and educator; BFA (Florida A&M), MFA (University of Wisconsin–Madison), doctoral candidate in Arts Education (Florida State). Founder of Deeproots Arts & Culture Creative Services; more than three decades of Afrocentric cultural practice using visual and performing arts for storytelling, cultural preservation, and community empowerment across the African diaspora." ;
   skos:broader hi:category/facilitator ;
   skos:inScheme hi:scheme ;
   hi:category "facilitator" ;
@@ -2578,7 +2578,7 @@ hi:turbado_marabou a skos:Concept, hi:NetworkNode ;
 
 hi:karla a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Karla Saldaña Ochoa" ;
-  skos:definition "Monday July 13 — AI and architecture." ;
+  skos:definition "Monday July 13 — AI and architecture. Ecuadorian architect and Assistant Professor in UF’s School of Architecture; Master of Advanced Studies in Landscape Architecture and Ph.D. from ETH Zurich on integrating artificial and human intelligence for disaster response. Leads SHARE Lab, developing human-centered AI for architectural practice at building and urban scale." ;
   skos:broader hi:category/facilitator ;
   skos:inScheme hi:scheme ;
   hi:category "facilitator" ;
@@ -2590,7 +2590,7 @@ hi:karla a skos:Concept, hi:NetworkNode ;
 
 hi:onye a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Onye P. Ozuzu" ;
-  skos:definition "Monday July 20 — Choreography and memory." ;
+  skos:definition "Monday July 20 — Choreography and memory. Dancer, choreographer, educator, and researcher; Professor in UF’s School of Theatre + Dance and former Dean of the College of the Arts (2018–2024). Work at the intersections of ritual, club, concert, and experimental movement, grounded in contemporary dance, West African dance and drumming, martial arts, yoga, salsa, and house. Recent project Space Carcasses investigates architecture, atmosphere, and African diaspora histories through site-responsive performance." ;
   skos:broader hi:category/facilitator ;
   skos:inScheme hi:scheme ;
   hi:category "facilitator" ;
@@ -2602,19 +2602,19 @@ hi:onye a skos:Concept, hi:NetworkNode ;
 
 hi:cheval_bailie a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Corey Cheval" ;
-  skos:definition "Monday July 27 — Partner acrobatics and object manipulation." ;
+  skos:definition "Monday July 27 — Partner acrobatics and object manipulation. Artist, educator, and entrepreneur; founder and executive director of Gainesville Circus Center. Ph.D. in Cultural Anthropology (University of Florida, 2015) and M.A. in Performance Studies (Federal University of Bahia, 2008); research on performance and identity. Acrobat, singer, and dancer who has performed in the U.S. and Brazil; co-creator of Dusty’s Ragtime Circus and author of the Cheval Aerial Method (NASM/AFAA)." ;
   skos:broader hi:category/facilitator ;
   skos:inScheme hi:scheme ;
   hi:category "facilitator" ;
   hi:weight "1.1"^^xsd:decimal
  ;
-  schema:url <https://www.gainesvillecircus.com/> ;
+  schema:url <https://www.coreycheval.com/bio> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Acro_balance>
  .
 
 hi:cameron a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Cameron Buckner" ;
-  skos:definition "Thursday July 23 — AI, authorship, ethics, and law." ;
+  skos:definition "Thursday July 23 — AI, authorship, ethics, and law. Professor of philosophy at the University of Florida and Donald F. Cronin Chair in the Humanities; specializes in philosophy of mind, cognitive science, and artificial intelligence. Author of From Deep Learning to Rational Machines: What the History of Philosophy Can Teach Us about the Future of Artificial Intelligence (Oxford, 2023). Teaches ethics, data, and technology." ;
   skos:broader hi:category/facilitator ;
   skos:inScheme hi:scheme ;
   hi:category "facilitator" ;
@@ -2626,7 +2626,7 @@ hi:cameron a skos:Concept, hi:NetworkNode ;
 
 hi:jasmine a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Jasmine McNealy" ;
-  skos:definition "Thursday July 23 — AI, data ecologies, and law." ;
+  skos:definition "Thursday July 23 — AI, data ecologies, and law. Professor in UF’s College of Journalism and Communications (Department of Media Production, Management, and Technology); attorney and critical public interest technologist. Research on privacy, surveillance, data governance, and AI policy, with a view toward more just outcomes for communities. Ph.D. in Mass Communication (media law) and J.D. from UF; Faculty Associate at Harvard’s Berkman Klein Center. Directs Infrastructure for Communities, Ecology for Data (ICED)." ;
   skos:broader hi:category/facilitator ;
   skos:inScheme hi:scheme ;
   hi:category "facilitator" ;
@@ -2638,7 +2638,7 @@ hi:jasmine a skos:Concept, hi:NetworkNode ;
 
 hi:melissa a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Melissa M. White" ;
-  skos:definition "Thursday July 30 — IGNITE leadership and program culmination." ;
+  skos:definition "Thursday July 30 — IGNITE leadership and program culmination. Senior Lecturer in UF’s Herbert Wertheim College of Engineering; develops engineering innovation and entrepreneurship curriculum. Ph.D. in Industrial and Systems Engineering (North Carolina State), M.S. in Engineering, Science, Technology, and Entrepreneurship (Notre Dame), B.S. in Biomedical Engineering (University of Miami). Co-founded MEDIC, a nonprofit for student–clinician medical innovation in the Research Triangle." ;
   skos:broader hi:category/facilitator ;
   skos:inScheme hi:scheme ;
   hi:category "facilitator" ;
