@@ -46,6 +46,8 @@ From this perspective, AI is not merely an external instrument. It becomes part 
 
 This is why [embodiment](concept:embodiment) remains central, even when dealing with apparently disembodied systems. Contemporary AI models may not have flesh, proprioception, pain, breath, hunger, or mortality, but they are not outside embodiment in a broader sense. They are embodied in infrastructures: data centers, extraction economies, labor systems, electrical grids, interfaces, datasets, laws, and patterns of use. They inhabit different substrates, but they are not immaterial. Their bodies are distributed, planetary, and often hidden. To think hybrid intelligence responsibly is to make those bodies perceptible.
 
+[Kate Crawford](concept:crawford)’s [three E’s of AI impact](concept:three_es_ai) give this a precise map. The consequences of AI are not only computational. They are [environmental](concept:ai_impact_environment)—extraction, energy, water, carbon, and the ecologies that make models run. They are a matter of [ethics](concept:ai_impact_ethics)—labor, bias, surveillance, governance, and the distribution of harm. And they are [epistemological](concept:ai_impact_epistemic)—how classification, datasets, and models organize what can be known, remembered, and taken as real. These registers are coupled. An extractive energy regime is already an ethical and an epistemological regime. To design hybrid intelligence without them is to treat AI as weather without climate.
+
 Here [architecture](concept:architecture) becomes a crucial field of inquiry. Space is not a neutral container for cognition. It is an active participant in the formation of perception, attention, movement, and behavior. A corridor invites movement differently from a plaza. A studio invites improvisation differently from a courtroom. A classroom organizes speech, authority, and attention differently from a dance floor or a meditation hall. A screen-based interface organizes the body differently from a circle of people sitting on the floor. Architecture choreographs cognition through [affordances](concept:affordances): openings, thresholds, distances, acoustics, light, texture, orientation, and the politics of access.
 
 In hybrid intelligence, architecture expands to include digital platforms, databases, algorithmic interfaces, immersive environments, and institutional protocols. We inhabit not only rooms but cognitive architectures. A platform is an architecture of attention. A database is an architecture of memory. A prompt interface is an architecture of desire and command. A recommendation system is an architecture of anticipation. A legal form is an architecture of responsibility. The built environment and the computational environment increasingly interpenetrate, producing spaces where bodies, abstractions, images, data, and decisions co-compose each other.
@@ -91,23 +93,24 @@ Hybrid intelligence names this mutation. Cognitive assemblage names its structur
 5. Clark, Andy. *Surfing Uncertainty: Prediction, Action, and the Embodied Mind*. Oxford: Oxford University Press, 2016.
 6. Clark, Andy. *The Experience Machine: How Our Minds Predict and Shape Reality*. New York: Pantheon, 2023.
 7. Clark, Andy, and David Chalmers. “The Extended Mind.” *Analysis* 58, no. 1, 1998: 7–19.
-8. Di Paolo, Ezequiel, Elena Clare Cuffari, and Hanne De Jaegher. *Linguistic Bodies: The Continuity Between Life and Language*. Cambridge, MA: MIT Press, 2018.
-9. Draganski, Bogdan, Christian Gaser, Volker Busch, Gerhard Schuierer, Ulrich Bogdahn, and Arne May. “Neuroplasticity: Changes in Grey Matter Induced by Training.” *Nature* 427, 2004: 311–312.
-10. Gallagher, Shaun. *How the Body Shapes the Mind*. Oxford: Oxford University Press, 2005.
-11. Gibson, James J. *The Ecological Approach to Visual Perception*. Boston: Houghton Mifflin, 1979.
-12. Hayles, N. Katherine. *How We Became Posthuman: Virtual Bodies in Cybernetics, Literature, and Informatics*. Chicago: University of Chicago Press, 1999.
-13. Hayles, N. Katherine. “Cognitive Assemblages: Technical Agency and Human Interactions.” *Critical Inquiry* 43, no. 1, 2016: 32–55.
-14. Hayles, N. Katherine. *Unthought: The Power of the Cognitive Nonconscious*. Chicago: University of Chicago Press, 2017.
-15. Hayles, N. Katherine. *Bacteria to AI: Human Futures with Our Nonhuman Symbionts*. Chicago: University of Chicago Press, 2025.
-16. Kirsh, David. “Thinking with the Body.” *Proceedings of the Annual Meeting of the Cognitive Science Society*, 2010.
-17. Malafouris, Lambros. *How Things Shape the Mind: A Theory of Material Engagement*. Cambridge, MA: MIT Press, 2013.
-18. NIST. *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*. National Institute of Standards and Technology, 2023.
-19. Noë, Alva. *Action in Perception*. Cambridge, MA: MIT Press, 2004.
-20. Parliament of the European Union and Council of the European Union. *Artificial Intelligence Act*. Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence, 2024.
-21. Shanahan, Murray. “The Space of Possible Minds.” *Edge*, 2018.
-22. Shapiro, Lawrence. “Embodied Cognition.” *Stanford Encyclopedia of Philosophy*, 2021.
-23. Thompson, Evan. *Mind in Life: Biology, Phenomenology, and the Sciences of Mind*. Cambridge, MA: Harvard University Press, 2007.
-24. Uexküll, Jakob von. *A Foray into the Worlds of Animals and Humans: with A Theory of Meaning*. Translated by Joseph D. O’Neil. Minneapolis: University of Minnesota Press, 2010.
-25. Varela, Francisco J. “Neurophenomenology: A Methodological Remedy for the Hard Problem.” *Journal of Consciousness Studies* 3, no. 4, 1996: 330–349.
-26. Varela, Francisco J., Evan Thompson, and Eleanor Rosch. *The Embodied Mind: Cognitive Science and Human Experience*. Cambridge, MA: MIT Press, 1991; revised edition, 2017.
-27. Wilson, Robert A., and Andy Clark. “How to Situate Cognition: Letting Nature Take Its Course.” In *The Cambridge Handbook of Situated Cognition*, edited by Philip Robbins and Murat Aydede. Cambridge: Cambridge University Press, 2009.
+8. Crawford, Kate. *Atlas of AI: Power, Politics, and the Planetary Costs of Artificial Intelligence*. New Haven: Yale University Press, 2021.
+9. Di Paolo, Ezequiel, Elena Clare Cuffari, and Hanne De Jaegher. *Linguistic Bodies: The Continuity Between Life and Language*. Cambridge, MA: MIT Press, 2018.
+10. Draganski, Bogdan, Christian Gaser, Volker Busch, Gerhard Schuierer, Ulrich Bogdahn, and Arne May. “Neuroplasticity: Changes in Grey Matter Induced by Training.” *Nature* 427, 2004: 311–312.
+11. Gallagher, Shaun. *How the Body Shapes the Mind*. Oxford: Oxford University Press, 2005.
+12. Gibson, James J. *The Ecological Approach to Visual Perception*. Boston: Houghton Mifflin, 1979.
+13. Hayles, N. Katherine. *How We Became Posthuman: Virtual Bodies in Cybernetics, Literature, and Informatics*. Chicago: University of Chicago Press, 1999.
+14. Hayles, N. Katherine. “Cognitive Assemblages: Technical Agency and Human Interactions.” *Critical Inquiry* 43, no. 1, 2016: 32–55.
+15. Hayles, N. Katherine. *Unthought: The Power of the Cognitive Nonconscious*. Chicago: University of Chicago Press, 2017.
+16. Hayles, N. Katherine. *Bacteria to AI: Human Futures with Our Nonhuman Symbionts*. Chicago: University of Chicago Press, 2025.
+17. Kirsh, David. “Thinking with the Body.” *Proceedings of the Annual Meeting of the Cognitive Science Society*, 2010.
+18. Malafouris, Lambros. *How Things Shape the Mind: A Theory of Material Engagement*. Cambridge, MA: MIT Press, 2013.
+19. NIST. *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*. National Institute of Standards and Technology, 2023.
+20. Noë, Alva. *Action in Perception*. Cambridge, MA: MIT Press, 2004.
+21. Parliament of the European Union and Council of the European Union. *Artificial Intelligence Act*. Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence, 2024.
+22. Shanahan, Murray. “The Space of Possible Minds.” *Edge*, 2018.
+23. Shapiro, Lawrence. “Embodied Cognition.” *Stanford Encyclopedia of Philosophy*, 2021.
+24. Thompson, Evan. *Mind in Life: Biology, Phenomenology, and the Sciences of Mind*. Cambridge, MA: Harvard University Press, 2007.
+25. Uexküll, Jakob von. *A Foray into the Worlds of Animals and Humans: with A Theory of Meaning*. Translated by Joseph D. O’Neil. Minneapolis: University of Minnesota Press, 2010.
+26. Varela, Francisco J. “Neurophenomenology: A Methodological Remedy for the Hard Problem.” *Journal of Consciousness Studies* 3, no. 4, 1996: 330–349.
+27. Varela, Francisco J., Evan Thompson, and Eleanor Rosch. *The Embodied Mind: Cognitive Science and Human Experience*. Cambridge, MA: MIT Press, 1991; revised edition, 2017.
+28. Wilson, Robert A., and Andy Clark. “How to Situate Cognition: Letting Nature Take Its Course.” In *The Cambridge Handbook of Situated Cognition*, edited by Philip Robbins and Murat Aydede. Cambridge: Cambridge University Press, 2009.

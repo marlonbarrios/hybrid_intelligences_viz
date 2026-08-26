@@ -74,6 +74,7 @@ Drawing on Katherine Hayles, Andy Clark, 4E/enactivist traditions, and contempor
 - **Enactivism**, **Autopoiesis** (Maturana & Varela), **Extended Mind**, **Natural-Born Cyborg**
 - **Holobiont**, **Affordances**, **Umwelt**
 - **Active Inference**, **Machine Learning**, **Neural Networks**, and related AI architectures (including formula nodes **z = Wx + b** and the RNN update **σ(Wₓx + Wₕh + b)**)
+- **3 E’s of AI Impact** (Kate Crawford): **environmental**, **ethics**, and **epistemological**
 - **Cyberfeminism**, **Queer Theory**, **Buddhism**, decolonial and critical frameworks
 - Authors and artists linked to these ideas (Maturana, Varela, Merleau-Ponty, Hayles, Clark, Haraway, Latour, Nāgārjuna, Mendieta, Bowery, and many others)
 

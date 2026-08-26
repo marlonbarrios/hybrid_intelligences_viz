@@ -989,20 +989,21 @@ hi:alphafold a owl:NamedIndividual, hi:FrameworkConcept ;
 hi:three_es_ai a owl:NamedIndividual, hi:FrameworkConcept ;
   rdfs:label "3 E's of AI Impact"@en ;
   skos:prefLabel "3 E's of AI Impact"@en ;
-  skos:definition "Kate Crawford's framework for mapping AI consequences across three coupled registers—Environment (extraction, energy, ecologies), Ethics (labor, bias, governance, harm), and Epistemic (classification, knowledge, and what counts as real)."@en ;
+  skos:definition "Kate Crawford’s notion of AI impact across three coupled registers: environmental (extraction, energy, water, ecologies), ethics (labor, bias, governance, harm), and epistemological (classification, knowledge, and what counts as real). These are not separate aftermaths of computation; they are how AI already organizes worlds."@en ;
   skos:broader hi:category/framework ;
   hi:inCategory hi:category/framework ;
   hi:schemeMember hi:scheme ;
   skos:inScheme hi:scheme ;
   hi:networkWeight "1.5"^^xsd:decimal
  ;
+  schema:url <essay.html> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Kate_Crawford>
  .
 
 hi:ai_impact_environment a owl:NamedIndividual, hi:FrameworkConcept ;
-  rdfs:label "Environment (AI Impact)"@en ;
-  skos:prefLabel "Environment (AI Impact)"@en ;
-  skos:definition "The environmental register of AI—material extraction, energy use, water, carbon, and ecological damage hidden behind seemingly immaterial computation."@en ;
+  rdfs:label "Environmental (AI Impact)"@en ;
+  skos:prefLabel "Environmental (AI Impact)"@en ;
+  skos:definition "Kate Crawford: the environmental register of AI—material extraction, energy use, water, carbon, and ecological damage hidden behind seemingly immaterial computation."@en ;
   skos:broader hi:category/framework ;
   hi:inCategory hi:category/framework ;
   hi:schemeMember hi:scheme ;
@@ -1015,7 +1016,7 @@ hi:ai_impact_environment a owl:NamedIndividual, hi:FrameworkConcept ;
 hi:ai_impact_ethics a owl:NamedIndividual, hi:FrameworkConcept ;
   rdfs:label "Ethics (AI Impact)"@en ;
   skos:prefLabel "Ethics (AI Impact)"@en ;
-  skos:definition "The ethical register of AI—labor conditions, surveillance, bias, accountability, and the distribution of benefit and harm across bodies and communities."@en ;
+  skos:definition "Kate Crawford: the ethical register of AI—labor conditions, surveillance, bias, accountability, and the distribution of benefit and harm across bodies and communities."@en ;
   skos:broader hi:category/framework ;
   hi:inCategory hi:category/framework ;
   hi:schemeMember hi:scheme ;
@@ -1026,9 +1027,9 @@ hi:ai_impact_ethics a owl:NamedIndividual, hi:FrameworkConcept ;
  .
 
 hi:ai_impact_epistemic a owl:NamedIndividual, hi:FrameworkConcept ;
-  rdfs:label "Epistemic (AI Impact)"@en ;
-  skos:prefLabel "Epistemic (AI Impact)"@en ;
-  skos:definition "The epistemic register of AI—how classification, datasets, and models organize perception, truth, memory, and what can be known or imagined."@en ;
+  rdfs:label "Epistemological (AI Impact)"@en ;
+  skos:prefLabel "Epistemological (AI Impact)"@en ;
+  skos:definition "Kate Crawford: the epistemological register of AI—how classification, datasets, and models organize perception, truth, memory, and what can be known or imagined."@en ;
   skos:broader hi:category/framework ;
   hi:inCategory hi:category/framework ;
   hi:schemeMember hi:scheme ;
@@ -1766,7 +1767,7 @@ hi:escobar a owl:NamedIndividual, hi:AuthorConcept ;
 hi:crawford a owl:NamedIndividual, hi:AuthorConcept ;
   rdfs:label "Kate Crawford"@en ;
   skos:prefLabel "Kate Crawford"@en ;
-  skos:definition "Scholar of AI, politics, and culture—Atlas of AI and critical studies of extraction, labor, infrastructure, classification, and the material-ecological conditions of artificial intelligence."@en ;
+  skos:definition "Scholar of AI, politics, and culture—Atlas of AI. The three E’s of AI impact: environmental, ethics, and epistemological—extraction, labor, infrastructure, classification, and the material-ecological conditions of artificial intelligence."@en ;
   skos:broader hi:category/author ;
   hi:inCategory hi:category/author ;
   hi:schemeMember hi:scheme ;

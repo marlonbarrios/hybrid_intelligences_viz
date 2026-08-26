@@ -671,18 +671,19 @@ hi:alphafold a skos:Concept, hi:NetworkNode ;
 
 hi:three_es_ai a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "3 E's of AI Impact" ;
-  skos:definition "Kate Crawford's framework for mapping AI consequences across three coupled registers—Environment (extraction, energy, ecologies), Ethics (labor, bias, governance, harm), and Epistemic (classification, knowledge, and what counts as real)." ;
+  skos:definition "Kate Crawford’s notion of AI impact across three coupled registers: environmental (extraction, energy, water, ecologies), ethics (labor, bias, governance, harm), and epistemological (classification, knowledge, and what counts as real). These are not separate aftermaths of computation; they are how AI already organizes worlds." ;
   skos:broader hi:category/framework ;
   skos:inScheme hi:scheme ;
   hi:category "framework" ;
   hi:weight "1.5"^^xsd:decimal
  ;
+  schema:url <essay.html> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Kate_Crawford>
  .
 
 hi:ai_impact_environment a skos:Concept, hi:NetworkNode ;
-  skos:prefLabel "Environment (AI Impact)" ;
-  skos:definition "The environmental register of AI—material extraction, energy use, water, carbon, and ecological damage hidden behind seemingly immaterial computation." ;
+  skos:prefLabel "Environmental (AI Impact)" ;
+  skos:definition "Kate Crawford: the environmental register of AI—material extraction, energy use, water, carbon, and ecological damage hidden behind seemingly immaterial computation." ;
   skos:broader hi:category/framework ;
   skos:inScheme hi:scheme ;
   hi:category "framework" ;
@@ -693,7 +694,7 @@ hi:ai_impact_environment a skos:Concept, hi:NetworkNode ;
 
 hi:ai_impact_ethics a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Ethics (AI Impact)" ;
-  skos:definition "The ethical register of AI—labor conditions, surveillance, bias, accountability, and the distribution of benefit and harm across bodies and communities." ;
+  skos:definition "Kate Crawford: the ethical register of AI—labor conditions, surveillance, bias, accountability, and the distribution of benefit and harm across bodies and communities." ;
   skos:broader hi:category/framework ;
   skos:inScheme hi:scheme ;
   hi:category "framework" ;
@@ -703,8 +704,8 @@ hi:ai_impact_ethics a skos:Concept, hi:NetworkNode ;
  .
 
 hi:ai_impact_epistemic a skos:Concept, hi:NetworkNode ;
-  skos:prefLabel "Epistemic (AI Impact)" ;
-  skos:definition "The epistemic register of AI—how classification, datasets, and models organize perception, truth, memory, and what can be known or imagined." ;
+  skos:prefLabel "Epistemological (AI Impact)" ;
+  skos:definition "Kate Crawford: the epistemological register of AI—how classification, datasets, and models organize perception, truth, memory, and what can be known or imagined." ;
   skos:broader hi:category/framework ;
   skos:inScheme hi:scheme ;
   hi:category "framework" ;
@@ -1336,7 +1337,7 @@ hi:escobar a skos:Concept, hi:NetworkNode ;
 
 hi:crawford a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Kate Crawford" ;
-  skos:definition "Scholar of AI, politics, and culture—Atlas of AI and critical studies of extraction, labor, infrastructure, classification, and the material-ecological conditions of artificial intelligence." ;
+  skos:definition "Scholar of AI, politics, and culture—Atlas of AI. The three E’s of AI impact: environmental, ethics, and epistemological—extraction, labor, infrastructure, classification, and the material-ecological conditions of artificial intelligence." ;
   skos:broader hi:category/author ;
   skos:inScheme hi:scheme ;
   hi:category "author" ;
