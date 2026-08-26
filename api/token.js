@@ -1,11 +1,22 @@
 const { ontologyInstructions } = require("./ontology-context");
 
-function sessionPayload() {
+function talkIdFromReq(req) {
+  const raw = (req.query && req.query.talk) || "";
+  if (raw) return String(raw).trim().toLowerCase().replace(/[^a-z0-9_]/g, "");
+  try {
+    const url = new URL(req.url || "/", "http://localhost");
+    return (url.searchParams.get("talk") || "").trim().toLowerCase().replace(/[^a-z0-9_]/g, "");
+  } catch (_) {
+    return "";
+  }
+}
+
+function sessionPayload(focusId) {
   return {
     session: {
       type: "realtime",
       model: "gpt-realtime-2.1",
-      instructions: ontologyInstructions(),
+      instructions: ontologyInstructions(focusId || ""),
       audio: {
         input: {
           transcription: { model: "gpt-4o-mini-transcribe" },
@@ -59,7 +70,7 @@ module.exports = async function handler(req, res) {
         "Content-Type": "application/json",
         "OpenAI-Safety-Identifier": "hybrid-intelligences-viz",
       },
-      body: JSON.stringify(sessionPayload()),
+      body: JSON.stringify(sessionPayload(talkIdFromReq(req))),
     });
 
     const data = await response.json();

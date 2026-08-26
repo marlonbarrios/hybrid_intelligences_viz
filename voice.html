@@ -380,6 +380,23 @@
     let assistantTurn = null;
     let greetingTimer = null;
     let greetingSent = false;
+    let ontologyEntry = null;
+
+    const CATEGORY_LABEL = {
+      program: "Program",
+      organization: "Organizations",
+      premise: "Framework",
+      participant: "Participants",
+      background: "Backgrounds",
+      facilitator: "Facilitators",
+      practice: "Practices",
+      tension: "Tensions",
+      quality: "Qualities",
+      phenomenon: "Phenomena",
+      domain: "Domains",
+      framework: "Conceptual Models",
+      author: "Authors/Artists",
+    };
 
     function talkTopic() {
       const params = new URLSearchParams(window.location.search);
@@ -390,12 +407,69 @@
       return { id: id || "topic", name };
     }
 
-    function greetingInstructions() {
+    function localId(iri) {
+      if (!iri) return "";
+      const value = typeof iri === "string" ? iri : iri["@id"] || "";
+      const hash = value.split("#")[1] || "";
+      return hash.replace(/^category\//, "");
+    }
+
+    function textOf(value) {
+      if (!value) return "";
+      if (typeof value === "string") return value;
+      if (Array.isArray(value)) return textOf(value[0]);
+      if (typeof value === "object") return value["@value"] || value["skos:prefLabel"] || "";
+      return String(value);
+    }
+
+    async function loadTalkEntry() {
       const topic = talkTopic();
-      if (topic) {
-        return "The listener opened Voice from the Hybrid Intelligences concept \"" + topic.name + "\"" +
-          (topic.id !== "topic" ? " (id " + topic.id + ")" : "") +
-          ". Speak first about that concept in a few short spoken sentences: what it is in this program, why it matters, and one or two related concepts from the ontology. Then invite them to go deeper or change the subject. Stop and listen. If they start speaking while you talk, stop immediately.";
+      if (!topic || topic.id === "topic") return topic;
+      try {
+        const res = await fetch("ontology.jsonld");
+        const data = await res.json();
+        const graph = data["@graph"] || [];
+        const labels = {};
+        for (const item of graph) {
+          const id = localId(item["@id"]);
+          const label = textOf(item["skos:prefLabel"]);
+          if (id && label) labels[id] = label;
+        }
+        const item = graph.find((entry) => localId(entry["@id"]) === topic.id);
+        if (!item) return topic;
+        const related = [].concat(item["skos:related"] || [])
+          .map((rel) => {
+            const id = localId(rel["@id"] || rel);
+            const strength = Number(rel["hi:strength"] || 0);
+            return { id, label: labels[id] || id, strength };
+          })
+          .sort((a, b) => b.strength - a.strength)
+          .slice(0, 8)
+          .map((rel) => rel.label)
+          .filter(Boolean);
+        return {
+          id: topic.id,
+          name: textOf(item["skos:prefLabel"]) || topic.name,
+          definition: textOf(item["skos:definition"]),
+          category: item["hi:category"] || "",
+          related,
+        };
+      } catch (_) {
+        return topic;
+      }
+    }
+
+    function greetingInstructions() {
+      const topic = ontologyEntry || talkTopic();
+      if (topic && topic.name) {
+        const cat = topic.category ? (CATEGORY_LABEL[topic.category] || topic.category) : "";
+        let text = "The listener opened Voice from a Hybrid Intelligences ontology node. Explain this entry first. Use it as source of truth. Do not give a generic welcome instead of explaining it.\n";
+        text += "Name: " + topic.name + "\n";
+        if (cat) text += "Category: " + cat + "\n";
+        if (topic.definition) text += "Definition: " + topic.definition + "\n";
+        if (topic.related && topic.related.length) text += "Related: " + topic.related.join(", ") + "\n";
+        text += "Speak in a few short sentences about what this is, grounded in that definition. If it is the program, say what Hybrid Intelligences is, who leads it, when and where it happens, and how it is organized. Mention one or two related concepts if useful. Then invite them to go deeper or change the subject. Stop and listen. If they start speaking while you talk, stop immediately.";
+        return text;
       }
       return "The listener just connected. Speak first, in one short spoken sentence, so they know you are live. Welcome them to Hybrid Intelligences and invite them to talk — for example 'Welcome to Hybrid Intelligences. How can I help you?' or a similarly warm, informal line. Then stop and wait. If they start speaking while you greet them, stop immediately.";
     }
@@ -417,9 +491,15 @@
 
     function tokenUrl() {
       if (window.location.protocol === "file:") return "";
-      if (isLocalHost() || window.location.hostname.endsWith("vercel.app")) return "/api/token";
-      const origin = normalizeOrigin(window.HI_REALTIME_ORIGIN || "https://project-s4uzk.vercel.app");
-      return origin + "/api/token";
+      let url;
+      if (isLocalHost() || window.location.hostname.endsWith("vercel.app")) url = "/api/token";
+      else {
+        const origin = normalizeOrigin(window.HI_REALTIME_ORIGIN || "https://project-s4uzk.vercel.app");
+        url = origin + "/api/token";
+      }
+      const topic = talkTopic();
+      if (topic && topic.id && topic.id !== "topic") url += "?talk=" + encodeURIComponent(topic.id);
+      return url;
     }
 
     function clearLogPlaceholder() {
@@ -539,6 +619,9 @@
       setStatus("Connecting…");
 
       try {
+        if (talkTopic() && !ontologyEntry) {
+          ontologyEntry = await loadTalkEntry();
+        }
         const tokenRes = await fetch(url);
         const raw = await tokenRes.text();
         let tokenData = {};
@@ -824,16 +907,23 @@
       const caption = document.querySelector("p.caption");
       if (caption) {
         const safeName = topic.name.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-        caption.innerHTML = "Press <strong>Talk</strong> and allow the microphone. The voice will start by speaking about <strong>" +
+        caption.innerHTML = "Press <strong>Talk</strong> and allow the microphone. The voice will start from the ontology entry for <strong>" +
           safeName +
-          "</strong>; you can interrupt it at any time. It is grounded in the Hybrid Intelligences ontology. Use <strong>PDF ↓</strong> to save the transcript.";
+          "</strong>; you can interrupt it at any time. Use <strong>PDF ↓</strong> to save the transcript.";
       }
     }
     if (window.location.protocol === "file:") {
       talkBtn.disabled = true;
       setStatus("This cannot run as a file. In Terminal: node local-server.js  then open http://localhost:8000/voice.html", true);
     } else if (topic) {
-      setStatus("Press Talk to hear about " + topic.name + ". Allow the microphone when the browser asks.");
+      setStatus("Press Talk to hear the ontology entry for " + topic.name + ". Allow the microphone when the browser asks.");
+      loadTalkEntry().then((entry) => {
+        ontologyEntry = entry;
+        if (entry && entry.name) {
+          const heading = document.querySelector(".panel h2");
+          if (heading) heading.textContent = "Talk about " + entry.name;
+        }
+      });
     } else {
       setStatus("Ready. Allow the microphone when the browser asks.");
     }

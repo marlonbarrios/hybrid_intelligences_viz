@@ -1048,7 +1048,7 @@ const NODES = [
     desc: "Philosophical thinking as a lived method—questioning concepts, testing distinctions, staying with ambivalence, and refining vocabulary through dialogue, reading, and writing. Not only a domain of theory, but a practice of inquiry that clarifies agency, embodiment, and world-making in the era of AI." },
 
   { id: "hi_program",         label: "Hybrid Intelligences\nProgram", cat: "program",  weight: 2.2,
-    desc: "Modular interdisciplinary program co-led by Marlon Barrios Solano and Erika Moore, hosted by CAME and CAM, in partnership with IGNITE at Wertheim Laboratory. July 13–30, 2026.",
+    desc: "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI — a University of Florida Creative B program, July 13–30, 2026. Co-led by Marlon Barrios Solano and Erika Moore; hosted by CAME and CAM in the College of the Arts, in partnership with IGNITE at the Wertheim Laboratory. Three tracks: Space & Memory (Mondays), Future Lab (Wednesdays), and Ethics & Leadership (Thursdays), closing with a public reception. The program treats intelligence as coupling across bodies, tools, institutions, and worlds, and rehearses hybrid cognition through embodiment, ethics, and creative practice.",
     url: "https://ufl.instructure.com/courses/574408", linkLabel: "Canvas course ↗" },
   { id: "track_space",        label: "Track 1\nSpace & Memory",       cat: "program",  weight: 1.5,
     desc: "Mondays 12:30–3:15 — AI, space, memory, and embodiment. Jul 13: Karla Saldaña Ochoa · Jul 20: Onye Ozuzu · Jul 27: Corey Cheval." },

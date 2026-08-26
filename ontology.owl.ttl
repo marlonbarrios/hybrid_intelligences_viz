@@ -2723,7 +2723,7 @@ hi:philosophical_practice a owl:NamedIndividual, hi:PracticeConcept ;
 hi:hi_program a owl:NamedIndividual, hi:ProgramConcept ;
   rdfs:label "Hybrid Intelligences Program"@en ;
   skos:prefLabel "Hybrid Intelligences Program"@en ;
-  skos:definition "Modular interdisciplinary program co-led by Marlon Barrios Solano and Erika Moore, hosted by CAME and CAM, in partnership with IGNITE at Wertheim Laboratory. July 13–30, 2026."@en ;
+  skos:definition "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI — a University of Florida Creative B program, July 13–30, 2026. Co-led by Marlon Barrios Solano and Erika Moore; hosted by CAME and CAM in the College of the Arts, in partnership with IGNITE at the Wertheim Laboratory. Three tracks: Space & Memory (Mondays), Future Lab (Wednesdays), and Ethics & Leadership (Thursdays), closing with a public reception. The program treats intelligence as coupling across bodies, tools, institutions, and worlds, and rehearses hybrid cognition through embodiment, ethics, and creative practice."@en ;
   skos:broader hi:category/program ;
   hi:inCategory hi:category/program ;
   hi:schemeMember hi:scheme ;
