@@ -338,8 +338,8 @@
       </form>
     </section>
     <p class="caption">
-      Press <strong>Talk</strong> and allow the microphone. The voice is grounded in the Hybrid Intelligences ontology.
-      Your API key stays on the server; this page only receives a short-lived token.
+      Press <strong>Talk</strong> and allow the microphone. The voice greets you as soon as it is live; you can interrupt it at any time.
+      It is grounded in the Hybrid Intelligences ontology. Your API key stays on the server; this page only receives a short-lived token.
       Use <strong>PDF ↓</strong> to save the transcript.
     </p>
   </main>
@@ -378,6 +378,8 @@
     let localStream = null;
     let remoteAudio = null;
     let assistantTurn = null;
+    let greetingTimer = null;
+    let greetingSent = false;
 
     function setStatus(text, isError) {
       statusEl.textContent = text;
@@ -435,7 +437,11 @@
     }
 
     function handleRealtimeEvent(event) {
-      if (event.type === "conversation.item.input_audio_transcription.completed" && event.transcript) {
+      if (event.type === "session.created") {
+        scheduleGreeting();
+      } else if (event.type === "input_audio_buffer.speech_started") {
+        setStatus("Listening. Speak anytime — you can interrupt.");
+      } else if (event.type === "conversation.item.input_audio_transcription.completed" && event.transcript) {
         addTurn("You", event.transcript);
         assistantTurn = null;
       } else if (event.type === "response.output_audio_transcript.delta" && event.delta) {
@@ -448,6 +454,55 @@
         const msg = (event.error && event.error.message) || "Realtime session error.";
         setStatus(msg, true);
       }
+    }
+
+    function waitForDataChannel() {
+      return new Promise((resolve, reject) => {
+        if (!dc) {
+          reject(new Error("Voice channel was not created."));
+          return;
+        }
+        if (dc.readyState === "open") {
+          resolve();
+          return;
+        }
+        const timer = setTimeout(() => {
+          cleanup();
+          reject(new Error("Voice channel timed out."));
+        }, 15000);
+        function cleanup() {
+          clearTimeout(timer);
+          dc.removeEventListener("open", onOpen);
+          dc.removeEventListener("error", onError);
+        }
+        function onOpen() {
+          cleanup();
+          resolve();
+        }
+        function onError() {
+          cleanup();
+          reject(new Error("Voice channel failed."));
+        }
+        dc.addEventListener("open", onOpen);
+        dc.addEventListener("error", onError);
+      });
+    }
+
+    function scheduleGreeting() {
+      if (greetingSent || !dc || dc.readyState !== "open") return;
+      greetingSent = true;
+      greetingTimer = setTimeout(() => {
+        greetingTimer = null;
+        if (!dc || dc.readyState !== "open") return;
+        assistantTurn = null;
+        dc.send(JSON.stringify({
+          type: "response.create",
+          response: {
+            instructions: "The listener just connected. Speak first, in one short spoken sentence, so they know you are live. Welcome them to Hybrid Intelligences and invite them to talk — for example 'Welcome to Hybrid Intelligences. How can I help you?' or a similarly warm, informal line. Then stop and wait. If they start speaking while you greet them, stop immediately.",
+          },
+        }));
+        setStatus("Listening. Speak anytime — you can interrupt.");
+      }, 450);
     }
 
     async function startSession() {
@@ -513,10 +568,15 @@
           sdp: await sdpResponse.text(),
         });
 
+        await waitForDataChannel();
+        setTimeout(() => {
+          if (!greetingSent) scheduleGreeting();
+        }, 1200);
+
         stopBtn.disabled = false;
         textInput.disabled = false;
         sendBtn.disabled = false;
-        setStatus("Listening. Speak, or type a line.");
+        setStatus("Connected. The voice will greet you — speak anytime.");
       } catch (err) {
         stopSession();
         setStatus(err.message || "Could not start the voice session.", true);
@@ -524,6 +584,11 @@
     }
 
     function stopSession() {
+      if (greetingTimer) {
+        clearTimeout(greetingTimer);
+        greetingTimer = null;
+      }
+      greetingSent = false;
       if (dc) {
         try { dc.close(); } catch (_) {}
       }
