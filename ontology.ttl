@@ -11,8 +11,8 @@
   rdfs:label "Hybrid Intelligences Ontology" ;
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   owl:versionInfo "1.0.0" ;
-  hi:nodeCount "222"^^xsd:integer ;
-  hi:edgeCount "2188"^^xsd:integer .
+  hi:nodeCount "224"^^xsd:integer ;
+  hi:edgeCount "2239"^^xsd:integer .
 
 hi:scheme a skos:ConceptScheme ;
   skos:prefLabel "Hybrid Intelligences Concept Scheme" ;
@@ -280,7 +280,7 @@ hi:creativity a skos:Concept, hi:NetworkNode ;
 
 hi:enactivism a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Enactivism" ;
-  skos:definition "Organisms bring forth meaningful worlds through histories of interaction; cognition and world are co-emergent." ;
+  skos:definition "Organisms bring forth meaningful worlds through histories of interaction; cognition and world are co-emergent. Rooted in Maturana and Varela’s autopoiesis: a living system first produces itself, then a world of significance." ;
   skos:broader hi:category/framework ;
   skos:inScheme hi:scheme ;
   hi:category "framework" ;
@@ -288,6 +288,18 @@ hi:enactivism a skos:Concept, hi:NetworkNode ;
  ;
   schema:url <essay.html> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Enactivism>
+ .
+
+hi:autopoiesis a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Autopoiesis" ;
+  skos:definition "Humberto Maturana and Francisco Varela: living systems as networks that continually produce and regenerate the components and boundaries that constitute them. An autopoietic unity is operationally closed—it specifies its own organization—yet structurally coupled with a medium. Cognition, in this biology of knowing, is the effective conduct of a living system in its world, not representation of a pre-given environment. Autopoiesis is the biological root of enactivism: organisms bring forth worlds because they first bring forth themselves." ;
+  skos:broader hi:category/framework ;
+  skos:inScheme hi:scheme ;
+  hi:category "framework" ;
+  hi:weight "1.65"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Autopoiesis> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Autopoiesis>
  .
 
 hi:buddhism a skos:Concept, hi:NetworkNode ;
@@ -808,7 +820,7 @@ hi:hayles a skos:Concept, hi:NetworkNode ;
 
 hi:thompson a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Evan Thompson" ;
-  skos:definition "Mind in Life and enactivism—bridging biology, phenomenology, and cognitive science." ;
+  skos:definition "Mind in Life and enactivism—extending autopoiesis from living organization to consciousness, bridging biology, phenomenology, and cognitive science." ;
   skos:broader hi:category/author ;
   skos:inScheme hi:scheme ;
   hi:category "author" ;
@@ -818,13 +830,25 @@ hi:thompson a skos:Concept, hi:NetworkNode ;
   schema:sameAs <https://en.wikipedia.org/wiki/Evan_Thompson>
  .
 
-hi:varela a skos:Concept, hi:NetworkNode ;
-  skos:prefLabel "Francisco Varela" ;
-  skos:definition "The Embodied Mind: cognition as embodied action bringing forth a world of significance." ;
+hi:maturana a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Humberto Maturana" ;
+  skos:definition "Chilean biologist—Autopoiesis and Cognition with Francisco Varela: living systems as self-producing, operationally closed unities that persist through structural coupling with a medium. A biology of knowing in which the observer, language, and cognition arise from the organization of life rather than from representation." ;
   skos:broader hi:category/author ;
   skos:inScheme hi:scheme ;
   hi:category "author" ;
-  hi:weight "1.2"^^xsd:decimal
+  hi:weight "1.25"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Humberto_Maturana> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Humberto_Maturana>
+ .
+
+hi:varela a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Francisco Varela" ;
+  skos:definition "Chilean biologist and neuroscientist—autopoiesis with Humberto Maturana; The Embodied Mind with Thompson and Rosch: cognition as embodied action bringing forth a world of significance." ;
+  skos:broader hi:category/author ;
+  skos:inScheme hi:scheme ;
+  hi:category "author" ;
+  hi:weight "1.25"^^xsd:decimal
  ;
   schema:url <https://en.wikipedia.org/wiki/Francisco_Varela> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Francisco_Varela>
@@ -3483,6 +3507,174 @@ hi:rel-enactivism-rehearsal a hi:Relation ;
   hi:strength "0.7"^^xsd:decimal ;
   skos:relatedMatch hi:rehearsal .
 
+hi:rel-enactivism-autopoiesis a hi:Relation ;
+  hi:source hi:enactivism ;
+  hi:target hi:autopoiesis ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:autopoiesis .
+
+hi:rel-autopoiesis-maturana a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:maturana ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:maturana .
+
+hi:rel-autopoiesis-varela a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:varela ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:varela .
+
+hi:rel-autopoiesis-enactivism a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:enactivism ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:enactivism .
+
+hi:rel-autopoiesis-coupling a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:coupling ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:coupling .
+
+hi:rel-autopoiesis-cognition a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:cognition ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:cognition .
+
+hi:rel-autopoiesis-embodiment a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:embodiment ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:embodiment .
+
+hi:rel-autopoiesis-body a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:body ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:body .
+
+hi:rel-autopoiesis-thompson a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:thompson ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:thompson .
+
+hi:rel-autopoiesis-4e a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:4e ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:4e .
+
+hi:rel-autopoiesis-enacted a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:enacted ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:enacted .
+
+hi:rel-autopoiesis-embodied a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:embodied ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:embodied .
+
+hi:rel-autopoiesis-cybernetics a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:cybernetics ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:cybernetics .
+
+hi:rel-autopoiesis-systems_thinking a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:systems_thinking ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:systems_thinking .
+
+hi:rel-autopoiesis-complexity_theory a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:complexity_theory ;
+  hi:strength "0.78"^^xsd:decimal ;
+  skos:relatedMatch hi:complexity_theory .
+
+hi:rel-autopoiesis-holobiont a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:holobiont ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:holobiont .
+
+hi:rel-autopoiesis-ecology a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:ecology ;
+  hi:strength "0.78"^^xsd:decimal ;
+  skos:relatedMatch hi:ecology .
+
+hi:rel-autopoiesis-consciousness a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:consciousness ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:consciousness .
+
+hi:rel-autopoiesis-epistemology a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:epistemology ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:epistemology .
+
+hi:rel-autopoiesis-di_paolo a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:di_paolo ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:di_paolo .
+
+hi:rel-autopoiesis-de_jaegher a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:de_jaegher ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:de_jaegher .
+
+hi:rel-autopoiesis-bateson a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:bateson ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:bateson .
+
+hi:rel-autopoiesis-merleau_ponty a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:merleau_ponty ;
+  hi:strength "0.72"^^xsd:decimal ;
+  skos:relatedMatch hi:merleau_ponty .
+
+hi:rel-autopoiesis-buddhism a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:buddhism ;
+  hi:strength "0.7"^^xsd:decimal ;
+  skos:relatedMatch hi:buddhism .
+
+hi:rel-autopoiesis-creative_embodiment a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:creative_embodiment ;
+  hi:strength "0.72"^^xsd:decimal ;
+  skos:relatedMatch hi:creative_embodiment .
+
+hi:rel-autopoiesis-technosymbiosis a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:technosymbiosis ;
+  hi:strength "0.7"^^xsd:decimal ;
+  skos:relatedMatch hi:technosymbiosis .
+
+hi:rel-autopoiesis-coregulation a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:coregulation ;
+  hi:strength "0.72"^^xsd:decimal ;
+  skos:relatedMatch hi:coregulation .
+
+hi:rel-autopoiesis-intelligence a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:intelligence ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:intelligence .
+
 hi:rel-buddhism-enactivism a hi:Relation ;
   hi:source hi:buddhism ;
   hi:target hi:enactivism ;
@@ -3921,6 +4113,12 @@ hi:rel-holobiont-distributed a hi:Relation ;
   hi:strength "0.7"^^xsd:decimal ;
   skos:relatedMatch hi:distributed .
 
+hi:rel-holobiont-autopoiesis a hi:Relation ;
+  hi:source hi:holobiont ;
+  hi:target hi:autopoiesis ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:autopoiesis .
+
 hi:rel-affordances-gibson a hi:Relation ;
   hi:source hi:affordances ;
   hi:target hi:gibson ;
@@ -3974,6 +4172,18 @@ hi:rel-umwelt-varela a hi:Relation ;
   hi:target hi:varela ;
   hi:strength "0.85"^^xsd:decimal ;
   skos:relatedMatch hi:varela .
+
+hi:rel-umwelt-maturana a hi:Relation ;
+  hi:source hi:umwelt ;
+  hi:target hi:maturana ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:maturana .
+
+hi:rel-umwelt-autopoiesis a hi:Relation ;
+  hi:source hi:umwelt ;
+  hi:target hi:autopoiesis ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:autopoiesis .
 
 hi:rel-umwelt-thompson a hi:Relation ;
   hi:source hi:umwelt ;
@@ -6849,6 +7059,18 @@ hi:rel-cybernetics-varela a hi:Relation ;
   hi:strength "0.75"^^xsd:decimal ;
   skos:relatedMatch hi:varela .
 
+hi:rel-cybernetics-maturana a hi:Relation ;
+  hi:source hi:cybernetics ;
+  hi:target hi:maturana ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:maturana .
+
+hi:rel-cybernetics-autopoiesis a hi:Relation ;
+  hi:source hi:cybernetics ;
+  hi:target hi:autopoiesis ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:autopoiesis .
+
 hi:rel-cybernetics-thompson a hi:Relation ;
   hi:source hi:cybernetics ;
   hi:target hi:thompson ;
@@ -9387,6 +9609,78 @@ hi:rel-thompson-merleau_ponty a hi:Relation ;
   hi:strength "0.9"^^xsd:decimal ;
   skos:relatedMatch hi:merleau_ponty .
 
+hi:rel-thompson-autopoiesis a hi:Relation ;
+  hi:source hi:thompson ;
+  hi:target hi:autopoiesis ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:autopoiesis .
+
+hi:rel-maturana-autopoiesis a hi:Relation ;
+  hi:source hi:maturana ;
+  hi:target hi:autopoiesis ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:autopoiesis .
+
+hi:rel-maturana-varela a hi:Relation ;
+  hi:source hi:maturana ;
+  hi:target hi:varela ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:varela .
+
+hi:rel-maturana-enactivism a hi:Relation ;
+  hi:source hi:maturana ;
+  hi:target hi:enactivism ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:enactivism .
+
+hi:rel-maturana-coupling a hi:Relation ;
+  hi:source hi:maturana ;
+  hi:target hi:coupling ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:coupling .
+
+hi:rel-maturana-cognition a hi:Relation ;
+  hi:source hi:maturana ;
+  hi:target hi:cognition ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:cognition .
+
+hi:rel-maturana-cybernetics a hi:Relation ;
+  hi:source hi:maturana ;
+  hi:target hi:cybernetics ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:cybernetics .
+
+hi:rel-maturana-embodiment a hi:Relation ;
+  hi:source hi:maturana ;
+  hi:target hi:embodiment ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:embodiment .
+
+hi:rel-maturana-epistemology a hi:Relation ;
+  hi:source hi:maturana ;
+  hi:target hi:epistemology ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:epistemology .
+
+hi:rel-maturana-thompson a hi:Relation ;
+  hi:source hi:maturana ;
+  hi:target hi:thompson ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:thompson .
+
+hi:rel-varela-autopoiesis a hi:Relation ;
+  hi:source hi:varela ;
+  hi:target hi:autopoiesis ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:autopoiesis .
+
+hi:rel-varela-maturana a hi:Relation ;
+  hi:source hi:varela ;
+  hi:target hi:maturana ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:maturana .
+
 hi:rel-varela-enactivism a hi:Relation ;
   hi:source hi:varela ;
   hi:target hi:enactivism ;
@@ -9428,6 +9722,18 @@ hi:rel-varela-merleau_ponty a hi:Relation ;
   hi:target hi:merleau_ponty ;
   hi:strength "0.9"^^xsd:decimal ;
   skos:relatedMatch hi:merleau_ponty .
+
+hi:rel-varela-coupling a hi:Relation ;
+  hi:source hi:varela ;
+  hi:target hi:coupling ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:coupling .
+
+hi:rel-varela-cybernetics a hi:Relation ;
+  hi:source hi:varela ;
+  hi:target hi:cybernetics ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:cybernetics .
 
 hi:rel-merleau_ponty-enactivism a hi:Relation ;
   hi:source hi:merleau_ponty ;
@@ -9897,6 +10203,12 @@ hi:rel-de_jaegher-cuffari a hi:Relation ;
   hi:strength "0.8"^^xsd:decimal ;
   skos:relatedMatch hi:cuffari .
 
+hi:rel-de_jaegher-autopoiesis a hi:Relation ;
+  hi:source hi:de_jaegher ;
+  hi:target hi:autopoiesis ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:autopoiesis .
+
 hi:rel-di_paolo-enactivism a hi:Relation ;
   hi:source hi:di_paolo ;
   hi:target hi:enactivism ;
@@ -9920,6 +10232,24 @@ hi:rel-di_paolo-cuffari a hi:Relation ;
   hi:target hi:cuffari ;
   hi:strength "0.85"^^xsd:decimal ;
   skos:relatedMatch hi:cuffari .
+
+hi:rel-di_paolo-autopoiesis a hi:Relation ;
+  hi:source hi:di_paolo ;
+  hi:target hi:autopoiesis ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:autopoiesis .
+
+hi:rel-di_paolo-maturana a hi:Relation ;
+  hi:source hi:di_paolo ;
+  hi:target hi:maturana ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:maturana .
+
+hi:rel-di_paolo-varela a hi:Relation ;
+  hi:source hi:di_paolo ;
+  hi:target hi:varela ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:varela .
 
 hi:rel-shanahan-possible_minds a hi:Relation ;
   hi:source hi:shanahan ;

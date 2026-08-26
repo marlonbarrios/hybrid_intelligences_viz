@@ -13,8 +13,8 @@
   dc:description "OWL 2 ontology of concepts, categories, and weighted relations from the Hybrid Intelligences program." ;
   owl:versionInfo "1.0.0" ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  hi:nodeCount "222"^^xsd:integer ;
-  hi:edgeCount "2188"^^xsd:integer .
+  hi:nodeCount "224"^^xsd:integer ;
+  hi:edgeCount "2239"^^xsd:integer .
 
 hi:Concept a owl:Class ;
   rdfs:label "Concept"@en ;
@@ -532,7 +532,7 @@ hi:creativity a owl:NamedIndividual, hi:FrameworkConcept ;
 hi:enactivism a owl:NamedIndividual, hi:FrameworkConcept ;
   rdfs:label "Enactivism"@en ;
   skos:prefLabel "Enactivism"@en ;
-  skos:definition "Organisms bring forth meaningful worlds through histories of interaction; cognition and world are co-emergent."@en ;
+  skos:definition "Organisms bring forth meaningful worlds through histories of interaction; cognition and world are co-emergent. Rooted in Maturana and Varela’s autopoiesis: a living system first produces itself, then a world of significance."@en ;
   skos:broader hi:category/framework ;
   hi:inCategory hi:category/framework ;
   hi:schemeMember hi:scheme ;
@@ -541,6 +541,20 @@ hi:enactivism a owl:NamedIndividual, hi:FrameworkConcept ;
  ;
   schema:url <essay.html> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Enactivism>
+ .
+
+hi:autopoiesis a owl:NamedIndividual, hi:FrameworkConcept ;
+  rdfs:label "Autopoiesis"@en ;
+  skos:prefLabel "Autopoiesis"@en ;
+  skos:definition "Humberto Maturana and Francisco Varela: living systems as networks that continually produce and regenerate the components and boundaries that constitute them. An autopoietic unity is operationally closed—it specifies its own organization—yet structurally coupled with a medium. Cognition, in this biology of knowing, is the effective conduct of a living system in its world, not representation of a pre-given environment. Autopoiesis is the biological root of enactivism: organisms bring forth worlds because they first bring forth themselves."@en ;
+  skos:broader hi:category/framework ;
+  hi:inCategory hi:category/framework ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.65"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Autopoiesis> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Autopoiesis>
  .
 
 hi:buddhism a owl:NamedIndividual, hi:FrameworkConcept ;
@@ -1150,7 +1164,7 @@ hi:hayles a owl:NamedIndividual, hi:AuthorConcept ;
 hi:thompson a owl:NamedIndividual, hi:AuthorConcept ;
   rdfs:label "Evan Thompson"@en ;
   skos:prefLabel "Evan Thompson"@en ;
-  skos:definition "Mind in Life and enactivism—bridging biology, phenomenology, and cognitive science."@en ;
+  skos:definition "Mind in Life and enactivism—extending autopoiesis from living organization to consciousness, bridging biology, phenomenology, and cognitive science."@en ;
   skos:broader hi:category/author ;
   hi:inCategory hi:category/author ;
   hi:schemeMember hi:scheme ;
@@ -1161,15 +1175,29 @@ hi:thompson a owl:NamedIndividual, hi:AuthorConcept ;
   schema:sameAs <https://en.wikipedia.org/wiki/Evan_Thompson>
  .
 
-hi:varela a owl:NamedIndividual, hi:AuthorConcept ;
-  rdfs:label "Francisco Varela"@en ;
-  skos:prefLabel "Francisco Varela"@en ;
-  skos:definition "The Embodied Mind: cognition as embodied action bringing forth a world of significance."@en ;
+hi:maturana a owl:NamedIndividual, hi:AuthorConcept ;
+  rdfs:label "Humberto Maturana"@en ;
+  skos:prefLabel "Humberto Maturana"@en ;
+  skos:definition "Chilean biologist—Autopoiesis and Cognition with Francisco Varela: living systems as self-producing, operationally closed unities that persist through structural coupling with a medium. A biology of knowing in which the observer, language, and cognition arise from the organization of life rather than from representation."@en ;
   skos:broader hi:category/author ;
   hi:inCategory hi:category/author ;
   hi:schemeMember hi:scheme ;
   skos:inScheme hi:scheme ;
-  hi:networkWeight "1.2"^^xsd:decimal
+  hi:networkWeight "1.25"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Humberto_Maturana> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Humberto_Maturana>
+ .
+
+hi:varela a owl:NamedIndividual, hi:AuthorConcept ;
+  rdfs:label "Francisco Varela"@en ;
+  skos:prefLabel "Francisco Varela"@en ;
+  skos:definition "Chilean biologist and neuroscientist—autopoiesis with Humberto Maturana; The Embodied Mind with Thompson and Rosch: cognition as embodied action bringing forth a world of significance."@en ;
+  skos:broader hi:category/author ;
+  hi:inCategory hi:category/author ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.25"^^xsd:decimal
  ;
   schema:url <https://en.wikipedia.org/wiki/Francisco_Varela> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Francisco_Varela>
@@ -3492,6 +3520,34 @@ hi:4e hi:relatedTo hi:enacted .
 hi:4e hi:relatedTo hi:extended_q .
 hi:enactivism hi:relatedTo hi:coupling .
 hi:enactivism hi:relatedTo hi:rehearsal .
+hi:enactivism hi:relatedTo hi:autopoiesis .
+hi:autopoiesis hi:relatedTo hi:maturana .
+hi:autopoiesis hi:relatedTo hi:varela .
+hi:autopoiesis hi:relatedTo hi:enactivism .
+hi:autopoiesis hi:relatedTo hi:coupling .
+hi:autopoiesis hi:relatedTo hi:cognition .
+hi:autopoiesis hi:relatedTo hi:embodiment .
+hi:autopoiesis hi:relatedTo hi:body .
+hi:autopoiesis hi:relatedTo hi:thompson .
+hi:autopoiesis hi:relatedTo hi:4e .
+hi:autopoiesis hi:relatedTo hi:enacted .
+hi:autopoiesis hi:relatedTo hi:embodied .
+hi:autopoiesis hi:relatedTo hi:cybernetics .
+hi:autopoiesis hi:relatedTo hi:systems_thinking .
+hi:autopoiesis hi:relatedTo hi:complexity_theory .
+hi:autopoiesis hi:relatedTo hi:holobiont .
+hi:autopoiesis hi:relatedTo hi:ecology .
+hi:autopoiesis hi:relatedTo hi:consciousness .
+hi:autopoiesis hi:relatedTo hi:epistemology .
+hi:autopoiesis hi:relatedTo hi:di_paolo .
+hi:autopoiesis hi:relatedTo hi:de_jaegher .
+hi:autopoiesis hi:relatedTo hi:bateson .
+hi:autopoiesis hi:relatedTo hi:merleau_ponty .
+hi:autopoiesis hi:relatedTo hi:buddhism .
+hi:autopoiesis hi:relatedTo hi:creative_embodiment .
+hi:autopoiesis hi:relatedTo hi:technosymbiosis .
+hi:autopoiesis hi:relatedTo hi:coregulation .
+hi:autopoiesis hi:relatedTo hi:intelligence .
 hi:buddhism hi:relatedTo hi:enactivism .
 hi:buddhism hi:relatedTo hi:nagarjuna .
 hi:buddhism hi:relatedTo hi:varela .
@@ -3565,6 +3621,7 @@ hi:holobiont hi:relatedTo hi:complexity_theory .
 hi:holobiont hi:relatedTo hi:ai_impact_environment .
 hi:holobiont hi:relatedTo hi:creative_embodiment .
 hi:holobiont hi:relatedTo hi:distributed .
+hi:holobiont hi:relatedTo hi:autopoiesis .
 hi:affordances hi:relatedTo hi:gibson .
 hi:affordances hi:relatedTo hi:embedded .
 hi:affordances hi:relatedTo hi:4e .
@@ -3574,6 +3631,8 @@ hi:affordances hi:relatedTo hi:ecology .
 hi:affordances hi:relatedTo hi:umwelt .
 hi:umwelt hi:relatedTo hi:enactivism .
 hi:umwelt hi:relatedTo hi:varela .
+hi:umwelt hi:relatedTo hi:maturana .
+hi:umwelt hi:relatedTo hi:autopoiesis .
 hi:umwelt hi:relatedTo hi:thompson .
 hi:umwelt hi:relatedTo hi:4e .
 hi:umwelt hi:relatedTo hi:embedded .
@@ -4053,6 +4112,8 @@ hi:cybernetics hi:relatedTo hi:symbiosis .
 hi:cybernetics hi:relatedTo hi:holobiont .
 hi:cybernetics hi:relatedTo hi:technosymbiosis .
 hi:cybernetics hi:relatedTo hi:varela .
+hi:cybernetics hi:relatedTo hi:maturana .
+hi:cybernetics hi:relatedTo hi:autopoiesis .
 hi:cybernetics hi:relatedTo hi:thompson .
 hi:cybernetics hi:relatedTo hi:model_introspection .
 hi:cybernetics hi:relatedTo hi:active_inference .
@@ -4476,6 +4537,18 @@ hi:thompson hi:relatedTo hi:rosch .
 hi:thompson hi:relatedTo hi:buddhism .
 hi:thompson hi:relatedTo hi:nagarjuna .
 hi:thompson hi:relatedTo hi:merleau_ponty .
+hi:thompson hi:relatedTo hi:autopoiesis .
+hi:maturana hi:relatedTo hi:autopoiesis .
+hi:maturana hi:relatedTo hi:varela .
+hi:maturana hi:relatedTo hi:enactivism .
+hi:maturana hi:relatedTo hi:coupling .
+hi:maturana hi:relatedTo hi:cognition .
+hi:maturana hi:relatedTo hi:cybernetics .
+hi:maturana hi:relatedTo hi:embodiment .
+hi:maturana hi:relatedTo hi:epistemology .
+hi:maturana hi:relatedTo hi:thompson .
+hi:varela hi:relatedTo hi:autopoiesis .
+hi:varela hi:relatedTo hi:maturana .
 hi:varela hi:relatedTo hi:enactivism .
 hi:varela hi:relatedTo hi:4e .
 hi:varela hi:relatedTo hi:embodied .
@@ -4483,6 +4556,8 @@ hi:varela hi:relatedTo hi:rosch .
 hi:varela hi:relatedTo hi:buddhism .
 hi:varela hi:relatedTo hi:nagarjuna .
 hi:varela hi:relatedTo hi:merleau_ponty .
+hi:varela hi:relatedTo hi:coupling .
+hi:varela hi:relatedTo hi:cybernetics .
 hi:merleau_ponty hi:relatedTo hi:enactivism .
 hi:merleau_ponty hi:relatedTo hi:embodiment .
 hi:merleau_ponty hi:relatedTo hi:embodied .
@@ -4561,10 +4636,14 @@ hi:de_jaegher hi:relatedTo hi:coupling .
 hi:de_jaegher hi:relatedTo hi:coregulation .
 hi:de_jaegher hi:relatedTo hi:di_paolo .
 hi:de_jaegher hi:relatedTo hi:cuffari .
+hi:de_jaegher hi:relatedTo hi:autopoiesis .
 hi:di_paolo hi:relatedTo hi:enactivism .
 hi:di_paolo hi:relatedTo hi:enacted .
 hi:di_paolo hi:relatedTo hi:coupling .
 hi:di_paolo hi:relatedTo hi:cuffari .
+hi:di_paolo hi:relatedTo hi:autopoiesis .
+hi:di_paolo hi:relatedTo hi:maturana .
+hi:di_paolo hi:relatedTo hi:varela .
 hi:shanahan hi:relatedTo hi:possible_minds .
 hi:boden hi:relatedTo hi:ai .
 hi:boden hi:relatedTo hi:gen_ai .
@@ -6209,6 +6288,146 @@ hi:rel-enactivism-rehearsal a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationTarget hi:rehearsal ;
   hi:relationStrength "0.7"^^xsd:decimal .
 
+hi:rel-enactivism-autopoiesis a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:enactivism ;
+  hi:relationTarget hi:autopoiesis ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-autopoiesis-maturana a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:maturana ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-autopoiesis-varela a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:varela ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-autopoiesis-enactivism a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:enactivism ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-autopoiesis-coupling a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:coupling ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-autopoiesis-cognition a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:cognition ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-autopoiesis-embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:embodiment ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-autopoiesis-body a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:body ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-autopoiesis-thompson a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:thompson ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-autopoiesis-4e a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:4e ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-autopoiesis-enacted a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:enacted ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-autopoiesis-embodied a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:embodied ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-autopoiesis-cybernetics a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:cybernetics ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-autopoiesis-systems_thinking a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:systems_thinking ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-autopoiesis-complexity_theory a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:complexity_theory ;
+  hi:relationStrength "0.78"^^xsd:decimal .
+
+hi:rel-autopoiesis-holobiont a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:holobiont ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-autopoiesis-ecology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:ecology ;
+  hi:relationStrength "0.78"^^xsd:decimal .
+
+hi:rel-autopoiesis-consciousness a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:consciousness ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-autopoiesis-epistemology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:epistemology ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-autopoiesis-di_paolo a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:di_paolo ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-autopoiesis-de_jaegher a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:de_jaegher ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-autopoiesis-bateson a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:bateson ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-autopoiesis-merleau_ponty a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:merleau_ponty ;
+  hi:relationStrength "0.72"^^xsd:decimal .
+
+hi:rel-autopoiesis-buddhism a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:buddhism ;
+  hi:relationStrength "0.7"^^xsd:decimal .
+
+hi:rel-autopoiesis-creative_embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:creative_embodiment ;
+  hi:relationStrength "0.72"^^xsd:decimal .
+
+hi:rel-autopoiesis-technosymbiosis a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:technosymbiosis ;
+  hi:relationStrength "0.7"^^xsd:decimal .
+
+hi:rel-autopoiesis-coregulation a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:coregulation ;
+  hi:relationStrength "0.72"^^xsd:decimal .
+
+hi:rel-autopoiesis-intelligence a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:intelligence ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
 hi:rel-buddhism-enactivism a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:buddhism ;
   hi:relationTarget hi:enactivism ;
@@ -6574,6 +6793,11 @@ hi:rel-holobiont-distributed a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationTarget hi:distributed ;
   hi:relationStrength "0.7"^^xsd:decimal .
 
+hi:rel-holobiont-autopoiesis a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:holobiont ;
+  hi:relationTarget hi:autopoiesis ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
 hi:rel-affordances-gibson a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:affordances ;
   hi:relationTarget hi:gibson ;
@@ -6618,6 +6842,16 @@ hi:rel-umwelt-varela a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:umwelt ;
   hi:relationTarget hi:varela ;
   hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-umwelt-maturana a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:umwelt ;
+  hi:relationTarget hi:maturana ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-umwelt-autopoiesis a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:umwelt ;
+  hi:relationTarget hi:autopoiesis ;
+  hi:relationStrength "0.8"^^xsd:decimal .
 
 hi:rel-umwelt-thompson a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:umwelt ;
@@ -9014,6 +9248,16 @@ hi:rel-cybernetics-varela a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationTarget hi:varela ;
   hi:relationStrength "0.75"^^xsd:decimal .
 
+hi:rel-cybernetics-maturana a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cybernetics ;
+  hi:relationTarget hi:maturana ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-cybernetics-autopoiesis a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cybernetics ;
+  hi:relationTarget hi:autopoiesis ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
 hi:rel-cybernetics-thompson a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:cybernetics ;
   hi:relationTarget hi:thompson ;
@@ -11129,6 +11373,66 @@ hi:rel-thompson-merleau_ponty a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationTarget hi:merleau_ponty ;
   hi:relationStrength "0.9"^^xsd:decimal .
 
+hi:rel-thompson-autopoiesis a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:thompson ;
+  hi:relationTarget hi:autopoiesis ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-maturana-autopoiesis a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:maturana ;
+  hi:relationTarget hi:autopoiesis ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-maturana-varela a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:maturana ;
+  hi:relationTarget hi:varela ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-maturana-enactivism a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:maturana ;
+  hi:relationTarget hi:enactivism ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-maturana-coupling a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:maturana ;
+  hi:relationTarget hi:coupling ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-maturana-cognition a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:maturana ;
+  hi:relationTarget hi:cognition ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-maturana-cybernetics a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:maturana ;
+  hi:relationTarget hi:cybernetics ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-maturana-embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:maturana ;
+  hi:relationTarget hi:embodiment ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-maturana-epistemology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:maturana ;
+  hi:relationTarget hi:epistemology ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-maturana-thompson a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:maturana ;
+  hi:relationTarget hi:thompson ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-varela-autopoiesis a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:varela ;
+  hi:relationTarget hi:autopoiesis ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-varela-maturana a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:varela ;
+  hi:relationTarget hi:maturana ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
 hi:rel-varela-enactivism a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:varela ;
   hi:relationTarget hi:enactivism ;
@@ -11163,6 +11467,16 @@ hi:rel-varela-merleau_ponty a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:varela ;
   hi:relationTarget hi:merleau_ponty ;
   hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-varela-coupling a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:varela ;
+  hi:relationTarget hi:coupling ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-varela-cybernetics a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:varela ;
+  hi:relationTarget hi:cybernetics ;
+  hi:relationStrength "0.82"^^xsd:decimal .
 
 hi:rel-merleau_ponty-enactivism a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:merleau_ponty ;
@@ -11554,6 +11868,11 @@ hi:rel-de_jaegher-cuffari a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationTarget hi:cuffari ;
   hi:relationStrength "0.8"^^xsd:decimal .
 
+hi:rel-de_jaegher-autopoiesis a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:de_jaegher ;
+  hi:relationTarget hi:autopoiesis ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
 hi:rel-di_paolo-enactivism a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:di_paolo ;
   hi:relationTarget hi:enactivism ;
@@ -11573,6 +11892,21 @@ hi:rel-di_paolo-cuffari a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:di_paolo ;
   hi:relationTarget hi:cuffari ;
   hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-di_paolo-autopoiesis a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:di_paolo ;
+  hi:relationTarget hi:autopoiesis ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-di_paolo-maturana a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:di_paolo ;
+  hi:relationTarget hi:maturana ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-di_paolo-varela a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:di_paolo ;
+  hi:relationTarget hi:varela ;
+  hi:relationStrength "0.8"^^xsd:decimal .
 
 hi:rel-shanahan-possible_minds a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:shanahan ;

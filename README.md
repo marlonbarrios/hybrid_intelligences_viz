@@ -71,11 +71,11 @@ Supporting **Framework** nodes include **Intelligence**, **Embodiment**, **Body*
 
 Drawing on Katherine Hayles, Andy Clark, 4E/enactivist traditions, and contemporary AI critique, the network treats cognition as **distributed**—spanning brains, bodies, tools, datasets, interfaces, institutions, and publics. Alongside framework-level cognitive assemblages, techno-symbiosis, and 4E cognition, **Conceptual Models** nodes include:
 
-- **Enactivism**, **Extended Mind**, **Natural-Born Cyborg**
+- **Enactivism**, **Autopoiesis** (Maturana & Varela), **Extended Mind**, **Natural-Born Cyborg**
 - **Holobiont**, **Affordances**, **Umwelt**
 - **Active Inference**, **Machine Learning**, **Neural Networks**, and related AI architectures (including formula nodes **z = Wx + b** and the RNN update **σ(Wₓx + Wₕh + b)**)
 - **Cyberfeminism**, **Queer Theory**, **Buddhism**, decolonial and critical frameworks
-- Authors and artists linked to these ideas (Merleau-Ponty, Hayles, Clark, Haraway, Latour, Nāgārjuna, Mendieta, Bowery, and many others)
+- Authors and artists linked to these ideas (Maturana, Varela, Merleau-Ponty, Hayles, Clark, Haraway, Latour, Nāgārjuna, Mendieta, Bowery, and many others)
 
 ### Tensions held open
 
