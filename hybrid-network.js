@@ -3973,9 +3973,9 @@ function getMaxRadius() {
   const topPad = mobile ? mobileBarH() + 8 : 120;
   const toggleH = mobile ? mobileBottomH() + 8 : 54;
   const focus = getActiveNode();
-  const panelH = focus && focus.url ? 128 : 108;
+  const panelH = focus ? detailPanelLayout(focus).panelH : 108;
   const bottomPad = focus
-    ? toggleH + (mobile ? min(panelH, 120) : panelH) + 18
+    ? toggleH + (mobile ? min(panelH, 190) : panelH) + 18
     : toggleH + 16;
   const sidePad = mobile ? 28 : 98;
   const layoutScale = mobile ? 0.98 : 1.08;
@@ -5479,6 +5479,11 @@ function drawLegend() {
   });
 }
 
+function voiceTalkUrl(id, label) {
+  const name = String(label || id).replace(/\n/g, " ").replace(/\s+/g, " ").trim();
+  return `${VOICE_URL}?talk=${encodeURIComponent(id)}&name=${encodeURIComponent(name)}`;
+}
+
 function detailPanelLayout(n) {
   const panelW = min(360, width - 32);
   const mobile = isMobileLayout();
@@ -5487,9 +5492,9 @@ function detailPanelLayout(n) {
     : toggleLayout().bottom + toggleLayout().btnH + toggleLayout().padY * 2 + 12;
   const wikiUrl = n?.wikiUrl || (n?.url?.includes("wikipedia.org") ? n.url : null);
   const primaryUrl = n?.url && n.url !== wikiUrl ? n.url : null;
-  const linkCount = (primaryUrl ? 1 : 0) + (wikiUrl ? 1 : 0) + 1;
+  const linkCount = 1 + (primaryUrl ? 1 : 0) + (wikiUrl ? 1 : 0) + 1;
   const hasLink = linkCount > 0;
-  const panelH = mobile ? min(108 + linkCount * 18, 150) : 108 + linkCount * 20;
+  const panelH = mobile ? min(108 + linkCount * 18, 190) : 108 + linkCount * 20;
   return { panelW, x: 16, y: height - toggleH - panelH, panelH, hasLink, linkCount, wikiUrl, primaryUrl };
 }
 
@@ -5537,7 +5542,8 @@ function drawDetailPanel(n) {
   textSize(10);
   const wrapped = wrapText(n.desc, panelW - 28, 10);
   let ty = y + 48;
-  const maxLines = hasLink ? max(2, 4 - (primaryUrl && wikiUrl ? 2 : primaryUrl || wikiUrl ? 1 : 0)) : 3;
+  const extraLinks = (primaryUrl ? 1 : 0) + (wikiUrl ? 1 : 0);
+  const maxLines = hasLink ? max(2, 4 - extraLinks) : 3;
   for (const line of wrapped.slice(0, maxLines)) {
     text(line, x + 14, ty);
     ty += 14;
@@ -5559,6 +5565,7 @@ function drawDetailPanel(n) {
     linkY += 20;
   }
 
+  drawPanelLink(voiceTalkUrl(n.id, n.label), "Talk about this");
   if (primaryUrl) {
     drawPanelLink(primaryUrl, n.linkLabel || "Open external link ↗");
   }
