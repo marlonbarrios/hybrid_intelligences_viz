@@ -355,7 +355,7 @@ function printCoverHtml(cover) {
   <section class="print-cover" aria-hidden="true">
     <p class="project">Hybrid Intelligences</p>
     <p class="tagline">Embodied Leadership and Creativity in the Era of AI</p>
-    <p class="impact">A hybrid dynamic knowledge architecture of concepts, essays, documentation, visualization, and program materials for embodied leadership and creativity in the era of AI.</p>
+    <p class="impact">A hybrid dynamic knowledge architecture of concepts, essays, documentation, visualization, conversational AI, and program materials for embodied leadership and creativity in the era of AI.</p>
     <p class="essay-label">${cover.essayLabel}</p>
     <h1>${cover.title}</h1>
     <p class="byline">${cover.byline}</p>
@@ -373,7 +373,7 @@ function printCoverHtml(cover) {
       <dt>Document type</dt>
       <dd>Program essay · PDF export from the Hybrid Intelligences site</dd>
       <dt>Related materials</dt>
-      <dd>Conceptual network · Ontology (JSON-LD / Turtle / OWL) · Video highlights · Synthetic Podcast (NotebookLM) · Slides (Creative B sessions, summer 2026) · Canvas · My Pendular Umwelt</dd>
+      <dd>Conceptual network · Ontology (JSON-LD / Turtle / OWL) · Conversational AI (Voice) · Video highlights · Synthetic Podcast (NotebookLM) · Slides (Creative B sessions, summer 2026) · Canvas · My Pendular Umwelt</dd>
     </dl>
   </section>
 `;

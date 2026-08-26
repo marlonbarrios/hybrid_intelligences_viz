@@ -1046,9 +1046,12 @@ const NODES = [
     desc: "Spatial and material practice—shaping rooms, interfaces, prototypes, and infrastructures that choreograph attention, movement, and encounter. Design here is not styling after the fact; it is composing conditions under which hybrid cognition can happen." },
   { id: "philosophical_practice", label: "Philosophical\nPractice", cat: "practice",   weight: 1.4,
     desc: "Philosophical thinking as a lived method—questioning concepts, testing distinctions, staying with ambivalence, and refining vocabulary through dialogue, reading, and writing. Not only a domain of theory, but a practice of inquiry that clarifies agency, embodiment, and world-making in the era of AI." },
+  { id: "conversational_ai",  label: "Conversational\nAI",            cat: "practice",   weight: 1.55,
+    desc: "The spoken companion for Hybrid Intelligences—a chatbot grounded in the program ontology. Voice is one layer of a hybrid dynamic knowledge architecture of concepts, essays, documentation, visualization, conversational AI, and program materials for embodied leadership and creativity in the era of AI. It explains concepts from their definitions and relations, can be interrupted, and opens from Talk about this on any node.",
+    url: "voice.html", linkLabel: "Open Voice →" },
 
   { id: "hi_program",         label: "Hybrid Intelligences\nProgram", cat: "program",  weight: 2.2,
-    desc: "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI — a University of Florida Creative B program, July 13–30, 2026. Co-led by Marlon Barrios Solano and Erika Moore; hosted by CAME and CAM in the College of the Arts, in partnership with IGNITE at the Wertheim Laboratory. Three tracks: Space & Memory (Mondays), Future Lab (Wednesdays), and Ethics & Leadership (Thursdays), closing with a public reception. The program treats intelligence as coupling across bodies, tools, institutions, and worlds, and rehearses hybrid cognition through embodiment, ethics, and creative practice.",
+    desc: "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI — a University of Florida Creative B program, July 13–30, 2026. Co-led by Marlon Barrios Solano and Erika Moore; hosted by CAME and CAM in the College of the Arts, in partnership with IGNITE at the Wertheim Laboratory. Three tracks: Space & Memory (Mondays), Future Lab (Wednesdays), and Ethics & Leadership (Thursdays), closing with a public reception. The program treats intelligence as coupling across bodies, tools, institutions, and worlds, and rehearses hybrid cognition through embodiment, ethics, and creative practice. Its public site is a hybrid dynamic knowledge architecture of concepts, essays, documentation, visualization, conversational AI, and program materials.",
     url: "https://ufl.instructure.com/courses/574408", linkLabel: "Canvas course ↗" },
   { id: "track_space",        label: "Track 1\nSpace & Memory",       cat: "program",  weight: 1.5,
     desc: "Mondays 12:30–3:15 — AI, space, memory, and embodiment. Jul 13: Karla Saldaña Ochoa · Jul 20: Onye Ozuzu · Jul 27: Corey Cheval." },
@@ -1350,6 +1353,7 @@ const WIKIPEDIA = {
   literacies: "Literacy",
   arch_design: "Architectural_design",
   philosophical_practice: "Philosophy",
+  conversational_ai: "Chatbot",
   hi_program: "Cognitive_science",
   came: "Entrepreneurship",
   cam: "Arts_in_health",
@@ -3520,10 +3524,20 @@ const EDGES = [
   ["hi_program", "track_future", 0.85],
   ["hi_program", "track_ethics", 0.85],
   ["hi_program", "reception", 0.85],
+  ["hi_program", "conversational_ai", 0.9],
   ["hi_program", "marlon", 0.95],
   ["marlon", "came", 0.95],
   ["marlon", "cota", 0.9],
   ["hi_program", "erika", 0.9],
+  ["conversational_ai", "hybrid", 0.9],
+  ["conversational_ai", "coupling", 0.85],
+  ["conversational_ai", "llm", 0.9],
+  ["conversational_ai", "ai", 0.85],
+  ["conversational_ai", "extended", 0.8],
+  ["conversational_ai", "mediation", 0.8],
+  ["conversational_ai", "literacies", 0.8],
+  ["conversational_ai", "creative", 0.8],
+  ["conversational_ai", "marlon", 0.85],
   ["cota", "came", 0.95],
   ["cota", "cam", 0.95],
   ["cota", "art", 0.85],
@@ -5171,7 +5185,7 @@ function drawUI() {
   textSize(8);
   fill(...t.subtitle);
   text(
-    "A hybrid dynamic knowledge architecture of concepts, essays, documentation, visualization, and program materials for embodied leadership and creativity in the era of AI.",
+    "A hybrid dynamic knowledge architecture of concepts, essays, documentation, visualization, conversational AI, and program materials for embodied leadership and creativity in the era of AI.",
     headerTextX,
     41
   );

@@ -53,8 +53,8 @@
       },
       "dc:date": "2026-08-26",
       "owl:versionInfo": "1.0.0",
-      "hi:nodeCount": 225,
-      "hi:edgeCount": 2262
+      "hi:nodeCount": 226,
+      "hi:edgeCount": 2272
     },
     {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme",
@@ -211,7 +211,7 @@
         "hi:Category"
       ],
       "skos:prefLabel": "Practices",
-      "skos:definition": "Methods and habits—rehearsal, somatics, pedagogy, cultural critique.",
+      "skos:definition": "Methods and habits—rehearsal, somatics, pedagogy, cultural critique, and conversational AI as a way of thinking with the ontology.",
       "skos:inScheme": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
       },
@@ -11807,13 +11807,70 @@
       ]
     },
     {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#conversational_ai",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Conversational AI",
+      "skos:definition": "The spoken companion for Hybrid Intelligences—a chatbot grounded in the program ontology. Voice is one layer of a hybrid dynamic knowledge architecture of concepts, essays, documentation, visualization, conversational AI, and program materials for embodied leadership and creativity in the era of AI. It explains concepts from their definitions and relations, can be interrupted, and opens from Talk about this on any node.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "practice",
+      "hi:weight": 1.55,
+      "schema:url": "voice.html",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Chatbot",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hybrid",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#llm",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#extended",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#mediation",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#literacies",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#marlon",
+          "hi:strength": 0.85
+        }
+      ]
+    },
+    {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_program",
       "@type": [
         "skos:Concept",
         "hi:NetworkNode"
       ],
       "skos:prefLabel": "Hybrid Intelligences Program",
-      "skos:definition": "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI — a University of Florida Creative B program, July 13–30, 2026. Co-led by Marlon Barrios Solano and Erika Moore; hosted by CAME and CAM in the College of the Arts, in partnership with IGNITE at the Wertheim Laboratory. Three tracks: Space & Memory (Mondays), Future Lab (Wednesdays), and Ethics & Leadership (Thursdays), closing with a public reception. The program treats intelligence as coupling across bodies, tools, institutions, and worlds, and rehearses hybrid cognition through embodiment, ethics, and creative practice.",
+      "skos:definition": "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI — a University of Florida Creative B program, July 13–30, 2026. Co-led by Marlon Barrios Solano and Erika Moore; hosted by CAME and CAM in the College of the Arts, in partnership with IGNITE at the Wertheim Laboratory. Three tracks: Space & Memory (Mondays), Future Lab (Wednesdays), and Ethics & Leadership (Thursdays), closing with a public reception. The program treats intelligence as coupling across bodies, tools, institutions, and worlds, and rehearses hybrid cognition through embodiment, ethics, and creative practice. Its public site is a hybrid dynamic knowledge architecture of concepts, essays, documentation, visualization, conversational AI, and program materials.",
       "skos:broader": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/program"
       },
@@ -11888,6 +11945,10 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#reception",
           "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#conversational_ai",
+          "hi:strength": 0.9
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#marlon",

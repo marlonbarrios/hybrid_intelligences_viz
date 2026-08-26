@@ -11,8 +11,8 @@
   rdfs:label "Hybrid Intelligences Ontology" ;
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   owl:versionInfo "1.0.0" ;
-  hi:nodeCount "225"^^xsd:integer ;
-  hi:edgeCount "2262"^^xsd:integer .
+  hi:nodeCount "226"^^xsd:integer ;
+  hi:edgeCount "2272"^^xsd:integer .
 
 hi:scheme a skos:ConceptScheme ;
   skos:prefLabel "Hybrid Intelligences Concept Scheme" ;
@@ -68,7 +68,7 @@ hi:category/facilitator a skos:Concept, hi:Category ;
 
 hi:category/practice a skos:Concept, hi:Category ;
   skos:prefLabel "Practices" ;
-  skos:definition "Methods and habits—rehearsal, somatics, pedagogy, cultural critique." ;
+  skos:definition "Methods and habits—rehearsal, somatics, pedagogy, cultural critique, and conversational AI as a way of thinking with the ontology." ;
   skos:inScheme hi:scheme ;
   skos:topConceptOf hi:scheme ;
   hi:ringFraction "0.51"^^xsd:decimal ;
@@ -2147,9 +2147,21 @@ hi:philosophical_practice a skos:Concept, hi:NetworkNode ;
   schema:sameAs <https://en.wikipedia.org/wiki/Philosophy>
  .
 
+hi:conversational_ai a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Conversational AI" ;
+  skos:definition "The spoken companion for Hybrid Intelligences—a chatbot grounded in the program ontology. Voice is one layer of a hybrid dynamic knowledge architecture of concepts, essays, documentation, visualization, conversational AI, and program materials for embodied leadership and creativity in the era of AI. It explains concepts from their definitions and relations, can be interrupted, and opens from Talk about this on any node." ;
+  skos:broader hi:category/practice ;
+  skos:inScheme hi:scheme ;
+  hi:category "practice" ;
+  hi:weight "1.55"^^xsd:decimal
+ ;
+  schema:url <voice.html> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Chatbot>
+ .
+
 hi:hi_program a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Hybrid Intelligences Program" ;
-  skos:definition "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI — a University of Florida Creative B program, July 13–30, 2026. Co-led by Marlon Barrios Solano and Erika Moore; hosted by CAME and CAM in the College of the Arts, in partnership with IGNITE at the Wertheim Laboratory. Three tracks: Space & Memory (Mondays), Future Lab (Wednesdays), and Ethics & Leadership (Thursdays), closing with a public reception. The program treats intelligence as coupling across bodies, tools, institutions, and worlds, and rehearses hybrid cognition through embodiment, ethics, and creative practice." ;
+  skos:definition "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI — a University of Florida Creative B program, July 13–30, 2026. Co-led by Marlon Barrios Solano and Erika Moore; hosted by CAME and CAM in the College of the Arts, in partnership with IGNITE at the Wertheim Laboratory. Three tracks: Space & Memory (Mondays), Future Lab (Wednesdays), and Ethics & Leadership (Thursdays), closing with a public reception. The program treats intelligence as coupling across bodies, tools, institutions, and worlds, and rehearses hybrid cognition through embodiment, ethics, and creative practice. Its public site is a hybrid dynamic knowledge architecture of concepts, essays, documentation, visualization, conversational AI, and program materials." ;
   skos:broader hi:category/program ;
   skos:inScheme hi:scheme ;
   hi:category "program" ;
@@ -14740,6 +14752,12 @@ hi:rel-hi_program-reception a hi:Relation ;
   hi:strength "0.85"^^xsd:decimal ;
   skos:relatedMatch hi:reception .
 
+hi:rel-hi_program-conversational_ai a hi:Relation ;
+  hi:source hi:hi_program ;
+  hi:target hi:conversational_ai ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:conversational_ai .
+
 hi:rel-hi_program-marlon a hi:Relation ;
   hi:source hi:hi_program ;
   hi:target hi:marlon ;
@@ -14763,6 +14781,60 @@ hi:rel-hi_program-erika a hi:Relation ;
   hi:target hi:erika ;
   hi:strength "0.9"^^xsd:decimal ;
   skos:relatedMatch hi:erika .
+
+hi:rel-conversational_ai-hybrid a hi:Relation ;
+  hi:source hi:conversational_ai ;
+  hi:target hi:hybrid ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:hybrid .
+
+hi:rel-conversational_ai-coupling a hi:Relation ;
+  hi:source hi:conversational_ai ;
+  hi:target hi:coupling ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:coupling .
+
+hi:rel-conversational_ai-llm a hi:Relation ;
+  hi:source hi:conversational_ai ;
+  hi:target hi:llm ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:llm .
+
+hi:rel-conversational_ai-ai a hi:Relation ;
+  hi:source hi:conversational_ai ;
+  hi:target hi:ai ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-conversational_ai-extended a hi:Relation ;
+  hi:source hi:conversational_ai ;
+  hi:target hi:extended ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:extended .
+
+hi:rel-conversational_ai-mediation a hi:Relation ;
+  hi:source hi:conversational_ai ;
+  hi:target hi:mediation ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:mediation .
+
+hi:rel-conversational_ai-literacies a hi:Relation ;
+  hi:source hi:conversational_ai ;
+  hi:target hi:literacies ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:literacies .
+
+hi:rel-conversational_ai-creative a hi:Relation ;
+  hi:source hi:conversational_ai ;
+  hi:target hi:creative ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:creative .
+
+hi:rel-conversational_ai-marlon a hi:Relation ;
+  hi:source hi:conversational_ai ;
+  hi:target hi:marlon ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:marlon .
 
 hi:rel-cota-came a hi:Relation ;
   hi:source hi:cota ;

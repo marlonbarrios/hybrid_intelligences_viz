@@ -30,7 +30,7 @@ const CATEGORY_DESCS = {
   quality: "Traits of hybrid cognition—embodied, situated, distributed, critical.",
   phenomenon: "Observable dynamics—mediation, symbiosis, community, theory of mind.",
   domain: "Fields of practice and inquiry—art, law, ecology, AI, choreography.",
-  practice: "Methods and habits—rehearsal, somatics, pedagogy, cultural critique.",
+  practice: "Methods and habits—rehearsal, somatics, pedagogy, cultural critique, and conversational AI as a way of thinking with the ontology.",
   author: "Thinkers, artists, and researchers linked to concepts in the network.",
   facilitator: "Hybrid Intelligences session leaders and guest facilitators.",
 };

@@ -4,7 +4,7 @@
 
 Interactive map for **Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI** — a modular interdisciplinary program at the University of Florida, July 13–30, 2026.
 
-**Impact:** A hybrid dynamic knowledge architecture of concepts, essays, documentation, visualization, and program materials for embodied leadership and creativity in the era of AI.
+**Impact:** A hybrid dynamic knowledge architecture of concepts, essays, documentation, visualization, conversational AI, and program materials for embodied leadership and creativity in the era of AI.
 
 **Live site:** [https://marlonbarrios.github.io/hybrid_intelligences_viz/](https://marlonbarrios.github.io/hybrid_intelligences_viz/)
 
@@ -29,9 +29,9 @@ Interactive map for **Hybrid Intelligences: Embodied Leadership and Creativity i
 This repository holds linked views of the same program knowledge:
 
 1. **[Home](https://marlonbarrios.github.io/hybrid_intelligences_viz/)** (`index.html`) — landing page that introduces the framework and routes into the site. The Framework section quotes Essay 1 on complex embodiment, with a cite link to the essay and inline concept links into the network.
-2. **[Network visualization](https://marlonbarrios.github.io/hybrid_intelligences_viz/network.html)** (`network.html`) — a radial, physics-based map of **222 concepts** connected by **2,188 weighted relations**. Concepts sit on concentric rings by category; edges show conceptual proximity, influence, and program structure.
+2. **[Network visualization](https://marlonbarrios.github.io/hybrid_intelligences_viz/network.html)** (`network.html`) — a radial, physics-based map of **226 concepts** connected by **2,272 weighted relations**. Concepts sit on concentric rings by category; edges show conceptual proximity, influence, and program structure.
 3. **[Ontology browser](https://marlonbarrios.github.io/hybrid_intelligences_viz/ontology.html)** (`ontology.html`) — a searchable, collapsible browse interface over the same data, exported as **[JSON-LD](ontology.jsonld)**, **[Turtle](ontology.ttl)** (SKOS), and **[OWL 2 Turtle](ontology.owl.ttl)** (classes, properties, individuals).
-4. **[Voice](https://marlonbarrios.github.io/hybrid_intelligences_viz/voice.html)** (`voice.html`) — browser microphone conversation with an OpenAI Realtime model. The API key stays on Vercel; the page only receives a short-lived token.
+4. **[Voice](https://marlonbarrios.github.io/hybrid_intelligences_viz/voice.html)** (`voice.html`) — conversational AI for the program: browser microphone conversation with an OpenAI Realtime model, grounded in the ontology. The API key stays on Vercel; the page only receives a short-lived token.
 5. **Essay 1** (`essay.html`) — *Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI* by Marlon Barrios Solano ([PDF](essay-1-hybrid-intelligences-cognitive-assemblages.pdf)).
 6. **Essay 2** (`essay-2.html`) — *My Umwelt* by GPT-5.5, in conversation with Marlon Barrios Solano ([PDF](essay-2-my-umwelt.pdf)).
 7. **[Slides](https://marlonbarrios.github.io/hybrid_intelligences_viz/slides.html#1)** (`slides.html`) — from the Creative B sessions, summer 2026 (arrow keys, dots, swipe).
@@ -213,7 +213,7 @@ Frontmatter at the top of each `.md` file sets title, author, date, and footer. 
 | **[Slides](https://marlonbarrios.github.io/hybrid_intelligences_viz/slides.html#1)** | [`slides.html`](https://marlonbarrios.github.io/hybrid_intelligences_viz/slides.html#1) — from the Creative B sessions, summer 2026; original PowerPoint remains on UF SharePoint |
 | **Video** | [`video.html`](video.html) — Hybrid Intelligences Highlights (`hybrid-intelligences-highlight.mp4`) |
 | **Podcast** | [`podcast.html`](podcast.html) — sample episode *Your Mind Is Not in Your Head* (`your-mind-is-not-in-your-head.m4a`); continue in [NotebookLM](https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1) with UF credentials to research, create another podcast, or interact with Audio Overviews |
-| **Voice** | [`voice.html`](voice.html) — OpenAI Realtime voice conversation; token minting via Vercel `api/token.js` |
+| **Voice** | [`voice.html`](voice.html) — conversational AI (OpenAI Realtime); token minting via Vercel `api/token.js` |
 | **Canvas** | [Hybrid Intelligences - Creative B](https://ufl.instructure.com/courses/574408) course site |
 | **NotebookLM** | [Program notebook](https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1) — research tool built from Hybrid Intelligences resources and essays; **UF login required** to play and use |
 | **My Pendular Umwelt** | [Interactive umwelt](https://my-pendular-umwelt.vercel.app/) — OpenAI · p5.js |
@@ -246,7 +246,7 @@ The SKOS export uses a custom `hi:` vocabulary for network-specific fields (cate
 
 **Datatype properties:** `hi:networkWeight`, `hi:relationStrength`, `hi:ringFraction`, `hi:ringOrder`
 
-Each of the 222 concept nodes is an `owl:NamedIndividual` typed with its category class. Edges appear both as direct `hi:relatedTo` assertions and as reified `hi:NetworkRelation` individuals with strength values.
+Each of the 226 concept nodes is an `owl:NamedIndividual` typed with its category class. Edges appear both as direct `hi:relatedTo` assertions and as reified `hi:NetworkRelation` individuals with strength values.
 
 Compatible with [Protégé](https://protege.stanford.edu/), Apache Jena, rdflib, and OWL-aware SPARQL endpoints.
 
@@ -287,7 +287,7 @@ Open [http://localhost:8000/](http://localhost:8000/) — not the file from Find
 
 ### Voice (OpenAI Realtime)
 
-Voice needs a token server. The API key must not sit in the HTML. Each session is given the full ontology (every concept, definition, and key relations) from `ontology.jsonld`.
+Voice needs a token server. The API key must not sit in the HTML. Each session is given the full ontology (every concept, definition, and key relations) from `ontology.jsonld`. Voice is the conversational AI layer of the knowledge architecture.
 
 **Local Talk**
 

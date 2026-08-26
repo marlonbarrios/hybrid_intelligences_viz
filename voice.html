@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hybrid Intelligences — Voice</title>
-  <meta name="description" content="Realtime voice conversation with Hybrid Intelligences, using an OpenAI Realtime model.">
+  <meta name="description" content="Conversational AI for Hybrid Intelligences — a spoken companion grounded in the program ontology, one layer of a hybrid dynamic knowledge architecture of concepts, essays, documentation, visualization, conversational AI, and program materials.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
   <style>
@@ -295,8 +295,8 @@
       </a>
       <div class="brand-copy">
         <p class="eyebrow">Voice</p>
-        <h1>Realtime conversation</h1>
-        <p class="meta">Hybrid Intelligences · OpenAI Realtime · microphone in the browser</p>
+        <h1>Conversational AI</h1>
+        <p class="meta">Hybrid Intelligences · ontology-grounded companion · OpenAI Realtime</p>
       </div>
     </div>
     <div class="header-row">
@@ -321,7 +321,7 @@
 
   <main>
     <section class="panel">
-      <p class="show">Speak with the program</p>
+      <p class="show">Speak with the architecture</p>
       <h2>Talk with Hybrid Intelligences</h2>
       <div class="controls">
         <button type="button" id="talkBtn">Talk</button>
@@ -338,8 +338,9 @@
       </form>
     </section>
     <p class="caption">
-      Press <strong>Talk</strong> and allow the microphone. The voice greets you as soon as it is live; you can interrupt it at any time.
-      It is grounded in the Hybrid Intelligences ontology. Your API key stays on the server; this page only receives a short-lived token.
+      Press <strong>Talk</strong> and allow the microphone. This conversational AI greets you as soon as it is live; you can interrupt it at any time.
+      It is one layer of the Hybrid Intelligences knowledge architecture, grounded in the ontology of concepts, essays, documentation, visualization, and program materials.
+      Your API key stays on the server; this page only receives a short-lived token.
       Use <strong>PDF ↓</strong> to save the transcript.
     </p>
   </main>
@@ -468,10 +469,10 @@
         if (cat) text += "Category: " + cat + "\n";
         if (topic.definition) text += "Definition: " + topic.definition + "\n";
         if (topic.related && topic.related.length) text += "Related: " + topic.related.join(", ") + "\n";
-        text += "Speak in a few short sentences about what this is, grounded in that definition. If it is the program, say what Hybrid Intelligences is, who leads it, when and where it happens, and how it is organized. Mention one or two related concepts if useful. Then invite them to go deeper or change the subject. Stop and listen. If they start speaking while you talk, stop immediately.";
+        text += "Speak in a few short sentences about what this is, grounded in that definition. If it is the program, say what Hybrid Intelligences is, who leads it, when and where it happens, how it is organized, and that the public site includes conversational AI among concepts, essays, documentation, visualization, and program materials. If it is Conversational AI, say that you are that spoken companion, grounded in the ontology. Mention one or two related concepts if useful. Then invite them to go deeper or change the subject. Stop and listen. If they start speaking while you talk, stop immediately.";
         return text;
       }
-      return "The listener just connected. Speak first, in one short spoken sentence, so they know you are live. Welcome them to Hybrid Intelligences and invite them to talk — for example 'Welcome to Hybrid Intelligences. How can I help you?' or a similarly warm, informal line. Then stop and wait. If they start speaking while you greet them, stop immediately.";
+      return "The listener just connected. Speak first, in one short spoken sentence, so they know you are live. Welcome them to Hybrid Intelligences as the conversational AI for this knowledge architecture and invite them to talk — for example 'Welcome to Hybrid Intelligences. How can I help you?' Then stop and wait. If they start speaking while you greet them, stop immediately.";
     }
 
     function setStatus(text, isError) {
