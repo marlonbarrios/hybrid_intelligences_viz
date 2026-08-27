@@ -13,8 +13,8 @@
   dc:description "OWL 2 ontology of concepts, categories, and weighted relations from the Hybrid Intelligences program." ;
   owl:versionInfo "1.0.0" ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  hi:nodeCount "226"^^xsd:integer ;
-  hi:edgeCount "2272"^^xsd:integer .
+  hi:nodeCount "227"^^xsd:integer ;
+  hi:edgeCount "2282"^^xsd:integer .
 
 hi:Concept a owl:Class ;
   rdfs:label "Concept"@en ;
@@ -2734,6 +2734,19 @@ hi:conversational_ai a owl:NamedIndividual, hi:PracticeConcept ;
   schema:sameAs <https://en.wikipedia.org/wiki/Chatbot>
  .
 
+hi:pendular_umwelt a owl:NamedIndividual, hi:PracticeConcept ;
+  rdfs:label "My Pendular Umwelt"@en ;
+  skos:prefLabel "My Pendular Umwelt"@en ;
+  skos:definition "Speculative web work by Marlon Barrios Solano, developed during the open labs of the inaugural Hybrid Intelligences program, July 2026. GPT-4o writes from a proposed computational Umwelt and reads aloud; p5.js pendulums inscribe the words along branching trails — folds of speed and path that poetically stage a large language model’s possible world (a Latentwelt of tokens, embeddings, and continuations) rather than a still map. The work lets a model self-report an Umwelt while physics and type refuse to keep that speech still."@en ;
+  skos:broader hi:category/practice ;
+  hi:inCategory hi:category/practice ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.5"^^xsd:decimal
+ ;
+  schema:url <pendular-umwelt.html>
+ .
+
 hi:hi_program a owl:NamedIndividual, hi:ProgramConcept ;
   rdfs:label "Hybrid Intelligences Program"@en ;
   skos:prefLabel "Hybrid Intelligences Program"@en ;
@@ -5433,6 +5446,16 @@ hi:conversational_ai hi:relatedTo hi:mediation .
 hi:conversational_ai hi:relatedTo hi:literacies .
 hi:conversational_ai hi:relatedTo hi:creative .
 hi:conversational_ai hi:relatedTo hi:marlon .
+hi:pendular_umwelt hi:relatedTo hi:umwelt .
+hi:pendular_umwelt hi:relatedTo hi:llm .
+hi:pendular_umwelt hi:relatedTo hi:latent_space .
+hi:pendular_umwelt hi:relatedTo hi:affordances .
+hi:pendular_umwelt hi:relatedTo hi:enactivism .
+hi:pendular_umwelt hi:relatedTo hi:uexkuell .
+hi:pendular_umwelt hi:relatedTo hi:embodiment .
+hi:pendular_umwelt hi:relatedTo hi:creative .
+hi:pendular_umwelt hi:relatedTo hi:hi_program .
+hi:pendular_umwelt hi:relatedTo hi:marlon .
 hi:cota hi:relatedTo hi:came .
 hi:cota hi:relatedTo hi:cam .
 hi:cota hi:relatedTo hi:art .
@@ -15769,6 +15792,56 @@ hi:rel-conversational_ai-marlon a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:conversational_ai ;
   hi:relationTarget hi:marlon ;
   hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-pendular_umwelt-umwelt a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:pendular_umwelt ;
+  hi:relationTarget hi:umwelt ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-pendular_umwelt-llm a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:pendular_umwelt ;
+  hi:relationTarget hi:llm ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-pendular_umwelt-latent_space a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:pendular_umwelt ;
+  hi:relationTarget hi:latent_space ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-pendular_umwelt-affordances a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:pendular_umwelt ;
+  hi:relationTarget hi:affordances ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-pendular_umwelt-enactivism a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:pendular_umwelt ;
+  hi:relationTarget hi:enactivism ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-pendular_umwelt-uexkuell a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:pendular_umwelt ;
+  hi:relationTarget hi:uexkuell ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-pendular_umwelt-embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:pendular_umwelt ;
+  hi:relationTarget hi:embodiment ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-pendular_umwelt-creative a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:pendular_umwelt ;
+  hi:relationTarget hi:creative ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-pendular_umwelt-hi_program a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:pendular_umwelt ;
+  hi:relationTarget hi:hi_program ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-pendular_umwelt-marlon a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:pendular_umwelt ;
+  hi:relationTarget hi:marlon ;
+  hi:relationStrength "0.9"^^xsd:decimal .
 
 hi:rel-cota-came a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:cota ;

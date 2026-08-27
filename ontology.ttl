@@ -11,8 +11,8 @@
   rdfs:label "Hybrid Intelligences Ontology" ;
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   owl:versionInfo "1.0.0" ;
-  hi:nodeCount "226"^^xsd:integer ;
-  hi:edgeCount "2272"^^xsd:integer .
+  hi:nodeCount "227"^^xsd:integer ;
+  hi:edgeCount "2282"^^xsd:integer .
 
 hi:scheme a skos:ConceptScheme ;
   skos:prefLabel "Hybrid Intelligences Concept Scheme" ;
@@ -2157,6 +2157,17 @@ hi:conversational_ai a skos:Concept, hi:NetworkNode ;
  ;
   schema:url <voice.html> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Chatbot>
+ .
+
+hi:pendular_umwelt a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "My Pendular Umwelt" ;
+  skos:definition "Speculative web work by Marlon Barrios Solano, developed during the open labs of the inaugural Hybrid Intelligences program, July 2026. GPT-4o writes from a proposed computational Umwelt and reads aloud; p5.js pendulums inscribe the words along branching trails — folds of speed and path that poetically stage a large language model’s possible world (a Latentwelt of tokens, embeddings, and continuations) rather than a still map. The work lets a model self-report an Umwelt while physics and type refuse to keep that speech still." ;
+  skos:broader hi:category/practice ;
+  skos:inScheme hi:scheme ;
+  hi:category "practice" ;
+  hi:weight "1.5"^^xsd:decimal
+ ;
+  schema:url <pendular-umwelt.html>
  .
 
 hi:hi_program a skos:Concept, hi:NetworkNode ;
@@ -14834,6 +14845,66 @@ hi:rel-conversational_ai-marlon a hi:Relation ;
   hi:source hi:conversational_ai ;
   hi:target hi:marlon ;
   hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:marlon .
+
+hi:rel-pendular_umwelt-umwelt a hi:Relation ;
+  hi:source hi:pendular_umwelt ;
+  hi:target hi:umwelt ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:umwelt .
+
+hi:rel-pendular_umwelt-llm a hi:Relation ;
+  hi:source hi:pendular_umwelt ;
+  hi:target hi:llm ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:llm .
+
+hi:rel-pendular_umwelt-latent_space a hi:Relation ;
+  hi:source hi:pendular_umwelt ;
+  hi:target hi:latent_space ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:latent_space .
+
+hi:rel-pendular_umwelt-affordances a hi:Relation ;
+  hi:source hi:pendular_umwelt ;
+  hi:target hi:affordances ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:affordances .
+
+hi:rel-pendular_umwelt-enactivism a hi:Relation ;
+  hi:source hi:pendular_umwelt ;
+  hi:target hi:enactivism ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:enactivism .
+
+hi:rel-pendular_umwelt-uexkuell a hi:Relation ;
+  hi:source hi:pendular_umwelt ;
+  hi:target hi:uexkuell ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:uexkuell .
+
+hi:rel-pendular_umwelt-embodiment a hi:Relation ;
+  hi:source hi:pendular_umwelt ;
+  hi:target hi:embodiment ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:embodiment .
+
+hi:rel-pendular_umwelt-creative a hi:Relation ;
+  hi:source hi:pendular_umwelt ;
+  hi:target hi:creative ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:creative .
+
+hi:rel-pendular_umwelt-hi_program a hi:Relation ;
+  hi:source hi:pendular_umwelt ;
+  hi:target hi:hi_program ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:hi_program .
+
+hi:rel-pendular_umwelt-marlon a hi:Relation ;
+  hi:source hi:pendular_umwelt ;
+  hi:target hi:marlon ;
+  hi:strength "0.9"^^xsd:decimal ;
   skos:relatedMatch hi:marlon .
 
 hi:rel-cota-came a hi:Relation ;

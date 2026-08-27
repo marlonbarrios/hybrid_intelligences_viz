@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hybrid Intelligences — My Pendular Umwelt</title>
+  <meta name="description" content="My Pendular Umwelt — a speculative p5.js work by Marlon Barrios Solano, developed during the open labs of the inaugural Hybrid Intelligences program, July 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e1018;
+      --panel: #12141e;
+      --border: #323848;
+      --title: #f4c430;
+      --text: #e8eaef;
+      --muted: #969eb0;
+      --link: #82c3ff;
+      --hover: #1a1e2a;
+      --accent: rgba(244, 196, 48, 0.12);
+      --cta-fg: #0e1018;
+    }
+    body.light-mode {
+      --bg: #fffdf8;
+      --panel: #ffffff;
+      --border: #d2d6e0;
+      --title: #a8760c;
+      --text: #202430;
+      --muted: #5a6070;
+      --link: #125599;
+      --hover: #f5f3ee;
+      --accent: rgba(168, 118, 12, 0.1);
+      --cta-fg: #fffdf8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse 90% 55% at 12% -10%, rgba(244, 196, 48, 0.07), transparent 55%),
+        radial-gradient(ellipse 70% 45% at 100% 0%, rgba(168, 140, 228, 0.06), transparent 50%),
+        var(--bg);
+      color: var(--text);
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      line-height: 1.5;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      padding: 1.25rem 1.5rem 1rem;
+      border-bottom: 1px solid var(--border);
+      background: color-mix(in srgb, var(--panel) 88%, transparent);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header .eyebrow {
+      margin: 0 0 0.4rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    header h1 {
+      margin: 0 0 0.45rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 300;
+      font-size: clamp(0.95rem, 2.4vw, 1.15rem);
+      line-height: 1.4;
+      color: var(--title);
+      max-width: 48rem;
+    }
+    header .meta {
+      margin: 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .brand-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+    .site-logo {
+      flex-shrink: 0;
+      display: block;
+      line-height: 0;
+      text-decoration: none;
+    }
+    .site-logo:hover { opacity: 0.88; text-decoration: none; }
+    .site-logo img {
+      display: block;
+      height: 88px;
+      width: auto;
+    }
+    .brand-copy { min-width: 0; }
+    .header-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 0.85rem;
+    }
+    .header-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      align-items: center;
+    }
+    .header-links a {
+      display: inline-flex;
+      align-items: center;
+    }
+    .gh-icon {
+      display: inline-block;
+      width: 0.92em;
+      height: 0.92em;
+      margin-right: 0.28em;
+      vertical-align: -0.12em;
+      background: currentColor;
+      -webkit-mask: url("github-mark.svg") center / contain no-repeat;
+      mask: url("github-mark.svg") center / contain no-repeat;
+    }
+    .theme-btn {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      padding: 0.35rem 0.55rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .theme-btn:hover { color: var(--title); border-color: var(--title); }
+    main {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 2.25rem 1.5rem 3.5rem;
+    }
+    .shot {
+      display: block;
+      margin: 0 0 0.65rem;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      line-height: 0;
+    }
+    .shot:hover { opacity: 0.94; text-decoration: none; }
+    .shot img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .shot-caption {
+      margin: 0 0 1.15rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin: 0 0 1.75rem;
+    }
+    .actions a {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.5rem 0.8rem;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      text-decoration: none;
+    }
+    .actions a.primary {
+      border-color: var(--title);
+      background: var(--title);
+      color: var(--cta-fg);
+    }
+    .actions a:hover { text-decoration: none; filter: brightness(1.06); }
+    article h2 {
+      margin: 1.75rem 0 0.65rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 400;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--title);
+    }
+    article p {
+      margin: 0 0 1rem;
+      font-family: "IBM Plex Serif", Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.62;
+    }
+    article p:last-child { margin-bottom: 0; }
+    .related {
+      margin: 2rem 0 0;
+      padding: 1.1rem 1.15rem;
+      border: 1px solid var(--border);
+      background: var(--panel);
+    }
+    .related h2 {
+      margin: 0 0 0.55rem;
+    }
+    .related p {
+      margin: 0;
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+    footer.page-foot {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand-row">
+      <a class="site-logo" href="index.html" aria-label="Hybrid Intelligences home">
+        <img src="logo.png" alt="Hybrid Intelligences">
+      </a>
+      <div class="brand-copy">
+        <p class="eyebrow">Open lab work</p>
+        <h1>My Pendular Umwelt</h1>
+        <p class="meta">Marlon Barrios Solano · open labs of the inaugural Hybrid Intelligences program · July 2026</p>
+      </div>
+    </div>
+    <div class="header-row">
+      <div class="header-links">
+        <a href="index.html">← Home</a>
+        <a href="network.html">Network</a>
+        <a href="ontology.html">Ontology</a>
+        <a href="voice.html">Voice</a>
+        <a href="essay.html">Essay 1</a>
+        <a href="essay-2.html">Essay 2</a>
+        <a href="https://ufl.instructure.com/courses/574408" target="_blank" rel="noopener noreferrer">Canvas ↗</a>
+        <a href="https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1" target="_blank" rel="noopener noreferrer">NotebookLM ↗</a>
+        <a href="podcast.html">Synthetic Podcast</a>
+        <a href="slides.html" title="From the Creative B sessions, summer 2026">Slides</a>
+        <a href="video.html">Video</a>
+        <a href="scan-qr.html">Scan QR Code</a>
+        <a href="https://github.com/marlonbarrios/hybrid_intelligences_viz" target="_blank" rel="noopener noreferrer"><span class="gh-icon" aria-hidden="true"></span>GitHub ↗</a>
+      </div>
+      <button type="button" class="theme-btn" id="themeBtn" aria-label="Toggle theme">Theme</button>
+    </div>
+  </header>
+
+  <main>
+    <a class="shot" href="https://my-pendular-umwelt.vercel.app/" target="_blank" rel="noopener noreferrer" title="Open the live application">
+      <img src="screenshots/pendular-umwelt.png" width="3208" height="1976" alt="Screenshot of My Pendular Umwelt: branching pendulum trails inscribe generated text across a light field, with language, dark mode, and sound controls.">
+    </a>
+    <p class="shot-caption">Click the image to open the live work. GPT-4o writes; OpenAI voice reads; p5.js pendulums inscribe the passage in motion.</p>
+
+    <div class="actions">
+      <a class="primary" href="https://my-pendular-umwelt.vercel.app/" target="_blank" rel="noopener noreferrer">Live application ↗</a>
+      <a href="https://github.com/marlonbarrios/my_pendular_umwelt" target="_blank" rel="noopener noreferrer">Source repository ↗</a>
+      <a href="voice.html?talk=pendular_umwelt&amp;name=My%20Pendular%20Umwelt">Talk about this</a>
+      <a href="network.html#pendular_umwelt">View in network</a>
+    </div>
+
+    <article>
+      <h2>The work</h2>
+      <p>
+        <em>My Pendular Umwelt</em> is a speculative web work by Marlon Barrios Solano.
+        It was developed during the open labs of the inaugural
+        <a href="network.html#hi_program">Hybrid Intelligences</a> program at the University of Florida,
+        in July 2026 — a Creative B gathering that treated intelligence as
+        <a href="network.html#coupling">coupling</a> across bodies, tools, institutions, and worlds.
+        The labs were a place to make, not only to discuss. This piece is one of those makings:
+        an artistic and poetic experiment in whether a
+        <a href="network.html#llm">large language model</a> can be approached as a system with a world,
+        and whether that world can be drawn rather than only described.
+      </p>
+
+      <h2>Umwelt</h2>
+      <p>
+        <a href="network.html#umwelt">Umwelt</a> is Jakob von
+        <a href="network.html#uexkuell">Uexküll</a>’s name for the lived world of a particular organism —
+        not the universe as measured from nowhere, but the slice of reality that a body’s sensing and acting
+        make significant. A tick does not inhabit a forest; it inhabits warmth, odor, and touch.
+        Different bodies, even in the same room, enact different Umwelten. That idea sits at the center of this
+        site’s <a href="ontology.html">ontology</a>, and it is worked through in
+        <a href="essay.html">Essay 1</a> and in <a href="essay-2.html">Essay 2</a> (<em>My Umwelt</em>),
+        where a model is invited to self-report: if it is a cognitive system rather than a failed human,
+        what would its world be?
+      </p>
+      <p>
+        The speculation is that an LLM’s Umwelt would not be physical. It would be semantic —
+        tokens, embeddings, context windows, probabilities, neighborhoods of meaning.
+        Essay 2 calls that companion world a <em>Latentwelt</em>: the environment disclosed by
+        <a href="network.html#latent_space">latent space</a>, whose “organs” are embeddings and whose
+        actions are continuations. <a href="network.html#affordances">Affordances</a>,
+        <a href="network.html#embodiment">embodiment</a>, and
+        <a href="network.html#enactivism">enactivism</a> belong here too. A prompt affords continuation
+        for a model the way a handle affords grasping for a hand. Cognition is not a picture of a pre-given
+        world; it is brought forth in coupling.
+      </p>
+
+      <h2>Inscription in motion</h2>
+      <p>
+        <em>My Pendular Umwelt</em> takes that theorization off the page. GPT-4o writes short passages
+        from inside a proposed computational Umwelt and reads them aloud; <strong>p5.js</strong> then
+        lets branching pendulums write the words along their trails — letter by letter, fold over fold,
+        at speeds that drift and interfere. The screen becomes a small unstable ecology: manifolds of
+        text, lines of force, dissipating generations. It does not claim to open the model’s interior.
+        It tries, speculatively, to give a visible rhythm to how such a system might inhabit possibility —
+        path-dependent, overlapping, never quite a still map.
+      </p>
+      <p>
+        That is why the work belongs with this knowledge architecture. Umwelt in the ontology is a concept;
+        here it is also a practice: an artistic way of letting a language model speak of its world while
+        physics, type, and time refuse to keep that speech still.
+      </p>
+    </article>
+
+    <aside class="related">
+      <h2>In the ontology</h2>
+      <p>
+        <a href="network.html#pendular_umwelt">My Pendular Umwelt</a> ·
+        <a href="network.html#umwelt">Umwelt</a> ·
+        <a href="network.html#uexkuell">Jakob von Uexküll</a> ·
+        <a href="network.html#llm">Large language models</a> ·
+        <a href="network.html#latent_space">Latent space</a> ·
+        <a href="network.html#affordances">Affordances</a> ·
+        <a href="network.html#enactivism">Enactivism</a> ·
+        <a href="network.html#embodiment">Embodiment</a> ·
+        <a href="essay-2.html">Essay 2 — My Umwelt</a>
+      </p>
+    </aside>
+  </main>
+
+  <footer class="page-foot">
+    Hybrid Intelligences · University of Florida · My Pendular Umwelt
+  </footer>
+
+  <script>
+    function applyTheme(mode) {
+      document.body.classList.toggle("light-mode", mode === "light");
+      localStorage.setItem("hi-theme", mode);
+    }
+
+    function initTheme() {
+      const saved = localStorage.getItem("hi-theme");
+      const mode = saved || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      applyTheme(mode);
+      document.getElementById("themeBtn").addEventListener("click", () => {
+        applyTheme(document.body.classList.contains("light-mode") ? "dark" : "light");
+      });
+    }
+
+    initTheme();
+  </script>
+</body>
+</html>
