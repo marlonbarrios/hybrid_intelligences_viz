@@ -53,8 +53,8 @@
       },
       "dc:date": "2026-08-27",
       "owl:versionInfo": "1.0.0",
-      "hi:nodeCount": 227,
-      "hi:edgeCount": 2282
+      "hi:nodeCount": 228,
+      "hi:edgeCount": 2290
     },
     {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme",
@@ -11920,6 +11920,58 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#marlon",
           "hi:strength": 0.9
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#lobby_showcase",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Lobby Showcase",
+      "skos:definition": "Works from Marlon Barrios Solano’s repertoire of AI pieces shown on the large screen in the lobby of the Herbert Wertheim Laboratory during the inaugural Hybrid Intelligences program, July 2026. Selected as relevant to the program’s concepts and practices: coupling, embodiment, latent space, hybrid bodies, and language as a moving field. The stills open All Watched Over By Machines of Loving Grace, Barely There, Wingspan, Proteans, and Semantic Tensegrities.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "practice",
+      "hi:weight": 1.4,
+      "schema:url": "showcase.html",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_program",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#wertheim",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#marlon",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#latent_space",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embodiment",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hybrid",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#pendular_umwelt",
+          "hi:strength": 0.75
         }
       ]
     },

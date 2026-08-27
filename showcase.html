@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hybrid Intelligences — Lobby showcase</title>
+  <meta name="description" content="AI works by Marlon Barrios Solano shown on the large screen in the Wertheim Laboratory lobby during the inaugural Hybrid Intelligences program, July 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e1018;
+      --panel: #12141e;
+      --border: #323848;
+      --title: #f4c430;
+      --text: #e8eaef;
+      --muted: #969eb0;
+      --link: #82c3ff;
+      --hover: #1a1e2a;
+      --accent: rgba(244, 196, 48, 0.12);
+      --cta-fg: #0e1018;
+    }
+    body.light-mode {
+      --bg: #fffdf8;
+      --panel: #ffffff;
+      --border: #d2d6e0;
+      --title: #a8760c;
+      --text: #202430;
+      --muted: #5a6070;
+      --link: #125599;
+      --hover: #f5f3ee;
+      --accent: rgba(168, 118, 12, 0.1);
+      --cta-fg: #fffdf8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse 90% 55% at 12% -10%, rgba(244, 196, 48, 0.07), transparent 55%),
+        radial-gradient(ellipse 70% 45% at 100% 0%, rgba(168, 140, 228, 0.06), transparent 50%),
+        var(--bg);
+      color: var(--text);
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      line-height: 1.5;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      padding: 1.25rem 1.5rem 1rem;
+      border-bottom: 1px solid var(--border);
+      background: color-mix(in srgb, var(--panel) 88%, transparent);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header .eyebrow {
+      margin: 0 0 0.4rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    header h1 {
+      margin: 0 0 0.45rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 300;
+      font-size: clamp(0.95rem, 2.4vw, 1.15rem);
+      line-height: 1.4;
+      color: var(--title);
+      max-width: 48rem;
+    }
+    header .meta {
+      margin: 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .brand-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+    .site-logo {
+      flex-shrink: 0;
+      display: block;
+      line-height: 0;
+      text-decoration: none;
+    }
+    .site-logo:hover { opacity: 0.88; text-decoration: none; }
+    .site-logo img {
+      display: block;
+      height: 88px;
+      width: auto;
+    }
+    .brand-copy { min-width: 0; }
+    .header-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 0.85rem;
+    }
+    .header-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      align-items: center;
+    }
+    .header-links a {
+      display: inline-flex;
+      align-items: center;
+    }
+    .gh-icon {
+      display: inline-block;
+      width: 0.92em;
+      height: 0.92em;
+      margin-right: 0.28em;
+      vertical-align: -0.12em;
+      background: currentColor;
+      -webkit-mask: url("github-mark.svg") center / contain no-repeat;
+      mask: url("github-mark.svg") center / contain no-repeat;
+    }
+    .theme-btn {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      padding: 0.35rem 0.55rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .theme-btn:hover { color: var(--title); border-color: var(--title); }
+    main {
+      max-width: 56rem;
+      margin: 0 auto;
+      padding: 2.25rem 1.5rem 3.5rem;
+    }
+    .lede {
+      max-width: 42rem;
+      margin: 0 0 1.75rem;
+    }
+    .lede p {
+      margin: 0 0 1rem;
+      font-family: "IBM Plex Serif", Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.62;
+    }
+    .lede p:last-child { margin-bottom: 0; }
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media (min-width: 820px) {
+      .gallery { grid-template-columns: 1fr 1fr; }
+      .gallery article:first-child { grid-column: 1 / -1; }
+    }
+    .work {
+      margin: 0;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      overflow: hidden;
+    }
+    .work a.shot {
+      display: block;
+      line-height: 0;
+      background: #000;
+    }
+    .work a.shot:hover { opacity: 0.94; text-decoration: none; }
+    .work img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .work .copy {
+      padding: 1rem 1.1rem 1.15rem;
+    }
+    .work h2 {
+      margin: 0 0 0.4rem;
+      font-family: "IBM Plex Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: 1.15rem;
+      line-height: 1.3;
+      color: var(--text);
+    }
+    .work p {
+      margin: 0 0 0.75rem;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+    .work .open {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+    }
+    .related {
+      margin: 2rem 0 0;
+      padding: 1.1rem 1.15rem;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      max-width: 42rem;
+    }
+    .related h2 {
+      margin: 0 0 0.55rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 400;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--title);
+    }
+    .related p {
+      margin: 0;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+    footer.page-foot {
+      max-width: 56rem;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand-row">
+      <a class="site-logo" href="index.html" aria-label="Hybrid Intelligences home">
+        <img src="logo.png" alt="Hybrid Intelligences">
+      </a>
+      <div class="brand-copy">
+        <p class="eyebrow">Showcase</p>
+        <h1>Wertheim lobby · AI works</h1>
+        <p class="meta">Marlon Barrios Solano · large screen, Herbert Wertheim Laboratory · inaugural Hybrid Intelligences program · July 2026</p>
+      </div>
+    </div>
+    <div class="header-row">
+      <div class="header-links">
+        <a href="index.html">← Home</a>
+        <a href="network.html">Network</a>
+        <a href="ontology.html">Ontology</a>
+        <a href="voice.html">Voice</a>
+        <a href="essay.html">Essay 1</a>
+        <a href="essay-2.html">Essay 2</a>
+        <a href="https://ufl.instructure.com/courses/574408" target="_blank" rel="noopener noreferrer">Canvas ↗</a>
+        <a href="https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1" target="_blank" rel="noopener noreferrer">NotebookLM ↗</a>
+        <a href="podcast.html">Synthetic Podcast</a>
+        <a href="pendular-umwelt.html">My Pendular Umwelt</a>
+        <a href="slides.html" title="From the Creative B sessions, summer 2026">Slides</a>
+        <a href="video.html">Video</a>
+        <a href="scan-qr.html">Scan QR Code</a>
+        <a href="https://github.com/marlonbarrios/hybrid_intelligences_viz" target="_blank" rel="noopener noreferrer"><span class="gh-icon" aria-hidden="true"></span>GitHub ↗</a>
+      </div>
+      <button type="button" class="theme-btn" id="themeBtn" aria-label="Toggle theme">Theme</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="lede">
+      <p>
+        During the inaugural <a href="network.html#hi_program">Hybrid Intelligences</a> program (July 2026),
+        these works from Marlon Barrios Solano’s repertoire of AI pieces were shown on the large screen
+        in the lobby of the <a href="network.html#wertheim">Herbert Wertheim Laboratory</a>.
+        They were not a side exhibition. They were chosen as relevant to the concepts and practices
+        the program was rehearsing: <a href="network.html#coupling">coupling</a>,
+        <a href="network.html#embodiment">embodiment</a>,
+        <a href="network.html#latent_space">latent space</a>,
+        <a href="network.html#hybrid">hybrid</a> bodies, and language as a moving field.
+      </p>
+      <p>
+        Click a still to open the live work — or, for <em>Proteans</em>, the video.
+      </p>
+    </div>
+
+    <section class="gallery" aria-label="Works shown in the Wertheim lobby">
+      <article class="work">
+        <a class="shot" href="https://marlonbarrios.github.io/alwatchedoverbymachinesoflovinggrace/" target="_blank" rel="noopener noreferrer">
+          <img src="screenshots/showcase-machines-of-loving-grace.png" width="2864" height="2014" alt="All Watched Over By Machines of Loving Grace: a close eye with the title set in the iris, and a line of Brautigan’s poem along the bottom.">
+        </a>
+        <div class="copy">
+          <h2>All Watched Over By Machines of Loving Grace</h2>
+          <p>
+            After Richard Brautigan’s 1967 poem: a cybernetic meadow, mammals and computers in mutual grace.
+            An eye that both watches and is written upon — a figure for technical systems that look back,
+            and for the hope (and the unease) of being held by loving machines.
+          </p>
+          <a class="open" href="https://marlonbarrios.github.io/alwatchedoverbymachinesoflovinggrace/" target="_blank" rel="noopener noreferrer">Open live work ↗</a>
+        </div>
+      </article>
+
+      <article class="work">
+        <a class="shot" href="https://marlonbarrios.github.io/barely_there/" target="_blank" rel="noopener noreferrer">
+          <img src="screenshots/showcase-barely-there.png" width="2864" height="2014" alt="Barely There: a generated face with neural overlays and a lyric about moving through latent space.">
+        </a>
+        <div class="copy">
+          <h2>Barely There</h2>
+          <p>
+            A barely-present body in a generative field. Portrait, glitch, and sung line move through
+            <a href="network.html#latent_space">latent space</a> — presence as something that can be
+            looped, solarized, automated, almost not there.
+          </p>
+          <a class="open" href="https://marlonbarrios.github.io/barely_there/" target="_blank" rel="noopener noreferrer">Open live work ↗</a>
+        </div>
+      </article>
+
+      <article class="work">
+        <a class="shot" href="https://marlonbarrios.github.io/spread_your_wings/" target="_blank" rel="noopener noreferrer">
+          <img src="screenshots/showcase-wingspan.png" width="2864" height="2014" alt="Wingspan: webcam portrait with yellow animal-like eyes and branching wing overlays across the chest.">
+        </a>
+        <div class="copy">
+          <h2>Wingspan</h2>
+          <p>
+            Webcam as coupling. The live body grows other eyes and a span of wing-like lines —
+            an embodied, more-than-human overlay that treats the camera not as a mirror but as a
+            site of hybrid becoming.
+          </p>
+          <a class="open" href="https://marlonbarrios.github.io/spread_your_wings/" target="_blank" rel="noopener noreferrer">Open live work ↗</a>
+        </div>
+      </article>
+
+      <article class="work">
+        <a class="shot" href="https://www.youtube.com/watch?v=iYiMgqiLDyU&amp;t=114s" target="_blank" rel="noopener noreferrer">
+          <img src="screenshots/showcase-proteans.png" width="3024" height="1898" alt="Proteans: a generated portrait labeled AI, with the line There is always someone for you in the future.">
+        </a>
+        <div class="copy">
+          <h2>Proteans</h2>
+          <p>
+            <em>We come from the future and want to date you.</em> Synthetic persons speak from a
+            speculative time — profile, voice, and face generated so that “someone for you” might
+            already be a model. Desire, persona, and futurity as AI social form.
+          </p>
+          <a class="open" href="https://www.youtube.com/watch?v=iYiMgqiLDyU&amp;t=114s" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>
+        </div>
+      </article>
+
+      <article class="work">
+        <a class="shot" href="https://semantic-tensegrities.vercel.app/" target="_blank" rel="noopener noreferrer">
+          <img src="screenshots/showcase-semantic-tensegrities.png" width="3208" height="1976" alt="Semantic Tensegrities: a field of language terms held by a web of thin lines and thick gestural strokes.">
+        </a>
+        <div class="copy">
+          <h2>Semantic Tensegrities</h2>
+          <p>
+            Language held in tension: words, embeddings, topology. A speculative map of how
+            syntactic and semantic patterns might form a backbone — not a still dictionary,
+            but a structure that stays up because it is pulled.
+          </p>
+          <a class="open" href="https://semantic-tensegrities.vercel.app/" target="_blank" rel="noopener noreferrer">Open live work ↗</a>
+        </div>
+      </article>
+    </section>
+
+    <aside class="related">
+      <h2>In the ontology</h2>
+      <p>
+        <a href="network.html#lobby_showcase">Lobby showcase</a> ·
+        <a href="network.html#wertheim">Wertheim Laboratory</a> ·
+        <a href="network.html#hi_program">Hybrid Intelligences Program</a> ·
+        <a href="network.html#marlon">Marlon Barrios Solano</a> ·
+        <a href="network.html#latent_space">Latent space</a> ·
+        <a href="network.html#embodiment">Embodiment</a> ·
+        <a href="network.html#hybrid">Hybrid Intelligences</a> ·
+        <a href="voice.html?talk=lobby_showcase&amp;name=Lobby%20showcase">Talk about this</a>
+      </p>
+    </aside>
+  </main>
+
+  <footer class="page-foot">
+    Hybrid Intelligences · University of Florida · Lobby showcase
+  </footer>
+
+  <script>
+    function applyTheme(mode) {
+      document.body.classList.toggle("light-mode", mode === "light");
+      localStorage.setItem("hi-theme", mode);
+    }
+
+    function initTheme() {
+      const saved = localStorage.getItem("hi-theme");
+      const mode = saved || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      applyTheme(mode);
+      document.getElementById("themeBtn").addEventListener("click", () => {
+        applyTheme(document.body.classList.contains("light-mode") ? "dark" : "light");
+      });
+    }
+
+    initTheme();
+  </script>
+</body>
+</html>

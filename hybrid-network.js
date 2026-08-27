@@ -140,6 +140,7 @@ const SLIDES_URL = "slides.html";
 const CANVAS_URL = "https://ufl.instructure.com/courses/574408";
 const NOTEBOOK_LM_URL = "https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1";
 const PENDULAR_UMWELT_URL = "pendular-umwelt.html";
+const SHOWCASE_URL = "showcase.html";
 let animateMode = false;
 let animateStep = 0;
 let animateUntil = 0;
@@ -1052,6 +1053,9 @@ const NODES = [
   { id: "pendular_umwelt",    label: "My Pendular\nUmwelt",           cat: "practice",   weight: 1.5,
     desc: "Speculative web work by Marlon Barrios Solano, developed during the open labs of the inaugural Hybrid Intelligences program, July 2026. GPT-4o writes from a proposed computational Umwelt and reads aloud; p5.js pendulums inscribe the words along branching trails — folds of speed and path that poetically stage a large language model’s possible world (a Latentwelt of tokens, embeddings, and continuations) rather than a still map. The work lets a model self-report an Umwelt while physics and type refuse to keep that speech still.",
     url: "pendular-umwelt.html", linkLabel: "Read about the work →" },
+  { id: "lobby_showcase",     label: "Lobby\nShowcase",               cat: "practice",   weight: 1.4,
+    desc: "Works from Marlon Barrios Solano’s repertoire of AI pieces shown on the large screen in the lobby of the Herbert Wertheim Laboratory during the inaugural Hybrid Intelligences program, July 2026. Selected as relevant to the program’s concepts and practices: coupling, embodiment, latent space, hybrid bodies, and language as a moving field. The stills open All Watched Over By Machines of Loving Grace, Barely There, Wingspan, Proteans, and Semantic Tensegrities.",
+    url: "showcase.html", linkLabel: "Open showcase →" },
 
   { id: "hi_program",         label: "Hybrid Intelligences\nProgram", cat: "program",  weight: 2.2,
     desc: "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI — the inaugural University of Florida Creative B program, held July 13–30, 2026. It was co-led by Marlon Barrios Solano and Erika Moore; hosted by CAME and CAM in the College of the Arts, in partnership with IGNITE at the Wertheim Laboratory. It had three tracks: Space & Memory (Mondays), Future Lab (Wednesdays), and Ethics & Leadership (Thursdays), and closed with a public reception. The program treated intelligence as coupling across bodies, tools, institutions, and worlds, and rehearsed hybrid cognition through embodiment, ethics, and creative practice. Hybrid Intelligences remains an ongoing research framework. Its public site is a hybrid dynamic knowledge architecture of concepts, essays, documentation, visualization, conversational AI, and program materials.",
@@ -3551,6 +3555,14 @@ const EDGES = [
   ["pendular_umwelt", "creative", 0.8],
   ["pendular_umwelt", "hi_program", 0.85],
   ["pendular_umwelt", "marlon", 0.9],
+  ["lobby_showcase", "hi_program", 0.9],
+  ["lobby_showcase", "wertheim", 0.95],
+  ["lobby_showcase", "marlon", 0.95],
+  ["lobby_showcase", "latent_space", 0.85],
+  ["lobby_showcase", "embodiment", 0.85],
+  ["lobby_showcase", "hybrid", 0.85],
+  ["lobby_showcase", "creative", 0.8],
+  ["lobby_showcase", "pendular_umwelt", 0.75],
   ["cota", "came", 0.95],
   ["cota", "cam", 0.95],
   ["cota", "art", 0.85],
@@ -5114,6 +5126,7 @@ function drawMobileMenu() {
     { id: "link", label: "NotebookLM \u2197", url: NOTEBOOK_LM_URL },
     { id: "link", label: "Synthetic Podcast", url: PODCAST_URL },
     { id: "link", label: "My Pendular Umwelt", url: PENDULAR_UMWELT_URL },
+    { id: "link", label: "Showcase", url: SHOWCASE_URL },
     { id: "link", label: "Slides", url: SLIDES_URL },
     { id: "link", label: "Video", url: VIDEO_URL },
     { id: "link", label: "Scan QR Code", url: SCAN_QR_URL },
@@ -5278,6 +5291,7 @@ function drawUI() {
     { url: NOTEBOOK_LM_URL, label: "NotebookLM \u2197" },
     { url: PODCAST_URL, label: "Synthetic Podcast" },
     { url: PENDULAR_UMWELT_URL, label: "My Pendular Umwelt" },
+    { url: SHOWCASE_URL, label: "Showcase" },
     { url: SLIDES_URL, label: "Slides" },
     { url: VIDEO_URL, label: "Video" },
     { url: SCAN_QR_URL, label: "Scan QR Code" },

@@ -11,8 +11,8 @@
   rdfs:label "Hybrid Intelligences Ontology" ;
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   owl:versionInfo "1.0.0" ;
-  hi:nodeCount "227"^^xsd:integer ;
-  hi:edgeCount "2282"^^xsd:integer .
+  hi:nodeCount "228"^^xsd:integer ;
+  hi:edgeCount "2290"^^xsd:integer .
 
 hi:scheme a skos:ConceptScheme ;
   skos:prefLabel "Hybrid Intelligences Concept Scheme" ;
@@ -2168,6 +2168,17 @@ hi:pendular_umwelt a skos:Concept, hi:NetworkNode ;
   hi:weight "1.5"^^xsd:decimal
  ;
   schema:url <pendular-umwelt.html>
+ .
+
+hi:lobby_showcase a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Lobby Showcase" ;
+  skos:definition "Works from Marlon Barrios Solano’s repertoire of AI pieces shown on the large screen in the lobby of the Herbert Wertheim Laboratory during the inaugural Hybrid Intelligences program, July 2026. Selected as relevant to the program’s concepts and practices: coupling, embodiment, latent space, hybrid bodies, and language as a moving field. The stills open All Watched Over By Machines of Loving Grace, Barely There, Wingspan, Proteans, and Semantic Tensegrities." ;
+  skos:broader hi:category/practice ;
+  skos:inScheme hi:scheme ;
+  hi:category "practice" ;
+  hi:weight "1.4"^^xsd:decimal
+ ;
+  schema:url <showcase.html>
  .
 
 hi:hi_program a skos:Concept, hi:NetworkNode ;
@@ -14906,6 +14917,54 @@ hi:rel-pendular_umwelt-marlon a hi:Relation ;
   hi:target hi:marlon ;
   hi:strength "0.9"^^xsd:decimal ;
   skos:relatedMatch hi:marlon .
+
+hi:rel-lobby_showcase-hi_program a hi:Relation ;
+  hi:source hi:lobby_showcase ;
+  hi:target hi:hi_program ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:hi_program .
+
+hi:rel-lobby_showcase-wertheim a hi:Relation ;
+  hi:source hi:lobby_showcase ;
+  hi:target hi:wertheim ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:wertheim .
+
+hi:rel-lobby_showcase-marlon a hi:Relation ;
+  hi:source hi:lobby_showcase ;
+  hi:target hi:marlon ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:marlon .
+
+hi:rel-lobby_showcase-latent_space a hi:Relation ;
+  hi:source hi:lobby_showcase ;
+  hi:target hi:latent_space ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:latent_space .
+
+hi:rel-lobby_showcase-embodiment a hi:Relation ;
+  hi:source hi:lobby_showcase ;
+  hi:target hi:embodiment ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:embodiment .
+
+hi:rel-lobby_showcase-hybrid a hi:Relation ;
+  hi:source hi:lobby_showcase ;
+  hi:target hi:hybrid ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:hybrid .
+
+hi:rel-lobby_showcase-creative a hi:Relation ;
+  hi:source hi:lobby_showcase ;
+  hi:target hi:creative ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:creative .
+
+hi:rel-lobby_showcase-pendular_umwelt a hi:Relation ;
+  hi:source hi:lobby_showcase ;
+  hi:target hi:pendular_umwelt ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:pendular_umwelt .
 
 hi:rel-cota-came a hi:Relation ;
   hi:source hi:cota ;
