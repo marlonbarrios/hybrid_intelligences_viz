@@ -184,13 +184,61 @@
       color: var(--cta-fg);
     }
     #talkBtn:hover { filter: brightness(1.05); }
-    #talkBtn[disabled], #stopBtn[disabled], #pdfBtn[disabled] {
+    #talkBtn[disabled], #stopBtn[disabled], #pdfBtn[disabled], #holdBtn[disabled] {
       opacity: 0.45;
       cursor: not-allowed;
     }
     #stopBtn, #pdfBtn {
       background: transparent;
       color: var(--title);
+    }
+    #holdBtn {
+      display: block;
+      width: 100%;
+      margin: 0 0 0.85rem;
+      min-height: 3.1rem;
+      border: 1px solid var(--title);
+      background: transparent;
+      color: var(--title);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.88rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-radius: 8px;
+      cursor: pointer;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-touch-callout: none;
+      touch-action: none;
+    }
+    #holdBtn.live {
+      background: var(--title);
+      color: var(--cta-fg);
+    }
+    .hold-hint {
+      margin: -0.45rem 0 0.95rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+    .how-to {
+      margin: 0 0 1rem;
+      padding: 0.75rem 0.95rem 0.75rem 1.35rem;
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--bg) 55%, var(--panel));
+      color: var(--text);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+    .how-to li { margin: 0 0 0.4rem; }
+    .how-to li:last-child { margin-bottom: 0; }
+    .how-to strong { color: var(--title); font-weight: 500; }
+    @media (pointer: coarse), (max-width: 720px) {
+      #holdBtn {
+        min-height: 5.25rem;
+        font-size: 1.05rem;
+        margin-bottom: 1rem;
+      }
     }
     .status {
       margin: 0 0 1rem;
@@ -328,7 +376,14 @@
         <button type="button" id="stopBtn" disabled>Stop</button>
         <button type="button" id="pdfBtn" disabled>PDF ↓</button>
       </div>
-      <p class="status" id="status">Ready. Allow the microphone when the browser asks.</p>
+      <button type="button" id="holdBtn" disabled aria-pressed="false">Hold to speak</button>
+      <p class="hold-hint" id="holdHint">The microphone only listens while you hold.</p>
+      <ol class="how-to">
+        <li>Press <strong>Talk</strong> and allow the microphone when the browser asks.</li>
+        <li>On a keyboard, hold <strong>Space</strong> to speak. On a phone, press and hold <strong>Hold to speak</strong>.</li>
+        <li>Release to send. Hold again if you want to interrupt or continue.</li>
+      </ol>
+      <p class="status" id="status">Ready. After Talk, hold Space on a keyboard, or Hold to speak on a phone.</p>
       <div class="log" id="log" aria-live="polite">
         <p class="empty">Transcript will appear here.</p>
       </div>
@@ -338,8 +393,8 @@
       </form>
     </section>
     <p class="caption">
-      Press <strong>Talk</strong> and allow the microphone. This conversational AI greets you as soon as it is live; you can interrupt it at any time.
-      It is one layer of the Hybrid Intelligences knowledge architecture, grounded in the ontology of concepts, essays, documentation, visualization, and program materials.
+      The microphone can only hear you while you are holding. On a keyboard that is <strong>Space</strong>; on a phone that is <strong>Hold to speak</strong>. Release to send.
+      This conversational AI is one layer of the Hybrid Intelligences knowledge architecture, grounded in the ontology of concepts, essays, documentation, visualization, and program materials.
       Your API key stays on the server; this page only receives a short-lived token.
       Use <strong>PDF ↓</strong> to save the transcript.
     </p>
@@ -367,6 +422,7 @@
 
     const talkBtn = document.getElementById("talkBtn");
     const stopBtn = document.getElementById("stopBtn");
+    const holdBtn = document.getElementById("holdBtn");
     const statusEl = document.getElementById("status");
     const logEl = document.getElementById("log");
     const textForm = document.getElementById("textForm");
@@ -382,6 +438,8 @@
     let greetingTimer = null;
     let greetingSent = false;
     let ontologyEntry = null;
+    let micLive = false;
+    let sessionLive = false;
 
     const CATEGORY_LABEL = {
       program: "Program",
@@ -460,6 +518,42 @@
       }
     }
 
+    function typingInField() {
+      const el = document.activeElement;
+      if (!el) return false;
+      const tag = (el.tagName || "").toLowerCase();
+      return tag === "input" || tag === "textarea" || tag === "select" || el.isContentEditable;
+    }
+
+    function holdHintStatus() {
+      if (window.matchMedia("(pointer: coarse)").matches || window.matchMedia("(max-width: 720px)").matches) {
+        return "Connected. Press and hold the Hold to speak button, then release to send.";
+      }
+      return "Connected. Hold Space to speak, then release. On a phone, press and hold Hold to speak.";
+    }
+
+    function setMicLive(on) {
+      const next = Boolean(on) && sessionLive && Boolean(localStream);
+      if (localStream) {
+        localStream.getAudioTracks().forEach((track) => {
+          track.enabled = next;
+        });
+      }
+      holdBtn.classList.toggle("live", next);
+      holdBtn.setAttribute("aria-pressed", next ? "true" : "false");
+      if (micLive === next) return;
+      micLive = next;
+      if (next) {
+        if (dc && dc.readyState === "open") {
+          try { dc.send(JSON.stringify({ type: "response.cancel" })); } catch (_) {}
+          try { dc.send(JSON.stringify({ type: "input_audio_buffer.clear" })); } catch (_) {}
+        }
+        setStatus("Listening. Keep holding to speak.");
+      } else if (sessionLive) {
+        setStatus(holdHintStatus());
+      }
+    }
+
     function greetingInstructions() {
       const topic = ontologyEntry || talkTopic();
       if (topic && topic.name) {
@@ -469,10 +563,10 @@
         if (cat) text += "Category: " + cat + "\n";
         if (topic.definition) text += "Definition: " + topic.definition + "\n";
         if (topic.related && topic.related.length) text += "Related: " + topic.related.join(", ") + "\n";
-        text += "Speak in a few short sentences about what this is, grounded in that definition. If it is the program, say what Hybrid Intelligences is, who leads it, when and where it happens, how it is organized, and that the public site includes conversational AI among concepts, essays, documentation, visualization, and program materials. If it is Conversational AI, say that you are that spoken companion, grounded in the ontology. Mention one or two related concepts if useful. Then invite them to go deeper or change the subject. Stop and listen. If they start speaking while you talk, stop immediately.";
+        text += "Speak in a few short sentences about what this is, grounded in that definition. If it is the program, say what Hybrid Intelligences is, who leads it, when and where it happens, how it is organized, and that the public site includes conversational AI among concepts, essays, documentation, visualization, and program materials. If it is Conversational AI, say that you are that spoken companion, grounded in the ontology. Mention one or two related concepts if useful. Then tell them how to talk with you: on a keyboard they must hold Space to speak; on a phone they press and hold Hold to speak; you can only hear them while they hold, and they release to send. Then stop and wait. If they start speaking while you talk, stop immediately.";
         return text;
       }
-      return "The listener just connected. Speak first, in one short spoken sentence, so they know you are live. Welcome them to Hybrid Intelligences as the conversational AI for this knowledge architecture and invite them to talk — for example 'Welcome to Hybrid Intelligences. How can I help you?' Then stop and wait. If they start speaking while you greet them, stop immediately.";
+      return "The listener just connected. Speak first so they know you are live. Welcome them to Hybrid Intelligences as the conversational AI for this knowledge architecture. Then tell them how to talk with you: on a keyboard they must hold Space to speak; on a phone they press and hold Hold to speak; you can only hear them while they hold, and they release to send. Keep that instruction to one short sentence. Then stop and wait. If they start speaking while you greet them, stop immediately.";
     }
 
     function setStatus(text, isError) {
@@ -540,7 +634,7 @@
       if (event.type === "session.created") {
         scheduleGreeting();
       } else if (event.type === "input_audio_buffer.speech_started") {
-        setStatus("Listening. Speak anytime — you can interrupt.");
+        if (micLive) setStatus("Listening. Keep holding to speak.");
       } else if (event.type === "conversation.item.input_audio_transcription.completed" && event.transcript) {
         addTurn("You", event.transcript);
         assistantTurn = null;
@@ -601,7 +695,7 @@
             instructions: greetingInstructions(),
           },
         }));
-        setStatus("Listening. Speak anytime — you can interrupt.");
+        setStatus(holdHintStatus());
       }, 450);
     }
 
@@ -636,9 +730,13 @@
         }
 
         localStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        localStream.getAudioTracks().forEach((track) => {
+          track.enabled = false;
+        });
         pc = new RTCPeerConnection();
         remoteAudio = document.createElement("audio");
         remoteAudio.autoplay = true;
+        remoteAudio.setAttribute("playsinline", "");
         pc.ontrack = (e) => {
           remoteAudio.srcObject = e.streams[0];
         };
@@ -672,6 +770,8 @@
         });
 
         await waitForDataChannel();
+        sessionLive = true;
+        holdBtn.disabled = false;
         setTimeout(() => {
           if (!greetingSent) scheduleGreeting();
         }, 1200);
@@ -679,9 +779,7 @@
         stopBtn.disabled = false;
         textInput.disabled = false;
         sendBtn.disabled = false;
-        setStatus(talkTopic()
-          ? "Connected. The voice will talk about " + talkTopic().name + " — speak anytime."
-          : "Connected. The voice will greet you — speak anytime.");
+        setStatus(holdHintStatus());
       } catch (err) {
         stopSession();
         setStatus(err.message || "Could not start the voice session.", true);
@@ -689,6 +787,8 @@
     }
 
     function stopSession() {
+      sessionLive = false;
+      setMicLive(false);
       if (greetingTimer) {
         clearTimeout(greetingTimer);
         greetingTimer = null;
@@ -713,6 +813,7 @@
       assistantTurn = null;
       talkBtn.disabled = false;
       stopBtn.disabled = true;
+      holdBtn.disabled = true;
       textInput.disabled = true;
       sendBtn.disabled = true;
     }
@@ -881,6 +982,41 @@
     });
     pdfBtn.addEventListener("click", downloadTranscriptPdf);
 
+    holdBtn.addEventListener("pointerdown", (e) => {
+      if (holdBtn.disabled) return;
+      e.preventDefault();
+      try { holdBtn.setPointerCapture(e.pointerId); } catch (_) {}
+      setMicLive(true);
+    });
+    holdBtn.addEventListener("pointerup", () => setMicLive(false));
+    holdBtn.addEventListener("pointercancel", () => setMicLive(false));
+    holdBtn.addEventListener("lostpointercapture", () => setMicLive(false));
+    holdBtn.addEventListener("contextmenu", (e) => e.preventDefault());
+    holdBtn.addEventListener("touchstart", (e) => {
+      if (holdBtn.disabled) return;
+      e.preventDefault();
+      setMicLive(true);
+    }, { passive: false });
+    holdBtn.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      setMicLive(false);
+    }, { passive: false });
+    holdBtn.addEventListener("touchcancel", () => setMicLive(false));
+
+    window.addEventListener("keydown", (e) => {
+      if (e.code !== "Space" && e.key !== " ") return;
+      if (!sessionLive || typingInField() || e.repeat) return;
+      e.preventDefault();
+      setMicLive(true);
+    });
+    window.addEventListener("keyup", (e) => {
+      if (e.code !== "Space" && e.key !== " ") return;
+      if (typingInField()) return;
+      e.preventDefault();
+      setMicLive(false);
+    });
+    window.addEventListener("blur", () => setMicLive(false));
+
     textForm.addEventListener("submit", (e) => {
       e.preventDefault();
       const text = textInput.value.trim();
@@ -910,14 +1046,14 @@
         const safeName = topic.name.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
         caption.innerHTML = "Press <strong>Talk</strong> and allow the microphone. The voice will start from the ontology entry for <strong>" +
           safeName +
-          "</strong>; you can interrupt it at any time. Use <strong>PDF ↓</strong> to save the transcript.";
+          "</strong>. After that, it can only hear you while you hold <strong>Space</strong> on a keyboard or <strong>Hold to speak</strong> on a phone. Release to send. Use <strong>PDF ↓</strong> to save the transcript.";
       }
     }
     if (window.location.protocol === "file:") {
       talkBtn.disabled = true;
       setStatus("This cannot run as a file. In Terminal: node local-server.js  then open http://localhost:8000/voice.html", true);
     } else if (topic) {
-      setStatus("Press Talk to hear the ontology entry for " + topic.name + ". Allow the microphone when the browser asks.");
+      setStatus("Press Talk to hear the ontology entry for " + topic.name + ". Then hold Space on a keyboard, or Hold to speak on a phone.");
       loadTalkEntry().then((entry) => {
         ontologyEntry = entry;
         if (entry && entry.name) {
@@ -926,7 +1062,7 @@
         }
       });
     } else {
-      setStatus("Ready. Allow the microphone when the browser asks.");
+      setStatus("Ready. After Talk, hold Space on a keyboard, or Hold to speak on a phone. Allow the microphone when the browser asks.");
     }
   </script>
 </body>
