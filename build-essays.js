@@ -373,7 +373,7 @@ function printCoverHtml(cover) {
       <dt>Document type</dt>
       <dd>Program essay · PDF export from the Hybrid Intelligences site</dd>
       <dt>Related materials</dt>
-      <dd>Conceptual network · Ontology (JSON-LD / Turtle / OWL) · Conversational AI (Voice) · Video highlights · Synthetic Podcast (NotebookLM) · Slides (Creative B sessions, summer 2026) · Showcase · Canvas · My Pendular Umwelt</dd>
+      <dd>Conceptual network · Ontology (JSON-LD / Turtle / OWL) · Conversational AI (Voice) · Video highlights · Synthetic Podcast · NotebookLM · Slides (Creative B sessions, summer 2026) · Showcase · Canvas · My Pendular Umwelt</dd>
     </dl>
   </section>
 `;
