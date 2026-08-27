@@ -20,9 +20,9 @@ const BASE = "https://marlonbarrios.github.io/hybrid-intelligences/ontology#";
 const DOC = "https://marlonbarrios.github.io/hybrid-intelligences/ontology";
 
 const CATEGORY_DESCS = {
-  program: "The Hybrid Intelligences program, its three tracks, and public events.",
+  program: "The inaugural Hybrid Intelligences Creative B program (July 13–30, 2026), its three tracks, and public events.",
   organization: "Host institutions and partners—College of the Arts (COA), CAME, CAM, IGNITE, Wertheim Laboratory, and Gainesville Circus Center.",
-  participant: "Cohort of the Hybrid Intelligences program—undergraduate and graduate students, UF staff, community members, alumni, and former faculty across arts, engineering, health, and media.",
+  participant: "Cohort of the inaugural Hybrid Intelligences program—undergraduate and graduate students, UF staff, community members, alumni, and former faculty across arts, engineering, health, and media.",
   background: "Formative backgrounds of the Hybrid Intelligences cohort—academic majors, professional formations, and community practices that participants bring into the room.",
   premise: "Core starting ideas—intelligence as coupling, hybrid intelligences, complex emergent embodiment, and leadership across bodies, tools, and worlds.",
   framework: "Extended conceptual models for cognition, AI, embodiment, and world-making.",

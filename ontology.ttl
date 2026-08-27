@@ -20,7 +20,7 @@ hi:scheme a skos:ConceptScheme ;
 
 hi:category/program a skos:Concept, hi:Category ;
   skos:prefLabel "Program" ;
-  skos:definition "The Hybrid Intelligences program, its three tracks, and public events." ;
+  skos:definition "The inaugural Hybrid Intelligences Creative B program (July 13–30, 2026), its three tracks, and public events." ;
   skos:inScheme hi:scheme ;
   skos:topConceptOf hi:scheme ;
   hi:ringFraction "0.09"^^xsd:decimal ;
@@ -44,7 +44,7 @@ hi:category/premise a skos:Concept, hi:Category ;
 
 hi:category/participant a skos:Concept, hi:Category ;
   skos:prefLabel "Participants" ;
-  skos:definition "Cohort of the Hybrid Intelligences program—undergraduate and graduate students, UF staff, community members, alumni, and former faculty across arts, engineering, health, and media." ;
+  skos:definition "Cohort of the inaugural Hybrid Intelligences program—undergraduate and graduate students, UF staff, community members, alumni, and former faculty across arts, engineering, health, and media." ;
   skos:inScheme hi:scheme ;
   skos:topConceptOf hi:scheme ;
   hi:ringFraction "0.3"^^xsd:decimal ;
@@ -2161,7 +2161,7 @@ hi:conversational_ai a skos:Concept, hi:NetworkNode ;
 
 hi:hi_program a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Hybrid Intelligences Program" ;
-  skos:definition "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI — a University of Florida Creative B program, July 13–30, 2026. Co-led by Marlon Barrios Solano and Erika Moore; hosted by CAME and CAM in the College of the Arts, in partnership with IGNITE at the Wertheim Laboratory. Three tracks: Space & Memory (Mondays), Future Lab (Wednesdays), and Ethics & Leadership (Thursdays), closing with a public reception. The program treats intelligence as coupling across bodies, tools, institutions, and worlds, and rehearses hybrid cognition through embodiment, ethics, and creative practice. Its public site is a hybrid dynamic knowledge architecture of concepts, essays, documentation, visualization, conversational AI, and program materials." ;
+  skos:definition "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI — the inaugural University of Florida Creative B program, held July 13–30, 2026. It was co-led by Marlon Barrios Solano and Erika Moore; hosted by CAME and CAM in the College of the Arts, in partnership with IGNITE at the Wertheim Laboratory. It had three tracks: Space & Memory (Mondays), Future Lab (Wednesdays), and Ethics & Leadership (Thursdays), and closed with a public reception. The program treated intelligence as coupling across bodies, tools, institutions, and worlds, and rehearsed hybrid cognition through embodiment, ethics, and creative practice. Hybrid Intelligences remains an ongoing research framework. Its public site is a hybrid dynamic knowledge architecture of concepts, essays, documentation, visualization, conversational AI, and program materials." ;
   skos:broader hi:category/program ;
   skos:inScheme hi:scheme ;
   hi:category "program" ;
@@ -2173,7 +2173,7 @@ hi:hi_program a skos:Concept, hi:NetworkNode ;
 
 hi:track_space a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Track 1 Space & Memory" ;
-  skos:definition "Mondays 12:30–3:15 — AI, space, memory, and embodiment. Jul 13: Karla Saldaña Ochoa · Jul 20: Onye Ozuzu · Jul 27: Corey Cheval." ;
+  skos:definition "Met Mondays 12:30–3:15 during the inaugural program (July 2026) — AI, space, memory, and embodiment. Jul 13: Karla Saldaña Ochoa · Jul 20: Onye Ozuzu · Jul 27: Corey Cheval." ;
   skos:broader hi:category/program ;
   skos:inScheme hi:scheme ;
   hi:category "program" ;
@@ -2184,7 +2184,7 @@ hi:track_space a skos:Concept, hi:NetworkNode ;
 
 hi:track_future a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Track 2 Future Lab" ;
-  skos:definition "Wednesdays 5:30–7:30 — Speculation, prototyping, and imagining alternative human–AI futures. Jul 15: Jackie Larson · Jul 22: Andrew Hix · Jul 29: Turbado Marabou — with Erika Moore." ;
+  skos:definition "Met Wednesdays 5:30–7:30 during the inaugural program (July 2026) — speculation, prototyping, and imagining alternative human–AI futures. Jul 15: Jackie Larson · Jul 22: Andrew Hix · Jul 29: Turbado Marabou — with Erika Moore." ;
   skos:broader hi:category/program ;
   skos:inScheme hi:scheme ;
   hi:category "program" ;
@@ -2195,7 +2195,7 @@ hi:track_future a skos:Concept, hi:NetworkNode ;
 
 hi:track_ethics a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Track 3 Ethics & Leadership" ;
-  skos:definition "Thursdays 12:30–3:15 — AI ethics, authorship, law, and embodied leadership. Jul 16, 23, 30 with Erika Moore, Buckner, McNealy, White." ;
+  skos:definition "Met Thursdays 12:30–3:15 during the inaugural program (July 2026) — AI ethics, authorship, law, and embodied leadership. Jul 16, 23, 30 with Erika Moore, Buckner, McNealy, White." ;
   skos:broader hi:category/program ;
   skos:inScheme hi:scheme ;
   hi:category "program" ;
@@ -2206,7 +2206,7 @@ hi:track_ethics a skos:Concept, hi:NetworkNode ;
 
 hi:reception a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Public Reception" ;
-  skos:definition "Thursday July 30 — public networking gathering to share experiments and process-based outcomes with the campus and Gainesville community." ;
+  skos:definition "Thursday July 30, 2026 — public networking gathering that closed the inaugural program, sharing experiments and process-based outcomes with the campus and Gainesville community." ;
   skos:broader hi:category/program ;
   skos:inScheme hi:scheme ;
   hi:category "program" ;
@@ -2229,7 +2229,7 @@ hi:cota a skos:Concept, hi:NetworkNode ;
 
 hi:came a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "CAME" ;
-  skos:definition "Center for Arts, Migration and Entrepreneurship — lead host institution for Hybrid Intelligences within the College of the Arts; entrepreneurship and strategic vision across arts, migration, and interdisciplinary innovation." ;
+  skos:definition "Center for Arts, Migration and Entrepreneurship — lead host of the inaugural Hybrid Intelligences program within the College of the Arts; entrepreneurship and strategic vision across arts, migration, and interdisciplinary innovation." ;
   skos:broader hi:category/organization ;
   skos:inScheme hi:scheme ;
   hi:category "organization" ;
@@ -2253,7 +2253,7 @@ hi:cam a skos:Concept, hi:NetworkNode ;
 
 hi:ignite a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "IGNITE Program" ;
-  skos:definition "Engineering Innovation Institute partnership integrating innovation leadership into the program." ;
+  skos:definition "Engineering Innovation Institute partnership that integrated innovation leadership into the inaugural program." ;
   skos:broader hi:category/organization ;
   skos:inScheme hi:scheme ;
   hi:category "organization" ;
@@ -2265,7 +2265,7 @@ hi:ignite a skos:Concept, hi:NetworkNode ;
 
 hi:wertheim a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Wertheim Laboratory" ;
-  skos:definition "Herbert Wertheim Laboratory for Engineering Excellence—Leadership Studio 370, all program activities." ;
+  skos:definition "Herbert Wertheim Laboratory for Engineering Excellence—Leadership Studio 370, where the inaugural program’s activities were held." ;
   skos:broader hi:category/organization ;
   skos:inScheme hi:scheme ;
   hi:category "organization" ;

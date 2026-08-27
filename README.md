@@ -2,7 +2,7 @@
 
 **Conceptual network visualization** by [Marlon Barrios Solano](https://marlonbarrios.github.io/)
 
-Interactive map for **Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI** — a modular interdisciplinary program at the University of Florida, July 13–30, 2026.
+Interactive map for **Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI** — the inaugural modular interdisciplinary program at the University of Florida, held July 13–30, 2026.
 
 **Impact:** A hybrid dynamic knowledge architecture of concepts, essays, documentation, visualization, conversational AI, and program materials for embodied leadership and creativity in the era of AI.
 
