@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hybrid Intelligences — Mini-pod</title>
-  <meta name="description" content="Record a three-minute Mini-pod from an ontology concept as a playable sound file, using the same Voice Realtime companion.">
+  <meta name="description" content="Record a two-and-a-half-minute Mini-pod from an ontology concept as a playable sound file, using the same Voice Realtime companion.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
   <style>
@@ -259,7 +259,7 @@
       </a>
       <div class="brand-copy">
         <p class="eyebrow">Mini-pod</p>
-        <h1>A three-minute ontology episode as a sound file</h1>
+        <h1>A two-and-a-half-minute ontology episode as a sound file</h1>
         <p class="meta">Same Voice companion · Realtime · Marin · recorded in this tab</p>
       </div>
     </div>
@@ -285,7 +285,7 @@
 
   <main>
     <p class="lede">
-      Voice talks with you. Mini-pod asks the same companion for a ~three-minute episode
+      Voice talks with you. Mini-pod asks the same companion for a ~two-and-a-half-minute episode
       on one ontology concept, records the speech, and leaves only the sound file to play back.
       No microphone. Keep this tab open until it finishes.
     </p>
@@ -346,8 +346,9 @@
       author: "Authors/Artists",
     };
 
-    const TARGET_MS = 3 * 60 * 1000;
-    const HARD_STOP_MS = TARGET_MS + 20 * 1000;
+    const TARGET_MS = 2 * 60 * 1000 + 30 * 1000;
+    const NO_MORE_TURNS_MS = 2 * 60 * 1000 + 10 * 1000;
+    const HARD_STOP_MS = 3 * 60 * 1000 + 30 * 1000;
     const MAX_CONTINUES = 8;
 
     function applyTheme(mode) {
@@ -514,14 +515,14 @@
       const name = currentLabel || currentId;
       const rel = related.length ? " Related concepts: " + related.join(", ") + "." : "";
       if (kind === "continue") {
-        return "Continue the same Mini-pod episode on " + name + " without restarting. Do not recap, greet, or ask a question. Pick up mid-thought and keep speaking until a full three-minute treatment is done.";
+        return "Continue the same Mini-pod episode on " + name + " without restarting. Do not recap, greet, or ask a question. Pick up mid-thought and keep speaking until a full two-and-a-half-minute treatment is done.";
       }
-      let text = "Record a three-minute Mini-pod on this Hybrid Intelligences ontology concept. No microphone, no questions, no greeting about how to talk.\n";
+      let text = "Record a two-and-a-half-minute Mini-pod on this Hybrid Intelligences ontology concept. No microphone, no questions, no greeting about how to talk.\n";
       text += "Name: " + name + "\n";
       if (currentCat) text += "Category: " + currentCat + "\n";
       if (currentDef) text += "Definition: " + currentDef + "\n";
       text += rel + "\n";
-      text += "Speak continuously for about three minutes. Stay with this concept. Then stop.";
+      text += "Speak continuously for about two and a half minutes. Stay with this concept. Then stop.";
       return text;
     }
 
@@ -624,11 +625,15 @@
     }
 
     function handleRealtimeEvent(event) {
-      if (event.type === "response.done" || event.type === "response.output_audio.done") {
-        if (event.type === "response.output_audio.done") return;
+      if (event.type === "response.done") {
+        const status = event.response && event.response.status;
         window.setTimeout(() => {
           if (finishing || !recording) return;
-          if (elapsed() >= TARGET_MS || continues >= MAX_CONTINUES) {
+          if (status === "cancelled" || status === "failed") {
+            finishRecording();
+            return;
+          }
+          if (elapsed() >= NO_MORE_TURNS_MS || elapsed() >= TARGET_MS || continues >= MAX_CONTINUES) {
             finishRecording();
             return;
           }
@@ -637,6 +642,12 @@
         }, 700);
       } else if (event.type === "error") {
         const msg = (event.error && event.error.message) || "Realtime session error.";
+        if (/cancel|no active response|already has an active response/i.test(msg)) return;
+        if (finishing || !recording) return;
+        if (chunks.length) {
+          finishRecording();
+          return;
+        }
         setStatus(msg, true);
       }
     }
@@ -651,7 +662,6 @@
         tickTimer = null;
       }
       if (dc) {
-        try { dc.send(JSON.stringify({ type: "response.cancel" })); } catch (_) {}
         try { dc.close(); } catch (_) {}
       }
       if (pc) {
@@ -682,16 +692,13 @@
         clearInterval(tickTimer);
         tickTimer = null;
       }
-      if (dc) {
-        try { dc.send(JSON.stringify({ type: "response.cancel" })); } catch (_) {}
-      }
       if (recorder && recorder.state === "recording") {
         try { recorder.stop(); } catch (_) {}
       }
       window.setTimeout(() => {
         teardownSession();
         recorder = null;
-      }, 400);
+      }, 800);
       document.getElementById("makeBtn").disabled = !currentId;
       document.getElementById("makeBtn").textContent = "Mini-pod";
       document.getElementById("stopBtn").hidden = true;
@@ -811,7 +818,7 @@
         return;
       }
       await loadConceptFromOntology(id, name);
-      setStatus("Press Mini-pod. Keep the tab open for about three minutes. You will hear it as it is recorded, then you can play the file.");
+      setStatus("Press Mini-pod. Keep the tab open for about two and a half minutes. You will hear it as it is recorded, then you can play the file.");
     }
 
     init();
