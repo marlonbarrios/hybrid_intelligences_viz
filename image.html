@@ -442,7 +442,7 @@
       const btn = document.getElementById("makeBtn");
       btn.disabled = true;
       btn.textContent = "Making…";
-      setStatus("Generating an abstract visualization with gpt-image-2. This can take up to a minute.");
+      setStatus("Generating an abstract visualization with gpt-image-2.");
       document.getElementById("downloadLink").hidden = true;
       try {
         const res = await fetch(imageUrl(), {
@@ -455,7 +455,11 @@
         try {
           data = JSON.parse(raw);
         } catch (_) {
-          throw new Error("No image server yet. Redeploy the Vercel project from the latest GitHub main, then try again.");
+          if (/FUNCTION_INVOCATION_TIMEOUT/i.test(raw)) {
+            throw new Error("The image took too long on the server. Try Make an image again.");
+          }
+          const snippet = raw.replace(/\s+/g, " ").trim().slice(0, 180);
+          throw new Error(snippet || "The image server did not return JSON. Redeploy Vercel from main, then try again.");
         }
         if (!res.ok || !data.image) {
           throw new Error(data.error || "Could not generate an image.");

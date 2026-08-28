@@ -103,8 +103,8 @@ module.exports = async function handler(req, res) {
       body: JSON.stringify({
         model: "gpt-image-2",
         prompt: buildImagePrompt(concept),
-        size: "1536x1024",
-        quality: "high",
+        size: "1024x1024",
+        quality: "medium",
         output_format: "png",
       }),
     });
