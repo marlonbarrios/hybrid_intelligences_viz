@@ -909,6 +909,14 @@
       return `image.html?${params.toString()}`;
     }
 
+    function podcastHref(concept) {
+      const params = new URLSearchParams({
+        id: concept.id,
+        name: concept.label,
+      });
+      return `deep-dive.html?${params.toString()}`;
+    }
+
     function renderDetail(concept) {
       const related = (relatedById[concept.id] || [])
         .map((r) => ({ ...r, concept: conceptById[r.id] }))
@@ -932,6 +940,7 @@
           <div class="actions">
             <a href="${voiceTalkHref(concept)}">Talk about this</a>
             <a href="${imageHref(concept)}">Make an image</a>
+            <a href="${podcastHref(concept)}">Make a podcast</a>
             <a href="network.html#${concept.id}">View in network ↗</a>
             ${external.join(" · ")}
           </div>

@@ -302,6 +302,7 @@
       <button type="button" id="makeBtn" disabled>Make an image</button>
       <a class="ghost btn" id="downloadLink" hidden download="hybrid-intelligences.png">Download</a>
       <a class="ghost btn" id="talkLink" hidden>Talk about this</a>
+      <a class="ghost btn" id="podcastLink" hidden>Make a podcast</a>
       <a class="ghost btn" id="ontoLink" hidden>View in ontology</a>
     </div>
     <p class="status" id="status">Choose a concept to generate a visualization.</p>
@@ -409,6 +410,9 @@
       const talk = document.getElementById("talkLink");
       talk.hidden = false;
       talk.href = "voice.html?talk=" + encodeURIComponent(id) + "&name=" + encodeURIComponent(label || id);
+      const podcast = document.getElementById("podcastLink");
+      podcast.hidden = false;
+      podcast.href = "deep-dive.html?id=" + encodeURIComponent(id) + "&name=" + encodeURIComponent(label || id);
       const onto = document.getElementById("ontoLink");
       onto.hidden = false;
       onto.href = "ontology.html#" + encodeURIComponent(id);

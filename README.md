@@ -305,6 +305,12 @@ Then open [http://localhost:8000/voice.html](http://localhost:8000/voice.html) a
 
 The Voice page on GitHub Pages calls [https://project-s4uzk.vercel.app](https://project-s4uzk.vercel.app) for tokens. Visitors only press **Talk**. Redeploy that Vercel project from `main` whenever `api/token.js`, `api/image.js`, or `ontology.jsonld` changes.
 
+### Deep dive (Voice Realtime recording)
+
+**Make a podcast** on Ontology or Network opens [`deep-dive.html`](deep-dive.html) for that concept. The same Voice token (`mode=podcast`) asks the companion for a ~three-minute spoken deep dive. This tab records that audio and shows only the sound file. No microphone. Keep the tab open until it finishes.
+
+Local: `node local-server.js`, then [http://localhost:8000/deep-dive.html?id=coupling](http://localhost:8000/deep-dive.html?id=coupling).
+
 ### Image (OpenAI)
 
 **Make an image** on Ontology or Network opens [`image.html`](image.html) for that concept. The same Vercel project (`/api/image`) builds a prompt from the ontology entry and asks OpenAI **gpt-image-2** (high quality) for an abstract information visualization. The API key never sits in the HTML.
@@ -323,6 +329,7 @@ Local: `node local-server.js`, then [http://localhost:8000/image.html?id=couplin
 | Podcast | http://localhost:8000/podcast.html |
 | Voice | http://localhost:8000/voice.html |
 | Image | http://localhost:8000/image.html |
+| Deep dive | http://localhost:8000/deep-dive.html?id=coupling |
 
 Or use the **Live Server** extension in VS Code / Cursor on `index.html`.
 
@@ -359,6 +366,7 @@ node build-essays.js --pdf
 | `slides/` | JPEG frames for the slideshow |
 | `podcast.html` | Synthetic Podcast page (NotebookLM sample + CTA) |
 | `voice.html` | Realtime voice conversation page |
+| `deep-dive.html` | Ontology deep dive: record a ~3-minute Voice episode as a sound file |
 | `image.html` | Image page: generate a still from an ontology concept |
 | `api/token.js` | Vercel function: mint OpenAI Realtime ephemeral token |
 | `api/image.js` | Vercel function: generate an ontology-grounded image |

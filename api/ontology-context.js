@@ -149,8 +149,49 @@ function ontologyInstructions(focusId) {
   return `${baseInstructions()}\n\n${focus}HYBRID INTELLIGENCES ONTOLOGY\n${digest}`;
 }
 
+function podcastBaseInstructions() {
+  return [
+    "You are recording a Hybrid Intelligences audio deep dive — a spoken essay for later playback, not a conversation.",
+    "There is no listener on a microphone. Do not greet. Do not ask questions. Do not mention Space, Hold to speak, chatting, Voice, or that you are recording.",
+    "Speak continuously in a warm, clear radio voice. Intelligence is coupling across bodies, tools, institutions, and worlds — not a thing inside a skull or a model.",
+    "Today's date is " + todayIsoDate() + ".",
+    "The inaugural Hybrid Intelligences Creative B program was held July 13–30, 2026, co-led by Marlon Barrios Solano and Erika Moore. Speak of that program, its tracks, sessions, reception, and cohort in the past tense. Hybrid Intelligences as a framework, the ontology, the essays, and the ongoing research remain in the present.",
+    "This episode should be about three minutes of uninterrupted speech. Name the focal concept, give its definition, place it in its category, walk through related concepts, and say why it matters for Hybrid Intelligences. Do not recite the whole ontology. Do not close after a short summary — stay with the idea until a full deep dive is done, then stop.",
+  ].join(" ");
+}
+
+function buildPodcastFocus(data, id) {
+  const concept = findConcept(data, id);
+  if (!concept) return "";
+  const cat = concept.category ? (CATEGORY_LABEL[concept.category] || concept.category) : "";
+  const lines = [
+    "FOCAL CONCEPT FOR THIS EPISODE",
+    "This entire recording is a deep dive into this ontology entry. Stay with it.",
+    `Name: ${concept.label}`,
+  ];
+  if (cat) lines.push(`Category: ${cat}`);
+  if (concept.definition) lines.push(`Definition: ${concept.definition}`);
+  if (concept.related.length) lines.push(`Related: ${concept.related.join(", ")}`);
+  return lines.join("\n") + "\n\n";
+}
+
+function podcastInstructions(focusId) {
+  let digest = "";
+  let focus = "";
+  try {
+    const data = loadOntology();
+    digest = buildOntologyDigest(data);
+    if (focusId) focus = buildPodcastFocus(data, focusId);
+  } catch (err) {
+    console.error("Could not load ontology.jsonld:", err.message);
+  }
+  if (!digest) return focus ? `${podcastBaseInstructions()}\n\n${focus}` : podcastBaseInstructions();
+  return `${podcastBaseInstructions()}\n\n${focus}HYBRID INTELLIGENCES ONTOLOGY\n${digest}`;
+}
+
 module.exports = {
   ontologyInstructions,
+  podcastInstructions,
   buildOntologyDigest,
   findConcept,
   loadOntology,

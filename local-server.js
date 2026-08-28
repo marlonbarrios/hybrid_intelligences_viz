@@ -5,7 +5,7 @@
  *   OPENAI_API_KEY=sk-... node local-server.js
  *   # or put OPENAI_API_KEY in a gitignored .env file
  *
- * Then open http://localhost:8000/voice.html or image.html
+ * Then open http://localhost:8000/voice.html, image.html, or deep-dive.html
  */
 
 const fs = require("fs");
@@ -147,7 +147,8 @@ server.listen(PORT, "127.0.0.1", () => {
   console.log(`Hybrid Intelligences local server: http://localhost:${PORT}/`);
   console.log(`Voice: http://localhost:${PORT}/voice.html`);
   console.log(`Image: http://localhost:${PORT}/image.html`);
+  console.log(`Deep dive: http://localhost:${PORT}/deep-dive.html?id=coupling`);
   if (!process.env.OPENAI_API_KEY) {
-    console.warn("OPENAI_API_KEY is not set. Copy .env.example to .env, or Talk / Make an image will fail until you paste a deployed Vercel URL.");
+    console.warn("OPENAI_API_KEY is not set. Copy .env.example to .env, or Talk / Make an image / Make a podcast will fail until you paste a deployed Vercel URL.");
   }
 });

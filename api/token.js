@@ -1,33 +1,48 @@
-const { ontologyInstructions } = require("./ontology-context");
+const { ontologyInstructions, podcastInstructions } = require("./ontology-context");
 
-function talkIdFromReq(req) {
-  const raw = (req.query && req.query.talk) || "";
-  if (raw) return String(raw).trim().toLowerCase().replace(/[^a-z0-9_]/g, "");
+function queryValue(req, key) {
+  if (req.query && req.query[key]) return String(req.query[key]);
   try {
     const url = new URL(req.url || "/", "http://localhost");
-    return (url.searchParams.get("talk") || "").trim().toLowerCase().replace(/[^a-z0-9_]/g, "");
+    return url.searchParams.get(key) || "";
   } catch (_) {
     return "";
   }
 }
 
-function sessionPayload(focusId) {
+function talkIdFromReq(req) {
+  return queryValue(req, "talk").trim().toLowerCase().replace(/[^a-z0-9_]/g, "");
+}
+
+function modeFromReq(req) {
+  return queryValue(req, "mode").trim().toLowerCase();
+}
+
+function sessionPayload(focusId, mode) {
+  const podcast = mode === "podcast";
   return {
     session: {
       type: "realtime",
       model: "gpt-realtime-2.1",
-      instructions: ontologyInstructions(focusId || ""),
+      instructions: podcast ? podcastInstructions(focusId || "") : ontologyInstructions(focusId || ""),
       audio: {
         input: {
           transcription: { model: "gpt-4o-mini-transcribe" },
-          turn_detection: {
-            type: "server_vad",
-            threshold: 0.5,
-            prefix_padding_ms: 300,
-            silence_duration_ms: 500,
-            create_response: true,
-            interrupt_response: true,
-          },
+          turn_detection: podcast
+            ? {
+                type: "server_vad",
+                threshold: 0.9,
+                create_response: false,
+                interrupt_response: false,
+              }
+            : {
+                type: "server_vad",
+                threshold: 0.5,
+                prefix_padding_ms: 300,
+                silence_duration_ms: 500,
+                create_response: true,
+                interrupt_response: true,
+              },
         },
         output: {
           voice: "marin",
@@ -70,7 +85,7 @@ module.exports = async function handler(req, res) {
         "Content-Type": "application/json",
         "OpenAI-Safety-Identifier": "hybrid-intelligences-viz",
       },
-      body: JSON.stringify(sessionPayload(talkIdFromReq(req))),
+      body: JSON.stringify(sessionPayload(talkIdFromReq(req), modeFromReq(req))),
     });
 
     const data = await response.json();

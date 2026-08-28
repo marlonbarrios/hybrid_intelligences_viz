@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hybrid Intelligences — Deep dive</title>
+  <meta name="description" content="Record a three-minute ontology deep dive as a playable sound file, using the same Voice Realtime companion.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e1018;
+      --panel: #12141e;
+      --border: #323848;
+      --title: #f4c430;
+      --text: #e8eaef;
+      --muted: #969eb0;
+      --link: #82c3ff;
+      --hover: #1a1e2a;
+      --accent: rgba(244, 196, 48, 0.12);
+      --cta-fg: #0e1018;
+    }
+    body.light-mode {
+      --bg: #fffdf8;
+      --panel: #ffffff;
+      --border: #d2d6e0;
+      --title: #a8760c;
+      --text: #202430;
+      --muted: #5a6070;
+      --link: #125599;
+      --hover: #f5f3ee;
+      --accent: rgba(168, 118, 12, 0.1);
+      --cta-fg: #fffdf8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse 90% 55% at 12% -10%, rgba(244, 196, 48, 0.07), transparent 55%),
+        radial-gradient(ellipse 70% 45% at 100% 0%, rgba(168, 140, 228, 0.06), transparent 50%),
+        var(--bg);
+      color: var(--text);
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      line-height: 1.5;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      padding: 1.25rem 1.5rem 1rem;
+      border-bottom: 1px solid var(--border);
+      background: color-mix(in srgb, var(--panel) 88%, transparent);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header .eyebrow {
+      margin: 0 0 0.4rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    header h1 {
+      margin: 0 0 0.45rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 300;
+      font-size: clamp(0.95rem, 2.4vw, 1.15rem);
+      line-height: 1.4;
+      color: var(--title);
+      max-width: 48rem;
+    }
+    header .meta {
+      margin: 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .brand-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+    .site-logo {
+      flex-shrink: 0;
+      display: block;
+      line-height: 0;
+      text-decoration: none;
+    }
+    .site-logo:hover { opacity: 0.88; text-decoration: none; }
+    .site-logo img {
+      display: block;
+      height: 88px;
+      width: auto;
+    }
+    .brand-copy { min-width: 0; }
+    .header-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 0.85rem;
+    }
+    .header-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      align-items: center;
+    }
+    .header-links a {
+      display: inline-flex;
+      align-items: center;
+    }
+    .gh-icon {
+      display: inline-block;
+      width: 0.92em;
+      height: 0.92em;
+      margin-right: 0.28em;
+      vertical-align: -0.12em;
+      background: currentColor;
+      -webkit-mask: url("github-mark.svg") center / contain no-repeat;
+      mask: url("github-mark.svg") center / contain no-repeat;
+    }
+    .theme-btn {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      padding: 0.35rem 0.55rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .theme-btn:hover { color: var(--title); border-color: var(--title); }
+    main {
+      max-width: 44rem;
+      margin: 0 auto;
+      padding: 2.25rem 1.5rem 3.5rem;
+    }
+    .lede {
+      margin: 0 0 1.5rem;
+      font-family: "IBM Plex Serif", Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.62;
+    }
+    .concept {
+      margin: 0 0 1.25rem;
+      padding: 1.1rem 1.15rem;
+      border: 1px solid var(--border);
+      background: var(--panel);
+    }
+    .concept .cat {
+      margin: 0 0 0.35rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--title);
+    }
+    .concept h2 {
+      margin: 0 0 0.45rem;
+      font-family: "IBM Plex Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: 1.35rem;
+      line-height: 1.3;
+    }
+    .concept p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 0.85rem;
+      align-items: center;
+      margin: 0 0 1.25rem;
+    }
+    .controls button, .controls a.btn {
+      border: 1px solid var(--border);
+      background: var(--title);
+      color: var(--cta-fg);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      padding: 0.45rem 0.75rem;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .controls button:hover, .controls a.btn:hover { opacity: 0.92; text-decoration: none; }
+    .controls button:disabled {
+      background: var(--panel);
+      color: var(--muted);
+      cursor: wait;
+    }
+    .controls a.ghost, .controls button.ghost {
+      background: transparent;
+      color: var(--link);
+    }
+    .status {
+      margin: 0 0 1rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .status.is-error { color: #e07070; }
+    .stage {
+      margin: 0 0 1.25rem;
+      padding: 1.15rem 1.2rem;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      min-height: 7rem;
+    }
+    .stage audio {
+      display: block;
+      width: 100%;
+      margin-top: 0.35rem;
+    }
+    .stage .placeholder {
+      margin: 0;
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.8rem;
+    }
+    .stage .rec-label {
+      margin: 0 0 0.55rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--title);
+    }
+    .related {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    footer.page-foot {
+      max-width: 44rem;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand-row">
+      <a class="site-logo" href="index.html" aria-label="Hybrid Intelligences home">
+        <img src="logo.png" alt="Hybrid Intelligences">
+      </a>
+      <div class="brand-copy">
+        <p class="eyebrow">Deep dive</p>
+        <h1>A three-minute ontology episode as a sound file</h1>
+        <p class="meta">Same Voice companion · Realtime · Marin · recorded in this tab</p>
+      </div>
+    </div>
+    <div class="header-row">
+      <div class="header-links">
+        <a href="index.html">← Home</a>
+        <a href="network.html">Network</a>
+        <a href="ontology.html">Ontology</a>
+        <a href="voice.html">Voice</a>
+        <a href="image.html">Image</a>
+        <a href="essay.html">Essay 1</a>
+        <a href="essay-2.html">Essay 2</a>
+        <a href="https://ufl.instructure.com/courses/574408" target="_blank" rel="noopener noreferrer">Canvas ↗</a>
+        <a href="slides.html" title="From the Creative B sessions, summer 2026">Slides</a>
+        <a href="showcase.html">Showcase</a>
+        <a href="video.html">Video</a>
+        <a href="podcast.html">Synthetic Podcast</a>
+        <a href="https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1" target="_blank" rel="noopener noreferrer">NotebookLM ↗</a>
+        <a href="scan-qr.html">Scan QR Code</a>
+        <a href="https://github.com/marlonbarrios/hybrid_intelligences_viz" target="_blank" rel="noopener noreferrer"><span class="gh-icon" aria-hidden="true"></span>GitHub ↗</a>
+      </div>
+      <button type="button" class="theme-btn" id="themeBtn" aria-label="Toggle theme">Theme</button>
+    </div>
+  </header>
+
+  <main>
+    <p class="lede">
+      Voice talks with you. This page asks the same companion for a ~three-minute deep dive
+      on one ontology concept, records the speech, and leaves only the sound file to play back.
+      No microphone. Keep this tab open until it finishes.
+    </p>
+
+    <section class="concept" id="conceptBox" hidden>
+      <p class="cat" id="conceptCat"></p>
+      <h2 id="conceptTitle">Concept</h2>
+      <p id="conceptDef"></p>
+    </section>
+
+    <p class="lede" id="emptyHint">
+      Open a concept in the <a href="ontology.html">ontology</a> or
+      <a href="network.html">network</a> and press <strong>Make a podcast</strong>.
+    </p>
+
+    <div class="controls">
+      <button type="button" id="makeBtn" disabled>Make a podcast</button>
+      <button type="button" class="ghost" id="stopBtn" hidden>Stop</button>
+      <a class="ghost btn" id="downloadLink" hidden>Download</a>
+      <a class="ghost btn" id="talkLink" hidden>Talk about this</a>
+      <a class="ghost btn" id="imageLink" hidden>Make an image</a>
+      <a class="ghost btn" id="ontoLink" hidden>View in ontology</a>
+    </div>
+    <p class="status" id="status">Choose a concept to record a deep dive.</p>
+
+    <div class="stage" id="stage">
+      <p class="placeholder" id="stageHint">The sound file will appear here.</p>
+      <p class="rec-label" id="recLabel" hidden>Episode</p>
+      <audio id="player" controls hidden></audio>
+    </div>
+
+    <p class="related">
+      The API key stays on Vercel; this page only receives a short-lived Voice token.
+      You hear the episode as it is spoken, then you can play the recording again.
+      This is not the NotebookLM Synthetic Podcast.
+    </p>
+  </main>
+
+  <footer class="page-foot">
+    Hybrid Intelligences · University of Florida · Deep dive
+  </footer>
+
+  <script src="realtime-config.js"></script>
+  <script>
+    const CATEGORY_LABEL = {
+      program: "Program",
+      organization: "Organizations",
+      premise: "Framework",
+      participant: "Participants",
+      background: "Backgrounds",
+      facilitator: "Facilitators",
+      practice: "Practices",
+      tension: "Tensions",
+      quality: "Qualities",
+      phenomenon: "Phenomena",
+      domain: "Domains",
+      framework: "Conceptual Models",
+      author: "Authors/Artists",
+    };
+
+    const TARGET_MS = 3 * 60 * 1000;
+    const HARD_STOP_MS = TARGET_MS + 20 * 1000;
+    const MAX_CONTINUES = 8;
+
+    function applyTheme(mode) {
+      document.body.classList.toggle("light-mode", mode === "light");
+      localStorage.setItem("hi-theme", mode);
+    }
+
+    function initTheme() {
+      const saved = localStorage.getItem("hi-theme");
+      const mode = saved || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      applyTheme(mode);
+      document.getElementById("themeBtn").addEventListener("click", () => {
+        applyTheme(document.body.classList.contains("light-mode") ? "dark" : "light");
+      });
+    }
+
+    function params() {
+      const q = new URLSearchParams(location.search);
+      return {
+        id: (q.get("id") || q.get("talk") || "").trim().toLowerCase().replace(/[^a-z0-9_]/g, ""),
+        name: (q.get("name") || "").trim(),
+      };
+    }
+
+    function isLocalHost() {
+      const h = location.hostname;
+      return h === "localhost" || h === "127.0.0.1";
+    }
+
+    function normalizeOrigin(value) {
+      return String(value || "").replace(/\/+$/, "");
+    }
+
+    function tokenUrl(id) {
+      if (location.protocol === "file:") return "";
+      let url;
+      if (isLocalHost() || location.hostname.endsWith("vercel.app")) url = "/api/token";
+      else {
+        const origin = normalizeOrigin(window.HI_REALTIME_ORIGIN || "https://project-s4uzk.vercel.app");
+        url = origin + "/api/token";
+      }
+      const q = new URLSearchParams({ mode: "podcast" });
+      if (id) q.set("talk", id);
+      return url + "?" + q.toString();
+    }
+
+    function localId(iri) {
+      if (!iri) return "";
+      const value = typeof iri === "string" ? iri : iri["@id"] || "";
+      const hash = value.split("#")[1] || "";
+      return hash.replace(/^category\//, "");
+    }
+
+    function textOf(value) {
+      if (!value) return "";
+      if (typeof value === "string") return value;
+      if (Array.isArray(value)) return textOf(value[0]);
+      if (typeof value === "object") return value["@value"] || "";
+      return String(value);
+    }
+
+    function formatTime(ms) {
+      const s = Math.max(0, Math.floor(ms / 1000));
+      return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0");
+    }
+
+    function recorderMime() {
+      const types = ["audio/webm;codecs=opus", "audio/webm", "audio/mp4"];
+      return types.find((type) => window.MediaRecorder && MediaRecorder.isTypeSupported(type)) || "";
+    }
+
+    function downloadExt(mime) {
+      if (mime.indexOf("mp4") !== -1) return "m4a";
+      return "webm";
+    }
+
+    let currentId = "";
+    let currentLabel = "";
+    let currentDef = "";
+    let currentCat = "";
+    let related = [];
+    let recording = false;
+    let pc = null;
+    let dc = null;
+    let silentCtx = null;
+    let remoteAudio = null;
+    let recorder = null;
+    let chunks = [];
+    let startedAt = 0;
+    let tickTimer = null;
+    let hardStopTimer = null;
+    let continues = 0;
+    let finishing = false;
+    let objectUrl = "";
+
+    function setStatus(msg, isError) {
+      const el = document.getElementById("status");
+      el.textContent = msg;
+      el.classList.toggle("is-error", !!isError);
+    }
+
+    function showConcept(id, label, definition, category, relatedLabels) {
+      currentId = id;
+      currentLabel = label || id;
+      currentDef = definition || "";
+      currentCat = category || "";
+      related = relatedLabels || [];
+      document.getElementById("emptyHint").hidden = true;
+      document.getElementById("conceptBox").hidden = false;
+      document.getElementById("conceptCat").textContent = currentCat;
+      document.getElementById("conceptTitle").textContent = currentLabel;
+      document.getElementById("conceptDef").textContent = currentDef;
+      document.getElementById("makeBtn").disabled = false;
+      const talk = document.getElementById("talkLink");
+      talk.hidden = false;
+      talk.href = "voice.html?talk=" + encodeURIComponent(id) + "&name=" + encodeURIComponent(currentLabel);
+      const image = document.getElementById("imageLink");
+      image.hidden = false;
+      image.href = "image.html?id=" + encodeURIComponent(id) + "&name=" + encodeURIComponent(currentLabel);
+      const onto = document.getElementById("ontoLink");
+      onto.hidden = false;
+      onto.href = "ontology.html#" + encodeURIComponent(id);
+    }
+
+    async function loadConceptFromOntology(id, fallbackName) {
+      try {
+        const res = await fetch("ontology.jsonld");
+        const data = await res.json();
+        const graph = data["@graph"] || [];
+        const labels = {};
+        for (const entry of graph) {
+          const nid = localId(entry["@id"]);
+          const lab = textOf(entry["skos:prefLabel"]);
+          if (nid && lab) labels[nid] = lab;
+        }
+        const item = graph.find((entry) => localId(entry["@id"]) === id);
+        if (!item) {
+          showConcept(id, fallbackName || id, "", "", []);
+          return;
+        }
+        const cat = item["hi:category"] || "";
+        const rel = [].concat(item["skos:related"] || [])
+          .map((r) => {
+            const rid = localId(r["@id"] || r);
+            return { id: rid, label: labels[rid] || rid, strength: Number(r["hi:strength"] || 0) };
+          })
+          .sort((a, b) => b.strength - a.strength)
+          .slice(0, 8)
+          .map((r) => r.label)
+          .filter(Boolean);
+        showConcept(
+          id,
+          textOf(item["skos:prefLabel"]) || fallbackName || id,
+          textOf(item["skos:definition"]),
+          CATEGORY_LABEL[cat] || cat,
+          rel
+        );
+      } catch (_) {
+        showConcept(id, fallbackName || id, "", "", []);
+      }
+    }
+
+    function episodeInstructions(kind) {
+      const name = currentLabel || currentId;
+      const rel = related.length ? " Related concepts: " + related.join(", ") + "." : "";
+      if (kind === "continue") {
+        return "Continue the same deep-dive episode on " + name + " without restarting. Do not recap, greet, or ask a question. Pick up mid-thought and keep speaking until a full three-minute treatment is done.";
+      }
+      let text = "Record a three-minute spoken deep dive on this Hybrid Intelligences ontology concept. No microphone, no questions, no greeting about how to talk.\n";
+      text += "Name: " + name + "\n";
+      if (currentCat) text += "Category: " + currentCat + "\n";
+      if (currentDef) text += "Definition: " + currentDef + "\n";
+      text += rel + "\n";
+      text += "Speak continuously for about three minutes. Stay with this concept. Then stop.";
+      return text;
+    }
+
+    function askTurn(kind) {
+      if (!dc || dc.readyState !== "open" || finishing) return;
+      dc.send(JSON.stringify({
+        type: "response.create",
+        response: { instructions: episodeInstructions(kind) },
+      }));
+    }
+
+    function elapsed() {
+      return startedAt ? Date.now() - startedAt : 0;
+    }
+
+    function updateTick() {
+      if (!recording) return;
+      setStatus("Recording " + formatTime(elapsed()) + " / ~3:00. Keep this tab open. You can stop early if you want.");
+    }
+
+    function pickMime() {
+      const mime = recorderMime();
+      if (!mime) throw new Error("This browser cannot save a sound file. Try Chrome, Edge, or a current Safari.");
+      return mime;
+    }
+
+    function startRecorder(stream) {
+      if (recorder) return;
+      const mime = pickMime();
+      chunks = [];
+      recorder = new MediaRecorder(stream, { mimeType: mime });
+      recorder.ondataavailable = (ev) => {
+        if (ev.data && ev.data.size) chunks.push(ev.data);
+      };
+      recorder.onstop = () => {
+        const blob = new Blob(chunks, { type: recorder.mimeType || mime });
+        if (objectUrl) URL.revokeObjectURL(objectUrl);
+        objectUrl = URL.createObjectURL(blob);
+        const player = document.getElementById("player");
+        player.src = objectUrl;
+        player.hidden = false;
+        document.getElementById("stageHint").hidden = true;
+        document.getElementById("recLabel").hidden = false;
+        document.getElementById("recLabel").textContent = "Episode · " + (currentLabel || currentId);
+        const dl = document.getElementById("downloadLink");
+        dl.hidden = false;
+        dl.href = objectUrl;
+        dl.download = "hybrid-intelligences-" + (currentId || "deep-dive") + "." + downloadExt(mime);
+        if (blob.size < 800) {
+          setStatus("The recording was empty. Try Make a podcast again in Chrome or a current Safari.", true);
+        } else {
+          setStatus("A sound file for " + (currentLabel || currentId) + ". Play it below.");
+        }
+      };
+      recorder.start(1000);
+    }
+
+    function silentTrack() {
+      silentCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const dest = silentCtx.createMediaStreamDestination();
+      const gain = silentCtx.createGain();
+      gain.gain.value = 0;
+      const osc = silentCtx.createOscillator();
+      osc.connect(gain);
+      gain.connect(dest);
+      osc.start();
+      return dest.stream;
+    }
+
+    function waitForDataChannel() {
+      return new Promise((resolve, reject) => {
+        if (!dc) {
+          reject(new Error("Voice channel was not created."));
+          return;
+        }
+        if (dc.readyState === "open") {
+          resolve();
+          return;
+        }
+        const timer = setTimeout(() => {
+          cleanup();
+          reject(new Error("Voice channel timed out."));
+        }, 15000);
+        function cleanup() {
+          clearTimeout(timer);
+          dc.removeEventListener("open", onOpen);
+          dc.removeEventListener("error", onError);
+        }
+        function onOpen() {
+          cleanup();
+          resolve();
+        }
+        function onError() {
+          cleanup();
+          reject(new Error("Voice channel failed."));
+        }
+        dc.addEventListener("open", onOpen);
+        dc.addEventListener("error", onError);
+      });
+    }
+
+    function handleRealtimeEvent(event) {
+      if (event.type === "response.done" || event.type === "response.output_audio.done") {
+        if (event.type === "response.output_audio.done") return;
+        window.setTimeout(() => {
+          if (finishing || !recording) return;
+          if (elapsed() >= TARGET_MS || continues >= MAX_CONTINUES) {
+            finishRecording();
+            return;
+          }
+          continues += 1;
+          askTurn("continue");
+        }, 700);
+      } else if (event.type === "error") {
+        const msg = (event.error && event.error.message) || "Realtime session error.";
+        setStatus(msg, true);
+      }
+    }
+
+    function teardownSession() {
+      if (hardStopTimer) {
+        clearTimeout(hardStopTimer);
+        hardStopTimer = null;
+      }
+      if (tickTimer) {
+        clearInterval(tickTimer);
+        tickTimer = null;
+      }
+      if (dc) {
+        try { dc.send(JSON.stringify({ type: "response.cancel" })); } catch (_) {}
+        try { dc.close(); } catch (_) {}
+      }
+      if (pc) {
+        try { pc.close(); } catch (_) {}
+      }
+      if (remoteAudio) {
+        try { remoteAudio.pause(); } catch (_) {}
+        remoteAudio.srcObject = null;
+      }
+      if (silentCtx) {
+        try { silentCtx.close(); } catch (_) {}
+      }
+      pc = null;
+      dc = null;
+      remoteAudio = null;
+      silentCtx = null;
+    }
+
+    function finishRecording() {
+      if (finishing) return;
+      finishing = true;
+      recording = false;
+      if (hardStopTimer) {
+        clearTimeout(hardStopTimer);
+        hardStopTimer = null;
+      }
+      if (tickTimer) {
+        clearInterval(tickTimer);
+        tickTimer = null;
+      }
+      if (dc) {
+        try { dc.send(JSON.stringify({ type: "response.cancel" })); } catch (_) {}
+      }
+      if (recorder && recorder.state === "recording") {
+        try { recorder.stop(); } catch (_) {}
+      }
+      window.setTimeout(() => {
+        teardownSession();
+        recorder = null;
+      }, 400);
+      document.getElementById("makeBtn").disabled = !currentId;
+      document.getElementById("makeBtn").textContent = "Make a podcast";
+      document.getElementById("stopBtn").hidden = true;
+    }
+
+    async function startRecording() {
+      if (!currentId || recording) return;
+      if (location.protocol === "file:") {
+        setStatus("This cannot run as a file. In Terminal run: node local-server.js  then open http://localhost:8000/deep-dive.html", true);
+        return;
+      }
+      const url = tokenUrl(currentId);
+      if (!url) {
+        setStatus("This cannot run as a file. Open http://localhost:8000/deep-dive.html after node local-server.js", true);
+        return;
+      }
+      if (!window.MediaRecorder) {
+        setStatus("This browser cannot save a sound file. Try Chrome, Edge, or a current Safari.", true);
+        return;
+      }
+
+      recording = true;
+      finishing = false;
+      continues = 0;
+      startedAt = Date.now();
+      document.getElementById("makeBtn").disabled = true;
+      document.getElementById("makeBtn").textContent = "Recording…";
+      document.getElementById("stopBtn").hidden = false;
+      document.getElementById("downloadLink").hidden = true;
+      document.getElementById("player").hidden = true;
+      document.getElementById("recLabel").hidden = true;
+      document.getElementById("stageHint").hidden = false;
+      document.getElementById("stageHint").textContent = "Speaking and recording. Keep this tab open.";
+      setStatus("Connecting…");
+
+      try {
+        const tokenRes = await fetch(url);
+        const raw = await tokenRes.text();
+        let tokenData = {};
+        try {
+          tokenData = JSON.parse(raw);
+        } catch (_) {
+          throw new Error("No token server yet. Redeploy the Vercel project from the latest GitHub main, then try again.");
+        }
+        if (!tokenRes.ok || !tokenData.value) {
+          throw new Error(tokenData.error || "Could not get a realtime token.");
+        }
+
+        const sendStream = silentTrack();
+        if (silentCtx && silentCtx.state === "suspended") await silentCtx.resume();
+
+        pc = new RTCPeerConnection();
+        remoteAudio = document.createElement("audio");
+        remoteAudio.autoplay = true;
+        remoteAudio.setAttribute("playsinline", "");
+        pc.ontrack = (e) => {
+          const stream = e.streams[0] || new MediaStream([e.track]);
+          remoteAudio.srcObject = stream;
+          remoteAudio.play().catch(() => {});
+          try {
+            startRecorder(stream);
+          } catch (err) {
+            setStatus(err.message || "Could not start the recorder.", true);
+          }
+        };
+        sendStream.getTracks().forEach((track) => pc.addTrack(track, sendStream));
+
+        dc = pc.createDataChannel("oai-events");
+        dc.addEventListener("message", (e) => {
+          try {
+            handleRealtimeEvent(JSON.parse(e.data));
+          } catch (_) {}
+        });
+
+        const offer = await pc.createOffer();
+        await pc.setLocalDescription(offer);
+        const sdpResponse = await fetch("https://api.openai.com/v1/realtime/calls", {
+          method: "POST",
+          body: offer.sdp,
+          headers: {
+            Authorization: "Bearer " + tokenData.value,
+            "Content-Type": "application/sdp",
+          },
+        });
+        if (!sdpResponse.ok) {
+          throw new Error("OpenAI did not accept the voice session.");
+        }
+        await pc.setRemoteDescription({
+          type: "answer",
+          sdp: await sdpResponse.text(),
+        });
+        await waitForDataChannel();
+
+        tickTimer = setInterval(updateTick, 500);
+        hardStopTimer = setTimeout(() => finishRecording(), HARD_STOP_MS);
+        window.setTimeout(() => askTurn("start"), 450);
+        updateTick();
+      } catch (err) {
+        finishRecording();
+        setStatus(err.message || "Could not start the recording.", true);
+      }
+    }
+
+    window.addEventListener("beforeunload", (e) => {
+      if (!recording) return;
+      e.preventDefault();
+      e.returnValue = "";
+    });
+
+    async function init() {
+      initTheme();
+      const { id, name } = params();
+      document.getElementById("makeBtn").addEventListener("click", startRecording);
+      document.getElementById("stopBtn").addEventListener("click", finishRecording);
+      if (!id) {
+        setStatus("Choose a concept in the ontology, then press Make a podcast.");
+        return;
+      }
+      await loadConceptFromOntology(id, name);
+      setStatus("Press Make a podcast. Keep the tab open for about three minutes. You will hear it as it is recorded, then you can play the file.");
+    }
+
+    init();
+  </script>
+</body>
+</html>

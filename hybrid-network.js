@@ -137,6 +137,7 @@ const GITHUB_URL = "https://github.com/marlonbarrios/hybrid_intelligences_viz";
 const PODCAST_URL = "podcast.html";
 const VOICE_URL = "voice.html";
 const IMAGE_URL = "image.html";
+const DEEP_DIVE_URL = "deep-dive.html";
 const SLIDES_URL = "slides.html";
 const CANVAS_URL = "https://ufl.instructure.com/courses/574408";
 const NOTEBOOK_LM_URL = "https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1";
@@ -5532,6 +5533,11 @@ function imageObjectUrl(id, label) {
   return `${IMAGE_URL}?id=${encodeURIComponent(id)}&name=${encodeURIComponent(name)}`;
 }
 
+function podcastObjectUrl(id, label) {
+  const name = String(label || id).replace(/\n/g, " ").replace(/\s+/g, " ").trim();
+  return `${DEEP_DIVE_URL}?id=${encodeURIComponent(id)}&name=${encodeURIComponent(name)}`;
+}
+
 function detailPanelLayout(n) {
   const panelW = min(360, width - 32);
   const mobile = isMobileLayout();
@@ -5540,9 +5546,9 @@ function detailPanelLayout(n) {
     : toggleLayout().bottom + toggleLayout().btnH + toggleLayout().padY * 2 + 12;
   const wikiUrl = n?.wikiUrl || (n?.url?.includes("wikipedia.org") ? n.url : null);
   const primaryUrl = n?.url && n.url !== wikiUrl ? n.url : null;
-  const linkCount = 2 + (primaryUrl ? 1 : 0) + (wikiUrl ? 1 : 0) + 1;
+  const linkCount = 3 + (primaryUrl ? 1 : 0) + (wikiUrl ? 1 : 0) + 1;
   const hasLink = linkCount > 0;
-  const panelH = mobile ? min(108 + linkCount * 18, 230) : 108 + linkCount * 20;
+  const panelH = mobile ? min(108 + linkCount * 18, 248) : 108 + linkCount * 20;
   return { panelW, x: 16, y: height - toggleH - panelH, panelH, hasLink, linkCount, wikiUrl, primaryUrl };
 }
 
@@ -5615,6 +5621,7 @@ function drawDetailPanel(n) {
 
   drawPanelLink(voiceTalkUrl(n.id, n.label), "Talk about this");
   drawPanelLink(imageObjectUrl(n.id, n.label), "Make an image");
+  drawPanelLink(podcastObjectUrl(n.id, n.label), "Make a podcast");
   if (primaryUrl) {
     drawPanelLink(primaryUrl, n.linkLabel || "Open external link ↗");
   }
