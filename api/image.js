@@ -34,20 +34,21 @@ function buildImagePrompt(concept) {
   const cat = concept.category ? (CATEGORY_LABEL[concept.category] || concept.category) : "";
   const related = (concept.related || []).slice(0, 6).join(", ");
   return [
-    "Create one still image: a digital object for a single concept from the Hybrid Intelligences ontology.",
-    "It should look like a sparse title card, print, or lobby-screen graphic — not a photograph of a scene.",
+    "Create one still that is an abstract information visualization of a single concept from the Hybrid Intelligences ontology.",
+    "Think knowledge map, semantic network, field diagram, constellation of relations — not a title card, not a poster, not a photograph of people or rooms.",
+    "The image should feel like looking into a conceptual structure: nodes, edges, clusters, orbits, vectors, lattices, flows, or tensegrity. Visually interesting. Dense enough to reward looking. Abstract.",
     "",
-    `Concept title (this MUST appear as the main text, large, precise lettering): ${concept.label}`,
-    cat ? `Category: ${cat}` : "",
-    concept.definition ? `Meaning to encode (distill into form, type, and one diagrammatic mark — do not dump this as a paragraph): ${concept.definition}` : "",
-    related ? `Related terms that may appear as small peripheral labels: ${related}` : "",
+    `Focal concept (this name appears as a label in the visualization, not as a huge headline covering the frame): ${concept.label}`,
+    cat ? `Category (may appear as a small ring, legend, or layer label): ${cat}` : "",
+    concept.definition ? `Meaning to spatialize (encode as structure and relation, not as a paragraph of text): ${concept.definition}` : "",
+    related ? `Related terms as neighboring nodes or satellite labels: ${related}` : "",
     "",
-    "Visual constraints:",
-    "- Strict black, white, and grey. No color.",
-    "- Minimal, high contrast, large empty field.",
-    "- Typographic and diagrammatic. Almost an object.",
-    "- Include the concept name as text.",
-    "- No photoreal people, no robots, no classroom, no website UI, no logos, no watermarks, no frames.",
+    "Visual language:",
+    "- Black, white, and grey, with optional one accent (gold or pale blue) if it clarifies the graph.",
+    "- Information visualization / abstract diagram. High graphic intelligence.",
+    "- Networks, fields, topologies, overlapping circles, thin connecting lines, small type as data labels.",
+    "- The concept should be readable as a labeled node or cluster, not as a book cover.",
+    "- No photoreal people, robots, classrooms, website UI, logos, watermarks, or picture frames.",
   ]
     .filter(Boolean)
     .join("\n");
@@ -100,10 +101,11 @@ module.exports = async function handler(req, res) {
         "OpenAI-Safety-Identifier": "hybrid-intelligences-viz",
       },
       body: JSON.stringify({
-        model: "gpt-image-1",
+        model: "gpt-image-2",
         prompt: buildImagePrompt(concept),
-        size: "1024x1024",
-        quality: "low",
+        size: "1536x1024",
+        quality: "high",
+        thinking: "medium",
         output_format: "png",
       }),
     });

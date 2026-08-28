@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hybrid Intelligences — Image</title>
-  <meta name="description" content="Generate a black-and-white digital object from a Hybrid Intelligences ontology concept.">
+  <meta name="description" content="Generate an abstract information visualization from a Hybrid Intelligences ontology concept.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
   <style>
@@ -255,8 +255,8 @@
       </a>
       <div class="brand-copy">
         <p class="eyebrow">Image</p>
-        <h1>Digital object from the ontology</h1>
-        <p class="meta">Black and white · typographic still · OpenAI image model via the same Vercel key as Voice</p>
+        <h1>Abstract visualization from the ontology</h1>
+        <p class="meta">Abstract information visualization · gpt-image-2 · same Vercel key as Voice</p>
       </div>
     </div>
     <div class="header-row">
@@ -283,8 +283,9 @@
 
   <main>
     <p class="lede">
-      Voice speaks a concept. This page prints it: a sparse still, built from the ontology entry —
-      name, definition, relations — as a digital object rather than a picture of a scene.
+      Voice speaks a concept. This page draws it as an abstract information visualization:
+      a field of nodes, relations, and labels built from the ontology entry — not a picture of a scene,
+      and not a title card.
     </p>
 
     <section class="concept" id="conceptBox" hidden>
@@ -304,10 +305,10 @@
       <a class="ghost btn" id="talkLink" hidden>Talk about this</a>
       <a class="ghost btn" id="ontoLink" hidden>View in ontology</a>
     </div>
-    <p class="status" id="status">Choose a concept to generate a still.</p>
+    <p class="status" id="status">Choose a concept to generate a visualization.</p>
 
     <div class="stage" id="stage">
-      <p class="placeholder">The still will appear here.</p>
+      <p class="placeholder">The visualization will appear here.</p>
     </div>
 
     <p class="related">
@@ -441,7 +442,7 @@
       const btn = document.getElementById("makeBtn");
       btn.disabled = true;
       btn.textContent = "Making…";
-      setStatus("Generating a still from this ontology entry. This can take up to half a minute.");
+      setStatus("Generating an abstract visualization with gpt-image-2. This can take up to a minute.");
       document.getElementById("downloadLink").hidden = true;
       try {
         const res = await fetch(imageUrl(), {
@@ -461,7 +462,7 @@
         }
         const img = document.createElement("img");
         img.src = data.image;
-        img.alt = "Generated still for " + (data.label || currentId);
+        img.alt = "Generated visualization for " + (data.label || currentId);
         const stage = document.getElementById("stage");
         stage.replaceChildren(img);
         const dl = document.getElementById("downloadLink");
@@ -471,7 +472,7 @@
         if (data.label) document.getElementById("conceptTitle").textContent = data.label;
         if (data.definition) document.getElementById("conceptDef").textContent = data.definition;
         if (data.category) document.getElementById("conceptCat").textContent = data.category;
-        setStatus("A still for " + (data.label || currentId) + ".");
+        setStatus("A visualization for " + (data.label || currentId) + ".");
       } catch (err) {
         setStatus(err.message || "Generation failed.", true);
       } finally {
@@ -490,7 +491,7 @@
         return;
       }
       await loadConceptFromOntology(id, name);
-      setStatus("Press Make an image to print this concept as a still.");
+      setStatus("Press Make an image to draw this concept as an information visualization.");
       generate();
     }
 

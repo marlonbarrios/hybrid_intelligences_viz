@@ -32,7 +32,7 @@ This repository holds linked views of the same program knowledge:
 2. **[Network visualization](https://marlonbarrios.github.io/hybrid_intelligences_viz/network.html)** (`network.html`) — a radial, physics-based map of **228 concepts** connected by **2,290 weighted relations**. Concepts sit on concentric rings by category; edges show conceptual proximity, influence, and program structure.
 3. **[Ontology browser](https://marlonbarrios.github.io/hybrid_intelligences_viz/ontology.html)** (`ontology.html`) — a searchable, collapsible browse interface over the same data, exported as **[JSON-LD](ontology.jsonld)**, **[Turtle](ontology.ttl)** (SKOS), and **[OWL 2 Turtle](ontology.owl.ttl)** (classes, properties, individuals).
 4. **[Voice](https://marlonbarrios.github.io/hybrid_intelligences_viz/voice.html)** (`voice.html`) — conversational AI for the program: browser microphone conversation with an OpenAI Realtime model, grounded in the ontology. The API key stays on Vercel; the page only receives a short-lived token.
-5. **[Image](https://marlonbarrios.github.io/hybrid_intelligences_viz/image.html)** (`image.html`) — a black-and-white digital object generated from an ontology concept (OpenAI image model via the same Vercel key as Voice). Open from **Make an image** on Ontology or Network.
+5. **[Image](https://marlonbarrios.github.io/hybrid_intelligences_viz/image.html)** (`image.html`) — an abstract information visualization generated from an ontology concept (OpenAI image model via the same Vercel key as Voice). Open from **Make an image** on Ontology or Network.
 6. **Essay 1** (`essay.html`) — *Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI* by Marlon Barrios Solano ([PDF](essay-1-hybrid-intelligences-cognitive-assemblages.pdf)).
 7. **Essay 2** (`essay-2.html`) — *My Umwelt* by GPT-5.5, in conversation with Marlon Barrios Solano ([PDF](essay-2-my-umwelt.pdf)).
 8. **[My Pendular Umwelt](https://marlonbarrios.github.io/hybrid_intelligences_viz/pendular-umwelt.html)** (`pendular-umwelt.html`) — page for the speculative p5.js work developed in the open labs of the inaugural program (July 2026); links through to the [live app](https://my-pendular-umwelt.vercel.app/) and the [source repository](https://github.com/marlonbarrios/my_pendular_umwelt).
@@ -219,7 +219,7 @@ Frontmatter at the top of each `.md` file sets title, author, date, and footer. 
 | **Podcast** | [`podcast.html`](podcast.html) — sample episode *Your Mind Is Not in Your Head* (`your-mind-is-not-in-your-head.m4a`); continue in [NotebookLM](https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1) with UF credentials to research, create another podcast, or interact with Audio Overviews |
 | **NotebookLM** | [Program notebook](https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1) — research tool built from Hybrid Intelligences resources and essays; **UF login required** to play and use |
 | **Voice** | [`voice.html`](voice.html) — conversational AI (OpenAI Realtime); token minting via Vercel `api/token.js` |
-| **Image** | [`image.html`](image.html) — black-and-white still from an ontology concept; generation via Vercel `api/image.js` |
+| **Image** | [`image.html`](image.html) — abstract info-viz still from an ontology concept; generation via Vercel `api/image.js` |
 | **Canvas** | [Hybrid Intelligences - Creative B](https://ufl.instructure.com/courses/574408) course site |
 | **My Pendular Umwelt** | [`pendular-umwelt.html`](pendular-umwelt.html) — open-lab work (July 2026); [live app](https://my-pendular-umwelt.vercel.app/) · [source](https://github.com/marlonbarrios/my_pendular_umwelt) |
 
@@ -309,7 +309,7 @@ The Voice page on GitHub Pages calls [https://project-s4uzk.vercel.app](https://
 
 ### Image (OpenAI)
 
-**Make an image** on Ontology or Network opens [`image.html`](image.html) for that concept. The same Vercel project (`/api/image`) builds a prompt from the ontology entry and asks an OpenAI image model for a black-and-white typographic still. The API key never sits in the HTML.
+**Make an image** on Ontology or Network opens [`image.html`](image.html) for that concept. The same Vercel project (`/api/image`) builds a prompt from the ontology entry and asks OpenAI **gpt-image-2** (high quality, thinking on) for an abstract information visualization. The API key never sits in the HTML.
 
 Local: `node local-server.js`, then [http://localhost:8000/image.html?id=coupling](http://localhost:8000/image.html?id=coupling).
 
