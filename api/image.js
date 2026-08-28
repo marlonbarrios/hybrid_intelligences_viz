@@ -105,7 +105,6 @@ module.exports = async function handler(req, res) {
         prompt: buildImagePrompt(concept),
         size: "1536x1024",
         quality: "high",
-        thinking: "medium",
         output_format: "png",
       }),
     });
