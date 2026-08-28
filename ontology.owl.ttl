@@ -2744,13 +2744,13 @@ hi:pendular_umwelt a owl:NamedIndividual, hi:PracticeConcept ;
   skos:inScheme hi:scheme ;
   hi:networkWeight "1.5"^^xsd:decimal
  ;
-  schema:url <pendular-umwelt.html>
+  schema:url <showcase.html#pendular-umwelt>
  .
 
 hi:lobby_showcase a owl:NamedIndividual, hi:PracticeConcept ;
   rdfs:label "Lobby Showcase"@en ;
   skos:prefLabel "Lobby Showcase"@en ;
-  skos:definition "Works from Marlon Barrios Solano’s repertoire of AI pieces shown on the large screen in the lobby of the Herbert Wertheim Laboratory during the inaugural Hybrid Intelligences program, July 2026. Selected as relevant to the program’s concepts and practices: coupling, embodiment, latent space, hybrid bodies, and language as a moving field. The stills open All Watched Over By Machines of Loving Grace, Barely There, Wingspan, Proteans, and Semantic Tensegrities."@en ;
+  skos:definition "Works from Marlon Barrios Solano’s repertoire of AI pieces, gathered as the Showcase: My Pendular Umwelt (open labs) first, then the pieces shown on the large screen in the lobby of the Herbert Wertheim Laboratory during the inaugural Hybrid Intelligences program, July 2026. Selected as relevant to the program’s concepts and practices: coupling, embodiment, latent space, hybrid bodies, and language as a moving field. The stills open My Pendular Umwelt, All Watched Over By Machines of Loving Grace, Barely There, Wingspan, Proteans, and Semantic Tensegrities."@en ;
   skos:broader hi:category/practice ;
   hi:inCategory hi:category/practice ;
   hi:schemeMember hi:scheme ;

@@ -51,7 +51,7 @@
         "foaf:name": "Marlon Barrios Solano",
         "foaf:homepage": "https://marlonbarrios.github.io/"
       },
-      "dc:date": "2026-08-27",
+      "dc:date": "2026-08-28",
       "owl:versionInfo": "1.0.0",
       "hi:nodeCount": 228,
       "hi:edgeCount": 2290
@@ -11879,7 +11879,7 @@
       },
       "hi:category": "practice",
       "hi:weight": 1.5,
-      "schema:url": "pendular-umwelt.html",
+      "schema:url": "showcase.html#pendular-umwelt",
       "skos:related": [
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#umwelt",
@@ -11930,7 +11930,7 @@
         "hi:NetworkNode"
       ],
       "skos:prefLabel": "Lobby Showcase",
-      "skos:definition": "Works from Marlon Barrios Solano’s repertoire of AI pieces shown on the large screen in the lobby of the Herbert Wertheim Laboratory during the inaugural Hybrid Intelligences program, July 2026. Selected as relevant to the program’s concepts and practices: coupling, embodiment, latent space, hybrid bodies, and language as a moving field. The stills open All Watched Over By Machines of Loving Grace, Barely There, Wingspan, Proteans, and Semantic Tensegrities.",
+      "skos:definition": "Works from Marlon Barrios Solano’s repertoire of AI pieces, gathered as the Showcase: My Pendular Umwelt (open labs) first, then the pieces shown on the large screen in the lobby of the Herbert Wertheim Laboratory during the inaugural Hybrid Intelligences program, July 2026. Selected as relevant to the program’s concepts and practices: coupling, embodiment, latent space, hybrid bodies, and language as a moving field. The stills open My Pendular Umwelt, All Watched Over By Machines of Loving Grace, Barely There, Wingspan, Proteans, and Semantic Tensegrities.",
       "skos:broader": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
       },

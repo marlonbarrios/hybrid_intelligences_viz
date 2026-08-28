@@ -140,7 +140,6 @@ const IMAGE_URL = "image.html";
 const SLIDES_URL = "slides.html";
 const CANVAS_URL = "https://ufl.instructure.com/courses/574408";
 const NOTEBOOK_LM_URL = "https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1";
-const PENDULAR_UMWELT_URL = "pendular-umwelt.html";
 const SHOWCASE_URL = "showcase.html";
 let animateMode = false;
 let animateStep = 0;
@@ -1053,9 +1052,9 @@ const NODES = [
     url: "voice.html", linkLabel: "Open Voice →" },
   { id: "pendular_umwelt",    label: "My Pendular\nUmwelt",           cat: "practice",   weight: 1.5,
     desc: "Speculative web work by Marlon Barrios Solano, developed during the open labs of the inaugural Hybrid Intelligences program, July 2026. GPT-4o writes from a proposed computational Umwelt and reads aloud; p5.js pendulums inscribe the words along branching trails — folds of speed and path that poetically stage a large language model’s possible world (a Latentwelt of tokens, embeddings, and continuations) rather than a still map. The work lets a model self-report an Umwelt while physics and type refuse to keep that speech still.",
-    url: "pendular-umwelt.html", linkLabel: "Read about the work →" },
+    url: "showcase.html#pendular-umwelt", linkLabel: "Open in showcase →" },
   { id: "lobby_showcase",     label: "Lobby\nShowcase",               cat: "practice",   weight: 1.4,
-    desc: "Works from Marlon Barrios Solano’s repertoire of AI pieces shown on the large screen in the lobby of the Herbert Wertheim Laboratory during the inaugural Hybrid Intelligences program, July 2026. Selected as relevant to the program’s concepts and practices: coupling, embodiment, latent space, hybrid bodies, and language as a moving field. The stills open All Watched Over By Machines of Loving Grace, Barely There, Wingspan, Proteans, and Semantic Tensegrities.",
+    desc: "Works from Marlon Barrios Solano’s repertoire of AI pieces, gathered as the Showcase: My Pendular Umwelt (open labs) first, then the pieces shown on the large screen in the lobby of the Herbert Wertheim Laboratory during the inaugural Hybrid Intelligences program, July 2026. Selected as relevant to the program’s concepts and practices: coupling, embodiment, latent space, hybrid bodies, and language as a moving field. The stills open My Pendular Umwelt, All Watched Over By Machines of Loving Grace, Barely There, Wingspan, Proteans, and Semantic Tensegrities.",
     url: "showcase.html", linkLabel: "Open showcase →" },
 
   { id: "hi_program",         label: "Hybrid Intelligences\nProgram", cat: "program",  weight: 2.2,
@@ -5125,7 +5124,6 @@ function drawMobileMenu() {
     { id: "link", label: "Image", url: IMAGE_URL },
     { id: "link", label: "Essay 1", url: ESSAY1_URL },
     { id: "link", label: "Essay 2", url: ESSAY2_URL },
-    { id: "link", label: "My Pendular Umwelt", url: PENDULAR_UMWELT_URL },
     { id: "link", label: "Slides", url: SLIDES_URL },
     { id: "link", label: "Showcase", url: SHOWCASE_URL },
     { id: "link", label: "Video", url: VIDEO_URL },
@@ -5291,7 +5289,6 @@ function drawUI() {
     { url: ESSAY1_URL, label: "Essay 1" },
     { url: ESSAY2_URL, label: "Essay 2" },
     { url: CANVAS_URL, label: "Canvas \u2197" },
-    { url: PENDULAR_UMWELT_URL, label: "My Pendular Umwelt" },
     { url: SLIDES_URL, label: "Slides" },
     { url: SHOWCASE_URL, label: "Showcase" },
     { url: VIDEO_URL, label: "Video" },
