@@ -134,13 +134,11 @@ const ESSAY2_URL = "essay-2.html";
 const VIDEO_URL = "video.html";
 const SCAN_QR_URL = "scan-qr.html";
 const GITHUB_URL = "https://github.com/marlonbarrios/hybrid_intelligences_viz";
-const PODCAST_URL = "podcast.html";
 const VOICE_URL = "voice.html";
 const IMAGE_URL = "image.html";
-const DEEP_DIVE_URL = "deep-dive.html";
+const MINI_POD_URL = "mini-pod.html";
 const SLIDES_URL = "slides.html";
 const CANVAS_URL = "https://ufl.instructure.com/courses/574408";
-const NOTEBOOK_LM_URL = "https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1";
 const SHOWCASE_URL = "showcase.html";
 let animateMode = false;
 let animateStep = 0;
@@ -5120,16 +5118,16 @@ function drawMobileMenu() {
 
   const items = [
     { id: "link", label: "Home", url: HOME_URL },
+    { id: "link", label: "Essay 1", url: ESSAY1_URL },
+    { id: "link", label: "Essay 2", url: ESSAY2_URL },
     { id: "link", label: "Ontology", url: ONTOLOGY_URL },
     { id: "link", label: "Voice", url: VOICE_URL },
     { id: "link", label: "Image", url: IMAGE_URL },
-    { id: "link", label: "Essay 1", url: ESSAY1_URL },
-    { id: "link", label: "Essay 2", url: ESSAY2_URL },
+    { id: "link", label: "Mini-pod", url: MINI_POD_URL },
+    { id: "link", label: "Canvas \u2197", url: CANVAS_URL },
     { id: "link", label: "Slides", url: SLIDES_URL },
-    { id: "link", label: "Showcase", url: SHOWCASE_URL },
     { id: "link", label: "Video", url: VIDEO_URL },
-    { id: "link", label: "Synthetic Podcast", url: PODCAST_URL },
-    { id: "link", label: "NotebookLM \u2197", url: NOTEBOOK_LM_URL },
+    { id: "link", label: "Showcase", url: SHOWCASE_URL },
     { id: "link", label: "Scan QR Code", url: SCAN_QR_URL },
     { id: "link", label: "GitHub \u2197", url: GITHUB_URL },
     { id: "theme_dark", label: "Theme: Dark" },
@@ -5284,17 +5282,16 @@ function drawUI() {
 
   const creditNavLinks = [
     { url: HOME_URL, label: "Home" },
+    { url: ESSAY1_URL, label: "Essay 1" },
+    { url: ESSAY2_URL, label: "Essay 2" },
     { url: ONTOLOGY_URL, label: "Ontology \u2197" },
     { url: VOICE_URL, label: "Voice" },
     { url: IMAGE_URL, label: "Image" },
-    { url: ESSAY1_URL, label: "Essay 1" },
-    { url: ESSAY2_URL, label: "Essay 2" },
+    { url: MINI_POD_URL, label: "Mini-pod" },
     { url: CANVAS_URL, label: "Canvas \u2197" },
     { url: SLIDES_URL, label: "Slides" },
-    { url: SHOWCASE_URL, label: "Showcase" },
     { url: VIDEO_URL, label: "Video" },
-    { url: PODCAST_URL, label: "Synthetic Podcast" },
-    { url: NOTEBOOK_LM_URL, label: "NotebookLM \u2197" },
+    { url: SHOWCASE_URL, label: "Showcase" },
     { url: SCAN_QR_URL, label: "Scan QR Code" },
     { url: GITHUB_URL, label: "GitHub \u2197" },
   ];
@@ -5535,7 +5532,7 @@ function imageObjectUrl(id, label) {
 
 function podcastObjectUrl(id, label) {
   const name = String(label || id).replace(/\n/g, " ").replace(/\s+/g, " ").trim();
-  return `${DEEP_DIVE_URL}?id=${encodeURIComponent(id)}&name=${encodeURIComponent(name)}`;
+  return `${MINI_POD_URL}?id=${encodeURIComponent(id)}&name=${encodeURIComponent(name)}`;
 }
 
 function detailPanelLayout(n) {
@@ -5621,7 +5618,7 @@ function drawDetailPanel(n) {
 
   drawPanelLink(voiceTalkUrl(n.id, n.label), "Talk about this");
   drawPanelLink(imageObjectUrl(n.id, n.label), "Make an image");
-  drawPanelLink(podcastObjectUrl(n.id, n.label), "Make a podcast");
+  drawPanelLink(podcastObjectUrl(n.id, n.label), "Mini-pod");
   if (primaryUrl) {
     drawPanelLink(primaryUrl, n.linkLabel || "Open external link ↗");
   }

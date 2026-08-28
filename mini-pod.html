@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hybrid Intelligences — Deep dive</title>
-  <meta name="description" content="Record a three-minute ontology deep dive as a playable sound file, using the same Voice Realtime companion.">
+  <title>Hybrid Intelligences — Mini-pod</title>
+  <meta name="description" content="Record a three-minute Mini-pod from an ontology concept as a playable sound file, using the same Voice Realtime companion.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
   <style>
@@ -258,7 +258,7 @@
         <img src="logo.png" alt="Hybrid Intelligences">
       </a>
       <div class="brand-copy">
-        <p class="eyebrow">Deep dive</p>
+        <p class="eyebrow">Mini-pod</p>
         <h1>A three-minute ontology episode as a sound file</h1>
         <p class="meta">Same Voice companion · Realtime · Marin · recorded in this tab</p>
       </div>
@@ -266,18 +266,16 @@
     <div class="header-row">
       <div class="header-links">
         <a href="index.html">← Home</a>
-        <a href="network.html">Network</a>
-        <a href="ontology.html">Ontology</a>
-        <a href="voice.html">Voice</a>
-        <a href="image.html">Image</a>
         <a href="essay.html">Essay 1</a>
         <a href="essay-2.html">Essay 2</a>
+        <a href="ontology.html">Ontology</a>
+        <a href="network.html">Network</a>
+        <a href="voice.html">Voice</a>
+        <a href="image.html">Image</a>
         <a href="https://ufl.instructure.com/courses/574408" target="_blank" rel="noopener noreferrer">Canvas ↗</a>
         <a href="slides.html" title="From the Creative B sessions, summer 2026">Slides</a>
-        <a href="showcase.html">Showcase</a>
         <a href="video.html">Video</a>
-        <a href="podcast.html">Synthetic Podcast</a>
-        <a href="https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1" target="_blank" rel="noopener noreferrer">NotebookLM ↗</a>
+        <a href="showcase.html">Showcase</a>
         <a href="scan-qr.html">Scan QR Code</a>
         <a href="https://github.com/marlonbarrios/hybrid_intelligences_viz" target="_blank" rel="noopener noreferrer"><span class="gh-icon" aria-hidden="true"></span>GitHub ↗</a>
       </div>
@@ -287,7 +285,7 @@
 
   <main>
     <p class="lede">
-      Voice talks with you. This page asks the same companion for a ~three-minute deep dive
+      Voice talks with you. Mini-pod asks the same companion for a ~three-minute episode
       on one ontology concept, records the speech, and leaves only the sound file to play back.
       No microphone. Keep this tab open until it finishes.
     </p>
@@ -300,18 +298,18 @@
 
     <p class="lede" id="emptyHint">
       Open a concept in the <a href="ontology.html">ontology</a> or
-      <a href="network.html">network</a> and press <strong>Make a podcast</strong>.
+      <a href="network.html">network</a> and press <strong>Mini-pod</strong>.
     </p>
 
     <div class="controls">
-      <button type="button" id="makeBtn" disabled>Make a podcast</button>
+      <button type="button" id="makeBtn" disabled>Mini-pod</button>
       <button type="button" class="ghost" id="stopBtn" hidden>Stop</button>
       <a class="ghost btn" id="downloadLink" hidden>Download</a>
       <a class="ghost btn" id="talkLink" hidden>Talk about this</a>
       <a class="ghost btn" id="imageLink" hidden>Make an image</a>
       <a class="ghost btn" id="ontoLink" hidden>View in ontology</a>
     </div>
-    <p class="status" id="status">Choose a concept to record a deep dive.</p>
+    <p class="status" id="status">Choose a concept to record a Mini-pod.</p>
 
     <div class="stage" id="stage">
       <p class="placeholder" id="stageHint">The sound file will appear here.</p>
@@ -327,7 +325,7 @@
   </main>
 
   <footer class="page-foot">
-    Hybrid Intelligences · University of Florida · Deep dive
+    Hybrid Intelligences · University of Florida · Mini-pod
   </footer>
 
   <script src="realtime-config.js"></script>
@@ -516,9 +514,9 @@
       const name = currentLabel || currentId;
       const rel = related.length ? " Related concepts: " + related.join(", ") + "." : "";
       if (kind === "continue") {
-        return "Continue the same deep-dive episode on " + name + " without restarting. Do not recap, greet, or ask a question. Pick up mid-thought and keep speaking until a full three-minute treatment is done.";
+        return "Continue the same Mini-pod episode on " + name + " without restarting. Do not recap, greet, or ask a question. Pick up mid-thought and keep speaking until a full three-minute treatment is done.";
       }
-      let text = "Record a three-minute spoken deep dive on this Hybrid Intelligences ontology concept. No microphone, no questions, no greeting about how to talk.\n";
+      let text = "Record a three-minute Mini-pod on this Hybrid Intelligences ontology concept. No microphone, no questions, no greeting about how to talk.\n";
       text += "Name: " + name + "\n";
       if (currentCat) text += "Category: " + currentCat + "\n";
       if (currentDef) text += "Definition: " + currentDef + "\n";
@@ -571,9 +569,9 @@
         const dl = document.getElementById("downloadLink");
         dl.hidden = false;
         dl.href = objectUrl;
-        dl.download = "hybrid-intelligences-" + (currentId || "deep-dive") + "." + downloadExt(mime);
+        dl.download = "hybrid-intelligences-" + (currentId || "mini-pod") + "." + downloadExt(mime);
         if (blob.size < 800) {
-          setStatus("The recording was empty. Try Make a podcast again in Chrome or a current Safari.", true);
+          setStatus("The recording was empty. Try Mini-pod again in Chrome or a current Safari.", true);
         } else {
           setStatus("A sound file for " + (currentLabel || currentId) + ". Play it below.");
         }
@@ -695,19 +693,19 @@
         recorder = null;
       }, 400);
       document.getElementById("makeBtn").disabled = !currentId;
-      document.getElementById("makeBtn").textContent = "Make a podcast";
+      document.getElementById("makeBtn").textContent = "Mini-pod";
       document.getElementById("stopBtn").hidden = true;
     }
 
     async function startRecording() {
       if (!currentId || recording) return;
       if (location.protocol === "file:") {
-        setStatus("This cannot run as a file. In Terminal run: node local-server.js  then open http://localhost:8000/deep-dive.html", true);
+        setStatus("This cannot run as a file. In Terminal run: node local-server.js  then open http://localhost:8000/mini-pod.html", true);
         return;
       }
       const url = tokenUrl(currentId);
       if (!url) {
-        setStatus("This cannot run as a file. Open http://localhost:8000/deep-dive.html after node local-server.js", true);
+        setStatus("This cannot run as a file. Open http://localhost:8000/mini-pod.html after node local-server.js", true);
         return;
       }
       if (!window.MediaRecorder) {
@@ -809,11 +807,11 @@
       document.getElementById("makeBtn").addEventListener("click", startRecording);
       document.getElementById("stopBtn").addEventListener("click", finishRecording);
       if (!id) {
-        setStatus("Choose a concept in the ontology, then press Make a podcast.");
+        setStatus("Choose a concept in the ontology, then press Mini-pod.");
         return;
       }
       await loadConceptFromOntology(id, name);
-      setStatus("Press Make a podcast. Keep the tab open for about three minutes. You will hear it as it is recorded, then you can play the file.");
+      setStatus("Press Mini-pod. Keep the tab open for about three minutes. You will hear it as it is recorded, then you can play the file.");
     }
 
     init();

@@ -262,17 +262,16 @@
     <div class="header-row">
       <div class="header-links">
         <a href="index.html">← Home</a>
-        <a href="network.html">Network</a>
-        <a href="ontology.html">Ontology</a>
-        <a href="voice.html">Voice</a>
         <a href="essay.html">Essay 1</a>
         <a href="essay-2.html">Essay 2</a>
+        <a href="ontology.html">Ontology</a>
+        <a href="network.html">Network</a>
+        <a href="voice.html">Voice</a>
+        <a href="mini-pod.html">Mini-pod</a>
         <a href="https://ufl.instructure.com/courses/574408" target="_blank" rel="noopener noreferrer">Canvas ↗</a>
         <a href="slides.html" title="From the Creative B sessions, summer 2026">Slides</a>
-        <a href="showcase.html">Showcase</a>
         <a href="video.html">Video</a>
-        <a href="podcast.html">Synthetic Podcast</a>
-        <a href="https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1" target="_blank" rel="noopener noreferrer">NotebookLM ↗</a>
+        <a href="showcase.html">Showcase</a>
         <a href="scan-qr.html">Scan QR Code</a>
         <a href="https://github.com/marlonbarrios/hybrid_intelligences_viz" target="_blank" rel="noopener noreferrer"><span class="gh-icon" aria-hidden="true"></span>GitHub ↗</a>
       </div>
@@ -302,7 +301,7 @@
       <button type="button" id="makeBtn" disabled>Make an image</button>
       <a class="ghost btn" id="downloadLink" hidden download="hybrid-intelligences.png">Download</a>
       <a class="ghost btn" id="talkLink" hidden>Talk about this</a>
-      <a class="ghost btn" id="podcastLink" hidden>Make a podcast</a>
+      <a class="ghost btn" id="podcastLink" hidden>Mini-pod</a>
       <a class="ghost btn" id="ontoLink" hidden>View in ontology</a>
     </div>
     <p class="status" id="status">Choose a concept to generate a visualization.</p>
@@ -412,7 +411,7 @@
       talk.href = "voice.html?talk=" + encodeURIComponent(id) + "&name=" + encodeURIComponent(label || id);
       const podcast = document.getElementById("podcastLink");
       podcast.hidden = false;
-      podcast.href = "deep-dive.html?id=" + encodeURIComponent(id) + "&name=" + encodeURIComponent(label || id);
+      podcast.href = "mini-pod.html?id=" + encodeURIComponent(id) + "&name=" + encodeURIComponent(label || id);
       const onto = document.getElementById("ontoLink");
       onto.hidden = false;
       onto.href = "ontology.html#" + encodeURIComponent(id);
