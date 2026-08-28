@@ -2,6 +2,10 @@
   "functions": {
     "api/token.js": {
       "includeFiles": "ontology.jsonld"
+    },
+    "api/image.js": {
+      "includeFiles": "ontology.jsonld",
+      "maxDuration": 60
     }
   },
   "headers": [
@@ -9,7 +13,7 @@
       "source": "/api/(.*)",
       "headers": [
         { "key": "Access-Control-Allow-Origin", "value": "*" },
-        { "key": "Access-Control-Allow-Methods", "value": "GET, OPTIONS" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" },
         { "key": "Access-Control-Allow-Headers", "value": "Content-Type" }
       ]
     }

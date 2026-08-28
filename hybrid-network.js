@@ -136,6 +136,7 @@ const SCAN_QR_URL = "scan-qr.html";
 const GITHUB_URL = "https://github.com/marlonbarrios/hybrid_intelligences_viz";
 const PODCAST_URL = "podcast.html";
 const VOICE_URL = "voice.html";
+const IMAGE_URL = "image.html";
 const SLIDES_URL = "slides.html";
 const CANVAS_URL = "https://ufl.instructure.com/courses/574408";
 const NOTEBOOK_LM_URL = "https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1";
@@ -4015,7 +4016,7 @@ function getMaxRadius() {
   const focus = getActiveNode();
   const panelH = focus ? detailPanelLayout(focus).panelH : 108;
   const bottomPad = focus
-    ? toggleH + (mobile ? min(panelH, 190) : panelH) + 18
+    ? toggleH + (mobile ? min(panelH, 230) : panelH) + 18
     : toggleH + 16;
   const sidePad = mobile ? 28 : 98;
   const layoutScale = mobile ? 0.98 : 1.08;
@@ -5121,6 +5122,7 @@ function drawMobileMenu() {
     { id: "link", label: "Home", url: HOME_URL },
     { id: "link", label: "Ontology", url: ONTOLOGY_URL },
     { id: "link", label: "Voice", url: VOICE_URL },
+    { id: "link", label: "Image", url: IMAGE_URL },
     { id: "link", label: "Essay 1", url: ESSAY1_URL },
     { id: "link", label: "Essay 2", url: ESSAY2_URL },
     { id: "link", label: "My Pendular Umwelt", url: PENDULAR_UMWELT_URL },
@@ -5285,6 +5287,7 @@ function drawUI() {
     { url: HOME_URL, label: "Home" },
     { url: ONTOLOGY_URL, label: "Ontology \u2197" },
     { url: VOICE_URL, label: "Voice" },
+    { url: IMAGE_URL, label: "Image" },
     { url: ESSAY1_URL, label: "Essay 1" },
     { url: ESSAY2_URL, label: "Essay 2" },
     { url: CANVAS_URL, label: "Canvas \u2197" },
@@ -5527,6 +5530,11 @@ function voiceTalkUrl(id, label) {
   return `${VOICE_URL}?talk=${encodeURIComponent(id)}&name=${encodeURIComponent(name)}`;
 }
 
+function imageObjectUrl(id, label) {
+  const name = String(label || id).replace(/\n/g, " ").replace(/\s+/g, " ").trim();
+  return `${IMAGE_URL}?id=${encodeURIComponent(id)}&name=${encodeURIComponent(name)}`;
+}
+
 function detailPanelLayout(n) {
   const panelW = min(360, width - 32);
   const mobile = isMobileLayout();
@@ -5535,9 +5543,9 @@ function detailPanelLayout(n) {
     : toggleLayout().bottom + toggleLayout().btnH + toggleLayout().padY * 2 + 12;
   const wikiUrl = n?.wikiUrl || (n?.url?.includes("wikipedia.org") ? n.url : null);
   const primaryUrl = n?.url && n.url !== wikiUrl ? n.url : null;
-  const linkCount = 1 + (primaryUrl ? 1 : 0) + (wikiUrl ? 1 : 0) + 1;
+  const linkCount = 2 + (primaryUrl ? 1 : 0) + (wikiUrl ? 1 : 0) + 1;
   const hasLink = linkCount > 0;
-  const panelH = mobile ? min(108 + linkCount * 18, 190) : 108 + linkCount * 20;
+  const panelH = mobile ? min(108 + linkCount * 18, 230) : 108 + linkCount * 20;
   return { panelW, x: 16, y: height - toggleH - panelH, panelH, hasLink, linkCount, wikiUrl, primaryUrl };
 }
 
@@ -5585,7 +5593,7 @@ function drawDetailPanel(n) {
   textSize(10);
   const wrapped = wrapText(n.desc, panelW - 28, 10);
   let ty = y + 48;
-  const extraLinks = (primaryUrl ? 1 : 0) + (wikiUrl ? 1 : 0);
+  const extraLinks = 1 + (primaryUrl ? 1 : 0) + (wikiUrl ? 1 : 0);
   const maxLines = hasLink ? max(2, 4 - extraLinks) : 3;
   for (const line of wrapped.slice(0, maxLines)) {
     text(line, x + 14, ty);
@@ -5609,6 +5617,7 @@ function drawDetailPanel(n) {
   }
 
   drawPanelLink(voiceTalkUrl(n.id, n.label), "Talk about this");
+  drawPanelLink(imageObjectUrl(n.id, n.label), "Make an image");
   if (primaryUrl) {
     drawPanelLink(primaryUrl, n.linkLabel || "Open external link ↗");
   }

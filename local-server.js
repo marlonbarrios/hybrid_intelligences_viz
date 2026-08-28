@@ -1,17 +1,18 @@
 #!/usr/bin/env node
 /**
- * Local static server plus /api/token for the Voice page.
+ * Local static server plus /api/token and /api/image.
  *
  *   OPENAI_API_KEY=sk-... node local-server.js
  *   # or put OPENAI_API_KEY in a gitignored .env file
  *
- * Then open http://localhost:8000/voice.html and press Talk.
+ * Then open http://localhost:8000/voice.html or image.html
  */
 
 const fs = require("fs");
 const http = require("http");
 const path = require("path");
 const tokenHandler = require("./api/token");
+const imageHandler = require("./api/image");
 
 const ROOT = __dirname;
 const PORT = Number(process.env.PORT) || 8000;
@@ -75,6 +76,36 @@ function vercelRes(res) {
   };
 }
 
+function readBody(req) {
+  return new Promise((resolve, reject) => {
+    const chunks = [];
+    req.on("data", (chunk) => chunks.push(chunk));
+    req.on("end", () => resolve(Buffer.concat(chunks).toString("utf8")));
+    req.on("error", reject);
+  });
+}
+
+async function vercelReq(req) {
+  const url = new URL(req.url || "/", "http://127.0.0.1");
+  let body = {};
+  if (req.method === "POST" || req.method === "PUT") {
+    const raw = await readBody(req);
+    if (raw) {
+      try {
+        body = JSON.parse(raw);
+      } catch (_) {
+        body = {};
+      }
+    }
+  }
+  return {
+    method: req.method,
+    url: req.url,
+    query: Object.fromEntries(url.searchParams),
+    body,
+  };
+}
+
 function serveStatic(req, res) {
   let urlPath = decodeURIComponent((req.url || "/").split("?")[0]);
   if (urlPath === "/") urlPath = "/index.html";
@@ -98,12 +129,15 @@ loadEnv();
 
 const server = http.createServer((req, res) => {
   const urlPath = (req.url || "/").split("?")[0];
-  if (urlPath === "/api/token") {
-    Promise.resolve(tokenHandler(req, vercelRes(res))).catch((err) => {
-      send(res, 500, JSON.stringify({ error: err.message || "Token handler failed." }), {
-        "Content-Type": "application/json; charset=utf-8",
+  const handler = urlPath === "/api/token" ? tokenHandler : urlPath === "/api/image" ? imageHandler : null;
+  if (handler) {
+    Promise.resolve(vercelReq(req))
+      .then((fakeReq) => handler(fakeReq, vercelRes(res)))
+      .catch((err) => {
+        send(res, 500, JSON.stringify({ error: err.message || "API handler failed." }), {
+          "Content-Type": "application/json; charset=utf-8",
+        });
       });
-    });
     return;
   }
   serveStatic(req, res);
@@ -112,7 +146,8 @@ const server = http.createServer((req, res) => {
 server.listen(PORT, "127.0.0.1", () => {
   console.log(`Hybrid Intelligences local server: http://localhost:${PORT}/`);
   console.log(`Voice: http://localhost:${PORT}/voice.html`);
+  console.log(`Image: http://localhost:${PORT}/image.html`);
   if (!process.env.OPENAI_API_KEY) {
-    console.warn("OPENAI_API_KEY is not set. Copy .env.example to .env, or Talk will fail until you paste a deployed Vercel URL.");
+    console.warn("OPENAI_API_KEY is not set. Copy .env.example to .env, or Talk / Make an image will fail until you paste a deployed Vercel URL.");
   }
 });

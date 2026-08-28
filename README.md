@@ -10,7 +10,7 @@ Interactive map for **Hybrid Intelligences: Embodied Leadership and Creativity i
 
 **[University of Florida](https://www.ufl.edu/) · [College of the Arts](https://arts.ufl.edu/) · [CAME](https://arts.ufl.edu/came/) · [CAM](https://arts.ufl.edu/programs-schools/center-for-arts-in-medicine/) · [IGNITE](https://www.eng.ufl.edu/innovation/) · [Wertheim Laboratory](https://www.eng.ufl.edu/wertheim/)**
 
-**[Home →](https://marlonbarrios.github.io/hybrid_intelligences_viz/)** · **[Network →](https://marlonbarrios.github.io/hybrid_intelligences_viz/network.html)** · **[Browse ontology →](https://marlonbarrios.github.io/hybrid_intelligences_viz/ontology.html)** · **[Voice →](https://marlonbarrios.github.io/hybrid_intelligences_viz/voice.html)** · **[Essay 1 →](https://marlonbarrios.github.io/hybrid_intelligences_viz/essay.html)** · **[Essay 2 →](https://marlonbarrios.github.io/hybrid_intelligences_viz/essay-2.html)** · **[Slides →](https://marlonbarrios.github.io/hybrid_intelligences_viz/slides.html#1)** · **[Showcase →](https://marlonbarrios.github.io/hybrid_intelligences_viz/showcase.html)** · **[Video →](https://marlonbarrios.github.io/hybrid_intelligences_viz/video.html)** · **[Synthetic Podcast →](https://marlonbarrios.github.io/hybrid_intelligences_viz/podcast.html)** · **[NotebookLM ↗](https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1)** · **[Canvas ↗](https://ufl.instructure.com/courses/574408)** · **[My Pendular Umwelt →](https://marlonbarrios.github.io/hybrid_intelligences_viz/pendular-umwelt.html)** · **[Scan QR Code →](https://marlonbarrios.github.io/hybrid_intelligences_viz/scan-qr.html)** · **[GitHub ↗](https://github.com/marlonbarrios/hybrid_intelligences_viz)**
+**[Home →](https://marlonbarrios.github.io/hybrid_intelligences_viz/)** · **[Network →](https://marlonbarrios.github.io/hybrid_intelligences_viz/network.html)** · **[Browse ontology →](https://marlonbarrios.github.io/hybrid_intelligences_viz/ontology.html)** · **[Voice →](https://marlonbarrios.github.io/hybrid_intelligences_viz/voice.html)** · **[Image →](https://marlonbarrios.github.io/hybrid_intelligences_viz/image.html)** · **[Essay 1 →](https://marlonbarrios.github.io/hybrid_intelligences_viz/essay.html)** · **[Essay 2 →](https://marlonbarrios.github.io/hybrid_intelligences_viz/essay-2.html)** · **[Slides →](https://marlonbarrios.github.io/hybrid_intelligences_viz/slides.html#1)** · **[Showcase →](https://marlonbarrios.github.io/hybrid_intelligences_viz/showcase.html)** · **[Video →](https://marlonbarrios.github.io/hybrid_intelligences_viz/video.html)** · **[Synthetic Podcast →](https://marlonbarrios.github.io/hybrid_intelligences_viz/podcast.html)** · **[NotebookLM ↗](https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1)** · **[Canvas ↗](https://ufl.instructure.com/courses/574408)** · **[My Pendular Umwelt →](https://marlonbarrios.github.io/hybrid_intelligences_viz/pendular-umwelt.html)** · **[Scan QR Code →](https://marlonbarrios.github.io/hybrid_intelligences_viz/scan-qr.html)** · **[GitHub ↗](https://github.com/marlonbarrios/hybrid_intelligences_viz)**
 
 ## Screenshots
 
@@ -32,15 +32,16 @@ This repository holds linked views of the same program knowledge:
 2. **[Network visualization](https://marlonbarrios.github.io/hybrid_intelligences_viz/network.html)** (`network.html`) — a radial, physics-based map of **228 concepts** connected by **2,290 weighted relations**. Concepts sit on concentric rings by category; edges show conceptual proximity, influence, and program structure.
 3. **[Ontology browser](https://marlonbarrios.github.io/hybrid_intelligences_viz/ontology.html)** (`ontology.html`) — a searchable, collapsible browse interface over the same data, exported as **[JSON-LD](ontology.jsonld)**, **[Turtle](ontology.ttl)** (SKOS), and **[OWL 2 Turtle](ontology.owl.ttl)** (classes, properties, individuals).
 4. **[Voice](https://marlonbarrios.github.io/hybrid_intelligences_viz/voice.html)** (`voice.html`) — conversational AI for the program: browser microphone conversation with an OpenAI Realtime model, grounded in the ontology. The API key stays on Vercel; the page only receives a short-lived token.
-5. **Essay 1** (`essay.html`) — *Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI* by Marlon Barrios Solano ([PDF](essay-1-hybrid-intelligences-cognitive-assemblages.pdf)).
-6. **Essay 2** (`essay-2.html`) — *My Umwelt* by GPT-5.5, in conversation with Marlon Barrios Solano ([PDF](essay-2-my-umwelt.pdf)).
-7. **[My Pendular Umwelt](https://marlonbarrios.github.io/hybrid_intelligences_viz/pendular-umwelt.html)** (`pendular-umwelt.html`) — page for the speculative p5.js work developed in the open labs of the inaugural program (July 2026); links through to the [live app](https://my-pendular-umwelt.vercel.app/) and the [source repository](https://github.com/marlonbarrios/my_pendular_umwelt).
-8. **[Slides](https://marlonbarrios.github.io/hybrid_intelligences_viz/slides.html#1)** (`slides.html`) — from the Creative B sessions, summer 2026 (arrow keys, dots, swipe).
-9. **[Showcase](https://marlonbarrios.github.io/hybrid_intelligences_viz/showcase.html)** (`showcase.html`) — AI works by Marlon Barrios Solano shown on the large screen in the Wertheim Laboratory lobby during the inaugural program (July 2026).
-10. **Video** (`video.html`) — Hybrid Intelligences Highlights reel.
-11. **Podcast** (`podcast.html`) — sample Synthetic Podcast (*Your Mind Is Not in Your Head*) from NotebookLM; link through to the program notebook (UF login) to research, generate another podcast, or interact with Audio Overviews.
+5. **[Image](https://marlonbarrios.github.io/hybrid_intelligences_viz/image.html)** (`image.html`) — a black-and-white digital object generated from an ontology concept (OpenAI image model via the same Vercel key as Voice). Open from **Make an image** on Ontology or Network.
+6. **Essay 1** (`essay.html`) — *Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI* by Marlon Barrios Solano ([PDF](essay-1-hybrid-intelligences-cognitive-assemblages.pdf)).
+7. **Essay 2** (`essay-2.html`) — *My Umwelt* by GPT-5.5, in conversation with Marlon Barrios Solano ([PDF](essay-2-my-umwelt.pdf)).
+8. **[My Pendular Umwelt](https://marlonbarrios.github.io/hybrid_intelligences_viz/pendular-umwelt.html)** (`pendular-umwelt.html`) — page for the speculative p5.js work developed in the open labs of the inaugural program (July 2026); links through to the [live app](https://my-pendular-umwelt.vercel.app/) and the [source repository](https://github.com/marlonbarrios/my_pendular_umwelt).
+9. **[Slides](https://marlonbarrios.github.io/hybrid_intelligences_viz/slides.html#1)** (`slides.html`) — from the Creative B sessions, summer 2026 (arrow keys, dots, swipe).
+10. **[Showcase](https://marlonbarrios.github.io/hybrid_intelligences_viz/showcase.html)** (`showcase.html`) — AI works by Marlon Barrios Solano shown on the large screen in the Wertheim Laboratory lobby during the inaugural program (July 2026).
+11. **Video** (`video.html`) — Hybrid Intelligences Highlights reel.
+12. **Podcast** (`podcast.html`) — sample Synthetic Podcast (*Your Mind Is Not in Your Head*) from NotebookLM; link through to the program notebook (UF login) to research, generate another podcast, or interact with Audio Overviews.
 
-Shared navigation links [Home](https://marlonbarrios.github.io/hybrid_intelligences_viz/), [Network](https://marlonbarrios.github.io/hybrid_intelligences_viz/network.html), [Ontology](https://marlonbarrios.github.io/hybrid_intelligences_viz/ontology.html), Voice, Essays, **[Slides](https://marlonbarrios.github.io/hybrid_intelligences_viz/slides.html#1)**, **[Showcase](https://marlonbarrios.github.io/hybrid_intelligences_viz/showcase.html)**, Video, Synthetic Podcast, **[NotebookLM](https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1)**, **[Canvas](https://ufl.instructure.com/courses/574408)**, **[My Pendular Umwelt](https://marlonbarrios.github.io/hybrid_intelligences_viz/pendular-umwelt.html)**, Scan QR Code, and **[GitHub](https://github.com/marlonbarrios/hybrid_intelligences_viz)**. Institution credits (UF, College of the Arts, CAME, CAM, IGNITE, Wertheim) are linked on Home, Ontology, and the Network header. Pages share a light/dark theme preference (`hi-theme`). On narrow screens the **Network** switches to a mobile chrome (↑ / Play|Pause|Resume / ↓ / Reset / Menu) while the desktop layout stays unchanged.
+Shared navigation links [Home](https://marlonbarrios.github.io/hybrid_intelligences_viz/), [Network](https://marlonbarrios.github.io/hybrid_intelligences_viz/network.html), [Ontology](https://marlonbarrios.github.io/hybrid_intelligences_viz/ontology.html), Voice, **[Image](https://marlonbarrios.github.io/hybrid_intelligences_viz/image.html)**, Essays, **[Slides](https://marlonbarrios.github.io/hybrid_intelligences_viz/slides.html#1)**, **[Showcase](https://marlonbarrios.github.io/hybrid_intelligences_viz/showcase.html)**, Video, Synthetic Podcast, **[NotebookLM](https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1)**, **[Canvas](https://ufl.instructure.com/courses/574408)**, **[My Pendular Umwelt](https://marlonbarrios.github.io/hybrid_intelligences_viz/pendular-umwelt.html)**, Scan QR Code, and **[GitHub](https://github.com/marlonbarrios/hybrid_intelligences_viz)**. Institution credits (UF, College of the Arts, CAME, CAM, IGNITE, Wertheim) are linked on Home, Ontology, and the Network header. Pages share a light/dark theme preference (`hi-theme`). On narrow screens the **Network** switches to a mobile chrome (↑ / Play|Pause|Resume / ↓ / Reset / Menu) while the desktop layout stays unchanged.
 
 The network is both a **pedagogical instrument** for the Hybrid Intelligences program and a **formal vocabulary** for intelligence, embodiment, AI, and creative practice as *coupling* across bodies, tools, institutions, and worlds.
 
@@ -218,6 +219,7 @@ Frontmatter at the top of each `.md` file sets title, author, date, and footer. 
 | **Podcast** | [`podcast.html`](podcast.html) — sample episode *Your Mind Is Not in Your Head* (`your-mind-is-not-in-your-head.m4a`); continue in [NotebookLM](https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1) with UF credentials to research, create another podcast, or interact with Audio Overviews |
 | **NotebookLM** | [Program notebook](https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1) — research tool built from Hybrid Intelligences resources and essays; **UF login required** to play and use |
 | **Voice** | [`voice.html`](voice.html) — conversational AI (OpenAI Realtime); token minting via Vercel `api/token.js` |
+| **Image** | [`image.html`](image.html) — black-and-white still from an ontology concept; generation via Vercel `api/image.js` |
 | **Canvas** | [Hybrid Intelligences - Creative B](https://ufl.instructure.com/courses/574408) course site |
 | **My Pendular Umwelt** | [`pendular-umwelt.html`](pendular-umwelt.html) — open-lab work (July 2026); [live app](https://my-pendular-umwelt.vercel.app/) · [source](https://github.com/marlonbarrios/my_pendular_umwelt) |
 
@@ -303,7 +305,13 @@ Then open [http://localhost:8000/voice.html](http://localhost:8000/voice.html) a
 
 **Live Talk (Vercel)**
 
-The Voice page on GitHub Pages calls [https://project-s4uzk.vercel.app](https://project-s4uzk.vercel.app) for tokens. Visitors only press **Talk**. Redeploy that Vercel project from `main` whenever `api/token.js` changes.
+The Voice page on GitHub Pages calls [https://project-s4uzk.vercel.app](https://project-s4uzk.vercel.app) for tokens. Visitors only press **Talk**. Redeploy that Vercel project from `main` whenever `api/token.js`, `api/image.js`, or `ontology.jsonld` changes.
+
+### Image (OpenAI)
+
+**Make an image** on Ontology or Network opens [`image.html`](image.html) for that concept. The same Vercel project (`/api/image`) builds a prompt from the ontology entry and asks an OpenAI image model for a black-and-white typographic still. The API key never sits in the HTML.
+
+Local: `node local-server.js`, then [http://localhost:8000/image.html?id=coupling](http://localhost:8000/image.html?id=coupling).
 
 | Page | URL |
 |------|-----|
@@ -316,6 +324,7 @@ The Voice page on GitHub Pages calls [https://project-s4uzk.vercel.app](https://
 | Video | http://localhost:8000/video.html |
 | Podcast | http://localhost:8000/podcast.html |
 | Voice | http://localhost:8000/voice.html |
+| Image | http://localhost:8000/image.html |
 
 Or use the **Live Server** extension in VS Code / Cursor on `index.html`.
 
@@ -352,10 +361,12 @@ node build-essays.js --pdf
 | `slides/` | JPEG frames for the slideshow |
 | `podcast.html` | Synthetic Podcast page (NotebookLM sample + CTA) |
 | `voice.html` | Realtime voice conversation page |
+| `image.html` | Image page: generate a still from an ontology concept |
 | `api/token.js` | Vercel function: mint OpenAI Realtime ephemeral token |
-| `api/ontology-context.js` | Loads `ontology.jsonld` into the Voice session instructions |
-| `local-server.js` | Local static server plus `/api/token` for Voice |
-| `vercel.json` | CORS headers for the token function |
+| `api/image.js` | Vercel function: generate an ontology-grounded image |
+| `api/ontology-context.js` | Loads `ontology.jsonld` into Voice instructions and Image prompts |
+| `local-server.js` | Local static server plus `/api/token` and `/api/image` |
+| `vercel.json` | CORS headers and function config for token and image |
 | `your-mind-is-not-in-your-head.m4a` | Synthetic Podcast episode audio |
 | `hybrid-intelligences-highlight.mp4` | Hybrid Intelligences Highlights video file |
 | `build-ontology.js` | Export script: `hybrid-network.js` → JSON-LD + Turtle + OWL |

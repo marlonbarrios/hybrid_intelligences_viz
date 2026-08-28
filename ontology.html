@@ -509,6 +509,7 @@
         <a href="index.html">← Home</a>
         <a href="network.html">Network</a>
         <a href="voice.html">Voice</a>
+        <a href="image.html">Image</a>
         <a href="essay.html">Essay 1</a>
         <a href="essay-2.html">Essay 2</a>
         <a href="https://ufl.instructure.com/courses/574408" target="_blank" rel="noopener noreferrer">Canvas ↗</a>
@@ -901,6 +902,14 @@
       return `voice.html?${params.toString()}`;
     }
 
+    function imageHref(concept) {
+      const params = new URLSearchParams({
+        id: concept.id,
+        name: concept.label,
+      });
+      return `image.html?${params.toString()}`;
+    }
+
     function renderDetail(concept) {
       const related = (relatedById[concept.id] || [])
         .map((r) => ({ ...r, concept: conceptById[r.id] }))
@@ -923,6 +932,7 @@
           <p class="desc">${concept.definition}</p>
           <div class="actions">
             <a href="${voiceTalkHref(concept)}">Talk about this</a>
+            <a href="${imageHref(concept)}">Make an image</a>
             <a href="network.html#${concept.id}">View in network ↗</a>
             ${external.join(" · ")}
           </div>

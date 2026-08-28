@@ -149,4 +149,10 @@ function ontologyInstructions(focusId) {
   return `${baseInstructions()}\n\n${focus}HYBRID INTELLIGENCES ONTOLOGY\n${digest}`;
 }
 
-module.exports = { ontologyInstructions, buildOntologyDigest };
+module.exports = {
+  ontologyInstructions,
+  buildOntologyDigest,
+  findConcept,
+  loadOntology,
+  CATEGORY_LABEL,
+};
