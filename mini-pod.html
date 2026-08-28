@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hybrid Intelligences — Mini-pod</title>
-  <meta name="description" content="Record a two-and-a-half-minute Mini-pod from an ontology concept as a playable sound file, using the same Voice Realtime companion.">
+  <meta name="description" content="Create a two-and-a-half-minute Mini-pod MP3 from an ontology concept, using the same Voice Realtime companion.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
   <style>
@@ -260,7 +260,7 @@
       <div class="brand-copy">
         <p class="eyebrow">Mini-pod</p>
         <h1>A two-and-a-half-minute ontology episode as a sound file</h1>
-        <p class="meta">Same Voice companion · Realtime · Marin · recorded in this tab</p>
+        <p class="meta">Same Voice companion · Realtime · Marin · MP3 in this tab</p>
       </div>
     </div>
     <div class="header-row">
@@ -286,8 +286,8 @@
   <main>
     <p class="lede">
       Voice talks with you. Mini-pod asks the same companion for a ~two-and-a-half-minute episode
-      on one ontology concept, records the speech, and leaves only the sound file to play back.
-      No microphone. Keep this tab open until it finishes.
+      on one ontology concept, then leaves an MP3 to play back. You will not hear it while it is
+      being created. No microphone. Keep this tab open until the file is ready.
     </p>
 
     <section class="concept" id="conceptBox" hidden>
@@ -309,18 +309,17 @@
       <a class="ghost btn" id="imageLink" hidden>Make an image</a>
       <a class="ghost btn" id="ontoLink" hidden>View in ontology</a>
     </div>
-    <p class="status" id="status">Choose a concept to record a Mini-pod.</p>
+    <p class="status" id="status">Choose a concept to create a Mini-pod.</p>
 
     <div class="stage" id="stage">
-      <p class="placeholder" id="stageHint">The sound file will appear here.</p>
+      <p class="placeholder" id="stageHint">The MP3 will appear here when it is ready.</p>
       <p class="rec-label" id="recLabel" hidden>Episode</p>
       <audio id="player" controls hidden></audio>
     </div>
 
     <p class="related">
       The API key stays on Vercel; this page only receives a short-lived Voice token.
-      You hear the episode as it is spoken, then you can play the recording again.
-      This is not the NotebookLM Synthetic Podcast.
+      Nothing plays until the MP3 is ready. This is not the NotebookLM Synthetic Podcast.
     </p>
   </main>
 
@@ -328,6 +327,7 @@
     Hybrid Intelligences · University of Florida · Mini-pod
   </footer>
 
+  <script src="lamejs.iife.js"></script>
   <script src="realtime-config.js"></script>
   <script>
     const CATEGORY_LABEL = {
@@ -415,14 +415,8 @@
       return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0");
     }
 
-    function recorderMime() {
-      const types = ["audio/webm;codecs=opus", "audio/webm", "audio/mp4"];
-      return types.find((type) => window.MediaRecorder && MediaRecorder.isTypeSupported(type)) || "";
-    }
-
-    function downloadExt(mime) {
-      if (mime.indexOf("mp4") !== -1) return "m4a";
-      return "webm";
+    function wait(ms) {
+      return new Promise((resolve) => setTimeout(resolve, ms));
     }
 
     let currentId = "";
@@ -437,6 +431,7 @@
     let remoteAudio = null;
     let recorder = null;
     let chunks = [];
+    let recorderMimeType = "";
     let startedAt = 0;
     let tickTimer = null;
     let hardStopTimer = null;
@@ -540,44 +535,102 @@
 
     function updateTick() {
       if (!recording) return;
-      setStatus("Recording " + formatTime(elapsed()) + " / ~3:00. Keep this tab open. You can stop early if you want.");
+      setStatus("Creating Mini-pod… " + formatTime(elapsed()) + " / ~" + formatTime(TARGET_MS) + ". Keep this tab open.");
     }
 
-    function pickMime() {
-      const mime = recorderMime();
-      if (!mime) throw new Error("This browser cannot save a sound file. Try Chrome, Edge, or a current Safari.");
-      return mime;
+    function recorderMime() {
+      const types = ["audio/webm;codecs=opus", "audio/webm", "audio/mp4"];
+      return types.find((type) => window.MediaRecorder && MediaRecorder.isTypeSupported(type)) || "";
     }
 
     function startRecorder(stream) {
       if (recorder) return;
-      const mime = pickMime();
+      recorderMimeType = recorderMime();
       chunks = [];
-      recorder = new MediaRecorder(stream, { mimeType: mime });
+      recorder = recorderMimeType
+        ? new MediaRecorder(stream, { mimeType: recorderMimeType })
+        : new MediaRecorder(stream);
+      recorderMimeType = recorder.mimeType || recorderMimeType || "audio/webm";
       recorder.ondataavailable = (ev) => {
         if (ev.data && ev.data.size) chunks.push(ev.data);
       };
-      recorder.onstop = () => {
-        const blob = new Blob(chunks, { type: recorder.mimeType || mime });
-        if (objectUrl) URL.revokeObjectURL(objectUrl);
-        objectUrl = URL.createObjectURL(blob);
-        const player = document.getElementById("player");
-        player.src = objectUrl;
-        player.hidden = false;
-        document.getElementById("stageHint").hidden = true;
-        document.getElementById("recLabel").hidden = false;
-        document.getElementById("recLabel").textContent = "Episode · " + (currentLabel || currentId);
-        const dl = document.getElementById("downloadLink");
-        dl.hidden = false;
-        dl.href = objectUrl;
-        dl.download = "hybrid-intelligences-" + (currentId || "mini-pod") + "." + downloadExt(mime);
-        if (blob.size < 800) {
-          setStatus("The recording was empty. Try Mini-pod again in Chrome or a current Safari.", true);
-        } else {
-          setStatus("A sound file for " + (currentLabel || currentId) + ". Play it below.");
+      recorder.start(250);
+    }
+
+    function stopRecorder() {
+      return new Promise((resolve) => {
+        if (!recorder || recorder.state === "inactive") {
+          resolve();
+          return;
         }
-      };
-      recorder.start(1000);
+        recorder.addEventListener("stop", () => resolve(), { once: true });
+        try { recorder.stop(); } catch (_) { resolve(); }
+      });
+    }
+
+    function floatTo16(float32) {
+      const out = new Int16Array(float32.length);
+      for (let i = 0; i < float32.length; i++) {
+        const s = Math.max(-1, Math.min(1, float32[i]));
+        out[i] = s < 0 ? s * 0x8000 : s * 0x7fff;
+      }
+      return out;
+    }
+
+    async function blobToMp3(blob) {
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      const copy = await blob.arrayBuffer();
+      const audioBuf = await ctx.decodeAudioData(copy.slice(0));
+      const pcm = audioBuf.numberOfChannels > 1
+        ? mixMono(audioBuf)
+        : audioBuf.getChannelData(0);
+      const mp3 = encodeMp3(pcm, audioBuf.sampleRate);
+      try { await ctx.close(); } catch (_) {}
+      return mp3;
+    }
+
+    function mixMono(audioBuf) {
+      const len = audioBuf.length;
+      const out = new Float32Array(len);
+      const channels = audioBuf.numberOfChannels;
+      for (let c = 0; c < channels; c++) {
+        const data = audioBuf.getChannelData(c);
+        for (let i = 0; i < len; i++) out[i] += data[i] / channels;
+      }
+      return out;
+    }
+
+    function encodeMp3(float32, sampleRate) {
+      const Encoder = window.lamejs && lamejs.Mp3Encoder;
+      if (!Encoder) throw new Error("The MP3 encoder did not load. Refresh and try again.");
+      const encoder = new Encoder(1, sampleRate, 128);
+      const samples = floatTo16(float32);
+      const block = 1152;
+      const parts = [];
+      for (let i = 0; i < samples.length; i += block) {
+        const buf = encoder.encodeBuffer(samples.subarray(i, i + block));
+        if (buf.length) parts.push(buf);
+      }
+      const end = encoder.flush();
+      if (end.length) parts.push(end);
+      return new Blob(parts, { type: "audio/mpeg" });
+    }
+
+    function presentEpisode(blob) {
+      if (objectUrl) URL.revokeObjectURL(objectUrl);
+      objectUrl = URL.createObjectURL(blob);
+      const player = document.getElementById("player");
+      player.src = objectUrl;
+      player.hidden = false;
+      document.getElementById("stageHint").hidden = true;
+      document.getElementById("recLabel").hidden = false;
+      document.getElementById("recLabel").textContent = "Episode · " + (currentLabel || currentId);
+      const dl = document.getElementById("downloadLink");
+      dl.hidden = false;
+      dl.href = objectUrl;
+      dl.download = "hybrid-intelligences-" + (currentId || "mini-pod") + ".mp3";
+      setStatus("Mini-pod for " + (currentLabel || currentId) + " is ready.");
+      player.play().catch(() => {});
     }
 
     function silentTrack() {
@@ -625,16 +678,18 @@
     }
 
     function handleRealtimeEvent(event) {
+      if (!event || !event.type) return;
+      if (/transcript|text\.delta|output_text/i.test(event.type)) return;
       if (event.type === "response.done") {
         const status = event.response && event.response.status;
         window.setTimeout(() => {
           if (finishing || !recording) return;
           if (status === "cancelled" || status === "failed") {
-            finishRecording();
+            finishMiniPod();
             return;
           }
           if (elapsed() >= NO_MORE_TURNS_MS || elapsed() >= TARGET_MS || continues >= MAX_CONTINUES) {
-            finishRecording();
+            finishMiniPod();
             return;
           }
           continues += 1;
@@ -645,7 +700,7 @@
         if (/cancel|no active response|already has an active response/i.test(msg)) return;
         if (finishing || !recording) return;
         if (chunks.length) {
-          finishRecording();
+          finishMiniPod();
           return;
         }
         setStatus(msg, true);
@@ -680,7 +735,13 @@
       silentCtx = null;
     }
 
-    function finishRecording() {
+    function resetControls() {
+      document.getElementById("makeBtn").disabled = !currentId;
+      document.getElementById("makeBtn").textContent = "Mini-pod";
+      document.getElementById("stopBtn").hidden = true;
+    }
+
+    async function finishMiniPod() {
       if (finishing) return;
       finishing = true;
       recording = false;
@@ -692,19 +753,35 @@
         clearInterval(tickTimer);
         tickTimer = null;
       }
-      if (recorder && recorder.state === "recording") {
-        try { recorder.stop(); } catch (_) {}
-      }
-      window.setTimeout(() => {
-        teardownSession();
-        recorder = null;
-      }, 800);
-      document.getElementById("makeBtn").disabled = !currentId;
-      document.getElementById("makeBtn").textContent = "Mini-pod";
       document.getElementById("stopBtn").hidden = true;
+      document.getElementById("makeBtn").textContent = "Creating…";
+      document.getElementById("stageHint").textContent = "Creating Mini-pod… writing the MP3.";
+      setStatus("Creating Mini-pod… writing the MP3.");
+      await wait(400);
+      await stopRecorder();
+      const rawBlob = new Blob(chunks, { type: recorderMimeType || "audio/webm" });
+      recorder = null;
+      teardownSession();
+      resetControls();
+      if (rawBlob.size < 800) {
+        setStatus("The Mini-pod was empty. Try again in Chrome or a current Safari.", true);
+        document.getElementById("stageHint").hidden = false;
+        document.getElementById("stageHint").textContent = "The MP3 will appear here when it is ready.";
+        return;
+      }
+      try {
+        const blob = await blobToMp3(rawBlob);
+        if (blob.size < 800) {
+          setStatus("The Mini-pod was empty. Try again in Chrome or a current Safari.", true);
+          return;
+        }
+        presentEpisode(blob);
+      } catch (err) {
+        setStatus(err.message || "Could not write the MP3.", true);
+      }
     }
 
-    async function startRecording() {
+    async function startMiniPod() {
       if (!currentId || recording) return;
       if (location.protocol === "file:") {
         setStatus("This cannot run as a file. In Terminal run: node local-server.js  then open http://localhost:8000/mini-pod.html", true);
@@ -715,24 +792,31 @@
         setStatus("This cannot run as a file. Open http://localhost:8000/mini-pod.html after node local-server.js", true);
         return;
       }
+      if (!(window.lamejs && lamejs.Mp3Encoder)) {
+        setStatus("The MP3 encoder did not load. Refresh and try again.", true);
+        return;
+      }
       if (!window.MediaRecorder) {
-        setStatus("This browser cannot save a sound file. Try Chrome, Edge, or a current Safari.", true);
+        setStatus("This browser cannot create the Mini-pod file. Try Chrome, Edge, or a current Safari.", true);
         return;
       }
 
       recording = true;
       finishing = false;
       continues = 0;
+      chunks = [];
+      recorder = null;
       startedAt = Date.now();
       document.getElementById("makeBtn").disabled = true;
-      document.getElementById("makeBtn").textContent = "Recording…";
+      document.getElementById("makeBtn").textContent = "Creating…";
       document.getElementById("stopBtn").hidden = false;
       document.getElementById("downloadLink").hidden = true;
       document.getElementById("player").hidden = true;
+      document.getElementById("player").removeAttribute("src");
       document.getElementById("recLabel").hidden = true;
       document.getElementById("stageHint").hidden = false;
-      document.getElementById("stageHint").textContent = "Speaking and recording. Keep this tab open.";
-      setStatus("Connecting…");
+      document.getElementById("stageHint").textContent = "Creating Mini-pod. Nothing plays until the file is ready.";
+      setStatus("Creating Mini-pod…");
 
       try {
         const tokenRes = await fetch(url);
@@ -752,6 +836,8 @@
 
         pc = new RTCPeerConnection();
         remoteAudio = document.createElement("audio");
+        remoteAudio.muted = true;
+        remoteAudio.volume = 0;
         remoteAudio.autoplay = true;
         remoteAudio.setAttribute("playsinline", "");
         pc.ontrack = (e) => {
@@ -761,7 +847,7 @@
           try {
             startRecorder(stream);
           } catch (err) {
-            setStatus(err.message || "Could not start the recorder.", true);
+            setStatus(err.message || "Could not create the Mini-pod.", true);
           }
         };
         sendStream.getTracks().forEach((track) => pc.addTrack(track, sendStream));
@@ -793,12 +879,27 @@
         await waitForDataChannel();
 
         tickTimer = setInterval(updateTick, 500);
-        hardStopTimer = setTimeout(() => finishRecording(), HARD_STOP_MS);
+        hardStopTimer = setTimeout(() => finishMiniPod(), HARD_STOP_MS);
         window.setTimeout(() => askTurn("start"), 450);
         updateTick();
       } catch (err) {
-        finishRecording();
-        setStatus(err.message || "Could not start the recording.", true);
+        recording = false;
+        finishing = true;
+        if (hardStopTimer) {
+          clearTimeout(hardStopTimer);
+          hardStopTimer = null;
+        }
+        if (tickTimer) {
+          clearInterval(tickTimer);
+          tickTimer = null;
+        }
+        recorder = null;
+        teardownSession();
+        resetControls();
+        document.getElementById("stageHint").hidden = false;
+        document.getElementById("stageHint").textContent = "The MP3 will appear here when it is ready.";
+        setStatus(err.message || "Could not start the Mini-pod.", true);
+        finishing = false;
       }
     }
 
@@ -811,14 +912,14 @@
     async function init() {
       initTheme();
       const { id, name } = params();
-      document.getElementById("makeBtn").addEventListener("click", startRecording);
-      document.getElementById("stopBtn").addEventListener("click", finishRecording);
+      document.getElementById("makeBtn").addEventListener("click", startMiniPod);
+      document.getElementById("stopBtn").addEventListener("click", finishMiniPod);
       if (!id) {
         setStatus("Choose a concept in the ontology, then press Mini-pod.");
         return;
       }
       await loadConceptFromOntology(id, name);
-      setStatus("Press Mini-pod. Keep the tab open for about two and a half minutes. You will hear it as it is recorded, then you can play the file.");
+      setStatus("Press Mini-pod. Keep the tab open for about two and a half minutes. Nothing plays until the MP3 is ready.");
     }
 
     init();

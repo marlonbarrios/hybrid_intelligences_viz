@@ -216,7 +216,7 @@ Frontmatter at the top of each `.md` file sets title, author, date, and footer. 
 | **Video** | [`video.html`](video.html) — Hybrid Intelligences Highlights (`hybrid-intelligences-highlight.mp4`) |
 | **Voice** | [`voice.html`](voice.html) — conversational AI (OpenAI Realtime); token minting via Vercel `api/token.js` |
 | **Image** | [`image.html`](image.html) — abstract info-viz still from an ontology concept; generation via Vercel `api/image.js` |
-| **Mini-pod** | [`mini-pod.html`](mini-pod.html) — ~2.5-minute Voice episode recorded as a sound file |
+| **Mini-pod** | [`mini-pod.html`](mini-pod.html) — ~2.5-minute Voice episode as an MP3 |
 | **Canvas** | [Hybrid Intelligences - Creative B](https://ufl.instructure.com/courses/574408) course site |
 
 ---
@@ -305,7 +305,7 @@ The Voice page on GitHub Pages calls [https://project-s4uzk.vercel.app](https://
 
 ### Mini-pod (Voice Realtime recording)
 
-**Mini-pod** on Ontology or Network opens [`mini-pod.html`](mini-pod.html) for that concept. The same Voice token (`mode=podcast`) asks the companion for a ~two-and-a-half-minute spoken episode. This tab records that audio and shows only the sound file. No microphone. Keep the tab open until it finishes.
+**Mini-pod** on Ontology or Network opens [`mini-pod.html`](mini-pod.html) for that concept. The same Voice token (`mode=podcast`) asks the companion for a ~two-and-a-half-minute spoken episode. This tab stays silent while it creates, then plays an MP3. No microphone. Keep the tab open until the file is ready.
 
 Local: `node local-server.js`, then [http://localhost:8000/mini-pod.html?id=coupling](http://localhost:8000/mini-pod.html?id=coupling).
 
@@ -364,7 +364,8 @@ node build-essays.js --pdf
 | `slides/` | JPEG frames for the slideshow |
 | `podcast.html` | Synthetic Podcast page (NotebookLM sample + CTA) |
 | `voice.html` | Realtime voice conversation page |
-| `mini-pod.html` | Mini-pod: record a ~2.5-minute Voice episode as a sound file |
+| `mini-pod.html` | Mini-pod: create a ~2.5-minute Voice episode as an MP3 |
+| `lamejs.iife.js` | Browser MP3 encoder used by Mini-pod |
 | `image.html` | Image page: generate a still from an ontology concept |
 | `api/token.js` | Vercel function: mint OpenAI Realtime ephemeral token |
 | `api/image.js` | Vercel function: generate an ontology-grounded image |
