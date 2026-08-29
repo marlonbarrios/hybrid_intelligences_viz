@@ -344,12 +344,14 @@
     };
 
     const TARGET_MS = 2 * 60 * 1000 + 30 * 1000;
-    const NO_MORE_TURNS_MS = 2 * 60 * 1000 + 10 * 1000;
+    const NO_MORE_TURNS_MS = 2 * 60 * 1000 + 25 * 1000;
     const HARD_STOP_MS = 3 * 60 * 1000 + 30 * 1000;
     const MAX_CONTINUES = 8;
     const PREAMBLE_MAX_MS = 10 * 1000;
     const PREAMBLE_SILENCE_MS = 1600;
     const SPEECH_RMS = 0.022;
+    const END_QUIET_MS = 1400;
+    const END_QUIET_MAX_MS = 8000;
 
     function applyTheme(mode) {
       document.body.classList.toggle("light-mode", mode === "light");
@@ -417,6 +419,19 @@
 
     function wait(ms) {
       return new Promise((resolve) => setTimeout(resolve, ms));
+    }
+
+    function waitForQuiet(maxMs) {
+      return new Promise((resolve) => {
+        const t0 = Date.now();
+        const tick = setInterval(() => {
+          const quietFor = lastLoudAt ? Date.now() - lastLoudAt : END_QUIET_MS;
+          if (quietFor >= END_QUIET_MS || Date.now() - t0 >= maxMs) {
+            clearInterval(tick);
+            resolve();
+          }
+        }, 80);
+      });
     }
 
     let currentId = "";
@@ -518,14 +533,14 @@
       const name = currentLabel || currentId;
       const rel = related.length ? " Related concepts: " + related.join(", ") + "." : "";
       if (kind === "continue") {
-        return "Continue the same Mini-pod episode on " + name + " without restarting. Do not recap, greet, or say let's dive in. Pick up mid-thought immediately and keep speaking with no long pause until a full two-and-a-half-minute treatment is done.";
+        return "Continue the same Mini-pod episode on " + name + " without restarting. Do not recap, greet, or say let's dive in. If the previous thought was incomplete, finish that sentence first, then keep speaking with no long pause until a full two-and-a-half-minute treatment is done. Always land on complete sentences. Never stop mid-clause or mid-word.";
       }
       let text = "Record a two-and-a-half-minute Mini-pod on this Hybrid Intelligences ontology concept. No microphone, no questions, no greeting, no preamble.\n";
       text += "Name: " + name + "\n";
       if (currentCat) text += "Category: " + currentCat + "\n";
       if (currentDef) text += "Definition: " + currentDef + "\n";
       text += rel + "\n";
-      text += "Begin immediately with the concept. Do not say let's dive in, welcome, or here we go. Speak continuously for about two and a half minutes with no long pause. Stay with this concept. Then stop.";
+      text += "Begin immediately with the concept. Do not say let's dive in, welcome, or here we go. Speak continuously for about two and a half minutes with no long pause. Stay with this concept. Always finish every sentence. When you end, land on a complete closing sentence, then stop. Never stop mid-clause or mid-word.";
       return text;
     }
 
@@ -533,7 +548,10 @@
       if (!dc || dc.readyState !== "open" || finishing) return;
       dc.send(JSON.stringify({
         type: "response.create",
-        response: { instructions: episodeInstructions(kind) },
+        response: {
+          instructions: episodeInstructions(kind),
+          max_output_tokens: "inf",
+        },
       }));
     }
 
@@ -626,16 +644,18 @@
       const buf = new Uint8Array(analyser.fftSize);
       if (watchCtx.state === "suspended") watchCtx.resume().catch(() => {});
       levelTimer = setInterval(() => {
-        if (finishing || !recording) return;
+        if (!pendingStream) return;
         const talking = speechRms(analyser, buf) >= SPEECH_RMS;
         const now = Date.now();
         if (talking) {
-          if (!speechStartedAt) speechStartedAt = now;
           lastLoudAt = now;
-          if (!recorder) startRecorder(pendingStream);
+          if (!finishing && recording) {
+            if (!speechStartedAt) speechStartedAt = now;
+            if (!recorder) startRecorder(pendingStream);
+          }
           return;
         }
-        if (!recorder || preambleSkipped || !speechStartedAt || !lastLoudAt) return;
+        if (finishing || !recording || !recorder || preambleSkipped || !speechStartedAt || !lastLoudAt) return;
         const uttered = lastLoudAt - speechStartedAt;
         const quiet = now - lastLoudAt;
         if (uttered > 0 && uttered < PREAMBLE_MAX_MS && quiet >= PREAMBLE_SILENCE_MS) {
@@ -666,6 +686,9 @@
           return;
         }
         recorder.addEventListener("stop", () => resolve(), { once: true });
+        try {
+          if (recorder.state === "recording") recorder.requestData();
+        } catch (_) {}
         try { recorder.stop(); } catch (_) { resolve(); }
       });
     }
@@ -719,7 +742,7 @@
         rms[i] = Math.sqrt(e / frame);
         if (rms[i] > peak) peak = rms[i];
       }
-      const thresh = Math.max(0.01, peak * 0.08);
+      const thresh = Math.max(0.008, peak * 0.05);
       const voiced = new Uint8Array(n);
       for (let i = 0; i < n; i++) voiced[i] = rms[i] >= thresh ? 1 : 0;
       const merge = Math.round(0.35 / 0.02);
@@ -746,7 +769,8 @@
         startSeg = 1;
       }
       const keepFrom = segs[startSeg].a;
-      const keepTo = segs[segs.length - 1].b;
+      const tail = Math.round(0.6 / 0.02);
+      const keepTo = Math.min(n, segs[segs.length - 1].b + tail);
       const maxGap = Math.round(0.9 / 0.02);
       const hold = Math.round(0.35 / 0.02);
       const parts = [];
@@ -852,18 +876,8 @@
       if (event.type === "response.done") {
         const status = event.response && event.response.status;
         window.setTimeout(() => {
-          if (finishing || !recording) return;
-          if (status === "cancelled" || status === "failed") {
-            if (chunks.length || startedAt) finishMiniPod();
-            return;
-          }
-          if (startedAt && (elapsed() >= NO_MORE_TURNS_MS || elapsed() >= TARGET_MS || continues >= MAX_CONTINUES)) {
-            finishMiniPod();
-            return;
-          }
-          continues += 1;
-          askTurn("continue");
-        }, 700);
+          afterResponseDone(status);
+        }, 400);
       } else if (event.type === "error") {
         const msg = (event.error && event.error.message) || "Realtime session error.";
         if (/cancel|no active response|already has an active response/i.test(msg)) return;
@@ -915,10 +929,30 @@
       document.getElementById("stopBtn").hidden = true;
     }
 
+    async function afterResponseDone(status) {
+      if (finishing || !recording) return;
+      if (status === "cancelled" || status === "failed") {
+        if (chunks.length || startedAt) finishMiniPod();
+        return;
+      }
+      const longEnough = startedAt && (elapsed() >= NO_MORE_TURNS_MS || elapsed() >= TARGET_MS || continues >= MAX_CONTINUES);
+      if (longEnough) {
+        finishMiniPod();
+        return;
+      }
+      await waitForQuiet(5000);
+      if (finishing || !recording) return;
+      if (elapsed() >= NO_MORE_TURNS_MS || elapsed() >= TARGET_MS || continues >= MAX_CONTINUES) {
+        finishMiniPod();
+        return;
+      }
+      continues += 1;
+      askTurn("continue");
+    }
+
     async function finishMiniPod() {
       if (finishing) return;
       finishing = true;
-      recording = false;
       if (hardStopTimer) {
         clearTimeout(hardStopTimer);
         hardStopTimer = null;
@@ -929,9 +963,13 @@
       }
       document.getElementById("stopBtn").hidden = true;
       document.getElementById("makeBtn").textContent = "Creating…";
+      document.getElementById("stageHint").textContent = "Creating Mini-pod… waiting for the last sentence.";
+      setStatus("Creating Mini-pod… waiting for the last sentence.");
+      await waitForQuiet(END_QUIET_MAX_MS);
+      await wait(500);
+      recording = false;
       document.getElementById("stageHint").textContent = "Creating Mini-pod… writing the MP3.";
       setStatus("Creating Mini-pod… writing the MP3.");
-      await wait(400);
       await stopRecorder();
       const rawBlob = new Blob(chunks, { type: recorderMimeType || "audio/webm" });
       recorder = null;
