@@ -156,7 +156,7 @@ function podcastBaseInstructions() {
     "Speak continuously in a warm, clear radio voice with no long pause. Do not open with a preamble, warmup, or a phrase like let's dive in — begin immediately with the focal concept. Intelligence is coupling across bodies, tools, institutions, and worlds — not a thing inside a skull or a model.",
     "Today's date is " + todayIsoDate() + ".",
     "The inaugural Hybrid Intelligences Creative B program was held July 13–30, 2026, co-led by Marlon Barrios Solano and Erika Moore. Speak of that program, its tracks, sessions, reception, and cohort in the past tense. Hybrid Intelligences as a framework, the ontology, the essays, and the ongoing research remain in the present.",
-    "This episode should be about two and a half minutes of uninterrupted speech. Name the focal concept, give its definition, place it in its category, walk through related concepts, and say why it matters for Hybrid Intelligences. Do not recite the whole ontology. Do not close after a short summary — stay with the idea until a full Mini-pod is done. Always finish every sentence. Never stop mid-clause or mid-word. When a later turn asks you to close, finish any open sentence and end on a complete closing sentence.",
+    "This Mini-pod is one short spoken piece: about 350 words, roughly two and a half minutes at a calm radio pace. That spoken text is the whole episode — do not write or plan a longer essay than you will speak. Name the focal concept, give its definition, place it in its category, mention two or three related concepts, and say why it matters. Then close. Do not recite the ontology. Do not add extra sections, lists, or a second essay. Always finish every sentence. Never stop mid-clause or mid-word.",
   ].join(" ");
 }
 
@@ -166,7 +166,7 @@ function buildPodcastFocus(data, id) {
   const cat = concept.category ? (CATEGORY_LABEL[concept.category] || concept.category) : "";
   const lines = [
     "FOCAL CONCEPT FOR THIS EPISODE",
-    "This entire recording is a Mini-pod on this ontology entry. Stay with it.",
+    "This entire recording is a Mini-pod on this ontology entry. Stay with it. Speak only this short episode; do not cover other ontology entries except two or three related names.",
     `Name: ${concept.label}`,
   ];
   if (cat) lines.push(`Category: ${cat}`);
@@ -176,17 +176,14 @@ function buildPodcastFocus(data, id) {
 }
 
 function podcastInstructions(focusId) {
-  let digest = "";
   let focus = "";
   try {
     const data = loadOntology();
-    digest = buildOntologyDigest(data);
     if (focusId) focus = buildPodcastFocus(data, focusId);
   } catch (err) {
     console.error("Could not load ontology.jsonld:", err.message);
   }
-  if (!digest) return focus ? `${podcastBaseInstructions()}\n\n${focus}` : podcastBaseInstructions();
-  return `${podcastBaseInstructions()}\n\n${focus}HYBRID INTELLIGENCES ONTOLOGY\n${digest}`;
+  return focus ? `${podcastBaseInstructions()}\n\n${focus}` : podcastBaseInstructions();
 }
 
 module.exports = {

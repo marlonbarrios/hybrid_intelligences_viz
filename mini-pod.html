@@ -371,7 +371,8 @@
 
     const TARGET_MS = 2 * 60 * 1000 + 30 * 1000;
     const HARD_STOP_MS = 4 * 60 * 1000;
-    const MAX_CONTINUES = 8;
+    const MAX_CONTINUES = 2;
+    const TARGET_WORDS = 350;
     const PREAMBLE_MAX_MS = 10 * 1000;
     const PREAMBLE_SILENCE_MS = 1600;
     const SPEECH_RMS = 0.022;
@@ -563,17 +564,17 @@
       const name = currentLabel || currentId;
       const rel = related.length ? " Related concepts: " + related.join(", ") + "." : "";
       if (kind === "close") {
-        return "The Mini-pod on " + name + " is long enough. Finish any incomplete sentence from the previous turn, then close the episode in two or three complete sentences. Do not recap the whole piece, greet, or start a new section. End on a full closing sentence and then stop speaking.";
+        return "Stop adding new material. The Mini-pod on " + name + " is a short ~350-word episode. Finish any incomplete sentence, then one or two closing sentences. Do not recap, greet, or start a new section. End on a full closing sentence and stop.";
       }
       if (kind === "continue") {
-        return "Continue the same Mini-pod episode on " + name + " without restarting. Do not recap, greet, or say let's dive in. If the previous thought was incomplete, finish that sentence first, then keep speaking with no long pause until a full two-and-a-half-minute treatment is done. Always land on complete sentences. Never stop mid-clause or mid-word.";
+        return "Continue the same short Mini-pod on " + name + " only if the last sentence was cut. Do not recap or greet. Speak at most another few sentences to complete the ~350-word episode, then stop. Do not start a longer essay. Always land on complete sentences.";
       }
-      let text = "Record a two-and-a-half-minute Mini-pod on this Hybrid Intelligences ontology concept. No microphone, no questions, no greeting, no preamble.\n";
+      let text = "Record a short Hybrid Intelligences Mini-pod — about 350 words, roughly two and a half minutes spoken. The words you speak are the entire episode. No microphone, no questions, no greeting, no preamble.\n";
       text += "Name: " + name + "\n";
       if (currentCat) text += "Category: " + currentCat + "\n";
       if (currentDef) text += "Definition: " + currentDef + "\n";
       text += rel + "\n";
-      text += "Begin immediately with the concept. Do not say let's dive in, welcome, or here we go. Speak continuously for about two and a half minutes with no long pause. Stay with this concept. Always finish every sentence. Do not stop because a time limit is approaching — a later turn will ask you to close. Never stop mid-clause or mid-word.";
+      text += "Begin immediately with the concept. Do not say let's dive in, welcome, or here we go. Name it, define it, place it, mention two or three related concepts, say why it matters, and close. Do not write a long essay. Do not cover the rest of the ontology. Always finish every sentence. Never stop mid-clause or mid-word.";
       return text;
     }
 
@@ -864,6 +865,12 @@
       box.hidden = false;
     }
 
+    function spokenWordCount() {
+      const t = episodeTranscript.replace(/\s+/g, " ").trim();
+      if (!t) return 0;
+      return t.split(" ").length;
+    }
+
     function transcriptLooksComplete() {
       const t = episodeTranscript.replace(/\s+/g, " ").trim();
       if (t.length < 80) return false;
@@ -879,7 +886,6 @@
         for (let j = 0; j < content.length; j++) {
           const c = content[j] || {};
           if (c.transcript) parts.push(c.transcript);
-          else if (c.text) parts.push(c.text);
         }
       }
       return parts.join("");
@@ -955,7 +961,7 @@
 
     function handleRealtimeEvent(event) {
       if (!event || !event.type) return;
-      if ((event.type === "response.output_audio_transcript.delta" || event.type === "response.audio_transcript.delta" || event.type === "response.output_text.delta") && event.delta) {
+      if ((event.type === "response.output_audio_transcript.delta" || event.type === "response.audio_transcript.delta") && event.delta) {
         appendTranscriptDelta(event.delta);
         return;
       }
@@ -1041,23 +1047,24 @@
         if (chunks.length || startedAt) finishMiniPod();
         return;
       }
+      const words = spokenWordCount();
       const incomplete = status === "incomplete" || !transcriptLooksComplete();
-      const timeToClose = wrapDue || (startedAt && elapsed() >= TARGET_MS) || continues >= MAX_CONTINUES;
+      const longEnough = words >= TARGET_WORDS || wrapDue || (startedAt && elapsed() >= TARGET_MS) || continues >= MAX_CONTINUES;
       if (wrapping) {
-        if (incomplete && closeTries < 2 && elapsed() < HARD_STOP_MS - 15000) {
+        if (incomplete && closeTries < 2 && elapsed() < HARD_STOP_MS - 15000 && words < TARGET_WORDS + 80) {
           await requestClose();
           return;
         }
         finishMiniPod();
         return;
       }
-      if (timeToClose) {
+      if (longEnough) {
         await requestClose();
         return;
       }
       await waitForQuiet(8000);
       if (finishing || !recording) return;
-      if (wrapDue || elapsed() >= TARGET_MS || continues >= MAX_CONTINUES) {
+      if (spokenWordCount() >= TARGET_WORDS || wrapDue || elapsed() >= TARGET_MS || continues >= MAX_CONTINUES) {
         await requestClose();
         return;
       }
