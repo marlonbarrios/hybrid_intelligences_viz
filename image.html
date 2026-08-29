@@ -455,7 +455,7 @@
           data = JSON.parse(raw);
         } catch (_) {
           if (/FUNCTION_INVOCATION_TIMEOUT/i.test(raw)) {
-            throw new Error("The image took too long on the server. Try Make an image again.");
+            throw new Error("The image took too long on the server. Wait a moment and try Make an image again.");
           }
           const snippet = raw.replace(/\s+/g, " ").trim().slice(0, 180);
           throw new Error(snippet || "The image server did not return JSON. Redeploy Vercel from main, then try again.");
@@ -471,7 +471,7 @@
         const dl = document.getElementById("downloadLink");
         dl.hidden = false;
         dl.href = data.image;
-        dl.download = "hybrid-intelligences-" + currentId + ".png";
+        dl.download = "hybrid-intelligences-" + currentId + ".jpg";
         if (data.label) document.getElementById("conceptTitle").textContent = data.label;
         if (data.definition) document.getElementById("conceptDef").textContent = data.definition;
         if (data.category) document.getElementById("conceptCat").textContent = data.category;

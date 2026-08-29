@@ -30,25 +30,23 @@ function conceptIdFromReq(req) {
   }
 }
 
+function clip(text, max) {
+  const t = String(text || "").replace(/\s+/g, " ").trim();
+  if (t.length <= max) return t;
+  return t.slice(0, max).replace(/\s+\S*$/, "") + "…";
+}
+
 function buildImagePrompt(concept) {
   const cat = concept.category ? (CATEGORY_LABEL[concept.category] || concept.category) : "";
-  const related = (concept.related || []).slice(0, 6).join(", ");
+  const related = (concept.related || []).slice(0, 4).join(", ");
   return [
-    "Create one still that is an abstract information visualization of a single concept from the Hybrid Intelligences ontology.",
-    "Think knowledge map, semantic network, field diagram, constellation of relations — not a title card, not a poster, not a photograph of people or rooms.",
-    "The image should feel like looking into a conceptual structure: nodes, edges, clusters, orbits, vectors, lattices, flows, or tensegrity. Visually interesting. Dense enough to reward looking. Abstract.",
-    "",
-    `Focal concept (this name appears as a label in the visualization, not as a huge headline covering the frame): ${concept.label}`,
-    cat ? `Category (may appear as a small ring, legend, or layer label): ${cat}` : "",
-    concept.definition ? `Meaning to spatialize (encode as structure and relation, not as a paragraph of text): ${concept.definition}` : "",
-    related ? `Related terms as neighboring nodes or satellite labels: ${related}` : "",
-    "",
-    "Visual language:",
-    "- Black, white, and grey, with optional one accent (gold or pale blue) if it clarifies the graph.",
-    "- Information visualization / abstract diagram. High graphic intelligence.",
-    "- Networks, fields, topologies, overlapping circles, thin connecting lines, small type as data labels.",
-    "- The concept should be readable as a labeled node or cluster, not as a book cover.",
-    "- No photoreal people, robots, classrooms, website UI, logos, watermarks, or picture frames.",
+    "Abstract information visualization of one Hybrid Intelligences ontology concept.",
+    "Knowledge map: nodes, thin edges, clusters, small labels. Black, white, grey, optional gold accent.",
+    "Not a poster, photograph, classroom, or UI screenshot.",
+    `Focal labeled node: ${concept.label}`,
+    cat ? `Category: ${cat}` : "",
+    concept.definition ? `Meaning: ${clip(concept.definition, 420)}` : "",
+    related ? `Neighbor nodes: ${related}` : "",
   ]
     .filter(Boolean)
     .join("\n");
@@ -104,8 +102,9 @@ module.exports = async function handler(req, res) {
         model: "gpt-image-2",
         prompt: buildImagePrompt(concept),
         size: "1024x1024",
-        quality: "medium",
-        output_format: "png",
+        quality: "low",
+        output_format: "jpeg",
+        output_compression: 80,
       }),
     });
 
@@ -131,7 +130,7 @@ module.exports = async function handler(req, res) {
       label: concept.label,
       category: concept.category ? (CATEGORY_LABEL[concept.category] || concept.category) : "",
       definition: concept.definition,
-      image: b64 ? `data:image/png;base64,${b64}` : url,
+      image: b64 ? `data:image/jpeg;base64,${b64}` : url,
     });
   } catch (err) {
     res.status(500).json({ error: err.message || "Failed to generate an image." });

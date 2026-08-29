@@ -328,7 +328,7 @@ Local: `node local-server.js`, then [http://localhost:8000/mini-pod.html?id=coup
 
 ### Image (OpenAI)
 
-**Make an image** on Ontology or Network opens [`image.html`](image.html) for that concept. The same Vercel project (`/api/image`) builds a prompt from the ontology entry and asks OpenAI **gpt-image-2** (high quality) for an abstract information visualization. The API key never sits in the HTML.
+**Make an image** on Ontology or Network opens [`image.html`](image.html) for that concept. The same Vercel project (`/api/image`) builds a prompt from the ontology entry and asks OpenAI **gpt-image-2** (low quality, JPEG) for an abstract information visualization so the request can finish inside Vercel’s time limit. The API key never sits in the HTML.
 
 Local: `node local-server.js`, then [http://localhost:8000/image.html?id=coupling](http://localhost:8000/image.html?id=coupling).
 
