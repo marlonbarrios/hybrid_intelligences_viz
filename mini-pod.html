@@ -236,6 +236,27 @@
       text-transform: uppercase;
       color: var(--title);
     }
+    .transcript {
+      margin: 0 0 1.25rem;
+      padding: 1.15rem 1.2rem;
+      border: 1px solid var(--border);
+      background: var(--panel);
+    }
+    .transcript h3 {
+      margin: 0 0 0.65rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--title);
+    }
+    .transcript p {
+      margin: 0;
+      font-family: "IBM Plex Serif", Georgia, serif;
+      font-size: 1.02rem;
+      line-height: 1.65;
+      white-space: pre-wrap;
+    }
     .related {
       font-size: 0.92rem;
       color: var(--muted);
@@ -314,6 +335,11 @@
       <audio id="player" controls hidden></audio>
     </div>
 
+    <section class="transcript" id="transcriptBox" hidden>
+      <h3>Transcript</h3>
+      <p id="transcriptText"></p>
+    </section>
+
     <p class="related">
       The API key stays on Vercel; this page only receives a short-lived Voice token.
       Nothing plays until the MP3 is ready. This is not the NotebookLM Synthetic Podcast.
@@ -344,8 +370,7 @@
     };
 
     const TARGET_MS = 2 * 60 * 1000 + 30 * 1000;
-    const NO_MORE_TURNS_MS = 2 * 60 * 1000 + 25 * 1000;
-    const HARD_STOP_MS = 3 * 60 * 1000 + 30 * 1000;
+    const HARD_STOP_MS = 4 * 60 * 1000;
     const MAX_CONTINUES = 8;
     const PREAMBLE_MAX_MS = 10 * 1000;
     const PREAMBLE_SILENCE_MS = 1600;
@@ -460,6 +485,11 @@
     let sessionCapTimer = null;
     let continues = 0;
     let finishing = false;
+    let wrapping = false;
+    let wrapDue = false;
+    let closeTries = 0;
+    let episodeTranscript = "";
+    let deltaThisTurn = false;
     let objectUrl = "";
 
     function setStatus(msg, isError) {
@@ -532,6 +562,9 @@
     function episodeInstructions(kind) {
       const name = currentLabel || currentId;
       const rel = related.length ? " Related concepts: " + related.join(", ") + "." : "";
+      if (kind === "close") {
+        return "The Mini-pod on " + name + " is long enough. Finish any incomplete sentence from the previous turn, then close the episode in two or three complete sentences. Do not recap the whole piece, greet, or start a new section. End on a full closing sentence and then stop speaking.";
+      }
       if (kind === "continue") {
         return "Continue the same Mini-pod episode on " + name + " without restarting. Do not recap, greet, or say let's dive in. If the previous thought was incomplete, finish that sentence first, then keep speaking with no long pause until a full two-and-a-half-minute treatment is done. Always land on complete sentences. Never stop mid-clause or mid-word.";
       }
@@ -540,7 +573,7 @@
       if (currentCat) text += "Category: " + currentCat + "\n";
       if (currentDef) text += "Definition: " + currentDef + "\n";
       text += rel + "\n";
-      text += "Begin immediately with the concept. Do not say let's dive in, welcome, or here we go. Speak continuously for about two and a half minutes with no long pause. Stay with this concept. Always finish every sentence. When you end, land on a complete closing sentence, then stop. Never stop mid-clause or mid-word.";
+      text += "Begin immediately with the concept. Do not say let's dive in, welcome, or here we go. Speak continuously for about two and a half minutes with no long pause. Stay with this concept. Always finish every sentence. Do not stop because a time limit is approaching — a later turn will ask you to close. Never stop mid-clause or mid-word.";
       return text;
     }
 
@@ -588,11 +621,15 @@
       };
       recorder.start(250);
       startedAt = Date.now();
+      wrapDue = false;
+      wrapping = false;
+      closeTries = 0;
       if (hardStopTimer) {
         clearTimeout(hardStopTimer);
         hardStopTimer = null;
       }
       hardStopTimer = setTimeout(() => finishMiniPod(), HARD_STOP_MS);
+      window.setTimeout(() => { wrapDue = true; }, TARGET_MS);
     }
 
     function discardRecorder() {
@@ -769,7 +806,7 @@
         startSeg = 1;
       }
       const keepFrom = segs[startSeg].a;
-      const tail = Math.round(0.6 / 0.02);
+      const tail = Math.round(1.0 / 0.02);
       const keepTo = Math.min(n, segs[segs.length - 1].b + tail);
       const maxGap = Math.round(0.9 / 0.02);
       const hold = Math.round(0.35 / 0.02);
@@ -809,6 +846,51 @@
       return new Blob(parts, { type: "audio/mpeg" });
     }
 
+    function hideTranscript() {
+      document.getElementById("transcriptBox").hidden = true;
+      document.getElementById("transcriptText").textContent = "";
+    }
+
+    function showTranscript() {
+      const text = episodeTranscript.replace(/\s+/g, " ").trim();
+      const box = document.getElementById("transcriptBox");
+      const el = document.getElementById("transcriptText");
+      if (!text) {
+        box.hidden = true;
+        el.textContent = "";
+        return;
+      }
+      el.textContent = text;
+      box.hidden = false;
+    }
+
+    function transcriptLooksComplete() {
+      const t = episodeTranscript.replace(/\s+/g, " ").trim();
+      if (t.length < 80) return false;
+      return /[.!?]["')\]]*$/.test(t);
+    }
+
+    function harvestResponseTranscript(response) {
+      if (!response) return "";
+      const parts = [];
+      const output = response.output || [];
+      for (let i = 0; i < output.length; i++) {
+        const content = output[i] && output[i].content ? output[i].content : [];
+        for (let j = 0; j < content.length; j++) {
+          const c = content[j] || {};
+          if (c.transcript) parts.push(c.transcript);
+          else if (c.text) parts.push(c.text);
+        }
+      }
+      return parts.join("");
+    }
+
+    function appendTranscriptDelta(delta) {
+      if (!delta) return;
+      deltaThisTurn = true;
+      episodeTranscript += delta;
+    }
+
     function presentEpisode(blob) {
       if (objectUrl) URL.revokeObjectURL(objectUrl);
       objectUrl = URL.createObjectURL(blob);
@@ -822,6 +904,7 @@
       dl.hidden = false;
       dl.href = objectUrl;
       dl.download = "hybrid-intelligences-" + (currentId || "mini-pod") + ".mp3";
+      showTranscript();
       setStatus("Mini-pod for " + (currentLabel || currentId) + " is ready.");
       player.play().catch(() => {});
     }
@@ -872,9 +955,22 @@
 
     function handleRealtimeEvent(event) {
       if (!event || !event.type) return;
+      if ((event.type === "response.output_audio_transcript.delta" || event.type === "response.audio_transcript.delta" || event.type === "response.output_text.delta") && event.delta) {
+        appendTranscriptDelta(event.delta);
+        return;
+      }
+      if (event.type === "response.output_audio_transcript.done" || event.type === "response.audio_transcript.done") {
+        if (!deltaThisTurn && event.transcript) episodeTranscript += event.transcript;
+        return;
+      }
       if (/transcript|text\.delta|output_text/i.test(event.type)) return;
       if (event.type === "response.done") {
         const status = event.response && event.response.status;
+        if (!deltaThisTurn) {
+          const harvested = harvestResponseTranscript(event.response);
+          if (harvested) episodeTranscript += harvested;
+        }
+        deltaThisTurn = false;
         window.setTimeout(() => {
           afterResponseDone(status);
         }, 400);
@@ -929,21 +1025,40 @@
       document.getElementById("stopBtn").hidden = true;
     }
 
+    async function requestClose() {
+      wrapping = true;
+      setStatus("Creating Mini-pod… finishing the last sentences.");
+      document.getElementById("stageHint").textContent = "Creating Mini-pod… finishing the last sentences.";
+      await waitForQuiet(12000);
+      if (finishing || !recording) return;
+      closeTries += 1;
+      askTurn("close");
+    }
+
     async function afterResponseDone(status) {
       if (finishing || !recording) return;
       if (status === "cancelled" || status === "failed") {
         if (chunks.length || startedAt) finishMiniPod();
         return;
       }
-      const longEnough = startedAt && (elapsed() >= NO_MORE_TURNS_MS || elapsed() >= TARGET_MS || continues >= MAX_CONTINUES);
-      if (longEnough) {
+      const incomplete = status === "incomplete" || !transcriptLooksComplete();
+      const timeToClose = wrapDue || (startedAt && elapsed() >= TARGET_MS) || continues >= MAX_CONTINUES;
+      if (wrapping) {
+        if (incomplete && closeTries < 2 && elapsed() < HARD_STOP_MS - 15000) {
+          await requestClose();
+          return;
+        }
         finishMiniPod();
         return;
       }
-      await waitForQuiet(5000);
+      if (timeToClose) {
+        await requestClose();
+        return;
+      }
+      await waitForQuiet(8000);
       if (finishing || !recording) return;
-      if (elapsed() >= NO_MORE_TURNS_MS || elapsed() >= TARGET_MS || continues >= MAX_CONTINUES) {
-        finishMiniPod();
+      if (wrapDue || elapsed() >= TARGET_MS || continues >= MAX_CONTINUES) {
+        await requestClose();
         return;
       }
       continues += 1;
@@ -1015,6 +1130,9 @@
 
       recording = true;
       finishing = false;
+      wrapping = false;
+      wrapDue = false;
+      closeTries = 0;
       continues = 0;
       chunks = [];
       recorder = null;
@@ -1023,6 +1141,9 @@
       speechStartedAt = 0;
       lastLoudAt = 0;
       ignoreChunks = false;
+      episodeTranscript = "";
+      deltaThisTurn = false;
+      hideTranscript();
       document.getElementById("makeBtn").disabled = true;
       document.getElementById("makeBtn").textContent = "Creating…";
       document.getElementById("stopBtn").hidden = false;
