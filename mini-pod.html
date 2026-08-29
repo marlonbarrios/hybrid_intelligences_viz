@@ -323,6 +323,7 @@
       <button type="button" id="makeBtn" disabled>Mini-pod</button>
       <button type="button" class="ghost" id="stopBtn" hidden>Stop</button>
       <a class="ghost btn" id="downloadLink" hidden>Download</a>
+      <button type="button" class="ghost" id="pdfBtn" hidden>PDF ↓</button>
       <a class="ghost btn" id="talkLink" hidden>Talk about this</a>
       <a class="ghost btn" id="imageLink" hidden>Make an image</a>
       <a class="ghost btn" id="ontoLink" hidden>View in ontology</a>
@@ -857,6 +858,7 @@
     function hideTranscript() {
       document.getElementById("transcriptBox").hidden = true;
       document.getElementById("transcriptText").textContent = "";
+      document.getElementById("pdfBtn").hidden = true;
     }
 
     function cleanTranscript(text) {
@@ -876,10 +878,12 @@
       if (!text) {
         box.hidden = true;
         el.textContent = "";
+        document.getElementById("pdfBtn").hidden = true;
         return;
       }
       el.textContent = text;
       box.hidden = false;
+      document.getElementById("pdfBtn").hidden = false;
     }
 
     function spokenWordCount() {
@@ -912,6 +916,151 @@
       if (!delta) return;
       deltaThisTurn = true;
       episodeTranscript += delta;
+    }
+
+    function pdfSafe(text) {
+      return String(text)
+        .replace(/[\u2018\u2019]/g, "'")
+        .replace(/[\u201C\u201D]/g, '"')
+        .replace(/\u2013/g, "-")
+        .replace(/\u2014/g, "--")
+        .replace(/\u2026/g, "...")
+        .replace(/\u00A0/g, " ")
+        .replace(/\u00B7/g, "-")
+        .replace(/[^\x20-\x7E]/g, "?");
+    }
+
+    function pdfString(text) {
+      return "(" + pdfSafe(text).replace(/\\/g, "\\\\").replace(/\(/g, "\\(").replace(/\)/g, "\\)") + ")";
+    }
+
+    function wrapWords(text, maxChars) {
+      const raw = pdfSafe(text).replace(/\s+/g, " ").trim();
+      if (!raw) return [""];
+      const words = raw.split(" ");
+      const lines = [];
+      let cur = "";
+      for (const word of words) {
+        const next = cur ? cur + " " + word : word;
+        if (next.length > maxChars && cur) {
+          lines.push(cur);
+          cur = word;
+        } else {
+          cur = next;
+        }
+        while (cur.length > maxChars) {
+          lines.push(cur.slice(0, maxChars));
+          cur = cur.slice(maxChars);
+        }
+      }
+      if (cur) lines.push(cur);
+      return lines;
+    }
+
+    function buildMiniPodPdf(body, stamp) {
+      const left = 54;
+      const floor = 56;
+      const startY = 730;
+      const pages = [];
+      let ops = [];
+      let y = startY;
+
+      function flushPage() {
+        if (ops.length) pages.push(ops);
+        ops = [];
+        y = startY;
+      }
+
+      function writeLine(text, size, bold, gap) {
+        if (y - gap < floor) flushPage();
+        ops.push("BT");
+        ops.push("/" + (bold ? "F2" : "F1") + " " + size + " Tf");
+        ops.push(left + " " + y + " Td");
+        ops.push(pdfString(text) + " Tj");
+        ops.push("ET");
+        y -= gap;
+      }
+
+      writeLine("Hybrid Intelligences", 16, true, 20);
+      writeLine("Mini-pod", 11, false, 16);
+      writeLine(currentLabel || currentId || "Episode", 13, true, 16);
+      if (currentCat) writeLine(currentCat, 10, false, 14);
+      writeLine(stamp, 9, false, 14);
+      ops.push(left + " " + y + " m");
+      ops.push("558 " + y + " l S");
+      y -= 20;
+      wrapWords(body, 90).forEach((line) => writeLine(line, 11, false, 15));
+      flushPage();
+
+      const count = pages.length;
+      const streams = pages.map((pageOps, i) => pageOps.concat([
+        "BT",
+        "/F1 8 Tf",
+        left + " 40 Td",
+        pdfString("Hybrid Intelligences · University of Florida · Mini-pod") + " Tj",
+        "ET",
+        "BT",
+        "/F1 8 Tf",
+        "520 40 Td",
+        pdfString((i + 1) + " / " + count) + " Tj",
+        "ET",
+      ]).join("\n"));
+
+      const obj = [];
+      obj[1] = "<< /Type /Catalog /Pages 2 0 R >>";
+      obj[3] = "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>";
+      obj[4] = "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>";
+      let next = 5;
+      const kids = [];
+      streams.forEach((stream) => {
+        const pageNum = next;
+        const contentNum = next + 1;
+        kids.push(pageNum + " 0 R");
+        obj[pageNum] = "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents " + contentNum + " 0 R >>";
+        obj[contentNum] = "<< /Length " + stream.length + " >>\nstream\n" + stream + "\nendstream";
+        next += 2;
+      });
+      obj[2] = "<< /Type /Pages /Kids [" + kids.join(" ") + "] /Count " + streams.length + " >>";
+
+      let out = "%PDF-1.4\n";
+      const offsets = [0];
+      for (let i = 1; i < next; i++) {
+        offsets[i] = out.length;
+        out += i + " 0 obj\n" + obj[i] + "\nendobj\n";
+      }
+      const xrefPos = out.length;
+      out += "xref\n0 " + next + "\n0000000000 65535 f \n";
+      for (let i = 1; i < next; i++) {
+        out += String(offsets[i]).padStart(10, "0") + " 00000 n \n";
+      }
+      out += "trailer\n<< /Size " + next + " /Root 1 0 R >>\nstartxref\n" + xrefPos + "\n%%EOF\n";
+      return out;
+    }
+
+    function downloadTranscriptPdf() {
+      const body = cleanTranscript(episodeTranscript);
+      if (!body) {
+        setStatus("Create a Mini-pod first, then save the transcript as PDF.", true);
+        return;
+      }
+      try {
+        const when = new Date();
+        const stamp = when.toLocaleString(undefined, { dateStyle: "long", timeStyle: "short" });
+        const fileStamp = when.toISOString().slice(0, 10);
+        const pdf = buildMiniPodPdf(body, stamp);
+        const blob = new Blob([pdf], { type: "application/pdf" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "hybrid-intelligences-mini-pod-" + (currentId || "episode") + "-" + fileStamp + ".pdf";
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        setTimeout(function () { URL.revokeObjectURL(url); }, 1500);
+        setStatus("Saved PDF.");
+      } catch (err) {
+        setStatus(err.message || "Could not save the PDF.", true);
+      }
     }
 
     function presentEpisode(blob) {
@@ -1281,6 +1430,7 @@
       const { id, name } = params();
       document.getElementById("makeBtn").addEventListener("click", startMiniPod);
       document.getElementById("stopBtn").addEventListener("click", finishMiniPod);
+      document.getElementById("pdfBtn").addEventListener("click", downloadTranscriptPdf);
       if (!id) {
         setStatus("Choose a concept in the ontology, then press Mini-pod.");
         return;
