@@ -14,6 +14,12 @@ otherEssayLabel: Essay 2
 <!-- Concept links: [coupling](concept:coupling) → network.html#coupling -->
 <!-- Rebuild HTML + PDF: node build-essays.js --pdf -->
 
+::: figure
+![Diagram titled Cognitive Assemblages: a radial map of bodies, Katherine Hayles, sensors, datasets, environments, institutions, interfaces, and assemblage around a central hub.](screenshots/cognitive-assemblages.jpg)
+
+Meaning emerges in context · Intelligence circulates
+:::
+
 I begin from the premise that intelligence is not a thing located inside a skull, a machine, a server, or a sovereign individual. Intelligence is an activity of [coupling](concept:coupling). It is a relational event. It happens through bodies, tools, architectures, histories, gestures, laws, media, atmospheres, and the fragile rhythms of co-presence. In the era of artificial intelligence, this premise becomes not only philosophical but urgent. We are entering a time in which mediation is no longer simply communicational, symbolic, or technical. [Mediation](concept:mediation) has become cognitive. The tools that once transmitted messages now participate in the production of perception, memory, imagination, decision, orientation, and future-making.
 
 This is also why [embodiment](concept:embodiment) must be understood as *[complex](concept:complexity_theory)* and *emergent*, not as a simple fact of having flesh. Embodiment is complex because it is never one layer. A living body is already a nested ecology: nerves, breath, posture, affect, memory, training, injury, culture, language, tools, rooms, laws, and other bodies. It is complex because scales interfere with one another—cellular metabolism with social habit, proprioception with institutional protocol, gesture with interface, attention with architecture. No single level explains cognition. Embodiment is emergent because capacities appear from relations that none of the parts possess alone. Balance, meaning, skill, care, refusal, and imagination do not sit inside a substance waiting to be expressed; they arise through ongoing coupling. The juggler’s timing, the dancer’s listening, the writer’s rhythm with a language model, the city’s ambient intelligence through sensors and law—these are not properties of an isolated subject. They are patterns that form when bodies, worlds, and technical systems enter into mutual constraint and mutual enablement. Complex embodiment names this condition: mind as world-involving process, always more than biological presence, always more than technical mediation, always becoming through relation. 

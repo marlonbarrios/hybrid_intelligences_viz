@@ -128,7 +128,9 @@ let mobileHits = [];
 const MOBILE_BREAKPOINT = 720;
 const PORTFOLIO_URL = "https://marlonbarrios.github.io/";
 const HOME_URL = "index.html";
+const ABOUT_URL = "about.html";
 const ONTOLOGY_URL = "ontology.html";
+const ESSAYS_URL = "essays.html";
 const ESSAY1_URL = "essay.html";
 const ESSAY2_URL = "essay-2.html";
 const VIDEO_URL = "video.html";
@@ -138,8 +140,8 @@ const VOICE_URL = "voice.html";
 const IMAGE_URL = "image.html";
 const MINI_POD_URL = "mini-pod.html";
 const SLIDES_URL = "slides.html";
-const CANVAS_URL = "https://ufl.instructure.com/courses/574408";
 const SHOWCASE_URL = "showcase.html";
+const CREATIVE_B_URL = "creative-b.html";
 let animateMode = false;
 let animateStep = 0;
 let animateUntil = 0;
@@ -1047,7 +1049,7 @@ const NODES = [
   { id: "philosophical_practice", label: "Philosophical\nPractice", cat: "practice",   weight: 1.4,
     desc: "Philosophical thinking as a lived method—questioning concepts, testing distinctions, staying with ambivalence, and refining vocabulary through dialogue, reading, and writing. Not only a domain of theory, but a practice of inquiry that clarifies agency, embodiment, and world-making in the era of AI." },
   { id: "conversational_ai",  label: "Conversational\nAI",            cat: "practice",   weight: 1.55,
-    desc: "The spoken companion for Hybrid Intelligences—a chatbot grounded in the program ontology. Voice is one layer of a hybrid dynamic knowledge architecture of concepts, essays, documentation, visualization, conversational AI, and program materials for embodied leadership and creativity in the era of AI. It explains concepts from their definitions and relations, can be interrupted, and opens from Talk about this on any node.",
+    desc: "The spoken companion for Hybrid Intelligences—a chatbot grounded in the program ontology. Voice is one layer of a hybrid dynamic knowledge architecture of concepts, essays, visualization, conversational AI, documentation, and program materials for embodied leadership and creativity in the era of AI. It explains concepts from their definitions and relations, can be interrupted, and opens from Talk about this on any node.",
     url: "voice.html", linkLabel: "Open Voice →" },
   { id: "pendular_umwelt",    label: "My Pendular\nUmwelt",           cat: "practice",   weight: 1.5,
     desc: "Speculative web work by Marlon Barrios Solano, developed during the open labs of the inaugural Hybrid Intelligences program, July 2026. GPT-4o writes from a proposed computational Umwelt and reads aloud; p5.js pendulums inscribe the words along branching trails — folds of speed and path that poetically stage a large language model’s possible world (a Latentwelt of tokens, embeddings, and continuations) rather than a still map. The work lets a model self-report an Umwelt while physics and type refuse to keep that speech still.",
@@ -1057,7 +1059,7 @@ const NODES = [
     url: "showcase.html", linkLabel: "Open showcase →" },
 
   { id: "hi_program",         label: "Hybrid Intelligences\nProgram", cat: "program",  weight: 2.2,
-    desc: "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI — the inaugural University of Florida Creative B program, held July 13–30, 2026. It was co-led by Marlon Barrios Solano and Erika Moore; hosted by CAME and CAM in the College of the Arts, in partnership with IGNITE at the Wertheim Laboratory. It had three tracks: Space & Memory (Mondays), Future Lab (Wednesdays), and Ethics & Leadership (Thursdays), and closed with a public reception. The program treated intelligence as coupling across bodies, tools, institutions, and worlds, and rehearsed hybrid cognition through embodiment, ethics, and creative practice. Hybrid Intelligences remains an ongoing research framework. Its public site is a hybrid dynamic knowledge architecture of concepts, essays, documentation, visualization, conversational AI, and program materials.",
+    desc: "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI — the inaugural University of Florida Creative B program, held July 13–30, 2026. It was co-led by Marlon Barrios Solano and Erika Moore; hosted by CAME and CAM in the College of the Arts, in partnership with IGNITE at the Wertheim Laboratory. It had three tracks: Space & Memory (Mondays), Future Lab (Wednesdays), and Ethics & Leadership (Thursdays), and closed with a public reception. The program treated intelligence as coupling across bodies, tools, institutions, and worlds, and rehearsed hybrid cognition through embodiment, ethics, and creative practice. Hybrid Intelligences remains an ongoing research framework. Its public site is a hybrid dynamic knowledge architecture of concepts, essays, visualization, conversational AI, documentation, and program materials.",
     url: "https://ufl.instructure.com/courses/574408", linkLabel: "Canvas course ↗" },
   { id: "track_space",        label: "Track 1\nSpace & Memory",       cat: "program",  weight: 1.5,
     desc: "Met Mondays 12:30–3:15 during the inaugural program (July 2026) — AI, space, memory, and embodiment. Jul 13: Karla Saldaña Ochoa · Jul 20: Onye Ozuzu · Jul 27: Corey Cheval." },
@@ -5118,16 +5120,13 @@ function drawMobileMenu() {
 
   const items = [
     { id: "link", label: "Home", url: HOME_URL },
-    { id: "link", label: "Essay 1", url: ESSAY1_URL },
-    { id: "link", label: "Essay 2", url: ESSAY2_URL },
+    { id: "link", label: "About", url: ABOUT_URL },
+    { id: "link", label: "Essays", url: ESSAYS_URL },
     { id: "link", label: "Ontology", url: ONTOLOGY_URL },
     { id: "link", label: "Voice", url: VOICE_URL },
     { id: "link", label: "Image", url: IMAGE_URL },
     { id: "link", label: "Mini-pod", url: MINI_POD_URL },
-    { id: "link", label: "Canvas \u2197", url: CANVAS_URL },
-    { id: "link", label: "Slides", url: SLIDES_URL },
-    { id: "link", label: "Video", url: VIDEO_URL },
-    { id: "link", label: "Showcase", url: SHOWCASE_URL },
+    { id: "link", label: "Creative B", url: CREATIVE_B_URL },
     { id: "link", label: "Scan QR Code", url: SCAN_QR_URL },
     { id: "link", label: "GitHub \u2197", url: GITHUB_URL },
     { id: "theme_dark", label: "Theme: Dark" },
@@ -5211,7 +5210,7 @@ function drawUI() {
   textSize(8);
   fill(...t.subtitle);
   text(
-    "A hybrid dynamic knowledge architecture of concepts, essays, documentation, visualization, conversational AI, and program materials for embodied leadership and creativity in the era of AI.",
+    "A hybrid dynamic knowledge architecture of concepts, essays, visualization, conversational AI, documentation, and program materials for embodied leadership and creativity in the era of AI.",
     headerTextX,
     41
   );
@@ -5282,16 +5281,13 @@ function drawUI() {
 
   const creditNavLinks = [
     { url: HOME_URL, label: "Home" },
-    { url: ESSAY1_URL, label: "Essay 1" },
-    { url: ESSAY2_URL, label: "Essay 2" },
+    { url: ABOUT_URL, label: "About" },
+    { url: ESSAYS_URL, label: "Essays" },
     { url: ONTOLOGY_URL, label: "Ontology \u2197" },
     { url: VOICE_URL, label: "Voice" },
     { url: IMAGE_URL, label: "Image" },
     { url: MINI_POD_URL, label: "Mini-pod" },
-    { url: CANVAS_URL, label: "Canvas \u2197" },
-    { url: SLIDES_URL, label: "Slides" },
-    { url: VIDEO_URL, label: "Video" },
-    { url: SHOWCASE_URL, label: "Showcase" },
+    { url: CREATIVE_B_URL, label: "Creative B" },
     { url: SCAN_QR_URL, label: "Scan QR Code" },
     { url: GITHUB_URL, label: "GitHub \u2197" },
   ];

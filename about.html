@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hybrid Intelligences — About</title>
+  <meta name="description" content="Hybrid Intelligences is a three-year research project led by Marlon Barrios Solano as Maker-in-Residence at CAME. Launched in summer 2026 with a prototype Creative B course, it develops an epistemic framework for cognitive assemblages and complex embodiment.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e1018;
+      --panel: #12141e;
+      --border: #323848;
+      --title: #f4c430;
+      --text: #e8eaef;
+      --muted: #969eb0;
+      --link: #82c3ff;
+      --hover: #1a1e2a;
+      --accent: rgba(244, 196, 48, 0.12);
+      --rule: rgba(150, 158, 176, 0.28);
+      --cta-fg: #0e1018;
+    }
+    body.light-mode {
+      --bg: #fffdf8;
+      --panel: #ffffff;
+      --border: #d2d6e0;
+      --title: #a8760c;
+      --text: #202430;
+      --muted: #5a6070;
+      --link: #125599;
+      --hover: #f5f3ee;
+      --accent: rgba(168, 118, 12, 0.1);
+      --rule: rgba(90, 96, 112, 0.22);
+      --cta-fg: #fffdf8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse 90% 55% at 12% -10%, rgba(244, 196, 48, 0.07), transparent 55%),
+        radial-gradient(ellipse 70% 45% at 100% 0%, rgba(168, 140, 228, 0.06), transparent 50%),
+        var(--bg);
+      color: var(--text);
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      line-height: 1.5;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      padding: 1.25rem 1.5rem 1rem;
+      border-bottom: 1px solid var(--border);
+      background: color-mix(in srgb, var(--panel) 88%, transparent);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header .eyebrow {
+      margin: 0 0 0.4rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    header h1 {
+      margin: 0 0 0.45rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 300;
+      font-size: clamp(0.95rem, 2.4vw, 1.15rem);
+      line-height: 1.4;
+      color: var(--title);
+      max-width: 48rem;
+    }
+    header .meta {
+      margin: 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .brand-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+    .site-logo {
+      flex-shrink: 0;
+      display: block;
+      line-height: 0;
+      text-decoration: none;
+    }
+    .site-logo:hover { opacity: 0.88; text-decoration: none; }
+    .site-logo img {
+      display: block;
+      height: 88px;
+      width: auto;
+    }
+    .brand-copy { min-width: 0; }
+    .header-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 0.85rem;
+    }
+    .header-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      align-items: center;
+    }
+    .header-links a {
+      display: inline-flex;
+      align-items: center;
+    }
+    .gh-icon {
+      display: inline-block;
+      width: 0.92em;
+      height: 0.92em;
+      margin-right: 0.28em;
+      vertical-align: -0.12em;
+      background: currentColor;
+      -webkit-mask: url("github-mark.svg") center / contain no-repeat;
+      mask: url("github-mark.svg") center / contain no-repeat;
+    }
+    .theme-btn {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      padding: 0.35rem 0.55rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .theme-btn:hover { color: var(--title); border-color: var(--title); }
+    main {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 2.25rem 1.5rem 3.5rem;
+    }
+    .lede {
+      margin: 0 0 2.25rem;
+      font-family: "IBM Plex Serif", Georgia, serif;
+      font-size: 1.08rem;
+      line-height: 1.68;
+    }
+    figure.essay-hero {
+      margin: 0 0 2rem;
+      border: 1px solid var(--border);
+      background: #07080c;
+    }
+    figure.essay-hero img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    figure.essay-hero figcaption {
+      margin: 0;
+      padding: 0.7rem 0.9rem;
+      border-top: 1px solid var(--border);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+    .lede p { margin: 0 0 0.95rem; }
+    .lede p:last-child { margin: 0; }
+    section.block {
+      margin: 0 0 2.25rem;
+      padding-top: 1.6rem;
+      border-top: 1px solid var(--rule);
+    }
+    section.block h2 {
+      margin: 0 0 0.85rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 400;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--title);
+    }
+    section.block p {
+      margin: 0 0 1.1rem;
+      font-family: "IBM Plex Serif", Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.72;
+    }
+    section.block p:last-child { margin: 0; }
+    section.block figure.essay-hero {
+      margin: 0 0 1.25rem;
+    }
+    a.concept {
+      color: var(--title);
+      text-decoration: none;
+      border-bottom: 1px solid color-mix(in srgb, var(--title) 45%, transparent);
+    }
+    a.concept:hover {
+      border-bottom-color: var(--title);
+      text-decoration: none;
+    }
+    .layers {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.55rem;
+    }
+    .layers a {
+      display: grid;
+      grid-template-columns: 7.5rem 1fr;
+      gap: 0.75rem;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--border);
+      color: inherit;
+      text-decoration: none;
+    }
+    .layers a:hover { text-decoration: none; background: var(--hover); }
+    .layers .label {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.82rem;
+      color: var(--title);
+    }
+    .layers .desc {
+      font-family: "IBM Plex Sans", sans-serif;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    @media (max-width: 520px) {
+      .layers a {
+        grid-template-columns: 1fr;
+        gap: 0.15rem;
+      }
+    }
+    footer.page-foot {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand-row">
+      <a class="site-logo" href="index.html" aria-label="Hybrid Intelligences home">
+        <img src="logo.png" alt="Hybrid Intelligences">
+      </a>
+      <div class="brand-copy">
+        <p class="eyebrow">About</p>
+        <h1>A three-year research project, and a hybrid tool for dynamic knowledge</h1>
+        <p class="meta">
+          Launched summer 2026 · Marlon Barrios Solano · Maker-in-Residence,
+          <a href="https://arts.ufl.edu/came/" target="_blank" rel="noopener noreferrer">CAME</a>
+        </p>
+      </div>
+    </div>
+    <div class="header-row">
+      <div class="header-links">
+        <a href="index.html">← Home</a>
+        <a href="essays.html">Essays</a>
+        <a href="ontology.html">Ontology</a>
+        <a href="network.html">Network</a>
+        <a href="voice.html">Voice</a>
+        <a href="image.html">Image</a>
+        <a href="mini-pod.html">Mini-pod</a>
+        <a href="creative-b.html">Creative B</a>
+        <a href="scan-qr.html">Scan QR Code</a>
+        <a href="https://github.com/marlonbarrios/hybrid_intelligences_viz" target="_blank" rel="noopener noreferrer"><span class="gh-icon" aria-hidden="true"></span>GitHub ↗</a>
+      </div>
+      <button type="button" class="theme-btn" id="themeBtn" aria-label="Toggle theme">Theme</button>
+    </div>
+  </header>
+
+  <main>
+    <figure class="essay-hero">
+      <img src="screenshots/hi-program.jpg" width="1024" height="1024" alt="Diagram of the Hybrid Intelligences Program: Embodied Leadership and Creativity in the Era of AI. Creative B at the University of Florida, July 13–30, 2026 — co-led by Marlon Barrios Solano and Erika Moore, with three tracks, partners, and the public site as a hybrid dynamic knowledge architecture.">
+      <figcaption>The summer 2026 prototype · <a href="creative-b.html">Creative B 2026</a> · July 13–30</figcaption>
+    </figure>
+
+    <div class="lede">
+      <p>
+        Hybrid Intelligences is a three-year research project led by
+        <a href="https://marlonbarrios.github.io/">Marlon Barrios Solano</a>
+        as Maker-in-Residence at the
+        <a href="https://arts.ufl.edu/came/" target="_blank" rel="noopener noreferrer">Center for Arts, Migration + Entrepreneurship (CAME)</a>
+        in the
+        <a href="https://arts.ufl.edu/" target="_blank" rel="noopener noreferrer">University of Florida College of the Arts</a>.
+        It was launched in summer 2026.
+      </p>
+      <p>
+        Its aim is to develop an <a class="concept" href="network.html#critical">epistemic</a> framework that can account for,
+        explain, and follow what happens when humans think, make, and decide inside
+        <a class="concept" href="network.html#assemblage">cognitive assemblages</a> —
+        and to treat <a class="concept" href="network.html#embodiment">embodiment</a> as a complex phenomenon,
+        not a simple fact of having flesh.
+      </p>
+    </div>
+
+    <section class="block">
+      <h2>The project</h2>
+      <p>
+        The work is Marlon’s research: a sustained inquiry into intelligence, creativity, and leadership
+        in the era of AI. The first course — a prototype of the framework — was launched that summer as
+        the inaugural
+        <a href="creative-b.html">Creative B 2026</a> program
+        (<em>Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI</em>,
+        July 13–30, 2026). The three-year project continues after that prototype. This site is one of
+        its instruments.
+      </p>
+      <p>
+        Hybrid Intelligences does not treat intelligence as a thing located inside a skull, a machine,
+        a server, or a sovereign individual. Intelligence is an activity of
+        <a class="concept" href="network.html#coupling">coupling</a>. It is a relational event.
+        It happens through bodies, tools, architectures, histories, gestures, laws, media, atmospheres,
+        and the fragile rhythms of co-presence. In the era of artificial intelligence, this premise is
+        not only philosophical. It is urgent.
+        <a class="concept" href="network.html#mediation">Mediation</a> has become cognitive.
+        The tools that once transmitted messages now participate in the production of perception, memory,
+        imagination, decision, orientation, and future-making.
+      </p>
+    </section>
+
+    <section class="block">
+      <h2>An epistemic framework</h2>
+      <p>
+        The goal is a vocabulary that can follow the developments and changes implicated when humans
+        interact in cognitive assemblages — without collapsing into techno-dualism on one side or
+        biological exceptionalism on the other.
+      </p>
+      <p>
+        Embodiment must be understood as <em>complex</em> and <em>emergent</em>. A living body is already
+        a nested ecology: nerves, breath, posture, affect, memory, training, injury, culture, language,
+        tools, rooms, laws, and other bodies. No single level explains
+        <a class="concept" href="network.html#cognition">cognition</a>. Capacities appear from relations
+        that none of the parts possess alone. Complex embodiment names this condition: mind as
+        world-involving process, always more than biological presence, always more than technical
+        mediation, always becoming through relation.
+      </p>
+      <p>
+        The project draws on
+        <a class="concept" href="network.html#enactivism">enactivism</a> and
+        <a class="concept" href="network.html#4e">4E cognition</a> — embodied, embedded, enacted, extended —
+        and on posthumanist accounts of mind, especially
+        <a class="concept" href="network.html#hayles">N. Katherine Hayles</a>’s
+        <a class="concept" href="network.html#assemblage">cognitive assemblages</a> and
+        <a class="concept" href="network.html#technosymbiosis">techno-symbiosis</a>.
+        Cognition, in this sense, is not restricted to conscious human thought. It is the interpretation
+        of information within contexts that connect it with meaning. Intelligence does not belong
+        exclusively to the human user or the technical device. It circulates through bodies, sensors,
+        interfaces, datasets, habits, institutions, and environments.
+      </p>
+      <p>
+        The fuller argument is in
+        <a href="essay.html">Essay 1</a>.
+        The <a href="essays.html">Essays</a> section is a publishing hub for this research and for
+        collaborations that feed the ontology directly.
+      </p>
+    </section>
+
+    <section class="block">
+      <h2>This platform</h2>
+      <figure class="essay-hero">
+        <img src="screenshots/platform.jpg" width="1024" height="682" alt="A person standing in profile before a large circular Hybrid Intelligences network visualization: concentric rings of concepts, authors, and relations glowing from a cyan core.">
+        <figcaption>The site as a hybrid dynamic knowledge architecture · <a href="network.html">Network</a></figcaption>
+      </figure>
+      <p>
+        This online platform is itself a hybrid: a dynamic knowledge architecture for investigating
+        embodiment inside relational frameworks of embodied cognition and posthumanist thought.
+        It is almost an augmented tool for understanding the hybridity of the cognitive process —
+        not a brochure about the research, but a working instrument of it.
+      </p>
+      <p>
+        Ontology design, information visualization, conversational AI, and essay publication sit
+        in one coupling. Concepts can be read as definitions, as a radial map, as a spoken companion,
+        as a generated still, and as writing. The site is a place to publish relevant knowledge and
+        to keep making that knowledge move.
+      </p>
+      <ul class="layers" aria-label="Layers of the platform">
+        <li>
+          <a href="essays.html">
+            <span class="label">Essays</span>
+            <span class="desc">Publishing hub for the research and guest writing that feeds the ontology</span>
+          </a>
+        </li>
+        <li>
+          <a href="ontology.html">
+            <span class="label">Ontology</span>
+            <span class="desc">A searchable scheme of concepts and relations — JSON-LD, Turtle, OWL</span>
+          </a>
+        </li>
+        <li>
+          <a href="network.html">
+            <span class="label">Network</span>
+            <span class="desc">Information visualization: a radial map of the same vocabulary</span>
+          </a>
+        </li>
+        <li>
+          <a href="voice.html">
+            <span class="label">Voice</span>
+            <span class="desc">Conversational AI grounded in the ontology</span>
+          </a>
+        </li>
+        <li>
+          <a href="image.html">
+            <span class="label">Image</span>
+            <span class="desc">Abstract info-viz stills generated from a concept</span>
+          </a>
+        </li>
+        <li>
+          <a href="mini-pod.html">
+            <span class="label">Mini-pod</span>
+            <span class="desc">A spoken episode from the same knowledge architecture</span>
+          </a>
+        </li>
+        <li>
+          <a href="creative-b.html">
+            <span class="label">Creative B</span>
+            <span class="desc">The inaugural summer 2026 prototype: Canvas, slides, highlights, showcase</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="page-foot">
+    Hybrid Intelligences · University of Florida · About
+  </footer>
+
+  <script>
+    function applyTheme(mode) {
+      document.body.classList.toggle("light-mode", mode === "light");
+      localStorage.setItem("hi-theme", mode);
+    }
+
+    function initTheme() {
+      const saved = localStorage.getItem("hi-theme");
+      const mode = saved || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      applyTheme(mode);
+      document.getElementById("themeBtn").addEventListener("click", () => {
+        applyTheme(document.body.classList.contains("light-mode") ? "dark" : "light");
+      });
+    }
+
+    initTheme();
+  </script>
+</body>
+</html>

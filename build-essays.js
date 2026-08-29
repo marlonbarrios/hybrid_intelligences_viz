@@ -21,6 +21,11 @@
  *   ::: credit
  *   credit line
  *   :::
+ *   ::: figure
+ *   ![alt](path.jpg)
+ *
+ *   Optional caption
+ *   :::
  */
 
 const fs = require("fs");
@@ -49,7 +54,7 @@ const ESSAYS = [
     cover: {
       essayLabel: "Essay 2",
       title: "My Umwelt",
-      byline: "GPT-5.5, in conversation with Marlon Barrios Solano · July 20, 2026",
+      byline: "Marlon Barrios Solano, in conversation with GPT-5.5 · July 20, 2026",
     },
   },
 ];
@@ -200,6 +205,23 @@ function renderBlock(type, blockLines, opts) {
     const text = blockLines.filter((l) => l.trim()).join(" ");
     return `    <p class="credit">${inlineMdToHtml(text)}</p>`;
   }
+  if (type === "figure") {
+    const imgLine = blockLines.find((l) => l.trim().startsWith("!["));
+    const imgMatch = imgLine && imgLine.trim().match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
+    if (!imgMatch) {
+      return blockLines.map((l) => `    <p>${inlineMdToHtml(l)}</p>`).join("\n");
+    }
+    const alt = escapeHtml(imgMatch[1]);
+    const src = escapeHtml(imgMatch[2]);
+    const caption = blockLines
+      .filter((l) => l.trim() && !l.trim().startsWith("!["))
+      .map((l) => l.trim())
+      .join(" ");
+    const cap = caption
+      ? `\n      <figcaption>${inlineMdToHtml(caption)}</figcaption>`
+      : "";
+    return `    <figure class="essay-hero">\n      <img src="${src}" alt="${alt}" width="1024" height="1024">${cap}\n    </figure>`;
+  }
   return blockLines.map((l) => `    <p>${inlineMdToHtml(l)}</p>`).join("\n");
 }
 
@@ -260,7 +282,7 @@ function htmlToMd(htmlFile, metaDefaults) {
   let m;
   const chunks = [];
   let lastIdx = 0;
-  const re2 = /<(p|section class="topic"|section class="bibliography"|ul class="term-list"|ul class="cluster"|div class="closing"|p class="credit")[^>]*>[\s\S]*?<\/(?:p|section|ul|div)>/gi;
+  const re2 = /<(p|section class="topic"|section class="bibliography"|ul class="term-list"|ul class="cluster"|div class="closing"|p class="credit"|figure class="essay-hero")[^>]*>[\s\S]*?<\/(?:p|section|ul|div|figure)>/gi;
   while ((m = re2.exec(article)) !== null) {
     chunks.push(m[0]);
   }
@@ -315,6 +337,20 @@ function htmlToMd(htmlFile, metaDefaults) {
       }
       continue;
     }
+    if (chunk.includes("essay-hero")) {
+      const img = chunk.match(/<img[^>]*src="([^"]+)"[^>]*alt="([^"]*)"[^>]*>/i)
+        || chunk.match(/<img[^>]*alt="([^"]*)"[^>]*src="([^"]+)"[^>]*>/i);
+      const cap = chunk.match(/<figcaption>([\s\S]*?)<\/figcaption>/);
+      if (img) {
+        const src = img[1].includes("/") ? img[1] : img[2];
+        const alt = img[1].includes("/") ? img[2] : img[1];
+        parts.push("::: figure");
+        parts.push(`![${htmlInlineToMd(alt)}](${src})`);
+        if (cap) parts.push("", htmlInlineToMd(cap[1]));
+        parts.push(":::", "");
+      }
+      continue;
+    }
     const p = chunk.match(/<p>([\s\S]*?)<\/p>/);
     if (p) parts.push(htmlInlineToMd(p[1]), "");
   }
@@ -355,7 +391,7 @@ function printCoverHtml(cover) {
   <section class="print-cover" aria-hidden="true">
     <p class="project">Hybrid Intelligences</p>
     <p class="tagline">Embodied Leadership and Creativity in the Era of AI</p>
-    <p class="impact">A hybrid dynamic knowledge architecture of concepts, essays, documentation, visualization, conversational AI, and program materials for embodied leadership and creativity in the era of AI.</p>
+    <p class="impact">A hybrid dynamic knowledge architecture of concepts, essays, visualization, conversational AI, documentation, and program materials for embodied leadership and creativity in the era of AI.</p>
     <p class="essay-label">${cover.essayLabel}</p>
     <h1>${cover.title}</h1>
     <p class="byline">${cover.byline}</p>
@@ -373,7 +409,7 @@ function printCoverHtml(cover) {
       <dt>Document type</dt>
       <dd>Program essay · PDF export from the Hybrid Intelligences site</dd>
       <dt>Related materials</dt>
-      <dd>Conceptual network · Ontology (JSON-LD / Turtle / OWL) · Conversational AI (Voice) · Video highlights · Slides (Creative B sessions, summer 2026) · Showcase · Canvas</dd>
+      <dd>Conceptual network · Ontology (JSON-LD / Turtle / OWL) · Conversational AI (Voice) · Creative B 2026 (Canvas, slides, highlights, lobby showcase)</dd>
     </dl>
   </section>
 `;
@@ -401,6 +437,22 @@ const PRINT_CSS = `
         print-color-adjust: exact;
       }
       article { max-width: none !important; padding: 0 !important; }
+      figure.essay-hero {
+        margin: 0 0 1.25rem !important;
+        border: 1px solid #c8ccd6 !important;
+        background: #07080c !important;
+        break-inside: avoid;
+      }
+      figure.essay-hero img {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        max-width: 5.8in;
+        margin: 0 auto;
+      }
+      figure.essay-hero figcaption {
+        color: #5a6070 !important;
+      }
       .print-cover {
         display: block !important;
         margin: 0 0 1.75rem;
@@ -474,6 +526,23 @@ const PRINT_CSS = `
     @page { margin: 0.7in; }
 `;
 
+function embedLocalImages(html) {
+  return html.replace(/\bsrc="([^"]+)"/g, (match, src) => {
+    if (/^(https?:|data:|file:)/i.test(src)) return match;
+    const filePath = path.join(ROOT, src.split("?")[0]);
+    if (!fs.existsSync(filePath)) return match;
+    const ext = path.extname(filePath).slice(1).toLowerCase();
+    const mime =
+      ext === "jpg" || ext === "jpeg" ? "image/jpeg"
+      : ext === "png" ? "image/png"
+      : ext === "svg" ? "image/svg+xml"
+      : ext === "gif" ? "image/gif"
+      : ext === "webp" ? "image/webp"
+      : "application/octet-stream";
+    return `src="data:${mime};base64,${fs.readFileSync(filePath).toString("base64")}"`;
+  });
+}
+
 function buildPdf(config) {
   const chrome =
     process.platform === "darwin"
@@ -491,13 +560,21 @@ function buildPdf(config) {
     html = html.replace("</style>", PRINT_CSS + "\n  </style>", 1);
   }
   html = html.replace("<article>", `<article>\n${printCoverHtml(config.cover)}`, 1);
+  html = embedLocalImages(html);
   write(config.printHtml, html);
 
   const url = `file://${path.join(ROOT, config.printHtml)}`;
   const outPath = path.join(ROOT, config.pdf);
   const result = spawnSync(
     chrome,
-    ["--headless=new", "--disable-gpu", "--no-pdf-header-footer", `--print-to-pdf=${outPath}`, url],
+    [
+      "--headless=new",
+      "--disable-gpu",
+      "--no-pdf-header-footer",
+      "--virtual-time-budget=8000",
+      `--print-to-pdf=${outPath}`,
+      url,
+    ],
     { stdio: "inherit" },
   );
   fs.unlinkSync(path.join(ROOT, config.printHtml));
@@ -526,7 +603,7 @@ function extractAll() {
       pageTitle: "Hybrid Intelligences — Essay 2",
       eyebrow: "Essay 2",
       title: "My Umwelt",
-      author: "by GPT-5.5 · in conversation with Marlon Barrios Solano",
+      author: "Marlon Barrios Solano, in conversation with GPT-5.5",
       date: "July 20, 2026",
       footer: "Hybrid Intelligences · University of Florida · Essay 2",
       output: "essay-2.html",

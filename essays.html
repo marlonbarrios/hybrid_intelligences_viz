@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hybrid Intelligences — Synthetic Podcast</title>
-  <meta name="description" content="Sample Synthetic Podcast from Hybrid Intelligences NotebookLM. Sign in with UF credentials to research, create another podcast, or interact with Audio Overviews.">
+  <title>Hybrid Intelligences — Essays</title>
+  <meta name="description" content="A growing publishing hub for Hybrid Intelligences: essays by Marlon Barrios Solano and guest collaborations that expand the ontology of embodiment, cognition, and cognitive assemblages.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
   <style>
@@ -18,6 +18,7 @@
       --link: #82c3ff;
       --hover: #1a1e2a;
       --accent: rgba(244, 196, 48, 0.12);
+      --cta-fg: #0e1018;
     }
     body.light-mode {
       --bg: #fffdf8;
@@ -29,6 +30,7 @@
       --link: #125599;
       --hover: #f5f3ee;
       --accent: rgba(168, 118, 12, 0.1);
+      --cta-fg: #fffdf8;
     }
     * { box-sizing: border-box; }
     body {
@@ -136,90 +138,127 @@
     }
     .theme-btn:hover { color: var(--title); border-color: var(--title); }
     main {
-      max-width: 42rem;
+      max-width: 56rem;
       margin: 0 auto;
       padding: 2.25rem 1.5rem 3.5rem;
     }
-    .episode {
-      padding: 1.5rem 1.35rem 1.35rem;
-      border: 1px solid var(--border);
-      background:
-        linear-gradient(165deg, var(--accent), transparent 42%),
-        var(--panel);
+    .lede {
+      margin: 0 0 1.75rem;
+      font-family: "IBM Plex Serif", Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.62;
+      max-width: 42rem;
     }
-    .episode .show {
-      margin: 0 0 0.55rem;
+    .lede p { margin: 0 0 0.85rem; }
+    .lede p:last-child { margin: 0; }
+    .links {
+      display: grid;
+      gap: 1.25rem;
+    }
+    .card {
+      display: grid;
+      grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.15fr);
+      border: 1px solid var(--border);
+      background: var(--panel);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+    }
+    .card:hover {
+      border-color: var(--title);
+      text-decoration: none;
+    }
+    .card .shot {
+      display: block;
+      background: #07080c;
+      aspect-ratio: 1 / 1;
+      min-height: 11rem;
+      border-right: 1px solid var(--border);
+    }
+    .card .shot img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .card .cover {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 11rem;
+      padding: 1.1rem 1.15rem;
+      background:
+        radial-gradient(ellipse 80% 70% at 12% 0%, rgba(244, 196, 48, 0.16), transparent 55%),
+        var(--accent);
+      border-right: 1px solid var(--border);
+    }
+    body.light-mode .card .cover {
+      background:
+        radial-gradient(ellipse 80% 70% at 12% 0%, rgba(168, 118, 12, 0.14), transparent 55%),
+        var(--accent);
+    }
+    .card .cover .num {
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 300;
+      font-size: clamp(2.4rem, 6vw, 3.4rem);
+      letter-spacing: 0.04em;
+      line-height: 1;
+      color: var(--title);
+    }
+    .card .copy {
+      padding: 1.15rem 1.2rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .card .kicker {
+      margin: 0 0 0.35rem;
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.72rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--title);
     }
-    .episode h2 {
-      margin: 0 0 0.85rem;
+    .card h2 {
+      margin: 0 0 0.45rem;
       font-family: "IBM Plex Serif", Georgia, serif;
       font-weight: 400;
-      font-size: clamp(1.35rem, 3.5vw, 1.75rem);
-      line-height: 1.25;
+      font-size: 1.28rem;
+      line-height: 1.28;
       color: var(--text);
     }
-    .episode audio {
-      display: block;
-      width: 100%;
-      margin: 0 0 1rem;
-      height: 2.75rem;
-    }
-    .episode .download {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.78rem;
-    }
-    .notebook-cta {
-      margin: 1.5rem 0 0;
-      padding: 1.15rem 1.2rem;
-      border: 1px solid var(--border);
-      background: var(--panel);
-    }
-    .notebook-cta h3 {
-      margin: 0 0 0.55rem;
-      font-family: "IBM Plex Mono", monospace;
-      font-weight: 400;
-      font-size: 0.78rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--title);
-    }
-    .notebook-cta p {
-      margin: 0 0 0.85rem;
-      font-size: 0.92rem;
-      line-height: 1.55;
+    .card p {
+      margin: 0;
       color: var(--muted);
-    }
-    .notebook-cta p:last-child { margin-bottom: 0; }
-    .notebook-cta a.cta {
-      display: inline-flex;
-      align-items: center;
-      margin-top: 0.15rem;
-      padding: 0.55rem 0.9rem;
-      border: 1px solid var(--title);
-      background: var(--title);
-      color: var(--bg);
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.78rem;
-      text-decoration: none;
-    }
-    .notebook-cta a.cta:hover {
-      background: transparent;
-      color: var(--title);
-      text-decoration: none;
-    }
-    .caption {
-      margin: 1.25rem 0 0;
       font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    @media (max-width: 700px) {
+      .card {
+        grid-template-columns: 1fr;
+      }
+      .card .cover,
+      .card .shot {
+        min-height: 7.5rem;
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .card .shot {
+        aspect-ratio: 16 / 10;
+        max-height: 16rem;
+      }
+    }
+    .note {
+      margin: 1.5rem 0 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
       color: var(--muted);
       line-height: 1.55;
+      max-width: 42rem;
     }
     footer.page-foot {
-      max-width: 42rem;
+      max-width: 56rem;
       margin: 0 auto;
       padding: 0 1.5rem 3rem;
       font-family: "IBM Plex Mono", monospace;
@@ -235,16 +274,15 @@
         <img src="logo.png" alt="Hybrid Intelligences">
       </a>
       <div class="brand-copy">
-        <p class="eyebrow">Synthetic Podcast</p>
-        <h1>Your Mind Is Not in Your Head</h1>
-        <p class="meta">Hybrid Intelligences · <a href="https://www.ufl.edu/" target="_blank" rel="noopener noreferrer">University of Florida</a> · <a href="https://arts.ufl.edu/" target="_blank" rel="noopener noreferrer">College of the Arts</a></p>
+        <p class="eyebrow">Essays</p>
+        <h1>A publishing hub for Hybrid Intelligences</h1>
+        <p class="meta">Marlon Barrios Solano · guests · a section that keeps growing</p>
       </div>
     </div>
     <div class="header-row">
       <div class="header-links">
         <a href="index.html">← Home</a>
         <a href="about.html">About</a>
-        <a href="essays.html">Essays</a>
         <a href="ontology.html">Ontology</a>
         <a href="network.html">Network</a>
         <a href="voice.html">Voice</a>
@@ -259,33 +297,59 @@
   </header>
 
   <main>
-    <article class="episode">
-      <p class="show">Sample episode · NotebookLM</p>
-      <h2>Your Mind Is Not in Your Head</h2>
-      <audio controls preload="metadata">
-        <source src="your-mind-is-not-in-your-head.m4a" type="audio/mp4">
-        Your browser does not support the audio element.
-        <a href="your-mind-is-not-in-your-head.m4a">Download the episode</a>
-      </audio>
-      <a class="download" href="your-mind-is-not-in-your-head.m4a" download>Download sample ↓</a>
-    </article>
-    <p class="caption">
-      This is one sample podcast generated in NotebookLM from Hybrid Intelligences program resources and essays—not the full notebook experience.
+    <div class="lede">
+      <p>
+        This page is a publishing hub for the research of
+        <a href="https://marlonbarrios.github.io/">Marlon Barrios Solano</a>
+        and for collaborations with guests. The writing is in essay form. Guest pieces feed
+        the <a href="ontology.html">ontology</a> and the <a href="network.html">network</a> directly:
+        they are not side notes. They are meant to expand an epistemological framework.
+      </p>
+      <p>
+        The aim is to take <a href="network.html#embodiment">embodiment</a> and
+        <a href="network.html#cognition">cognition</a> beyond the human, and at the same time
+        beyond the organic — including synthetic entities — in the proposition of
+        <a href="network.html#assemblage">cognitive assemblages</a> developed by
+        <a href="network.html#hayles">N. Katherine Hayles</a>.
+      </p>
+      <p>
+        The first essays here are by Marlon — including <em>My Umwelt</em>, written in conversation
+        with GPT-5.5. Guest essays from the program will appear as the section grows.
+      </p>
+    </div>
+
+    <section class="links" aria-label="Essays">
+      <a class="card" href="essay.html">
+        <span class="shot">
+          <img src="screenshots/cognitive-assemblages.jpg" width="1024" height="1024" alt="Diagram titled Cognitive Assemblages: a radial map of bodies, Katherine Hayles, sensors, datasets, environments, institutions, interfaces, and assemblage around a central hub. Meaning emerges in context; intelligence circulates.">
+        </span>
+        <span class="copy">
+          <span class="kicker">Essay 1</span>
+          <h2>Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI</h2>
+          <p>Marlon Barrios Solano · July 10, 2026</p>
+        </span>
+      </a>
+
+      <a class="card" href="essay-2.html">
+        <span class="shot">
+          <img src="screenshots/umwelt.jpg" width="1024" height="1024" alt="Diagram titled Umwelt: the organism’s lived, meaningful environment. Sensing and action around a central Umwelt, with enactivism, 4E cognition, autopoiesis, and a continuum of Umwelten from tick to octopus.">
+        </span>
+        <span class="copy">
+          <span class="kicker">Essay 2</span>
+          <h2>My Umwelt</h2>
+          <p>Marlon Barrios Solano, in conversation with GPT-5.5 · July 20, 2026</p>
+        </span>
+      </a>
+    </section>
+
+    <p class="note">
+      This section will keep growing. New essays — from Marlon and from guests — will be added as they
+      enter the Hybrid Intelligences knowledge architecture.
     </p>
-    <aside class="notebook-cta">
-      <h3>Open NotebookLM</h3>
-      <p>
-        Go to the program NotebookLM notebook to use it as a research tool: ask questions, generate another podcast, or interact with Audio Overviews built from the same materials.
-      </p>
-      <p>
-        Sign in with your <strong>UF credentials</strong> to play and use the notebook.
-      </p>
-      <a class="cta" href="https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1" target="_blank" rel="noopener noreferrer">Open NotebookLM ↗</a>
-    </aside>
   </main>
 
   <footer class="page-foot">
-    Hybrid Intelligences · University of Florida · Synthetic Podcast
+    Hybrid Intelligences · University of Florida · Essays
   </footer>
 
   <script>

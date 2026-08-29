@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hybrid Intelligences — Synthetic Podcast</title>
-  <meta name="description" content="Sample Synthetic Podcast from Hybrid Intelligences NotebookLM. Sign in with UF credentials to research, create another podcast, or interact with Audio Overviews.">
+  <title>Hybrid Intelligences — Creative B 2026</title>
+  <meta name="description" content="Hybrid Intelligences: Creative B 2026, summer 2026 at the University of Florida — Canvas course, slides, highlights video, and the Wertheim lobby showcase.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
   <style>
@@ -18,6 +18,7 @@
       --link: #82c3ff;
       --hover: #1a1e2a;
       --accent: rgba(244, 196, 48, 0.12);
+      --cta-fg: #0e1018;
     }
     body.light-mode {
       --bg: #fffdf8;
@@ -29,6 +30,7 @@
       --link: #125599;
       --hover: #f5f3ee;
       --accent: rgba(168, 118, 12, 0.1);
+      --cta-fg: #fffdf8;
     }
     * { box-sizing: border-box; }
     body {
@@ -136,90 +138,99 @@
     }
     .theme-btn:hover { color: var(--title); border-color: var(--title); }
     main {
-      max-width: 42rem;
+      max-width: 56rem;
       margin: 0 auto;
       padding: 2.25rem 1.5rem 3.5rem;
     }
-    .episode {
-      padding: 1.5rem 1.35rem 1.35rem;
+    .poster {
+      display: block;
+      margin: 0 0 1.5rem;
       border: 1px solid var(--border);
-      background:
-        linear-gradient(165deg, var(--accent), transparent 42%),
-        var(--panel);
+      background: var(--panel);
+      overflow: hidden;
     }
-    .episode .show {
-      margin: 0 0 0.55rem;
+    .poster img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .lede {
+      margin: 0 0 1.75rem;
+      font-family: "IBM Plex Serif", Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.62;
+      max-width: 42rem;
+    }
+    .lede p { margin: 0 0 0.85rem; }
+    .lede p:last-child { margin: 0; }
+    .links {
+      display: grid;
+      gap: 1.25rem;
+    }
+    .card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      border: 1px solid var(--border);
+      background: var(--panel);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+    }
+    .card:hover {
+      border-color: var(--title);
+      text-decoration: none;
+    }
+    .card .shot {
+      display: block;
+      background: #0a0c12;
+      min-height: 10rem;
+    }
+    .card .shot img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .card .copy {
+      padding: 1.05rem 1.15rem 1.15rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .card .kicker {
+      margin: 0 0 0.35rem;
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.72rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--title);
     }
-    .episode h2 {
-      margin: 0 0 0.85rem;
+    .card h2 {
+      margin: 0 0 0.4rem;
       font-family: "IBM Plex Serif", Georgia, serif;
       font-weight: 400;
-      font-size: clamp(1.35rem, 3.5vw, 1.75rem);
+      font-size: 1.28rem;
       line-height: 1.25;
       color: var(--text);
     }
-    .episode audio {
-      display: block;
-      width: 100%;
-      margin: 0 0 1rem;
-      height: 2.75rem;
-    }
-    .episode .download {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.78rem;
-    }
-    .notebook-cta {
-      margin: 1.5rem 0 0;
-      padding: 1.15rem 1.2rem;
-      border: 1px solid var(--border);
-      background: var(--panel);
-    }
-    .notebook-cta h3 {
-      margin: 0 0 0.55rem;
-      font-family: "IBM Plex Mono", monospace;
-      font-weight: 400;
-      font-size: 0.78rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--title);
-    }
-    .notebook-cta p {
-      margin: 0 0 0.85rem;
-      font-size: 0.92rem;
-      line-height: 1.55;
+    .card p {
+      margin: 0;
       color: var(--muted);
-    }
-    .notebook-cta p:last-child { margin-bottom: 0; }
-    .notebook-cta a.cta {
-      display: inline-flex;
-      align-items: center;
-      margin-top: 0.15rem;
-      padding: 0.55rem 0.9rem;
-      border: 1px solid var(--title);
-      background: var(--title);
-      color: var(--bg);
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.78rem;
-      text-decoration: none;
-    }
-    .notebook-cta a.cta:hover {
-      background: transparent;
-      color: var(--title);
-      text-decoration: none;
-    }
-    .caption {
-      margin: 1.25rem 0 0;
       font-size: 0.95rem;
-      color: var(--muted);
-      line-height: 1.55;
+      line-height: 1.5;
+    }
+    @media (max-width: 700px) {
+      .card {
+        grid-template-columns: 1fr;
+      }
+      .card .shot {
+        min-height: 11rem;
+        max-height: 16rem;
+      }
     }
     footer.page-foot {
-      max-width: 42rem;
+      max-width: 56rem;
       margin: 0 auto;
       padding: 0 1.5rem 3rem;
       font-family: "IBM Plex Mono", monospace;
@@ -235,9 +246,14 @@
         <img src="logo.png" alt="Hybrid Intelligences">
       </a>
       <div class="brand-copy">
-        <p class="eyebrow">Synthetic Podcast</p>
-        <h1>Your Mind Is Not in Your Head</h1>
-        <p class="meta">Hybrid Intelligences · <a href="https://www.ufl.edu/" target="_blank" rel="noopener noreferrer">University of Florida</a> · <a href="https://arts.ufl.edu/" target="_blank" rel="noopener noreferrer">College of the Arts</a></p>
+        <p class="eyebrow">Creative B · Summer 2026</p>
+        <h1>Hybrid Intelligences · Creative B 2026</h1>
+        <p class="meta">
+          July 13–30, 2026 ·
+          <a href="https://www.ufl.edu/" target="_blank" rel="noopener noreferrer">University of Florida</a> ·
+          <a href="https://arts.ufl.edu/" target="_blank" rel="noopener noreferrer">College of the Arts</a> ·
+          <a href="https://arts.ufl.edu/about/campus-impact-programs/creative-b/" target="_blank" rel="noopener noreferrer">Creative B</a>
+        </p>
       </div>
     </div>
     <div class="header-row">
@@ -250,7 +266,6 @@
         <a href="voice.html">Voice</a>
         <a href="image.html">Image</a>
         <a href="mini-pod.html">Mini-pod</a>
-        <a href="creative-b.html">Creative B</a>
         <a href="scan-qr.html">Scan QR Code</a>
         <a href="https://github.com/marlonbarrios/hybrid_intelligences_viz" target="_blank" rel="noopener noreferrer"><span class="gh-icon" aria-hidden="true"></span>GitHub ↗</a>
       </div>
@@ -259,33 +274,74 @@
   </header>
 
   <main>
-    <article class="episode">
-      <p class="show">Sample episode · NotebookLM</p>
-      <h2>Your Mind Is Not in Your Head</h2>
-      <audio controls preload="metadata">
-        <source src="your-mind-is-not-in-your-head.m4a" type="audio/mp4">
-        Your browser does not support the audio element.
-        <a href="your-mind-is-not-in-your-head.m4a">Download the episode</a>
-      </audio>
-      <a class="download" href="your-mind-is-not-in-your-head.m4a" download>Download sample ↓</a>
-    </article>
-    <p class="caption">
-      This is one sample podcast generated in NotebookLM from Hybrid Intelligences program resources and essays—not the full notebook experience.
-    </p>
-    <aside class="notebook-cta">
-      <h3>Open NotebookLM</h3>
+    <figure class="poster">
+      <img src="slides/slide-01.jpg" width="1600" height="900" alt="Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI. Creative B summer program, July 13–30, 2026, co-led by Marlon Barrios Solano and Erika Moore at the University of Florida College of the Arts.">
+    </figure>
+
+    <div class="lede">
       <p>
-        Go to the program NotebookLM notebook to use it as a research tool: ask questions, generate another podcast, or interact with Audio Overviews built from the same materials.
+        The inaugural <a href="network.html#hi_program">Hybrid Intelligences</a> program —
+        <em>Embodied Leadership and Creativity in the Era of AI</em> — ran July 13–30, 2026,
+        as a <a href="https://arts.ufl.edu/about/campus-impact-programs/creative-b/" target="_blank" rel="noopener noreferrer">Creative B</a>
+        offering at the University of Florida College of the Arts, co-led by
+        <a href="network.html#marlon">Marlon Barrios Solano</a> and
+        <a href="network.html#erika">Erika Moore</a>.
       </p>
       <p>
-        Sign in with your <strong>UF credentials</strong> to play and use the notebook.
+        This page gathers what is specific to that summer: the Canvas course, the session slides,
+        the highlights reel, and the Wertheim lobby showcase.
       </p>
-      <a class="cta" href="https://notebook.google.com/notebook/04fd1fb2-34c0-4f33-aac3-8917c51e1cf1?authuser=1&pli=1" target="_blank" rel="noopener noreferrer">Open NotebookLM ↗</a>
-    </aside>
+    </div>
+
+    <section class="links" aria-label="Creative B 2026 materials">
+      <a class="card" href="https://ufl.instructure.com/courses/574408" target="_blank" rel="noopener noreferrer">
+        <span class="shot">
+          <img src="screenshots/canvas-course.jpg" width="1024" height="627" alt="Canvas course home for Hybrid Intelligences - Creative B: a student at monitors in the Wertheim lab under a College of the Arts banner, Where art meets innovation.">
+        </span>
+        <span class="copy">
+          <span class="kicker">Canvas ↗</span>
+          <h2>Hybrid Intelligences - Creative B</h2>
+          <p>The UF Canvas course: syllabus, modules, files, and the shared program space.</p>
+        </span>
+      </a>
+
+      <a class="card" href="slides.html">
+        <span class="shot">
+          <img src="slides/slide-02.jpg" width="1600" height="900" alt="Photographs from a Creative B session: a seminar screen and participants around tables.">
+        </span>
+        <span class="copy">
+          <span class="kicker">Slides</span>
+          <h2>From the Creative B sessions, summer 2026</h2>
+          <p>Session stills and talk titles from the tracks, as they were shown during the program.</p>
+        </span>
+      </a>
+
+      <a class="card" href="video.html">
+        <span class="shot">
+          <img src="screenshots/highlights-video.jpg" width="1024" height="642" alt="Still from Hybrid Intelligences Highlights: five people in a shared acrobatic balance in the Wertheim lobby.">
+        </span>
+        <span class="copy">
+          <span class="kicker">Video</span>
+          <h2>Hybrid Intelligences Highlights</h2>
+          <p>The program highlight reel — rooms, sessions, and the cohort in motion.</p>
+        </span>
+      </a>
+
+      <a class="card" href="showcase.html">
+        <span class="shot">
+          <img src="slides/slide-15.jpg" width="1600" height="827" alt="Large LCD screen in the Wertheim Laboratory lobby showing generative AI works by Marlon Barrios Solano.">
+        </span>
+        <span class="copy">
+          <span class="kicker">Showcase</span>
+          <h2>Wertheim lobby · AI works by Marlon Barrios Solano</h2>
+          <p>My Pendular Umwelt and the pieces shown on the lobby screen during the inaugural program.</p>
+        </span>
+      </a>
+    </section>
   </main>
 
   <footer class="page-foot">
-    Hybrid Intelligences · University of Florida · Synthetic Podcast
+    Hybrid Intelligences · University of Florida · Creative B 2026
   </footer>
 
   <script>

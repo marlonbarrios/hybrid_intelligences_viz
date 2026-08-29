@@ -148,6 +148,25 @@
       line-height: 1.72;
       color: var(--text);
     }
+    figure.essay-hero {
+      margin: 0 0 2rem;
+      border: 1px solid var(--border);
+      background: #07080c;
+    }
+    figure.essay-hero img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    figure.essay-hero figcaption {
+      margin: 0;
+      padding: 0.7rem 0.9rem;
+      border-top: 1px solid var(--border);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      line-height: 1.5;
+      color: var(--muted);
+    }
     article p:first-of-type::first-letter {
       font-family: "IBM Plex Mono", monospace;
       font-weight: 300;
@@ -223,6 +242,8 @@
     <div class="header-row">
       <div class="header-links">
         <a href="index.html">← Home</a>
+        <a href="about.html">About</a>
+        <a href="essays.html">Essays</a>
         <a href="essay-2.html">Essay 2</a>
         <a href="essay-1-hybrid-intelligences-cognitive-assemblages.pdf" download>PDF ↓</a>
         <a href="ontology.html">Ontology</a>
@@ -230,10 +251,7 @@
         <a href="voice.html">Voice</a>
         <a href="image.html">Image</a>
         <a href="mini-pod.html">Mini-pod</a>
-        <a href="https://ufl.instructure.com/courses/574408" target="_blank" rel="noopener noreferrer">Canvas ↗</a>
-        <a href="slides.html" title="From the Creative B sessions, summer 2026">Slides</a>
-        <a href="video.html">Video</a>
-        <a href="showcase.html">Showcase</a>
+        <a href="creative-b.html">Creative B</a>
         <a href="scan-qr.html">Scan QR Code</a>
         <a href="https://github.com/marlonbarrios/hybrid_intelligences_viz" target="_blank" rel="noopener noreferrer"><span class="gh-icon" aria-hidden="true"></span>GitHub ↗</a>
       </div>
@@ -242,6 +260,11 @@
   </header>
 
   <article>
+
+    <figure class="essay-hero">
+      <img src="screenshots/cognitive-assemblages.jpg" alt="Diagram titled Cognitive Assemblages: a radial map of bodies, Katherine Hayles, sensors, datasets, environments, institutions, interfaces, and assemblage around a central hub." width="1024" height="1024">
+      <figcaption>Meaning emerges in context · Intelligence circulates</figcaption>
+    </figure>
 
     <p>I begin from the premise that intelligence is not a thing located inside a skull, a machine, a server, or a sovereign individual. Intelligence is an activity of <a class="concept" href="network.html#coupling">coupling</a>. It is a relational event. It happens through bodies, tools, architectures, histories, gestures, laws, media, atmospheres, and the fragile rhythms of co-presence. In the era of artificial intelligence, this premise becomes not only philosophical but urgent. We are entering a time in which mediation is no longer simply communicational, symbolic, or technical. <a class="concept" href="network.html#mediation">Mediation</a> has become cognitive. The tools that once transmitted messages now participate in the production of perception, memory, imagination, decision, orientation, and future-making.</p>
 
