@@ -156,7 +156,7 @@ function podcastBaseInstructions() {
     "Speak continuously in a warm, clear radio voice with no long pause. Do not open with a preamble, warmup, or a phrase like let's dive in — begin immediately with the focal concept. Intelligence is coupling across bodies, tools, institutions, and worlds — not a thing inside a skull or a model.",
     "Today's date is " + todayIsoDate() + ".",
     "The inaugural Hybrid Intelligences Creative B program was held July 13–30, 2026, co-led by Marlon Barrios Solano and Erika Moore. Speak of that program, its tracks, sessions, reception, and cohort in the past tense. Hybrid Intelligences as a framework, the ontology, the essays, and the ongoing research remain in the present.",
-    "This Mini-pod is one short spoken piece: about 350 words, roughly two and a half minutes at a calm radio pace. That spoken text is the whole episode — do not write or plan a longer essay than you will speak. Name the focal concept, give its definition, place it in its category, mention two or three related concepts, and say why it matters. Then close. Do not recite the ontology. Do not add extra sections, lists, or a second essay. Always finish every sentence. Never stop mid-clause or mid-word.",
+    "This Mini-pod is one short spoken piece of about 220 words — six to eight complete sentences, about two minutes at a calm radio pace. Speak every word you plan; do not write a longer essay than you will speak. Name the focal concept, define it, place it, mention two related concepts, say why it matters, and close. Do not recite the ontology. Do not add extra sections. Do not say you are done, complete, stopping, or that no further content is needed. Always finish every sentence.",
   ].join(" ");
 }
 

@@ -369,15 +369,15 @@
       author: "Authors/Artists",
     };
 
-    const TARGET_MS = 2 * 60 * 1000 + 30 * 1000;
-    const HARD_STOP_MS = 4 * 60 * 1000;
-    const MAX_CONTINUES = 2;
-    const TARGET_WORDS = 350;
+    const TARGET_MS = 3 * 60 * 1000;
+    const HARD_STOP_MS = 4 * 60 * 1000 + 30 * 1000;
+    const MAX_CONTINUES = 1;
+    const TARGET_WORDS = 220;
     const PREAMBLE_MAX_MS = 10 * 1000;
     const PREAMBLE_SILENCE_MS = 1600;
     const SPEECH_RMS = 0.022;
-    const END_QUIET_MS = 1400;
-    const END_QUIET_MAX_MS = 8000;
+    const END_QUIET_MS = 1600;
+    const END_QUIET_MAX_MS = 90 * 1000;
 
     function applyTheme(mode) {
       document.body.classList.toggle("light-mode", mode === "light");
@@ -452,7 +452,14 @@
         const t0 = Date.now();
         const tick = setInterval(() => {
           const quietFor = lastLoudAt ? Date.now() - lastLoudAt : END_QUIET_MS;
-          if (quietFor >= END_QUIET_MS || Date.now() - t0 >= maxMs) {
+          const talking = lastLoudAt && quietFor < 500;
+          if (quietFor >= END_QUIET_MS) {
+            clearInterval(tick);
+            resolve();
+          } else if (Date.now() - t0 >= maxMs && !talking) {
+            clearInterval(tick);
+            resolve();
+          } else if (Date.now() - t0 >= maxMs + 30 * 1000) {
             clearInterval(tick);
             resolve();
           }
@@ -564,17 +571,17 @@
       const name = currentLabel || currentId;
       const rel = related.length ? " Related concepts: " + related.join(", ") + "." : "";
       if (kind === "close") {
-        return "Stop adding new material. The Mini-pod on " + name + " is a short ~350-word episode. Finish any incomplete sentence, then one or two closing sentences. Do not recap, greet, or start a new section. End on a full closing sentence and stop.";
+        return "The last sentence on " + name + " was cut. Speak only that unfinished sentence, then stop. Do not add a new point. Do not say you are done, complete, stopping, or that no further content is needed.";
       }
       if (kind === "continue") {
-        return "Continue the same short Mini-pod on " + name + " only if the last sentence was cut. Do not recap or greet. Speak at most another few sentences to complete the ~350-word episode, then stop. Do not start a longer essay. Always land on complete sentences.";
+        return "Continue the same short Mini-pod on " + name + " only if the last sentence was cut. Finish that sentence and stop. Do not start a new section or a longer essay. Do not say you are done or stopping.";
       }
-      let text = "Record a short Hybrid Intelligences Mini-pod — about 350 words, roughly two and a half minutes spoken. The words you speak are the entire episode. No microphone, no questions, no greeting, no preamble.\n";
+      let text = "Speak a short Hybrid Intelligences Mini-pod of about 220 words — six to eight complete sentences. At a calm radio pace that is about two minutes. Every word you speak is the whole episode. No microphone, no questions, no greeting, no preamble.\n";
       text += "Name: " + name + "\n";
       if (currentCat) text += "Category: " + currentCat + "\n";
       if (currentDef) text += "Definition: " + currentDef + "\n";
       text += rel + "\n";
-      text += "Begin immediately with the concept. Do not say let's dive in, welcome, or here we go. Name it, define it, place it, mention two or three related concepts, say why it matters, and close. Do not write a long essay. Do not cover the rest of the ontology. Always finish every sentence. Never stop mid-clause or mid-word.";
+      text += "Begin immediately with the concept. Do not say let's dive in, welcome, or here we go. In this order, one or two sentences each: name and define it; place it with Hayles or its category; name two related concepts; say why it matters; close. Do not write more than you will speak. Do not announce that you are done, complete, or stopping.";
       return text;
     }
 
@@ -852,8 +859,18 @@
       document.getElementById("transcriptText").textContent = "";
     }
 
+    function cleanTranscript(text) {
+      return String(text || "")
+        .replace(/\s+/g, " ")
+        .replace(/\s*(That'?s complete.*)$/i, "")
+        .replace(/\s*(No further content.*)$/i, "")
+        .replace(/\s*(I(?:'m| am) stopping here\.?)/gi, "")
+        .replace(/\s*(Done\.?\s*)+$/i, "")
+        .trim();
+    }
+
     function showTranscript() {
-      const text = episodeTranscript.replace(/\s+/g, " ").trim();
+      const text = cleanTranscript(episodeTranscript);
       const box = document.getElementById("transcriptBox");
       const el = document.getElementById("transcriptText");
       if (!text) {
@@ -1033,9 +1050,9 @@
 
     async function requestClose() {
       wrapping = true;
-      setStatus("Creating Mini-pod… finishing the last sentences.");
-      document.getElementById("stageHint").textContent = "Creating Mini-pod… finishing the last sentences.";
-      await waitForQuiet(12000);
+      setStatus("Creating Mini-pod… finishing the last sentence.");
+      document.getElementById("stageHint").textContent = "Creating Mini-pod… finishing the last sentence.";
+      await waitForQuiet(END_QUIET_MAX_MS);
       if (finishing || !recording) return;
       closeTries += 1;
       askTurn("close");
@@ -1047,25 +1064,25 @@
         if (chunks.length || startedAt) finishMiniPod();
         return;
       }
+      await waitForQuiet(END_QUIET_MAX_MS);
+      if (finishing || !recording) return;
       const words = spokenWordCount();
+      const complete = transcriptLooksComplete() && words >= 120;
       const incomplete = status === "incomplete" || !transcriptLooksComplete();
-      const longEnough = words >= TARGET_WORDS || wrapDue || (startedAt && elapsed() >= TARGET_MS) || continues >= MAX_CONTINUES;
       if (wrapping) {
-        if (incomplete && closeTries < 2 && elapsed() < HARD_STOP_MS - 15000 && words < TARGET_WORDS + 80) {
+        finishMiniPod();
+        return;
+      }
+      if (complete) {
+        finishMiniPod();
+        return;
+      }
+      if (wrapDue || elapsed() >= TARGET_MS || continues >= MAX_CONTINUES || words >= TARGET_WORDS) {
+        if (incomplete && closeTries < 1) {
           await requestClose();
           return;
         }
         finishMiniPod();
-        return;
-      }
-      if (longEnough) {
-        await requestClose();
-        return;
-      }
-      await waitForQuiet(8000);
-      if (finishing || !recording) return;
-      if (spokenWordCount() >= TARGET_WORDS || wrapDue || elapsed() >= TARGET_MS || continues >= MAX_CONTINUES) {
-        await requestClose();
         return;
       }
       continues += 1;
