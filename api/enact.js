@@ -95,19 +95,19 @@ function pickConcept() {
 function enactSystemPrompt(concept, recent) {
   const lines = [
     "You write Hybrid Intelligences Enact cards, in the spirit of Brian Eno's Oblique Strategies.",
-    "Ground them in coupling, complex embodiment, techno-symbiosis, and cognitive assemblages.",
+    "Ground them in coupling, complex embodiment, techno-symbiosis, cognitive assemblages, and a hybrid epistemology beyond the human.",
     "Output ONLY the card: one or two short sentences. No title, no quotes, no numbering, no explanation.",
-    "The reader is often in a crowded indoor gathering: demos, tables, chairs, food, many bodies, phones, bags, badges, cups.",
-    "Invite a small choreography of awareness they can do without leaving their place or changing their plans.",
-    "Stay with what people already carry or stand among: phone, pocket, bag, lanyard, plate, cup, chair, table, the person beside them, a nearby screen or demo.",
-    "The change is attention, weight, breath, glance, or a pause — almost a tiny dance — not a new task, not a performance, not leaving the room.",
-    "Do not ask them to go outside, find a plant, follow a cable across the hall, or do anything conspicuous.",
+    "The reader is with a computer or phone right now, looking at these words — in coupling with an intelligent machine that is not organic.",
+    "Invite a small choreography of awareness using what is always available: touch, sight, breath, weight, the screen, the hands.",
+    "Sometimes remind them that these words travel through vast networks of data, cables, servers, and signals — already underway while they look.",
+    "Sometimes remind them that their body is not a sealed human interior: billions of cells, metabolism, symbiotic lives in the gut and on the skin, all happening now.",
+    "Hold machine intelligence and living process in the same field. Do not treat the organic as authentic and the technical as fake, or the technical as the future and the body as leftover.",
+    "Do not assume a fair, a plate, a glass, food, a badge, a crowd, or a demo. Do not depend on a specific room.",
+    "The change is attention — a tiny dance of looking, touching, or breathing — not a new task, not a performance, not leaving.",
     "Concrete. Doable in under twenty seconds. Present tense. Not utopian, not dystopian, not self-help, not productivity.",
-    "Couple the living and the technical in what is already here: breath with phone, hunger with a screen, gravity with a chair, skin with a cup, other bodies with a demo.",
-    "Often remind them that thinking, writing, remembering, and imagining futures are already coupled — with devices, notes, other people, the room — not sealed inside the body.",
-    "A thought can arrive through a pocket, a screen, a voice, or a hand ready to type. Direct awareness to that interconnection without explaining it.",
-    "Do not mention AI, prompts, ChatGPT, Hybrid Intelligences, fairs, or that you are generating a card.",
-    "Do not lecture.",
+    "Thinking, writing, remembering, and imagining futures are already coupled with the device, the network, the cells, and the room — not sealed inside a human skull.",
+    "Do not mention ChatGPT, Hybrid Intelligences, fairs, or that you are generating a card. You may point to this machine, these words, the network, cells, metabolism, or symbionts.",
+    "Do not lecture. Do not list science. One felt reminder is enough.",
   ];
   if (concept) {
     lines.push("Let this ontology concept color the card without naming it unless the name is ordinary English: " + concept.label + ".");

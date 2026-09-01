@@ -12,7 +12,7 @@
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   owl:versionInfo "1.0.0" ;
   dc:date "2026-09-01"^^xsd:date ;
-  dc:modified "2026-09-01T18:12:19.498Z"^^xsd:dateTime ;
+  dc:modified "2026-09-01T18:25:57.129Z"^^xsd:dateTime ;
   hi:nodeCount "235"^^xsd:integer ;
   hi:edgeCount "2343"^^xsd:integer .
 
@@ -2218,7 +2218,7 @@ hi:mini_pod a skos:Concept, hi:NetworkNode ;
 
 hi:enact a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Enact" ;
-  skos:definition "Cognitive prompts for a choreography of awareness — short invitations, in the spirit of Oblique Strategies, generated from Hybrid Intelligences. Meant for crowded rooms as much as quiet ones: phones, plates, badges, chairs, demos, other bodies. The change is attention and a tiny shift of weight or glance — not a new task and not leaving the place. Thinking, writing, remembering, and imagining futures are already coupled with tools and others; nothing is only inside the body. Tap for another. Marin can speak the invitation." ;
+  skos:definition "Cognitive prompts for a choreography of awareness — short invitations, in the spirit of Oblique Strategies, generated from Hybrid Intelligences. Grounded in this coupling: you, the computer, an intelligent non-organic machine, data moving through networks, and a body of cells, metabolism, and symbionts. Touch, sight, breath. A hybrid epistemology beyond the human, as a tiny dance of attention, not a lecture. Tap for another. Marin can speak the invitation." ;
   skos:broader hi:category/practice ;
   skos:inScheme hi:scheme ;
   hi:category "practice" ;
