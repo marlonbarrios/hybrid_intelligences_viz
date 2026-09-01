@@ -33,9 +33,13 @@
       "@id": "hi:edgeCount",
       "@type": "xsd:integer"
     },
-    "category": {
-      "@id": "hi:category",
-      "@type": "xsd:string"
+    "modified": {
+      "@id": "dc:modified",
+      "@type": "xsd:dateTime"
+    },
+    "date": {
+      "@id": "dc:date",
+      "@type": "xsd:date"
     },
     "xsd": "http://www.w3.org/2001/XMLSchema#"
   },
@@ -52,6 +56,7 @@
         "foaf:homepage": "https://marlonbarrios.github.io/"
       },
       "dc:date": "2026-09-01",
+      "dc:modified": "2026-09-01T16:51:09.551Z",
       "owl:versionInfo": "1.0.0",
       "hi:nodeCount": 234,
       "hi:edgeCount": 2332

@@ -86,6 +86,14 @@ function cleanLabel(label) {
   return label.replace(/\n/g, " ").trim();
 }
 
+function ontologyStamp() {
+  const now = new Date();
+  return {
+    date: now.toISOString().slice(0, 10),
+    modified: now.toISOString(),
+  };
+}
+
 function buildJsonLd({ NODES, EDGES, CATEGORY_META, RING_ORDER }) {
   const nodeById = Object.fromEntries(NODES.map((n) => [n.id, n]));
   const relatedBySource = {};
@@ -94,6 +102,7 @@ function buildJsonLd({ NODES, EDGES, CATEGORY_META, RING_ORDER }) {
     relatedBySource[a].push({ "@id": `${BASE}${b}`, "hi:strength": strength });
   }
 
+  const stamp = ontologyStamp();
   const graph = [];
 
   graph.push({
@@ -108,7 +117,8 @@ function buildJsonLd({ NODES, EDGES, CATEGORY_META, RING_ORDER }) {
       "foaf:name": "Marlon Barrios Solano",
       "foaf:homepage": "https://marlonbarrios.github.io/",
     },
-    "dc:date": new Date().toISOString().slice(0, 10),
+    "dc:date": stamp.date,
+    "dc:modified": stamp.modified,
     "owl:versionInfo": "1.0.0",
     "hi:nodeCount": NODES.length,
     "hi:edgeCount": EDGES.length,
@@ -172,7 +182,8 @@ function buildJsonLd({ NODES, EDGES, CATEGORY_META, RING_ORDER }) {
       ringOrder: { "@id": "hi:ringOrder", "@type": "xsd:integer" },
       nodeCount: { "@id": "hi:nodeCount", "@type": "xsd:integer" },
       edgeCount: { "@id": "hi:edgeCount", "@type": "xsd:integer" },
-      category: { "@id": "hi:category", "@type": "xsd:string" },
+      modified: { "@id": "dc:modified", "@type": "xsd:dateTime" },
+      date: { "@id": "dc:date", "@type": "xsd:date" },
       xsd: "http://www.w3.org/2001/XMLSchema#",
     },
     "@graph": graph,
@@ -187,6 +198,7 @@ function turtleEscape(str) {
 }
 
 function buildTurtle({ NODES, EDGES, CATEGORY_META, RING_ORDER }) {
+  const stamp = ontologyStamp();
   const lines = [];
   lines.push(`@prefix hi: <${BASE}> .`);
   lines.push(`@prefix owl: <http://www.w3.org/2002/07/owl#> .`);
@@ -202,6 +214,8 @@ function buildTurtle({ NODES, EDGES, CATEGORY_META, RING_ORDER }) {
   lines.push(`  rdfs:label "Hybrid Intelligences Ontology" ;`);
   lines.push(`  dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;`);
   lines.push(`  owl:versionInfo "1.0.0" ;`);
+  lines.push(`  dc:date "${stamp.date}"^^xsd:date ;`);
+  lines.push(`  dc:modified "${stamp.modified}"^^xsd:dateTime ;`);
   lines.push(`  hi:nodeCount "${NODES.length}"^^xsd:integer ;`);
   lines.push(`  hi:edgeCount "${EDGES.length}"^^xsd:integer .`);
   lines.push("");
@@ -257,6 +271,7 @@ function buildTurtle({ NODES, EDGES, CATEGORY_META, RING_ORDER }) {
 }
 
 function buildOwlTurtle({ NODES, EDGES, CATEGORY_META, RING_ORDER }) {
+  const stamp = ontologyStamp();
   const lines = [];
   const categoryClasses = RING_ORDER.map((cat) => CAT_CLASS[cat]);
 
@@ -276,6 +291,8 @@ function buildOwlTurtle({ NODES, EDGES, CATEGORY_META, RING_ORDER }) {
   lines.push(`  dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;`);
   lines.push(`  dc:description "OWL 2 ontology of concepts, categories, and weighted relations from the Hybrid Intelligences program." ;`);
   lines.push(`  owl:versionInfo "1.0.0" ;`);
+  lines.push(`  dc:date "${stamp.date}"^^xsd:date ;`);
+  lines.push(`  dc:modified "${stamp.modified}"^^xsd:dateTime ;`);
   lines.push(`  owl:imports <http://www.w3.org/2004/02/skos/core> ;`);
   lines.push(`  hi:nodeCount "${NODES.length}"^^xsd:integer ;`);
   lines.push(`  hi:edgeCount "${EDGES.length}"^^xsd:integer .`);

@@ -92,6 +92,14 @@
       font-size: 0.82rem;
       color: var(--muted);
     }
+    #ontologyUpdated {
+      margin: 0.4rem 0 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--title);
+    }
     .intro {
       margin: 0.85rem 0 0;
       max-width: 52rem;
@@ -494,6 +502,7 @@
           • <a href="https://arts.ufl.edu/" target="_blank" rel="noopener noreferrer">College of the Arts</a>
         </p>
         <p id="ontologyStats">Loading concept scheme…</p>
+        <p id="ontologyUpdated" hidden></p>
       </div>
     </div>
     <p class="intro">
@@ -614,10 +623,44 @@
       }
     }
 
+    function formatOntologyUpdated(value) {
+      if (!value) return "";
+      const raw = typeof value === "object" ? (value["@value"] || "") : String(value);
+      if (!raw) return "";
+      const when = new Date(raw.length <= 10 ? raw + "T12:00:00Z" : raw);
+      if (Number.isNaN(when.getTime())) return "Last updated · " + raw;
+      const longDate = when.toLocaleDateString(undefined, {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      });
+      if (raw.length <= 10) return "Last updated · " + longDate;
+      const time = when.toLocaleTimeString(undefined, {
+        hour: "numeric",
+        minute: "2-digit",
+      });
+      return "Last updated · " + longDate + " · " + time;
+    }
+
+    function ontologyLastUpdated(record) {
+      return formatOntologyUpdated((record && (record.modified || record.date)) || "");
+    }
+
     function updateHeaderStats() {
       const el = document.getElementById("ontologyStats");
-      if (!el) return;
-      el.textContent = `SKOS concept scheme — ${meta.nodeCount || concepts.length} concepts, ${meta.edgeCount || ""} relations · ${RING_ORDER.length} categories`;
+      if (el) {
+        el.textContent = `SKOS concept scheme — ${meta.nodeCount || concepts.length} concepts, ${meta.edgeCount || ""} relations · ${RING_ORDER.length} categories`;
+      }
+      const updated = document.getElementById("ontologyUpdated");
+      if (!updated) return;
+      const label = ontologyLastUpdated(meta);
+      if (!label) {
+        updated.hidden = true;
+        updated.textContent = "";
+        return;
+      }
+      updated.hidden = false;
+      updated.textContent = label;
     }
 
     function typesOf(entry) {
@@ -644,6 +687,7 @@
             nodeCount: entry["hi:nodeCount"],
             edgeCount: entry["hi:edgeCount"],
             date: entry["dc:date"],
+            modified: entry["dc:modified"] || entry.modified,
           };
           continue;
         }

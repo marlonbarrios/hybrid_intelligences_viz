@@ -12,6 +12,8 @@
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   dc:description "OWL 2 ontology of concepts, categories, and weighted relations from the Hybrid Intelligences program." ;
   owl:versionInfo "1.0.0" ;
+  dc:date "2026-09-01"^^xsd:date ;
+  dc:modified "2026-09-01T16:51:09.569Z"^^xsd:dateTime ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   hi:nodeCount "234"^^xsd:integer ;
   hi:edgeCount "2332"^^xsd:integer .

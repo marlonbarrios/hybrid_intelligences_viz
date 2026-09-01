@@ -11,6 +11,8 @@
   rdfs:label "Hybrid Intelligences Ontology" ;
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   owl:versionInfo "1.0.0" ;
+  dc:date "2026-09-01"^^xsd:date ;
+  dc:modified "2026-09-01T16:51:09.565Z"^^xsd:dateTime ;
   hi:nodeCount "234"^^xsd:integer ;
   hi:edgeCount "2332"^^xsd:integer .
 
