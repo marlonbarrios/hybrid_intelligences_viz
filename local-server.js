@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 /**
- * Local static server plus /api/token and /api/image.
+ * Local static server plus /api/token, /api/image, and /api/enact.
  *
  *   OPENAI_API_KEY=sk-... node local-server.js
  *   # or put OPENAI_API_KEY in a gitignored .env file
  *
- * Then open http://localhost:8000/voice.html, image.html, or mini-pod.html
+ * Then open http://localhost:8000/voice.html, image.html, mini-pod.html, or enact.html
  */
 
 const fs = require("fs");
@@ -13,6 +13,7 @@ const http = require("http");
 const path = require("path");
 const tokenHandler = require("./api/token");
 const imageHandler = require("./api/image");
+const enactHandler = require("./api/enact");
 
 const ROOT = __dirname;
 const PORT = Number(process.env.PORT) || 8000;
@@ -129,7 +130,7 @@ loadEnv();
 
 const server = http.createServer((req, res) => {
   const urlPath = (req.url || "/").split("?")[0];
-  const handler = urlPath === "/api/token" ? tokenHandler : urlPath === "/api/image" ? imageHandler : null;
+  const handler = urlPath === "/api/token" ? tokenHandler : urlPath === "/api/image" ? imageHandler : urlPath === "/api/enact" ? enactHandler : null;
   if (handler) {
     Promise.resolve(vercelReq(req))
       .then((fakeReq) => handler(fakeReq, vercelRes(res)))
@@ -147,8 +148,8 @@ server.listen(PORT, "127.0.0.1", () => {
   console.log(`Hybrid Intelligences local server: http://localhost:${PORT}/`);
   console.log(`Voice: http://localhost:${PORT}/voice.html`);
   console.log(`Image: http://localhost:${PORT}/image.html`);
-  console.log(`Mini-pod: http://localhost:${PORT}/mini-pod.html?id=coupling`);
+  console.log(`Enact: http://localhost:${PORT}/enact.html`);
   if (!process.env.OPENAI_API_KEY) {
-    console.warn("OPENAI_API_KEY is not set. Copy .env.example to .env, or Talk / Make an image / Mini-pod will fail until you paste a deployed Vercel URL.");
+    console.warn("OPENAI_API_KEY is not set. Copy .env.example to .env, or Talk / Make an image / Mini-pod / Enact will fail until you paste a deployed Vercel URL.");
   }
 });

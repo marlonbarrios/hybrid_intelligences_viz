@@ -3,9 +3,9 @@
     "api/token.js": {
       "includeFiles": "ontology.jsonld"
     },
-    "api/image.js": {
+    "api/enact.js": {
       "includeFiles": "ontology.jsonld",
-      "maxDuration": 60
+      "maxDuration": 20
     }
   },
   "headers": [

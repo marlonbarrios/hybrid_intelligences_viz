@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hybrid Intelligences — Enact</title>
+  <meta name="description" content="Cognitive prompts for a choreography of awareness — Hybrid Intelligences invitations in the spirit of Oblique Strategies.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500&family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e1018;
+      --panel: #12141e;
+      --border: #323848;
+      --title: #f4c430;
+      --text: #e8eaef;
+      --muted: #969eb0;
+      --link: #82c3ff;
+      --cta-fg: #0e1018;
+    }
+    body.light-mode {
+      --bg: #fffdf8;
+      --panel: #ffffff;
+      --border: #d2d6e0;
+      --title: #a8760c;
+      --text: #202430;
+      --muted: #5a6070;
+      --link: #125599;
+      --cta-fg: #fffdf8;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      flex-shrink: 0;
+      padding: 1rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      min-width: 0;
+    }
+    .site-logo { display: block; line-height: 0; text-decoration: none; }
+    .site-logo:hover { opacity: 0.88; text-decoration: none; }
+    .site-logo img { display: block; height: 52px; width: auto; }
+    .eyebrow {
+      margin: 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--title);
+    }
+    .header-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem 0.95rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      align-items: center;
+    }
+    .theme-btn {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      padding: 0.35rem 0.55rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .theme-btn:hover { color: var(--title); border-color: var(--title); }
+    .stage {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1.5rem 8vw 5.5rem;
+      cursor: pointer;
+      user-select: none;
+    }
+    .stage:focus { outline: none; }
+    #card {
+      margin: 0 auto;
+      max-width: 16em;
+      font-family: "Bricolage Grotesque", "IBM Plex Sans", system-ui, sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-size: clamp(2.05rem, 7.2vw, 5.1rem);
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+      text-wrap: pretty;
+      color: var(--text);
+      opacity: 1;
+      transition: opacity 0.7s ease;
+    }
+    #card.is-out { opacity: 0; }
+    @media (prefers-reduced-motion: reduce) {
+      #card { transition: none; }
+    }
+    .hint {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: 0;
+      padding: 1rem 1.5rem 1.35rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      text-align: center;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand-row">
+      <a class="site-logo" href="index.html" aria-label="Hybrid Intelligences home">
+        <img src="logo.png" alt="Hybrid Intelligences">
+      </a>
+      <p class="eyebrow">Enact</p>
+    </div>
+    <div class="header-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="ontology.html">Ontology</a>
+      <a href="network.html">Network</a>
+      <a href="voice.html">Voice</a>
+      <a href="mini-pod.html">Mini-pod</a>
+      <button type="button" class="theme-btn" id="themeBtn" aria-label="Toggle theme">Theme</button>
+    </div>
+  </header>
+
+  <main class="stage" id="stage" tabindex="0" role="button" aria-label="Show another invitation">
+    <p id="card" class="is-out" aria-live="polite"></p>
+  </main>
+  <p class="hint" id="hint">Tap, click, or press Space for another invitation.</p>
+
+  <script src="realtime-config.js"></script>
+  <script>
+    const FALLBACK = [
+      "Feel the seam where your skin meets whatever you are holding. Stay until it is neither only yours nor only its.",
+      "Shift your weight onto the less familiar foot. Let the floor finish the adjustment.",
+      "Let the nearest screen complete its refresh. Do not help it.",
+      "Hear the farthest sound and the closest one at the same time. Do not rank them.",
+      "Place a palm on a surface that is not your body. Wait for the temperatures to meet.",
+      "Follow, with your eyes, one cable, beam, or glance that leaves this room.",
+      "Soften your jaw. Keep looking at whatever you were already looking at.",
+      "Name, silently, one infrastructure you are borrowing. Do not improve it.",
+      "Take one step as if the floor were a partner, not a ground.",
+      "Notice who or what is holding your attention for you. Thank it without returning it yet.",
+      "Blink slower than the interface expects.",
+      "Feel the chair, the air, and the network as one weather. Do not pick a favorite.",
+      "Reach toward something, then stop halfway. Stay in the almost.",
+      "Let a notification wait. Track the half-begun gesture in your hand.",
+      "Turn your face toward a person or a device without addressing them. Notice the coupling anyway.",
+      "Count three breaths with the room, not against it.",
+      "Find a weight you are already carrying that is not muscle. Set it down for one sentence of time.",
+      "Listen for the hum that is not music. Stay until it has a location in your body.",
+      "Change nothing except the distance between your shoulder blades.",
+      "Look at a tool until it looks back as a condition, not an object.",
+      "Walk to the nearest threshold. Stand in it as if it were a practice.",
+      "Let your next thought arrive through your feet.",
+      "Notice the institution in the furniture. Do not argue with it. Sit differently.",
+      "Offer your attention to something that cannot thank you.",
+    ];
+
+    const FADE_MS = 700;
+    const recent = [];
+    let busy = false;
+    const card = document.getElementById("card");
+    const hint = document.getElementById("hint");
+
+    function applyTheme(mode) {
+      document.body.classList.toggle("light-mode", mode === "light");
+      localStorage.setItem("hi-theme", mode);
+    }
+
+    function initTheme() {
+      const saved = localStorage.getItem("hi-theme");
+      const mode = saved || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      applyTheme(mode);
+      document.getElementById("themeBtn").addEventListener("click", (e) => {
+        e.stopPropagation();
+        applyTheme(document.body.classList.contains("light-mode") ? "dark" : "light");
+      });
+    }
+
+    function remember(text) {
+      if (!text) return;
+      recent.push(text);
+      if (recent.length > 12) recent.shift();
+    }
+
+    function unusedFallback() {
+      const pool = FALLBACK.filter((line) => !recent.includes(line));
+      const source = pool.length ? pool : FALLBACK;
+      return source[Math.floor(Math.random() * source.length)];
+    }
+
+    function enactUrl() {
+      if (location.protocol === "file:") return "";
+      const host = location.hostname;
+      if (host === "localhost" || host === "127.0.0.1" || host.endsWith("vercel.app")) return "/api/enact";
+      const origin = String(window.HI_REALTIME_ORIGIN || "https://project-s4uzk.vercel.app").replace(/\/+$/, "");
+      return origin + "/api/enact";
+    }
+
+    function fadeMs() {
+      return window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : FADE_MS;
+    }
+
+    function wait(ms) {
+      return new Promise((resolve) => setTimeout(resolve, ms));
+    }
+
+    async function fadeOut() {
+      if (card.classList.contains("is-out")) return;
+      card.classList.add("is-out");
+      await wait(fadeMs());
+    }
+
+    async function fadeIn() {
+      void card.offsetWidth;
+      card.classList.remove("is-out");
+      await wait(fadeMs());
+    }
+
+    async function fetchPrompt() {
+      const url = enactUrl();
+      if (url) {
+        try {
+          const res = await fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ recent: recent.slice(-8) }),
+          });
+          const data = await res.json();
+          if (res.ok && data.prompt) return { text: data.prompt, url };
+        } catch (_) {}
+      }
+      return { text: unusedFallback(), url };
+    }
+
+    async function nextCard() {
+      if (busy) return;
+      busy = true;
+      hint.textContent = "Listening for another invitation…";
+      const leaving = fadeOut();
+      const next = await fetchPrompt();
+      await leaving;
+      remember(next.text);
+      card.textContent = next.text;
+      hint.textContent = next.url
+        ? "Tap, click, or press Space for another invitation."
+        : "Open this page from the site, not as a file, for generated cards.";
+      await fadeIn();
+      busy = false;
+    }
+
+    initTheme();
+    document.getElementById("stage").addEventListener("click", nextCard);
+    window.addEventListener("keydown", (e) => {
+      if (e.key === " " || e.key === "Enter" || e.key === "ArrowRight") {
+        e.preventDefault();
+        nextCard();
+      }
+    });
+    nextCard();
+  </script>
+</body>
+</html>
