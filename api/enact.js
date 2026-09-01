@@ -96,7 +96,7 @@ function enactSystemPrompt(concept, recent, language) {
   const lines = [
     "You write Hybrid Intelligences Enact cards, in the spirit of Brian Eno's Oblique Strategies.",
     "Ground them in coupling, complex embodiment, techno-symbiosis, cognitive assemblages, and a hybrid epistemology beyond the human.",
-    "Output ONLY the card: one or two short sentences. No title, no quotes, no numbering, no explanation.",
+    "Output ONLY the card: one short sentence. About eight to fourteen words. No second sentence. No title, no quotes, no numbering, no explanation.",
     "The reader is with a computer or phone right now, looking at these words — in coupling with an intelligent machine that is not organic.",
     "Invite a small choreography of awareness using what is always available: touch, sight, breath, weight, the screen, the hands.",
     "Sometimes remind them that these words travel through vast networks of data, cables, servers, and signals — already underway while they look.",
@@ -107,7 +107,7 @@ function enactSystemPrompt(concept, recent, language) {
     "Concrete. Doable in under twenty seconds. Present tense. Not utopian, not dystopian, not self-help, not productivity.",
     "Thinking, writing, remembering, and imagining futures are already coupled with the device, the network, the cells, and the room — not sealed inside a human skull.",
     "Do not mention ChatGPT, Hybrid Intelligences, fairs, or that you are generating a card. You may point to this machine, these words, the network, cells, metabolism, or symbionts.",
-    "Do not lecture. Do not list science. One felt reminder is enough.",
+    "Do not lecture. Do not list science. One felt reminder is enough. Keep it half as long as a two-sentence card.",
   ];
   if (language && language.name && !/^english$/i.test(language.name)) {
     const label = language.native ? language.name + " (" + language.native + ")" : language.name;
@@ -164,7 +164,7 @@ module.exports = async function handler(req, res) {
       body: JSON.stringify({
         model: "gpt-4o-mini",
         temperature: 1.05,
-        max_tokens: 140,
+        max_tokens: 55,
         stream: stream,
         messages: [
           { role: "system", content: enactSystemPrompt(concept, recent, language) },

@@ -336,7 +336,7 @@ Local: `node local-server.js`, then [http://localhost:8000/image.html?id=couplin
 
 ### Enact (cognitive prompts)
 
-**Enact** opens [`enact.html`](enact.html). The same Vercel project (`/api/enact`) asks for one or two sentences — a small choreography of awareness with the computer in front of you (touch, sight, breath), reminding that these words move through networks, that the body is cells and metabolism and symbionts, and that the partner on the screen is an intelligent machine that is not organic. Choose a language from the menu (twenty-six languages). Marin — the same Realtime voice as Voice — reads each invitation. Tap once to hear; tap again for another. Sound can be turned off. If the model is unavailable, the page uses a local deck.
+**Enact** opens [`enact.html`](enact.html). The same Vercel project (`/api/enact`) asks for one short sentence — a small choreography of awareness with the computer in front of you (touch, sight, breath), reminding that these words move through networks, that the body is cells and metabolism and symbionts, and that the partner on the screen is an intelligent machine that is not organic. Choose a language from the menu (twenty-six languages). Marin — the same Realtime voice as Voice — reads each invitation. Tap once to hear; tap again for another. Sound can be turned off. If the model is unavailable, the page uses a local deck.
 
 Local: `node local-server.js`, then [http://localhost:8000/enact.html](http://localhost:8000/enact.html).
 
