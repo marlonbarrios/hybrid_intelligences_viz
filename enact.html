@@ -150,8 +150,19 @@
       transition: opacity 0.7s ease;
     }
     #card.is-out { opacity: 0; }
+    #card.is-streaming::after {
+      content: "▍";
+      margin-left: 0.06em;
+      font-weight: 400;
+      opacity: 0.42;
+      animation: enact-caret 1.05s steps(1) infinite;
+    }
+    @keyframes enact-caret {
+      50% { opacity: 0; }
+    }
     @media (prefers-reduced-motion: reduce) {
       #card { transition: none; }
+      #card.is-streaming::after { animation: none; }
     }
   </style>
 </head>
@@ -185,30 +196,30 @@
   <script src="realtime-config.js"></script>
   <script>
     const FALLBACK = [
-      "Feel the seam where your skin meets whatever you are holding. Stay until it is neither only yours nor only its.",
-      "Shift your weight onto the less familiar foot. Let the floor finish the adjustment.",
-      "Let the nearest screen complete its refresh. Do not help it.",
-      "Hear the farthest sound and the closest one at the same time. Do not rank them.",
-      "Place a palm on a surface that is not your body. Wait for the temperatures to meet.",
-      "Follow, with your eyes, one cable, beam, or glance that leaves this room.",
-      "Soften your jaw. Keep looking at whatever you were already looking at.",
-      "Name, silently, one infrastructure you are borrowing. Do not improve it.",
-      "Take one step as if the floor were a partner, not a ground.",
-      "Notice who or what is holding your attention for you. Thank it without returning it yet.",
-      "Blink slower than the interface expects.",
-      "Feel the chair, the air, and the network as one weather. Do not pick a favorite.",
-      "Reach toward something, then stop halfway. Stay in the almost.",
-      "Let a notification wait. Track the half-begun gesture in your hand.",
-      "Turn your face toward a person or a device without addressing them. Notice the coupling anyway.",
-      "Count three breaths with the room, not against it.",
-      "Find a weight you are already carrying that is not muscle. Set it down for one sentence of time.",
-      "Listen for the hum that is not music. Stay until it has a location in your body.",
-      "Change nothing except the distance between your shoulder blades.",
-      "Look at a tool until it looks back as a condition, not an object.",
-      "Walk to the nearest threshold. Stand in it as if it were a practice.",
-      "Let your next thought arrive through your feet.",
-      "Notice the institution in the furniture. Do not argue with it. Sit differently.",
-      "Offer your attention to something that cannot thank you.",
+      "Feel the phone in your hand and the air on the back of your neck as one weather.",
+      "Look from a leaf, a cable, and a screen without ranking which is more alive.",
+      "Let daylight and a notification occupy the same second. Do not choose.",
+      "Place a palm on a window. Notice glass, weather, and the signal behind the glass.",
+      "Follow a cable until it disappears. Name, silently, the nearest living thing.",
+      "Hear a bird or a vent and a device hum without picking a favorite.",
+      "Take one step as if the floor, the network, and gravity were sharing the load.",
+      "Feel the battery’s warmth and your own. Stay until they are not a contest.",
+      "Water something living, or touch a plant. Do not dry your hands before the next key.",
+      "Stand where indoor air meets outdoor air. Keep the device with you. Do not use it.",
+      "Blink with the screen, then with the sky or a lamp. Let both refresh you.",
+      "Feel the seam where skin meets plastic, wood, or glass. Stay until it is neither only yours nor only its.",
+      "Name one infrastructure you are borrowing and one living process you are borrowing. Thank both.",
+      "Let a fan, a breeze, and a speaker be the same room. Soften your jaw.",
+      "Look at a tool until it looks back as a condition, like weather, not an object.",
+      "Count three breaths with the room: body, building, and whatever is charging nearby.",
+      "Reach toward a plant or a window, then stop halfway. Notice the device still in the other hand.",
+      "Listen for the hum that is not music: server, fridge, insect, blood. Stay until it has a location.",
+      "Walk to the nearest threshold. Let daylight and electric light meet on your face.",
+      "Offer your attention to something that cannot thank you: soil, cable, dust, or a sleeping screen.",
+      "Shift your weight onto the less familiar foot. Let the floor and the building finish the adjustment.",
+      "Turn toward a person, a plant, or a device without addressing them. Notice the coupling anyway.",
+      "Let the nearest screen complete its refresh. Watch a shadow or a leaf while you wait.",
+      "Find a weight you are already carrying that is not muscle: a charge, a forecast, a deadline. Set one down.",
     ];
 
     const FADE_MS = 700;
@@ -298,12 +309,6 @@
       await wait(fadeMs());
     }
 
-    async function fadeIn() {
-      void card.offsetWidth;
-      card.classList.remove("is-out");
-      await wait(fadeMs());
-    }
-
     function stopSpeak() {
       speakGen += 1;
       try { player.pause(); } catch (_) {}
@@ -356,20 +361,71 @@
       browserSpeak(text);
     }
 
-    async function fetchPrompt() {
-      const url = enactUrl();
-      if (url) {
-        try {
-          const res = await fetch(url, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ recent: recent.slice(-8) }),
-          });
-          const data = await res.json();
-          if (res.ok && data.prompt) return { text: data.prompt, url };
-        } catch (_) {}
+    function showPartial(raw) {
+      return String(raw || "").replace(/^["“]+/, "").replace(/\s+/g, " ");
+    }
+
+    function finishCard(raw) {
+      return showPartial(raw).replace(/["”]+$/g, "").replace(/^\s*card\s*\d*[:.\-]\s*/i, "").trim();
+    }
+
+    async function typeOntoCard(text) {
+      const finalText = finishCard(text);
+      if (!finalText) return "";
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        card.textContent = finalText;
+        return finalText;
       }
-      return { text: unusedFallback(), url };
+      card.classList.add("is-streaming");
+      const parts = finalText.split(/(\s+)/);
+      let shown = "";
+      for (const part of parts) {
+        shown += part;
+        card.textContent = shown;
+        if (part.trim()) await wait(Math.min(70, 28 + part.length * 4));
+      }
+      card.classList.remove("is-streaming");
+      card.textContent = finalText;
+      return finalText;
+    }
+
+    async function streamOntoCard() {
+      const url = enactUrl();
+      if (!url) return "";
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "text/plain",
+        },
+        body: JSON.stringify({ recent: recent.slice(-8) }),
+      });
+      if (!res.ok || !res.body) return "";
+      const type = res.headers.get("content-type") || "";
+      if (type.includes("application/json")) {
+        const data = await res.json();
+        return data.prompt ? typeOntoCard(data.prompt) : "";
+      }
+      card.classList.add("is-streaming");
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let full = "";
+      let pieces = 0;
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        const piece = decoder.decode(value, { stream: true });
+        if (!piece) continue;
+        pieces += 1;
+        full += piece;
+        card.textContent = showPartial(full);
+      }
+      card.classList.remove("is-streaming");
+      const text = finishCard(full);
+      if (!text) return "";
+      if (pieces <= 1) return typeOntoCard(text);
+      card.textContent = text;
+      return text;
     }
 
     async function nextCard() {
@@ -378,16 +434,22 @@
       stopSpeak();
       heardCurrent = false;
       hint.textContent = "Listening for another invitation…";
-      const leaving = fadeOut();
-      const next = await fetchPrompt();
-      await leaving;
-      remember(next.text);
-      card.textContent = next.text;
-      await fadeIn();
+      await fadeOut();
+      card.textContent = "";
+      card.classList.remove("is-out");
+      let text = "";
+      try {
+        text = await streamOntoCard();
+      } catch (_) {
+        text = "";
+      }
+      if (!text) text = await typeOntoCard(unusedFallback());
+      else if (!card.textContent) card.textContent = text;
+      remember(text);
       busy = false;
       if (soundOn && gestured) {
         heardCurrent = true;
-        speak(next.text);
+        speak(text);
         hint.textContent = "Tap, click, or press Space for another invitation.";
       } else {
         heardCurrent = false;

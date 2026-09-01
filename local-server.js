@@ -61,6 +61,13 @@ function send(res, status, body, headers) {
 
 function vercelRes(res) {
   let code = 200;
+  let started = false;
+  function ensure() {
+    if (!started) {
+      res.statusCode = code;
+      started = true;
+    }
+  }
   return {
     setHeader(name, value) {
       res.setHeader(name, value);
@@ -69,17 +76,28 @@ function vercelRes(res) {
       code = next;
       return this;
     },
+    write(chunk) {
+      ensure();
+      res.write(typeof chunk === "string" ? chunk : Buffer.from(chunk));
+    },
     json(obj) {
       res.statusCode = code;
       res.setHeader("Content-Type", "application/json; charset=utf-8");
+      started = true;
       res.end(JSON.stringify(obj));
     },
     send(body) {
       res.statusCode = code;
+      started = true;
       res.end(body);
     },
-    end() {
-      res.statusCode = code;
+    end(body) {
+      if (body !== undefined) {
+        ensure();
+        res.end(typeof body === "string" ? body : body);
+        return;
+      }
+      if (!started) res.statusCode = code;
       res.end();
     },
   };
@@ -111,6 +129,7 @@ async function vercelReq(req) {
     method: req.method,
     url: req.url,
     query: Object.fromEntries(url.searchParams),
+    headers: req.headers || {},
     body,
   };
 }

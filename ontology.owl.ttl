@@ -13,7 +13,7 @@
   dc:description "OWL 2 ontology of concepts, categories, and weighted relations from the Hybrid Intelligences program." ;
   owl:versionInfo "1.0.0" ;
   dc:date "2026-09-01"^^xsd:date ;
-  dc:modified "2026-09-01T17:28:03.450Z"^^xsd:dateTime ;
+  dc:modified "2026-09-01T18:01:05.598Z"^^xsd:dateTime ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   hi:nodeCount "235"^^xsd:integer ;
   hi:edgeCount "2343"^^xsd:integer .
@@ -2804,7 +2804,7 @@ hi:mini_pod a owl:NamedIndividual, hi:PracticeConcept ;
 hi:enact a owl:NamedIndividual, hi:PracticeConcept ;
   rdfs:label "Enact"@en ;
   skos:prefLabel "Enact"@en ;
-  skos:definition "Cognitive prompts for a choreography of awareness — short invitations, in the spirit of Oblique Strategies, generated from Hybrid Intelligences: coupling, complex embodiment, techno-symbiosis. One or two sentences. Not utopian, not dystopian. A practice of directing attention through a simple act, posture, or relation already available in the room. Tap for another."@en ;
+  skos:definition "Cognitive prompts for a choreography of awareness — short invitations, in the spirit of Oblique Strategies, generated from Hybrid Intelligences: coupling, complex embodiment, techno-symbiosis. Nature and ordinary technologies share the same field of attention: plant with cable, breath with battery, weather with screen. One or two sentences. Not utopian, not dystopian. A practice of directing attention through a simple act, posture, or relation already available. Tap for another. Marin can speak the invitation."@en ;
   skos:broader hi:category/practice ;
   hi:inCategory hi:category/practice ;
   hi:schemeMember hi:scheme ;

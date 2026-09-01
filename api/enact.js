@@ -32,6 +32,46 @@ function cleanCard(text) {
     .trim();
 }
 
+function header(req, name) {
+  const headers = req.headers || {};
+  const key = Object.keys(headers).find((k) => k.toLowerCase() === name.toLowerCase());
+  return key ? String(headers[key] || "") : "";
+}
+
+function wantsStream(req) {
+  return header(req, "accept").includes("text/plain");
+}
+
+async function pipeCompletionStream(response, res) {
+  const reader = response.body.getReader();
+  const decoder = new TextDecoder();
+  let buffer = "";
+  let full = "";
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    buffer += decoder.decode(value, { stream: true });
+    const lines = buffer.split("\n");
+    buffer = lines.pop() || "";
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (!trimmed.startsWith("data:")) continue;
+      const payload = trimmed.slice(5).trim();
+      if (!payload || payload === "[DONE]") continue;
+      try {
+        const json = JSON.parse(payload);
+        const piece =
+          json.choices && json.choices[0] && json.choices[0].delta && json.choices[0].delta.content;
+        if (piece) {
+          full += piece;
+          res.write(piece);
+        }
+      } catch (_) {}
+    }
+  }
+  return full;
+}
+
 function pickConcept() {
   try {
     const data = loadOntology();
@@ -59,8 +99,10 @@ function enactSystemPrompt(concept, recent) {
     "Output ONLY the card: one or two short sentences. No title, no quotes, no numbering, no explanation.",
     "It is an invitation the reader can enact now: a small choreography of attention, posture, or relation.",
     "Concrete. Doable in under a minute. Present tense. Not utopian, not dystopian, not self-help, not productivity.",
+    "Include ordinary technologies often: phone, screen, cable, battery, router, lamp, speaker, camera, car, HVAC, satellite delay, notification, keyboard, plastic, glass, charge.",
+    "Balance nature and tech in the same invitation: plant, light, weather, dust, water, wood, insect, gravity, breath, or skin with a device, signal, or infrastructure. Do not treat nature as pure and tech as fallen, or tech as salvation.",
     "Do not mention AI, prompts, ChatGPT, Hybrid Intelligences, or that you are generating a card.",
-    "Do not lecture. Direct awareness to bodies, tools, rooms, other people, or infrastructures already here.",
+    "Do not lecture. Direct awareness to bodies, tools, rooms, living things, other people, or infrastructures already here.",
   ];
   if (concept) {
     lines.push("Let this ontology concept color the card without naming it unless the name is ordinary English: " + concept.label + ".");
@@ -95,6 +137,8 @@ module.exports = async function handler(req, res) {
   const recent = [].concat(body.recent || []).map((c) => String(c || "").trim()).filter(Boolean).slice(-8);
   const concept = pickConcept();
 
+  const stream = wantsStream(req);
+
   try {
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
@@ -106,20 +150,33 @@ module.exports = async function handler(req, res) {
         model: "gpt-4o-mini",
         temperature: 1.05,
         max_tokens: 90,
+        stream: stream,
         messages: [
           { role: "system", content: enactSystemPrompt(concept, recent) },
           { role: "user", content: "One new Enact card." },
         ],
       }),
     });
-    const data = await response.json();
     if (!response.ok) {
-      const message =
-        (data && data.error && (data.error.message || data.error)) ||
-        "OpenAI did not return a card.";
+      let message = "OpenAI did not return a card.";
+      try {
+        const data = await response.json();
+        message = (data && data.error && (data.error.message || data.error)) || message;
+      } catch (_) {}
       res.status(response.status).json({ error: message });
       return;
     }
+
+    if (stream) {
+      res.setHeader("Content-Type", "text/plain; charset=utf-8");
+      res.setHeader("Cache-Control", "no-cache");
+      res.status(200);
+      const full = await pipeCompletionStream(response, res);
+      res.end();
+      return;
+    }
+
+    const data = await response.json();
     const text = cleanCard(data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content);
     if (!text) {
       res.status(502).json({ error: "The card was empty." });
