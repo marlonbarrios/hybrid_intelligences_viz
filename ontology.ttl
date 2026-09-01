@@ -11,8 +11,8 @@
   rdfs:label "Hybrid Intelligences Ontology" ;
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   owl:versionInfo "1.0.0" ;
-  hi:nodeCount "228"^^xsd:integer ;
-  hi:edgeCount "2290"^^xsd:integer .
+  hi:nodeCount "234"^^xsd:integer ;
+  hi:edgeCount "2332"^^xsd:integer .
 
 hi:scheme a skos:ConceptScheme ;
   skos:prefLabel "Hybrid Intelligences Concept Scheme" ;
@@ -20,7 +20,7 @@ hi:scheme a skos:ConceptScheme ;
 
 hi:category/program a skos:Concept, hi:Category ;
   skos:prefLabel "Program" ;
-  skos:definition "The inaugural Hybrid Intelligences Creative B program (July 13–30, 2026), its three tracks, and public events." ;
+  skos:definition "The Hybrid Intelligences Hub (the public tool), the inaugural Creative B program (July 13–30, 2026), its three tracks, and public events." ;
   skos:inScheme hi:scheme ;
   skos:topConceptOf hi:scheme ;
   hi:ringFraction "0.09"^^xsd:decimal ;
@@ -68,7 +68,7 @@ hi:category/facilitator a skos:Concept, hi:Category ;
 
 hi:category/practice a skos:Concept, hi:Category ;
   skos:prefLabel "Practices" ;
-  skos:definition "Methods and habits—rehearsal, somatics, pedagogy, cultural critique, and conversational AI as a way of thinking with the ontology." ;
+  skos:definition "Methods and habits—rehearsal, somatics, pedagogy, cultural critique, conversational AI, Mini-pod, concept image, and the ontology as a knowledge base for the Hub." ;
   skos:inScheme hi:scheme ;
   skos:topConceptOf hi:scheme ;
   hi:ringFraction "0.51"^^xsd:decimal ;
@@ -2149,7 +2149,7 @@ hi:philosophical_practice a skos:Concept, hi:NetworkNode ;
 
 hi:conversational_ai a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Conversational AI" ;
-  skos:definition "The spoken companion for Hybrid Intelligences—a chatbot grounded in the program ontology. Voice is one layer of a hybrid dynamic knowledge architecture of concepts, essays, documentation, visualization, conversational AI, and program materials for embodied leadership and creativity in the era of AI. It explains concepts from their definitions and relations, can be interrupted, and opens from Talk about this on any node." ;
+  skos:definition "The spoken companion for the Hybrid Intelligences Hub — one layer of a dynamic cognitive assemblage created by Marlon Barrios Solano. Grounded in the ontology as its knowledge base, it explains concepts from their definitions and relations, can be interrupted, and opens from Talk about this on any node. When asked what this tool or hub is, it should describe the Hub itself: essays, ontology, network, Voice, Image, and Mini-pod coupled as one instrument — not a chatbot standing alone." ;
   skos:broader hi:category/practice ;
   skos:inScheme hi:scheme ;
   hi:category "practice" ;
@@ -2157,6 +2157,61 @@ hi:conversational_ai a skos:Concept, hi:NetworkNode ;
  ;
   schema:url <voice.html> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Chatbot>
+ .
+
+hi:ontology_kb a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Ontology as Knowledge Base" ;
+  skos:definition "The Hybrid Intelligences ontology as a living vocabulary that grounds the conversational AI. Concepts, definitions, and weighted relations are the source of truth the spoken companion is given — a situated knowledge base rather than a generic model talking about the program from outside. Essays feed this scheme; the network makes it visible; Voice, Image, and Mini-pod generate from it." ;
+  skos:broader hi:category/practice ;
+  skos:inScheme hi:scheme ;
+  hi:category "practice" ;
+  hi:weight "1.55"^^xsd:decimal
+ ;
+  schema:url <ontology.html>
+ .
+
+hi:network_viz a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Network Visualization" ;
+  skos:definition "The radial map of the Hybrid Intelligences ontology — concentric rings of concepts and weighted relations. Information visualization as a way of thinking with the Hub: coupling becomes seeable, not only readable. The same nodes that ground Voice can be opened as Talk, Image, or Mini-pod." ;
+  skos:broader hi:category/practice ;
+  skos:inScheme hi:scheme ;
+  hi:category "practice" ;
+  hi:weight "1.5"^^xsd:decimal
+ ;
+  schema:url <network.html>
+ .
+
+hi:hi_essays a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Essays" ;
+  skos:definition "The publishing layer of the Hybrid Intelligences Hub — research writing by Marlon Barrios Solano and future guest collaborations that feed the ontology. Essay 1 (cognitive assemblages and complex embodiment) and Essay 2 (My Umwelt) are current entries. Writing here is not illustration after the fact; it is knowledge that becomes concepts, relations, and prompts for Voice, Image, and Mini-pod." ;
+  skos:broader hi:category/practice ;
+  skos:inScheme hi:scheme ;
+  hi:category "practice" ;
+  hi:weight "1.5"^^xsd:decimal
+ ;
+  schema:url <essays.html>
+ .
+
+hi:concept_image a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Concept Image" ;
+  skos:definition "A generated abstract information visualization from any ontology concept — one generative layer of the Hybrid Intelligences Hub. The same vocabulary that grounds conversation can become a still: Make an image on Ontology or Network. Image is not decoration; it is another coupling of the concept with a model, a prompt, and a viewer." ;
+  skos:broader hi:category/practice ;
+  skos:inScheme hi:scheme ;
+  hi:category "practice" ;
+  hi:weight "1.5"^^xsd:decimal
+ ;
+  schema:url <image.html>
+ .
+
+hi:mini_pod a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Mini-pod" ;
+  skos:definition "A short spoken episode — about two to three minutes — generated from any ontology concept, then left as an MP3 with a transcript that can be saved as PDF. Mini-pod is the Hub speaking a concept as radio rather than as dialogue: silent while it creates, then playable. No microphone. The same knowledge base that grounds Voice becomes a complete short podcast of that node." ;
+  skos:broader hi:category/practice ;
+  skos:inScheme hi:scheme ;
+  hi:category "practice" ;
+  hi:weight "1.55"^^xsd:decimal
+ ;
+  schema:url <mini-pod.html>
  .
 
 hi:pendular_umwelt a skos:Concept, hi:NetworkNode ;
@@ -2181,9 +2236,20 @@ hi:lobby_showcase a skos:Concept, hi:NetworkNode ;
   schema:url <showcase.html>
  .
 
+hi:hi_hub a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Hybrid Intelligences Hub" ;
+  skos:definition "The public Hybrid Intelligences tool: a dynamic cognitive assemblage created by Marlon Barrios Solano as Maker-in-Residence at CAME. Not a brochure and not a chatbot in isolation — a hybrid instrument in which essays, ontology, network visualization, conversational AI, concept images, and Mini-pods couple. The ontology is the knowledge base that grounds Voice; from any concept one can talk, generate an image, or create a short spoken episode. Also called this site, this platform, or this knowledge architecture. When asked what the Hub or this tool is, describe it as that assemblage and refer to its layers by name." ;
+  skos:broader hi:category/program ;
+  skos:inScheme hi:scheme ;
+  hi:category "program" ;
+  hi:weight "2.15"^^xsd:decimal
+ ;
+  schema:url <index.html>
+ .
+
 hi:hi_program a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Hybrid Intelligences Program" ;
-  skos:definition "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI — the inaugural University of Florida Creative B program, held July 13–30, 2026. It was co-led by Marlon Barrios Solano and Erika Moore; hosted by CAME and CAM in the College of the Arts, in partnership with IGNITE at the Wertheim Laboratory. It had three tracks: Space & Memory (Mondays), Future Lab (Wednesdays), and Ethics & Leadership (Thursdays), and closed with a public reception. The program treated intelligence as coupling across bodies, tools, institutions, and worlds, and rehearsed hybrid cognition through embodiment, ethics, and creative practice. Hybrid Intelligences remains an ongoing research framework. Its public site is a hybrid dynamic knowledge architecture of concepts, essays, documentation, visualization, conversational AI, and program materials." ;
+  skos:definition "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI — the inaugural University of Florida Creative B program, held July 13–30, 2026. It was co-led by Marlon Barrios Solano and Erika Moore; hosted by CAME and CAM in the College of the Arts, in partnership with IGNITE at the Wertheim Laboratory. It had three tracks: Space & Memory (Mondays), Future Lab (Wednesdays), and Ethics & Leadership (Thursdays), and closed with a public reception. The program treated intelligence as coupling across bodies, tools, institutions, and worlds, and rehearsed hybrid cognition through embodiment, ethics, and creative practice. Hybrid Intelligences remains an ongoing research framework. Its public site is the Hybrid Intelligences Hub — a dynamic cognitive assemblage of concepts, essays, visualization, conversational AI, Image, Mini-pod, documentation, and program materials." ;
   skos:broader hi:category/program ;
   skos:inScheme hi:scheme ;
   hi:category "program" ;
@@ -14779,6 +14845,258 @@ hi:rel-hi_program-conversational_ai a hi:Relation ;
   hi:target hi:conversational_ai ;
   hi:strength "0.9"^^xsd:decimal ;
   skos:relatedMatch hi:conversational_ai .
+
+hi:rel-hi_program-hi_hub a hi:Relation ;
+  hi:source hi:hi_program ;
+  hi:target hi:hi_hub ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:hi_hub .
+
+hi:rel-hi_hub-marlon a hi:Relation ;
+  hi:source hi:hi_hub ;
+  hi:target hi:marlon ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:marlon .
+
+hi:rel-hi_hub-came a hi:Relation ;
+  hi:source hi:hi_hub ;
+  hi:target hi:came ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:came .
+
+hi:rel-hi_hub-hybrid a hi:Relation ;
+  hi:source hi:hi_hub ;
+  hi:target hi:hybrid ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:hybrid .
+
+hi:rel-hi_hub-coupling a hi:Relation ;
+  hi:source hi:hi_hub ;
+  hi:target hi:coupling ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:coupling .
+
+hi:rel-hi_hub-assemblage a hi:Relation ;
+  hi:source hi:hi_hub ;
+  hi:target hi:assemblage ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:assemblage .
+
+hi:rel-hi_hub-assemblage_form a hi:Relation ;
+  hi:source hi:hi_hub ;
+  hi:target hi:assemblage_form ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:assemblage_form .
+
+hi:rel-hi_hub-creative_embodiment a hi:Relation ;
+  hi:source hi:hi_hub ;
+  hi:target hi:creative_embodiment ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:creative_embodiment .
+
+hi:rel-hi_hub-technosymbiosis a hi:Relation ;
+  hi:source hi:hi_hub ;
+  hi:target hi:technosymbiosis ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:technosymbiosis .
+
+hi:rel-hi_hub-extended a hi:Relation ;
+  hi:source hi:hi_hub ;
+  hi:target hi:extended ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:extended .
+
+hi:rel-hi_hub-mediation a hi:Relation ;
+  hi:source hi:hi_hub ;
+  hi:target hi:mediation ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:mediation .
+
+hi:rel-hi_hub-conversational_ai a hi:Relation ;
+  hi:source hi:hi_hub ;
+  hi:target hi:conversational_ai ;
+  hi:strength "1"^^xsd:decimal ;
+  skos:relatedMatch hi:conversational_ai .
+
+hi:rel-hi_hub-ontology_kb a hi:Relation ;
+  hi:source hi:hi_hub ;
+  hi:target hi:ontology_kb ;
+  hi:strength "1"^^xsd:decimal ;
+  skos:relatedMatch hi:ontology_kb .
+
+hi:rel-hi_hub-network_viz a hi:Relation ;
+  hi:source hi:hi_hub ;
+  hi:target hi:network_viz ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:network_viz .
+
+hi:rel-hi_hub-hi_essays a hi:Relation ;
+  hi:source hi:hi_hub ;
+  hi:target hi:hi_essays ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:hi_essays .
+
+hi:rel-hi_hub-concept_image a hi:Relation ;
+  hi:source hi:hi_hub ;
+  hi:target hi:concept_image ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:concept_image .
+
+hi:rel-hi_hub-mini_pod a hi:Relation ;
+  hi:source hi:hi_hub ;
+  hi:target hi:mini_pod ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:mini_pod .
+
+hi:rel-hi_hub-llm a hi:Relation ;
+  hi:source hi:hi_hub ;
+  hi:target hi:llm ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:llm .
+
+hi:rel-hi_hub-ai a hi:Relation ;
+  hi:source hi:hi_hub ;
+  hi:target hi:ai ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-ontology_kb-conversational_ai a hi:Relation ;
+  hi:source hi:ontology_kb ;
+  hi:target hi:conversational_ai ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:conversational_ai .
+
+hi:rel-ontology_kb-network_viz a hi:Relation ;
+  hi:source hi:ontology_kb ;
+  hi:target hi:network_viz ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:network_viz .
+
+hi:rel-ontology_kb-hi_essays a hi:Relation ;
+  hi:source hi:ontology_kb ;
+  hi:target hi:hi_essays ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:hi_essays .
+
+hi:rel-ontology_kb-mini_pod a hi:Relation ;
+  hi:source hi:ontology_kb ;
+  hi:target hi:mini_pod ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:mini_pod .
+
+hi:rel-ontology_kb-concept_image a hi:Relation ;
+  hi:source hi:ontology_kb ;
+  hi:target hi:concept_image ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:concept_image .
+
+hi:rel-ontology_kb-assemblage a hi:Relation ;
+  hi:source hi:ontology_kb ;
+  hi:target hi:assemblage ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:assemblage .
+
+hi:rel-ontology_kb-epistemology a hi:Relation ;
+  hi:source hi:ontology_kb ;
+  hi:target hi:epistemology ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:epistemology .
+
+hi:rel-ontology_kb-hybrid a hi:Relation ;
+  hi:source hi:ontology_kb ;
+  hi:target hi:hybrid ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:hybrid .
+
+hi:rel-network_viz-mediation a hi:Relation ;
+  hi:source hi:network_viz ;
+  hi:target hi:mediation ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:mediation .
+
+hi:rel-network_viz-mini_pod a hi:Relation ;
+  hi:source hi:network_viz ;
+  hi:target hi:mini_pod ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:mini_pod .
+
+hi:rel-network_viz-concept_image a hi:Relation ;
+  hi:source hi:network_viz ;
+  hi:target hi:concept_image ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:concept_image .
+
+hi:rel-hi_essays-marlon a hi:Relation ;
+  hi:source hi:hi_essays ;
+  hi:target hi:marlon ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:marlon .
+
+hi:rel-hi_essays-assemblage a hi:Relation ;
+  hi:source hi:hi_essays ;
+  hi:target hi:assemblage ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:assemblage .
+
+hi:rel-hi_essays-coupling a hi:Relation ;
+  hi:source hi:hi_essays ;
+  hi:target hi:coupling ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:coupling .
+
+hi:rel-hi_essays-umwelt a hi:Relation ;
+  hi:source hi:hi_essays ;
+  hi:target hi:umwelt ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:umwelt .
+
+hi:rel-hi_essays-philosophical_practice a hi:Relation ;
+  hi:source hi:hi_essays ;
+  hi:target hi:philosophical_practice ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:philosophical_practice .
+
+hi:rel-concept_image-generative_arts a hi:Relation ;
+  hi:source hi:concept_image ;
+  hi:target hi:generative_arts ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:generative_arts .
+
+hi:rel-concept_image-ai_art a hi:Relation ;
+  hi:source hi:concept_image ;
+  hi:target hi:ai_art ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_art .
+
+hi:rel-concept_image-creative a hi:Relation ;
+  hi:source hi:concept_image ;
+  hi:target hi:creative ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:creative .
+
+hi:rel-concept_image-conversational_ai a hi:Relation ;
+  hi:source hi:concept_image ;
+  hi:target hi:conversational_ai ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:conversational_ai .
+
+hi:rel-mini_pod-conversational_ai a hi:Relation ;
+  hi:source hi:mini_pod ;
+  hi:target hi:conversational_ai ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:conversational_ai .
+
+hi:rel-mini_pod-storytelling a hi:Relation ;
+  hi:source hi:mini_pod ;
+  hi:target hi:storytelling ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:storytelling .
+
+hi:rel-mini_pod-hi_essays a hi:Relation ;
+  hi:source hi:mini_pod ;
+  hi:target hi:hi_essays ;
+  hi:strength "0.78"^^xsd:decimal ;
+  skos:relatedMatch hi:hi_essays .
 
 hi:rel-hi_program-marlon a hi:Relation ;
   hi:source hi:hi_program ;
