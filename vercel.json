@@ -6,6 +6,9 @@
     "api/enact.js": {
       "includeFiles": "ontology.jsonld",
       "maxDuration": 20
+    },
+    "api/speech.js": {
+      "maxDuration": 20
     }
   },
   "headers": [

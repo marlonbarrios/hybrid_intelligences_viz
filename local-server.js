@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Local static server plus /api/token, /api/image, and /api/enact.
+ * Local static server plus /api/token, /api/image, /api/enact, and /api/speech.
  *
  *   OPENAI_API_KEY=sk-... node local-server.js
  *   # or put OPENAI_API_KEY in a gitignored .env file
@@ -14,6 +14,7 @@ const path = require("path");
 const tokenHandler = require("./api/token");
 const imageHandler = require("./api/image");
 const enactHandler = require("./api/enact");
+const speechHandler = require("./api/speech");
 
 const ROOT = __dirname;
 const PORT = Number(process.env.PORT) || 8000;
@@ -69,10 +70,17 @@ function vercelRes(res) {
       return this;
     },
     json(obj) {
-      send(res, code, JSON.stringify(obj), { "Content-Type": "application/json; charset=utf-8" });
+      res.statusCode = code;
+      res.setHeader("Content-Type", "application/json; charset=utf-8");
+      res.end(JSON.stringify(obj));
+    },
+    send(body) {
+      res.statusCode = code;
+      res.end(body);
     },
     end() {
-      send(res, code, "", {});
+      res.statusCode = code;
+      res.end();
     },
   };
 }
@@ -130,7 +138,12 @@ loadEnv();
 
 const server = http.createServer((req, res) => {
   const urlPath = (req.url || "/").split("?")[0];
-  const handler = urlPath === "/api/token" ? tokenHandler : urlPath === "/api/image" ? imageHandler : urlPath === "/api/enact" ? enactHandler : null;
+  const handler =
+    urlPath === "/api/token" ? tokenHandler
+    : urlPath === "/api/image" ? imageHandler
+    : urlPath === "/api/enact" ? enactHandler
+    : urlPath === "/api/speech" ? speechHandler
+    : null;
   if (handler) {
     Promise.resolve(vercelReq(req))
       .then((fakeReq) => handler(fakeReq, vercelRes(res)))

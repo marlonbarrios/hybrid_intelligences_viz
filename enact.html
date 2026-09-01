@@ -87,12 +87,50 @@
       cursor: pointer;
     }
     .theme-btn:hover { color: var(--title); border-color: var(--title); }
+    .dock {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.85rem 1.5rem 1.35rem;
+      pointer-events: none;
+    }
+    .sound-btn {
+      pointer-events: auto;
+      border: 1px solid var(--title);
+      background: var(--panel);
+      color: var(--title);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.55rem 1rem;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    .sound-btn:hover { color: var(--title); border-color: var(--title); }
+    .sound-btn[aria-pressed="false"] {
+      border-color: var(--border);
+      color: var(--muted);
+    }
+    .hint {
+      margin: 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      text-align: center;
+    }
     .stage {
       flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 1.5rem 8vw 5.5rem;
+      padding: 1.5rem 8vw 7.5rem;
       cursor: pointer;
       user-select: none;
     }
@@ -114,20 +152,6 @@
     #card.is-out { opacity: 0; }
     @media (prefers-reduced-motion: reduce) {
       #card { transition: none; }
-    }
-    .hint {
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      margin: 0;
-      padding: 1rem 1.5rem 1.35rem;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.04em;
-      color: var(--muted);
-      text-align: center;
-      pointer-events: none;
     }
   </style>
 </head>
@@ -153,7 +177,10 @@
   <main class="stage" id="stage" tabindex="0" role="button" aria-label="Show another invitation">
     <p id="card" class="is-out" aria-live="polite"></p>
   </main>
-  <p class="hint" id="hint">Tap, click, or press Space for another invitation.</p>
+  <div class="dock">
+    <button type="button" class="sound-btn" id="soundBtn" aria-pressed="true" aria-label="Turn sound off">Sound on</button>
+    <p class="hint" id="hint">Tap to hear the invitation. Tap again for another.</p>
+  </div>
 
   <script src="realtime-config.js"></script>
   <script>
@@ -187,8 +214,16 @@
     const FADE_MS = 700;
     const recent = [];
     let busy = false;
+    let gestured = false;
+    let heardCurrent = false;
+    let soundOn = localStorage.getItem("hi-enact-sound") !== "off";
+    let speakGen = 0;
+    let objectUrl = "";
     const card = document.getElementById("card");
     const hint = document.getElementById("hint");
+    const soundBtn = document.getElementById("soundBtn");
+    const player = new Audio();
+    player.preload = "auto";
 
     function applyTheme(mode) {
       document.body.classList.toggle("light-mode", mode === "light");
@@ -205,6 +240,22 @@
       });
     }
 
+    function syncSoundButton() {
+      soundBtn.setAttribute("aria-pressed", soundOn ? "true" : "false");
+      soundBtn.setAttribute("aria-label", soundOn ? "Turn sound off" : "Turn sound on");
+      soundBtn.textContent = soundOn ? "Sound on" : "Sound off";
+    }
+
+    function idleHint() {
+      if (!soundOn) {
+        hint.textContent = "Tap, click, or press Space for another invitation.";
+        return;
+      }
+      hint.textContent = heardCurrent
+        ? "Tap, click, or press Space for another invitation."
+        : "Tap to hear the invitation. Tap again for another.";
+    }
+
     function remember(text) {
       if (!text) return;
       recent.push(text);
@@ -217,12 +268,20 @@
       return source[Math.floor(Math.random() * source.length)];
     }
 
-    function enactUrl() {
+    function apiUrl(path) {
       if (location.protocol === "file:") return "";
       const host = location.hostname;
-      if (host === "localhost" || host === "127.0.0.1" || host.endsWith("vercel.app")) return "/api/enact";
+      if (host === "localhost" || host === "127.0.0.1" || host.endsWith("vercel.app")) return path;
       const origin = String(window.HI_REALTIME_ORIGIN || "https://project-s4uzk.vercel.app").replace(/\/+$/, "");
-      return origin + "/api/enact";
+      return origin + path;
+    }
+
+    function enactUrl() {
+      return apiUrl("/api/enact");
+    }
+
+    function speechUrl() {
+      return apiUrl("/api/speech");
     }
 
     function fadeMs() {
@@ -245,6 +304,58 @@
       await wait(fadeMs());
     }
 
+    function stopSpeak() {
+      speakGen += 1;
+      try { player.pause(); } catch (_) {}
+      player.removeAttribute("src");
+      try { player.load(); } catch (_) {}
+      if (objectUrl) {
+        URL.revokeObjectURL(objectUrl);
+        objectUrl = "";
+      }
+      if (window.speechSynthesis) speechSynthesis.cancel();
+    }
+
+    function browserSpeak(text) {
+      if (!window.speechSynthesis) return;
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.rate = 0.88;
+      utter.pitch = 0.96;
+      const voices = speechSynthesis.getVoices();
+      const preferred =
+        voices.find((v) => /en/i.test(v.lang) && /Google|Samantha|Daniel|Karen|Martha|Moira/i.test(v.name)) ||
+        voices.find((v) => /^en/i.test(v.lang));
+      if (preferred) utter.voice = preferred;
+      speechSynthesis.speak(utter);
+    }
+
+    async function speak(text) {
+      if (!soundOn || !text) return;
+      stopSpeak();
+      const gen = speakGen;
+      const url = speechUrl();
+      if (url) {
+        try {
+          const res = await fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ text }),
+          });
+          if (gen !== speakGen) return;
+          if (res.ok) {
+            const blob = await res.blob();
+            if (gen !== speakGen) return;
+            objectUrl = URL.createObjectURL(blob);
+            player.src = objectUrl;
+            await player.play();
+            return;
+          }
+        } catch (_) {}
+      }
+      if (gen !== speakGen) return;
+      browserSpeak(text);
+    }
+
     async function fetchPrompt() {
       const url = enactUrl();
       if (url) {
@@ -264,25 +375,59 @@
     async function nextCard() {
       if (busy) return;
       busy = true;
+      stopSpeak();
+      heardCurrent = false;
       hint.textContent = "Listening for another invitation…";
       const leaving = fadeOut();
       const next = await fetchPrompt();
       await leaving;
       remember(next.text);
       card.textContent = next.text;
-      hint.textContent = next.url
-        ? "Tap, click, or press Space for another invitation."
-        : "Open this page from the site, not as a file, for generated cards.";
       await fadeIn();
       busy = false;
+      if (soundOn && gestured) {
+        heardCurrent = true;
+        speak(next.text);
+        hint.textContent = "Tap, click, or press Space for another invitation.";
+      } else {
+        heardCurrent = false;
+        idleHint();
+      }
+    }
+
+    function requestNext() {
+      gestured = true;
+      if (busy) return;
+      if (soundOn && card.textContent && !heardCurrent) {
+        heardCurrent = true;
+        speak(card.textContent);
+        idleHint();
+        return;
+      }
+      nextCard();
     }
 
     initTheme();
-    document.getElementById("stage").addEventListener("click", nextCard);
+    syncSoundButton();
+    soundBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      soundOn = !soundOn;
+      localStorage.setItem("hi-enact-sound", soundOn ? "on" : "off");
+      syncSoundButton();
+      if (!soundOn) {
+        stopSpeak();
+      } else if (card.textContent) {
+        gestured = true;
+        heardCurrent = true;
+        speak(card.textContent);
+      }
+      idleHint();
+    });
+    document.getElementById("stage").addEventListener("click", requestNext);
     window.addEventListener("keydown", (e) => {
       if (e.key === " " || e.key === "Enter" || e.key === "ArrowRight") {
         e.preventDefault();
-        nextCard();
+        requestNext();
       }
     });
     nextCard();

@@ -37,7 +37,7 @@ This repository holds linked views of the same knowledge architecture:
 5. **[Voice](https://marlonbarrios.github.io/hybrid_intelligences_viz/voice.html)** (`voice.html`) — conversational AI for the program: browser microphone conversation with an OpenAI Realtime model, grounded in the ontology. The API key stays on Vercel; the page only receives a short-lived token.
 6. **[Image](https://marlonbarrios.github.io/hybrid_intelligences_viz/image.html)** (`image.html`) — an abstract information visualization generated from an ontology concept (OpenAI image model via the same Vercel key as Voice). Open from **Make an image** on Ontology or Network.
 7. **[Mini-pod](https://marlonbarrios.github.io/hybrid_intelligences_viz/mini-pod.html)** (`mini-pod.html`) — a ~2.5-minute Voice episode as an MP3, created silently then played when ready. No microphone.
-8. **[Enact](https://marlonbarrios.github.io/hybrid_intelligences_viz/enact.html)** (`enact.html`) — one large cognitive prompt at a time, in the spirit of Oblique Strategies: an invitation to enact a small choreography of awareness (coupling, embodiment, techno-symbiosis). Tap or press Space for another. Generated via Vercel; a local deck if the model is unavailable.
+8. **[Enact](https://marlonbarrios.github.io/hybrid_intelligences_viz/enact.html)** (`enact.html`) — one large cognitive prompt at a time, in the spirit of Oblique Strategies: an invitation to enact a small choreography of awareness (coupling, embodiment, techno-symbiosis). Marin reads it aloud. Tap to hear, tap again for another. Generated via Vercel; a local deck if the model is unavailable.
 9. **[Essays](https://marlonbarrios.github.io/hybrid_intelligences_viz/essays.html)** (`essays.html`) — a growing publishing hub for Marlon Barrios Solano’s research and guest collaborations that feed the ontology; currently Essay 1 and Essay 2, each with a diagram on the hub card and at the top of the essay.
 10. **Essay 1** (`essay.html`) — *Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI* by Marlon Barrios Solano ([PDF](essay-1-hybrid-intelligences-cognitive-assemblages.pdf), includes the cognitive assemblages diagram).
 11. **Essay 2** (`essay-2.html`) — *My Umwelt* by Marlon Barrios Solano, in conversation with GPT-5.5 ([PDF](essay-2-my-umwelt.pdf), includes the Umwelt diagram).
@@ -320,7 +320,7 @@ Then open [http://localhost:8000/voice.html](http://localhost:8000/voice.html) a
 
 **Live Talk (Vercel)**
 
-The Voice page on GitHub Pages calls [https://project-s4uzk.vercel.app](https://project-s4uzk.vercel.app) for tokens. Visitors only press **Talk**. Redeploy that Vercel project from `main` whenever `api/token.js`, `api/image.js`, `api/enact.js`, or `ontology.jsonld` changes.
+The Voice page on GitHub Pages calls [https://project-s4uzk.vercel.app](https://project-s4uzk.vercel.app) for tokens. Visitors only press **Talk**. Redeploy that Vercel project from `main` whenever `api/token.js`, `api/image.js`, `api/enact.js`, `api/speech.js`, or `ontology.jsonld` changes.
 
 ### Mini-pod (Voice Realtime recording)
 
@@ -336,7 +336,7 @@ Local: `node local-server.js`, then [http://localhost:8000/image.html?id=couplin
 
 ### Enact (cognitive prompts)
 
-**Enact** opens [`enact.html`](enact.html). The same Vercel project (`/api/enact`) asks for one or two sentences — an invitation to enact a small choreography of awareness, in the spirit of Oblique Strategies, grounded in Hybrid Intelligences. Tap, click, or press Space for another. If the model is unavailable, the page uses a local deck.
+**Enact** opens [`enact.html`](enact.html). The same Vercel project (`/api/enact`) asks for one or two sentences — an invitation to enact a small choreography of awareness, in the spirit of Oblique Strategies, grounded in Hybrid Intelligences. Marin (the Voice page voice) reads each invitation aloud (`/api/speech`). Tap once to hear; tap again for another. Sound can be turned off. If the model is unavailable, the page uses a local deck.
 
 Local: `node local-server.js`, then [http://localhost:8000/enact.html](http://localhost:8000/enact.html).
 
@@ -403,9 +403,10 @@ node build-essays.js --pdf
 | `api/token.js` | Vercel function: mint OpenAI Realtime ephemeral token |
 | `api/image.js` | Vercel function: generate an ontology-grounded image |
 | `api/enact.js` | Vercel function: generate an Enact invitation |
+| `api/speech.js` | Vercel function: speak an Enact invitation (Marin) |
 | `api/ontology-context.js` | Loads `ontology.jsonld` into Voice instructions and Image prompts |
-| `local-server.js` | Local static server plus `/api/token`, `/api/image`, and `/api/enact` |
-| `vercel.json` | CORS headers and function config for token, image, and enact |
+| `local-server.js` | Local static server plus `/api/token`, `/api/image`, `/api/enact`, and `/api/speech` |
+| `vercel.json` | CORS headers and function config for token, image, enact, and speech |
 | `your-mind-is-not-in-your-head.m4a` | Synthetic Podcast episode audio |
 | `hybrid-intelligences-highlight.mp4` | Hybrid Intelligences Highlights video file |
 | `build-ontology.js` | Export script: `hybrid-network.js` → JSON-LD + Turtle + OWL |
