@@ -6,7 +6,7 @@ It was **launched in summer 2026**. The first course — a prototype of the fram
 
 **Home:** Cognition as coupling across bodies, tools, institutions, and worlds.
 
-**Impact:** A hybrid dynamic knowledge architecture of concepts, essays, visualization, conversational AI, documentation, and program materials for embodied leadership and creativity in the era of AI.
+**Impact:** A hybrid dynamic knowledge architecture of concepts, essays, visualization, conversational AI, Enact invitations, documentation, and program materials for embodied leadership and creativity in the era of AI.
 
 **Live site:** [https://marlonbarrios.github.io/hybrid_intelligences_viz/](https://marlonbarrios.github.io/hybrid_intelligences_viz/)
 
@@ -37,7 +37,7 @@ This repository holds linked views of the same knowledge architecture:
 5. **[Voice](https://marlonbarrios.github.io/hybrid_intelligences_viz/voice.html)** (`voice.html`) — conversational AI for the program: browser microphone conversation with an OpenAI Realtime model, grounded in the ontology. The API key stays on Vercel; the page only receives a short-lived token.
 6. **[Image](https://marlonbarrios.github.io/hybrid_intelligences_viz/image.html)** (`image.html`) — an abstract information visualization generated from an ontology concept (OpenAI image model via the same Vercel key as Voice). Open from **Make an image** on Ontology or Network.
 7. **[Mini-pod](https://marlonbarrios.github.io/hybrid_intelligences_viz/mini-pod.html)** (`mini-pod.html`) — a ~2.5-minute Voice episode as an MP3, created silently then played when ready. No microphone.
-8. **[Enact](https://marlonbarrios.github.io/hybrid_intelligences_viz/enact.html)** (`enact.html`) — one large cognitive prompt at a time, in the spirit of Oblique Strategies: a small choreography of awareness at the computer (touch, sight, breath), holding data networks, cellular life, and the non-organic machine in one field. Marin (the Voice model) reads it aloud. Tap to hear, tap again for another. Generated via Vercel; a local deck if the model is unavailable.
+8. **[Enact](https://marlonbarrios.github.io/hybrid_intelligences_viz/enact.html)** (`enact.html`) — one large cognitive invitation at a time, in the spirit of Oblique Strategies: a short choreography of awareness at the computer (touch, sight, breath), holding data networks, cellular life, and the non-organic machine in one field. One short sentence streams onto the page. Choose among **26 languages**. Marin (the same Realtime voice as Voice) can read it aloud; **Sound on / Sound off** toggles that. Tap to hear, tap again for another. Generated via Vercel; a local deck if the model is unavailable.
 9. **[Essays](https://marlonbarrios.github.io/hybrid_intelligences_viz/essays.html)** (`essays.html`) — a growing publishing hub for Marlon Barrios Solano’s research and guest collaborations that feed the ontology; currently Essay 1 and Essay 2, each with a diagram on the hub card and at the top of the essay.
 10. **Essay 1** (`essay.html`) — *Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI* by Marlon Barrios Solano ([PDF](essay-1-hybrid-intelligences-cognitive-assemblages.pdf), includes the cognitive assemblages diagram).
 11. **Essay 2** (`essay-2.html`) — *My Umwelt* by Marlon Barrios Solano, in conversation with GPT-5.5 ([PDF](essay-2-my-umwelt.pdf), includes the Umwelt diagram).
@@ -236,7 +236,7 @@ Frontmatter at the top of each `.md` file sets title, author, date, and footer. 
 | **Voice** | [`voice.html`](voice.html) — conversational AI (OpenAI Realtime); token minting via Vercel `api/token.js` |
 | **Image** | [`image.html`](image.html) — abstract info-viz still from an ontology concept; generation via Vercel `api/image.js` |
 | **Mini-pod** | [`mini-pod.html`](mini-pod.html) — ~2.5-minute Voice episode as an MP3 |
-| **Enact** | [`enact.html`](enact.html) — cognitive prompts for a choreography of awareness (`api/enact.js`) |
+| **Enact** | [`enact.html`](enact.html) — short cognitive invitations; 26 languages; Marin Realtime (`api/enact.js`, `api/token.js?mode=enact`) |
 
 ---
 
@@ -334,11 +334,15 @@ Local: `node local-server.js`, then [http://localhost:8000/mini-pod.html?id=coup
 
 Local: `node local-server.js`, then [http://localhost:8000/image.html?id=coupling](http://localhost:8000/image.html?id=coupling).
 
-### Enact (cognitive prompts)
+### Enact (cognitive invitations)
 
-**Enact** opens [`enact.html`](enact.html). The same Vercel project (`/api/enact`) asks for one short sentence — a small choreography of awareness with the computer in front of you (touch, sight, breath), reminding that these words move through networks, that the body is cells and metabolism and symbionts, and that the partner on the screen is an intelligent machine that is not organic. Choose a language from the menu (twenty-six languages). Marin — the same Realtime voice as Voice — reads each invitation. Tap once to hear; tap again for another. Sound can be turned off. If the model is unavailable, the page uses a local deck.
+**Enact** opens [`enact.html`](enact.html). Each card is **one short sentence** (about eight to fourteen words), in the spirit of Oblique Strategies: a small choreography of awareness with the computer in front of you (touch, sight, breath). The invitation can remind you that these words move through networks, that the body is cells, metabolism, and symbionts, and that the partner on the screen is an intelligent machine that is not organic — without a lecture, and without depending on a specific room.
 
-Local: `node local-server.js`, then [http://localhost:8000/enact.html](http://localhost:8000/enact.html).
+The text **streams** onto the page. A language menu offers **26 languages** (including Spanish, Portuguese, Arabic, Chinese, Japanese, Hindi, and Swahili; Arabic, Hebrew, Persian, and Urdu display right to left). Marin — the same OpenAI Realtime voice as Voice — can speak the invitation (`/api/token?mode=enact`). **Sound on / Sound off** turns that voice on or off. Tap once to hear; tap again for another. No microphone.
+
+Generation is `POST /api/enact` on the same Vercel project as Voice. If the model is unavailable, a local English deck is used.
+
+Local: `node local-server.js`, then [http://localhost:8000/enact.html](http://localhost:8000/enact.html). Redeploy Vercel from `main` after changing `api/enact.js` or `api/token.js` so live cards and speech match the repo.
 
 | Page | URL |
 |------|-----|
@@ -397,13 +401,13 @@ node build-essays.js --pdf
 | `podcast.html` | Synthetic Podcast page (NotebookLM sample + CTA) |
 | `voice.html` | Realtime voice conversation page |
 | `mini-pod.html` | Mini-pod: create a ~2.5-minute Voice episode as an MP3 |
-| `enact.html` | Enact: cognitive prompts for a choreography of awareness |
+| `enact.html` | Enact: short cognitive invitations, language menu, Marin Realtime voice |
 | `lamejs.iife.js` | Browser MP3 encoder used by Mini-pod |
 | `image.html` | Image page: generate a still from an ontology concept |
-| `api/token.js` | Vercel function: mint OpenAI Realtime ephemeral token |
+| `api/token.js` | Vercel function: mint OpenAI Realtime ephemeral token (Voice, Mini-pod, Enact `mode=enact`) |
 | `api/image.js` | Vercel function: generate an ontology-grounded image |
-| `api/enact.js` | Vercel function: generate an Enact invitation |
-| `api/speech.js` | Vercel function: speak an Enact invitation (Marin) |
+| `api/enact.js` | Vercel function: stream a short Enact invitation (optional language) |
+| `api/speech.js` | Vercel function: TTS fallback if Realtime speech is unavailable |
 | `api/ontology-context.js` | Loads `ontology.jsonld` into Voice instructions and Image prompts |
 | `local-server.js` | Local static server plus `/api/token`, `/api/image`, `/api/enact`, and `/api/speech` |
 | `vercel.json` | CORS headers and function config for token, image, enact, and speech |
