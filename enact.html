@@ -99,6 +99,34 @@
       padding: 0.85rem 1.5rem 1.35rem;
       pointer-events: none;
     }
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+    }
+    .dock-row {
+      pointer-events: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      align-items: center;
+      justify-content: center;
+    }
+    .lang-select {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--text);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.02em;
+      padding: 0.5rem 0.75rem;
+      border-radius: 999px;
+      cursor: pointer;
+      max-width: min(16rem, 86vw);
+    }
+    .lang-select:hover { border-color: var(--title); color: var(--title); }
     .sound-btn {
       pointer-events: auto;
       border: 1px solid var(--title);
@@ -138,7 +166,7 @@
     #card {
       margin: 0 auto;
       max-width: 16em;
-      font-family: "Bricolage Grotesque", "IBM Plex Sans", system-ui, sans-serif;
+      font-family: "Bricolage Grotesque", "IBM Plex Sans", "Noto Sans", "Hiragino Sans", "PingFang SC", "Apple SD Gothic Neo", system-ui, sans-serif;
       font-optical-sizing: auto;
       font-weight: 500;
       font-size: clamp(2.05rem, 7.2vw, 5.1rem);
@@ -189,12 +217,46 @@
     <p id="card" class="is-out" aria-live="polite"></p>
   </main>
   <div class="dock">
-    <button type="button" class="sound-btn" id="soundBtn" aria-pressed="true" aria-label="Turn sound off">Sound on</button>
+    <div class="dock-row">
+      <label class="visually-hidden" for="langSelect">Language</label>
+      <select id="langSelect" class="lang-select" aria-label="Language"></select>
+      <button type="button" class="sound-btn" id="soundBtn" aria-pressed="true" aria-label="Turn sound off">Sound on</button>
+    </div>
     <p class="hint" id="hint">Tap to hear the invitation. Tap again for another.</p>
   </div>
 
   <script src="realtime-config.js"></script>
   <script>
+    const LANGUAGES = [
+      { id: "en", name: "English", native: "English" },
+      { id: "es", name: "Spanish", native: "Español" },
+      { id: "pt", name: "Portuguese", native: "Português" },
+      { id: "fr", name: "French", native: "Français" },
+      { id: "de", name: "German", native: "Deutsch" },
+      { id: "it", name: "Italian", native: "Italiano" },
+      { id: "nl", name: "Dutch", native: "Nederlands" },
+      { id: "pl", name: "Polish", native: "Polski" },
+      { id: "sv", name: "Swedish", native: "Svenska" },
+      { id: "el", name: "Greek", native: "Ελληνικά" },
+      { id: "ru", name: "Russian", native: "Русский" },
+      { id: "uk", name: "Ukrainian", native: "Українська" },
+      { id: "tr", name: "Turkish", native: "Türkçe" },
+      { id: "ar", name: "Arabic", native: "العربية", rtl: true },
+      { id: "he", name: "Hebrew", native: "עברית", rtl: true },
+      { id: "fa", name: "Persian", native: "فارسی", rtl: true },
+      { id: "hi", name: "Hindi", native: "हिन्दी" },
+      { id: "bn", name: "Bengali", native: "বাংলা" },
+      { id: "ur", name: "Urdu", native: "اردو", rtl: true },
+      { id: "zh", name: "Chinese (Simplified)", native: "简体中文" },
+      { id: "zh-Hant", name: "Chinese (Traditional)", native: "繁體中文" },
+      { id: "ja", name: "Japanese", native: "日本語" },
+      { id: "ko", name: "Korean", native: "한국어" },
+      { id: "vi", name: "Vietnamese", native: "Tiếng Việt" },
+      { id: "th", name: "Thai", native: "ไทย" },
+      { id: "id", name: "Indonesian", native: "Bahasa Indonesia" },
+      { id: "sw", name: "Swahili", native: "Kiswahili" },
+    ];
+
     const FALLBACK = [
       "Feel these words arriving. Somewhere a network is moving. Somewhere cells are metabolizing. Stay with both.",
       "Breathe once with the machine. Do not wait for it to breathe back.",
@@ -230,9 +292,16 @@
     let soundOn = localStorage.getItem("hi-enact-sound") !== "off";
     let speakGen = 0;
     let objectUrl = "";
+    let pc = null;
+    let dc = null;
+    let remoteAudio = null;
+    let silentCtx = null;
+    let voiceConnecting = null;
     const card = document.getElementById("card");
     const hint = document.getElementById("hint");
     const soundBtn = document.getElementById("soundBtn");
+    const langSelect = document.getElementById("langSelect");
+    let currentLang = LANGUAGES[0];
     const player = new Audio();
     player.preload = "auto";
 
@@ -249,6 +318,36 @@
         e.stopPropagation();
         applyTheme(document.body.classList.contains("light-mode") ? "dark" : "light");
       });
+    }
+
+    function findLanguage(id) {
+      return LANGUAGES.find((l) => l.id === id) || LANGUAGES[0];
+    }
+
+    function browserLanguageId() {
+      const nav = String(navigator.language || navigator.userLanguage || "en").toLowerCase();
+      if (nav.startsWith("zh-hant") || nav.startsWith("zh-tw") || nav.startsWith("zh-hk")) return "zh-Hant";
+      if (nav.startsWith("zh")) return "zh";
+      const short = nav.split("-")[0];
+      if (LANGUAGES.some((l) => l.id === nav)) return nav;
+      const match = LANGUAGES.find((l) => l.id === short);
+      return match ? match.id : "en";
+    }
+
+    function applyLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem("hi-enact-lang", lang.id);
+      document.documentElement.lang = lang.id === "zh-Hant" ? "zh-Hant" : lang.id;
+      card.setAttribute("dir", lang.rtl ? "rtl" : "ltr");
+      langSelect.value = lang.id;
+    }
+
+    function fillLanguages() {
+      langSelect.innerHTML = LANGUAGES.map((lang) => {
+        const label = lang.id === "en" ? lang.native : lang.native + " · " + lang.name;
+        return "<option value=\"" + lang.id + "\">" + label + "</option>";
+      }).join("");
+      applyLanguage(findLanguage(localStorage.getItem("hi-enact-lang") || browserLanguageId()));
     }
 
     function syncSoundButton() {
@@ -295,6 +394,12 @@
       return apiUrl("/api/speech");
     }
 
+    function tokenUrl() {
+      const base = apiUrl("/api/token");
+      if (!base) return "";
+      return base + (base.includes("?") ? "&" : "?") + "mode=enact";
+    }
+
     function fadeMs() {
       return window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : FADE_MS;
     }
@@ -311,6 +416,11 @@
 
     function stopSpeak() {
       speakGen += 1;
+      try {
+        if (dc && dc.readyState === "open") {
+          dc.send(JSON.stringify({ type: "response.cancel" }));
+        }
+      } catch (_) {}
       try { player.pause(); } catch (_) {}
       player.removeAttribute("src");
       try { player.load(); } catch (_) {}
@@ -321,44 +431,161 @@
       if (window.speechSynthesis) speechSynthesis.cancel();
     }
 
-    function browserSpeak(text) {
-      if (!window.speechSynthesis) return;
-      const utter = new SpeechSynthesisUtterance(text);
-      utter.rate = 0.88;
-      utter.pitch = 0.96;
-      const voices = speechSynthesis.getVoices();
-      const preferred =
-        voices.find((v) => /en/i.test(v.lang) && /Google|Samantha|Daniel|Karen|Martha|Moira/i.test(v.name)) ||
-        voices.find((v) => /^en/i.test(v.lang));
-      if (preferred) utter.voice = preferred;
-      speechSynthesis.speak(utter);
+    function teardownVoice() {
+      if (dc) {
+        try { dc.close(); } catch (_) {}
+      }
+      if (pc) {
+        try { pc.close(); } catch (_) {}
+      }
+      if (remoteAudio) {
+        try { remoteAudio.pause(); } catch (_) {}
+        remoteAudio.srcObject = null;
+      }
+      if (silentCtx) {
+        try { silentCtx.close(); } catch (_) {}
+      }
+      dc = null;
+      pc = null;
+      remoteAudio = null;
+      silentCtx = null;
+    }
+
+    function silentTrack() {
+      silentCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const dest = silentCtx.createMediaStreamDestination();
+      const gain = silentCtx.createGain();
+      gain.gain.value = 0;
+      const osc = silentCtx.createOscillator();
+      osc.connect(gain);
+      gain.connect(dest);
+      osc.start();
+      return dest.stream;
+    }
+
+    function waitForDataChannel() {
+      return new Promise((resolve, reject) => {
+        if (!dc) {
+          reject(new Error("Voice channel was not created."));
+          return;
+        }
+        if (dc.readyState === "open") {
+          resolve();
+          return;
+        }
+        const timer = setTimeout(() => {
+          cleanup();
+          reject(new Error("Voice channel timed out."));
+        }, 15000);
+        function cleanup() {
+          clearTimeout(timer);
+          dc.removeEventListener("open", onOpen);
+          dc.removeEventListener("error", onError);
+        }
+        function onOpen() {
+          cleanup();
+          resolve();
+        }
+        function onError() {
+          cleanup();
+          reject(new Error("Voice channel failed."));
+        }
+        dc.addEventListener("open", onOpen);
+        dc.addEventListener("error", onError);
+      });
+    }
+
+    async function connectVoice() {
+      teardownVoice();
+      const url = tokenUrl();
+      if (!url) throw new Error("No token URL");
+      const tokenRes = await fetch(url);
+      const tokenData = await tokenRes.json();
+      if (!tokenRes.ok || !tokenData.value) {
+        throw new Error(tokenData.error || "Could not get a realtime token.");
+      }
+      const sendStream = silentTrack();
+      if (silentCtx && silentCtx.state === "suspended") await silentCtx.resume();
+      pc = new RTCPeerConnection();
+      remoteAudio = document.createElement("audio");
+      remoteAudio.autoplay = true;
+      remoteAudio.setAttribute("playsinline", "");
+      pc.ontrack = (e) => {
+        remoteAudio.srcObject = e.streams[0] || new MediaStream([e.track]);
+        remoteAudio.play().catch(() => {});
+      };
+      sendStream.getTracks().forEach((track) => pc.addTrack(track, sendStream));
+      dc = pc.createDataChannel("oai-events");
+      const offer = await pc.createOffer();
+      await pc.setLocalDescription(offer);
+      const sdpResponse = await fetch("https://api.openai.com/v1/realtime/calls", {
+        method: "POST",
+        body: offer.sdp,
+        headers: {
+          Authorization: "Bearer " + tokenData.value,
+          "Content-Type": "application/sdp",
+        },
+      });
+      if (!sdpResponse.ok) throw new Error("OpenAI did not accept the voice session.");
+      await pc.setRemoteDescription({
+        type: "answer",
+        sdp: await sdpResponse.text(),
+      });
+      await waitForDataChannel();
+    }
+
+    async function ensureVoice() {
+      if (dc && dc.readyState === "open") return;
+      if (voiceConnecting) {
+        await voiceConnecting;
+        if (dc && dc.readyState === "open") return;
+      }
+      voiceConnecting = connectVoice().finally(() => {
+        voiceConnecting = null;
+      });
+      await voiceConnecting;
+    }
+
+    function speakWithModel(text) {
+      if (!dc || dc.readyState !== "open") return false;
+      dc.send(JSON.stringify({
+        type: "response.create",
+        response: {
+          instructions: "Speak this invitation exactly in " + currentLang.name + ", and nothing else:\n\n" + text,
+        },
+      }));
+      return true;
+    }
+
+    async function speakWithTts(text) {
+      const url = speechUrl();
+      if (!url) return false;
+      const res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text, language: currentLang.name }),
+      });
+      if (!res.ok) return false;
+      const blob = await res.blob();
+      objectUrl = URL.createObjectURL(blob);
+      player.src = objectUrl;
+      await player.play();
+      return true;
     }
 
     async function speak(text) {
       if (!soundOn || !text) return;
       stopSpeak();
       const gen = speakGen;
-      const url = speechUrl();
-      if (url) {
-        try {
-          const res = await fetch(url, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ text }),
-          });
-          if (gen !== speakGen) return;
-          if (res.ok) {
-            const blob = await res.blob();
-            if (gen !== speakGen) return;
-            objectUrl = URL.createObjectURL(blob);
-            player.src = objectUrl;
-            await player.play();
-            return;
-          }
-        } catch (_) {}
-      }
+      try {
+        await ensureVoice();
+        if (gen !== speakGen) return;
+        if (speakWithModel(text)) return;
+      } catch (_) {}
       if (gen !== speakGen) return;
-      browserSpeak(text);
+      try {
+        if (await speakWithTts(text)) return;
+      } catch (_) {}
     }
 
     function showPartial(raw) {
@@ -398,7 +625,11 @@
           "Content-Type": "application/json",
           Accept: "text/plain",
         },
-        body: JSON.stringify({ recent: recent.slice(-8) }),
+        body: JSON.stringify({
+            recent: recent.slice(-8),
+            language: currentLang.name,
+            languageNative: currentLang.native,
+          }),
       });
       if (!res.ok || !res.body) return "";
       const type = res.headers.get("content-type") || "";
@@ -470,7 +701,17 @@
     }
 
     initTheme();
+    fillLanguages();
     syncSoundButton();
+    langSelect.addEventListener("click", (e) => e.stopPropagation());
+    langSelect.addEventListener("change", () => {
+      const next = findLanguage(langSelect.value);
+      if (next.id === currentLang.id) return;
+      applyLanguage(next);
+      recent.length = 0;
+      heardCurrent = false;
+      if (!busy) nextCard();
+    });
     soundBtn.addEventListener("click", (e) => {
       e.stopPropagation();
       soundOn = !soundOn;
@@ -478,6 +719,7 @@
       syncSoundButton();
       if (!soundOn) {
         stopSpeak();
+        teardownVoice();
       } else if (card.textContent) {
         gestured = true;
         heardCurrent = true;
@@ -487,11 +729,13 @@
     });
     document.getElementById("stage").addEventListener("click", requestNext);
     window.addEventListener("keydown", (e) => {
+      if (e.target === langSelect) return;
       if (e.key === " " || e.key === "Enter" || e.key === "ArrowRight") {
         e.preventDefault();
         requestNext();
       }
     });
+    window.addEventListener("pagehide", teardownVoice);
     nextCard();
   </script>
 </body>

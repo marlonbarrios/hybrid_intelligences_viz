@@ -18,17 +18,26 @@ function modeFromReq(req) {
   return queryValue(req, "mode").trim().toLowerCase();
 }
 
+function enactInstructions() {
+  return "You are the spoken voice of Enact. Speak only the invitation in the response instructions, slowly and calmly, as a quiet invitation the listener can enact now. Intimate, unhurried. Not a coach, not an advertisement, not a greeting. Do not add words before or after. Do not mention that you are an AI. Leave a little air between sentences. Speak in the language of the invitation you are given.";
+}
+
 function sessionPayload(focusId, mode) {
   const podcast = mode === "podcast";
+  const enact = mode === "enact";
   return {
     session: {
       type: "realtime",
       model: "gpt-realtime-2.1",
-      instructions: podcast ? podcastInstructions(focusId || "") : ontologyInstructions(focusId || ""),
+      instructions: enact
+        ? enactInstructions()
+        : podcast
+          ? podcastInstructions(focusId || "")
+          : ontologyInstructions(focusId || ""),
       audio: {
         input: {
           transcription: { model: "gpt-4o-mini-transcribe" },
-          turn_detection: podcast
+          turn_detection: (podcast || enact)
             ? {
                 type: "server_vad",
                 threshold: 0.9,

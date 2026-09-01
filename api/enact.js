@@ -92,7 +92,7 @@ function pickConcept() {
   }
 }
 
-function enactSystemPrompt(concept, recent) {
+function enactSystemPrompt(concept, recent, language) {
   const lines = [
     "You write Hybrid Intelligences Enact cards, in the spirit of Brian Eno's Oblique Strategies.",
     "Ground them in coupling, complex embodiment, techno-symbiosis, cognitive assemblages, and a hybrid epistemology beyond the human.",
@@ -109,6 +109,12 @@ function enactSystemPrompt(concept, recent) {
     "Do not mention ChatGPT, Hybrid Intelligences, fairs, or that you are generating a card. You may point to this machine, these words, the network, cells, metabolism, or symbionts.",
     "Do not lecture. Do not list science. One felt reminder is enough.",
   ];
+  if (language && language.name && !/^english$/i.test(language.name)) {
+    const label = language.native ? language.name + " (" + language.native + ")" : language.name;
+    lines.push("Write the entire card in " + label + ". Natural contemporary " + language.name + ". Do not mix in English.");
+  } else {
+    lines.push("Write the card in English.");
+  }
   if (concept) {
     lines.push("Let this ontology concept color the card without naming it unless the name is ordinary English: " + concept.label + ".");
     if (concept.definition) lines.push("Sense of it: " + clip(concept.definition, 280));
@@ -140,6 +146,10 @@ module.exports = async function handler(req, res) {
 
   const body = readJsonBody(req);
   const recent = [].concat(body.recent || []).map((c) => String(c || "").trim()).filter(Boolean).slice(-8);
+  const language = {
+    name: clip(body.language || body.languageName || "English", 60),
+    native: clip(body.languageNative || "", 60),
+  };
   const concept = pickConcept();
 
   const stream = wantsStream(req);
@@ -154,10 +164,10 @@ module.exports = async function handler(req, res) {
       body: JSON.stringify({
         model: "gpt-4o-mini",
         temperature: 1.05,
-        max_tokens: 90,
+        max_tokens: 140,
         stream: stream,
         messages: [
-          { role: "system", content: enactSystemPrompt(concept, recent) },
+          { role: "system", content: enactSystemPrompt(concept, recent, language) },
           { role: "user", content: "One new Enact card." },
         ],
       }),

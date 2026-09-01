@@ -41,7 +41,9 @@ module.exports = async function handler(req, res) {
     return;
   }
 
-  const text = clip(readJsonBody(req).text, 480);
+  const body = readJsonBody(req);
+  const language = clip(body.language || "English", 60);
+  const text = clip(body.text, 480);
   if (!text) {
     res.status(400).json({ error: "No text to speak." });
     return;
@@ -59,7 +61,7 @@ module.exports = async function handler(req, res) {
         voice: "marin",
         input: text,
         instructions:
-          "Speak slowly and calmly, as a quiet invitation the listener can enact now. Intimate, unhurried. Not a coach, not an advertisement, not a documentary narrator. Leave a little air between sentences.",
+          "Speak slowly and calmly, as a quiet invitation the listener can enact now. Intimate, unhurried. Not a coach, not an advertisement, not a documentary narrator. Leave a little air between sentences. Speak in " + language + ".",
         response_format: "mp3",
       }),
     });
