@@ -32,21 +32,22 @@ This repository holds linked views of the same knowledge architecture:
 
 1. **[Home](https://marlonbarrios.github.io/hybrid_intelligences_viz/)** (`index.html`) — landing page. Hero line: *Cognition as coupling across bodies, tools, institutions, and worlds.* Routes into About, Essays, Ontology, Network, Voice, Image, Mini-pod, Enact, and Creative B. The Framework section quotes Essay 1 on complex embodiment, with a cite link to the essay and inline concept links into the network.
 2. **[About](https://marlonbarrios.github.io/hybrid_intelligences_viz/about.html)** (`about.html`) — what Hybrid Intelligences is: a three-year research project led by Marlon Barrios Solano as Maker-in-Residence at CAME; launched in summer 2026 with a prototype [Creative B](https://marlonbarrios.github.io/hybrid_intelligences_viz/creative-b.html) course; an epistemic framework for cognitive assemblages and complex embodiment; and this site as a hybrid dynamic knowledge architecture (program diagram + a still of a body with the network).
-3. **[Network visualization](https://marlonbarrios.github.io/hybrid_intelligences_viz/network.html)** (`network.html`) — a radial, physics-based map of **235 concepts** connected by **2,343 weighted relations**. Concepts sit on concentric rings by category; edges show conceptual proximity, influence, and program structure. The **Hybrid Intelligences Hub** node names this site as a dynamic cognitive assemblage (Voice, Image, Mini-pod, Enact, essays, ontology).
+3. **[Network visualization](https://marlonbarrios.github.io/hybrid_intelligences_viz/network.html)** (`network.html`) — a radial, physics-based map of **236 concepts** connected by **2,361 weighted relations**. Concepts sit on concentric rings by category; edges show conceptual proximity, influence, and program structure. The **Hybrid Intelligences Hub** node names this site as a dynamic cognitive assemblage (Voice, Image, Mini-pod, Enact, essays, ontology).
 4. **[Ontology browser](https://marlonbarrios.github.io/hybrid_intelligences_viz/ontology.html)** (`ontology.html`) — a searchable, collapsible browse interface over the same data, exported as **[JSON-LD](ontology.jsonld)**, **[Turtle](ontology.ttl)** (SKOS), and **[OWL 2 Turtle](ontology.owl.ttl)** (classes, properties, individuals).
 5. **[Voice](https://marlonbarrios.github.io/hybrid_intelligences_viz/voice.html)** (`voice.html`) — conversational AI for the program: browser microphone conversation with an OpenAI Realtime model, grounded in the ontology. The API key stays on Vercel; the page only receives a short-lived token.
 6. **[Image](https://marlonbarrios.github.io/hybrid_intelligences_viz/image.html)** (`image.html`) — an abstract information visualization generated from an ontology concept (OpenAI image model via the same Vercel key as Voice). Open from **Make an image** on Ontology or Network.
 7. **[Mini-pod](https://marlonbarrios.github.io/hybrid_intelligences_viz/mini-pod.html)** (`mini-pod.html`) — a ~2.5-minute Voice episode as an MP3, created silently then played when ready. No microphone.
 8. **[Enact](https://marlonbarrios.github.io/hybrid_intelligences_viz/enact.html)** (`enact.html`) — one large cognitive invitation at a time, in the spirit of Oblique Strategies: a short choreography of awareness at the computer (touch, sight, breath), holding data networks, cellular life, and the non-organic machine in one field. One short sentence streams onto the page. Choose among **26 languages**. Marin (the same Realtime voice as Voice) can read it aloud; **Sound on / Sound off** toggles that. Tap to hear, tap again for another. Generated via Vercel; a local deck if the model is unavailable.
-9. **[Essays](https://marlonbarrios.github.io/hybrid_intelligences_viz/essays.html)** (`essays.html`) — a growing publishing hub for Marlon Barrios Solano’s research and guest collaborations that feed the ontology; currently Essay 1 and Essay 2, each with a diagram on the hub card and at the top of the essay.
+9. **[Essays](https://marlonbarrios.github.io/hybrid_intelligences_viz/essays.html)** (`essays.html`) — a growing publishing hub for Marlon Barrios Solano’s research and guest collaborations that feed the ontology; currently Essays 1–3.
 10. **Essay 1** (`essay.html`) — *Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI* by Marlon Barrios Solano ([PDF](essay-1-hybrid-intelligences-cognitive-assemblages.pdf), includes the cognitive assemblages diagram).
 11. **Essay 2** (`essay-2.html`) — *My Umwelt* by Marlon Barrios Solano, in conversation with GPT-5.5 ([PDF](essay-2-my-umwelt.pdf), includes the Umwelt diagram).
-12. **[Creative B 2026](https://marlonbarrios.github.io/hybrid_intelligences_viz/creative-b.html)** (`creative-b.html`) — hub for the inaugural summer 2026 prototype course: [Canvas](https://ufl.instructure.com/courses/574408) (linked from this hub, not from the global menu), slides, highlights video, and the Wertheim lobby showcase.
-13. **[Slides](https://marlonbarrios.github.io/hybrid_intelligences_viz/slides.html#1)** (`slides.html`) — from the Creative B sessions, summer 2026 (arrow keys, dots, swipe).
-14. **[Showcase](https://marlonbarrios.github.io/hybrid_intelligences_viz/showcase.html)** (`showcase.html`) — AI works by Marlon Barrios Solano: *My Pendular Umwelt* first (open labs), then the pieces shown on the large screen in the Wertheim Laboratory lobby during the inaugural program (July 2026).
-15. **Video** (`video.html`) — Hybrid Intelligences Highlights reel.
+12. **Essay 3** (`essay-3.html`) — *Hybrid Intelligences: Ontology, Knowledge Graph, and Cognitive Assemblage* by Marlon Barrios Solano ([PDF](essay-3-ontology-knowledge-graph.pdf)). The Hub as concept scheme, knowledge graph, and formal ontology; the network as one interface, not the ontology itself.
+13. **[Creative B 2026](https://marlonbarrios.github.io/hybrid_intelligences_viz/creative-b.html)** (`creative-b.html`) — hub for the inaugural summer 2026 prototype course: [Canvas](https://ufl.instructure.com/courses/574408) (linked from this hub, not from the global menu), slides, highlights video, and the Wertheim lobby showcase.
+14. **[Slides](https://marlonbarrios.github.io/hybrid_intelligences_viz/slides.html#1)** (`slides.html`) — from the Creative B sessions, summer 2026 (arrow keys, dots, swipe).
+15. **[Showcase](https://marlonbarrios.github.io/hybrid_intelligences_viz/showcase.html)** (`showcase.html`) — AI works by Marlon Barrios Solano: *My Pendular Umwelt* first (open labs), then the pieces shown on the large screen in the Wertheim Laboratory lobby during the inaugural program (July 2026).
+16. **Video** (`video.html`) — Hybrid Intelligences Highlights reel.
 
-Shared navigation links [Home](https://marlonbarrios.github.io/hybrid_intelligences_viz/), **[About](https://marlonbarrios.github.io/hybrid_intelligences_viz/about.html)**, **[Essays](https://marlonbarrios.github.io/hybrid_intelligences_viz/essays.html)** (a growing publishing hub: Marlon, guests, currently Essay 1 and Essay 2), [Ontology](https://marlonbarrios.github.io/hybrid_intelligences_viz/ontology.html), [Network](https://marlonbarrios.github.io/hybrid_intelligences_viz/network.html), Voice, **[Image](https://marlonbarrios.github.io/hybrid_intelligences_viz/image.html)**, **[Mini-pod](https://marlonbarrios.github.io/hybrid_intelligences_viz/mini-pod.html)**, **[Enact](https://marlonbarrios.github.io/hybrid_intelligences_viz/enact.html)**, **[Creative B](https://marlonbarrios.github.io/hybrid_intelligences_viz/creative-b.html)** (Canvas, slides, highlights, lobby showcase — Canvas is on this hub, not in the global menu), Scan QR Code, and **[GitHub](https://github.com/marlonbarrios/hybrid_intelligences_viz)**. Institution credits (UF, College of the Arts, CAME, CAM, IGNITE, Wertheim) are linked on Home, Ontology, and the Network header. Pages share a light/dark theme preference (`hi-theme`). On narrow screens the **Network** switches to a mobile chrome (↑ / Play|Pause|Resume / ↓ / Reset / Menu) while the desktop layout stays unchanged.
+Shared navigation links [Home](https://marlonbarrios.github.io/hybrid_intelligences_viz/), **[About](https://marlonbarrios.github.io/hybrid_intelligences_viz/about.html)**, **[Essays](https://marlonbarrios.github.io/hybrid_intelligences_viz/essays.html)** (a growing publishing hub: Marlon, guests, currently Essays 1–3), [Ontology](https://marlonbarrios.github.io/hybrid_intelligences_viz/ontology.html), [Network](https://marlonbarrios.github.io/hybrid_intelligences_viz/network.html), Voice, **[Image](https://marlonbarrios.github.io/hybrid_intelligences_viz/image.html)**, **[Mini-pod](https://marlonbarrios.github.io/hybrid_intelligences_viz/mini-pod.html)**, **[Enact](https://marlonbarrios.github.io/hybrid_intelligences_viz/enact.html)**, **[Creative B](https://marlonbarrios.github.io/hybrid_intelligences_viz/creative-b.html)** (Canvas, slides, highlights, lobby showcase — Canvas is on this hub, not in the global menu), Scan QR Code, and **[GitHub](https://github.com/marlonbarrios/hybrid_intelligences_viz)**. Institution credits (UF, College of the Arts, CAME, CAM, IGNITE, Wertheim) are linked on Home, Ontology, and the Network header. Pages share a light/dark theme preference (`hi-theme`). On narrow screens the **Network** switches to a mobile chrome (↑ / Play|Pause|Resume / ↓ / Reset / Menu) while the desktop layout stays unchanged.
 
 The network is both a **pedagogical instrument** for the Hybrid Intelligences program and a **formal vocabulary** for intelligence, embodiment, AI, and creative practice as *coupling* across bodies, tools, institutions, and worlds.
 
@@ -176,13 +177,13 @@ During animation, each ring/category step plays a **generative ambient tone** (W
 | `ontology.html#coupling` | Open concept detail in ontology browser |
 | `ontology.html#cat/premise` | Filter ontology to **Framework** category |
 
-Links between network and ontology are wired from concept detail panels and category banners (“View in network ↗”). Framework and conceptual-model nodes such as **Intelligence as Coupling**, **Hybrid Intelligences**, **Cognitive Assemblages**, **4E Cognition**, **Umwelt**, and **LLM** deep-link to Essay 1 or Essay 2 (Wikipedia and institutional URLs remain available where mapped).
+Links between network and ontology are wired from concept detail panels and category banners (“View in network ↗”). Framework and conceptual-model nodes such as **Intelligence as Coupling**, **Hybrid Intelligences**, **Cognitive Assemblages**, **4E Cognition**, **Umwelt**, and **LLM** deep-link to Essay 1 or Essay 2 (Wikipedia and institutional URLs remain available where mapped). **Essay 3** (`essay_3`) is a practice node that opens the essay; **Ontology as Knowledge Base**, **Network Visualization**, and **Essays** name it in their definitions.
 
 ---
 
 ## About
 
-[`about.html`](about.html) is the project statement: three-year research at CAME, summer 2026 launch, Creative B as the first-course prototype, the epistemic framework (from Essay 1), and this platform as a hybrid tool for dynamic knowledge. It uses the Hybrid Intelligences Program diagram at the top and a photograph of a body with the network in **This platform**.
+[`about.html`](about.html) is the project statement: three-year research at CAME, summer 2026 launch, Creative B as the first-course prototype, the epistemic framework (from Essay 1), this platform as a hybrid tool for dynamic knowledge (Essay 3), and a photograph of a body with the network in **This platform**. It uses the Hybrid Intelligences Program diagram at the top.
 
 ---
 
@@ -190,14 +191,14 @@ Links between network and ontology are wired from concept detail panels and cate
 
 [`essays.html`](essays.html) is the publishing hub. It holds essays mainly by Marlon Barrios Solano, plus guest collaborations that feed the ontology and network. The aim is to expand an epistemological framework of embodiment and cognition beyond the human and beyond the organic — including synthetic entities — in N. Katherine Hayles’s sense of cognitive assemblages. The section is meant to keep growing.
 
-Essay 1 opens with a **cognitive assemblages** diagram; Essay 2 with an **Umwelt** diagram. Those stills are also the hub cards. Essay 2 is credited as Marlon Barrios Solano, in conversation with GPT-5.5 — not as a guest collaboration.
+Essay 1 opens with a **cognitive assemblages** diagram; Essay 2 with an **Umwelt** diagram; Essay 3 with the **radial network** still (the graph as one interface into the architecture, not the ontology itself). Those stills are also the hub cards. Essay 2 is credited as Marlon Barrios Solano, in conversation with GPT-5.5 — not as a guest collaboration.
 
-Both published essays use the same visual language as the ontology browser (IBM Plex, shared CSS theme variables, sticky header nav, theme toggle). Key terms in the essay body are inline **concept links** into the **Network** (`network.html#conceptId`). Matching network nodes deep-link back with **Read Essay 1 →** / **Read Essay 2 →**. Downloadable PDFs include a project cover masthead and the essay diagrams (`node build-essays.js --pdf` embeds local images).
+The published essays use the same visual language as the ontology browser (IBM Plex, shared CSS theme variables, sticky header nav, theme toggle). Key terms in the essay body are inline **concept links** into the **Network** (`network.html#conceptId`). Matching network nodes deep-link back with **Read Essay 1 →** / **Read Essay 2 →**. Downloadable PDFs include a project cover masthead and the essay figures (`node build-essays.js --pdf` embeds local images).
 
-**Source of truth:** edit [`essay-1.md`](essay-1.md) or [`essay-2.md`](essay-2.md), then rebuild:
+**Source of truth:** edit [`essay-1.md`](essay-1.md), [`essay-2.md`](essay-2.md), or [`essay-3.md`](essay-3.md), then rebuild:
 
 ```bash
-node build-essays.js          # regenerate essay.html + essay-2.html
+node build-essays.js          # regenerate essay.html + essay-2.html + essay-3.html
 node build-essays.js --pdf    # also export PDFs (Chrome headless)
 ```
 
@@ -208,7 +209,7 @@ Markdown syntax:
 | Blank line between paragraphs | `<p>` |
 | `[coupling](concept:coupling)` | Network concept link |
 | `*italic*` / `**bold**` | `<em>` / `<strong>` |
-| `## Bibliography` + numbered list | Bibliography section (Essay 1) |
+| `## Bibliography` / `## References` + numbered list | Bibliography (Essay 1) or References (Essay 3) |
 | `## Space` | Topic section with `<h2>` (Essay 2) |
 | `::: term-list` … `:::` | Bulleted term list (Essay 2) |
 | `::: cluster` … `:::` | Concept cluster list (Essay 2) |
@@ -216,12 +217,13 @@ Markdown syntax:
 | `::: credit` … `:::` | Credit line (Essay 2) |
 | `::: figure` + `![alt](path.jpg)` + caption | Hero figure (essay diagrams) |
 
-Frontmatter at the top of each `.md` file sets title, author, date, and footer. Do not edit `essay.html` / `essay-2.html` directly—they are generated.
+Frontmatter at the top of each `.md` file sets title, author, date, and footer. Do not edit `essay.html` / `essay-2.html` / `essay-3.html` directly—they are generated.
 
 | Page | Title | Author / credit |
 |------|-------|-----------------|
 | [`essay.html`](essay.html) · [PDF](essay-1-hybrid-intelligences-cognitive-assemblages.pdf) | Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI | Marlon Barrios Solano · July 10, 2026 |
 | [`essay-2.html`](essay-2.html) · [PDF](essay-2-my-umwelt.pdf) | My Umwelt | Marlon Barrios Solano, in conversation with GPT-5.5 · July 20, 2026 |
+| [`essay-3.html`](essay-3.html) · [PDF](essay-3-ontology-knowledge-graph.pdf) | Hybrid Intelligences: Ontology, Knowledge Graph, and Cognitive Assemblage | Marlon Barrios Solano · September 2, 2026 |
 | [`video.html`](video.html) | Hybrid Intelligences Highlights | Program highlight video |
 | [`podcast.html`](podcast.html) | Your Mind Is Not in Your Head | Sample NotebookLM podcast; CTA to program notebook |
 
@@ -266,7 +268,7 @@ The SKOS export uses a custom `hi:` vocabulary for network-specific fields (cate
 
 **Datatype properties:** `hi:networkWeight`, `hi:relationStrength`, `hi:ringFraction`, `hi:ringOrder`
 
-Each of the 235 concept nodes is an `owl:NamedIndividual` typed with its category class. Edges appear both as direct `hi:relatedTo` assertions and as reified `hi:NetworkRelation` individuals with strength values.
+Each of the 236 concept nodes is an `owl:NamedIndividual` typed with its category class. Edges appear both as direct `hi:relatedTo` assertions and as reified `hi:NetworkRelation` individuals with strength values.
 
 Compatible with [Protégé](https://protege.stanford.edu/), Apache Jena, rdflib, and OWL-aware SPARQL endpoints.
 
@@ -353,6 +355,7 @@ Local: `node local-server.js`, then [http://localhost:8000/enact.html](http://lo
 | Essays | http://localhost:8000/essays.html |
 | Essay 1 | http://localhost:8000/essay.html |
 | Essay 2 | http://localhost:8000/essay-2.html |
+| Essay 3 | http://localhost:8000/essay-3.html |
 | Creative B | http://localhost:8000/creative-b.html |
 | Slides | http://localhost:8000/slides.html |
 | Video | http://localhost:8000/video.html |
@@ -370,7 +373,7 @@ To update the ontology after editing `hybrid-network.js`:
 node build-ontology.js
 ```
 
-To update essays after editing `essay-1.md` or `essay-2.md`:
+To update essays after editing `essay-1.md`, `essay-2.md`, or `essay-3.md`:
 
 ```bash
 node build-essays.js --pdf
@@ -390,11 +393,14 @@ node build-essays.js --pdf
 | `essays.html` | Essays publishing hub: Marlon, guests, growing |
 | `essay.html` | Essay 1 page (generated from `essay-1.md`) |
 | `essay-2.html` | Essay 2 page (generated from `essay-2.md`) |
+| `essay-3.html` | Essay 3 page (generated from `essay-3.md`) |
 | `essay-1.md` | Essay 1 source — edit this, then `node build-essays.js` |
 | `essay-2.md` | Essay 2 source — edit this, then `node build-essays.js` |
+| `essay-3.md` | Essay 3 source — edit this, then `node build-essays.js` |
 | `build-essays.js` | Essay build script: markdown → HTML (+ optional PDF) |
 | `essay-1-hybrid-intelligences-cognitive-assemblages.pdf` | Essay 1 PDF (includes cognitive assemblages diagram) |
 | `essay-2-my-umwelt.pdf` | Essay 2 PDF (includes Umwelt diagram) |
+| `essay-3-ontology-knowledge-graph.pdf` | Essay 3 PDF (includes network still) |
 | `creative-b.html` | Creative B 2026 event hub: Canvas course, slides, highlights video, lobby showcase |
 | `slides.html` | Slideshow from the Creative B sessions, summer 2026 |
 | `slides/` | JPEG frames for the slideshow |
@@ -431,6 +437,7 @@ node build-essays.js --pdf
 - **Venue:** [Herbert Wertheim Laboratory for Engineering Excellence](https://www.eng.ufl.edu/wertheim/)
 - **Built with:** [p5.js](https://p5js.org/) · SKOS / JSON-LD / Turtle / OWL 2
 - **Essay 2 (*My Umwelt*):** Marlon Barrios Solano, in conversation with GPT-5.5
+- **Essay 3 (*Ontology, Knowledge Graph, and Cognitive Assemblage*):** Marlon Barrios Solano
 
 ---
 

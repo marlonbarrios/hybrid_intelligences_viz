@@ -55,11 +55,11 @@
         "foaf:name": "Marlon Barrios Solano",
         "foaf:homepage": "https://marlonbarrios.github.io/"
       },
-      "dc:date": "2026-09-01",
-      "dc:modified": "2026-09-01T18:25:57.115Z",
+      "dc:date": "2026-09-02",
+      "dc:modified": "2026-09-02T22:33:23.917Z",
       "owl:versionInfo": "1.0.0",
-      "hi:nodeCount": 235,
-      "hi:edgeCount": 2343
+      "hi:nodeCount": 236,
+      "hi:edgeCount": 2361
     },
     {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme",
@@ -11875,7 +11875,7 @@
         "hi:NetworkNode"
       ],
       "skos:prefLabel": "Ontology as Knowledge Base",
-      "skos:definition": "The Hybrid Intelligences ontology as a living vocabulary that grounds the conversational AI. Concepts, definitions, and weighted relations are the source of truth the spoken companion is given — a situated knowledge base rather than a generic model talking about the program from outside. Essays feed this scheme; the network makes it visible; Voice, Image, Mini-pod, and Enact generate from it.",
+      "skos:definition": "The Hybrid Intelligences ontology as a living vocabulary that grounds the conversational AI. Concepts, definitions, and weighted relations are the source of truth the spoken companion is given — a situated knowledge base rather than a generic model talking about the program from outside. Essays feed this scheme; the network makes it visible; Voice, Image, Mini-pod, and Enact generate from it. Essay 3 describes this as three layers — concept scheme, knowledge graph, and formal OWL ontology — and asks how relations themselves might become more semantically differentiated.",
       "skos:broader": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
       },
@@ -11927,7 +11927,7 @@
         "hi:NetworkNode"
       ],
       "skos:prefLabel": "Network Visualization",
-      "skos:definition": "The radial map of the Hybrid Intelligences ontology — concentric rings of concepts and weighted relations. Information visualization as a way of thinking with the Hub: coupling becomes seeable, not only readable. The same nodes that ground Voice can be opened as Talk, Image, or Mini-pod.",
+      "skos:definition": "The radial map of the Hybrid Intelligences ontology — concentric rings of concepts and weighted relations. Information visualization as a way of thinking with the Hub: coupling becomes seeable, not only readable. The same nodes that ground Voice can be opened as Talk, Image, or Mini-pod. Essay 3 is careful: this network is not the ontology itself. It is one visual and navigational interface into the knowledge architecture.",
       "skos:broader": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
       },
@@ -11959,7 +11959,7 @@
         "hi:NetworkNode"
       ],
       "skos:prefLabel": "Essays",
-      "skos:definition": "The publishing layer of the Hybrid Intelligences Hub — research writing by Marlon Barrios Solano and future guest collaborations that feed the ontology. Essay 1 (cognitive assemblages and complex embodiment) and Essay 2 (My Umwelt) are current entries. Writing here is not illustration after the fact; it is knowledge that becomes concepts, relations, and prompts for Voice, Image, Mini-pod, and Enact.",
+      "skos:definition": "The publishing layer of the Hybrid Intelligences Hub — research writing by Marlon Barrios Solano and future guest collaborations that feed the ontology. Current entries: Essay 1 (cognitive assemblages and complex embodiment), Essay 2 (My Umwelt), and Essay 3 (ontology, knowledge graph, and cognitive assemblage). Writing here is not illustration after the fact; it is knowledge that becomes concepts, relations, and prompts for Voice, Image, Mini-pod, and Enact.",
       "skos:broader": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
       },
@@ -11989,6 +11989,98 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#philosophical_practice",
           "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_3",
+          "hi:strength": 0.98
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_3",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Essay 3",
+      "skos:definition": "Hybrid Intelligences: Ontology, Knowledge Graph, and Cognitive Assemblage — Essay 3 by Marlon Barrios Solano (September 2, 2026). Describes the Hub as three interconnected layers: a SKOS concept scheme, a knowledge graph of weighted relations, and a formal OWL ontology. The radial network is one visual interface, not the ontology itself. Argues for semantically differentiated relations (enables, mediates, constrains, critiques) and for entities that occupy multiple functional positions at once. The ontology is epistemic context for generative AI, not training. Intelligence emerges through coupling among ontology, model, human, and network.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "practice",
+      "hi:weight": 1.55,
+      "schema:url": "essay-3.html",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology_kb",
+          "hi:strength": 1
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#network_viz",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
+          "hi:strength": 0.92
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hybrid",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#marlon",
+          "hi:strength": 0.92
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#conversational_ai",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#llm",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#gen_ai",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#philosophical_practice",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#epistemology",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#mediation",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#enact",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#concept_image",
+          "hi:strength": 0.78
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#mini_pod",
+          "hi:strength": 0.78
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hayles",
+          "hi:strength": 0.78
         }
       ]
     },

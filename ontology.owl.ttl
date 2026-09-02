@@ -12,11 +12,11 @@
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   dc:description "OWL 2 ontology of concepts, categories, and weighted relations from the Hybrid Intelligences program." ;
   owl:versionInfo "1.0.0" ;
-  dc:date "2026-09-01"^^xsd:date ;
-  dc:modified "2026-09-01T18:25:57.133Z"^^xsd:dateTime ;
+  dc:date "2026-09-02"^^xsd:date ;
+  dc:modified "2026-09-02T22:33:23.921Z"^^xsd:dateTime ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  hi:nodeCount "235"^^xsd:integer ;
-  hi:edgeCount "2343"^^xsd:integer .
+  hi:nodeCount "236"^^xsd:integer ;
+  hi:edgeCount "2361"^^xsd:integer .
 
 hi:Concept a owl:Class ;
   rdfs:label "Concept"@en ;
@@ -2739,7 +2739,7 @@ hi:conversational_ai a owl:NamedIndividual, hi:PracticeConcept ;
 hi:ontology_kb a owl:NamedIndividual, hi:PracticeConcept ;
   rdfs:label "Ontology as Knowledge Base"@en ;
   skos:prefLabel "Ontology as Knowledge Base"@en ;
-  skos:definition "The Hybrid Intelligences ontology as a living vocabulary that grounds the conversational AI. Concepts, definitions, and weighted relations are the source of truth the spoken companion is given — a situated knowledge base rather than a generic model talking about the program from outside. Essays feed this scheme; the network makes it visible; Voice, Image, Mini-pod, and Enact generate from it."@en ;
+  skos:definition "The Hybrid Intelligences ontology as a living vocabulary that grounds the conversational AI. Concepts, definitions, and weighted relations are the source of truth the spoken companion is given — a situated knowledge base rather than a generic model talking about the program from outside. Essays feed this scheme; the network makes it visible; Voice, Image, Mini-pod, and Enact generate from it. Essay 3 describes this as three layers — concept scheme, knowledge graph, and formal OWL ontology — and asks how relations themselves might become more semantically differentiated."@en ;
   skos:broader hi:category/practice ;
   hi:inCategory hi:category/practice ;
   hi:schemeMember hi:scheme ;
@@ -2752,7 +2752,7 @@ hi:ontology_kb a owl:NamedIndividual, hi:PracticeConcept ;
 hi:network_viz a owl:NamedIndividual, hi:PracticeConcept ;
   rdfs:label "Network Visualization"@en ;
   skos:prefLabel "Network Visualization"@en ;
-  skos:definition "The radial map of the Hybrid Intelligences ontology — concentric rings of concepts and weighted relations. Information visualization as a way of thinking with the Hub: coupling becomes seeable, not only readable. The same nodes that ground Voice can be opened as Talk, Image, or Mini-pod."@en ;
+  skos:definition "The radial map of the Hybrid Intelligences ontology — concentric rings of concepts and weighted relations. Information visualization as a way of thinking with the Hub: coupling becomes seeable, not only readable. The same nodes that ground Voice can be opened as Talk, Image, or Mini-pod. Essay 3 is careful: this network is not the ontology itself. It is one visual and navigational interface into the knowledge architecture."@en ;
   skos:broader hi:category/practice ;
   hi:inCategory hi:category/practice ;
   hi:schemeMember hi:scheme ;
@@ -2765,7 +2765,7 @@ hi:network_viz a owl:NamedIndividual, hi:PracticeConcept ;
 hi:hi_essays a owl:NamedIndividual, hi:PracticeConcept ;
   rdfs:label "Essays"@en ;
   skos:prefLabel "Essays"@en ;
-  skos:definition "The publishing layer of the Hybrid Intelligences Hub — research writing by Marlon Barrios Solano and future guest collaborations that feed the ontology. Essay 1 (cognitive assemblages and complex embodiment) and Essay 2 (My Umwelt) are current entries. Writing here is not illustration after the fact; it is knowledge that becomes concepts, relations, and prompts for Voice, Image, Mini-pod, and Enact."@en ;
+  skos:definition "The publishing layer of the Hybrid Intelligences Hub — research writing by Marlon Barrios Solano and future guest collaborations that feed the ontology. Current entries: Essay 1 (cognitive assemblages and complex embodiment), Essay 2 (My Umwelt), and Essay 3 (ontology, knowledge graph, and cognitive assemblage). Writing here is not illustration after the fact; it is knowledge that becomes concepts, relations, and prompts for Voice, Image, Mini-pod, and Enact."@en ;
   skos:broader hi:category/practice ;
   hi:inCategory hi:category/practice ;
   hi:schemeMember hi:scheme ;
@@ -2773,6 +2773,19 @@ hi:hi_essays a owl:NamedIndividual, hi:PracticeConcept ;
   hi:networkWeight "1.5"^^xsd:decimal
  ;
   schema:url <essays.html>
+ .
+
+hi:essay_3 a owl:NamedIndividual, hi:PracticeConcept ;
+  rdfs:label "Essay 3"@en ;
+  skos:prefLabel "Essay 3"@en ;
+  skos:definition "Hybrid Intelligences: Ontology, Knowledge Graph, and Cognitive Assemblage — Essay 3 by Marlon Barrios Solano (September 2, 2026). Describes the Hub as three interconnected layers: a SKOS concept scheme, a knowledge graph of weighted relations, and a formal OWL ontology. The radial network is one visual interface, not the ontology itself. Argues for semantically differentiated relations (enables, mediates, constrains, critiques) and for entities that occupy multiple functional positions at once. The ontology is epistemic context for generative AI, not training. Intelligence emerges through coupling among ontology, model, human, and network."@en ;
+  skos:broader hi:category/practice ;
+  hi:inCategory hi:category/practice ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.55"^^xsd:decimal
+ ;
+  schema:url <essay-3.html>
  .
 
 hi:concept_image a owl:NamedIndividual, hi:PracticeConcept ;
@@ -5575,6 +5588,24 @@ hi:hi_essays hi:relatedTo hi:assemblage .
 hi:hi_essays hi:relatedTo hi:coupling .
 hi:hi_essays hi:relatedTo hi:umwelt .
 hi:hi_essays hi:relatedTo hi:philosophical_practice .
+hi:hi_essays hi:relatedTo hi:essay_3 .
+hi:essay_3 hi:relatedTo hi:ontology_kb .
+hi:essay_3 hi:relatedTo hi:network_viz .
+hi:essay_3 hi:relatedTo hi:hi_hub .
+hi:essay_3 hi:relatedTo hi:assemblage .
+hi:essay_3 hi:relatedTo hi:hybrid .
+hi:essay_3 hi:relatedTo hi:coupling .
+hi:essay_3 hi:relatedTo hi:marlon .
+hi:essay_3 hi:relatedTo hi:conversational_ai .
+hi:essay_3 hi:relatedTo hi:llm .
+hi:essay_3 hi:relatedTo hi:gen_ai .
+hi:essay_3 hi:relatedTo hi:philosophical_practice .
+hi:essay_3 hi:relatedTo hi:epistemology .
+hi:essay_3 hi:relatedTo hi:mediation .
+hi:essay_3 hi:relatedTo hi:enact .
+hi:essay_3 hi:relatedTo hi:concept_image .
+hi:essay_3 hi:relatedTo hi:mini_pod .
+hi:essay_3 hi:relatedTo hi:hayles .
 hi:concept_image hi:relatedTo hi:generative_arts .
 hi:concept_image hi:relatedTo hi:ai_art .
 hi:concept_image hi:relatedTo hi:creative .
@@ -16074,6 +16105,96 @@ hi:rel-hi_essays-philosophical_practice a owl:NamedIndividual, hi:NetworkRelatio
   hi:relationSource hi:hi_essays ;
   hi:relationTarget hi:philosophical_practice ;
   hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-hi_essays-essay_3 a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:hi_essays ;
+  hi:relationTarget hi:essay_3 ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-essay_3-ontology_kb a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_3 ;
+  hi:relationTarget hi:ontology_kb ;
+  hi:relationStrength "1"^^xsd:decimal .
+
+hi:rel-essay_3-network_viz a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_3 ;
+  hi:relationTarget hi:network_viz ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-essay_3-hi_hub a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_3 ;
+  hi:relationTarget hi:hi_hub ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-essay_3-assemblage a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_3 ;
+  hi:relationTarget hi:assemblage ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-essay_3-hybrid a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_3 ;
+  hi:relationTarget hi:hybrid ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-essay_3-coupling a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_3 ;
+  hi:relationTarget hi:coupling ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-essay_3-marlon a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_3 ;
+  hi:relationTarget hi:marlon ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-essay_3-conversational_ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_3 ;
+  hi:relationTarget hi:conversational_ai ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-essay_3-llm a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_3 ;
+  hi:relationTarget hi:llm ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-essay_3-gen_ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_3 ;
+  hi:relationTarget hi:gen_ai ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-essay_3-philosophical_practice a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_3 ;
+  hi:relationTarget hi:philosophical_practice ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-essay_3-epistemology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_3 ;
+  hi:relationTarget hi:epistemology ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-essay_3-mediation a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_3 ;
+  hi:relationTarget hi:mediation ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-essay_3-enact a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_3 ;
+  hi:relationTarget hi:enact ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-essay_3-concept_image a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_3 ;
+  hi:relationTarget hi:concept_image ;
+  hi:relationStrength "0.78"^^xsd:decimal .
+
+hi:rel-essay_3-mini_pod a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_3 ;
+  hi:relationTarget hi:mini_pod ;
+  hi:relationStrength "0.78"^^xsd:decimal .
+
+hi:rel-essay_3-hayles a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_3 ;
+  hi:relationTarget hi:hayles ;
+  hi:relationStrength "0.78"^^xsd:decimal .
 
 hi:rel-concept_image-generative_arts a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:concept_image ;

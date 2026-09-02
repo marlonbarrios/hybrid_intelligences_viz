@@ -133,6 +133,7 @@ const ONTOLOGY_URL = "ontology.html";
 const ESSAYS_URL = "essays.html";
 const ESSAY1_URL = "essay.html";
 const ESSAY2_URL = "essay-2.html";
+const ESSAY3_URL = "essay-3.html";
 const VIDEO_URL = "video.html";
 const SCAN_QR_URL = "scan-qr.html";
 const GITHUB_URL = "https://github.com/marlonbarrios/hybrid_intelligences_viz";
@@ -1053,14 +1054,17 @@ const NODES = [
     desc: "The spoken companion for the Hybrid Intelligences Hub — one layer of a dynamic cognitive assemblage created by Marlon Barrios Solano. Grounded in the ontology as its knowledge base, it explains concepts from their definitions and relations, can be interrupted, and opens from Talk about this on any node. When asked what this tool or hub is, it should describe the Hub itself: essays, ontology, network, Voice, Image, Mini-pod, and Enact coupled as one instrument — not a chatbot standing alone.",
     url: "voice.html", linkLabel: "Open Voice →" },
   { id: "ontology_kb",        label: "Ontology as\nKnowledge Base",   cat: "practice",   weight: 1.55,
-    desc: "The Hybrid Intelligences ontology as a living vocabulary that grounds the conversational AI. Concepts, definitions, and weighted relations are the source of truth the spoken companion is given — a situated knowledge base rather than a generic model talking about the program from outside. Essays feed this scheme; the network makes it visible; Voice, Image, Mini-pod, and Enact generate from it.",
+    desc: "The Hybrid Intelligences ontology as a living vocabulary that grounds the conversational AI. Concepts, definitions, and weighted relations are the source of truth the spoken companion is given — a situated knowledge base rather than a generic model talking about the program from outside. Essays feed this scheme; the network makes it visible; Voice, Image, Mini-pod, and Enact generate from it. Essay 3 describes this as three layers — concept scheme, knowledge graph, and formal OWL ontology — and asks how relations themselves might become more semantically differentiated.",
     url: "ontology.html", linkLabel: "Open ontology →" },
   { id: "network_viz",        label: "Network\nVisualization",        cat: "practice",   weight: 1.5,
-    desc: "The radial map of the Hybrid Intelligences ontology — concentric rings of concepts and weighted relations. Information visualization as a way of thinking with the Hub: coupling becomes seeable, not only readable. The same nodes that ground Voice can be opened as Talk, Image, or Mini-pod.",
+    desc: "The radial map of the Hybrid Intelligences ontology — concentric rings of concepts and weighted relations. Information visualization as a way of thinking with the Hub: coupling becomes seeable, not only readable. The same nodes that ground Voice can be opened as Talk, Image, or Mini-pod. Essay 3 is careful: this network is not the ontology itself. It is one visual and navigational interface into the knowledge architecture.",
     url: "network.html", linkLabel: "Open network →" },
   { id: "hi_essays",          label: "Essays",                        cat: "practice",   weight: 1.5,
-    desc: "The publishing layer of the Hybrid Intelligences Hub — research writing by Marlon Barrios Solano and future guest collaborations that feed the ontology. Essay 1 (cognitive assemblages and complex embodiment) and Essay 2 (My Umwelt) are current entries. Writing here is not illustration after the fact; it is knowledge that becomes concepts, relations, and prompts for Voice, Image, Mini-pod, and Enact.",
+    desc: "The publishing layer of the Hybrid Intelligences Hub — research writing by Marlon Barrios Solano and future guest collaborations that feed the ontology. Current entries: Essay 1 (cognitive assemblages and complex embodiment), Essay 2 (My Umwelt), and Essay 3 (ontology, knowledge graph, and cognitive assemblage). Writing here is not illustration after the fact; it is knowledge that becomes concepts, relations, and prompts for Voice, Image, Mini-pod, and Enact.",
     url: "essays.html", linkLabel: "Open essays →" },
+  { id: "essay_3",            label: "Essay 3",                        cat: "practice",   weight: 1.55,
+    desc: "Hybrid Intelligences: Ontology, Knowledge Graph, and Cognitive Assemblage — Essay 3 by Marlon Barrios Solano (September 2, 2026). Describes the Hub as three interconnected layers: a SKOS concept scheme, a knowledge graph of weighted relations, and a formal OWL ontology. The radial network is one visual interface, not the ontology itself. Argues for semantically differentiated relations (enables, mediates, constrains, critiques) and for entities that occupy multiple functional positions at once. The ontology is epistemic context for generative AI, not training. Intelligence emerges through coupling among ontology, model, human, and network.",
+    url: "essay-3.html", linkLabel: "Read Essay 3 →" },
   { id: "concept_image",      label: "Concept\nImage",                cat: "practice",   weight: 1.5,
     desc: "A generated abstract information visualization from any ontology concept — one generative layer of the Hybrid Intelligences Hub. The same vocabulary that grounds conversation can become a still: Make an image on Ontology or Network. Image is not decoration; it is another coupling of the concept with a model, a prompt, and a viewer.",
     url: "image.html", linkLabel: "Open Image →" },
@@ -3591,6 +3595,24 @@ const EDGES = [
   ["hi_essays", "coupling", 0.85],
   ["hi_essays", "umwelt", 0.85],
   ["hi_essays", "philosophical_practice", 0.82],
+  ["hi_essays", "essay_3", 0.98],
+  ["essay_3", "ontology_kb", 1.0],
+  ["essay_3", "network_viz", 0.95],
+  ["essay_3", "hi_hub", 0.95],
+  ["essay_3", "assemblage", 0.92],
+  ["essay_3", "hybrid", 0.9],
+  ["essay_3", "coupling", 0.88],
+  ["essay_3", "marlon", 0.92],
+  ["essay_3", "conversational_ai", 0.85],
+  ["essay_3", "llm", 0.85],
+  ["essay_3", "gen_ai", 0.82],
+  ["essay_3", "philosophical_practice", 0.85],
+  ["essay_3", "epistemology", 0.82],
+  ["essay_3", "mediation", 0.8],
+  ["essay_3", "enact", 0.8],
+  ["essay_3", "concept_image", 0.78],
+  ["essay_3", "mini_pod", 0.78],
+  ["essay_3", "hayles", 0.78],
   ["concept_image", "generative_arts", 0.88],
   ["concept_image", "ai_art", 0.88],
   ["concept_image", "creative", 0.82],

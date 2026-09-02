@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hybrid Intelligences: Ontology, Knowledge Graph, and Cognitive Assemblage</title>
+  <meta name="description" content="Essay 3 by Marlon Barrios Solano: the Hybrid Intelligences Hub as a computational ontology, knowledge graph, and experimental cognitive assemblage.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e1018;
+      --panel: #12141e;
+      --border: #323848;
+      --title: #f4c430;
+      --text: #e8eaef;
+      --muted: #969eb0;
+      --link: #82c3ff;
+      --hover: #1a1e2a;
+      --accent: rgba(244, 196, 48, 0.12);
+      --rule: rgba(150, 158, 176, 0.28);
+    }
+    body.light-mode {
+      --bg: #fffdf8;
+      --panel: #ffffff;
+      --border: #d2d6e0;
+      --title: #a8760c;
+      --text: #202430;
+      --muted: #5a6070;
+      --link: #125599;
+      --hover: #f5f3ee;
+      --accent: rgba(168, 118, 12, 0.1);
+      --rule: rgba(90, 96, 112, 0.22);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse 90% 55% at 12% -10%, rgba(244, 196, 48, 0.07), transparent 55%),
+        radial-gradient(ellipse 70% 45% at 100% 0%, rgba(78, 196, 196, 0.05), transparent 50%),
+        var(--bg);
+      color: var(--text);
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      line-height: 1.5;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      padding: 1.25rem 1.5rem 1rem;
+      border-bottom: 1px solid var(--border);
+      background: color-mix(in srgb, var(--panel) 88%, transparent);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header .eyebrow {
+      margin: 0 0 0.4rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    header h1 {
+      margin: 0 0 0.45rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 300;
+      font-size: clamp(0.95rem, 2.4vw, 1.15rem);
+      line-height: 1.4;
+      color: var(--title);
+      max-width: 48rem;
+    }
+    header .meta {
+      margin: 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .brand-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+    .site-logo {
+      flex-shrink: 0;
+      display: block;
+      line-height: 0;
+      text-decoration: none;
+    }
+    .site-logo:hover { opacity: 0.88; text-decoration: none; }
+    .site-logo img {
+      display: block;
+      height: 88px;
+      width: auto;
+    }
+    .brand-copy { min-width: 0; }
+    .header-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 0.85rem;
+    }
+    .header-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      align-items: center;
+    }
+    .header-links a {
+      display: inline-flex;
+      align-items: center;
+    }
+    .gh-icon {
+      display: inline-block;
+      width: 0.92em;
+      height: 0.92em;
+      margin-right: 0.28em;
+      vertical-align: -0.12em;
+      background: currentColor;
+      -webkit-mask: url("github-mark.svg") center / contain no-repeat;
+      mask: url("github-mark.svg") center / contain no-repeat;
+    }
+    .theme-btn {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      padding: 0.35rem 0.55rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .theme-btn:hover { color: var(--title); border-color: var(--title); }
+    article {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 2.25rem 1.5rem 4rem;
+    }
+    article > p {
+      margin: 0 0 1.35rem;
+      font-family: "IBM Plex Serif", "IBM Plex Sans", Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.72;
+      color: var(--text);
+    }
+    figure.essay-hero {
+      margin: 0 0 2rem;
+      border: 1px solid var(--border);
+      background: #07080c;
+    }
+    figure.essay-hero img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    figure.essay-hero figcaption {
+      margin: 0;
+      padding: 0.7rem 0.9rem;
+      border-top: 1px solid var(--border);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+    .bibliography {
+      margin-top: 3rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--rule);
+    }
+    .bibliography h2 {
+      margin: 0 0 1.25rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 400;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--title);
+    }
+    .bibliography ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .bibliography li {
+      margin: 0 0 0.85rem;
+      padding-left: 1.1rem;
+      text-indent: -1.1rem;
+      font-family: "IBM Plex Serif", "IBM Plex Sans", Georgia, serif;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+    .bibliography li em { color: var(--text); font-style: italic; }
+    article > p:first-of-type::first-letter {
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 300;
+      font-size: 3.1rem;
+      float: left;
+      line-height: 0.85;
+      padding: 0.12rem 0.55rem 0 0;
+      color: var(--title);
+    }
+    section.topic {
+      margin: 2.25rem 0 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+    }
+    section.topic h2 {
+      margin: 0 0 0.85rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 400;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--title);
+    }
+    section.topic p {
+      margin: 0 0 1.1rem;
+      font-family: "IBM Plex Serif", "IBM Plex Sans", Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.72;
+      color: var(--text);
+    }
+    .term-list, .cluster {
+      margin: 0 0 1.35rem;
+      padding: 0;
+      list-style: none;
+    }
+    .term-list li {
+      margin: 0 0 0.55rem;
+      padding-left: 1rem;
+      position: relative;
+      font-family: "IBM Plex Serif", "IBM Plex Sans", Georgia, serif;
+      font-size: 1.02rem;
+      line-height: 1.55;
+      color: var(--text);
+    }
+    .term-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: var(--title);
+      font-family: "IBM Plex Mono", monospace;
+    }
+    .term-list li strong {
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 400;
+      font-size: 0.92rem;
+      color: var(--title);
+    }
+    .cluster {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.85rem;
+      padding: 0.85rem 1rem;
+      border-left: 2px solid var(--title);
+      background: color-mix(in srgb, var(--panel) 70%, transparent);
+    }
+    .cluster li {
+      margin: 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    .closing {
+      margin-top: 2.5rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--rule);
+    }
+    .closing p {
+      margin: 0 0 1.35rem;
+      font-family: "IBM Plex Serif", "IBM Plex Sans", Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.72;
+      color: var(--text);
+    }
+    .credit {
+      margin-top: 2.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--rule);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    footer.page-foot {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+  
+    a.concept {
+      color: var(--title);
+      text-decoration: none;
+      border-bottom: 1px solid color-mix(in srgb, var(--title) 45%, transparent);
+      transition: border-color 0.15s ease, color 0.15s ease;
+    }
+    a.concept:hover {
+      border-bottom-color: var(--title);
+      text-decoration: none;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand-row">
+      <a class="site-logo" href="index.html" aria-label="Hybrid Intelligences home">
+        <img src="logo.png" alt="Hybrid Intelligences">
+      </a>
+      <div class="brand-copy">
+        <p class="eyebrow">Essay 3</p>
+    <h1>Hybrid Intelligences: Ontology, Knowledge Graph, and Cognitive Assemblage</h1>
+    <p class="meta">Marlon Barrios Solano · September 2, 2026</p>
+      </div>
+    </div>
+    <div class="header-row">
+      <div class="header-links">
+        <a href="index.html">← Home</a>
+        <a href="about.html">About</a>
+        <a href="essays.html">Essays</a>
+        <a href="essay.html">Essay 1</a>
+        <a href="essay-2.html">Essay 2</a>
+        <a href="essay-3-ontology-knowledge-graph.pdf" download>PDF ↓</a>
+        <a href="ontology.html">Ontology</a>
+        <a href="network.html">Network</a>
+        <a href="voice.html">Voice</a>
+        <a href="image.html">Image</a>
+        <a href="mini-pod.html">Mini-pod</a>
+        <a href="enact.html">Enact</a>
+        <a href="creative-b.html">Creative B</a>
+        <a href="scan-qr.html">Scan QR Code</a>
+        <a href="https://github.com/marlonbarrios/hybrid_intelligences_viz" target="_blank" rel="noopener noreferrer"><span class="gh-icon" aria-hidden="true"></span>GitHub ↗</a>
+      </div>
+      <button type="button" class="theme-btn" id="themeBtn" aria-label="Toggle theme">Theme</button>
+    </div>
+  </header>
+
+  <article>
+
+    <figure class="essay-hero">
+      <img src="screenshots/network.jpg" alt="The Hybrid Intelligences radial network: concentric rings of concepts around a central hub. One visual interface into the knowledge architecture, not the ontology itself." width="1024" height="1024">
+      <figcaption>The radial network is one visual and navigational interface · not the ontology itself</figcaption>
+    </figure>
+
+    <p>In <a class="concept" href="network.html#hybrid">Hybrid Intelligences</a>, I am developing an evolving knowledge architecture that combines a computational <a class="concept" href="network.html#ontology_kb">ontology</a>, a knowledge graph, artistic research, <a class="concept" href="network.html#network_viz">network visualization</a>, and <a class="concept" href="network.html#gen_ai">generative AI</a> interfaces. Together, these components form an experimental <a class="concept" href="network.html#assemblage">cognitive assemblage</a> through which I investigate intelligence as <a class="concept" href="network.html#coupling">coupling</a> across bodies, technologies, institutions, environments, and worlds.</p>
+
+    <p>I use the term ontology deliberately. In knowledge representation and artificial intelligence, an ontology is not simply a collection of keywords, concepts, or visualizations. It provides a formal and machine-readable way of specifying entities and concepts within a domain, their categories, properties, and relationships.</p>
+
+    <p>The <a class="concept" href="network.html#hi_hub">Hybrid Intelligences Hub</a> currently contains 236 concepts and 2,361 relationships. These concepts and relationships are not only displayed through a network visualization; I also represent them through Semantic Web and knowledge-representation standards, including SKOS, JSON-LD, RDF/Turtle, and OWL.</p>
+
+    <p>The project publishes several machine-readable representations of this knowledge architecture:</p>
+
+      <ul class="cluster">
+        <li>ontology.jsonld</li>
+        <li>ontology.ttl</li>
+        <li>ontology.owl.ttl</li>
+      </ul>
+
+    <p>Within the OWL representation, I define hi:Concept as a superclass and organize concepts through classes such as:</p>
+
+      <ul class="cluster">
+        <li>hi:ProgramConcept</li>
+        <li>hi:OrganizationConcept</li>
+        <li>hi:PremiseConcept</li>
+        <li>hi:PracticeConcept</li>
+        <li>hi:TensionConcept</li>
+        <li>hi:QualityConcept</li>
+        <li>hi:PhenomenonConcept</li>
+        <li>hi:DomainConcept</li>
+        <li>hi:FrameworkConcept</li>
+        <li>hi:AuthorConcept</li>
+      </ul>
+
+    <p>I also define object properties, datatype properties, domains, ranges, subclasses, and relationships between entities. In this sense, the project goes beyond producing a visualization of interconnected ideas. I am engaging directly with practices of ontology engineering and computational knowledge representation.</p>
+
+<section class="topic">
+      <h2>Three interconnected layers</h2>
+
+    </section>
+
+    <p>I understand the current architecture of Hybrid Intelligences as operating across three interconnected layers: a concept scheme or knowledge organization system, a knowledge graph, and a formal ontology.</p>
+
+    <p>At the level of knowledge organization, I use SKOS structures such as skos:ConceptScheme, skos:prefLabel, skos:definition, skos:broader, skos:inScheme, and skos:topConceptOf. These allow me to define concepts, descriptions, categories, and conceptual hierarchies in a structured and machine-readable form.</p>
+
+    <p>At the level of the knowledge graph, I instantiate hundreds of concepts and connect them through thousands of relationships. The interactive radial network is therefore not the ontology itself. It is one visual and navigational interface into the underlying knowledge architecture.</p>
+
+    <p>The OWL layer extends this further by formally defining classes, subclasses, object properties, datatype properties, domains, ranges, and individuals. This is where Hybrid Intelligences becomes an ontology in the stronger sense associated with Semantic Web technologies and computational knowledge representation.</p>
+
+    <p>I therefore understand the architecture approximately as:</p>
+
+      <ul class="cluster">
+        <li>Ontology → Knowledge Graph → Interfaces</li>
+      </ul>
+
+    <p>But the actual research process is recursive rather than linear:</p>
+
+      <ul class="cluster">
+        <li>Essays + artistic research → Ontology → Knowledge Graph → Network / Voice / Image / Mini-pod / Enact → New research → Ontology</li>
+      </ul>
+
+    <p>The system continually feeds back into itself.</p>
+
+<section class="topic">
+      <h2>From associations to semantic relationships</h2>
+
+    </section>
+
+    <p>One of the next stages of my research is to make the relational structure of the ontology more expressive.</p>
+
+    <p>Many of the current relationships operate through a relatively general formulation of relatedness plus relational weight. This has been useful for constructing and navigating the network, but I am increasingly interested in asking not only whether two concepts are connected, but <em>how</em> they are connected.</p>
+
+    <p>Instead of representing a relationship primarily as:</p>
+
+    <ul class="term-list">
+      <li>Embodiment → relatedTo → Cognition</li>
+    </ul>
+
+    <p>I want to investigate semantically differentiated relationships such as:</p>
+
+    <ul class="term-list">
+      <li>embodiment → enables → cognition</li>
+      <li>tool → mediates → cognition</li>
+      <li>practice → cultivates → capacity</li>
+      <li>institution → constrains → practice</li>
+      <li>technology → participatesIn → assemblage</li>
+      <li>concept → critiques → concept</li>
+      <li>author → proposes → framework</li>
+      <li>artwork → instantiates → concept</li>
+      <li>essay → develops → concept</li>
+      <li>practice → enacts → concept</li>
+      <li>AI system → mediates → relation</li>
+    </ul>
+
+    <p>This shifts the research question from:</p>
+
+    <p>What concepts are connected?</p>
+
+    <p>toward:</p>
+
+    <p>What kinds of relationships produce the assemblage?</p>
+
+    <p>I see this as an important next step in developing Hybrid Intelligences from a network of weighted conceptual associations toward a richer relational ontology of cognitive assemblages.</p>
+
+<section class="topic">
+      <h2>Questioning fixed categories</h2>
+
+    </section>
+
+    <p>This development also raises a productive problem within the ontology itself.</p>
+
+    <p>Some of the current top-level categories are represented as mutually disjoint classes. I am interested in reconsidering this structure because the theoretical proposition of Hybrid Intelligences challenges precisely this kind of rigid separation.</p>
+
+    <p>A practice might simultaneously function as a framework. An artwork might be a practice, an experiment, a conceptual model, and part of a program. A person might simultaneously operate as an author, participant, facilitator, artist, and researcher.</p>
+
+    <p>Rather than seeing this ambiguity as something that needs to be eliminated from the ontology, I am interested in treating it as a research problem.</p>
+
+    <p>This leads to a central question:</p>
+
+    <p>What would an ontology of cognitive assemblages look like if entities were allowed to occupy multiple functional positions simultaneously?</p>
+
+    <p>For me, this question connects the technical construction of the ontology directly with the philosophical and artistic research of Hybrid Intelligences.</p>
+
+<section class="topic">
+      <h2>Ontology and generative AI</h2>
+
+    </section>
+
+    <p>The ontology also performs a specific function in relation to generative AI.</p>
+
+    <p>I do not understand it as training or fine-tuning a <a class="concept" href="network.html#llm">large language model</a> unless model weights are actually being modified. Instead, the ontology provides a structured knowledge and epistemic context for the language model.</p>
+
+    <p>The conversational AI within the Hub is therefore grounded in the Hybrid Intelligences ontology and research framework.</p>
+
+    <p>This distinction is important because an ontology and a large language model organize knowledge differently.</p>
+
+    <p>An LLM operates through distributed statistical representations learned from very large quantities of language. The ontology allows me to make particular conceptual and epistemic commitments explicit:</p>
+
+    <ul class="term-list">
+      <li>These are the entities I consider relevant.</li>
+      <li>These are their definitions.</li>
+      <li>These are the categories I am proposing.</li>
+      <li>These are the relationships I consider meaningful.</li>
+    </ul>
+
+    <p>The language model contributes something different: linguistic flexibility, interpretation, conversation, recombination, and generativity.</p>
+
+    <p>The resulting assemblage can be understood as:</p>
+
+      <ul class="cluster">
+        <li>formal and semi-formal knowledge structures + probabilistic language models + human interaction + embodied practices + artistic research</li>
+      </ul>
+
+    <p>This is where the technical architecture of the project intersects with its larger conceptual proposition.</p>
+
+    <p>I am not proposing that the <a class="concept" href="network.html#ai">AI</a> itself is the intelligence.</p>
+
+    <p>The ontology is not the intelligence.</p>
+
+    <p>The human is not the intelligence.</p>
+
+    <p>The network is not the intelligence.</p>
+
+    <p>Intelligence emerges through their coupling.</p>
+
+    <p>This is the central proposition I am testing through Hybrid Intelligences.</p>
+
+<section class="topic">
+      <h2>The Hub as an experimental cognitive assemblage</h2>
+
+    </section>
+
+    <p>I therefore describe Hybrid Intelligences as an evolving knowledge architecture combining a computational ontology, knowledge graph, artistic research, network visualization, and generative AI interfaces. Together, these components form an experimental cognitive assemblage for investigating intelligence as coupling across bodies, tools, technologies, institutions, environments, and worlds.</p>
+
+    <p>The different components of the Hub—<a class="concept" href="network.html#ontology_kb">Ontology</a>, <a class="concept" href="network.html#network_viz">Network</a>, <a class="concept" href="network.html#conversational_ai">Voice</a>, <a class="concept" href="network.html#concept_image">Image</a>, <a class="concept" href="network.html#mini_pod">Mini-pod</a>, <a class="concept" href="network.html#enact">Enact</a>, <a class="concept" href="network.html#hi_essays">essays</a>, and artistic works—are not separate tools. They are different modes for entering and activating the same evolving knowledge ecology.</p>
+
+    <p>Writing feeds the ontology.</p>
+
+    <p>The ontology reorganizes the network.</p>
+
+    <p>The network and ontology ground conversations.</p>
+
+    <p>Concepts become images, voices, audio, and embodied prompts.</p>
+
+    <p>Artistic practice enters the assemblage and generates new questions.</p>
+
+    <p>Those questions return to the research and potentially transform the ontology.</p>
+
+    <p>For this reason, I see the next stage of Hybrid Intelligences not simply as expanding the number of concepts or adding new AI features. I am interested in developing a richer relational ontology of cognitive assemblages, in which relations such as mediates, constrains, enables, embodies, transforms, participates in, emerges from, and critiques become first-class components of the knowledge architecture.</p>
+
+    <p>This makes the ontology itself part of my artistic and epistemological research.</p>
+
+    <p>Hybrid Intelligences is therefore not simply a project about hybrid intelligence. The architecture, the AI systems, the ontology, my artistic practice, its users, and the institutions within which it develops participate in producing the cognitive assemblage that the project is attempting to understand.</p>
+
+    <div class="closing">
+      <p>Perhaps the Hub is not simply about Hybrid Intelligences.</p>
+      <p>It is an experiment in becoming one.</p>
+    </div>
+
+    <section class="bibliography" aria-labelledby="bib-heading">
+      <h2 id="bib-heading">References</h2>
+      <ol>
+        <li>Bender, Emily M., Timnit Gebru, Angelina McMillan-Major, and Margaret Mitchell. “On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?” In <em>Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency</em>, 610–623. 2021.</li>
+        <li>Berners-Lee, Tim, James Hendler, and Ora Lassila. “The Semantic Web.” <em>Scientific American</em> 284, no. 5 (2001): 34–43.</li>
+        <li>Clark, Andy. <em>Supersizing the Mind: Embodiment, Action, and Cognitive Extension</em>. Oxford: Oxford University Press, 2008.</li>
+        <li>Clark, Andy, and David J. Chalmers. “The Extended Mind.” <em>Analysis</em> 58, no. 1 (1998): 7–19.</li>
+        <li>Deleuze, Gilles, and Félix Guattari. <em>A Thousand Plateaus: Capitalism and Schizophrenia</em>. Translated by Brian Massumi. Minneapolis: University of Minnesota Press, 1987.</li>
+        <li>Gruber, Thomas R. “A Translation Approach to Portable Ontology Specifications.” <em>Knowledge Acquisition</em> 5, no. 2 (1993): 199–220.</li>
+        <li>Guarino, Nicola, Daniel Oberle, and Steffen Staab. “What Is an Ontology?” In <em>Handbook on Ontologies</em>, edited by Steffen Staab and Rudi Studer, 1–17. Berlin: Springer, 2009.</li>
+        <li>Hayles, N. Katherine. <em>Bacteria to AI: Human Futures with Our Nonhuman Symbionts</em>. Chicago: University of Chicago Press, 2025.</li>
+        <li>Hayles, N. Katherine. <em>How We Became Posthuman: Virtual Bodies in Cybernetics, Literature, and Informatics</em>. Chicago: University of Chicago Press, 1999.</li>
+        <li>Hayles, N. Katherine. <em>Unthought: The Power of the Cognitive Nonconscious</em>. Chicago: University of Chicago Press, 2017.</li>
+        <li>Hogan, Aidan, et al. “Knowledge Graphs.” <em>ACM Computing Surveys</em> 54, no. 4 (2021): Article 71.</li>
+        <li>Hutchins, Edwin. <em>Cognition in the Wild</em>. Cambridge, MA: MIT Press, 1995.</li>
+        <li>Lewis, Patrick, et al. “Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.” <em>Advances in Neural Information Processing Systems</em> 33 (2020): 9459–9474.</li>
+        <li>Noy, Natalya F., and Deborah L. McGuinness. <em>Ontology Development 101: A Guide to Creating Your First Ontology</em>. Stanford Knowledge Systems Laboratory Technical Report KSL-01-05, 2001.</li>
+        <li>Simondon, Gilbert. <em>On the Mode of Existence of Technical Objects</em>. Translated by Cecile Malaspina and John Rogove. Minneapolis: Univocal Publishing, 2017.</li>
+        <li>World Wide Web Consortium (W3C). <em>OWL 2 Web Ontology Language Document Overview</em>. W3C Recommendation, December 11, 2012.</li>
+        <li>World Wide Web Consortium (W3C). <em>SKOS Simple Knowledge Organization System Reference</em>. W3C Recommendation, August 18, 2009.</li>
+      </ol>
+    </section>
+
+  </article>
+
+  <footer class="page-foot">
+    Hybrid Intelligences · University of Florida · Essay 3
+  </footer>
+
+  <script>
+    function applyTheme(mode) {
+      document.body.classList.toggle("light-mode", mode === "light");
+      localStorage.setItem("hi-theme", mode);
+    }
+
+    function initTheme() {
+      const saved = localStorage.getItem("hi-theme");
+      const mode = saved || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      applyTheme(mode);
+      document.getElementById("themeBtn").addEventListener("click", () => {
+        applyTheme(document.body.classList.contains("light-mode") ? "dark" : "light");
+      });
+    }
+
+    initTheme();
+  </script>
+</body>
+</html>

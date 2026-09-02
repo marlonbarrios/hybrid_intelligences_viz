@@ -2,8 +2,8 @@
 /**
  * Essay source-of-truth workflow
  *
- * Edit essay-1.md or essay-2.md, then:
- *   node build-essays.js          # regenerate essay.html + essay-2.html
+ * Edit essay-1.md, essay-2.md, or essay-3.md, then:
+ *   node build-essays.js          # regenerate essay.html + essay-2.html + essay-3.html
  *   node build-essays.js --pdf    # also export PDFs (Chrome headless)
  *   node build-essays.js --extract  # one-time: HTML → markdown (overwrites .md)
  *
@@ -55,6 +55,17 @@ const ESSAYS = [
       essayLabel: "Essay 2",
       title: "My Umwelt",
       byline: "Marlon Barrios Solano, in conversation with GPT-5.5 · July 20, 2026",
+    },
+  },
+  {
+    md: "essay-3.md",
+    html: "essay-3.html",
+    pdf: "essay-3-ontology-knowledge-graph.pdf",
+    printHtml: "_print-essay-3.html",
+    cover: {
+      essayLabel: "Essay 3",
+      title: "Hybrid Intelligences: Ontology, Knowledge Graph, and Cognitive Assemblage",
+      byline: "Marlon Barrios Solano · September 2, 2026",
     },
   },
 ];
@@ -143,14 +154,16 @@ function mdToHtml(body, opts = {}) {
       continue;
     }
 
-    if (line.startsWith("## Bibliography")) {
+    if (/^## (Bibliography|References)$/.test(line)) {
+      const heading = line.slice(3).trim();
       i++;
+      while (i < lines.length && lines[i].trim() === "") i++;
       const items = [];
       while (i < lines.length && /^\d+\.\s/.test(lines[i])) {
         items.push(lines[i].replace(/^\d+\.\s*/, ""));
         i++;
       }
-      parts.push(renderBibliography(items));
+      parts.push(renderBibliography(items, heading));
       continue;
     }
 
@@ -225,17 +238,17 @@ function renderBlock(type, blockLines, opts) {
   return blockLines.map((l) => `    <p>${inlineMdToHtml(l)}</p>`).join("\n");
 }
 
-function renderBibliography(items) {
+function renderBibliography(items, heading = "Bibliography") {
   const lis = items
     .map((item) => {
-      let html = escapeHtml(item);
-      html = html.replace(/"([^"]+)"/g, "&ldquo;$1&rdquo;");
+      let html = item.replace(/"([^"]+)"/g, "\u201C$1\u201D");
+      html = escapeHtml(html);
       html = html.replace(/\*([^*]+)\*/g, "<em>$1</em>");
       return `        <li>${html}</li>`;
     })
     .join("\n");
   return `    <section class="bibliography" aria-labelledby="bib-heading">
-      <h2 id="bib-heading">Bibliography</h2>
+      <h2 id="bib-heading">${escapeHtml(heading)}</h2>
       <ol>
 ${lis}
       </ol>
@@ -289,7 +302,8 @@ function htmlToMd(htmlFile, metaDefaults) {
 
   for (const chunk of chunks) {
     if (chunk.includes('class="bibliography"')) {
-      parts.push("## Bibliography", "");
+      const h2 = chunk.match(/<h2[^>]*>([\s\S]*?)<\/h2>/);
+      parts.push(`## ${h2 ? htmlInlineToMd(h2[1]) : "Bibliography"}`, "");
       const items = [...chunk.matchAll(/<li>([\s\S]*?)<\/li>/g)];
       items.forEach((item, idx) => {
         parts.push(`${idx + 1}. ${htmlInlineToMd(item[1])}`);
@@ -608,6 +622,18 @@ function extractAll() {
       footer: "Hybrid Intelligences · University of Florida · Essay 2",
       output: "essay-2.html",
       pdf: "essay-2-my-umwelt.pdf",
+      otherEssay: "essay.html",
+      otherEssayLabel: "Essay 1",
+    },
+    {
+      pageTitle: "Hybrid Intelligences: Ontology, Knowledge Graph, and Cognitive Assemblage",
+      eyebrow: "Essay 3",
+      title: "Hybrid Intelligences: Ontology, Knowledge Graph, and Cognitive Assemblage",
+      author: "Marlon Barrios Solano",
+      date: "September 2, 2026",
+      footer: "Hybrid Intelligences · University of Florida · Essay 3",
+      output: "essay-3.html",
+      pdf: "essay-3-ontology-knowledge-graph.pdf",
       otherEssay: "essay.html",
       otherEssayLabel: "Essay 1",
     },
