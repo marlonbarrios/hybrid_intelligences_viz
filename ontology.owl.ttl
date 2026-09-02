@@ -13,10 +13,11 @@
   dc:description "OWL 2 ontology of concepts, categories, and weighted relations from the Hybrid Intelligences program." ;
   owl:versionInfo "1.0.0" ;
   dc:date "2026-09-02"^^xsd:date ;
-  dc:modified "2026-09-02T22:33:23.921Z"^^xsd:dateTime ;
+  dc:modified "2026-09-02T23:28:26.886Z"^^xsd:dateTime ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  hi:nodeCount "236"^^xsd:integer ;
-  hi:edgeCount "2361"^^xsd:integer .
+  hi:nodeCount "238"^^xsd:integer ;
+  hi:edgeCount "2379"^^xsd:integer ;
+  hi:typedEdgeCount "102"^^xsd:integer .
 
 hi:Concept a owl:Class ;
   rdfs:label "Concept"@en ;
@@ -179,7 +180,86 @@ hi:relatedTo a owl:ObjectProperty ;
   rdfs:label "related to"@en ;
   rdfs:domain hi:Concept ;
   rdfs:range hi:Concept ;
+  rdfs:comment "Undirected conceptual proximity. Typed verbs are subproperties."@en ;
   owl:propertyType owl:SymmetricProperty .
+
+hi:couplesWith a owl:ObjectProperty ;
+  rdfs:subPropertyOf hi:relatedTo ;
+  rdfs:label "couples with"@en ;
+  rdfs:domain hi:Concept ;
+  rdfs:range hi:Concept .
+
+hi:enables a owl:ObjectProperty ;
+  rdfs:subPropertyOf hi:relatedTo ;
+  rdfs:label "enables"@en ;
+  rdfs:domain hi:Concept ;
+  rdfs:range hi:Concept .
+
+hi:mediates a owl:ObjectProperty ;
+  rdfs:subPropertyOf hi:relatedTo ;
+  rdfs:label "mediates"@en ;
+  rdfs:domain hi:Concept ;
+  rdfs:range hi:Concept .
+
+hi:cultivates a owl:ObjectProperty ;
+  rdfs:subPropertyOf hi:relatedTo ;
+  rdfs:label "cultivates"@en ;
+  rdfs:domain hi:Concept ;
+  rdfs:range hi:Concept .
+
+hi:constrains a owl:ObjectProperty ;
+  rdfs:subPropertyOf hi:relatedTo ;
+  rdfs:label "constrains"@en ;
+  rdfs:domain hi:Concept ;
+  rdfs:range hi:Concept .
+
+hi:participatesIn a owl:ObjectProperty ;
+  rdfs:subPropertyOf hi:relatedTo ;
+  rdfs:label "participates in"@en ;
+  rdfs:domain hi:Concept ;
+  rdfs:range hi:Concept .
+
+hi:critiques a owl:ObjectProperty ;
+  rdfs:subPropertyOf hi:relatedTo ;
+  rdfs:label "critiques"@en ;
+  rdfs:domain hi:Concept ;
+  rdfs:range hi:Concept .
+
+hi:proposes a owl:ObjectProperty ;
+  rdfs:subPropertyOf hi:relatedTo ;
+  rdfs:label "proposes"@en ;
+  rdfs:domain hi:Concept ;
+  rdfs:range hi:Concept .
+
+hi:instantiates a owl:ObjectProperty ;
+  rdfs:subPropertyOf hi:relatedTo ;
+  rdfs:label "instantiates"@en ;
+  rdfs:domain hi:Concept ;
+  rdfs:range hi:Concept .
+
+hi:develops a owl:ObjectProperty ;
+  rdfs:subPropertyOf hi:relatedTo ;
+  rdfs:label "develops"@en ;
+  rdfs:domain hi:Concept ;
+  rdfs:range hi:Concept .
+
+hi:enacts a owl:ObjectProperty ;
+  rdfs:subPropertyOf hi:relatedTo ;
+  rdfs:label "enacts"@en ;
+  rdfs:domain hi:Concept ;
+  rdfs:range hi:Concept .
+
+hi:embodies a owl:ObjectProperty ;
+  rdfs:subPropertyOf hi:relatedTo ;
+  rdfs:label "embodies"@en ;
+  rdfs:domain hi:Concept ;
+  rdfs:range hi:Concept .
+
+hi:emergesFrom a owl:ObjectProperty ;
+  rdfs:subPropertyOf hi:relatedTo ;
+  rdfs:label "emerges from"@en ;
+  rdfs:domain hi:Concept ;
+  rdfs:range hi:Concept .
 
 hi:inCategory a owl:ObjectProperty ;
   rdfs:label "in category"@en ;
@@ -200,6 +280,11 @@ hi:relationTarget a owl:ObjectProperty ;
   rdfs:label "relation target"@en ;
   rdfs:domain hi:NetworkRelation ;
   rdfs:range hi:Concept .
+
+hi:relationType a owl:ObjectProperty ;
+  rdfs:label "relation type"@en ;
+  rdfs:domain hi:NetworkRelation ;
+  rdfs:range owl:ObjectProperty .
 
 hi:networkWeight a owl:DatatypeProperty ;
   rdfs:label "network weight"@en ;
@@ -2739,7 +2824,7 @@ hi:conversational_ai a owl:NamedIndividual, hi:PracticeConcept ;
 hi:ontology_kb a owl:NamedIndividual, hi:PracticeConcept ;
   rdfs:label "Ontology as Knowledge Base"@en ;
   skos:prefLabel "Ontology as Knowledge Base"@en ;
-  skos:definition "The Hybrid Intelligences ontology as a living vocabulary that grounds the conversational AI. Concepts, definitions, and weighted relations are the source of truth the spoken companion is given — a situated knowledge base rather than a generic model talking about the program from outside. Essays feed this scheme; the network makes it visible; Voice, Image, Mini-pod, and Enact generate from it. Essay 3 describes this as three layers — concept scheme, knowledge graph, and formal OWL ontology — and asks how relations themselves might become more semantically differentiated."@en ;
+  skos:definition "The Hybrid Intelligences ontology as a living vocabulary that grounds the conversational AI. Concepts, definitions, weighted relatedTo edges, and a seed of typed verbs (couples with, enables, mediates, cultivates, constrains, participates in, critiques, proposes, instantiates, develops, enacts, embodies, emerges from) are the source of truth the spoken companion is given — a situated knowledge base rather than a generic model talking about the program from outside. Essays feed this scheme; the network makes it visible; Voice, Image, Mini-pod, and Enact generate from it. Essay 3 describes this as three layers — concept scheme, knowledge graph, and formal OWL ontology — with those thirteen verbs as first-class object properties."@en ;
   skos:broader hi:category/practice ;
   hi:inCategory hi:category/practice ;
   hi:schemeMember hi:scheme ;
@@ -2752,7 +2837,7 @@ hi:ontology_kb a owl:NamedIndividual, hi:PracticeConcept ;
 hi:network_viz a owl:NamedIndividual, hi:PracticeConcept ;
   rdfs:label "Network Visualization"@en ;
   skos:prefLabel "Network Visualization"@en ;
-  skos:definition "The radial map of the Hybrid Intelligences ontology — concentric rings of concepts and weighted relations. Information visualization as a way of thinking with the Hub: coupling becomes seeable, not only readable. The same nodes that ground Voice can be opened as Talk, Image, or Mini-pod. Essay 3 is careful: this network is not the ontology itself. It is one visual and navigational interface into the knowledge architecture."@en ;
+  skos:definition "The radial map of the Hybrid Intelligences ontology — concentric rings of concepts, weighted relatedTo edges, and a seed of typed verbs. A Relations filter can isolate a verb, alone or together with a category ring. Information visualization as a way of thinking with the Hub: coupling becomes seeable, not only readable. The same nodes that ground Voice can be opened as Talk, Image, or Mini-pod. Essay 3 is careful: this network is not the ontology itself. It is one visual and navigational interface into the knowledge architecture."@en ;
   skos:broader hi:category/practice ;
   hi:inCategory hi:category/practice ;
   hi:schemeMember hi:scheme ;
@@ -2765,7 +2850,7 @@ hi:network_viz a owl:NamedIndividual, hi:PracticeConcept ;
 hi:hi_essays a owl:NamedIndividual, hi:PracticeConcept ;
   rdfs:label "Essays"@en ;
   skos:prefLabel "Essays"@en ;
-  skos:definition "The publishing layer of the Hybrid Intelligences Hub — research writing by Marlon Barrios Solano and future guest collaborations that feed the ontology. Current entries: Essay 1 (cognitive assemblages and complex embodiment), Essay 2 (My Umwelt), and Essay 3 (ontology, knowledge graph, and cognitive assemblage). Writing here is not illustration after the fact; it is knowledge that becomes concepts, relations, and prompts for Voice, Image, Mini-pod, and Enact."@en ;
+  skos:definition "The publishing layer of the Hybrid Intelligences Hub. The three essays published now are by Marlon Barrios Solano: Essay 1 (cognitive assemblages and complex embodiment), Essay 2 (My Umwelt, in conversation with GPT-5.5), and Essay 3 (ontology, knowledge graph, and cognitive assemblage). Guest collaborations will feed the ontology as the section grows. Writing here is not illustration after the fact; it is knowledge that becomes concepts, relations, and prompts for Voice, Image, Mini-pod, and Enact."@en ;
   skos:broader hi:category/practice ;
   hi:inCategory hi:category/practice ;
   hi:schemeMember hi:scheme ;
@@ -2775,10 +2860,36 @@ hi:hi_essays a owl:NamedIndividual, hi:PracticeConcept ;
   schema:url <essays.html>
  .
 
+hi:essay_1 a owl:NamedIndividual, hi:PracticeConcept ;
+  rdfs:label "Essay 1"@en ;
+  skos:prefLabel "Essay 1"@en ;
+  skos:definition "Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI — Essay 1 by Marlon Barrios Solano (July 10, 2026). Develops intelligence as coupling and embodiment as a nested ecology of body, tool, institution, and world. The argument that cognition circulates through assemblages rather than sitting inside an isolated subject."@en ;
+  skos:broader hi:category/practice ;
+  hi:inCategory hi:category/practice ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.55"^^xsd:decimal
+ ;
+  schema:url <essay.html>
+ .
+
+hi:essay_2 a owl:NamedIndividual, hi:PracticeConcept ;
+  rdfs:label "Essay 2"@en ;
+  skos:prefLabel "Essay 2"@en ;
+  skos:definition "My Umwelt — Essay 2 by Marlon Barrios Solano, in conversation with GPT-5.5 (July 20, 2026). A first-person inquiry into lived worlds: Uexküll’s Umwelt, enactivism, and what a language model’s possible world (a Latentwelt) might be. Authored by Marlon; the conversation with the model is method, not a guest byline."@en ;
+  skos:broader hi:category/practice ;
+  hi:inCategory hi:category/practice ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.5"^^xsd:decimal
+ ;
+  schema:url <essay-2.html>
+ .
+
 hi:essay_3 a owl:NamedIndividual, hi:PracticeConcept ;
   rdfs:label "Essay 3"@en ;
   skos:prefLabel "Essay 3"@en ;
-  skos:definition "Hybrid Intelligences: Ontology, Knowledge Graph, and Cognitive Assemblage — Essay 3 by Marlon Barrios Solano (September 2, 2026). Describes the Hub as three interconnected layers: a SKOS concept scheme, a knowledge graph of weighted relations, and a formal OWL ontology. The radial network is one visual interface, not the ontology itself. Argues for semantically differentiated relations (enables, mediates, constrains, critiques) and for entities that occupy multiple functional positions at once. The ontology is epistemic context for generative AI, not training. Intelligence emerges through coupling among ontology, model, human, and network."@en ;
+  skos:definition "Hybrid Intelligences: Ontology, Knowledge Graph, and Cognitive Assemblage — Essay 3 by Marlon Barrios Solano (September 2, 2026). Describes the Hub as three interconnected layers: a SKOS concept scheme, a knowledge graph of weighted relations, and a formal OWL ontology. The radial network is one visual interface, not the ontology itself. Names the thirteen typed verbs now seeded on the graph (couples with, enables, mediates, cultivates, constrains, participates in, critiques, proposes, instantiates, develops, enacts, embodies, emerges from) and asks whether entities may occupy multiple functional positions at once. The ontology is epistemic context for generative AI, not training. Intelligence emerges through coupling among ontology, model, human, and network."@en ;
   skos:broader hi:category/practice ;
   hi:inCategory hi:category/practice ;
   hi:schemeMember hi:scheme ;
@@ -3305,7 +3416,7 @@ hi:bg_digital_art a owl:NamedIndividual, hi:BackgroundConcept ;
 hi:marlon a owl:NamedIndividual, hi:FacilitatorConcept ;
   rdfs:label "Marlon Barrios Solano"@en ;
   skos:prefLabel "Marlon Barrios Solano"@en ;
-  skos:definition "Co-director of Hybrid Intelligences and Maker-in-Residence at CAME, focused on AI, arts, and diasporas. Venezuelan-American interdisciplinary artist, creative technologist, and researcher with a background in dance, software engineering, and cognitive science; MFA in Dance and Technology (Ohio State). Founder of dance-tech.net; work combines generative AI, creative coding, and performance. Certified in Vipassana/mindfulness (Spirit Rock), Embodyoga, and Somatic Experiencing."@en ;
+  skos:definition "Co-director of Hybrid Intelligences and Maker-in-Residence at CAME, focused on AI, arts, and diasporas. Author of the three essays published now: Essay 1 (cognitive assemblages and complex embodiment), Essay 2 (My Umwelt), and Essay 3 (ontology, knowledge graph, and cognitive assemblage). Venezuelan-American interdisciplinary artist, creative technologist, and researcher with a background in dance, software engineering, and cognitive science; MFA in Dance and Technology (Ohio State). Founder of dance-tech.net; work combines generative AI, creative coding, and performance. Certified in Vipassana/mindfulness (Spirit Rock), Embodyoga, and Somatic Experiencing."@en ;
   skos:broader hi:category/facilitator ;
   hi:inCategory hi:category/facilitator ;
   hi:schemeMember hi:scheme ;
@@ -5588,7 +5699,25 @@ hi:hi_essays hi:relatedTo hi:assemblage .
 hi:hi_essays hi:relatedTo hi:coupling .
 hi:hi_essays hi:relatedTo hi:umwelt .
 hi:hi_essays hi:relatedTo hi:philosophical_practice .
+hi:hi_essays hi:relatedTo hi:essay_1 .
+hi:hi_essays hi:relatedTo hi:essay_2 .
 hi:hi_essays hi:relatedTo hi:essay_3 .
+hi:essay_1 hi:relatedTo hi:essay_2 .
+hi:essay_1 hi:relatedTo hi:essay_3 .
+hi:essay_2 hi:relatedTo hi:essay_3 .
+hi:essay_1 hi:relatedTo hi:marlon .
+hi:essay_1 hi:relatedTo hi:assemblage .
+hi:essay_1 hi:relatedTo hi:embodiment .
+hi:essay_1 hi:relatedTo hi:hybrid .
+hi:essay_1 hi:relatedTo hi:coupling .
+hi:essay_1 hi:relatedTo hi:hayles .
+hi:essay_1 hi:relatedTo hi:hi_hub .
+hi:essay_2 hi:relatedTo hi:marlon .
+hi:essay_2 hi:relatedTo hi:umwelt .
+hi:essay_2 hi:relatedTo hi:enactivism .
+hi:essay_2 hi:relatedTo hi:llm .
+hi:essay_2 hi:relatedTo hi:pendular_umwelt .
+hi:essay_2 hi:relatedTo hi:hi_hub .
 hi:essay_3 hi:relatedTo hi:ontology_kb .
 hi:essay_3 hi:relatedTo hi:network_viz .
 hi:essay_3 hi:relatedTo hi:hi_hub .
@@ -5910,6 +6039,109 @@ hi:asi hi:relatedTo hi:track_ethics .
 hi:wertheim hi:relatedTo hi:ignite .
 hi:karla hi:relatedTo hi:ai .
 hi:karla hi:relatedTo hi:physical_ai .
+
+hi:autopoiesis hi:couplesWith hi:coupling .
+hi:autopoiesis hi:couplesWith hi:ecology .
+hi:body hi:couplesWith hi:ai .
+hi:body hi:couplesWith hi:extended .
+hi:body hi:couplesWith hi:ecology .
+hi:embodiment hi:couplesWith hi:mediation .
+hi:llm hi:couplesWith hi:ontology_kb .
+hi:conversational_ai hi:couplesWith hi:ontology_kb .
+hi:network_viz hi:couplesWith hi:ontology_kb .
+hi:hi_hub hi:couplesWith hi:assemblage .
+hi:hi_hub hi:couplesWith hi:coupling .
+hi:hybrid hi:couplesWith hi:technosymbiosis .
+hi:marlon hi:couplesWith hi:conversational_ai .
+hi:enact hi:couplesWith hi:body .
+hi:gen_ai hi:couplesWith hi:creative .
+hi:autopoiesis hi:enables hi:cognition .
+hi:autopoiesis hi:enables hi:enactivism .
+hi:embodiment hi:enables hi:cognition .
+hi:embodiment hi:enables hi:intelligence .
+hi:4e hi:enables hi:cognition .
+hi:enactivism hi:enables hi:cognition .
+hi:coupling hi:enables hi:intelligence .
+hi:somatics hi:enables hi:embodiment .
+hi:literacies hi:enables hi:coupling .
+hi:extended hi:mediates hi:cognition .
+hi:llm hi:mediates hi:cognition .
+hi:llm hi:mediates hi:mediation .
+hi:conversational_ai hi:mediates hi:ontology_kb .
+hi:network_viz hi:mediates hi:ontology_kb .
+hi:gen_ai hi:mediates hi:creative .
+hi:mediation hi:mediates hi:cognition .
+hi:ai hi:mediates hi:cognition .
+hi:somatics hi:cultivates hi:literacies .
+hi:vipassana hi:cultivates hi:literacies .
+hi:choreography hi:cultivates hi:literacies .
+hi:philosophical_practice hi:cultivates hi:epistemology .
+hi:hi_program hi:cultivates hi:literacies .
+hi:creative hi:cultivates hi:creative_embodiment .
+hi:came hi:constrains hi:creative .
+hi:cota hi:constrains hi:creative .
+hi:came hi:constrains hi:hi_hub .
+hi:techno_dualism hi:constrains hi:hybrid .
+hi:bio_exception hi:constrains hi:assemblage .
+hi:ai hi:participatesIn hi:assemblage .
+hi:llm hi:participatesIn hi:assemblage .
+hi:conversational_ai hi:participatesIn hi:hi_hub .
+hi:enact hi:participatesIn hi:hi_hub .
+hi:hi_essays hi:participatesIn hi:hi_hub .
+hi:ontology_kb hi:participatesIn hi:hi_hub .
+hi:network_viz hi:participatesIn hi:hi_hub .
+hi:concept_image hi:participatesIn hi:hi_hub .
+hi:mini_pod hi:participatesIn hi:hi_hub .
+hi:marlon hi:participatesIn hi:hi_hub .
+hi:posthumanism hi:critiques hi:humanism .
+hi:hybrid hi:critiques hi:techno_dualism .
+hi:hybrid hi:critiques hi:bio_exception .
+hi:posthumanism hi:critiques hi:anthropocentrism .
+hi:assemblage hi:critiques hi:humanism .
+hi:essay_3 hi:critiques hi:techno_dualism .
+hi:hayles hi:proposes hi:assemblage .
+hi:hayles hi:proposes hi:technosymbiosis .
+hi:clark hi:proposes hi:extended .
+hi:varela hi:proposes hi:enactivism .
+hi:maturana hi:proposes hi:autopoiesis .
+hi:varela hi:proposes hi:autopoiesis .
+hi:uexkuell hi:proposes hi:umwelt .
+hi:gibson hi:proposes hi:affordances .
+hi:marlon hi:proposes hi:hybrid .
+hi:marlon hi:proposes hi:essay_1 .
+hi:marlon hi:proposes hi:essay_2 .
+hi:marlon hi:proposes hi:essay_3 .
+hi:pendular_umwelt hi:instantiates hi:umwelt .
+hi:pendular_umwelt hi:instantiates hi:latent_space .
+hi:lobby_showcase hi:instantiates hi:creative_ai .
+hi:concept_image hi:instantiates hi:ontology_kb .
+hi:enact hi:instantiates hi:creative_embodiment .
+hi:network_viz hi:instantiates hi:assemblage .
+hi:essay_3 hi:develops hi:ontology_kb .
+hi:essay_3 hi:develops hi:assemblage .
+hi:essay_3 hi:develops hi:coupling .
+hi:essay_3 hi:develops hi:hi_hub .
+hi:essay_3 hi:develops hi:network_viz .
+hi:essay_3 hi:develops hi:hybrid .
+hi:thompson hi:develops hi:autopoiesis .
+hi:hi_essays hi:develops hi:ontology_kb .
+hi:enact hi:enacts hi:coupling .
+hi:enact hi:enacts hi:embodiment .
+hi:vipassana hi:enacts hi:enactivism .
+hi:somatics hi:enacts hi:embodiment .
+hi:choreography hi:enacts hi:coupling .
+hi:hi_hub hi:enacts hi:assemblage .
+hi:body hi:embodies hi:autopoiesis .
+hi:body hi:embodies hi:cognition .
+hi:embodiment hi:embodies hi:coupling .
+hi:creative_embodiment hi:embodies hi:hybrid .
+hi:somatics hi:embodies hi:cognition .
+hi:intelligence hi:emergesFrom hi:coupling .
+hi:assemblage hi:emergesFrom hi:coupling .
+hi:hybrid hi:emergesFrom hi:assemblage .
+hi:enactivism hi:emergesFrom hi:autopoiesis .
+hi:cognition hi:emergesFrom hi:embodiment .
+hi:hi_hub hi:emergesFrom hi:ontology_kb .
 
 hi:rel-coupling-hybrid a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:coupling ;
@@ -16106,10 +16338,100 @@ hi:rel-hi_essays-philosophical_practice a owl:NamedIndividual, hi:NetworkRelatio
   hi:relationTarget hi:philosophical_practice ;
   hi:relationStrength "0.82"^^xsd:decimal .
 
+hi:rel-hi_essays-essay_1 a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:hi_essays ;
+  hi:relationTarget hi:essay_1 ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-hi_essays-essay_2 a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:hi_essays ;
+  hi:relationTarget hi:essay_2 ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
 hi:rel-hi_essays-essay_3 a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:hi_essays ;
   hi:relationTarget hi:essay_3 ;
   hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-essay_1-essay_2 a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_1 ;
+  hi:relationTarget hi:essay_2 ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-essay_1-essay_3 a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_1 ;
+  hi:relationTarget hi:essay_3 ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-essay_2-essay_3 a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_2 ;
+  hi:relationTarget hi:essay_3 ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-essay_1-marlon a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_1 ;
+  hi:relationTarget hi:marlon ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-essay_1-assemblage a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_1 ;
+  hi:relationTarget hi:assemblage ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-essay_1-embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_1 ;
+  hi:relationTarget hi:embodiment ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-essay_1-hybrid a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_1 ;
+  hi:relationTarget hi:hybrid ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-essay_1-coupling a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_1 ;
+  hi:relationTarget hi:coupling ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-essay_1-hayles a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_1 ;
+  hi:relationTarget hi:hayles ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-essay_1-hi_hub a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_1 ;
+  hi:relationTarget hi:hi_hub ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-essay_2-marlon a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_2 ;
+  hi:relationTarget hi:marlon ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-essay_2-umwelt a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_2 ;
+  hi:relationTarget hi:umwelt ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-essay_2-enactivism a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_2 ;
+  hi:relationTarget hi:enactivism ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-essay_2-llm a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_2 ;
+  hi:relationTarget hi:llm ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-essay_2-pendular_umwelt a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_2 ;
+  hi:relationTarget hi:pendular_umwelt ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-essay_2-hi_hub a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_2 ;
+  hi:relationTarget hi:hi_hub ;
+  hi:relationStrength "0.85"^^xsd:decimal .
 
 hi:rel-essay_3-ontology_kb a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:essay_3 ;
@@ -17715,3 +18037,615 @@ hi:rel-karla-physical_ai a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:karla ;
   hi:relationTarget hi:physical_ai ;
   hi:relationStrength "0.7"^^xsd:decimal .
+
+hi:rel-autopoiesis-coupling-couplesWith a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:coupling ;
+  hi:relationType hi:couplesWith ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-autopoiesis-ecology-couplesWith a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:ecology ;
+  hi:relationType hi:couplesWith ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-body-ai-couplesWith a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:body ;
+  hi:relationTarget hi:ai ;
+  hi:relationType hi:couplesWith ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-body-extended-couplesWith a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:body ;
+  hi:relationTarget hi:extended ;
+  hi:relationType hi:couplesWith ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-body-ecology-couplesWith a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:body ;
+  hi:relationTarget hi:ecology ;
+  hi:relationType hi:couplesWith ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-embodiment-mediation-couplesWith a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:embodiment ;
+  hi:relationTarget hi:mediation ;
+  hi:relationType hi:couplesWith ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-llm-ontology_kb-couplesWith a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:llm ;
+  hi:relationTarget hi:ontology_kb ;
+  hi:relationType hi:couplesWith ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-conversational_ai-ontology_kb-couplesWith a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:conversational_ai ;
+  hi:relationTarget hi:ontology_kb ;
+  hi:relationType hi:couplesWith ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-network_viz-ontology_kb-couplesWith a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:network_viz ;
+  hi:relationTarget hi:ontology_kb ;
+  hi:relationType hi:couplesWith ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-hi_hub-assemblage-couplesWith a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:hi_hub ;
+  hi:relationTarget hi:assemblage ;
+  hi:relationType hi:couplesWith ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-hi_hub-coupling-couplesWith a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:hi_hub ;
+  hi:relationTarget hi:coupling ;
+  hi:relationType hi:couplesWith ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-hybrid-technosymbiosis-couplesWith a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:hybrid ;
+  hi:relationTarget hi:technosymbiosis ;
+  hi:relationType hi:couplesWith ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-marlon-conversational_ai-couplesWith a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:marlon ;
+  hi:relationTarget hi:conversational_ai ;
+  hi:relationType hi:couplesWith ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-enact-body-couplesWith a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:enact ;
+  hi:relationTarget hi:body ;
+  hi:relationType hi:couplesWith ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-gen_ai-creative-couplesWith a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:gen_ai ;
+  hi:relationTarget hi:creative ;
+  hi:relationType hi:couplesWith ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-autopoiesis-cognition-enables a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:cognition ;
+  hi:relationType hi:enables ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-autopoiesis-enactivism-enables a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autopoiesis ;
+  hi:relationTarget hi:enactivism ;
+  hi:relationType hi:enables ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-embodiment-cognition-enables a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:embodiment ;
+  hi:relationTarget hi:cognition ;
+  hi:relationType hi:enables ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-embodiment-intelligence-enables a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:embodiment ;
+  hi:relationTarget hi:intelligence ;
+  hi:relationType hi:enables ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-4e-cognition-enables a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:4e ;
+  hi:relationTarget hi:cognition ;
+  hi:relationType hi:enables ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-enactivism-cognition-enables a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:enactivism ;
+  hi:relationTarget hi:cognition ;
+  hi:relationType hi:enables ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-coupling-intelligence-enables a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:coupling ;
+  hi:relationTarget hi:intelligence ;
+  hi:relationType hi:enables ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-somatics-embodiment-enables a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:somatics ;
+  hi:relationTarget hi:embodiment ;
+  hi:relationType hi:enables ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-literacies-coupling-enables a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:literacies ;
+  hi:relationTarget hi:coupling ;
+  hi:relationType hi:enables ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-extended-cognition-mediates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:extended ;
+  hi:relationTarget hi:cognition ;
+  hi:relationType hi:mediates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-llm-cognition-mediates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:llm ;
+  hi:relationTarget hi:cognition ;
+  hi:relationType hi:mediates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-llm-mediation-mediates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:llm ;
+  hi:relationTarget hi:mediation ;
+  hi:relationType hi:mediates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-conversational_ai-ontology_kb-mediates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:conversational_ai ;
+  hi:relationTarget hi:ontology_kb ;
+  hi:relationType hi:mediates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-network_viz-ontology_kb-mediates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:network_viz ;
+  hi:relationTarget hi:ontology_kb ;
+  hi:relationType hi:mediates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-gen_ai-creative-mediates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:gen_ai ;
+  hi:relationTarget hi:creative ;
+  hi:relationType hi:mediates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-mediation-cognition-mediates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:mediation ;
+  hi:relationTarget hi:cognition ;
+  hi:relationType hi:mediates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-ai-cognition-mediates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:ai ;
+  hi:relationTarget hi:cognition ;
+  hi:relationType hi:mediates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-somatics-literacies-cultivates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:somatics ;
+  hi:relationTarget hi:literacies ;
+  hi:relationType hi:cultivates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-vipassana-literacies-cultivates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:vipassana ;
+  hi:relationTarget hi:literacies ;
+  hi:relationType hi:cultivates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-choreography-literacies-cultivates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:choreography ;
+  hi:relationTarget hi:literacies ;
+  hi:relationType hi:cultivates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-philosophical_practice-epistemology-cultivates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:philosophical_practice ;
+  hi:relationTarget hi:epistemology ;
+  hi:relationType hi:cultivates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-hi_program-literacies-cultivates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:hi_program ;
+  hi:relationTarget hi:literacies ;
+  hi:relationType hi:cultivates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-creative-creative_embodiment-cultivates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:creative ;
+  hi:relationTarget hi:creative_embodiment ;
+  hi:relationType hi:cultivates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-came-creative-constrains a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:came ;
+  hi:relationTarget hi:creative ;
+  hi:relationType hi:constrains ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-cota-creative-constrains a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cota ;
+  hi:relationTarget hi:creative ;
+  hi:relationType hi:constrains ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-came-hi_hub-constrains a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:came ;
+  hi:relationTarget hi:hi_hub ;
+  hi:relationType hi:constrains ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-techno_dualism-hybrid-constrains a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:techno_dualism ;
+  hi:relationTarget hi:hybrid ;
+  hi:relationType hi:constrains ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-bio_exception-assemblage-constrains a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:bio_exception ;
+  hi:relationTarget hi:assemblage ;
+  hi:relationType hi:constrains ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-ai-assemblage-participatesIn a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:ai ;
+  hi:relationTarget hi:assemblage ;
+  hi:relationType hi:participatesIn ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-llm-assemblage-participatesIn a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:llm ;
+  hi:relationTarget hi:assemblage ;
+  hi:relationType hi:participatesIn ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-conversational_ai-hi_hub-participatesIn a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:conversational_ai ;
+  hi:relationTarget hi:hi_hub ;
+  hi:relationType hi:participatesIn ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-enact-hi_hub-participatesIn a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:enact ;
+  hi:relationTarget hi:hi_hub ;
+  hi:relationType hi:participatesIn ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-hi_essays-hi_hub-participatesIn a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:hi_essays ;
+  hi:relationTarget hi:hi_hub ;
+  hi:relationType hi:participatesIn ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-ontology_kb-hi_hub-participatesIn a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:ontology_kb ;
+  hi:relationTarget hi:hi_hub ;
+  hi:relationType hi:participatesIn ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-network_viz-hi_hub-participatesIn a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:network_viz ;
+  hi:relationTarget hi:hi_hub ;
+  hi:relationType hi:participatesIn ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-concept_image-hi_hub-participatesIn a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:concept_image ;
+  hi:relationTarget hi:hi_hub ;
+  hi:relationType hi:participatesIn ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-mini_pod-hi_hub-participatesIn a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:mini_pod ;
+  hi:relationTarget hi:hi_hub ;
+  hi:relationType hi:participatesIn ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-marlon-hi_hub-participatesIn a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:marlon ;
+  hi:relationTarget hi:hi_hub ;
+  hi:relationType hi:participatesIn ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-posthumanism-humanism-critiques a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:posthumanism ;
+  hi:relationTarget hi:humanism ;
+  hi:relationType hi:critiques ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-hybrid-techno_dualism-critiques a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:hybrid ;
+  hi:relationTarget hi:techno_dualism ;
+  hi:relationType hi:critiques ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-hybrid-bio_exception-critiques a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:hybrid ;
+  hi:relationTarget hi:bio_exception ;
+  hi:relationType hi:critiques ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-posthumanism-anthropocentrism-critiques a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:posthumanism ;
+  hi:relationTarget hi:anthropocentrism ;
+  hi:relationType hi:critiques ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-assemblage-humanism-critiques a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:assemblage ;
+  hi:relationTarget hi:humanism ;
+  hi:relationType hi:critiques ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-essay_3-techno_dualism-critiques a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_3 ;
+  hi:relationTarget hi:techno_dualism ;
+  hi:relationType hi:critiques ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-hayles-assemblage-proposes a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:hayles ;
+  hi:relationTarget hi:assemblage ;
+  hi:relationType hi:proposes ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-hayles-technosymbiosis-proposes a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:hayles ;
+  hi:relationTarget hi:technosymbiosis ;
+  hi:relationType hi:proposes ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-clark-extended-proposes a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:clark ;
+  hi:relationTarget hi:extended ;
+  hi:relationType hi:proposes ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-varela-enactivism-proposes a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:varela ;
+  hi:relationTarget hi:enactivism ;
+  hi:relationType hi:proposes ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-maturana-autopoiesis-proposes a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:maturana ;
+  hi:relationTarget hi:autopoiesis ;
+  hi:relationType hi:proposes ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-varela-autopoiesis-proposes a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:varela ;
+  hi:relationTarget hi:autopoiesis ;
+  hi:relationType hi:proposes ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-uexkuell-umwelt-proposes a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:uexkuell ;
+  hi:relationTarget hi:umwelt ;
+  hi:relationType hi:proposes ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-gibson-affordances-proposes a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:gibson ;
+  hi:relationTarget hi:affordances ;
+  hi:relationType hi:proposes ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-marlon-hybrid-proposes a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:marlon ;
+  hi:relationTarget hi:hybrid ;
+  hi:relationType hi:proposes ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-marlon-essay_1-proposes a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:marlon ;
+  hi:relationTarget hi:essay_1 ;
+  hi:relationType hi:proposes ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-marlon-essay_2-proposes a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:marlon ;
+  hi:relationTarget hi:essay_2 ;
+  hi:relationType hi:proposes ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-marlon-essay_3-proposes a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:marlon ;
+  hi:relationTarget hi:essay_3 ;
+  hi:relationType hi:proposes ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-pendular_umwelt-umwelt-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:pendular_umwelt ;
+  hi:relationTarget hi:umwelt ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-pendular_umwelt-latent_space-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:pendular_umwelt ;
+  hi:relationTarget hi:latent_space ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-lobby_showcase-creative_ai-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:lobby_showcase ;
+  hi:relationTarget hi:creative_ai ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-concept_image-ontology_kb-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:concept_image ;
+  hi:relationTarget hi:ontology_kb ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-enact-creative_embodiment-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:enact ;
+  hi:relationTarget hi:creative_embodiment ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-network_viz-assemblage-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:network_viz ;
+  hi:relationTarget hi:assemblage ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-essay_3-ontology_kb-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_3 ;
+  hi:relationTarget hi:ontology_kb ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-essay_3-assemblage-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_3 ;
+  hi:relationTarget hi:assemblage ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-essay_3-coupling-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_3 ;
+  hi:relationTarget hi:coupling ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-essay_3-hi_hub-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_3 ;
+  hi:relationTarget hi:hi_hub ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-essay_3-network_viz-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_3 ;
+  hi:relationTarget hi:network_viz ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-essay_3-hybrid-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_3 ;
+  hi:relationTarget hi:hybrid ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-thompson-autopoiesis-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:thompson ;
+  hi:relationTarget hi:autopoiesis ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-hi_essays-ontology_kb-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:hi_essays ;
+  hi:relationTarget hi:ontology_kb ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-enact-coupling-enacts a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:enact ;
+  hi:relationTarget hi:coupling ;
+  hi:relationType hi:enacts ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-enact-embodiment-enacts a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:enact ;
+  hi:relationTarget hi:embodiment ;
+  hi:relationType hi:enacts ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-vipassana-enactivism-enacts a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:vipassana ;
+  hi:relationTarget hi:enactivism ;
+  hi:relationType hi:enacts ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-somatics-embodiment-enacts a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:somatics ;
+  hi:relationTarget hi:embodiment ;
+  hi:relationType hi:enacts ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-choreography-coupling-enacts a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:choreography ;
+  hi:relationTarget hi:coupling ;
+  hi:relationType hi:enacts ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-hi_hub-assemblage-enacts a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:hi_hub ;
+  hi:relationTarget hi:assemblage ;
+  hi:relationType hi:enacts ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-body-autopoiesis-embodies a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:body ;
+  hi:relationTarget hi:autopoiesis ;
+  hi:relationType hi:embodies ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-body-cognition-embodies a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:body ;
+  hi:relationTarget hi:cognition ;
+  hi:relationType hi:embodies ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-embodiment-coupling-embodies a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:embodiment ;
+  hi:relationTarget hi:coupling ;
+  hi:relationType hi:embodies ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-creative_embodiment-hybrid-embodies a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:creative_embodiment ;
+  hi:relationTarget hi:hybrid ;
+  hi:relationType hi:embodies ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-somatics-cognition-embodies a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:somatics ;
+  hi:relationTarget hi:cognition ;
+  hi:relationType hi:embodies ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-intelligence-coupling-emergesFrom a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:intelligence ;
+  hi:relationTarget hi:coupling ;
+  hi:relationType hi:emergesFrom ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-assemblage-coupling-emergesFrom a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:assemblage ;
+  hi:relationTarget hi:coupling ;
+  hi:relationType hi:emergesFrom ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-hybrid-assemblage-emergesFrom a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:hybrid ;
+  hi:relationTarget hi:assemblage ;
+  hi:relationType hi:emergesFrom ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-enactivism-autopoiesis-emergesFrom a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:enactivism ;
+  hi:relationTarget hi:autopoiesis ;
+  hi:relationType hi:emergesFrom ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-cognition-embodiment-emergesFrom a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cognition ;
+  hi:relationTarget hi:embodiment ;
+  hi:relationType hi:emergesFrom ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-hi_hub-ontology_kb-emergesFrom a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:hi_hub ;
+  hi:relationTarget hi:ontology_kb ;
+  hi:relationType hi:emergesFrom ;
+  hi:relationStrength "0.9"^^xsd:decimal .

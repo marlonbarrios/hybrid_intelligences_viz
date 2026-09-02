@@ -33,6 +33,13 @@
       "@id": "hi:edgeCount",
       "@type": "xsd:integer"
     },
+    "typedEdgeCount": {
+      "@id": "hi:typedEdgeCount",
+      "@type": "xsd:integer"
+    },
+    "relationType": {
+      "@id": "hi:relationType"
+    },
     "modified": {
       "@id": "dc:modified",
       "@type": "xsd:dateTime"
@@ -56,10 +63,11 @@
         "foaf:homepage": "https://marlonbarrios.github.io/"
       },
       "dc:date": "2026-09-02",
-      "dc:modified": "2026-09-02T22:33:23.917Z",
+      "dc:modified": "2026-09-02T23:28:26.880Z",
       "owl:versionInfo": "1.0.0",
-      "hi:nodeCount": 236,
-      "hi:edgeCount": 2361
+      "hi:nodeCount": 238,
+      "hi:edgeCount": 2379,
+      "hi:typedEdgeCount": 102
     },
     {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme",
@@ -382,6 +390,11 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage_form",
           "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#intelligence",
+          "hi:strength": 0.9,
+          "hi:relationType": "enables"
         }
       ]
     },
@@ -439,6 +452,26 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#literacies",
           "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#technosymbiosis",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#techno_dualism",
+          "hi:strength": 0.9,
+          "hi:relationType": "critiques"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bio_exception",
+          "hi:strength": 0.9,
+          "hi:relationType": "critiques"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
+          "hi:strength": 0.9,
+          "hi:relationType": "emergesFrom"
         }
       ]
     },
@@ -512,6 +545,11 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cam",
           "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hybrid",
+          "hi:strength": 0.9,
+          "hi:relationType": "embodies"
         }
       ]
     },
@@ -569,6 +607,11 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#synthetic_cognition",
           "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
+          "hi:strength": 0.9,
+          "hi:relationType": "emergesFrom"
         }
       ]
     },
@@ -638,6 +681,26 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#gallagher",
           "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#mediation",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cognition",
+          "hi:strength": 0.9,
+          "hi:relationType": "enables"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#intelligence",
+          "hi:strength": 0.9,
+          "hi:relationType": "enables"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
+          "hi:strength": 0.9,
+          "hi:relationType": "embodies"
         }
       ]
     },
@@ -695,6 +758,31 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cognition",
           "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#extended",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ecology",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#autopoiesis",
+          "hi:strength": 0.9,
+          "hi:relationType": "embodies"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cognition",
+          "hi:strength": 0.9,
+          "hi:relationType": "embodies"
         }
       ]
     },
@@ -777,6 +865,16 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative",
           "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#humanism",
+          "hi:strength": 0.9,
+          "hi:relationType": "critiques"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
+          "hi:strength": 0.9,
+          "hi:relationType": "emergesFrom"
         }
       ]
     },
@@ -956,6 +1054,11 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#active_inference",
           "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embodiment",
+          "hi:strength": 0.9,
+          "hi:relationType": "emergesFrom"
         }
       ]
     },
@@ -1025,6 +1128,11 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#extended_q",
           "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cognition",
+          "hi:strength": 0.9,
+          "hi:relationType": "enables"
         }
       ]
     },
@@ -1163,6 +1271,16 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#autopoiesis",
           "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cognition",
+          "hi:strength": 0.9,
+          "hi:relationType": "enables"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#autopoiesis",
+          "hi:strength": 0.9,
+          "hi:relationType": "emergesFrom"
         }
       ]
     },
@@ -1292,6 +1410,26 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#intelligence",
           "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ecology",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cognition",
+          "hi:strength": 0.9,
+          "hi:relationType": "enables"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#enactivism",
+          "hi:strength": 0.9,
+          "hi:relationType": "enables"
         }
       ]
     },
@@ -1506,6 +1644,11 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cyborg",
           "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cognition",
+          "hi:strength": 0.9,
+          "hi:relationType": "mediates"
         }
       ]
     },
@@ -2034,6 +2177,16 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#agi",
           "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cognition",
+          "hi:strength": 0.9,
+          "hi:relationType": "mediates"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
+          "hi:strength": 0.9,
+          "hi:relationType": "participatesIn"
         }
       ]
     },
@@ -2695,6 +2848,16 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#distributed",
           "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative",
+          "hi:strength": 0.9,
+          "hi:relationType": "mediates"
         }
       ]
     },
@@ -2776,6 +2939,26 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#literacies",
           "hi:strength": 0.7
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology_kb",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cognition",
+          "hi:strength": 0.9,
+          "hi:relationType": "mediates"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#mediation",
+          "hi:strength": 0.9,
+          "hi:relationType": "mediates"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
+          "hi:strength": 0.9,
+          "hi:relationType": "participatesIn"
         }
       ]
     },
@@ -4328,6 +4511,11 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#wilson",
           "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#extended",
+          "hi:strength": 0.9,
+          "hi:relationType": "proposes"
         }
       ]
     },
@@ -4373,6 +4561,16 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#mediation",
           "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
+          "hi:strength": 0.9,
+          "hi:relationType": "proposes"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#technosymbiosis",
+          "hi:strength": 0.9,
+          "hi:relationType": "proposes"
         }
       ]
     },
@@ -4438,6 +4636,11 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#friston",
           "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#autopoiesis",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
         }
       ]
     },
@@ -4495,6 +4698,11 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#thompson",
           "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#autopoiesis",
+          "hi:strength": 0.9,
+          "hi:relationType": "proposes"
         }
       ]
     },
@@ -4564,6 +4772,16 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cybernetics",
           "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#enactivism",
+          "hi:strength": 0.9,
+          "hi:relationType": "proposes"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#autopoiesis",
+          "hi:strength": 0.9,
+          "hi:relationType": "proposes"
         }
       ]
     },
@@ -4896,6 +5114,11 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ecology",
           "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#affordances",
+          "hi:strength": 0.9,
+          "hi:relationType": "proposes"
         }
       ]
     },
@@ -4949,6 +5172,11 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#varela",
           "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#umwelt",
+          "hi:strength": 0.9,
+          "hi:relationType": "proposes"
         }
       ]
     },
@@ -8276,6 +8504,11 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#perception_politics",
           "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cognition",
+          "hi:strength": 0.9,
+          "hi:relationType": "mediates"
         }
       ]
     },
@@ -11286,6 +11519,16 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hybrid",
           "hi:strength": 0.7
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#literacies",
+          "hi:strength": 0.9,
+          "hi:relationType": "cultivates"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
+          "hi:strength": 0.9,
+          "hi:relationType": "enacts"
         }
       ]
     },
@@ -11387,6 +11630,26 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
           "hi:strength": 0.65
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embodiment",
+          "hi:strength": 0.9,
+          "hi:relationType": "enables"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#literacies",
+          "hi:strength": 0.9,
+          "hi:relationType": "cultivates"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embodiment",
+          "hi:strength": 0.9,
+          "hi:relationType": "enacts"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cognition",
+          "hi:strength": 0.9,
+          "hi:relationType": "embodies"
         }
       ]
     },
@@ -11480,6 +11743,16 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#rehearsal",
           "hi:strength": 0.7
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#literacies",
+          "hi:strength": 0.9,
+          "hi:relationType": "cultivates"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#enactivism",
+          "hi:strength": 0.9,
+          "hi:relationType": "enacts"
         }
       ]
     },
@@ -11624,6 +11897,11 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
           "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative_embodiment",
+          "hi:strength": 0.9,
+          "hi:relationType": "cultivates"
         }
       ]
     },
@@ -11676,6 +11954,11 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#somatics",
           "hi:strength": 0.65
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
+          "hi:strength": 0.9,
+          "hi:relationType": "enables"
         }
       ]
     },
@@ -11808,6 +12091,11 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cameron",
           "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#epistemology",
+          "hi:strength": 0.9,
+          "hi:relationType": "cultivates"
         }
       ]
     },
@@ -11865,6 +12153,21 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#marlon",
           "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology_kb",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology_kb",
+          "hi:strength": 0.9,
+          "hi:relationType": "mediates"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
+          "hi:strength": 0.9,
+          "hi:relationType": "participatesIn"
         }
       ]
     },
@@ -11875,7 +12178,7 @@
         "hi:NetworkNode"
       ],
       "skos:prefLabel": "Ontology as Knowledge Base",
-      "skos:definition": "The Hybrid Intelligences ontology as a living vocabulary that grounds the conversational AI. Concepts, definitions, and weighted relations are the source of truth the spoken companion is given — a situated knowledge base rather than a generic model talking about the program from outside. Essays feed this scheme; the network makes it visible; Voice, Image, Mini-pod, and Enact generate from it. Essay 3 describes this as three layers — concept scheme, knowledge graph, and formal OWL ontology — and asks how relations themselves might become more semantically differentiated.",
+      "skos:definition": "The Hybrid Intelligences ontology as a living vocabulary that grounds the conversational AI. Concepts, definitions, weighted relatedTo edges, and a seed of typed verbs (couples with, enables, mediates, cultivates, constrains, participates in, critiques, proposes, instantiates, develops, enacts, embodies, emerges from) are the source of truth the spoken companion is given — a situated knowledge base rather than a generic model talking about the program from outside. Essays feed this scheme; the network makes it visible; Voice, Image, Mini-pod, and Enact generate from it. Essay 3 describes this as three layers — concept scheme, knowledge graph, and formal OWL ontology — with those thirteen verbs as first-class object properties.",
       "skos:broader": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
       },
@@ -11917,6 +12220,11 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hybrid",
           "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
+          "hi:strength": 0.9,
+          "hi:relationType": "participatesIn"
         }
       ]
     },
@@ -11927,7 +12235,7 @@
         "hi:NetworkNode"
       ],
       "skos:prefLabel": "Network Visualization",
-      "skos:definition": "The radial map of the Hybrid Intelligences ontology — concentric rings of concepts and weighted relations. Information visualization as a way of thinking with the Hub: coupling becomes seeable, not only readable. The same nodes that ground Voice can be opened as Talk, Image, or Mini-pod. Essay 3 is careful: this network is not the ontology itself. It is one visual and navigational interface into the knowledge architecture.",
+      "skos:definition": "The radial map of the Hybrid Intelligences ontology — concentric rings of concepts, weighted relatedTo edges, and a seed of typed verbs. A Relations filter can isolate a verb, alone or together with a category ring. Information visualization as a way of thinking with the Hub: coupling becomes seeable, not only readable. The same nodes that ground Voice can be opened as Talk, Image, or Mini-pod. Essay 3 is careful: this network is not the ontology itself. It is one visual and navigational interface into the knowledge architecture.",
       "skos:broader": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
       },
@@ -11949,6 +12257,26 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#concept_image",
           "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology_kb",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology_kb",
+          "hi:strength": 0.9,
+          "hi:relationType": "mediates"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
+          "hi:strength": 0.9,
+          "hi:relationType": "participatesIn"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
+          "hi:strength": 0.9,
+          "hi:relationType": "instantiates"
         }
       ]
     },
@@ -11959,7 +12287,7 @@
         "hi:NetworkNode"
       ],
       "skos:prefLabel": "Essays",
-      "skos:definition": "The publishing layer of the Hybrid Intelligences Hub — research writing by Marlon Barrios Solano and future guest collaborations that feed the ontology. Current entries: Essay 1 (cognitive assemblages and complex embodiment), Essay 2 (My Umwelt), and Essay 3 (ontology, knowledge graph, and cognitive assemblage). Writing here is not illustration after the fact; it is knowledge that becomes concepts, relations, and prompts for Voice, Image, Mini-pod, and Enact.",
+      "skos:definition": "The publishing layer of the Hybrid Intelligences Hub. The three essays published now are by Marlon Barrios Solano: Essay 1 (cognitive assemblages and complex embodiment), Essay 2 (My Umwelt, in conversation with GPT-5.5), and Essay 3 (ontology, knowledge graph, and cognitive assemblage). Guest collaborations will feed the ontology as the section grows. Writing here is not illustration after the fact; it is knowledge that becomes concepts, relations, and prompts for Voice, Image, Mini-pod, and Enact.",
       "skos:broader": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
       },
@@ -11991,8 +12319,130 @@
           "hi:strength": 0.82
         },
         {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_1",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_2",
+          "hi:strength": 0.98
+        },
+        {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_3",
           "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
+          "hi:strength": 0.9,
+          "hi:relationType": "participatesIn"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology_kb",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_1",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Essay 1",
+      "skos:definition": "Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI — Essay 1 by Marlon Barrios Solano (July 10, 2026). Develops intelligence as coupling and embodiment as a nested ecology of body, tool, institution, and world. The argument that cognition circulates through assemblages rather than sitting inside an isolated subject.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "practice",
+      "hi:weight": 1.55,
+      "schema:url": "essay.html",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_2",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_3",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#marlon",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embodiment",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hybrid",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hayles",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
+          "hi:strength": 0.85
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_2",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Essay 2",
+      "skos:definition": "My Umwelt — Essay 2 by Marlon Barrios Solano, in conversation with GPT-5.5 (July 20, 2026). A first-person inquiry into lived worlds: Uexküll’s Umwelt, enactivism, and what a language model’s possible world (a Latentwelt) might be. Authored by Marlon; the conversation with the model is method, not a guest byline.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "practice",
+      "hi:weight": 1.5,
+      "schema:url": "essay-2.html",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_3",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#marlon",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#umwelt",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#enactivism",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#llm",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#pendular_umwelt",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
+          "hi:strength": 0.85
         }
       ]
     },
@@ -12003,7 +12453,7 @@
         "hi:NetworkNode"
       ],
       "skos:prefLabel": "Essay 3",
-      "skos:definition": "Hybrid Intelligences: Ontology, Knowledge Graph, and Cognitive Assemblage — Essay 3 by Marlon Barrios Solano (September 2, 2026). Describes the Hub as three interconnected layers: a SKOS concept scheme, a knowledge graph of weighted relations, and a formal OWL ontology. The radial network is one visual interface, not the ontology itself. Argues for semantically differentiated relations (enables, mediates, constrains, critiques) and for entities that occupy multiple functional positions at once. The ontology is epistemic context for generative AI, not training. Intelligence emerges through coupling among ontology, model, human, and network.",
+      "skos:definition": "Hybrid Intelligences: Ontology, Knowledge Graph, and Cognitive Assemblage — Essay 3 by Marlon Barrios Solano (September 2, 2026). Describes the Hub as three interconnected layers: a SKOS concept scheme, a knowledge graph of weighted relations, and a formal OWL ontology. The radial network is one visual interface, not the ontology itself. Names the thirteen typed verbs now seeded on the graph (couples with, enables, mediates, cultivates, constrains, participates in, critiques, proposes, instantiates, develops, enacts, embodies, emerges from) and asks whether entities may occupy multiple functional positions at once. The ontology is epistemic context for generative AI, not training. Intelligence emerges through coupling among ontology, model, human, and network.",
       "skos:broader": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
       },
@@ -12081,6 +12531,41 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hayles",
           "hi:strength": 0.78
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#techno_dualism",
+          "hi:strength": 0.9,
+          "hi:relationType": "critiques"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology_kb",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#network_viz",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hybrid",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
         }
       ]
     },
@@ -12117,6 +12602,16 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#conversational_ai",
           "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
+          "hi:strength": 0.9,
+          "hi:relationType": "participatesIn"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology_kb",
+          "hi:strength": 0.9,
+          "hi:relationType": "instantiates"
         }
       ]
     },
@@ -12149,6 +12644,11 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_essays",
           "hi:strength": 0.78
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
+          "hi:strength": 0.9,
+          "hi:relationType": "participatesIn"
         }
       ]
     },
@@ -12209,6 +12709,31 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#marlon",
           "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#body",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
+          "hi:strength": 0.9,
+          "hi:relationType": "participatesIn"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative_embodiment",
+          "hi:strength": 0.9,
+          "hi:relationType": "instantiates"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
+          "hi:strength": 0.9,
+          "hi:relationType": "enacts"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embodiment",
+          "hi:strength": 0.9,
+          "hi:relationType": "enacts"
         }
       ]
     },
@@ -12269,6 +12794,16 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#marlon",
           "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#umwelt",
+          "hi:strength": 0.9,
+          "hi:relationType": "instantiates"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#latent_space",
+          "hi:strength": 0.9,
+          "hi:relationType": "instantiates"
         }
       ]
     },
@@ -12321,6 +12856,11 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#pendular_umwelt",
           "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative_ai",
+          "hi:strength": 0.9,
+          "hi:relationType": "instantiates"
         }
       ]
     },
@@ -12417,6 +12957,26 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai",
           "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
+          "hi:strength": 0.9,
+          "hi:relationType": "enacts"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology_kb",
+          "hi:strength": 0.9,
+          "hi:relationType": "emergesFrom"
         }
       ]
     },
@@ -12518,6 +13078,11 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#erika",
           "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#literacies",
+          "hi:strength": 0.9,
+          "hi:relationType": "cultivates"
         }
       ]
     },
@@ -12747,6 +13312,11 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#onye",
           "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative",
+          "hi:strength": 0.9,
+          "hi:relationType": "constrains"
         }
       ]
     },
@@ -12788,6 +13358,16 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative",
           "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative",
+          "hi:strength": 0.9,
+          "hi:relationType": "constrains"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
+          "hi:strength": 0.9,
+          "hi:relationType": "constrains"
         }
       ]
     },
@@ -13750,7 +14330,7 @@
         "hi:NetworkNode"
       ],
       "skos:prefLabel": "Marlon Barrios Solano",
-      "skos:definition": "Co-director of Hybrid Intelligences and Maker-in-Residence at CAME, focused on AI, arts, and diasporas. Venezuelan-American interdisciplinary artist, creative technologist, and researcher with a background in dance, software engineering, and cognitive science; MFA in Dance and Technology (Ohio State). Founder of dance-tech.net; work combines generative AI, creative coding, and performance. Certified in Vipassana/mindfulness (Spirit Rock), Embodyoga, and Somatic Experiencing.",
+      "skos:definition": "Co-director of Hybrid Intelligences and Maker-in-Residence at CAME, focused on AI, arts, and diasporas. Author of the three essays published now: Essay 1 (cognitive assemblages and complex embodiment), Essay 2 (My Umwelt), and Essay 3 (ontology, knowledge graph, and cognitive assemblage). Venezuelan-American interdisciplinary artist, creative technologist, and researcher with a background in dance, software engineering, and cognitive science; MFA in Dance and Technology (Ohio State). Founder of dance-tech.net; work combines generative AI, creative coding, and performance. Certified in Vipassana/mindfulness (Spirit Rock), Embodyoga, and Somatic Experiencing.",
       "skos:broader": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/facilitator"
       },
@@ -13833,6 +14413,36 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#melissa",
           "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#conversational_ai",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
+          "hi:strength": 0.9,
+          "hi:relationType": "participatesIn"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hybrid",
+          "hi:strength": 0.9,
+          "hi:relationType": "proposes"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_1",
+          "hi:strength": 0.9,
+          "hi:relationType": "proposes"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_2",
+          "hi:strength": 0.9,
+          "hi:relationType": "proposes"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_3",
+          "hi:strength": 0.9,
+          "hi:relationType": "proposes"
         }
       ]
     },
@@ -14256,6 +14866,11 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embodied",
           "hi:strength": 0.45
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hybrid",
+          "hi:strength": 0.9,
+          "hi:relationType": "constrains"
         }
       ]
     },
@@ -14305,6 +14920,11 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#physical_ai",
           "hi:strength": 0.4
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
+          "hi:strength": 0.9,
+          "hi:relationType": "constrains"
         }
       ]
     },
@@ -14617,6 +15237,16 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#brooks",
           "hi:strength": 0.7
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#humanism",
+          "hi:strength": 0.9,
+          "hi:relationType": "critiques"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#anthropocentrism",
+          "hi:strength": 0.9,
+          "hi:relationType": "critiques"
         }
       ]
     }

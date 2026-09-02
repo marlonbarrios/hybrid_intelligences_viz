@@ -45,17 +45,59 @@ function loadOntology() {
   return JSON.parse(fs.readFileSync(filePath, "utf8"));
 }
 
+const RELATION_VERBS = {
+  couplesWith: "couples with",
+  enables: "enables",
+  mediates: "mediates",
+  cultivates: "cultivates",
+  constrains: "constrains",
+  participatesIn: "participates in",
+  critiques: "critiques",
+  proposes: "proposes",
+  instantiates: "instantiates",
+  develops: "develops",
+  enacts: "enacts",
+  embodies: "embodies",
+  emergesFrom: "emerges from",
+};
+
 function relatedLabels(item, labels, limit) {
   return [].concat(item["skos:related"] || [])
     .map((rel) => {
       const id = localId(rel);
       const strength = Number(rel["hi:strength"] || 0);
-      return { id, label: labels[id] || id, strength };
+      const type = rel["hi:relationType"] || "";
+      return { id, label: labels[id] || id, strength, type };
     })
-    .sort((a, b) => b.strength - a.strength)
+    .sort((a, b) => {
+      if (a.type && !b.type) return -1;
+      if (!a.type && b.type) return 1;
+      return b.strength - a.strength;
+    })
     .slice(0, limit)
-    .map((rel) => rel.label)
+    .map((rel) => {
+      if (rel.type && RELATION_VERBS[rel.type]) {
+        return `${RELATION_VERBS[rel.type]} ${rel.label}`;
+      }
+      return rel.label;
+    })
     .filter(Boolean);
+}
+
+function typedRelationSentences(graph, labels) {
+  const lines = [];
+  for (const item of graph) {
+    const sourceId = localId(item["@id"]);
+    const source = labels[sourceId];
+    if (!source) continue;
+    for (const rel of [].concat(item["skos:related"] || [])) {
+      const type = rel["hi:relationType"];
+      if (!type || !RELATION_VERBS[type]) continue;
+      const target = labels[localId(rel)] || localId(rel);
+      lines.push(`${source} ${RELATION_VERBS[type]} ${target}.`);
+    }
+  }
+  return lines;
 }
 
 function conceptLabels(graph) {
@@ -95,6 +137,7 @@ function buildFocusBlock(data, id) {
   if (cat) lines.push(`Category: ${cat}`);
   if (concept.definition) lines.push(`Definition: ${concept.definition}`);
   if (concept.related.length) lines.push(`Related: ${concept.related.join(", ")}`);
+  lines.push("When a related line includes a verb (couples with, enables, mediates, develops), speak that relationship. Do not flatten it to 'is related to'.");
   lines.push("If this is the Hybrid Intelligences Hub, say that you are its conversational AI layer: a dynamic cognitive assemblage created by Marlon Barrios Solano, in which essays, ontology, network, Voice, Image, Mini-pod, and Enact couple. If this is Conversational AI, say that you are that spoken companion, grounded in the ontology as knowledge base, then invite them to ask about any concept — including what this tool is. If this is Mini-pod, Concept Image, Enact, Ontology as Knowledge Base, Essays, or Network Visualization, explain that layer of the Hub and how it couples with the others. If this is the Hybrid Intelligences Program, a track, or the reception, speak in the past tense: the inaugural Creative B program was held July 13–30, 2026; say who co-led it, where it took place, and how it was organized. Then note that Hybrid Intelligences as a framework remains ongoing research in the present. Then invite them to go deeper or change the subject.");
   return lines.join("\n") + "\n\n";
 }
@@ -131,6 +174,12 @@ function buildOntologyDigest(data) {
       if (node.related.length) line += ` Related: ${node.related.join(", ")}.`;
       parts.push(line);
     }
+  }
+  const typed = typedRelationSentences(graph, labels);
+  if (typed.length) {
+    parts.push("## Typed relations");
+    parts.push("These verbs are commitments, not mere proximity. Prefer them over 'is related to'.");
+    parts.push(...typed.map((line) => `- ${line}`));
   }
   return parts.join("\n");
 }
@@ -172,6 +221,7 @@ function buildPodcastFocus(data, id) {
   if (cat) lines.push(`Category: ${cat}`);
   if (concept.definition) lines.push(`Definition: ${concept.definition}`);
   if (concept.related.length) lines.push(`Related: ${concept.related.join(", ")}`);
+  lines.push("If a related line includes a verb, speak that relationship.");
   return lines.join("\n") + "\n\n";
 }
 

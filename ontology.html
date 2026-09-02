@@ -323,6 +323,75 @@
       float: right;
       margin-left: 0;
     }
+    .rel-list {
+      list-style: none;
+      padding: 0 0.15rem;
+      margin: 0 0 1.1rem;
+    }
+    .rel-list button {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      text-align: left;
+      border: none;
+      background: transparent;
+      color: var(--text);
+      font: inherit;
+      font-size: 0.82rem;
+      padding: 0.38rem 0.55rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .rel-list button:hover { background: var(--hover); }
+    .rel-list button.active {
+      background: var(--accent);
+      color: var(--title);
+      font-weight: 500;
+    }
+    .rel-list button.dim {
+      color: var(--muted);
+      opacity: 0.55;
+    }
+    .triple-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.45rem;
+    }
+    .triple-list li {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.35rem 0.5rem;
+      padding: 0.65rem 0.8rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--panel);
+      font-size: 0.9rem;
+    }
+    .triple-list button {
+      border: none;
+      background: none;
+      color: var(--link);
+      font: inherit;
+      cursor: pointer;
+      padding: 0;
+    }
+    .triple-list button:hover { text-decoration: underline; }
+    .triple-list .verb {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      color: var(--title);
+      letter-spacing: 0.02em;
+    }
+    .triple-list .cat-tag {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
     main { padding: 1rem 1.25rem 2rem; }
     .toolbar {
       display: flex;
@@ -510,7 +579,9 @@
       An ontology is a structured map of concepts and the relations between them—a shared vocabulary
       with definitions that both people and software can read. Here, the interactive network is exported
       into standard formats so you can browse, search, and link ideas across the program: frameworks,
-      authors, practices, domains, and how strongly they connect. The same vocabulary is the knowledge
+      authors, practices, domains, and how they connect — including typed verbs such as couples with,
+      enables, mediates, and proposes on a seed of directed edges, listed under Browse by relation.
+      The same vocabulary is the knowledge
       base for Voice, and from any concept you can Talk, Make an image, or create a Mini-pod. Enact
       offers cognitive prompts for a choreography of awareness — layers of the Hybrid Intelligences Hub.
     </p>
@@ -562,6 +633,27 @@
       framework: "#4ec4c4",
       author: "#baa880",
     };
+    const RELATION_TYPE_ORDER = [
+      "couplesWith", "enables", "mediates", "cultivates", "constrains",
+      "participatesIn", "critiques", "proposes", "instantiates",
+      "develops", "enacts", "embodies", "emergesFrom",
+    ];
+    const RELATION_TYPES = {
+      couplesWith:    { label: "couples with",    verb: "couples with",    inverse: "coupled with" },
+      enables:        { label: "enables",         verb: "enables",         inverse: "enabled by" },
+      mediates:       { label: "mediates",        verb: "mediates",        inverse: "mediated by" },
+      cultivates:     { label: "cultivates",      verb: "cultivates",      inverse: "cultivated by" },
+      constrains:     { label: "constrains",      verb: "constrains",      inverse: "constrained by" },
+      participatesIn: { label: "participates in", verb: "participates in", inverse: "includes" },
+      critiques:      { label: "critiques",       verb: "critiques",       inverse: "critiqued by" },
+      proposes:       { label: "proposes",        verb: "proposes",        inverse: "proposed by" },
+      instantiates:   { label: "instantiates",    verb: "instantiates",    inverse: "instantiated by" },
+      develops:       { label: "develops",        verb: "develops",        inverse: "developed by" },
+      enacts:         { label: "enacts",          verb: "enacts",          inverse: "enacted by" },
+      embodies:       { label: "embodies",        verb: "embodies",        inverse: "embodied by" },
+      emergesFrom:    { label: "emerges from",    verb: "emerges from",    inverse: "gives rise to" },
+    };
+
     const CATEGORY_DEFS = {
       program:      { label: "Program",        desc: "The Hybrid Intelligences program, its three tracks, and public events." },
       organization: { label: "Organizations",  desc: "Host institutions and partners—College of the Arts (COA), CAME, CAM, IGNITE, Wertheim Laboratory, and Gainesville Circus Center." },
@@ -582,8 +674,10 @@
     let categories = {};
     let conceptById = {};
     let relatedById = {};
+    let typedTriples = [];
     let meta = {};
     let activeCategory = "all";
+    let activeRelation = null;
     let expandedCategories = new Set();
     let selectedId = null;
     let searchQuery = "";
@@ -609,6 +703,50 @@
 
     function networkCategoryUrl(catId) {
       return `network.html#cat/${catId}`;
+    }
+
+    function networkRelationUrl(type, catId) {
+      if (catId && catId !== "all") return `network.html#cat/${catId}&rel/${type}`;
+      return `network.html#rel/${type}`;
+    }
+
+    function syncHash() {
+      const url = new URL(location.href);
+      if (selectedId) {
+        url.hash = selectedId;
+      } else {
+        const parts = [];
+        if (activeCategory !== "all") parts.push(`cat/${activeCategory}`);
+        if (activeRelation) parts.push(`rel/${activeRelation}`);
+        url.hash = parts.join("&");
+      }
+      history.replaceState(null, "", url);
+    }
+
+    function collectTypedTriples() {
+      typedTriples = [];
+      for (const c of concepts) {
+        for (const r of relatedById[c.id] || []) {
+          if (r.relationType && conceptById[r.id]) {
+            typedTriples.push({ source: c.id, target: r.id, type: r.relationType });
+          }
+        }
+      }
+    }
+
+    function triplesFor(type, catId) {
+      const q = searchQuery.trim().toLowerCase();
+      const cat = catId && catId !== "all" ? catId : null;
+      return typedTriples.filter((t) => {
+        if (type && t.type !== type) return false;
+        const a = conceptById[t.source];
+        const b = conceptById[t.target];
+        if (!a || !b) return false;
+        if (cat && a.category !== cat && b.category !== cat) return false;
+        if (!q) return true;
+        const hay = `${a.label} ${b.label} ${a.definition} ${b.definition} ${t.type}`.toLowerCase();
+        return hay.includes(q);
+      });
     }
 
     function ensureCategories() {
@@ -650,7 +788,8 @@
     function updateHeaderStats() {
       const el = document.getElementById("ontologyStats");
       if (el) {
-        el.textContent = `SKOS concept scheme — ${meta.nodeCount || concepts.length} concepts, ${meta.edgeCount || ""} relations · ${RING_ORDER.length} categories`;
+        const typed = meta.typedEdgeCount ? `, ${meta.typedEdgeCount} typed` : "";
+        el.textContent = `SKOS concept scheme — ${meta.nodeCount || concepts.length} concepts, ${meta.edgeCount || ""} relations${typed} · ${RING_ORDER.length} categories`;
       }
       const updated = document.getElementById("ontologyUpdated");
       if (!updated) return;
@@ -687,6 +826,7 @@
             description: entry["dc:description"],
             nodeCount: entry["hi:nodeCount"],
             edgeCount: entry["hi:edgeCount"],
+            typedEdgeCount: entry["hi:typedEdgeCount"],
             date: entry["dc:date"],
             modified: entry["dc:modified"] || entry.modified,
           };
@@ -722,12 +862,14 @@
           relatedById[nodeId] = related.map((r) => ({
             id: localId(r["@id"]),
             strength: r["hi:strength"] ?? null,
+            relationType: r["hi:relationType"] || null,
           }));
         }
       }
 
       concepts.sort((a, b) => a.label.localeCompare(b.label));
       ensureCategories();
+      collectTypedTriples();
       updateHeaderStats();
     }
 
@@ -830,7 +972,20 @@
         })
         .join("");
 
-      sidebar.innerHTML = `<h2>Browse by category</h2><ul class="cat-list">${allBtn}</ul>${groups}`;
+      const relItems = RELATION_TYPE_ORDER.map((type) => {
+        const metaRel = RELATION_TYPES[type];
+        const count = triplesFor(type, activeCategory).length;
+        const available = !activeCategory || activeCategory === "all" || count > 0 || activeRelation === type;
+        const active = activeRelation === type;
+        return `<li><button type="button" data-rel="${type}" class="${active ? "active" : ""} ${available ? "" : "dim"}">${metaRel.label}<span class="cat-count">${count}</span></button></li>`;
+      }).join("");
+
+      sidebar.innerHTML = `
+        <h2>Browse by category</h2>
+        <ul class="cat-list">${allBtn}</ul>
+        ${groups}
+        <h2>Browse by relation</h2>
+        <ul class="rel-list">${relItems}</ul>`;
     }
 
     function renderResults() {
@@ -840,11 +995,48 @@
 
       const list = filteredConcepts();
       const selected = selectedId ? conceptById[selectedId] : null;
+      const relTriples = activeRelation ? triplesFor(activeRelation, activeCategory) : [];
 
-      stats.textContent = `${list.length} shown · ${meta.nodeCount || concepts.length} total · ${meta.edgeCount || ""} relations`;
+      const typed = meta.typedEdgeCount ? ` · ${meta.typedEdgeCount} typed` : "";
+      if (activeRelation && !selected) {
+        stats.textContent = `${relTriples.length} shown · ${RELATION_TYPES[activeRelation].label}${typed}`;
+      } else {
+        stats.textContent = `${list.length} shown · ${meta.nodeCount || concepts.length} total · ${meta.edgeCount || ""} relations${typed}`;
+      }
 
       if (selected) {
         results.innerHTML = renderDetail(selected);
+        return;
+      }
+
+      if (activeRelation) {
+        const relMeta = RELATION_TYPES[activeRelation];
+        const cat = activeCategory !== "all" ? categories[activeCategory] : null;
+        const banner = `<div class="category-banner">
+              <div class="category-banner-head">
+                <h2>${relMeta.label}</h2>
+              </div>
+              <p>Directed ${relMeta.verb} assertions in the ontology${cat ? ` involving <strong>${cat.label}</strong>` : ""}. Most edges remain untyped <em>relatedTo</em>.</p>
+              <div class="category-banner-actions">
+                <a href="${networkRelationUrl(activeRelation, activeCategory)}">View in network ↗</a>
+              </div>
+            </div>`;
+        if (!relTriples.length) {
+          results.innerHTML = `${banner}<p class="empty">No typed ${relMeta.label} relations match.</p>`;
+          return;
+        }
+        results.innerHTML = `${banner}<ul class="triple-list">${relTriples
+          .map((t) => {
+            const a = conceptById[t.source];
+            const b = conceptById[t.target];
+            return `<li>
+              <button type="button" data-select="${a.id}">${a.label}</button>
+              <span class="verb">${relMeta.verb}</span>
+              <button type="button" data-select="${b.id}">${b.label}</button>
+              <span class="cat-tag">${categories[a.category]?.label || ""} → ${categories[b.category]?.label || ""}</span>
+            </li>`;
+          })
+          .join("")}</ul>`;
         return;
       }
 
@@ -902,6 +1094,15 @@
       });
 
       app.addEventListener("click", (e) => {
+        const relBtn = e.target.closest("[data-rel]");
+        if (relBtn) {
+          const type = relBtn.dataset.rel;
+          activeRelation = activeRelation === type ? null : type;
+          selectedId = null;
+          syncHash();
+          render();
+          return;
+        }
         const catBtn = e.target.closest("[data-cat]");
         if (catBtn) {
           const cat = catBtn.dataset.cat;
@@ -912,13 +1113,14 @@
             activeCategory = cat;
           }
           selectedId = null;
+          syncHash();
           render();
           return;
         }
         const selectEl = e.target.closest("[data-select]");
         if (selectEl) {
           selectedId = selectEl.dataset.select;
-          history.replaceState(null, "", `#${selectedId}`);
+          syncHash();
           renderSidebar();
           renderResults();
         }
@@ -963,7 +1165,25 @@
       const related = (relatedById[concept.id] || [])
         .map((r) => ({ ...r, concept: conceptById[r.id] }))
         .filter((r) => r.concept)
-        .sort((a, b) => (b.strength ?? 0) - (a.strength ?? 0));
+        .sort((a, b) => {
+          if (a.relationType && !b.relationType) return -1;
+          if (!a.relationType && b.relationType) return 1;
+          return (b.strength ?? 0) - (a.strength ?? 0);
+        });
+      const typedOut = typedTriples.filter((t) => t.source === concept.id);
+      const typedIn = typedTriples.filter((t) => t.target === concept.id);
+      const typedLines = [
+        ...typedOut.map((t) => {
+          const other = conceptById[t.target];
+          const verb = RELATION_TYPES[t.type]?.verb || t.type;
+          return other ? { id: other.id, text: `${verb} ${other.label}` } : null;
+        }),
+        ...typedIn.map((t) => {
+          const other = conceptById[t.source];
+          const verb = RELATION_TYPES[t.type]?.inverse || t.type;
+          return other ? { id: other.id, text: `${verb} ${other.label}` } : null;
+        }),
+      ].filter(Boolean);
 
       const catLabel = categories[concept.category]?.label || concept.category;
       const external = [];
@@ -986,17 +1206,29 @@
             <a href="network.html#${concept.id}">View in network ↗</a>
             ${external.join(" · ")}
           </div>
+          ${
+            typedLines.length
+              ? `<div class="related">
+            <h4>Typed relations (${typedLines.length})</h4>
+            <ul>${typedLines
+              .map((line) => `<li><button type="button" data-select="${line.id}">${line.text}</button></li>`)
+              .join("")}</ul>
+          </div>`
+              : ""
+          }
           <div class="related">
             <h4>Related concepts (${related.length})</h4>
             ${
               related.length
                 ? `<ul>${related
                     .slice(0, 40)
-                    .map(
-                      (r) =>
-                        `<li><button type="button" data-select="${r.id}">${r.concept.label}</button>
-                         <span class="strength">${r.strength != null ? r.strength.toFixed(2) : ""}</span></li>`
-                    )
+                    .map((r) => {
+                      const verb = r.relationType
+                        ? `<span class="strength">${r.relationType}</span> `
+                        : "";
+                      return `<li>${verb}<button type="button" data-select="${r.id}">${r.concept.label}</button>
+                         <span class="strength">${r.strength != null && !r.relationType ? r.strength.toFixed(2) : ""}</span></li>`;
+                    })
                     .join("")}${related.length > 40 ? `<li class="strength">…and ${related.length - 40} more</li>` : ""}</ul>`
                 : "<p class='empty'>No relations listed.</p>"
             }
@@ -1005,26 +1237,42 @@
     }
 
     function applyHash() {
-      const raw = location.hash.replace(/^#/, "");
+      const raw = (location.hash || "").replace(/^#/, "");
       if (!raw) return;
 
-      if (raw.startsWith("cat/")) {
-        const catId = raw.slice(4);
-        if (categories[catId] || CATEGORY_DEFS[catId]) {
-          activeCategory = catId;
-          expandedCategories.add(catId);
-          selectedId = null;
-          searchQuery = "";
-          const search = document.getElementById("search");
-          if (search) search.value = "";
-        }
-        return;
+      let cat = null;
+      let rel = null;
+      let nodeId = null;
+      for (const part of raw.split("&")) {
+        if (part.startsWith("cat/")) cat = part.slice(4);
+        else if (part.startsWith("rel/")) rel = part.slice(4);
+        else if (part) nodeId = part;
       }
+
+      if (cat && (categories[cat] || CATEGORY_DEFS[cat])) {
+        activeCategory = cat;
+        expandedCategories.add(cat);
+        selectedId = null;
+        searchQuery = "";
+        const search = document.getElementById("search");
+        if (search) search.value = "";
+      }
+
+      if (rel && RELATION_TYPES[rel]) {
+        activeRelation = rel;
+        selectedId = null;
+        searchQuery = "";
+        const search = document.getElementById("search");
+        if (search) search.value = "";
+      }
+
+      if (cat || rel) return;
 
       const id = raw;
       if (id && conceptById[id]) {
         selectedId = id;
         activeCategory = "all";
+        activeRelation = null;
         expandedCategories.clear();
         if (conceptById[id].category) {
           expandedCategories.add(conceptById[id].category);

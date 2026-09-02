@@ -56,6 +56,8 @@ function loadNetwork() {
   const nodesBlock = code.match(/const NODES = \[([\s\S]*?)\n\];\n\nconst WIKIPEDIA/)[1];
   const wikiBlock = code.match(/const WIKIPEDIA = \{([\s\S]*?)\};/)[1];
   const edgesBlock = code.match(/const EDGES = \[([\s\S]*?)\n\];/)[1];
+  const typedBlock = code.match(/const TYPED_EDGES = \[([\s\S]*?)\n\];/)[1];
+  const relTypesBlock = code.match(/const RELATION_TYPES = \{([\s\S]*?)\n\};/)[1];
   const metaBlock = code.match(/const CATEGORY_META = \{([\s\S]*?)\};/)[1];
   const ringBlock = code.match(/const RING_ORDER = (\[[^\]]+\]);/)[1];
 
@@ -65,6 +67,8 @@ function loadNetwork() {
     const NODES = [${nodesBlock}];
     const WIKIPEDIA = {${wikiBlock}};
     const EDGES = [${edgesBlock}];
+    const TYPED_EDGES = [${typedBlock}];
+    const RELATION_TYPES = {${relTypesBlock}};
     const CATEGORY_META = {${metaBlock}};
     const RING_ORDER = ${ringBlock};
     for (const n of NODES) {
@@ -74,12 +78,28 @@ function loadNetwork() {
     }
     result.NODES = NODES;
     result.EDGES = EDGES;
+    result.TYPED_EDGES = TYPED_EDGES;
+    result.RELATION_TYPES = RELATION_TYPES;
     result.CATEGORY_META = CATEGORY_META;
     result.RING_ORDER = RING_ORDER;
     `,
     sandbox
   );
   return sandbox.result;
+}
+
+function validTypedEdges(NODES, TYPED_EDGES, RELATION_TYPES) {
+  const ids = new Set(NODES.map((n) => n.id));
+  const out = [];
+  for (const row of TYPED_EDGES || []) {
+    const [a, b, type] = row;
+    if (!ids.has(a) || !ids.has(b) || !RELATION_TYPES[type]) {
+      console.warn(`Skipping typed edge: ${a} ${type} ${b}`);
+      continue;
+    }
+    out.push(row);
+  }
+  return out;
 }
 
 function cleanLabel(label) {
@@ -94,12 +114,21 @@ function ontologyStamp() {
   };
 }
 
-function buildJsonLd({ NODES, EDGES, CATEGORY_META, RING_ORDER }) {
+function buildJsonLd({ NODES, EDGES, CATEGORY_META, RING_ORDER, TYPED_EDGES, RELATION_TYPES }) {
+  const typed = validTypedEdges(NODES, TYPED_EDGES, RELATION_TYPES);
   const nodeById = Object.fromEntries(NODES.map((n) => [n.id, n]));
   const relatedBySource = {};
   for (const [a, b, strength] of EDGES) {
     if (!relatedBySource[a]) relatedBySource[a] = [];
     relatedBySource[a].push({ "@id": `${BASE}${b}`, "hi:strength": strength });
+  }
+  for (const [a, b, type] of typed) {
+    if (!relatedBySource[a]) relatedBySource[a] = [];
+    relatedBySource[a].push({
+      "@id": `${BASE}${b}`,
+      "hi:strength": 0.9,
+      "hi:relationType": type,
+    });
   }
 
   const stamp = ontologyStamp();
@@ -122,6 +151,7 @@ function buildJsonLd({ NODES, EDGES, CATEGORY_META, RING_ORDER }) {
     "owl:versionInfo": "1.0.0",
     "hi:nodeCount": NODES.length,
     "hi:edgeCount": EDGES.length,
+    "hi:typedEdgeCount": typed.length,
   });
 
   graph.push({
@@ -182,6 +212,8 @@ function buildJsonLd({ NODES, EDGES, CATEGORY_META, RING_ORDER }) {
       ringOrder: { "@id": "hi:ringOrder", "@type": "xsd:integer" },
       nodeCount: { "@id": "hi:nodeCount", "@type": "xsd:integer" },
       edgeCount: { "@id": "hi:edgeCount", "@type": "xsd:integer" },
+      typedEdgeCount: { "@id": "hi:typedEdgeCount", "@type": "xsd:integer" },
+      relationType: { "@id": "hi:relationType" },
       modified: { "@id": "dc:modified", "@type": "xsd:dateTime" },
       date: { "@id": "dc:date", "@type": "xsd:date" },
       xsd: "http://www.w3.org/2001/XMLSchema#",
@@ -197,7 +229,7 @@ function turtleEscape(str) {
     .replace(/\n/g, "\\n");
 }
 
-function buildTurtle({ NODES, EDGES, CATEGORY_META, RING_ORDER }) {
+function buildTurtle({ NODES, EDGES, CATEGORY_META, RING_ORDER, TYPED_EDGES, RELATION_TYPES }) {
   const stamp = ontologyStamp();
   const lines = [];
   lines.push(`@prefix hi: <${BASE}> .`);
@@ -267,13 +299,24 @@ function buildTurtle({ NODES, EDGES, CATEGORY_META, RING_ORDER }) {
     lines.push("");
   }
 
+  const typed = validTypedEdges(NODES, TYPED_EDGES, RELATION_TYPES);
+  for (const [a, b, type] of typed) {
+    const relId = `rel-${a}-${b}-${type}`.replace(/[^a-zA-Z0-9_-]/g, "_");
+    lines.push(`hi:${relId} a hi:Relation ;`);
+    lines.push(`  hi:source hi:${a} ;`);
+    lines.push(`  hi:target hi:${b} ;`);
+    lines.push(`  hi:relationType hi:${type} .`);
+    lines.push("");
+  }
+
   return lines.join("\n");
 }
 
-function buildOwlTurtle({ NODES, EDGES, CATEGORY_META, RING_ORDER }) {
+function buildOwlTurtle({ NODES, EDGES, CATEGORY_META, RING_ORDER, TYPED_EDGES, RELATION_TYPES }) {
   const stamp = ontologyStamp();
   const lines = [];
   const categoryClasses = RING_ORDER.map((cat) => CAT_CLASS[cat]);
+  const typed = validTypedEdges(NODES, TYPED_EDGES, RELATION_TYPES);
 
   lines.push(`@prefix hi: <${BASE}> .`);
   lines.push(`@prefix owl: <http://www.w3.org/2002/07/owl#> .`);
@@ -295,7 +338,8 @@ function buildOwlTurtle({ NODES, EDGES, CATEGORY_META, RING_ORDER }) {
   lines.push(`  dc:modified "${stamp.modified}"^^xsd:dateTime ;`);
   lines.push(`  owl:imports <http://www.w3.org/2004/02/skos/core> ;`);
   lines.push(`  hi:nodeCount "${NODES.length}"^^xsd:integer ;`);
-  lines.push(`  hi:edgeCount "${EDGES.length}"^^xsd:integer .`);
+  lines.push(`  hi:edgeCount "${EDGES.length}"^^xsd:integer ;`);
+  lines.push(`  hi:typedEdgeCount "${typed.length}"^^xsd:integer .`);
   lines.push("");
 
   // --- TBox: classes ---
@@ -339,8 +383,18 @@ function buildOwlTurtle({ NODES, EDGES, CATEGORY_META, RING_ORDER }) {
   lines.push(`  rdfs:label "related to"@en ;`);
   lines.push(`  rdfs:domain hi:Concept ;`);
   lines.push(`  rdfs:range hi:Concept ;`);
+  lines.push(`  rdfs:comment "Undirected conceptual proximity. Typed verbs are subproperties."@en ;`);
   lines.push(`  owl:propertyType owl:SymmetricProperty .`);
   lines.push("");
+
+  for (const [type, meta] of Object.entries(RELATION_TYPES || {})) {
+    lines.push(`hi:${type} a owl:ObjectProperty ;`);
+    lines.push(`  rdfs:subPropertyOf hi:relatedTo ;`);
+    lines.push(`  rdfs:label "${turtleEscape(meta.verb)}"@en ;`);
+    lines.push(`  rdfs:domain hi:Concept ;`);
+    lines.push(`  rdfs:range hi:Concept .`);
+    lines.push("");
+  }
 
   lines.push(`hi:inCategory a owl:ObjectProperty ;`);
   lines.push(`  rdfs:label "in category"@en ;`);
@@ -364,6 +418,12 @@ function buildOwlTurtle({ NODES, EDGES, CATEGORY_META, RING_ORDER }) {
   lines.push(`  rdfs:label "relation target"@en ;`);
   lines.push(`  rdfs:domain hi:NetworkRelation ;`);
   lines.push(`  rdfs:range hi:Concept .`);
+  lines.push("");
+
+  lines.push(`hi:relationType a owl:ObjectProperty ;`);
+  lines.push(`  rdfs:label "relation type"@en ;`);
+  lines.push(`  rdfs:domain hi:NetworkRelation ;`);
+  lines.push(`  rdfs:range owl:ObjectProperty .`);
   lines.push("");
 
   // --- TBox: datatype properties ---
@@ -452,6 +512,11 @@ function buildOwlTurtle({ NODES, EDGES, CATEGORY_META, RING_ORDER }) {
   }
   lines.push("");
 
+  for (const [a, b, type] of typed) {
+    lines.push(`hi:${a} hi:${type} hi:${b} .`);
+  }
+  lines.push("");
+
   // --- ABox: reified network relations ---
   for (const [a, b, strength] of EDGES) {
     const relId = `rel-${a}-${b}`.replace(/[^a-zA-Z0-9_-]/g, "_");
@@ -459,6 +524,16 @@ function buildOwlTurtle({ NODES, EDGES, CATEGORY_META, RING_ORDER }) {
     lines.push(`  hi:relationSource hi:${a} ;`);
     lines.push(`  hi:relationTarget hi:${b} ;`);
     lines.push(`  hi:relationStrength "${strength}"^^xsd:decimal .`);
+    lines.push("");
+  }
+
+  for (const [a, b, type] of typed) {
+    const relId = `rel-${a}-${b}-${type}`.replace(/[^a-zA-Z0-9_-]/g, "_");
+    lines.push(`hi:${relId} a owl:NamedIndividual, hi:NetworkRelation ;`);
+    lines.push(`  hi:relationSource hi:${a} ;`);
+    lines.push(`  hi:relationTarget hi:${b} ;`);
+    lines.push(`  hi:relationType hi:${type} ;`);
+    lines.push(`  hi:relationStrength "0.9"^^xsd:decimal .`);
     lines.push("");
   }
 
@@ -475,7 +550,7 @@ function main() {
   fs.writeFileSync(OUT_TTL, ttl);
   fs.writeFileSync(OUT_OWL, owl);
 
-  console.log(`Wrote ${path.basename(OUT_JSONLD)} (${network.NODES.length} concepts, ${network.EDGES.length} relations)`);
+  console.log(`Wrote ${path.basename(OUT_JSONLD)} (${network.NODES.length} concepts, ${network.EDGES.length} relations, ${(network.TYPED_EDGES || []).length} typed)`);
   console.log(`Wrote ${path.basename(OUT_TTL)}`);
   console.log(`Wrote ${path.basename(OUT_OWL)}`);
 }

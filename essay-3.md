@@ -15,16 +15,16 @@ otherEssayLabel: Essay 1
 <!-- Rebuild HTML + PDF: node build-essays.js --pdf -->
 
 ::: figure
-![The Hybrid Intelligences radial network: concentric rings of concepts around a central hub. One visual interface into the knowledge architecture, not the ontology itself.](screenshots/network.jpg)
+![Diagram titled Essay 3: Practices — Hybrid Intelligences: Ontology, Knowledge Graph, and Cognitive Assemblage. Essay 3 at the center, with four clusters: Ontology as Knowledge Base, Network Visualization, Hybrid Intelligences Hub, and Cognitive Assemblages, plus a legend of semantically differentiated relations.](screenshots/ontology-knowledge-graph.jpg)
 
-The radial network is one visual and navigational interface · not the ontology itself
+Essay 3 as practice · four clusters and a vocabulary of relations
 :::
 
 In [Hybrid Intelligences](concept:hybrid), I am developing an evolving knowledge architecture that combines a computational [ontology](concept:ontology_kb), a knowledge graph, artistic research, [network visualization](concept:network_viz), and [generative AI](concept:gen_ai) interfaces. Together, these components form an experimental [cognitive assemblage](concept:assemblage) through which I investigate intelligence as [coupling](concept:coupling) across bodies, technologies, institutions, environments, and worlds.
 
 I use the term ontology deliberately. In knowledge representation and artificial intelligence, an ontology is not simply a collection of keywords, concepts, or visualizations. It provides a formal and machine-readable way of specifying entities and concepts within a domain, their categories, properties, and relationships.
 
-The [Hybrid Intelligences Hub](concept:hi_hub) currently contains 236 concepts and 2,361 relationships. These concepts and relationships are not only displayed through a network visualization; I also represent them through Semantic Web and knowledge-representation standards, including SKOS, JSON-LD, RDF/Turtle, and OWL.
+The [Hybrid Intelligences Hub](concept:hi_hub) currently contains 238 concepts and 2,379 weighted relationships. One hundred two of those relationships are also typed: directed verbs such as couples with, enables, mediates, and proposes, published in the [network](concept:network_viz) and in the machine-readable ontology. The concepts and relationships are not only displayed through a visualization; I also represent them through Semantic Web and knowledge-representation standards, including SKOS, JSON-LD, RDF/Turtle, and OWL.
 
 The project publishes several machine-readable representations of this knowledge architecture:
 
@@ -40,6 +40,9 @@ Within the OWL representation, I define hi:Concept as a superclass and organize 
 - hi:ProgramConcept
 - hi:OrganizationConcept
 - hi:PremiseConcept
+- hi:ParticipantConcept
+- hi:BackgroundConcept
+- hi:FacilitatorConcept
 - hi:PracticeConcept
 - hi:TensionConcept
 - hi:QualityConcept
@@ -49,7 +52,25 @@ Within the OWL representation, I define hi:Concept as a superclass and organize 
 - hi:AuthorConcept
 :::
 
-I also define object properties, datatype properties, domains, ranges, subclasses, and relationships between entities. In this sense, the project goes beyond producing a visualization of interconnected ideas. I am engaging directly with practices of ontology engineering and computational knowledge representation.
+The OWL layer also defines object properties. `hi:relatedTo` remains the general, weighted association. Thirteen directed verbs are declared as `rdfs:subPropertyOf hi:relatedTo`:
+
+::: cluster
+- hi:couplesWith
+- hi:enables
+- hi:mediates
+- hi:cultivates
+- hi:constrains
+- hi:participatesIn
+- hi:critiques
+- hi:proposes
+- hi:instantiates
+- hi:develops
+- hi:enacts
+- hi:embodies
+- hi:emergesFrom
+:::
+
+I also define datatype properties, domains, ranges, subclasses, and individuals. In this sense, the project goes beyond producing a visualization of interconnected ideas. I am engaging directly with practices of ontology engineering and computational knowledge representation.
 
 ## Three interconnected layers
 
@@ -77,31 +98,37 @@ The system continually feeds back into itself.
 
 ## From associations to semantic relationships
 
-One of the next stages of my research is to make the relational structure of the ontology more expressive.
+Many of the relationships still operate through a general formulation of relatedness plus relational weight. That substrate remains: thousands of `relatedTo` edges whose thickness is strength. It has been useful for constructing and navigating the network. I have now also begun to ask not only whether two concepts are connected, but *how* they are connected.
 
-Many of the current relationships operate through a relatively general formulation of relatedness plus relational weight. This has been useful for constructing and navigating the network, but I am increasingly interested in asking not only whether two concepts are connected, but *how* they are connected.
-
-Instead of representing a relationship primarily as:
+The general association is still:
 
 ::: term-list
 - Embodiment → relatedTo → Cognition
 :::
 
-I want to investigate semantically differentiated relationships such as:
+On top of it the graph now carries a seed of semantically differentiated, directed relationships — one hundred two assertions using the thirteen verbs named above. They are visible in the network (a Relations filter, combinable with a category ring), in the ontology browser, and as OWL object-property assertions such as hi:body hi:couplesWith hi:ai.
+
+Examples now asserted in the Hub:
 
 ::: term-list
-- embodiment → enables → cognition
-- tool → mediates → cognition
-- practice → cultivates → capacity
-- institution → constrains → practice
-- technology → participatesIn → assemblage
-- concept → critiques → concept
-- author → proposes → framework
-- artwork → instantiates → concept
-- essay → develops → concept
-- practice → enacts → concept
-- AI system → mediates → relation
+- [body](concept:body) → couples with → [artificial intelligence](concept:ai)
+- [embodiment](concept:embodiment) → enables → [cognition](concept:cognition)
+- [LLM](concept:llm) → mediates → cognition
+- [somatics](concept:somatics) → cultivates → [literacies](concept:literacies)
+- [CAME](concept:came) → constrains → [creativity](concept:creative)
+- [conversational AI](concept:conversational_ai) → participates in → [Hybrid Intelligences Hub](concept:hi_hub)
+- [hybrid intelligences](concept:hybrid) → critiques → [techno-dualism](concept:techno_dualism)
+- [Hayles](concept:hayles) → proposes → [cognitive assemblages](concept:assemblage)
+- [Maturana](concept:maturana) and [Varela](concept:varela) → propose → [autopoiesis](concept:autopoiesis)
+- [Marlon Barrios Solano](concept:marlon) → proposes → [Essay 1](concept:essay_1), [Essay 2](concept:essay_2), [Essay 3](concept:essay_3)
+- [network visualization](concept:network_viz) → instantiates → assemblage
+- Essay 3 → develops → [ontology as knowledge base](concept:ontology_kb)
+- [Enact](concept:enact) → enacts → [coupling](concept:coupling)
+- [body](concept:body) → embodies → cognition
+- [intelligence](concept:intelligence) → emerges from → coupling
 :::
+
+Most edges remain untyped association. The seed is small on purpose. I am not pretending that every proximity is already a differentiated verb.
 
 This shifts the research question from:
 
@@ -111,7 +138,7 @@ toward:
 
 What kinds of relationships produce the assemblage?
 
-I see this as an important next step in developing Hybrid Intelligences from a network of weighted conceptual associations toward a richer relational ontology of cognitive assemblages.
+That question is no longer only prospective. It is now a working layer of the knowledge architecture — still thin, still growing, already inspectable.
 
 ## Questioning fixed categories
 
@@ -188,7 +215,7 @@ Artistic practice enters the assemblage and generates new questions.
 
 Those questions return to the research and potentially transform the ontology.
 
-For this reason, I see the next stage of Hybrid Intelligences not simply as expanding the number of concepts or adding new AI features. I am interested in developing a richer relational ontology of cognitive assemblages, in which relations such as mediates, constrains, enables, embodies, transforms, participates in, emerges from, and critiques become first-class components of the knowledge architecture.
+For this reason, I see the next stage of Hybrid Intelligences not simply as expanding the number of concepts or adding new AI features. Relations such as couples with, enables, mediates, cultivates, constrains, participates in, critiques, proposes, instantiates, develops, enacts, embodies, and emerges from are now first-class components of the knowledge architecture. What remains is to grow that seed, to let more of the graph speak in verbs, and to keep asking whether entities may occupy more than one functional position at once.
 
 This makes the ontology itself part of my artistic and epistemological research.
 

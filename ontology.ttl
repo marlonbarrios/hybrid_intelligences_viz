@@ -12,9 +12,9 @@
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   owl:versionInfo "1.0.0" ;
   dc:date "2026-09-02"^^xsd:date ;
-  dc:modified "2026-09-02T22:33:23.918Z"^^xsd:dateTime ;
-  hi:nodeCount "236"^^xsd:integer ;
-  hi:edgeCount "2361"^^xsd:integer .
+  dc:modified "2026-09-02T23:28:26.883Z"^^xsd:dateTime ;
+  hi:nodeCount "238"^^xsd:integer ;
+  hi:edgeCount "2379"^^xsd:integer .
 
 hi:scheme a skos:ConceptScheme ;
   skos:prefLabel "Hybrid Intelligences Concept Scheme" ;
@@ -2163,7 +2163,7 @@ hi:conversational_ai a skos:Concept, hi:NetworkNode ;
 
 hi:ontology_kb a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Ontology as Knowledge Base" ;
-  skos:definition "The Hybrid Intelligences ontology as a living vocabulary that grounds the conversational AI. Concepts, definitions, and weighted relations are the source of truth the spoken companion is given — a situated knowledge base rather than a generic model talking about the program from outside. Essays feed this scheme; the network makes it visible; Voice, Image, Mini-pod, and Enact generate from it. Essay 3 describes this as three layers — concept scheme, knowledge graph, and formal OWL ontology — and asks how relations themselves might become more semantically differentiated." ;
+  skos:definition "The Hybrid Intelligences ontology as a living vocabulary that grounds the conversational AI. Concepts, definitions, weighted relatedTo edges, and a seed of typed verbs (couples with, enables, mediates, cultivates, constrains, participates in, critiques, proposes, instantiates, develops, enacts, embodies, emerges from) are the source of truth the spoken companion is given — a situated knowledge base rather than a generic model talking about the program from outside. Essays feed this scheme; the network makes it visible; Voice, Image, Mini-pod, and Enact generate from it. Essay 3 describes this as three layers — concept scheme, knowledge graph, and formal OWL ontology — with those thirteen verbs as first-class object properties." ;
   skos:broader hi:category/practice ;
   skos:inScheme hi:scheme ;
   hi:category "practice" ;
@@ -2174,7 +2174,7 @@ hi:ontology_kb a skos:Concept, hi:NetworkNode ;
 
 hi:network_viz a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Network Visualization" ;
-  skos:definition "The radial map of the Hybrid Intelligences ontology — concentric rings of concepts and weighted relations. Information visualization as a way of thinking with the Hub: coupling becomes seeable, not only readable. The same nodes that ground Voice can be opened as Talk, Image, or Mini-pod. Essay 3 is careful: this network is not the ontology itself. It is one visual and navigational interface into the knowledge architecture." ;
+  skos:definition "The radial map of the Hybrid Intelligences ontology — concentric rings of concepts, weighted relatedTo edges, and a seed of typed verbs. A Relations filter can isolate a verb, alone or together with a category ring. Information visualization as a way of thinking with the Hub: coupling becomes seeable, not only readable. The same nodes that ground Voice can be opened as Talk, Image, or Mini-pod. Essay 3 is careful: this network is not the ontology itself. It is one visual and navigational interface into the knowledge architecture." ;
   skos:broader hi:category/practice ;
   skos:inScheme hi:scheme ;
   hi:category "practice" ;
@@ -2185,7 +2185,7 @@ hi:network_viz a skos:Concept, hi:NetworkNode ;
 
 hi:hi_essays a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Essays" ;
-  skos:definition "The publishing layer of the Hybrid Intelligences Hub — research writing by Marlon Barrios Solano and future guest collaborations that feed the ontology. Current entries: Essay 1 (cognitive assemblages and complex embodiment), Essay 2 (My Umwelt), and Essay 3 (ontology, knowledge graph, and cognitive assemblage). Writing here is not illustration after the fact; it is knowledge that becomes concepts, relations, and prompts for Voice, Image, Mini-pod, and Enact." ;
+  skos:definition "The publishing layer of the Hybrid Intelligences Hub. The three essays published now are by Marlon Barrios Solano: Essay 1 (cognitive assemblages and complex embodiment), Essay 2 (My Umwelt, in conversation with GPT-5.5), and Essay 3 (ontology, knowledge graph, and cognitive assemblage). Guest collaborations will feed the ontology as the section grows. Writing here is not illustration after the fact; it is knowledge that becomes concepts, relations, and prompts for Voice, Image, Mini-pod, and Enact." ;
   skos:broader hi:category/practice ;
   skos:inScheme hi:scheme ;
   hi:category "practice" ;
@@ -2194,9 +2194,31 @@ hi:hi_essays a skos:Concept, hi:NetworkNode ;
   schema:url <essays.html>
  .
 
+hi:essay_1 a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Essay 1" ;
+  skos:definition "Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI — Essay 1 by Marlon Barrios Solano (July 10, 2026). Develops intelligence as coupling and embodiment as a nested ecology of body, tool, institution, and world. The argument that cognition circulates through assemblages rather than sitting inside an isolated subject." ;
+  skos:broader hi:category/practice ;
+  skos:inScheme hi:scheme ;
+  hi:category "practice" ;
+  hi:weight "1.55"^^xsd:decimal
+ ;
+  schema:url <essay.html>
+ .
+
+hi:essay_2 a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Essay 2" ;
+  skos:definition "My Umwelt — Essay 2 by Marlon Barrios Solano, in conversation with GPT-5.5 (July 20, 2026). A first-person inquiry into lived worlds: Uexküll’s Umwelt, enactivism, and what a language model’s possible world (a Latentwelt) might be. Authored by Marlon; the conversation with the model is method, not a guest byline." ;
+  skos:broader hi:category/practice ;
+  skos:inScheme hi:scheme ;
+  hi:category "practice" ;
+  hi:weight "1.5"^^xsd:decimal
+ ;
+  schema:url <essay-2.html>
+ .
+
 hi:essay_3 a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Essay 3" ;
-  skos:definition "Hybrid Intelligences: Ontology, Knowledge Graph, and Cognitive Assemblage — Essay 3 by Marlon Barrios Solano (September 2, 2026). Describes the Hub as three interconnected layers: a SKOS concept scheme, a knowledge graph of weighted relations, and a formal OWL ontology. The radial network is one visual interface, not the ontology itself. Argues for semantically differentiated relations (enables, mediates, constrains, critiques) and for entities that occupy multiple functional positions at once. The ontology is epistemic context for generative AI, not training. Intelligence emerges through coupling among ontology, model, human, and network." ;
+  skos:definition "Hybrid Intelligences: Ontology, Knowledge Graph, and Cognitive Assemblage — Essay 3 by Marlon Barrios Solano (September 2, 2026). Describes the Hub as three interconnected layers: a SKOS concept scheme, a knowledge graph of weighted relations, and a formal OWL ontology. The radial network is one visual interface, not the ontology itself. Names the thirteen typed verbs now seeded on the graph (couples with, enables, mediates, cultivates, constrains, participates in, critiques, proposes, instantiates, develops, enacts, embodies, emerges from) and asks whether entities may occupy multiple functional positions at once. The ontology is epistemic context for generative AI, not training. Intelligence emerges through coupling among ontology, model, human, and network." ;
   skos:broader hi:category/practice ;
   skos:inScheme hi:scheme ;
   hi:category "practice" ;
@@ -2643,7 +2665,7 @@ hi:bg_digital_art a skos:Concept, hi:NetworkNode ;
 
 hi:marlon a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Marlon Barrios Solano" ;
-  skos:definition "Co-director of Hybrid Intelligences and Maker-in-Residence at CAME, focused on AI, arts, and diasporas. Venezuelan-American interdisciplinary artist, creative technologist, and researcher with a background in dance, software engineering, and cognitive science; MFA in Dance and Technology (Ohio State). Founder of dance-tech.net; work combines generative AI, creative coding, and performance. Certified in Vipassana/mindfulness (Spirit Rock), Embodyoga, and Somatic Experiencing." ;
+  skos:definition "Co-director of Hybrid Intelligences and Maker-in-Residence at CAME, focused on AI, arts, and diasporas. Author of the three essays published now: Essay 1 (cognitive assemblages and complex embodiment), Essay 2 (My Umwelt), and Essay 3 (ontology, knowledge graph, and cognitive assemblage). Venezuelan-American interdisciplinary artist, creative technologist, and researcher with a background in dance, software engineering, and cognitive science; MFA in Dance and Technology (Ohio State). Founder of dance-tech.net; work combines generative AI, creative coding, and performance. Certified in Vipassana/mindfulness (Spirit Rock), Embodyoga, and Somatic Experiencing." ;
   skos:broader hi:category/facilitator ;
   skos:inScheme hi:scheme ;
   hi:category "facilitator" ;
@@ -15086,11 +15108,119 @@ hi:rel-hi_essays-philosophical_practice a hi:Relation ;
   hi:strength "0.82"^^xsd:decimal ;
   skos:relatedMatch hi:philosophical_practice .
 
+hi:rel-hi_essays-essay_1 a hi:Relation ;
+  hi:source hi:hi_essays ;
+  hi:target hi:essay_1 ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:essay_1 .
+
+hi:rel-hi_essays-essay_2 a hi:Relation ;
+  hi:source hi:hi_essays ;
+  hi:target hi:essay_2 ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:essay_2 .
+
 hi:rel-hi_essays-essay_3 a hi:Relation ;
   hi:source hi:hi_essays ;
   hi:target hi:essay_3 ;
   hi:strength "0.98"^^xsd:decimal ;
   skos:relatedMatch hi:essay_3 .
+
+hi:rel-essay_1-essay_2 a hi:Relation ;
+  hi:source hi:essay_1 ;
+  hi:target hi:essay_2 ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:essay_2 .
+
+hi:rel-essay_1-essay_3 a hi:Relation ;
+  hi:source hi:essay_1 ;
+  hi:target hi:essay_3 ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:essay_3 .
+
+hi:rel-essay_2-essay_3 a hi:Relation ;
+  hi:source hi:essay_2 ;
+  hi:target hi:essay_3 ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:essay_3 .
+
+hi:rel-essay_1-marlon a hi:Relation ;
+  hi:source hi:essay_1 ;
+  hi:target hi:marlon ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:marlon .
+
+hi:rel-essay_1-assemblage a hi:Relation ;
+  hi:source hi:essay_1 ;
+  hi:target hi:assemblage ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:assemblage .
+
+hi:rel-essay_1-embodiment a hi:Relation ;
+  hi:source hi:essay_1 ;
+  hi:target hi:embodiment ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:embodiment .
+
+hi:rel-essay_1-hybrid a hi:Relation ;
+  hi:source hi:essay_1 ;
+  hi:target hi:hybrid ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:hybrid .
+
+hi:rel-essay_1-coupling a hi:Relation ;
+  hi:source hi:essay_1 ;
+  hi:target hi:coupling ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:coupling .
+
+hi:rel-essay_1-hayles a hi:Relation ;
+  hi:source hi:essay_1 ;
+  hi:target hi:hayles ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:hayles .
+
+hi:rel-essay_1-hi_hub a hi:Relation ;
+  hi:source hi:essay_1 ;
+  hi:target hi:hi_hub ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:hi_hub .
+
+hi:rel-essay_2-marlon a hi:Relation ;
+  hi:source hi:essay_2 ;
+  hi:target hi:marlon ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:marlon .
+
+hi:rel-essay_2-umwelt a hi:Relation ;
+  hi:source hi:essay_2 ;
+  hi:target hi:umwelt ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:umwelt .
+
+hi:rel-essay_2-enactivism a hi:Relation ;
+  hi:source hi:essay_2 ;
+  hi:target hi:enactivism ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:enactivism .
+
+hi:rel-essay_2-llm a hi:Relation ;
+  hi:source hi:essay_2 ;
+  hi:target hi:llm ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:llm .
+
+hi:rel-essay_2-pendular_umwelt a hi:Relation ;
+  hi:source hi:essay_2 ;
+  hi:target hi:pendular_umwelt ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:pendular_umwelt .
+
+hi:rel-essay_2-hi_hub a hi:Relation ;
+  hi:source hi:essay_2 ;
+  hi:target hi:hi_hub ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:hi_hub .
 
 hi:rel-essay_3-ontology_kb a hi:Relation ;
   hi:source hi:essay_3 ;
@@ -17017,3 +17147,513 @@ hi:rel-karla-physical_ai a hi:Relation ;
   hi:target hi:physical_ai ;
   hi:strength "0.7"^^xsd:decimal ;
   skos:relatedMatch hi:physical_ai .
+
+hi:rel-autopoiesis-coupling-couplesWith a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:coupling ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-autopoiesis-ecology-couplesWith a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:ecology ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-body-ai-couplesWith a hi:Relation ;
+  hi:source hi:body ;
+  hi:target hi:ai ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-body-extended-couplesWith a hi:Relation ;
+  hi:source hi:body ;
+  hi:target hi:extended ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-body-ecology-couplesWith a hi:Relation ;
+  hi:source hi:body ;
+  hi:target hi:ecology ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-embodiment-mediation-couplesWith a hi:Relation ;
+  hi:source hi:embodiment ;
+  hi:target hi:mediation ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-llm-ontology_kb-couplesWith a hi:Relation ;
+  hi:source hi:llm ;
+  hi:target hi:ontology_kb ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-conversational_ai-ontology_kb-couplesWith a hi:Relation ;
+  hi:source hi:conversational_ai ;
+  hi:target hi:ontology_kb ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-network_viz-ontology_kb-couplesWith a hi:Relation ;
+  hi:source hi:network_viz ;
+  hi:target hi:ontology_kb ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-hi_hub-assemblage-couplesWith a hi:Relation ;
+  hi:source hi:hi_hub ;
+  hi:target hi:assemblage ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-hi_hub-coupling-couplesWith a hi:Relation ;
+  hi:source hi:hi_hub ;
+  hi:target hi:coupling ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-hybrid-technosymbiosis-couplesWith a hi:Relation ;
+  hi:source hi:hybrid ;
+  hi:target hi:technosymbiosis ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-marlon-conversational_ai-couplesWith a hi:Relation ;
+  hi:source hi:marlon ;
+  hi:target hi:conversational_ai ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-enact-body-couplesWith a hi:Relation ;
+  hi:source hi:enact ;
+  hi:target hi:body ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-gen_ai-creative-couplesWith a hi:Relation ;
+  hi:source hi:gen_ai ;
+  hi:target hi:creative ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-autopoiesis-cognition-enables a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:cognition ;
+  hi:relationType hi:enables .
+
+hi:rel-autopoiesis-enactivism-enables a hi:Relation ;
+  hi:source hi:autopoiesis ;
+  hi:target hi:enactivism ;
+  hi:relationType hi:enables .
+
+hi:rel-embodiment-cognition-enables a hi:Relation ;
+  hi:source hi:embodiment ;
+  hi:target hi:cognition ;
+  hi:relationType hi:enables .
+
+hi:rel-embodiment-intelligence-enables a hi:Relation ;
+  hi:source hi:embodiment ;
+  hi:target hi:intelligence ;
+  hi:relationType hi:enables .
+
+hi:rel-4e-cognition-enables a hi:Relation ;
+  hi:source hi:4e ;
+  hi:target hi:cognition ;
+  hi:relationType hi:enables .
+
+hi:rel-enactivism-cognition-enables a hi:Relation ;
+  hi:source hi:enactivism ;
+  hi:target hi:cognition ;
+  hi:relationType hi:enables .
+
+hi:rel-coupling-intelligence-enables a hi:Relation ;
+  hi:source hi:coupling ;
+  hi:target hi:intelligence ;
+  hi:relationType hi:enables .
+
+hi:rel-somatics-embodiment-enables a hi:Relation ;
+  hi:source hi:somatics ;
+  hi:target hi:embodiment ;
+  hi:relationType hi:enables .
+
+hi:rel-literacies-coupling-enables a hi:Relation ;
+  hi:source hi:literacies ;
+  hi:target hi:coupling ;
+  hi:relationType hi:enables .
+
+hi:rel-extended-cognition-mediates a hi:Relation ;
+  hi:source hi:extended ;
+  hi:target hi:cognition ;
+  hi:relationType hi:mediates .
+
+hi:rel-llm-cognition-mediates a hi:Relation ;
+  hi:source hi:llm ;
+  hi:target hi:cognition ;
+  hi:relationType hi:mediates .
+
+hi:rel-llm-mediation-mediates a hi:Relation ;
+  hi:source hi:llm ;
+  hi:target hi:mediation ;
+  hi:relationType hi:mediates .
+
+hi:rel-conversational_ai-ontology_kb-mediates a hi:Relation ;
+  hi:source hi:conversational_ai ;
+  hi:target hi:ontology_kb ;
+  hi:relationType hi:mediates .
+
+hi:rel-network_viz-ontology_kb-mediates a hi:Relation ;
+  hi:source hi:network_viz ;
+  hi:target hi:ontology_kb ;
+  hi:relationType hi:mediates .
+
+hi:rel-gen_ai-creative-mediates a hi:Relation ;
+  hi:source hi:gen_ai ;
+  hi:target hi:creative ;
+  hi:relationType hi:mediates .
+
+hi:rel-mediation-cognition-mediates a hi:Relation ;
+  hi:source hi:mediation ;
+  hi:target hi:cognition ;
+  hi:relationType hi:mediates .
+
+hi:rel-ai-cognition-mediates a hi:Relation ;
+  hi:source hi:ai ;
+  hi:target hi:cognition ;
+  hi:relationType hi:mediates .
+
+hi:rel-somatics-literacies-cultivates a hi:Relation ;
+  hi:source hi:somatics ;
+  hi:target hi:literacies ;
+  hi:relationType hi:cultivates .
+
+hi:rel-vipassana-literacies-cultivates a hi:Relation ;
+  hi:source hi:vipassana ;
+  hi:target hi:literacies ;
+  hi:relationType hi:cultivates .
+
+hi:rel-choreography-literacies-cultivates a hi:Relation ;
+  hi:source hi:choreography ;
+  hi:target hi:literacies ;
+  hi:relationType hi:cultivates .
+
+hi:rel-philosophical_practice-epistemology-cultivates a hi:Relation ;
+  hi:source hi:philosophical_practice ;
+  hi:target hi:epistemology ;
+  hi:relationType hi:cultivates .
+
+hi:rel-hi_program-literacies-cultivates a hi:Relation ;
+  hi:source hi:hi_program ;
+  hi:target hi:literacies ;
+  hi:relationType hi:cultivates .
+
+hi:rel-creative-creative_embodiment-cultivates a hi:Relation ;
+  hi:source hi:creative ;
+  hi:target hi:creative_embodiment ;
+  hi:relationType hi:cultivates .
+
+hi:rel-came-creative-constrains a hi:Relation ;
+  hi:source hi:came ;
+  hi:target hi:creative ;
+  hi:relationType hi:constrains .
+
+hi:rel-cota-creative-constrains a hi:Relation ;
+  hi:source hi:cota ;
+  hi:target hi:creative ;
+  hi:relationType hi:constrains .
+
+hi:rel-came-hi_hub-constrains a hi:Relation ;
+  hi:source hi:came ;
+  hi:target hi:hi_hub ;
+  hi:relationType hi:constrains .
+
+hi:rel-techno_dualism-hybrid-constrains a hi:Relation ;
+  hi:source hi:techno_dualism ;
+  hi:target hi:hybrid ;
+  hi:relationType hi:constrains .
+
+hi:rel-bio_exception-assemblage-constrains a hi:Relation ;
+  hi:source hi:bio_exception ;
+  hi:target hi:assemblage ;
+  hi:relationType hi:constrains .
+
+hi:rel-ai-assemblage-participatesIn a hi:Relation ;
+  hi:source hi:ai ;
+  hi:target hi:assemblage ;
+  hi:relationType hi:participatesIn .
+
+hi:rel-llm-assemblage-participatesIn a hi:Relation ;
+  hi:source hi:llm ;
+  hi:target hi:assemblage ;
+  hi:relationType hi:participatesIn .
+
+hi:rel-conversational_ai-hi_hub-participatesIn a hi:Relation ;
+  hi:source hi:conversational_ai ;
+  hi:target hi:hi_hub ;
+  hi:relationType hi:participatesIn .
+
+hi:rel-enact-hi_hub-participatesIn a hi:Relation ;
+  hi:source hi:enact ;
+  hi:target hi:hi_hub ;
+  hi:relationType hi:participatesIn .
+
+hi:rel-hi_essays-hi_hub-participatesIn a hi:Relation ;
+  hi:source hi:hi_essays ;
+  hi:target hi:hi_hub ;
+  hi:relationType hi:participatesIn .
+
+hi:rel-ontology_kb-hi_hub-participatesIn a hi:Relation ;
+  hi:source hi:ontology_kb ;
+  hi:target hi:hi_hub ;
+  hi:relationType hi:participatesIn .
+
+hi:rel-network_viz-hi_hub-participatesIn a hi:Relation ;
+  hi:source hi:network_viz ;
+  hi:target hi:hi_hub ;
+  hi:relationType hi:participatesIn .
+
+hi:rel-concept_image-hi_hub-participatesIn a hi:Relation ;
+  hi:source hi:concept_image ;
+  hi:target hi:hi_hub ;
+  hi:relationType hi:participatesIn .
+
+hi:rel-mini_pod-hi_hub-participatesIn a hi:Relation ;
+  hi:source hi:mini_pod ;
+  hi:target hi:hi_hub ;
+  hi:relationType hi:participatesIn .
+
+hi:rel-marlon-hi_hub-participatesIn a hi:Relation ;
+  hi:source hi:marlon ;
+  hi:target hi:hi_hub ;
+  hi:relationType hi:participatesIn .
+
+hi:rel-posthumanism-humanism-critiques a hi:Relation ;
+  hi:source hi:posthumanism ;
+  hi:target hi:humanism ;
+  hi:relationType hi:critiques .
+
+hi:rel-hybrid-techno_dualism-critiques a hi:Relation ;
+  hi:source hi:hybrid ;
+  hi:target hi:techno_dualism ;
+  hi:relationType hi:critiques .
+
+hi:rel-hybrid-bio_exception-critiques a hi:Relation ;
+  hi:source hi:hybrid ;
+  hi:target hi:bio_exception ;
+  hi:relationType hi:critiques .
+
+hi:rel-posthumanism-anthropocentrism-critiques a hi:Relation ;
+  hi:source hi:posthumanism ;
+  hi:target hi:anthropocentrism ;
+  hi:relationType hi:critiques .
+
+hi:rel-assemblage-humanism-critiques a hi:Relation ;
+  hi:source hi:assemblage ;
+  hi:target hi:humanism ;
+  hi:relationType hi:critiques .
+
+hi:rel-essay_3-techno_dualism-critiques a hi:Relation ;
+  hi:source hi:essay_3 ;
+  hi:target hi:techno_dualism ;
+  hi:relationType hi:critiques .
+
+hi:rel-hayles-assemblage-proposes a hi:Relation ;
+  hi:source hi:hayles ;
+  hi:target hi:assemblage ;
+  hi:relationType hi:proposes .
+
+hi:rel-hayles-technosymbiosis-proposes a hi:Relation ;
+  hi:source hi:hayles ;
+  hi:target hi:technosymbiosis ;
+  hi:relationType hi:proposes .
+
+hi:rel-clark-extended-proposes a hi:Relation ;
+  hi:source hi:clark ;
+  hi:target hi:extended ;
+  hi:relationType hi:proposes .
+
+hi:rel-varela-enactivism-proposes a hi:Relation ;
+  hi:source hi:varela ;
+  hi:target hi:enactivism ;
+  hi:relationType hi:proposes .
+
+hi:rel-maturana-autopoiesis-proposes a hi:Relation ;
+  hi:source hi:maturana ;
+  hi:target hi:autopoiesis ;
+  hi:relationType hi:proposes .
+
+hi:rel-varela-autopoiesis-proposes a hi:Relation ;
+  hi:source hi:varela ;
+  hi:target hi:autopoiesis ;
+  hi:relationType hi:proposes .
+
+hi:rel-uexkuell-umwelt-proposes a hi:Relation ;
+  hi:source hi:uexkuell ;
+  hi:target hi:umwelt ;
+  hi:relationType hi:proposes .
+
+hi:rel-gibson-affordances-proposes a hi:Relation ;
+  hi:source hi:gibson ;
+  hi:target hi:affordances ;
+  hi:relationType hi:proposes .
+
+hi:rel-marlon-hybrid-proposes a hi:Relation ;
+  hi:source hi:marlon ;
+  hi:target hi:hybrid ;
+  hi:relationType hi:proposes .
+
+hi:rel-marlon-essay_1-proposes a hi:Relation ;
+  hi:source hi:marlon ;
+  hi:target hi:essay_1 ;
+  hi:relationType hi:proposes .
+
+hi:rel-marlon-essay_2-proposes a hi:Relation ;
+  hi:source hi:marlon ;
+  hi:target hi:essay_2 ;
+  hi:relationType hi:proposes .
+
+hi:rel-marlon-essay_3-proposes a hi:Relation ;
+  hi:source hi:marlon ;
+  hi:target hi:essay_3 ;
+  hi:relationType hi:proposes .
+
+hi:rel-pendular_umwelt-umwelt-instantiates a hi:Relation ;
+  hi:source hi:pendular_umwelt ;
+  hi:target hi:umwelt ;
+  hi:relationType hi:instantiates .
+
+hi:rel-pendular_umwelt-latent_space-instantiates a hi:Relation ;
+  hi:source hi:pendular_umwelt ;
+  hi:target hi:latent_space ;
+  hi:relationType hi:instantiates .
+
+hi:rel-lobby_showcase-creative_ai-instantiates a hi:Relation ;
+  hi:source hi:lobby_showcase ;
+  hi:target hi:creative_ai ;
+  hi:relationType hi:instantiates .
+
+hi:rel-concept_image-ontology_kb-instantiates a hi:Relation ;
+  hi:source hi:concept_image ;
+  hi:target hi:ontology_kb ;
+  hi:relationType hi:instantiates .
+
+hi:rel-enact-creative_embodiment-instantiates a hi:Relation ;
+  hi:source hi:enact ;
+  hi:target hi:creative_embodiment ;
+  hi:relationType hi:instantiates .
+
+hi:rel-network_viz-assemblage-instantiates a hi:Relation ;
+  hi:source hi:network_viz ;
+  hi:target hi:assemblage ;
+  hi:relationType hi:instantiates .
+
+hi:rel-essay_3-ontology_kb-develops a hi:Relation ;
+  hi:source hi:essay_3 ;
+  hi:target hi:ontology_kb ;
+  hi:relationType hi:develops .
+
+hi:rel-essay_3-assemblage-develops a hi:Relation ;
+  hi:source hi:essay_3 ;
+  hi:target hi:assemblage ;
+  hi:relationType hi:develops .
+
+hi:rel-essay_3-coupling-develops a hi:Relation ;
+  hi:source hi:essay_3 ;
+  hi:target hi:coupling ;
+  hi:relationType hi:develops .
+
+hi:rel-essay_3-hi_hub-develops a hi:Relation ;
+  hi:source hi:essay_3 ;
+  hi:target hi:hi_hub ;
+  hi:relationType hi:develops .
+
+hi:rel-essay_3-network_viz-develops a hi:Relation ;
+  hi:source hi:essay_3 ;
+  hi:target hi:network_viz ;
+  hi:relationType hi:develops .
+
+hi:rel-essay_3-hybrid-develops a hi:Relation ;
+  hi:source hi:essay_3 ;
+  hi:target hi:hybrid ;
+  hi:relationType hi:develops .
+
+hi:rel-thompson-autopoiesis-develops a hi:Relation ;
+  hi:source hi:thompson ;
+  hi:target hi:autopoiesis ;
+  hi:relationType hi:develops .
+
+hi:rel-hi_essays-ontology_kb-develops a hi:Relation ;
+  hi:source hi:hi_essays ;
+  hi:target hi:ontology_kb ;
+  hi:relationType hi:develops .
+
+hi:rel-enact-coupling-enacts a hi:Relation ;
+  hi:source hi:enact ;
+  hi:target hi:coupling ;
+  hi:relationType hi:enacts .
+
+hi:rel-enact-embodiment-enacts a hi:Relation ;
+  hi:source hi:enact ;
+  hi:target hi:embodiment ;
+  hi:relationType hi:enacts .
+
+hi:rel-vipassana-enactivism-enacts a hi:Relation ;
+  hi:source hi:vipassana ;
+  hi:target hi:enactivism ;
+  hi:relationType hi:enacts .
+
+hi:rel-somatics-embodiment-enacts a hi:Relation ;
+  hi:source hi:somatics ;
+  hi:target hi:embodiment ;
+  hi:relationType hi:enacts .
+
+hi:rel-choreography-coupling-enacts a hi:Relation ;
+  hi:source hi:choreography ;
+  hi:target hi:coupling ;
+  hi:relationType hi:enacts .
+
+hi:rel-hi_hub-assemblage-enacts a hi:Relation ;
+  hi:source hi:hi_hub ;
+  hi:target hi:assemblage ;
+  hi:relationType hi:enacts .
+
+hi:rel-body-autopoiesis-embodies a hi:Relation ;
+  hi:source hi:body ;
+  hi:target hi:autopoiesis ;
+  hi:relationType hi:embodies .
+
+hi:rel-body-cognition-embodies a hi:Relation ;
+  hi:source hi:body ;
+  hi:target hi:cognition ;
+  hi:relationType hi:embodies .
+
+hi:rel-embodiment-coupling-embodies a hi:Relation ;
+  hi:source hi:embodiment ;
+  hi:target hi:coupling ;
+  hi:relationType hi:embodies .
+
+hi:rel-creative_embodiment-hybrid-embodies a hi:Relation ;
+  hi:source hi:creative_embodiment ;
+  hi:target hi:hybrid ;
+  hi:relationType hi:embodies .
+
+hi:rel-somatics-cognition-embodies a hi:Relation ;
+  hi:source hi:somatics ;
+  hi:target hi:cognition ;
+  hi:relationType hi:embodies .
+
+hi:rel-intelligence-coupling-emergesFrom a hi:Relation ;
+  hi:source hi:intelligence ;
+  hi:target hi:coupling ;
+  hi:relationType hi:emergesFrom .
+
+hi:rel-assemblage-coupling-emergesFrom a hi:Relation ;
+  hi:source hi:assemblage ;
+  hi:target hi:coupling ;
+  hi:relationType hi:emergesFrom .
+
+hi:rel-hybrid-assemblage-emergesFrom a hi:Relation ;
+  hi:source hi:hybrid ;
+  hi:target hi:assemblage ;
+  hi:relationType hi:emergesFrom .
+
+hi:rel-enactivism-autopoiesis-emergesFrom a hi:Relation ;
+  hi:source hi:enactivism ;
+  hi:target hi:autopoiesis ;
+  hi:relationType hi:emergesFrom .
+
+hi:rel-cognition-embodiment-emergesFrom a hi:Relation ;
+  hi:source hi:cognition ;
+  hi:target hi:embodiment ;
+  hi:relationType hi:emergesFrom .
+
+hi:rel-hi_hub-ontology_kb-emergesFrom a hi:Relation ;
+  hi:source hi:hi_hub ;
+  hi:target hi:ontology_kb ;
+  hi:relationType hi:emergesFrom .

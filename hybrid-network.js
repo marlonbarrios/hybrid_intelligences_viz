@@ -118,7 +118,10 @@ let themeMode = "dark";
 let themeToggleBounds = { dark: null, light: null };
 let hoveredCategory = null;
 let selectedCategory = null;
+let hoveredRelation = null;
+let selectedRelation = null;
 let mouseOnLegend = false;
+let mouseOnRelationLegend = false;
 let hoveredLegendHeader = false;
 let detailPanelLinks = [];
 let uiLinks = [];
@@ -199,6 +202,8 @@ function resetNetworkView() {
   relationLinger = null;
   relationLingerUntil = 0;
   selectedCategory = null;
+  selectedRelation = null;
+  hoveredRelation = null;
   mobileMenuOpen = false;
   initGraph();
 }
@@ -1054,16 +1059,22 @@ const NODES = [
     desc: "The spoken companion for the Hybrid Intelligences Hub — one layer of a dynamic cognitive assemblage created by Marlon Barrios Solano. Grounded in the ontology as its knowledge base, it explains concepts from their definitions and relations, can be interrupted, and opens from Talk about this on any node. When asked what this tool or hub is, it should describe the Hub itself: essays, ontology, network, Voice, Image, Mini-pod, and Enact coupled as one instrument — not a chatbot standing alone.",
     url: "voice.html", linkLabel: "Open Voice →" },
   { id: "ontology_kb",        label: "Ontology as\nKnowledge Base",   cat: "practice",   weight: 1.55,
-    desc: "The Hybrid Intelligences ontology as a living vocabulary that grounds the conversational AI. Concepts, definitions, and weighted relations are the source of truth the spoken companion is given — a situated knowledge base rather than a generic model talking about the program from outside. Essays feed this scheme; the network makes it visible; Voice, Image, Mini-pod, and Enact generate from it. Essay 3 describes this as three layers — concept scheme, knowledge graph, and formal OWL ontology — and asks how relations themselves might become more semantically differentiated.",
+    desc: "The Hybrid Intelligences ontology as a living vocabulary that grounds the conversational AI. Concepts, definitions, weighted relatedTo edges, and a seed of typed verbs (couples with, enables, mediates, cultivates, constrains, participates in, critiques, proposes, instantiates, develops, enacts, embodies, emerges from) are the source of truth the spoken companion is given — a situated knowledge base rather than a generic model talking about the program from outside. Essays feed this scheme; the network makes it visible; Voice, Image, Mini-pod, and Enact generate from it. Essay 3 describes this as three layers — concept scheme, knowledge graph, and formal OWL ontology — with those thirteen verbs as first-class object properties.",
     url: "ontology.html", linkLabel: "Open ontology →" },
   { id: "network_viz",        label: "Network\nVisualization",        cat: "practice",   weight: 1.5,
-    desc: "The radial map of the Hybrid Intelligences ontology — concentric rings of concepts and weighted relations. Information visualization as a way of thinking with the Hub: coupling becomes seeable, not only readable. The same nodes that ground Voice can be opened as Talk, Image, or Mini-pod. Essay 3 is careful: this network is not the ontology itself. It is one visual and navigational interface into the knowledge architecture.",
+    desc: "The radial map of the Hybrid Intelligences ontology — concentric rings of concepts, weighted relatedTo edges, and a seed of typed verbs. A Relations filter can isolate a verb, alone or together with a category ring. Information visualization as a way of thinking with the Hub: coupling becomes seeable, not only readable. The same nodes that ground Voice can be opened as Talk, Image, or Mini-pod. Essay 3 is careful: this network is not the ontology itself. It is one visual and navigational interface into the knowledge architecture.",
     url: "network.html", linkLabel: "Open network →" },
   { id: "hi_essays",          label: "Essays",                        cat: "practice",   weight: 1.5,
-    desc: "The publishing layer of the Hybrid Intelligences Hub — research writing by Marlon Barrios Solano and future guest collaborations that feed the ontology. Current entries: Essay 1 (cognitive assemblages and complex embodiment), Essay 2 (My Umwelt), and Essay 3 (ontology, knowledge graph, and cognitive assemblage). Writing here is not illustration after the fact; it is knowledge that becomes concepts, relations, and prompts for Voice, Image, Mini-pod, and Enact.",
+    desc: "The publishing layer of the Hybrid Intelligences Hub. The three essays published now are by Marlon Barrios Solano: Essay 1 (cognitive assemblages and complex embodiment), Essay 2 (My Umwelt, in conversation with GPT-5.5), and Essay 3 (ontology, knowledge graph, and cognitive assemblage). Guest collaborations will feed the ontology as the section grows. Writing here is not illustration after the fact; it is knowledge that becomes concepts, relations, and prompts for Voice, Image, Mini-pod, and Enact.",
     url: "essays.html", linkLabel: "Open essays →" },
+  { id: "essay_1",            label: "Essay 1",                        cat: "practice",   weight: 1.55,
+    desc: "Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI — Essay 1 by Marlon Barrios Solano (July 10, 2026). Develops intelligence as coupling and embodiment as a nested ecology of body, tool, institution, and world. The argument that cognition circulates through assemblages rather than sitting inside an isolated subject.",
+    url: "essay.html", linkLabel: "Read Essay 1 →" },
+  { id: "essay_2",            label: "Essay 2",                        cat: "practice",   weight: 1.5,
+    desc: "My Umwelt — Essay 2 by Marlon Barrios Solano, in conversation with GPT-5.5 (July 20, 2026). A first-person inquiry into lived worlds: Uexküll’s Umwelt, enactivism, and what a language model’s possible world (a Latentwelt) might be. Authored by Marlon; the conversation with the model is method, not a guest byline.",
+    url: "essay-2.html", linkLabel: "Read Essay 2 →" },
   { id: "essay_3",            label: "Essay 3",                        cat: "practice",   weight: 1.55,
-    desc: "Hybrid Intelligences: Ontology, Knowledge Graph, and Cognitive Assemblage — Essay 3 by Marlon Barrios Solano (September 2, 2026). Describes the Hub as three interconnected layers: a SKOS concept scheme, a knowledge graph of weighted relations, and a formal OWL ontology. The radial network is one visual interface, not the ontology itself. Argues for semantically differentiated relations (enables, mediates, constrains, critiques) and for entities that occupy multiple functional positions at once. The ontology is epistemic context for generative AI, not training. Intelligence emerges through coupling among ontology, model, human, and network.",
+    desc: "Hybrid Intelligences: Ontology, Knowledge Graph, and Cognitive Assemblage — Essay 3 by Marlon Barrios Solano (September 2, 2026). Describes the Hub as three interconnected layers: a SKOS concept scheme, a knowledge graph of weighted relations, and a formal OWL ontology. The radial network is one visual interface, not the ontology itself. Names the thirteen typed verbs now seeded on the graph (couples with, enables, mediates, cultivates, constrains, participates in, critiques, proposes, instantiates, develops, enacts, embodies, emerges from) and asks whether entities may occupy multiple functional positions at once. The ontology is epistemic context for generative AI, not training. Intelligence emerges through coupling among ontology, model, human, and network.",
     url: "essay-3.html", linkLabel: "Read Essay 3 →" },
   { id: "concept_image",      label: "Concept\nImage",                cat: "practice",   weight: 1.5,
     desc: "A generated abstract information visualization from any ontology concept — one generative layer of the Hybrid Intelligences Hub. The same vocabulary that grounds conversation can become a still: Make an image on Ontology or Network. Image is not decoration; it is another coupling of the concept with a model, a prompt, and a viewer.",
@@ -1162,7 +1173,7 @@ const NODES = [
     desc: "Community / alumni background—art practice through code, screens, networks, and computational media." },
 
   { id: "marlon",             label: "Marlon Barrios\nSolano",        cat: "facilitator", weight: 1.6,
-    desc: "Co-director of Hybrid Intelligences and Maker-in-Residence at CAME, focused on AI, arts, and diasporas. Venezuelan-American interdisciplinary artist, creative technologist, and researcher with a background in dance, software engineering, and cognitive science; MFA in Dance and Technology (Ohio State). Founder of dance-tech.net; work combines generative AI, creative coding, and performance. Certified in Vipassana/mindfulness (Spirit Rock), Embodyoga, and Somatic Experiencing.",
+    desc: "Co-director of Hybrid Intelligences and Maker-in-Residence at CAME, focused on AI, arts, and diasporas. Author of the three essays published now: Essay 1 (cognitive assemblages and complex embodiment), Essay 2 (My Umwelt), and Essay 3 (ontology, knowledge graph, and cognitive assemblage). Venezuelan-American interdisciplinary artist, creative technologist, and researcher with a background in dance, software engineering, and cognitive science; MFA in Dance and Technology (Ohio State). Founder of dance-tech.net; work combines generative AI, creative coding, and performance. Certified in Vipassana/mindfulness (Spirit Rock), Embodyoga, and Somatic Experiencing.",
     url: "https://arts.ufl.edu/people/profiles/marlon-barrios-solano/", linkLabel: "Faculty profile ↗" },
   { id: "erika",              label: "Erika Moore",                   cat: "facilitator", weight: 1.4,
     desc: "Co-director of Hybrid Intelligences—Future Lab (Wednesdays) and Ethics & Leadership (Thursdays). Assistant Professor in UF’s Center for Arts in Medicine; educator, facilitator, and arts strategist with an MFA in Dance (Arizona State) and a B.S. in Nonprofit Leadership and Management. Classically trained dancer and certified Pilates instructor; research at the crossroads of arts, AI, human performance, and community engagement. Teaches arts in health and leads Moore Arts.",
@@ -3595,7 +3606,25 @@ const EDGES = [
   ["hi_essays", "coupling", 0.85],
   ["hi_essays", "umwelt", 0.85],
   ["hi_essays", "philosophical_practice", 0.82],
+  ["hi_essays", "essay_1", 0.98],
+  ["hi_essays", "essay_2", 0.98],
   ["hi_essays", "essay_3", 0.98],
+  ["essay_1", "essay_2", 0.9],
+  ["essay_1", "essay_3", 0.88],
+  ["essay_2", "essay_3", 0.88],
+  ["essay_1", "marlon", 0.95],
+  ["essay_1", "assemblage", 0.95],
+  ["essay_1", "embodiment", 0.95],
+  ["essay_1", "hybrid", 0.95],
+  ["essay_1", "coupling", 0.9],
+  ["essay_1", "hayles", 0.85],
+  ["essay_1", "hi_hub", 0.85],
+  ["essay_2", "marlon", 0.95],
+  ["essay_2", "umwelt", 0.98],
+  ["essay_2", "enactivism", 0.88],
+  ["essay_2", "llm", 0.85],
+  ["essay_2", "pendular_umwelt", 0.88],
+  ["essay_2", "hi_hub", 0.85],
   ["essay_3", "ontology_kb", 1.0],
   ["essay_3", "network_viz", 0.95],
   ["essay_3", "hi_hub", 0.95],
@@ -3934,6 +3963,134 @@ const EDGES = [
   ["karla", "physical_ai", 0.7],
 ];
 
+const RELATION_TYPE_ORDER = [
+  "couplesWith", "enables", "mediates", "cultivates", "constrains",
+  "participatesIn", "critiques", "proposes", "instantiates",
+  "develops", "enacts", "embodies", "emergesFrom",
+];
+
+const RELATION_TYPES = {
+  couplesWith:    { label: "couples with",    verb: "couples with",    inverse: "coupled with" },
+  enables:        { label: "enables",         verb: "enables",         inverse: "enabled by" },
+  mediates:       { label: "mediates",        verb: "mediates",        inverse: "mediated by" },
+  cultivates:     { label: "cultivates",      verb: "cultivates",      inverse: "cultivated by" },
+  constrains:     { label: "constrains",      verb: "constrains",      inverse: "constrained by" },
+  participatesIn: { label: "participates in", verb: "participates in", inverse: "includes" },
+  critiques:      { label: "critiques",       verb: "critiques",       inverse: "critiqued by" },
+  proposes:       { label: "proposes",        verb: "proposes",        inverse: "proposed by" },
+  instantiates:   { label: "instantiates",    verb: "instantiates",    inverse: "instantiated by" },
+  develops:       { label: "develops",        verb: "develops",        inverse: "developed by" },
+  enacts:         { label: "enacts",          verb: "enacts",          inverse: "enacted by" },
+  embodies:       { label: "embodies",        verb: "embodies",        inverse: "embodied by" },
+  emergesFrom:    { label: "emerges from",    verb: "emerges from",    inverse: "gives rise to" },
+};
+
+// Directed seed: [source, target, type]. relatedTo + weight still hold the graph.
+const TYPED_EDGES = [
+  ["autopoiesis", "coupling", "couplesWith"],
+  ["autopoiesis", "ecology", "couplesWith"],
+  ["body", "ai", "couplesWith"],
+  ["body", "extended", "couplesWith"],
+  ["body", "ecology", "couplesWith"],
+  ["embodiment", "mediation", "couplesWith"],
+  ["llm", "ontology_kb", "couplesWith"],
+  ["conversational_ai", "ontology_kb", "couplesWith"],
+  ["network_viz", "ontology_kb", "couplesWith"],
+  ["hi_hub", "assemblage", "couplesWith"],
+  ["hi_hub", "coupling", "couplesWith"],
+  ["hybrid", "technosymbiosis", "couplesWith"],
+  ["marlon", "conversational_ai", "couplesWith"],
+  ["enact", "body", "couplesWith"],
+  ["gen_ai", "creative", "couplesWith"],
+  ["autopoiesis", "cognition", "enables"],
+  ["autopoiesis", "enactivism", "enables"],
+  ["embodiment", "cognition", "enables"],
+  ["embodiment", "intelligence", "enables"],
+  ["4e", "cognition", "enables"],
+  ["enactivism", "cognition", "enables"],
+  ["coupling", "intelligence", "enables"],
+  ["somatics", "embodiment", "enables"],
+  ["literacies", "coupling", "enables"],
+  ["extended", "cognition", "mediates"],
+  ["llm", "cognition", "mediates"],
+  ["llm", "mediation", "mediates"],
+  ["conversational_ai", "ontology_kb", "mediates"],
+  ["network_viz", "ontology_kb", "mediates"],
+  ["gen_ai", "creative", "mediates"],
+  ["mediation", "cognition", "mediates"],
+  ["ai", "cognition", "mediates"],
+  ["somatics", "literacies", "cultivates"],
+  ["vipassana", "literacies", "cultivates"],
+  ["choreography", "literacies", "cultivates"],
+  ["philosophical_practice", "epistemology", "cultivates"],
+  ["hi_program", "literacies", "cultivates"],
+  ["creative", "creative_embodiment", "cultivates"],
+  ["came", "creative", "constrains"],
+  ["cota", "creative", "constrains"],
+  ["came", "hi_hub", "constrains"],
+  ["techno_dualism", "hybrid", "constrains"],
+  ["bio_exception", "assemblage", "constrains"],
+  ["ai", "assemblage", "participatesIn"],
+  ["llm", "assemblage", "participatesIn"],
+  ["conversational_ai", "hi_hub", "participatesIn"],
+  ["enact", "hi_hub", "participatesIn"],
+  ["hi_essays", "hi_hub", "participatesIn"],
+  ["ontology_kb", "hi_hub", "participatesIn"],
+  ["network_viz", "hi_hub", "participatesIn"],
+  ["concept_image", "hi_hub", "participatesIn"],
+  ["mini_pod", "hi_hub", "participatesIn"],
+  ["marlon", "hi_hub", "participatesIn"],
+  ["posthumanism", "humanism", "critiques"],
+  ["hybrid", "techno_dualism", "critiques"],
+  ["hybrid", "bio_exception", "critiques"],
+  ["posthumanism", "anthropocentrism", "critiques"],
+  ["assemblage", "humanism", "critiques"],
+  ["essay_3", "techno_dualism", "critiques"],
+  ["hayles", "assemblage", "proposes"],
+  ["hayles", "technosymbiosis", "proposes"],
+  ["clark", "extended", "proposes"],
+  ["varela", "enactivism", "proposes"],
+  ["maturana", "autopoiesis", "proposes"],
+  ["varela", "autopoiesis", "proposes"],
+  ["uexkuell", "umwelt", "proposes"],
+  ["gibson", "affordances", "proposes"],
+  ["marlon", "hybrid", "proposes"],
+  ["marlon", "essay_1", "proposes"],
+  ["marlon", "essay_2", "proposes"],
+  ["marlon", "essay_3", "proposes"],
+  ["pendular_umwelt", "umwelt", "instantiates"],
+  ["pendular_umwelt", "latent_space", "instantiates"],
+  ["lobby_showcase", "creative_ai", "instantiates"],
+  ["concept_image", "ontology_kb", "instantiates"],
+  ["enact", "creative_embodiment", "instantiates"],
+  ["network_viz", "assemblage", "instantiates"],
+  ["essay_3", "ontology_kb", "develops"],
+  ["essay_3", "assemblage", "develops"],
+  ["essay_3", "coupling", "develops"],
+  ["essay_3", "hi_hub", "develops"],
+  ["essay_3", "network_viz", "develops"],
+  ["essay_3", "hybrid", "develops"],
+  ["thompson", "autopoiesis", "develops"],
+  ["hi_essays", "ontology_kb", "develops"],
+  ["enact", "coupling", "enacts"],
+  ["enact", "embodiment", "enacts"],
+  ["vipassana", "enactivism", "enacts"],
+  ["somatics", "embodiment", "enacts"],
+  ["choreography", "coupling", "enacts"],
+  ["hi_hub", "assemblage", "enacts"],
+  ["body", "autopoiesis", "embodies"],
+  ["body", "cognition", "embodies"],
+  ["embodiment", "coupling", "embodies"],
+  ["creative_embodiment", "hybrid", "embodies"],
+  ["somatics", "cognition", "embodies"],
+  ["intelligence", "coupling", "emergesFrom"],
+  ["assemblage", "coupling", "emergesFrom"],
+  ["hybrid", "assemblage", "emergesFrom"],
+  ["enactivism", "autopoiesis", "emergesFrom"],
+  ["cognition", "embodiment", "emergesFrom"],
+  ["hi_hub", "ontology_kb", "emergesFrom"],
+];
+
 let nodes = [];
 let edges = [];
 let hovered = null;
@@ -4081,16 +4238,30 @@ function applyHashSelection() {
   const raw = (location.hash || "").replace(/^#/, "");
   if (!raw || !nodes.length) return;
 
-  if (raw.startsWith("cat/")) {
-    const cat = raw.slice(4);
-    if (CATEGORY_META[cat]) {
-      pinCategory(cat);
+  let cat = null;
+  let rel = null;
+  for (const part of raw.split("&")) {
+    if (part.startsWith("cat/")) cat = part.slice(4);
+    else if (part.startsWith("rel/")) rel = part.slice(4);
+  }
+
+  if (cat && CATEGORY_META[cat]) {
+    pinCategory(cat);
+    selected = null;
+    hovered = null;
+    dragging = null;
+  }
+
+  if (rel && RELATION_TYPES[rel]) {
+    selectedRelation = rel;
+    if (!cat) {
       selected = null;
       hovered = null;
       dragging = null;
     }
-    return;
   }
+
+  if (cat || rel) return;
 
   const n = nodes.find((node) => node.id === raw);
   if (n) {
@@ -4196,10 +4367,34 @@ function initGraph() {
     ringOffset += PI / RING_ORDER.length;
   }
 
-  edges = EDGES.map(([a, b, strength]) => ({
+  const typedOnPair = {};
+  for (const [src, tgt, type] of TYPED_EDGES) {
+    if (!RELATION_TYPES[type] || !nodeMap[src] || !nodeMap[tgt]) continue;
+    const rec = { type, source: src, target: tgt };
+    const key = `${src}|${tgt}`;
+    const rev = `${tgt}|${src}`;
+    if (!typedOnPair[key]) typedOnPair[key] = [];
+    typedOnPair[key].push(rec);
+    if (key !== rev) {
+      if (!typedOnPair[rev]) typedOnPair[rev] = [];
+      typedOnPair[rev].push(rec);
+    }
+  }
+
+  const pairSeen = new Set(EDGES.map(([a, b]) => `${a}|${b}`));
+  const extraPairs = [];
+  for (const [src, tgt] of TYPED_EDGES) {
+    if (!nodeMap[src] || !nodeMap[tgt]) continue;
+    if (pairSeen.has(`${src}|${tgt}`) || pairSeen.has(`${tgt}|${src}`)) continue;
+    extraPairs.push([src, tgt, 0.85]);
+    pairSeen.add(`${src}|${tgt}`);
+  }
+
+  edges = [...EDGES, ...extraPairs].map(([a, b, strength]) => ({
     a: nodeMap[a],
     b: nodeMap[b],
     strength: strength || 0.5,
+    types: typedOnPair[`${a}|${b}`] || [],
   })).filter(e => e.a && e.b);
 }
 
@@ -4514,6 +4709,98 @@ function legendLayout() {
   return { boxW, boxH, x: width - boxW - 16, y: 70 };
 }
 
+function relationLegendLayout() {
+  const { x, y, boxW, boxH } = legendLayout();
+  const rowH = 16;
+  return {
+    boxW,
+    boxH: 24 + RELATION_TYPE_ORDER.length * rowH,
+    x,
+    y: y + boxH + 8,
+    rowH,
+  };
+}
+
+function relationLegendAt(mx, my) {
+  if (isMobileLayout()) return null;
+  const { x, y, boxW, boxH, rowH } = relationLegendLayout();
+  if (mx < x || mx > x + boxW || my < y || my > y + boxH) return null;
+  let found = null;
+  RELATION_TYPE_ORDER.forEach((key, i) => {
+    const ly = y + 26 + i * rowH;
+    if (my >= ly - 1 && my <= ly + rowH - 2 && mx >= x + 4 && mx <= x + boxW - 4) {
+      found = key;
+    }
+  });
+  return found;
+}
+
+function setSelectedRelation(type) {
+  if (type === selectedRelation) {
+    selectedRelation = null;
+    return;
+  }
+  selectedRelation = type;
+}
+
+function activeRelation() {
+  return selectedRelation || hoveredRelation;
+}
+
+function edgeHasRelation(e, type) {
+  return !!(type && e.types && e.types.some((t) => t.type === type));
+}
+
+function edgeMatchesFilters(e) {
+  const type = activeRelation();
+  if (!type) return true;
+  if (!edgeHasRelation(e, type)) return false;
+  const cat = activeCategory();
+  if (cat && e.a.cat !== cat && e.b.cat !== cat) return false;
+  return true;
+}
+
+function relationTouchesCategory(type, cat) {
+  if (!type || !cat) return true;
+  return edges.some((e) => edgeHasRelation(e, type) && (e.a.cat === cat || e.b.cat === cat));
+}
+
+function nodesInActiveRelation() {
+  const type = activeRelation();
+  if (!type) return null;
+  const ids = new Set();
+  for (const e of edges) {
+    if (!edgeMatchesFilters(e)) continue;
+    ids.add(e.a.id);
+    ids.add(e.b.id);
+  }
+  return ids;
+}
+
+function typedPhrasesFor(n) {
+  if (!n) return [];
+  const phrases = [];
+  const seen = new Set();
+  for (const e of edges) {
+    if (!e.types || (e.a !== n && e.b !== n)) continue;
+    for (const t of e.types) {
+      const meta = RELATION_TYPES[t.type];
+      if (!meta) continue;
+      const other = t.source === n.id ? t.target : t.source;
+      const otherNode = nodes.find((node) => node.id === other);
+      if (!otherNode) continue;
+      const otherLabel = otherNode.label.replace(/\n/g, " ");
+      const text = t.source === n.id
+        ? `${meta.verb} ${otherLabel}`
+        : `${meta.inverse} ${otherLabel}`;
+      if (seen.has(text)) continue;
+      seen.add(text);
+      phrases.push({ text, type: t.type, other });
+    }
+  }
+  return phrases;
+}
+
 function legendHeaderLayout() {
   const { x, y } = legendLayout();
   textSize(9);
@@ -4702,6 +4989,7 @@ function updateCategoryTransition() {
 }
 
 function nodeCategoryFocus(n) {
+  if (activeRelation()) return null;
   if (categoryExploreActive() && relationFocusNode()) return null;
   if (!categoryHighlightActive() || categoryDisplay === null) return null;
   if (n.cat === categoryDisplay) return categoryFocusIn();
@@ -4725,6 +5013,8 @@ function toggleAnimate() {
     dragging = null;
     hoveredCategory = null;
     selectedCategory = null;
+    selectedRelation = null;
+    hoveredRelation = null;
     hoveredLegendHeader = false;
     animatePaused = false;
     const holdLeft = animatePauseRemaining > 0 ? animatePauseRemaining : ANIM_HOLD_SEC;
@@ -4810,10 +5100,10 @@ function stepCategory(delta) {
 function pinCategory(cat) {
   if (!CATEGORY_META[cat]) return;
   selectedCategory = cat;
-  if (selected && selected.cat !== cat) selected = null;
-  if (hovered && hovered.cat !== cat) hovered = null;
-  if (dragging && dragging.cat !== cat) dragging = null;
-  if (relationLinger && relationLinger.cat !== cat) {
+  if (selected && !nodeAcceptsPointer(selected) && selected.cat !== cat) selected = null;
+  if (hovered && !nodeAcceptsPointer(hovered) && hovered.cat !== cat) hovered = null;
+  if (dragging && !nodeAcceptsPointer(dragging) && dragging.cat !== cat) dragging = null;
+  if (relationLinger && relationLinger.cat !== cat && !nodeAcceptsPointer(relationLinger)) {
     relationLinger = null;
     relationLingerUntil = 0;
   }
@@ -4839,7 +5129,9 @@ function updateLegendHover(mx, my) {
   if (animateMode) return;
 
   hoveredCategory = null;
+  hoveredRelation = null;
   mouseOnLegend = false;
+  mouseOnRelationLegend = false;
   hoveredLegendHeader = false;
 
   if (legendHeaderHit(mx, my)) {
@@ -4849,16 +5141,23 @@ function updateLegendHover(mx, my) {
   }
 
   const { x, y, boxW, boxH } = legendLayout();
-  if (mx < x || mx > x + boxW || my < y || my > y + boxH) return;
+  const inCats = mx >= x && mx <= x + boxW && my >= y && my <= y + boxH;
+  if (inCats) {
+    mouseOnLegend = true;
+    RING_ORDER.forEach((key, i) => {
+      const ly = y + 30 + i * 20;
+      if (my >= ly - 2 && my <= ly + 18 && mx >= x + 4 && mx <= x + boxW - 4) {
+        hoveredCategory = key;
+      }
+    });
+  }
 
-  mouseOnLegend = true;
-
-  RING_ORDER.forEach((key, i) => {
-    const ly = y + 30 + i * 20;
-    if (my >= ly - 2 && my <= ly + 18 && mx >= x + 4 && mx <= x + boxW - 4) {
-      hoveredCategory = key;
-    }
-  });
+  const relHit = relationLegendAt(mx, my);
+  if (relHit) {
+    hoveredRelation = relHit;
+    mouseOnRelationLegend = true;
+    mouseOnLegend = true;
+  }
 }
 
 function categoryHighlightActive() {
@@ -4875,6 +5174,8 @@ function nodeKeptInCategoryFocus(n) {
 }
 
 function nodeDimmed(n) {
+  const relNodes = nodesInActiveRelation();
+  if (relNodes) return !relNodes.has(n.id);
   if (categoryHighlightActive()) {
     return !nodeKeptInCategoryFocus(n);
   }
@@ -4906,6 +5207,10 @@ function nodeNeighbor(n) {
 function nodeAcceptsPointer(n) {
   if (!n) return false;
   if (ringsOnlyMode()) return false;
+  if (activeRelation()) {
+    const relNodes = nodesInActiveRelation();
+    return !!(relNodes && relNodes.has(n.id));
+  }
   if (!categoryHighlightActive()) return true;
   return nodeKeptInCategoryFocus(n);
 }
@@ -4951,16 +5256,22 @@ function drawEdges() {
       ? min(nodeCategoryFocus(e.a) ?? 0, nodeCategoryFocus(e.b) ?? 0)
       : null;
     const rel = relationFocusNode();
-    const highlight = catHL
+    let highlight = catHL
       ? (rel
         ? (e.a === rel || e.b === rel)
         : edgeFocus > 0.45)
       : active && (e.a === active || e.b === active);
-    const dim = catHL
+    let dim = catHL
       ? (rel
         ? !(highlight || (activeCategory() && e.a.cat === activeCategory() && e.b.cat === activeCategory()))
         : edgeFocus < 0.2)
       : active && !highlight;
+    const relType = activeRelation();
+    if (relType) {
+      highlight = edgeMatchesFilters(e);
+      dim = !highlight;
+      if (!highlight) continue;
+    }
     const col = edgeColor(e, highlight, dim);
     let weight = highlight ? 2.0 + e.strength * 1.2 : 0.9 + e.strength * 1.6;
     if (edgeFocus !== null) {
@@ -4994,6 +5305,18 @@ function drawEdges() {
       noStroke();
       fill(red(col), green(col), blue(col), 180);
       ellipse(mx, my, sz);
+      if (e.types && e.types.length && (relType || (active && (e.a === active || e.b === active)))) {
+        const shown = relType
+          ? e.types.filter((tp) => tp.type === relType)
+          : e.types;
+        const verb = shown[0] && RELATION_TYPES[shown[0].type]?.verb;
+        if (verb) {
+          fill(...t.title, 220);
+          textAlign(CENTER, CENTER);
+          textSize(9);
+          text(verb, mx, my - 8);
+        }
+      }
     }
   }
 }
@@ -5014,6 +5337,7 @@ function drawNodeCircles() {
   const dark = themeDarkness() > 0.5;
 
   for (const n of nodes) {
+    if (activeRelation() && nodeDimmed(n)) continue;
     const [r, g, b] = ringColor(n.cat);
     const [sr, sg, sb] = nodeAccentStroke(r, g, b, dark);
     const catFocus = nodeCategoryFocus(n);
@@ -5075,6 +5399,7 @@ function drawNodeLabels() {
   });
 
   for (const n of sorted) {
+    if (activeRelation() && nodeDimmed(n)) continue;
     const catFocus = nodeCategoryFocus(n);
     const isActive = catFocus === null ? nodeHighlighted(n) : catFocus > 0.65;
     const dim = catFocus === null ? nodeDimmed(n) : catFocus < 0.2;
@@ -5131,6 +5456,10 @@ function drawMobileUI() {
       ? "Theme"
       : (CATEGORY_META[phase]?.label || "");
     status = `Tour · ${phaseLabel}${animatePaused ? " · Paused" : ""}`;
+  } else if (selectedRelation && selectedCategory) {
+    status = `${CATEGORY_META[selectedCategory].label} · ${RELATION_TYPES[selectedRelation].label}`;
+  } else if (selectedRelation) {
+    status = `Relations · ${RELATION_TYPES[selectedRelation].label}`;
   } else if (selectedCategory) {
     status = `Focus · ${CATEGORY_META[selectedCategory].label}`;
   }
@@ -5192,7 +5521,7 @@ function drawMobileUI() {
 function drawMobileMenu() {
   const t = theme();
   const bottomH = mobileBottomH();
-  const sheetH = min(height * 0.62, 420);
+  const sheetH = min(height * 0.72, 520);
   const y = height - bottomH - sheetH;
 
   fill(t.bg[0], t.bg[1], t.bg[2], 160);
@@ -5276,6 +5605,35 @@ function drawMobileMenu() {
     textAlign(CENTER, CENTER);
     text(label, chipX + chipW / 2, rowY + chipH / 2 + 1);
     pushMobileHit("category", chipX, rowY, chipW, chipH, cat);
+    chipX += chipW + 6;
+  }
+
+  rowY += chipH + 14;
+  fill(...t.muted);
+  textAlign(LEFT, TOP);
+  textSize(9);
+  text("RELATIONS — tap to combine with category", 16, rowY);
+  rowY += 20;
+  chipX = 16;
+  for (const key of RELATION_TYPE_ORDER) {
+    const label = RELATION_TYPES[key].label;
+    const chipW = textWidth(label) + 16;
+    if (chipX + chipW > width - 16) {
+      chipX = 16;
+      rowY += chipH + 6;
+    }
+    const active = selectedRelation === key;
+    fill(...(active ? t.title : t.toggleBg));
+    if (!active) {
+      stroke(...t.border);
+      strokeWeight(1);
+    } else noStroke();
+    rect(chipX, rowY, chipW, chipH, 6);
+    noStroke();
+    fill(...(active ? t.bg : t.subtitle));
+    textAlign(CENTER, CENTER);
+    text(label, chipX + chipW / 2, rowY + chipH / 2 + 1);
+    pushMobileHit("relation", chipX, rowY, chipW, chipH, key);
     chipX += chipW + 6;
   }
 }
@@ -5417,6 +5775,7 @@ function drawUI() {
   text("Jul 13\u201330, 2026 \u00b7 click legend / \u2191\u2193 categories \u00b7 A animate \u00b7 R reset \u00b7 T theme", headerTextX, 87);
 
   drawLegend();
+  drawRelationLegend();
 
   const focus = getActiveNode();
   if (focus && !ringsOnlyMode()) drawDetailPanel(focus);
@@ -5436,6 +5795,16 @@ function drawUI() {
     fill(...t.title, 220);
     const pauseLabel = animatePaused ? " · PAUSED" : "";
     text(`ANIMATE · ${phaseLabel}${pauseLabel}`, width - 16, height - 24);
+    fill(...t.muted, 180);
+  } else if (selectedRelation && selectedCategory) {
+    fill(...t.title, 220);
+    const relNodes = nodesInActiveRelation();
+    const empty = relNodes && relNodes.size === 0;
+    text(`${CATEGORY_META[selectedCategory].label.toUpperCase()} · ${RELATION_TYPES[selectedRelation].label.toUpperCase()}${empty ? " · NONE" : ""} · Esc clear`, width - 16, height - 24);
+    fill(...t.muted, 180);
+  } else if (selectedRelation) {
+    fill(...t.title, 220);
+    text(`RELATIONS · ${RELATION_TYPES[selectedRelation].label.toUpperCase()} · Esc clear`, width - 16, height - 24);
     fill(...t.muted, 180);
   } else if (selectedCategory) {
     fill(...t.title, 220);
@@ -5598,7 +5967,14 @@ function drawLegend() {
     noFill();
     ellipse(x + 18, ly + 7, 16 + focus * 4);
     noStroke();
-    fill(lerp(t.legendText[0], t.title[0], focus), lerp(t.legendText[1], t.title[1], focus), lerp(t.legendText[2], t.title[2], focus));
+    const relType = selectedRelation || hoveredRelation;
+    const available = !relType || relationTouchesCategory(relType, key);
+    fill(
+      lerp(t.legendText[0], t.title[0], focus),
+      lerp(t.legendText[1], t.title[1], focus),
+      lerp(t.legendText[2], t.title[2], focus),
+      available || focus > 0 ? 255 : 95
+    );
     textSize(9);
     textStyle(focus > 0.45 ? BOLD : NORMAL);
     text(meta.label, x + 32, ly);
@@ -5611,6 +5987,49 @@ function drawLegend() {
       textSize(8);
       text("●", x + boxW - 16, ly + 1);
     }
+    textStyle(NORMAL);
+  });
+}
+
+function drawRelationLegend() {
+  if (isMobileLayout() || animateMode) return;
+  const t = theme();
+  const { boxW, boxH, x, y, rowH } = relationLegendLayout();
+
+  fill(...t.panel, 230);
+  stroke(...t.border);
+  strokeWeight(1);
+  rect(x, y, boxW, boxH, 6);
+
+  fill(...t.legendHead);
+  noStroke();
+  textAlign(LEFT, TOP);
+  textSize(9);
+  text(selectedCategory ? "RELATIONS · WITH CATEGORY" : "RELATIONS", x + 12, y + 8);
+
+  RELATION_TYPE_ORDER.forEach((key, i) => {
+    const meta = RELATION_TYPES[key];
+    const ly = y + 26 + i * rowH;
+    const focus = selectedRelation === key || hoveredRelation === key ? 1 : 0;
+    if (focus) {
+      fill(...t.title, selectedRelation === key ? 48 : 24);
+      noStroke();
+      rect(x + 6, ly - 1, boxW - 12, rowH - 1, 3);
+    }
+    const cat = selectedCategory || hoveredCategory;
+    const available = !cat || relationTouchesCategory(key, cat);
+    fill(...t.title, available || focus ? 255 : 70);
+    noStroke();
+    rect(x + 14, ly + 5, 8, 2);
+    fill(
+      lerp(t.legendText[0], t.title[0], focus),
+      lerp(t.legendText[1], t.title[1], focus),
+      lerp(t.legendText[2], t.title[2], focus),
+      available || focus ? 255 : 95
+    );
+    textSize(9);
+    textStyle(focus ? BOLD : NORMAL);
+    text(meta.label, x + 28, ly);
     textStyle(NORMAL);
   });
 }
@@ -5640,8 +6059,11 @@ function detailPanelLayout(n) {
   const primaryUrl = n?.url && n.url !== wikiUrl ? n.url : null;
   const linkCount = 3 + (primaryUrl ? 1 : 0) + (wikiUrl ? 1 : 0) + 1;
   const hasLink = linkCount > 0;
-  const panelH = mobile ? min(108 + linkCount * 18, 248) : 108 + linkCount * 20;
-  return { panelW, x: 16, y: height - toggleH - panelH, panelH, hasLink, linkCount, wikiUrl, primaryUrl };
+  const typedCount = n ? min(4, typedPhrasesFor(n).length) : 0;
+  const panelH = mobile
+    ? min(108 + linkCount * 18 + typedCount * 14, 280)
+    : 108 + linkCount * 20 + typedCount * 15;
+  return { panelW, x: 16, y: height - toggleH - panelH, panelH, hasLink, linkCount, wikiUrl, primaryUrl, typedCount };
 }
 
 function hitDetailPanelLink(mx, my) {
@@ -5665,7 +6087,8 @@ function hitUiLink(mx, my) {
 function drawDetailPanel(n) {
   const t = theme();
   detailPanelLinks = [];
-  const { panelW, x, y, panelH, hasLink, linkCount, wikiUrl, primaryUrl } = detailPanelLayout(n);
+  const { panelW, x, y, panelH, hasLink, linkCount, wikiUrl, primaryUrl, typedCount } = detailPanelLayout(n);
+  const phrases = typedPhrasesFor(n).slice(0, 4);
 
   fill(...t.panel, panelAlpha * 0.96);
   stroke(...ringColor(n.cat), 140);
@@ -5693,6 +6116,14 @@ function drawDetailPanel(n) {
   for (const line of wrapped.slice(0, maxLines)) {
     text(line, x + 14, ty);
     ty += 14;
+  }
+  if (phrases.length) {
+    fill(...t.title);
+    textSize(9);
+    for (const phrase of phrases) {
+      text(phrase.text, x + 14, ty);
+      ty += 14;
+    }
   }
 
   const linkCol = [18, 85, 155].map((v, i) => lerp(v, [130, 195, 255][i], themeDarkness()));
@@ -5725,7 +6156,8 @@ function drawDetailPanel(n) {
   const connCount = edges.filter(e => e.a === n || e.b === n).length;
   fill(...t.panelMuted);
   textSize(9);
-  text(`${connCount} connections${hasLink ? " · click link to open" : " highlighted on hover"}`, x + 14, y + panelH - 14);
+  const typedNote = typedCount ? ` · ${typedCount} typed` : "";
+  text(`${connCount} connections${typedNote}${hasLink ? " · click link to open" : " highlighted on hover"}`, x + 14, y + panelH - 14);
 }
 
 function wrapText(str, maxW, sz) {
@@ -5840,6 +6272,14 @@ function handleMobileChromePress(hit) {
     setSelectedCategory(hit.meta);
     return true;
   }
+  if (hit.id === "relation" && hit.meta) {
+    if (animateMode) {
+      animateMode = false;
+      animatePaused = false;
+    }
+    setSelectedRelation(hit.meta);
+    return true;
+  }
   return false;
 }
 
@@ -5882,6 +6322,12 @@ function mousePressed() {
   const catClick = legendCategoryAt(mouseX, mouseY);
   if (catClick) {
     setSelectedCategory(catClick);
+    return;
+  }
+
+  const relClick = relationLegendAt(mouseX, mouseY);
+  if (relClick) {
+    setSelectedRelation(relClick);
     return;
   }
 
@@ -5945,6 +6391,7 @@ function keyPressed() {
   }
   if (keyCode === ESCAPE) {
     selectedCategory = null;
+    selectedRelation = null;
   }
   if (keyCode === UP_ARROW) {
     stepCategory(-1);
