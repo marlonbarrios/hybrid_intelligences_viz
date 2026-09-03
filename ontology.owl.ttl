@@ -13,11 +13,11 @@
   dc:description "OWL 2 ontology of concepts, categories, and weighted relations from the Hybrid Intelligences program." ;
   owl:versionInfo "1.0.0" ;
   dc:date "2026-09-03"^^xsd:date ;
-  dc:modified "2026-09-03T00:51:52.918Z"^^xsd:dateTime ;
+  dc:modified "2026-09-03T19:29:10.034Z"^^xsd:dateTime ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  hi:nodeCount "238"^^xsd:integer ;
-  hi:edgeCount "2379"^^xsd:integer ;
-  hi:typedEdgeCount "102"^^xsd:integer .
+  hi:nodeCount "239"^^xsd:integer ;
+  hi:edgeCount "2410"^^xsd:integer ;
+  hi:typedEdgeCount "114"^^xsd:integer .
 
 hi:Concept a owl:Class ;
   rdfs:label "Concept"@en ;
@@ -2240,7 +2240,7 @@ hi:pluriversal a owl:NamedIndividual, hi:QualityConcept ;
 hi:architecture a owl:NamedIndividual, hi:DomainConcept ;
   rdfs:label "Architecture"@en ;
   skos:prefLabel "Architecture"@en ;
-  skos:definition "Space actively choreographs cognition through affordances; platforms are architectures of attention and memory."@en ;
+  skos:definition "Performative spatial and technical organization: worlds become knowable through affordances. Rooms, platforms, databases, and interfaces choreograph cognition, attention, and memory—not neutral containers but active participants in embodied knowing."@en ;
   skos:broader hi:category/domain ;
   hi:inCategory hi:category/domain ;
   hi:schemeMember hi:scheme ;
@@ -2850,7 +2850,7 @@ hi:network_viz a owl:NamedIndividual, hi:PracticeConcept ;
 hi:hi_essays a owl:NamedIndividual, hi:PracticeConcept ;
   rdfs:label "Essays"@en ;
   skos:prefLabel "Essays"@en ;
-  skos:definition "The publishing layer of the Hybrid Intelligences Hub. The three essays published now are by Marlon Barrios Solano: Essay 1 (cognitive assemblages and complex embodiment), Essay 2 (My Umwelt, in conversation with GPT-5.5), and Essay 3 (ontology, knowledge graph, and cognitive assemblage). Guest collaborations will feed the ontology as the section grows. Writing here is not illustration after the fact; it is knowledge that becomes concepts, relations, and prompts for Voice, Image, Mini-pod, and Enact."@en ;
+  skos:definition "The publishing layer of the Hybrid Intelligences Hub. The four essays published now are by Marlon Barrios Solano: Essay 1 (cognitive assemblages and complex embodiment), Essay 2 (My Umwelt, in conversation with GPT-5.5), Essay 3 (ontology, knowledge graph, and cognitive assemblage), and Essay 4 (Designing Unstable Landscapes — improvisational dance within cognitive systems). Guest collaborations will feed the ontology as the section grows. Writing here is not illustration after the fact; it is knowledge that becomes concepts, relations, and prompts for Voice, Image, Mini-pod, and Enact."@en ;
   skos:broader hi:category/practice ;
   hi:inCategory hi:category/practice ;
   hi:schemeMember hi:scheme ;
@@ -2863,7 +2863,7 @@ hi:hi_essays a owl:NamedIndividual, hi:PracticeConcept ;
 hi:essay_1 a owl:NamedIndividual, hi:PracticeConcept ;
   rdfs:label "Essay 1"@en ;
   skos:prefLabel "Essay 1"@en ;
-  skos:definition "Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI — Essay 1 by Marlon Barrios Solano (July 10, 2026). Develops intelligence as coupling and embodiment as a nested ecology of body, tool, institution, and world. The argument that cognition circulates through assemblages rather than sitting inside an isolated subject."@en ;
+  skos:definition "Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI — Essay 1 by Marlon Barrios Solano (July 10, 2026). Traces a lineage from Unstablelandscape (early 2000s real-time dance–technology) through Essay 4 (2005) to generative AI. Develops intelligence as coupling, embodiment as nested ecology, and cognition as distributed across assemblages. Performative architecture and affordances; Brooks's embodied robotics and Hayles's cognitive nonconscious; Paxton, Forsythe's choreographic object, and Synchronous Objects; juggling as reflex training. First-person argument that hybrid intelligence extends designed cognitive systems into language models and cognitive architectures."@en ;
   skos:broader hi:category/practice ;
   hi:inCategory hi:category/practice ;
   hi:schemeMember hi:scheme ;
@@ -2897,6 +2897,19 @@ hi:essay_3 a owl:NamedIndividual, hi:PracticeConcept ;
   hi:networkWeight "1.55"^^xsd:decimal
  ;
   schema:url <essay-3.html>
+ .
+
+hi:essay_4 a owl:NamedIndividual, hi:PracticeConcept ;
+  rdfs:label "Essay 4"@en ;
+  skos:prefLabel "Essay 4"@en ;
+  skos:definition "Designing Unstable Landscapes: Improvisational Dance within Cognitive Systems — Essay 4 by Marlon Barrios Solano. First published in Johannes H. Birringer and Josephine Fenger (eds.), Tanz Im Kopf: Dance and Cognition (Broschiert), 2005; dedicated to Francisco Varela. Theorizes hybrid improvisational dance with real-time interactive multimedia as designed cognitive systems through the Unstablelandscape series (1999–2005): post-humanist coupling of bodies, algorithms, and environments; Gibsonian perception-action, embodied cognition, Hayles's posthuman, hyper-plastic embodiment, and distributed cognition across performers and Max/Jitter systems. Republished in the Hybrid Intelligences Hub."@en ;
+  skos:broader hi:category/practice ;
+  hi:inCategory hi:category/practice ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.55"^^xsd:decimal
+ ;
+  schema:url <essay-4.html>
  .
 
 hi:concept_image a owl:NamedIndividual, hi:PracticeConcept ;
@@ -3416,7 +3429,7 @@ hi:bg_digital_art a owl:NamedIndividual, hi:BackgroundConcept ;
 hi:marlon a owl:NamedIndividual, hi:FacilitatorConcept ;
   rdfs:label "Marlon Barrios Solano"@en ;
   skos:prefLabel "Marlon Barrios Solano"@en ;
-  skos:definition "Co-director of Hybrid Intelligences and Maker-in-Residence at CAME, focused on AI, arts, and diasporas. Author of the three essays published now: Essay 1 (cognitive assemblages and complex embodiment), Essay 2 (My Umwelt), and Essay 3 (ontology, knowledge graph, and cognitive assemblage). Venezuelan-American interdisciplinary artist, creative technologist, and researcher with a background in dance, software engineering, and cognitive science; MFA in Dance and Technology (Ohio State). Founder of dance-tech.net; work combines generative AI, creative coding, and performance. Certified in Vipassana/mindfulness (Spirit Rock), Embodyoga, and Somatic Experiencing."@en ;
+  skos:definition "Co-director of Hybrid Intelligences and Maker-in-Residence at CAME, focused on AI, arts, and diasporas. Author of the four essays published now: Essay 1 (cognitive assemblages and complex embodiment), Essay 2 (My Umwelt), Essay 3 (ontology, knowledge graph, and cognitive assemblage), and Essay 4 (Designing Unstable Landscapes). Venezuelan-American interdisciplinary artist, creative technologist, and researcher with a background in dance, software engineering, and cognitive science; MFA in Dance and Technology (Ohio State). Founder of dance-tech.net; work combines generative AI, creative coding, and performance. Certified in Vipassana/mindfulness (Spirit Rock), Embodyoga, and Somatic Experiencing."@en ;
   skos:broader hi:category/facilitator ;
   hi:inCategory hi:category/facilitator ;
   hi:schemeMember hi:scheme ;
@@ -5702,9 +5715,13 @@ hi:hi_essays hi:relatedTo hi:philosophical_practice .
 hi:hi_essays hi:relatedTo hi:essay_1 .
 hi:hi_essays hi:relatedTo hi:essay_2 .
 hi:hi_essays hi:relatedTo hi:essay_3 .
+hi:hi_essays hi:relatedTo hi:essay_4 .
 hi:essay_1 hi:relatedTo hi:essay_2 .
 hi:essay_1 hi:relatedTo hi:essay_3 .
+hi:essay_1 hi:relatedTo hi:essay_4 .
 hi:essay_2 hi:relatedTo hi:essay_3 .
+hi:essay_2 hi:relatedTo hi:essay_4 .
+hi:essay_3 hi:relatedTo hi:essay_4 .
 hi:essay_1 hi:relatedTo hi:marlon .
 hi:essay_1 hi:relatedTo hi:assemblage .
 hi:essay_1 hi:relatedTo hi:embodiment .
@@ -5735,6 +5752,33 @@ hi:essay_3 hi:relatedTo hi:enact .
 hi:essay_3 hi:relatedTo hi:concept_image .
 hi:essay_3 hi:relatedTo hi:mini_pod .
 hi:essay_3 hi:relatedTo hi:hayles .
+hi:essay_4 hi:relatedTo hi:marlon .
+hi:essay_4 hi:relatedTo hi:coupling .
+hi:essay_4 hi:relatedTo hi:creative_embodiment .
+hi:essay_4 hi:relatedTo hi:embodiment .
+hi:essay_4 hi:relatedTo hi:assemblage .
+hi:essay_4 hi:relatedTo hi:distributed .
+hi:essay_4 hi:relatedTo hi:posthumanism .
+hi:essay_4 hi:relatedTo hi:hayles .
+hi:essay_4 hi:relatedTo hi:clark .
+hi:essay_4 hi:relatedTo hi:varela .
+hi:essay_4 hi:relatedTo hi:gibson .
+hi:essay_4 hi:relatedTo hi:steve_paxton .
+hi:essay_4 hi:relatedTo hi:affordances .
+hi:essay_4 hi:relatedTo hi:cybernetics .
+hi:essay_4 hi:relatedTo hi:4e .
+hi:essay_4 hi:relatedTo hi:extended .
+hi:essay_4 hi:relatedTo hi:cyborg .
+hi:essay_4 hi:relatedTo hi:dance .
+hi:essay_4 hi:relatedTo hi:generative_arts .
+hi:essay_4 hi:relatedTo hi:rehearsal .
+hi:essay_4 hi:relatedTo hi:hi_hub .
+hi:essay_4 hi:relatedTo hi:essay_1 .
+hi:essay_4 hi:relatedTo hi:enactivism .
+hi:essay_4 hi:relatedTo hi:thompson .
+hi:essay_4 hi:relatedTo hi:judson_church .
+hi:essay_4 hi:relatedTo hi:techno_dualism .
+hi:essay_4 hi:relatedTo hi:humanism .
 hi:concept_image hi:relatedTo hi:generative_arts .
 hi:concept_image hi:relatedTo hi:ai_art .
 hi:concept_image hi:relatedTo hi:creative .
@@ -6111,6 +6155,12 @@ hi:marlon hi:proposes hi:hybrid .
 hi:marlon hi:proposes hi:essay_1 .
 hi:marlon hi:proposes hi:essay_2 .
 hi:marlon hi:proposes hi:essay_3 .
+hi:marlon hi:proposes hi:essay_4 .
+hi:essay_1 hi:develops hi:hybrid .
+hi:essay_1 hi:develops hi:assemblage .
+hi:essay_1 hi:instantiates hi:creative_embodiment .
+hi:essay_1 hi:develops hi:coupling .
+hi:essay_1 hi:mediates hi:essay_4 .
 hi:pendular_umwelt hi:instantiates hi:umwelt .
 hi:pendular_umwelt hi:instantiates hi:latent_space .
 hi:lobby_showcase hi:instantiates hi:creative_ai .
@@ -6123,6 +6173,12 @@ hi:essay_3 hi:develops hi:coupling .
 hi:essay_3 hi:develops hi:hi_hub .
 hi:essay_3 hi:develops hi:network_viz .
 hi:essay_3 hi:develops hi:hybrid .
+hi:essay_4 hi:develops hi:coupling .
+hi:essay_4 hi:instantiates hi:creative_embodiment .
+hi:essay_4 hi:instantiates hi:assemblage .
+hi:essay_4 hi:develops hi:distributed .
+hi:essay_4 hi:critiques hi:techno_dualism .
+hi:essay_4 hi:critiques hi:humanism .
 hi:thompson hi:develops hi:autopoiesis .
 hi:hi_essays hi:develops hi:ontology_kb .
 hi:enact hi:enacts hi:coupling .
@@ -16353,6 +16409,11 @@ hi:rel-hi_essays-essay_3 a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationTarget hi:essay_3 ;
   hi:relationStrength "0.98"^^xsd:decimal .
 
+hi:rel-hi_essays-essay_4 a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:hi_essays ;
+  hi:relationTarget hi:essay_4 ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
 hi:rel-essay_1-essay_2 a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:essay_1 ;
   hi:relationTarget hi:essay_2 ;
@@ -16363,10 +16424,25 @@ hi:rel-essay_1-essay_3 a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationTarget hi:essay_3 ;
   hi:relationStrength "0.88"^^xsd:decimal .
 
+hi:rel-essay_1-essay_4 a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_1 ;
+  hi:relationTarget hi:essay_4 ;
+  hi:relationStrength "0.86"^^xsd:decimal .
+
 hi:rel-essay_2-essay_3 a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:essay_2 ;
   hi:relationTarget hi:essay_3 ;
   hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-essay_2-essay_4 a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_2 ;
+  hi:relationTarget hi:essay_4 ;
+  hi:relationStrength "0.84"^^xsd:decimal .
+
+hi:rel-essay_3-essay_4 a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_3 ;
+  hi:relationTarget hi:essay_4 ;
+  hi:relationStrength "0.85"^^xsd:decimal .
 
 hi:rel-essay_1-marlon a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:essay_1 ;
@@ -16517,6 +16593,141 @@ hi:rel-essay_3-hayles a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:essay_3 ;
   hi:relationTarget hi:hayles ;
   hi:relationStrength "0.78"^^xsd:decimal .
+
+hi:rel-essay_4-marlon a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:marlon ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-essay_4-coupling a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:coupling ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-essay_4-creative_embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:creative_embodiment ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-essay_4-embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:embodiment ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-essay_4-assemblage a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:assemblage ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-essay_4-distributed a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:distributed ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-essay_4-posthumanism a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:posthumanism ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-essay_4-hayles a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:hayles ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-essay_4-clark a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:clark ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-essay_4-varela a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:varela ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-essay_4-gibson a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:gibson ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-essay_4-steve_paxton a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:steve_paxton ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-essay_4-affordances a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:affordances ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-essay_4-cybernetics a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:cybernetics ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-essay_4-4e a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:4e ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-essay_4-extended a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:extended ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-essay_4-cyborg a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:cyborg ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-essay_4-dance a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:dance ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-essay_4-generative_arts a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:generative_arts ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-essay_4-rehearsal a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:rehearsal ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-essay_4-hi_hub a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:hi_hub ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-essay_4-essay_1 a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:essay_1 ;
+  hi:relationStrength "0.86"^^xsd:decimal .
+
+hi:rel-essay_4-enactivism a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:enactivism ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-essay_4-thompson a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:thompson ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-essay_4-judson_church a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:judson_church ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-essay_4-techno_dualism a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:techno_dualism ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-essay_4-humanism a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:humanism ;
+  hi:relationStrength "0.75"^^xsd:decimal .
 
 hi:rel-concept_image-generative_arts a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:concept_image ;
@@ -18464,6 +18675,42 @@ hi:rel-marlon-essay_3-proposes a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationType hi:proposes ;
   hi:relationStrength "0.9"^^xsd:decimal .
 
+hi:rel-marlon-essay_4-proposes a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:marlon ;
+  hi:relationTarget hi:essay_4 ;
+  hi:relationType hi:proposes ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-essay_1-hybrid-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_1 ;
+  hi:relationTarget hi:hybrid ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-essay_1-assemblage-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_1 ;
+  hi:relationTarget hi:assemblage ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-essay_1-creative_embodiment-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_1 ;
+  hi:relationTarget hi:creative_embodiment ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-essay_1-coupling-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_1 ;
+  hi:relationTarget hi:coupling ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-essay_1-essay_4-mediates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_1 ;
+  hi:relationTarget hi:essay_4 ;
+  hi:relationType hi:mediates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
 hi:rel-pendular_umwelt-umwelt-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:pendular_umwelt ;
   hi:relationTarget hi:umwelt ;
@@ -18534,6 +18781,42 @@ hi:rel-essay_3-hybrid-develops a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:essay_3 ;
   hi:relationTarget hi:hybrid ;
   hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-essay_4-coupling-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:coupling ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-essay_4-creative_embodiment-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:creative_embodiment ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-essay_4-assemblage-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:assemblage ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-essay_4-distributed-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:distributed ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-essay_4-techno_dualism-critiques a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:techno_dualism ;
+  hi:relationType hi:critiques ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-essay_4-humanism-critiques a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_4 ;
+  hi:relationTarget hi:humanism ;
+  hi:relationType hi:critiques ;
   hi:relationStrength "0.9"^^xsd:decimal .
 
 hi:rel-thompson-autopoiesis-develops a owl:NamedIndividual, hi:NetworkRelation ;

@@ -63,11 +63,11 @@
         "foaf:homepage": "https://marlonbarrios.github.io/"
       },
       "dc:date": "2026-09-03",
-      "dc:modified": "2026-09-03T00:51:52.912Z",
+      "dc:modified": "2026-09-03T19:29:10.018Z",
       "owl:versionInfo": "1.0.0",
-      "hi:nodeCount": 238,
-      "hi:edgeCount": 2379,
-      "hi:typedEdgeCount": 102
+      "hi:nodeCount": 239,
+      "hi:edgeCount": 2410,
+      "hi:typedEdgeCount": 114
     },
     {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme",
@@ -9238,7 +9238,7 @@
         "hi:NetworkNode"
       ],
       "skos:prefLabel": "Architecture",
-      "skos:definition": "Space actively choreographs cognition through affordances; platforms are architectures of attention and memory.",
+      "skos:definition": "Performative spatial and technical organization: worlds become knowable through affordances. Rooms, platforms, databases, and interfaces choreograph cognition, attention, and memory—not neutral containers but active participants in embodied knowing.",
       "skos:broader": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/domain"
       },
@@ -12287,7 +12287,7 @@
         "hi:NetworkNode"
       ],
       "skos:prefLabel": "Essays",
-      "skos:definition": "The publishing layer of the Hybrid Intelligences Hub. The three essays published now are by Marlon Barrios Solano: Essay 1 (cognitive assemblages and complex embodiment), Essay 2 (My Umwelt, in conversation with GPT-5.5), and Essay 3 (ontology, knowledge graph, and cognitive assemblage). Guest collaborations will feed the ontology as the section grows. Writing here is not illustration after the fact; it is knowledge that becomes concepts, relations, and prompts for Voice, Image, Mini-pod, and Enact.",
+      "skos:definition": "The publishing layer of the Hybrid Intelligences Hub. The four essays published now are by Marlon Barrios Solano: Essay 1 (cognitive assemblages and complex embodiment), Essay 2 (My Umwelt, in conversation with GPT-5.5), Essay 3 (ontology, knowledge graph, and cognitive assemblage), and Essay 4 (Designing Unstable Landscapes — improvisational dance within cognitive systems). Guest collaborations will feed the ontology as the section grows. Writing here is not illustration after the fact; it is knowledge that becomes concepts, relations, and prompts for Voice, Image, Mini-pod, and Enact.",
       "skos:broader": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
       },
@@ -12331,6 +12331,10 @@
           "hi:strength": 0.98
         },
         {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_4",
+          "hi:strength": 0.98
+        },
+        {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
           "hi:strength": 0.9,
           "hi:relationType": "participatesIn"
@@ -12349,7 +12353,7 @@
         "hi:NetworkNode"
       ],
       "skos:prefLabel": "Essay 1",
-      "skos:definition": "Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI — Essay 1 by Marlon Barrios Solano (July 10, 2026). Develops intelligence as coupling and embodiment as a nested ecology of body, tool, institution, and world. The argument that cognition circulates through assemblages rather than sitting inside an isolated subject.",
+      "skos:definition": "Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI — Essay 1 by Marlon Barrios Solano (July 10, 2026). Traces a lineage from Unstablelandscape (early 2000s real-time dance–technology) through Essay 4 (2005) to generative AI. Develops intelligence as coupling, embodiment as nested ecology, and cognition as distributed across assemblages. Performative architecture and affordances; Brooks's embodied robotics and Hayles's cognitive nonconscious; Paxton, Forsythe's choreographic object, and Synchronous Objects; juggling as reflex training. First-person argument that hybrid intelligence extends designed cognitive systems into language models and cognitive architectures.",
       "skos:broader": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
       },
@@ -12367,6 +12371,10 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_3",
           "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_4",
+          "hi:strength": 0.86
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#marlon",
@@ -12395,6 +12403,31 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
           "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hybrid",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative_embodiment",
+          "hi:strength": 0.9,
+          "hi:relationType": "instantiates"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_4",
+          "hi:strength": 0.9,
+          "hi:relationType": "mediates"
         }
       ]
     },
@@ -12419,6 +12452,10 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_3",
           "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_4",
+          "hi:strength": 0.84
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#marlon",
@@ -12464,6 +12501,10 @@
       "hi:weight": 1.55,
       "schema:url": "essay-3.html",
       "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_4",
+          "hi:strength": 0.85
+        },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology_kb",
           "hi:strength": 1
@@ -12566,6 +12607,164 @@
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hybrid",
           "hi:strength": 0.9,
           "hi:relationType": "develops"
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_4",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Essay 4",
+      "skos:definition": "Designing Unstable Landscapes: Improvisational Dance within Cognitive Systems — Essay 4 by Marlon Barrios Solano. First published in Johannes H. Birringer and Josephine Fenger (eds.), Tanz Im Kopf: Dance and Cognition (Broschiert), 2005; dedicated to Francisco Varela. Theorizes hybrid improvisational dance with real-time interactive multimedia as designed cognitive systems through the Unstablelandscape series (1999–2005): post-humanist coupling of bodies, algorithms, and environments; Gibsonian perception-action, embodied cognition, Hayles's posthuman, hyper-plastic embodiment, and distributed cognition across performers and Max/Jitter systems. Republished in the Hybrid Intelligences Hub.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "practice",
+      "hi:weight": 1.55,
+      "schema:url": "essay-4.html",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#marlon",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative_embodiment",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embodiment",
+          "hi:strength": 0.92
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
+          "hi:strength": 0.92
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#distributed",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#posthumanism",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hayles",
+          "hi:strength": 0.92
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#clark",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#varela",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#gibson",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#steve_paxton",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#affordances",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cybernetics",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#4e",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#extended",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cyborg",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#dance",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#generative_arts",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#rehearsal",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_1",
+          "hi:strength": 0.86
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#enactivism",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#thompson",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#judson_church",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#techno_dualism",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#humanism",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative_embodiment",
+          "hi:strength": 0.9,
+          "hi:relationType": "instantiates"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
+          "hi:strength": 0.9,
+          "hi:relationType": "instantiates"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#distributed",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#techno_dualism",
+          "hi:strength": 0.9,
+          "hi:relationType": "critiques"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#humanism",
+          "hi:strength": 0.9,
+          "hi:relationType": "critiques"
         }
       ]
     },
@@ -14330,7 +14529,7 @@
         "hi:NetworkNode"
       ],
       "skos:prefLabel": "Marlon Barrios Solano",
-      "skos:definition": "Co-director of Hybrid Intelligences and Maker-in-Residence at CAME, focused on AI, arts, and diasporas. Author of the three essays published now: Essay 1 (cognitive assemblages and complex embodiment), Essay 2 (My Umwelt), and Essay 3 (ontology, knowledge graph, and cognitive assemblage). Venezuelan-American interdisciplinary artist, creative technologist, and researcher with a background in dance, software engineering, and cognitive science; MFA in Dance and Technology (Ohio State). Founder of dance-tech.net; work combines generative AI, creative coding, and performance. Certified in Vipassana/mindfulness (Spirit Rock), Embodyoga, and Somatic Experiencing.",
+      "skos:definition": "Co-director of Hybrid Intelligences and Maker-in-Residence at CAME, focused on AI, arts, and diasporas. Author of the four essays published now: Essay 1 (cognitive assemblages and complex embodiment), Essay 2 (My Umwelt), Essay 3 (ontology, knowledge graph, and cognitive assemblage), and Essay 4 (Designing Unstable Landscapes). Venezuelan-American interdisciplinary artist, creative technologist, and researcher with a background in dance, software engineering, and cognitive science; MFA in Dance and Technology (Ohio State). Founder of dance-tech.net; work combines generative AI, creative coding, and performance. Certified in Vipassana/mindfulness (Spirit Rock), Embodyoga, and Somatic Experiencing.",
       "skos:broader": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/facilitator"
       },
@@ -14441,6 +14640,11 @@
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_3",
+          "hi:strength": 0.9,
+          "hi:relationType": "proposes"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_4",
           "hi:strength": 0.9,
           "hi:relationType": "proposes"
         }

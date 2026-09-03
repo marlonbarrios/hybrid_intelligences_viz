@@ -2,8 +2,8 @@
 /**
  * Essay source-of-truth workflow
  *
- * Edit essay-1.md, essay-2.md, or essay-3.md, then:
- *   node build-essays.js          # regenerate essay.html + essay-2.html + essay-3.html
+ * Edit essay-1.md, essay-2.md, essay-3.md, or essay-4.md, then:
+ *   node build-essays.js          # regenerate essay.html + essay-2.html + essay-3.html + essay-4.html
  *   node build-essays.js --pdf    # also export PDFs (Chrome headless)
  *   node build-essays.js --extract  # one-time: HTML → markdown (overwrites .md)
  *
@@ -68,6 +68,17 @@ const ESSAYS = [
       byline: "Marlon Barrios Solano · September 2, 2026",
     },
   },
+  {
+    md: "essay-4.md",
+    html: "essay-4.html",
+    pdf: "essay-4-unstable-landscapes.pdf",
+    printHtml: "_print-essay-4.html",
+    cover: {
+      essayLabel: "Essay 4",
+      title: "Designing Unstable Landscapes — Improvisational Dance within Cognitive Systems",
+      byline: "Marlon Barrios Solano · Tanz Im Kopf: Dance and Cognition, 2005",
+    },
+  },
 ];
 
 const SLIDES_URL = "slides.html";
@@ -128,6 +139,8 @@ function inlineMdToHtml(text) {
   let out = escapeHtml(text);
   out = out.replace(/\[([^\]]+)\]\(concept:([a-z0-9_]+)\)/gi, (_, label, id) =>
     `<a class="concept" href="network.html#${id}">${label}</a>`);
+  out = out.replace(/\[([^\]]+)\]\((?!concept:)([^)]+)\)/g, (_, label, href) =>
+    `<a href="${href}">${label}</a>`);
   out = out.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
   out = out.replace(/\*([^*]+)\*/g, "<em>$1</em>");
   return out;
@@ -242,8 +255,7 @@ function renderBibliography(items, heading = "Bibliography") {
   const lis = items
     .map((item) => {
       let html = item.replace(/"([^"]+)"/g, "\u201C$1\u201D");
-      html = escapeHtml(html);
-      html = html.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+      html = inlineMdToHtml(html);
       return `        <li>${html}</li>`;
     })
     .join("\n");
