@@ -332,7 +332,7 @@
         <a href="essay-2.html">Essay 2</a>
         <a href="essay-3-ontology-knowledge-graph.pdf" download>PDF ↓</a>
         <a href="ontology.html">Ontology</a>
-        <a href="network.html">Network</a>
+        <a href="views.html">Views</a>
         <a href="voice.html">Voice</a>
         <a href="image.html">Image</a>
         <a href="mini-pod.html">Mini-pod</a>
@@ -356,7 +356,7 @@
 
     <p>I use the term ontology deliberately. In knowledge representation and artificial intelligence, an ontology is not simply a collection of keywords, concepts, or visualizations. It provides a formal and machine-readable way of specifying entities and concepts within a domain, their categories, properties, and relationships.</p>
 
-    <p>The <a class="concept" href="network.html#hi_hub">Hybrid Intelligences Hub</a> currently contains 238 concepts and 2,379 weighted relationships. One hundred two of those relationships are also typed: directed verbs such as couples with, enables, mediates, and proposes, published in the <a class="concept" href="network.html#network_viz">network</a> and in the machine-readable ontology. The concepts and relationships are not only displayed through a visualization; I also represent them through Semantic Web and knowledge-representation standards, including SKOS, JSON-LD, RDF/Turtle, and OWL.</p>
+    <p>The <a class="concept" href="network.html#hi_hub">Hybrid Intelligences Hub</a> currently contains 238 concepts and 2,379 weighted relationships. One hundred two of those relationships are also typed: directed verbs such as couples with, enables, mediates, and proposes, published in the Views and in the machine-readable ontology. The concepts and relationships are not only displayed through a visualization; I also represent them through Semantic Web and knowledge-representation standards, including SKOS, JSON-LD, RDF/Turtle, and OWL.</p>
 
     <p>The project publishes several machine-readable representations of this knowledge architecture:</p>
 
@@ -413,7 +413,17 @@
 
     <p>At the level of knowledge organization, I use SKOS structures such as skos:ConceptScheme, skos:prefLabel, skos:definition, skos:broader, skos:inScheme, and skos:topConceptOf. These allow me to define concepts, descriptions, categories, and conceptual hierarchies in a structured and machine-readable form.</p>
 
-    <p>At the level of the knowledge graph, I instantiate hundreds of concepts and connect them through thousands of relationships. The interactive radial network is therefore not the ontology itself. It is one visual and navigational interface into the underlying knowledge architecture.</p>
+    <p>At the level of the knowledge graph, I instantiate hundreds of concepts and connect them through thousands of relationships. Visualization is therefore not the ontology itself. It is a family of visual and navigational interfaces into the same knowledge architecture, gathered under Views. The Hub currently publishes five pictures of that graph:</p>
+
+    <ul class="term-list">
+      <li>Radial <a class="concept" href="network.html#network_viz">network</a> — what is near what. Concepts sit on concentric rings by category; edge thickness is weighted relatedness. Isolate a ring or a typed verb. This is the first map; the others start from it.</li>
+      <li>Ring chord — which categories couple with which. Thirteen arcs; ribbon volume is relatedTo between rings. The node graph is soup; this 13×13 map is readable.</li>
+      <li>Hive — authors, conceptual models, and practices on three axes. A trail such as Maturana → Autopoiesis → Enactivism becomes a line, not a highlight in the soup.</li>
+      <li>Layered DAG — one typed verb at a time, left to right. Sources sit left of what they act on. Direction becomes visible.</li>
+      <li>Path walker — one coupling trail. Pedagogical, not a map: <a class="concept" href="network.html#body">body</a> couples with <a class="concept" href="network.html#ai">AI</a>; AI mediates <a class="concept" href="network.html#cognition">cognition</a>. The same sentences Voice already speaks.</li>
+    </ul>
+
+    <p>Each asks a different question of the same scheme. The radial network remains the first map — the one the others start from — but it is no longer the only way to see the graph.</p>
 
     <p>The OWL layer extends this further by formally defining classes, subclasses, object properties, datatype properties, domains, ranges, and individuals. This is where Hybrid Intelligences becomes an ontology in the stronger sense associated with Semantic Web technologies and computational knowledge representation.</p>
 
@@ -426,7 +436,7 @@
     <p>But the actual research process is recursive rather than linear:</p>
 
       <ul class="cluster">
-        <li>Essays + artistic research → Ontology → Knowledge Graph → Network / Voice / Image / Mini-pod / Enact → New research → Ontology</li>
+        <li>Essays + artistic research → Ontology → Knowledge Graph → Views / Voice / Image / Mini-pod / Enact → New research → Ontology</li>
       </ul>
 
     <p>The system continually feeds back into itself.</p>
@@ -444,7 +454,7 @@
       <li>Embodiment → relatedTo → Cognition</li>
     </ul>
 
-    <p>On top of it the graph now carries a seed of semantically differentiated, directed relationships — one hundred two assertions using the thirteen verbs named above. They are visible in the network (a Relations filter, combinable with a category ring), in the ontology browser, and as OWL object-property assertions such as hi:body hi:couplesWith hi:ai.</p>
+    <p>On top of it the graph now carries a seed of semantically differentiated, directed relationships — one hundred two assertions using the thirteen verbs named above. They are visible in the radial network (a Relations filter, combinable with a category ring), in the ontology browser, in the hive, the layered DAG, and the path walker, and as OWL object-property assertions such as hi:body hi:couplesWith hi:ai.</p>
 
     <p>Examples now asserted in the Hub:</p>
 
@@ -546,15 +556,15 @@
 
     </section>
 
-    <p>I therefore describe Hybrid Intelligences as an evolving knowledge architecture combining a computational ontology, knowledge graph, artistic research, network visualization, and generative AI interfaces. Together, these components form an experimental cognitive assemblage for investigating intelligence as coupling across bodies, tools, technologies, institutions, environments, and worlds.</p>
+    <p>I therefore describe Hybrid Intelligences as an evolving knowledge architecture combining a computational ontology, knowledge graph, artistic research, visualization, and generative AI interfaces. Together, these components form an experimental cognitive assemblage for investigating intelligence as coupling across bodies, tools, technologies, institutions, environments, and worlds.</p>
 
-    <p>The different components of the Hub—<a class="concept" href="network.html#ontology_kb">Ontology</a>, <a class="concept" href="network.html#network_viz">Network</a>, <a class="concept" href="network.html#conversational_ai">Voice</a>, <a class="concept" href="network.html#concept_image">Image</a>, <a class="concept" href="network.html#mini_pod">Mini-pod</a>, <a class="concept" href="network.html#enact">Enact</a>, <a class="concept" href="network.html#hi_essays">essays</a>, and artistic works—are not separate tools. They are different modes for entering and activating the same evolving knowledge ecology.</p>
+    <p>The different components of the Hub—<a class="concept" href="network.html#ontology_kb">Ontology</a>, Views (radial <a class="concept" href="network.html#network_viz">network</a>, ring chord, hive, layered DAG, path walker), <a class="concept" href="network.html#conversational_ai">Voice</a>, <a class="concept" href="network.html#concept_image">Image</a>, <a class="concept" href="network.html#mini_pod">Mini-pod</a>, <a class="concept" href="network.html#enact">Enact</a>, <a class="concept" href="network.html#hi_essays">essays</a>, and artistic works—are not separate tools. They are different modes for entering and activating the same evolving knowledge ecology.</p>
 
     <p>Writing feeds the ontology.</p>
 
-    <p>The ontology reorganizes the network.</p>
+    <p>The ontology reorganizes the Views.</p>
 
-    <p>The network and ontology ground conversations.</p>
+    <p>The Views and the ontology ground conversations.</p>
 
     <p>Concepts become images, voices, audio, and embodied prompts.</p>
 

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hybrid Intelligences — Views</title>
+  <meta name="description" content="Maps of the Hybrid Intelligences ontology: radial network, ring chord, hive plot, layered verb, and path walker.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="hybrid-viz.css">
+</head>
+<body>
+  <header>
+    <div class="brand-row">
+      <a class="site-logo" href="index.html" aria-label="Hybrid Intelligences home">
+        <img src="logo.png" alt="Hybrid Intelligences">
+      </a>
+      <div class="brand-copy">
+        <p class="eyebrow">Views</p>
+        <h1>Maps of the same ontology</h1>
+        <p class="lede">
+          Five pictures of one scheme — thirteen rings, weighted ties, and typed verbs.
+          The radial network is first: it answers what is near what. The others ask different questions.
+        </p>
+      </div>
+    </div>
+    <div class="header-row">
+      <div class="header-links">
+        <a href="index.html">← Home</a>
+        <a href="about.html">About</a>
+        <a href="essays.html">Essays</a>
+        <a href="ontology.html">Ontology</a>
+        <a href="views.html">Views</a>
+        <a href="voice.html">Voice</a>
+        <a href="image.html">Image</a>
+        <a href="mini-pod.html">Mini-pod</a>
+        <a href="enact.html">Enact</a>
+        <a href="creative-b.html">Creative B</a>
+        <a href="scan-qr.html">Scan QR Code</a>
+        <a href="https://github.com/marlonbarrios/hybrid_intelligences_viz" target="_blank" rel="noopener noreferrer"><span class="gh-icon" aria-hidden="true"></span>GitHub ↗</a>
+      </div>
+      <button type="button" class="theme-btn" id="themeBtn" aria-label="Toggle theme">Theme</button>
+    </div>
+    <nav class="view-nav" aria-label="Ontology views">
+      <a href="network.html">Network</a>
+      <a class="current" href="views.html">Overview</a>
+      <a href="chord.html">Chord</a>
+      <a href="hive.html">Hive</a>
+      <a href="dag.html">DAG</a>
+      <a href="path.html">Path</a>
+    </nav>
+  </header>
+
+  <main class="cards" id="cards">
+    <a class="card" href="network.html">
+      <span class="shot">
+        <img src="screenshots/network.jpg" width="1024" height="640" alt="Radial network of Hybrid Intelligences concepts on concentric category rings.">
+      </span>
+      <div class="copy">
+        <div class="kicker">The radial map</div>
+        <h2>Network</h2>
+        <p>What is near what. Concepts sit on concentric rings by category; edge thickness is weighted relatedness. Isolate a ring or a typed verb. This is the map the other views start from.</p>
+      </div>
+    </a>
+    <a class="card" href="chord.html">
+      <span class="shot">
+        <img src="screenshots/view-chord.jpg" width="1280" height="800" alt="Chord diagram of relatedTo volume among the thirteen ontology rings.">
+      </span>
+      <div class="copy">
+        <div class="kicker">Uses the weighted ties</div>
+        <h2>Ring chord</h2>
+        <p>Which categories couple with which? Thirteen arcs; ribbon volume is relatedTo between rings. The node graph is soup; this 13×13 map is readable.</p>
+      </div>
+    </a>
+    <a class="card" href="hive.html">
+      <span class="shot">
+        <img src="screenshots/view-hive.jpg" width="1280" height="800" alt="Hive plot with authors, conceptual models, and practices on three axes.">
+      </span>
+      <div class="copy">
+        <div class="kicker">Uses proposes · develops · instantiates · enacts</div>
+        <h2>Hive</h2>
+        <p>Authors, conceptual models, and practices on three axes. A trail such as Maturana → Autopoiesis → Enactivism becomes a line, not a highlight in the soup.</p>
+      </div>
+    </a>
+    <a class="card" href="dag.html">
+      <span class="shot">
+        <img src="screenshots/view-dag.jpg" width="1280" height="800" alt="Layered directed graph of the enables relation, left to right.">
+      </span>
+      <div class="copy">
+        <div class="kicker">One verb, left to right</div>
+        <h2>Layered DAG</h2>
+        <p>Pick enables, emerges from, constrains, or any other typed verb. Sources sit left of what they act on. Direction becomes visible.</p>
+      </div>
+    </a>
+    <a class="card" href="path.html">
+      <span class="shot">
+        <img src="screenshots/view-path.jpg" width="1280" height="800" alt="Path walker trail: Body couples with Artificial Intelligence, which mediates Cognition.">
+      </span>
+      <div class="copy">
+        <div class="kicker">One trail at a time</div>
+        <h2>Path walker</h2>
+        <p>Walk a coupling: Body couples with AI; AI mediates Cognition. Pedagogical, not a map. Same sentences Voice already speaks.</p>
+      </div>
+    </a>
+  </main>
+
+  <script src="hybrid-graph.js"></script>
+  <script>
+    HIGraph.initTheme();
+    HIGraph.load().then((g) => {
+      const cards = document.getElementById("cards");
+      const note = document.createElement("p");
+      note.className = "stats";
+      note.style.cssText = "grid-column:1/-1;padding:0 0.15rem;margin:0";
+      note.textContent = `${g.meta.nodeCount || g.concepts.length} concepts · ${g.meta.edgeCount || g.edges.length} weighted relations · ${g.typed.length} typed assertions · ${HIGraph.RING_ORDER.length} rings`;
+      cards.appendChild(note);
+    }).catch((err) => {
+      document.getElementById("cards").insertAdjacentHTML(
+        "beforeend",
+        `<p class="error">Could not load ontology.jsonld. Serve this folder over HTTP.<br>${HIGraph.escapeHtml(err.message)}</p>`
+      );
+    });
+  </script>
+</body>
+</html>

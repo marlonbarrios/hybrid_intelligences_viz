@@ -263,6 +263,9 @@
       line-height: 1.5;
     }
     .category-banner-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem 0.85rem;
       margin-top: 0.65rem;
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.78rem;
@@ -493,6 +496,17 @@
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.78rem;
     }
+    .detail .actions.view-links {
+      margin-top: -0.35rem;
+    }
+    .cat-view-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.75rem;
+    }
+    .cat-view-links a {
+      white-space: nowrap;
+    }
     .related h4 {
       margin: 0 0 0.5rem;
       font-family: "IBM Plex Mono", monospace;
@@ -577,20 +591,35 @@
     <p class="intro">
       <strong>What is an ontology?</strong>
       An ontology is a structured map of concepts and the relations between them—a shared vocabulary
-      with definitions that both people and software can read. Here, the interactive network is exported
-      into standard formats so you can browse, search, and link ideas across the program: frameworks,
-      authors, practices, domains, and how they connect — including typed verbs such as couples with,
-      enables, mediates, and proposes on a seed of directed edges, listed under Browse by relation.
+      with definitions that both people and software can read. Here, the
+      <a href="network.html">interactive network</a> is one of several
+      <a href="views.html">Views</a> of the same graph —
+      <a href="network.html">radial network</a>,
+      <a href="chord.html">ring chord</a>,
+      <a href="hive.html">hive</a>,
+      <a href="dag.html">layered DAG</a>, and
+      <a href="path.html">path walker</a> —
+      and is exported into standard formats so you can browse, search, and link ideas across the program:
+      frameworks, authors, practices, domains, and how they connect — including typed verbs such as
+      <a href="#rel/couplesWith">couples with</a>,
+      <a href="#rel/enables">enables</a>,
+      <a href="#rel/mediates">mediates</a>, and
+      <a href="#rel/proposes">proposes</a>
+      on a seed of directed edges, listed under
+      <a href="#browse-relation">Browse by relation</a>.
       The same vocabulary is the knowledge
-      base for Voice, and from any concept you can Talk, Make an image, or create a Mini-pod. Enact
-      offers cognitive prompts for a choreography of awareness — layers of the Hybrid Intelligences Hub.
+      base for <a href="voice.html">Voice</a>, and from any concept you can
+      <a href="voice.html">Talk</a>, <a href="image.html">Make an image</a>, or create a
+      <a href="mini-pod.html">Mini-pod</a>.
+      <a href="enact.html">Enact</a> offers cognitive prompts for a choreography of awareness — layers of the
+      <a href="index.html">Hybrid Intelligences Hub</a>.
     </p>
     <div class="header-row">
       <div class="header-links">
         <a href="index.html">← Home</a>
         <a href="about.html">About</a>
         <a href="essays.html">Essays</a>
-        <a href="network.html">Network</a>
+        <a href="views.html">Views</a>
         <a href="voice.html">Voice</a>
         <a href="image.html">Image</a>
         <a href="mini-pod.html">Mini-pod</a>
@@ -708,6 +737,39 @@
     function networkRelationUrl(type, catId) {
       if (catId && catId !== "all") return `network.html#cat/${catId}&rel/${type}`;
       return `network.html#rel/${type}`;
+    }
+
+    function firstTypedVerb(conceptId) {
+      const t = typedTriples.find((x) => x.source === conceptId || x.target === conceptId);
+      return t ? t.type : null;
+    }
+
+    function viewActionLinks(opts) {
+      const { id, category, relation } = opts || {};
+      const links = [];
+      if (id) {
+        const verb = firstTypedVerb(id);
+        links.push(`<a href="network.html#${id}">View in network ↗</a>`);
+        if (category) links.push(`<a href="chord.html#cat/${category}">View in ring chord ↗</a>`);
+        links.push(`<a href="hive.html#node/${id}">View in hive ↗</a>`);
+        links.push(`<a href="${verb ? `dag.html#${verb}/${id}` : "dag.html"}">View in layered DAG ↗</a>`);
+        links.push(`<a href="path.html#${id}">View in path walker ↗</a>`);
+      } else if (relation) {
+        links.push(`<a href="${networkRelationUrl(relation, category)}">View in network ↗</a>`);
+        if (category && category !== "all") {
+          links.push(`<a href="chord.html#cat/${category}">View in ring chord ↗</a>`);
+        }
+        links.push(`<a href="hive.html#${relation}">View in hive ↗</a>`);
+        links.push(`<a href="dag.html#${relation}">View in layered DAG ↗</a>`);
+        links.push(`<a href="path.html">View in path walker ↗</a>`);
+      } else if (category) {
+        links.push(`<a href="${networkCategoryUrl(category)}">View in network ↗</a>`);
+        links.push(`<a href="chord.html#cat/${category}">View in ring chord ↗</a>`);
+        links.push(`<a href="hive.html">View in hive ↗</a>`);
+        links.push(`<a href="dag.html">View in layered DAG ↗</a>`);
+        links.push(`<a href="path.html">View in path walker ↗</a>`);
+      }
+      return links.join("");
     }
 
     function syncHash() {
@@ -963,7 +1025,7 @@
               ${
                 isExpanded
                   ? `<div class="cat-group-body">
-                      ${cat.desc ? `<p class="cat-group-desc">${cat.desc} <a class="cat-network-link" href="${networkCategoryUrl(id)}">View in network ↗</a></p>` : ""}
+                      ${cat.desc ? `<p class="cat-group-desc">${cat.desc}</p><p class="cat-group-desc cat-view-links">${viewActionLinks({ category: id })}</p>` : ""}
                       ${items.length ? `<ul class="cat-concepts">${conceptsHtml}</ul>` : '<p class="cat-group-desc">No concepts match.</p>'}
                     </div>`
                   : ""
@@ -984,7 +1046,7 @@
         <h2>Browse by category</h2>
         <ul class="cat-list">${allBtn}</ul>
         ${groups}
-        <h2>Browse by relation</h2>
+        <h2 id="browse-relation">Browse by relation</h2>
         <ul class="rel-list">${relItems}</ul>`;
     }
 
@@ -1018,7 +1080,7 @@
               </div>
               <p>Directed ${relMeta.verb} assertions in the ontology${cat ? ` involving <strong>${cat.label}</strong>` : ""}. Most edges remain untyped <em>relatedTo</em>.</p>
               <div class="category-banner-actions">
-                <a href="${networkRelationUrl(activeRelation, activeCategory)}">View in network ↗</a>
+                ${viewActionLinks({ relation: activeRelation, category: activeCategory })}
               </div>
             </div>`;
         if (!relTriples.length) {
@@ -1054,7 +1116,7 @@
               </div>
               <p>${categories[activeCategory].desc || ""}</p>
               <div class="category-banner-actions">
-                <a href="${networkCategoryUrl(activeCategory)}">View in network ↗</a>
+                ${viewActionLinks({ category: activeCategory })}
               </div>
             </div>`
           : "";
@@ -1203,8 +1265,10 @@
             <a href="${voiceTalkHref(concept)}">Talk about this</a>
             <a href="${imageHref(concept)}">Make an image</a>
             <a href="${podcastHref(concept)}">Mini-pod</a>
-            <a href="network.html#${concept.id}">View in network ↗</a>
-            ${external.join(" · ")}
+            ${external.join("")}
+          </div>
+          <div class="actions view-links">
+            ${viewActionLinks({ id: concept.id, category: concept.category })}
           </div>
           ${
             typedLines.length

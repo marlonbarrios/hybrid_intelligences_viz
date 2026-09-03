@@ -28,12 +28,41 @@
         .site-logo:hover { opacity: 0.9; }
         .site-logo img {
             display: block;
-            height: 96px;
+            height: 54px;
             width: auto;
+        }
+        .view-nav-net {
+            position: fixed;
+            z-index: 9;
+            top: 74px;
+            left: 78px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem 0.85rem;
+            font-family: "IBM Plex Mono", monospace;
+            font-size: 0.72rem;
+        }
+        .view-nav-net a {
+            color: #969eb0;
+            text-decoration: none;
+            padding: 0.12rem 0.35rem;
+            border-radius: 4px;
+        }
+        .view-nav-net a:hover { color: #e8eaef; }
+        .view-nav-net a.current {
+            color: #f4c430;
+            background: rgba(244, 196, 48, 0.12);
+        }
+        body.light-mode .view-nav-net a { color: #5a6070; }
+        body.light-mode .view-nav-net a:hover { color: #202430; }
+        body.light-mode .view-nav-net a.current {
+            color: #a8760c;
+            background: rgba(168, 118, 12, 0.1);
         }
         @media (max-width: 720px) {
             .site-logo { top: 6px; left: 8px; }
-            .site-logo img { height: 80px; }
+            .site-logo img { height: 72px; }
+            .view-nav-net { display: none; }
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,5 +72,13 @@
     <a class="site-logo" href="index.html" aria-label="Hybrid Intelligences home">
         <img src="logo.png" alt="Hybrid Intelligences">
     </a>
+    <nav class="view-nav-net" aria-label="Ontology views">
+        <a class="current" href="network.html">Network</a>
+        <a href="views.html">Overview</a>
+        <a href="chord.html">Chord</a>
+        <a href="hive.html">Hive</a>
+        <a href="dag.html">DAG</a>
+        <a href="path.html">Path</a>
+    </nav>
 </body>
 </html>

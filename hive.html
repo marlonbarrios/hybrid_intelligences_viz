@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hybrid Intelligences — Hive</title>
+  <meta name="description" content="Hive plot of authors, conceptual models, and practices in the Hybrid Intelligences ontology.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="hybrid-viz.css">
+</head>
+<body>
+  <header>
+    <div class="brand-row">
+      <a class="site-logo" href="index.html" aria-label="Hybrid Intelligences home">
+        <img src="logo.png" alt="Hybrid Intelligences">
+      </a>
+      <div class="brand-copy">
+        <p class="eyebrow">Views · Hive</p>
+        <h1>Who proposes, develops, instantiates</h1>
+        <p class="lede">
+          Three axes — authors, conceptual models, practices. Trails are typed verbs.
+          Maturana → Autopoiesis is a line, not a highlight in the radial soup.
+        </p>
+      </div>
+    </div>
+    <div class="header-row">
+      <div class="header-links">
+        <a href="index.html">← Home</a>
+        <a href="about.html">About</a>
+        <a href="essays.html">Essays</a>
+        <a href="ontology.html">Ontology</a>
+        <a href="views.html">Views</a>
+        <a href="voice.html">Voice</a>
+        <a href="image.html">Image</a>
+        <a href="mini-pod.html">Mini-pod</a>
+        <a href="enact.html">Enact</a>
+        <a href="creative-b.html">Creative B</a>
+        <a href="scan-qr.html">Scan QR Code</a>
+        <a href="https://github.com/marlonbarrios/hybrid_intelligences_viz" target="_blank" rel="noopener noreferrer"><span class="gh-icon" aria-hidden="true"></span>GitHub ↗</a>
+      </div>
+      <button type="button" class="theme-btn" id="themeBtn" aria-label="Toggle theme">Theme</button>
+    </div>
+    <nav class="view-nav" aria-label="Ontology views">
+      <a href="network.html">Network</a>
+      <a href="views.html">Overview</a>
+      <a href="chord.html">Chord</a>
+      <a class="current" href="hive.html">Hive</a>
+      <a href="dag.html">DAG</a>
+      <a href="path.html">Path</a>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside id="panel"><p class="loading">Loading ontology…</p></aside>
+    <div class="stage" id="stage"></div>
+  </div>
+
+  <script src="hybrid-graph.js"></script>
+  <script src="viz-hive.js"></script>
+</body>
+</html>

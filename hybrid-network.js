@@ -133,6 +133,11 @@ const PORTFOLIO_URL = "https://marlonbarrios.github.io/";
 const HOME_URL = "index.html";
 const ABOUT_URL = "about.html";
 const ONTOLOGY_URL = "ontology.html";
+const VIEWS_URL = "views.html";
+const CHORD_URL = "chord.html";
+const HIVE_URL = "hive.html";
+const DAG_URL = "dag.html";
+const PATH_URL = "path.html";
 const ESSAYS_URL = "essays.html";
 const ESSAY1_URL = "essay.html";
 const ESSAY2_URL = "essay-2.html";
@@ -180,6 +185,10 @@ function isMobileLayout() {
   return typeof width === "number" && width > 0
     ? width < MOBILE_BREAKPOINT
     : (typeof window !== "undefined" && window.innerWidth < MOBILE_BREAKPOINT);
+}
+
+function desktopBarH() {
+  return 70;
 }
 
 function mobileBarH() {
@@ -4279,7 +4288,7 @@ function getCenter() {
 
 function getMaxRadius() {
   const mobile = isMobileLayout();
-  const topPad = mobile ? mobileBarH() + 8 : 120;
+  const topPad = mobile ? mobileBarH() + 8 : desktopBarH() + 28;
   const toggleH = mobile ? mobileBottomH() + 8 : 54;
   const focus = getActiveNode();
   const panelH = focus ? detailPanelLayout(focus).panelH : 108;
@@ -5442,7 +5451,7 @@ function drawMobileUI() {
   textAlign(LEFT, CENTER);
   textSize(12);
   drawingContext.font = '300 12px "IBM Plex Mono", monospace';
-  text("Hybrid Intelligences", 98, 36);
+  text("Conceptual network", 98, 36);
   drawingContext.font = '400 11px "IBM Plex Mono", monospace';
 
   textSize(8);
@@ -5549,6 +5558,11 @@ function drawMobileMenu() {
     { id: "link", label: "About", url: ABOUT_URL },
     { id: "link", label: "Essays", url: ESSAYS_URL },
     { id: "link", label: "Ontology", url: ONTOLOGY_URL },
+    { id: "link", label: "Views", url: VIEWS_URL },
+    { id: "link", label: "Chord", url: CHORD_URL },
+    { id: "link", label: "Hive", url: HIVE_URL },
+    { id: "link", label: "DAG", url: DAG_URL },
+    { id: "link", label: "Path", url: PATH_URL },
     { id: "link", label: "Voice", url: VOICE_URL },
     { id: "link", label: "Image", url: IMAGE_URL },
     { id: "link", label: "Mini-pod", url: MINI_POD_URL },
@@ -5648,98 +5662,32 @@ function drawUI() {
     return;
   }
 
-  const barH = 112;
-  const headerTextX = 118;
+  const barH = desktopBarH();
+  const headerTextX = 78;
   fill(...t.uiBar);
   noStroke();
   rect(0, 0, width, barH);
 
   setTextFill();
   textAlign(LEFT, CENTER);
-  textSize(11);
   textStyle(NORMAL);
   fill(...t.title);
-  drawingContext.font = '300 11px "IBM Plex Mono", monospace';
-  text("Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI", headerTextX, 27);
+  drawingContext.font = '300 12px "IBM Plex Mono", monospace';
+  text("Conceptual network visualization", headerTextX, 18);
   drawingContext.font = '400 11px "IBM Plex Mono", monospace';
 
-  textSize(8);
-  fill(...t.subtitle);
-  text(
-    "A hybrid dynamic knowledge architecture of concepts, essays, visualization, conversational AI, documentation, and program materials for embodied leadership and creativity in the era of AI.",
-    headerTextX,
-    41
-  );
-
-  textSize(8.5);
-  const orgY = 55;
-  const orgSep = " \u2022 ";
-  const orgLinks = [
-    { label: "University of Florida", url: "https://www.ufl.edu/" },
-    { label: "Center for Arts, Migration + Entrepreneurship", url: "https://arts.ufl.edu/came/" },
-    { label: "IGNITE Engineering", url: "https://www.eng.ufl.edu/innovation/" },
-    { label: "Center for Arts in Medicine", url: "https://arts.ufl.edu/programs-schools/center-for-arts-in-medicine/" },
-    { label: "College of the Arts", url: "https://arts.ufl.edu/" },
-  ];
-  let orgX = headerTextX;
-  for (let i = 0; i < orgLinks.length; i++) {
-    if (i > 0) {
-      fill(...t.subtitle);
-      text(orgSep, orgX, orgY);
-      orgX += textWidth(orgSep);
-    }
-    const org = orgLinks[i];
-    const orgW = textWidth(org.label);
-    uiLinks.push({
-      url: org.url,
-      x: orgX,
-      y: orgY - 6,
-      w: orgW,
-      h: 12,
-    });
-    const orgHover = hitUiLink(mouseX, mouseY) === org.url;
-    fill(...t.title, orgHover ? 255 : 200);
-    text(org.label, orgX, orgY);
-    stroke(...t.title, orgHover ? 220 : 120);
-    strokeWeight(0.5);
-    line(orgX, orgY + 5, orgX + orgW, orgY + 5);
-    noStroke();
-    orgX += orgW;
-  }
-
-  const creditY = 69;
-  const subtitlePrefix = "Conceptual network visualization by ";
-  const subtitleName = "Marlon Barrios Solano";
-  textSize(8);
-  fill(...t.subtitle);
-  text(subtitlePrefix, headerTextX, creditY);
-  const nameX = headerTextX + textWidth(subtitlePrefix);
-  const nameW = textWidth(subtitleName);
-  uiLinks.push({
-    url: PORTFOLIO_URL,
-    x: nameX,
-    y: creditY - 6,
-    w: nameW,
-    h: 12,
-  });
-  const nameHover = hitUiLink(mouseX, mouseY) === PORTFOLIO_URL;
-  fill(...t.title, nameHover ? 255 : 220);
-  text(subtitleName, nameX, creditY);
-  stroke(...t.title, nameHover ? 220 : 140);
-  strokeWeight(0.5);
-  line(nameX, creditY + 5, nameX + nameW, creditY + 5);
-  noStroke();
-
+  const creditY = 38;
   const creditSep = " \u00b7 ";
   textSize(8);
   fill(...t.subtitle);
-  let creditCursorX = nameX + nameW;
+  let creditCursorX = headerTextX;
 
   const creditNavLinks = [
     { url: HOME_URL, label: "Home" },
     { url: ABOUT_URL, label: "About" },
     { url: ESSAYS_URL, label: "Essays" },
-    { url: ONTOLOGY_URL, label: "Ontology \u2197" },
+    { url: ONTOLOGY_URL, label: "Ontology" },
+    { url: VIEWS_URL, label: "Views" },
     { url: VOICE_URL, label: "Voice" },
     { url: IMAGE_URL, label: "Image" },
     { url: MINI_POD_URL, label: "Mini-pod" },
@@ -5748,9 +5696,12 @@ function drawUI() {
     { url: SCAN_QR_URL, label: "Scan QR Code" },
     { url: GITHUB_URL, label: "GitHub \u2197" },
   ];
-  for (const link of creditNavLinks) {
-    text(creditSep, creditCursorX, creditY);
-    creditCursorX += textWidth(creditSep);
+  for (let i = 0; i < creditNavLinks.length; i++) {
+    if (i > 0) {
+      text(creditSep, creditCursorX, creditY);
+      creditCursorX += textWidth(creditSep);
+    }
+    const link = creditNavLinks[i];
     const linkW = textWidth(link.label);
     uiLinks.push({
       url: link.url,
@@ -5772,7 +5723,7 @@ function drawUI() {
 
   fill(...t.muted);
   textSize(9);
-  text("Jul 13\u201330, 2026 \u00b7 click legend / \u2191\u2193 categories \u00b7 A animate \u00b7 R reset \u00b7 T theme", headerTextX, 87);
+  text("click legend / \u2191\u2193 categories \u00b7 A animate \u00b7 R reset \u00b7 T theme", headerTextX, 56);
 
   drawLegend();
   drawRelationLegend();
@@ -6057,7 +6008,7 @@ function detailPanelLayout(n) {
     : toggleLayout().bottom + toggleLayout().btnH + toggleLayout().padY * 2 + 12;
   const wikiUrl = n?.wikiUrl || (n?.url?.includes("wikipedia.org") ? n.url : null);
   const primaryUrl = n?.url && n.url !== wikiUrl ? n.url : null;
-  const linkCount = 3 + (primaryUrl ? 1 : 0) + (wikiUrl ? 1 : 0) + 1;
+  const linkCount = 3 + (primaryUrl ? 1 : 0) + (wikiUrl ? 1 : 0) + 1 + 4;
   const hasLink = linkCount > 0;
   const typedCount = n ? min(4, typedPhrasesFor(n).length) : 0;
   const panelH = mobile
@@ -6152,6 +6103,11 @@ function drawDetailPanel(n) {
     drawPanelLink(wikiUrl, "Wikipedia ↗");
   }
   drawPanelLink(`${ONTOLOGY_URL}#${n.id}`, "View in ontology ↗");
+  drawPanelLink(`${CHORD_URL}#cat/${n.cat}`, "View in ring chord ↗");
+  drawPanelLink(`${HIVE_URL}#node/${n.id}`, "View in hive ↗");
+  const typedHit = TYPED_EDGES.find(([a, b]) => a === n.id || b === n.id);
+  drawPanelLink(typedHit ? `${DAG_URL}#${typedHit[2]}/${n.id}` : DAG_URL, "View in layered DAG ↗");
+  drawPanelLink(`${PATH_URL}#${n.id}`, "View in path walker ↗");
 
   const connCount = edges.filter(e => e.a === n || e.b === n).length;
   fill(...t.panelMuted);

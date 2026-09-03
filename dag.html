@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hybrid Intelligences — DAG</title>
+  <meta name="description" content="Layered directed graph of one typed verb in the Hybrid Intelligences ontology.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="hybrid-viz.css">
+</head>
+<body>
+  <header>
+    <div class="brand-row">
+      <a class="site-logo" href="index.html" aria-label="Hybrid Intelligences home">
+        <img src="logo.png" alt="Hybrid Intelligences">
+      </a>
+      <div class="brand-copy">
+        <p class="eyebrow">Views · DAG</p>
+        <h1>A verb, laid left to right</h1>
+        <p class="lede">
+          One typed relation at a time. Sources sit to the left of what they act on.
+          Enables, emerges from, and constrains are the verbs this picture was made for.
+        </p>
+      </div>
+    </div>
+    <div class="header-row">
+      <div class="header-links">
+        <a href="index.html">← Home</a>
+        <a href="about.html">About</a>
+        <a href="essays.html">Essays</a>
+        <a href="ontology.html">Ontology</a>
+        <a href="views.html">Views</a>
+        <a href="voice.html">Voice</a>
+        <a href="image.html">Image</a>
+        <a href="mini-pod.html">Mini-pod</a>
+        <a href="enact.html">Enact</a>
+        <a href="creative-b.html">Creative B</a>
+        <a href="scan-qr.html">Scan QR Code</a>
+        <a href="https://github.com/marlonbarrios/hybrid_intelligences_viz" target="_blank" rel="noopener noreferrer"><span class="gh-icon" aria-hidden="true"></span>GitHub ↗</a>
+      </div>
+      <button type="button" class="theme-btn" id="themeBtn" aria-label="Toggle theme">Theme</button>
+    </div>
+    <nav class="view-nav" aria-label="Ontology views">
+      <a href="network.html">Network</a>
+      <a href="views.html">Overview</a>
+      <a href="chord.html">Chord</a>
+      <a href="hive.html">Hive</a>
+      <a class="current" href="dag.html">DAG</a>
+      <a href="path.html">Path</a>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside id="panel"><p class="loading">Loading ontology…</p></aside>
+    <div class="stage" id="stage"></div>
+  </div>
+
+  <script src="hybrid-graph.js"></script>
+  <script src="viz-dag.js"></script>
+</body>
+</html>

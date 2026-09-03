@@ -122,6 +122,34 @@
       backdrop-filter: blur(6px);
     }
     .theme-btn:hover { border-color: var(--title); color: var(--title); }
+    .header-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem 0.8rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      align-items: center;
+      justify-content: flex-end;
+      flex: 1;
+      padding: 0.7rem 0.75rem 0 0;
+    }
+    .header-links a {
+      color: var(--theme-btn-color);
+      text-decoration: none;
+    }
+    .header-links a:hover {
+      color: var(--title);
+      text-decoration: underline;
+    }
+    @media (max-width: 860px) {
+      .topbar { flex-wrap: wrap; }
+      .header-links {
+        order: 3;
+        flex-basis: 100%;
+        justify-content: flex-start;
+        padding: 0.15rem 0 0.35rem;
+      }
+    }
 
     .hero-body {
       position: relative;
@@ -422,6 +450,19 @@
       <a class="site-logo" href="index.html" aria-label="Hybrid Intelligences home">
         <img src="logo.png" alt="Hybrid Intelligences">
       </a>
+      <nav class="header-links" aria-label="Main">
+        <a href="about.html">About</a>
+        <a href="essays.html">Essays</a>
+        <a href="ontology.html">Ontology</a>
+        <a href="views.html">Views</a>
+        <a href="voice.html">Voice</a>
+        <a href="image.html">Image</a>
+        <a href="mini-pod.html">Mini-pod</a>
+        <a href="enact.html">Enact</a>
+        <a href="creative-b.html">Creative B</a>
+        <a href="scan-qr.html">Scan QR Code</a>
+        <a href="https://github.com/marlonbarrios/hybrid_intelligences_viz" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </nav>
       <button type="button" class="theme-btn" id="themeBtn" aria-label="Toggle theme">Theme</button>
     </div>
 
@@ -432,7 +473,7 @@
         <p class="support">
           A hybrid dynamic knowledge architecture of concepts, essays, visualization, conversational AI, documentation, and program materials for embodied leadership and creativity in the era of AI.
         </p>
-        <a class="cta-primary" href="network.html">Enter the network</a>
+        <a class="cta-primary" href="ontology.html">Enter the Ontology</a>
         <p class="meta">
           <a href="https://www.ufl.edu/" target="_blank" rel="noopener noreferrer">University of Florida</a>
           · <a href="https://arts.ufl.edu/" target="_blank" rel="noopener noreferrer">College of the Arts</a>
@@ -467,9 +508,9 @@
             </a>
           </li>
           <li>
-            <a href="network.html">
-              <span class="label">Network</span>
-              <span class="desc">Radial map of concepts, tracks, and relations</span>
+            <a href="views.html">
+              <span class="label">Views</span>
+              <span class="desc">Network, chord, hive, layered verb, and path walker</span>
             </a>
           </li>
           <li>
