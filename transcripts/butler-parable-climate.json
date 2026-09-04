@@ -1,0 +1,7 @@
+{
+  "videoId": "sv5m3tnT9wk",
+  "text": "",
+  "source": "pending",
+  "ingestedAt": "2026-09-04T18:24:21.759Z",
+  "note": "Run: python3 scripts/import-youtube-captions.py butler-parable-climate"
+}

@@ -232,13 +232,713 @@ const VIDEO_FALLBACK_CONCEPTS = {
     { conceptId: "embodied", label: "Embodied" },
     { conceptId: "consciousness", label: "Consciousness" },
   ],
+  "ai-fluency-generative-ai": [
+    { conceptId: "gen_ai", label: "Generative AI" },
+    { conceptId: "llm", label: "LLM" },
+    { conceptId: "ai", label: "AI" },
+    { conceptId: "machine_learning", label: "Machine Learning" },
+  ],
+  "karla-expanding-possibilities": [
+    { conceptId: "karla", label: "Karla Saldaña Ochoa" },
+    { conceptId: "architecture", label: "Architecture" },
+    { conceptId: "creative_embodiment", label: "Creative Embodiment" },
+    { conceptId: "ai", label: "AI" },
+  ],
+  "gallagher-4e-cognition": [
+    { conceptId: "gallagher", label: "Shaun Gallagher" },
+    { conceptId: "4e", label: "4E Cognition" },
+    { conceptId: "embodied", label: "Embodied" },
+    { conceptId: "enactivism", label: "Enactivism" },
+  ],
+  "privacy-illusion-ai-data": [
+    { conceptId: "crawford", label: "Kate Crawford" },
+    { conceptId: "track_ethics", label: "Ethics Track" },
+    { conceptId: "ai", label: "AI" },
+    { conceptId: "llm", label: "LLM" },
+  ],
+  "friston-brain-constructs-reality": [
+    { conceptId: "friston", label: "Karl Friston" },
+    { conceptId: "active_inference", label: "Active Inference" },
+    { conceptId: "consciousness", label: "Consciousness" },
+    { conceptId: "clark", label: "Andy Clark" },
+  ],
+  "levin-diverse-intelligences": [
+    { conceptId: "synthetic_cognition", label: "Synthetic Cognition" },
+    { conceptId: "distributed", label: "Distributed" },
+    { conceptId: "holobiont", label: "Holobiont" },
+    { conceptId: "symbiosis", label: "Symbiosis" },
+  ],
+  "levin-intelligence-without-brains": [
+    { conceptId: "synthetic_cognition", label: "Synthetic Cognition" },
+    { conceptId: "distributed", label: "Distributed" },
+    { conceptId: "holobiont", label: "Holobiont" },
+    { conceptId: "margulis", label: "Lynn Margulis" },
+  ],
+  "thompson-embodied-cognition": [
+    { conceptId: "thompson", label: "Evan Thompson" },
+    { conceptId: "enactivism", label: "Enactivism" },
+    { conceptId: "4e", label: "4E Cognition" },
+    { conceptId: "embodied", label: "Embodied" },
+  ],
+  "varela-god-computers": [
+    { conceptId: "varela", label: "Francisco Varela" },
+    { conceptId: "enactivism", label: "Enactivism" },
+    { conceptId: "autopoiesis", label: "Autopoiesis" },
+    { conceptId: "4e", label: "4E Cognition" },
+  ],
+  "mini-brains-150k": [
+    { conceptId: "neural_networks", label: "Neural Networks" },
+    { conceptId: "distributed", label: "Distributed" },
+    { conceptId: "embodied", label: "Embodied" },
+    { conceptId: "consciousness", label: "Consciousness" },
+  ],
+  "understanding-ai-inner-thoughts": [
+    { conceptId: "ai_interpretability", label: "AI Interpretability" },
+    { conceptId: "llm", label: "LLM" },
+    { conceptId: "neural_networks", label: "Neural Networks" },
+    { conceptId: "aguilera_arcas", label: "Blaise Agüera y Arcas" },
+  ],
+  "visualizing-transformers-attention": [
+    { conceptId: "transformers", label: "Transformers" },
+    { conceptId: "llm", label: "LLM" },
+    { conceptId: "neural_networks", label: "Neural Networks" },
+    { conceptId: "machine_learning", label: "Machine Learning" },
+  ],
+  "am-i-ai-consciousness-doc": [
+    { conceptId: "consciousness", label: "Consciousness" },
+    { conceptId: "chalmers", label: "David Chalmers" },
+    { conceptId: "ai", label: "AI" },
+    { conceptId: "synthetic_cognition", label: "Synthetic Cognition" },
+  ],
+  "creative-workers-ai-impact": [
+    { conceptId: "creative_ai", label: "Creative AI" },
+    { conceptId: "creative", label: "Creative Practice" },
+    { conceptId: "gen_ai", label: "Generative AI" },
+    { conceptId: "creative_embodiment", label: "Creative Embodiment" },
+  ],
+  "thinking-game-documentary": [
+    { conceptId: "ai", label: "AI" },
+    { conceptId: "possible_minds", label: "Possible Minds" },
+    { conceptId: "shanahan", label: "Murray Shanahan" },
+    { conceptId: "agi", label: "AGI" },
+  ],
+  "noe-out-of-our-heads": [
+    { conceptId: "noe", label: "Alva Noë" },
+    { conceptId: "embodied", label: "Embodied" },
+    { conceptId: "enactivism", label: "Enactivism" },
+    { conceptId: "4e", label: "4E Cognition" },
+  ],
+  "aguilera-what-is-intelligence": [
+    { conceptId: "aguilera_arcas", label: "Blaise Agüera y Arcas" },
+    { conceptId: "possible_minds", label: "Possible Minds" },
+    { conceptId: "ai", label: "AI" },
+    { conceptId: "symbiosis", label: "Symbiosis" },
+  ],
+  "mendieta-decolonial-feminist": [
+    { conceptId: "ana_mendieta", label: "ana_mendieta" },
+    { conceptId: "art", label: "art" },
+    { conceptId: "creative_embodiment", label: "creative_embodiment" },
+    { conceptId: "body", label: "body" },
+  ],
+  "escobar-pluriverse": [
+    { conceptId: "escobar", label: "escobar" },
+    { conceptId: "pluriversal", label: "pluriversal" },
+    { conceptId: "design_thinking", label: "design_thinking" },
+    { conceptId: "cultural_critical", label: "cultural_critical" },
+  ],
+  "akomolafe-animism": [
+    { conceptId: "akomolafe", label: "akomolafe" },
+    { conceptId: "cultural_critical", label: "cultural_critical" },
+    { conceptId: "hybrid", label: "hybrid" },
+    { conceptId: "philosophy", label: "philosophy" },
+  ],
+  "bell-hooks-speaking-freely": [
+    { conceptId: "bell_hooks", label: "bell_hooks" },
+    { conceptId: "cultural_critical", label: "cultural_critical" },
+    { conceptId: "pedagogy", label: "pedagogy" },
+    { conceptId: "freire", label: "freire" },
+  ],
+  "sousa-santos-decolonising": [
+    { conceptId: "sousa_santos", label: "sousa_santos" },
+    { conceptId: "epistemologies_south", label: "epistemologies_south" },
+    { conceptId: "epistemology", label: "epistemology" },
+    { conceptId: "freire", label: "freire" },
+  ],
+  "latour-once-out-of-nature": [
+    { conceptId: "latour", label: "latour" },
+    { conceptId: "assemblage", label: "assemblage" },
+    { conceptId: "distributed", label: "distributed" },
+    { conceptId: "technical_agency", label: "technical_agency" },
+  ],
+  "chalmers-talking-to-ai": [
+    { conceptId: "chalmers", label: "chalmers" },
+    { conceptId: "extended", label: "extended" },
+    { conceptId: "clark", label: "clark" },
+    { conceptId: "agi", label: "agi" },
+  ],
+  "kirsh-thinking-with-body": [
+    { conceptId: "kirsh", label: "kirsh" },
+    { conceptId: "choreo_knowledge", label: "choreo_knowledge" },
+    { conceptId: "extended", label: "extended" },
+    { conceptId: "distributed", label: "distributed" },
+  ],
+  "haraway-chthulucene": [
+    { conceptId: "haraway", label: "haraway" },
+    { conceptId: "cyborg", label: "cyborg" },
+    { conceptId: "technosymbiosis", label: "technosymbiosis" },
+    { conceptId: "hybrid", label: "hybrid" },
+  ],
+  "rosch-prototype-cognition": [
+    { conceptId: "rosch", label: "rosch" },
+    { conceptId: "buddhism", label: "buddhism" },
+    { conceptId: "enacted", label: "enacted" },
+    { conceptId: "enactivism", label: "enactivism" },
+  ],
+  "cuffari-linguistic-bodies": [
+    { conceptId: "cuffari", label: "cuffari" },
+    { conceptId: "enactivism", label: "enactivism" },
+    { conceptId: "di_paolo", label: "di_paolo" },
+    { conceptId: "de_jaegher", label: "de_jaegher" },
+  ],
+  "di-paolo-enactivism": [
+    { conceptId: "di_paolo", label: "di_paolo" },
+    { conceptId: "enactivism", label: "enactivism" },
+    { conceptId: "cuffari", label: "cuffari" },
+    { conceptId: "autopoiesis", label: "autopoiesis" },
+  ],
+  "fanon-colonization-mind": [
+    { conceptId: "fanon", label: "fanon" },
+    { conceptId: "cultural_critical", label: "cultural_critical" },
+    { conceptId: "critical", label: "critical" },
+    { conceptId: "perception_politics", label: "perception_politics" },
+  ],
+  "bateson-ecology-of-mind": [
+    { conceptId: "bateson", label: "bateson" },
+    { conceptId: "ecology", label: "ecology" },
+    { conceptId: "cybernetics", label: "cybernetics" },
+    { conceptId: "ecology_d", label: "ecology_d" },
+  ],
+  "de-jaegher-participatory-sense": [
+    { conceptId: "de_jaegher", label: "de_jaegher" },
+    { conceptId: "enactivism", label: "enactivism" },
+    { conceptId: "coupling", label: "coupling" },
+    { conceptId: "di_paolo", label: "di_paolo" },
+  ],
+  "maturana-interview": [
+    { conceptId: "maturana", label: "maturana" },
+    { conceptId: "autopoiesis", label: "autopoiesis" },
+    { conceptId: "varela", label: "varela" },
+    { conceptId: "coupling", label: "coupling" },
+  ],
+  "uexkuell-umwelt": [
+    { conceptId: "uexkuell", label: "uexkuell" },
+    { conceptId: "umwelt", label: "umwelt" },
+    { conceptId: "ecology", label: "ecology" },
+    { conceptId: "varela", label: "varela" },
+  ],
+  "gibson-ecological-psychology": [
+    { conceptId: "gibson", label: "gibson" },
+    { conceptId: "embedded", label: "embedded" },
+    { conceptId: "architecture", label: "architecture" },
+    { conceptId: "ecology", label: "ecology" },
+  ],
+  "cage-433-lifetime": [
+    { conceptId: "cage", label: "cage" },
+    { conceptId: "music", label: "music" },
+    { conceptId: "fluxus", label: "fluxus" },
+    { conceptId: "creative", label: "creative" },
+  ],
+  "munoz-queer-utopianism": [
+    { conceptId: "munoz", label: "munoz" },
+    { conceptId: "futurity", label: "futurity" },
+    { conceptId: "speculative_futures", label: "speculative_futures" },
+    { conceptId: "cultural_imagination", label: "cultural_imagination" },
+  ],
+  "barad-meeting-universe": [
+    { conceptId: "barad", label: "barad" },
+    { conceptId: "haraway", label: "haraway" },
+    { conceptId: "coupling", label: "coupling" },
+    { conceptId: "assemblage", label: "assemblage" },
+  ],
+  "crawford-ai-planet": [
+    { conceptId: "crawford", label: "crawford" },
+    { conceptId: "ai", label: "ai" },
+    { conceptId: "perception_politics", label: "perception_politics" },
+    { conceptId: "gen_ai", label: "gen_ai" },
+  ],
+  "malafouris-embodied-patterns": [
+    { conceptId: "malafouris", label: "malafouris" },
+    { conceptId: "extended", label: "extended" },
+    { conceptId: "extended_q", label: "extended_q" },
+    { conceptId: "synthetic_cognition", label: "synthetic_cognition" },
+  ],
+  "shapiro-embodied-cognition": [
+    { conceptId: "shapiro", label: "shapiro" },
+    { conceptId: "enactivism", label: "enactivism" },
+    { conceptId: "embodied", label: "embodied" },
+    { conceptId: "embedded", label: "embedded" },
+  ],
+  "leigh-bowery-tate": [
+    { conceptId: "leigh_bowery", label: "leigh_bowery" },
+    { conceptId: "art", label: "art" },
+    { conceptId: "queer_theory", label: "queer_theory" },
+    { conceptId: "creative", label: "creative" },
+  ],
+  "margulis-symbiotic-earth": [
+    { conceptId: "margulis", label: "margulis" },
+    { conceptId: "symbiosis", label: "symbiosis" },
+    { conceptId: "technosymbiosis", label: "technosymbiosis" },
+    { conceptId: "ecology_d", label: "ecology_d" },
+  ],
+  "duchamp-art-dada": [
+    { conceptId: "duchamp", label: "duchamp" },
+    { conceptId: "art", label: "art" },
+    { conceptId: "creative", label: "creative" },
+    { conceptId: "curation", label: "curation" },
+  ],
+  "boden-creativity-ai": [
+    { conceptId: "boden", label: "boden" },
+    { conceptId: "ai", label: "ai" },
+    { conceptId: "creative_ai", label: "creative_ai" },
+    { conceptId: "creativity", label: "creativity" },
+  ],
+  "merleau-ponty-phenomenology": [
+    { conceptId: "merleau_ponty", label: "merleau_ponty" },
+    { conceptId: "enactivism", label: "enactivism" },
+    { conceptId: "embodiment", label: "embodiment" },
+    { conceptId: "embodied", label: "embodied" },
+  ],
+  "foucault-prison-1975": [
+    { conceptId: "foucault", label: "foucault" },
+    { conceptId: "perception_politics", label: "perception_politics" },
+    { conceptId: "critical", label: "critical" },
+    { conceptId: "philosophy", label: "philosophy" },
+  ],
+  "shanahan-consciousness-ai": [
+    { conceptId: "shanahan", label: "shanahan" },
+    { conceptId: "possible_minds", label: "possible_minds" },
+  ],
+  "nagarjuna-emptiness": [
+    { conceptId: "nagarjuna", label: "nagarjuna" },
+    { conceptId: "buddhism", label: "buddhism" },
+    { conceptId: "philosophy", label: "philosophy" },
+    { conceptId: "epistemology", label: "epistemology" },
+  ],
+  "butler-parable-climate": [
+    { conceptId: "butler", label: "butler" },
+    { conceptId: "afrofuturism", label: "afrofuturism" },
+    { conceptId: "speculative_futures", label: "speculative_futures" },
+    { conceptId: "futurity", label: "futurity" },
+  ],
+  "freire-incredible-conversation": [
+    { conceptId: "freire", label: "freire" },
+    { conceptId: "cultural_critical", label: "cultural_critical" },
+    { conceptId: "critical", label: "critical" },
+    { conceptId: "literacies", label: "literacies" },
+  ],
+  "wilson-state-space": [
+    { conceptId: "wilson", label: "wilson" },
+    { conceptId: "situated", label: "situated" },
+    { conceptId: "extended", label: "extended" },
+    { conceptId: "embedded", label: "embedded" },
+  ],
+  "brooks-humanoid-robots": [
+    { conceptId: "brooks", label: "brooks" },
+    { conceptId: "4e", label: "4e" },
+    { conceptId: "embodied", label: "embodied" },
+    { conceptId: "affordances", label: "affordances" },
+  ],
+  "braidotti-posthuman-knowledge": [
+    { conceptId: "braidotti", label: "braidotti" },
+    { conceptId: "hybrid", label: "hybrid" },
+    { conceptId: "philosophy", label: "philosophy" },
+    { conceptId: "cultural_critical", label: "cultural_critical" },
+  ],
+  "saul-leiter-color": [
+    { conceptId: "saul_leiter", label: "saul_leiter" },
+    { conceptId: "art", label: "art" },
+    { conceptId: "abstraction", label: "abstraction" },
+    { conceptId: "creative", label: "creative" },
+  ],
+  "paxton-contact-improv": [
+    { conceptId: "steve_paxton", label: "steve_paxton" },
+    { conceptId: "judson_church", label: "judson_church" },
+    { conceptId: "trisha_brown", label: "trisha_brown" },
+    { conceptId: "dance", label: "dance" },
+  ],
+  "trisha-brown-intensive": [
+    { conceptId: "trisha_brown", label: "trisha_brown" },
+    { conceptId: "dance", label: "dance" },
+    { conceptId: "choreography_d", label: "choreography_d" },
+    { conceptId: "choreography", label: "choreography" },
+  ],
+  "vera-molnar-generative": [
+    { conceptId: "vera_molnar", label: "vera_molnar" },
+    { conceptId: "generative_arts", label: "generative_arts" },
+    { conceptId: "abstraction", label: "abstraction" },
+    { conceptId: "creativity", label: "creativity" },
+  ],
+  "forsythe-imagining-lines": [
+    { conceptId: "forsythe", label: "forsythe" },
+    { conceptId: "choreo_knowledge", label: "choreo_knowledge" },
+    { conceptId: "choreo_object", label: "choreo_object" },
+    { conceptId: "motion_bank", label: "motion_bank" },
+  ],
+  "yoko-ono-interview": [
+    { conceptId: "yoko_ono", label: "Yoko Ono" },
+    { conceptId: "fluxus", label: "Fluxus" },
+    { conceptId: "art", label: "Art" },
+    { conceptId: "interdisciplinary_art", label: "Interdisciplinary Art" },
+  ],
+  "batson-minds-in-motion": [
+    { conceptId: "somatics", label: "Somatics" },
+    { conceptId: "dance", label: "Dance" },
+    { conceptId: "embodiment", label: "Embodiment" },
+    { conceptId: "marlon", label: "Marlon Barrios Solano" },
+  ],
+  "forsythe-synchronous-objects-hellerau": [
+    { conceptId: "forsythe", label: "William Forsythe" },
+    { conceptId: "choreo_object", label: "Choreographic Object" },
+    { conceptId: "motion_bank", label: "Motion Bank" },
+    { conceptId: "choreo_knowledge", label: "Choreographic Knowledge" },
+  ],
 };
 
 function videoConcepts(video, transcript) {
+  const max = 4;
+  let list;
   if (transcript && transcript.matched && transcript.matched.length) {
-    return transcript.matched.slice(0, 6);
+    list = transcript.matched.slice(0, max);
+  } else {
+    list = (VIDEO_FALLBACK_CONCEPTS[video.id] || []).slice(0, max);
   }
-  return VIDEO_FALLBACK_CONCEPTS[video.id] || [];
+  return list.map((c) => ({
+    ...c,
+    label: conceptDisplayLabel(c.conceptId, c.label),
+  }));
+}
+
+let conceptLabelCache = null;
+function getConceptLabels() {
+  if (conceptLabelCache) return conceptLabelCache;
+  conceptLabelCache = new Map();
+  const srcPath = path.join(ROOT, "hybrid-network.js");
+  if (!fs.existsSync(srcPath)) return conceptLabelCache;
+  const src = fs.readFileSync(srcPath, "utf8");
+  const re = /\{\s*id:\s*"([^"]+)"[^}]*label:\s*"((?:[^"\\]|\\.)*)"/g;
+  let match;
+  while ((match = re.exec(src))) {
+    conceptLabelCache.set(match[1], match[2].replace(/\\n/g, " ").trim());
+  }
+  return conceptLabelCache;
+}
+
+function conceptDisplayLabel(conceptId, fallback) {
+  const fromOntology = getConceptLabels().get(conceptId);
+  if (fromOntology) return fromOntology;
+  const raw = fallback || conceptId;
+  return String(raw).replace(/_/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function videoDisplayLabel(video) {
+  return String(video.title || video.speaker || video.id).trim();
+}
+
+function normalizeSpeakerKey(name) {
+  return String(name)
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/\p{M}/gu, "")
+    .replace(/[^a-z0-9]+/g, "_")
+    .replace(/^_|_$/g, "")
+    .slice(0, 48);
+}
+
+function speakerKey(name) {
+  return `speaker_${normalizeSpeakerKey(name) || "other"}`;
+}
+
+function speakerDisplayName(video) {
+  const speaker = String(video.speaker || "").trim();
+  if (speaker) return speaker;
+  const title = String(video.title || "").trim();
+  const dash = title.match(/^(.+?)\s*[—–-]\s+/);
+  if (dash) return dash[1].trim();
+  const short = title.split(/[—–|]/)[0].trim();
+  return short || "Other";
+}
+
+const VIDEO_SHORT_LABELS = {
+  "hayles-integrated-cognition": "Hayles ·\nICF",
+  "hayles-bacteria-ai": "Hayles ·\nBacteria",
+  "clark-experience-machine": "Clark ·\nExperience",
+  "ai-fluency-generative-ai": "Gen AI ·\nFluency",
+  "karla-expanding-possibilities": "Karla ·\nSpace",
+  "gallagher-4e-cognition": "Gallagher ·\n4E",
+  "privacy-illusion-ai-data": "Privacy ·\nIllusion",
+  "friston-brain-constructs-reality": "Friston ·\nReality",
+  "levin-diverse-intelligences": "Levin ·\nDiverse",
+  "levin-intelligence-without-brains": "Levin ·\nNo Brain",
+  "thompson-embodied-cognition": "Thompson ·\nEmbodied",
+  "varela-god-computers": "Varela ·\nComputers",
+  "mini-brains-150k": "150k ·\nMini-Brains",
+  "understanding-ai-inner-thoughts": "AI Inner\nThoughts",
+  "visualizing-transformers-attention": "Transformers\n& Attention",
+  "am-i-ai-consciousness-doc": "AM I?\nDocumentary",
+  "creative-workers-ai-impact": "Creative\nWorkers",
+  "thinking-game-documentary": "Thinking\nGame",
+  "forsythe-synchronous-objects-hellerau": "Forsythe ·\nSync Objects",
+  "mendieta-decolonial-feminist": "Mendieta ·\nDecolonial",
+  "batson-minds-in-motion": "Batson ·\nMinds",
+};
+
+function abbreviateTopic(topic, maxLen = 14) {
+  const clean = String(topic).replace(/\s+/g, " ").trim();
+  if (clean.length <= maxLen) return clean;
+  const words = clean.split(/\s+/);
+  const two = words.slice(0, 2).join(" ");
+  if (two.length <= maxLen) return two;
+  return `${clean.slice(0, maxLen - 1)}…`;
+}
+
+function speakerShortName(speaker) {
+  const parts = String(speaker).trim().split(/\s+/);
+  if (!parts.length) return "";
+  if (speaker.toLowerCase() === "bell hooks") return "hooks";
+  const last = parts[parts.length - 1].replace(/[^A-Za-zÀ-ÿ]/g, "");
+  return last.slice(0, 12);
+}
+
+function videoNetworkShortLabel(video) {
+  if (VIDEO_SHORT_LABELS[video.id]) return VIDEO_SHORT_LABELS[video.id];
+
+  const title = videoDisplayLabel(video);
+  const speaker = String(video.speaker || "").trim();
+
+  if (speaker && speaker !== "AI Fluency Course") {
+    const name = speakerShortName(speaker);
+    let topic = title;
+    const esc = speaker.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    topic = topic
+      .replace(new RegExp(`^${esc}\\s*[—–-]\\s*`, "i"), "")
+      .replace(new RegExp(`\\s*[—–-]\\s*${esc}\\s*$`, "i"), "")
+      .replace(new RegExp(`^${esc}\\s*:\\s*`, "i"), "")
+      .replace(/^Prof\.\s+/i, "")
+      .trim();
+    if (!topic || topic.toLowerCase() === speaker.toLowerCase()) topic = "Talk";
+    return `${name} ·\n${abbreviateTopic(topic)}`;
+  }
+
+  const head = title.split("—")[0].split("|")[0].trim();
+  if (head.length <= 16) return head;
+  const mid = Math.ceil(head.length / 2);
+  const splitAt = head.lastIndexOf(" ", mid);
+  if (splitAt > 4) {
+    return `${head.slice(0, splitAt)}\n${abbreviateTopic(head.slice(splitAt + 1))}`;
+  }
+  return `${head.slice(0, 14)}\n${abbreviateTopic(head.slice(14))}`;
+}
+
+function escapeNetworkLabel(value) {
+  return String(value)
+    .replace(/\\/g, "\\\\")
+    .replace(/"/g, '\\"')
+    .replace(/\n/g, "\\n");
+}
+
+const VIDEO_AUTHOR_OVERRIDES = {
+  "privacy-illusion-ai-data": "crawford",
+  "thinking-game-documentary": "shanahan",
+  "am-i-ai-consciousness-doc": "chalmers",
+};
+
+const SPEAKER_AUTHOR_OVERRIDES = {
+  "karla saldana ochoa": "karla",
+  "glenna batson": "batson",
+  "michael levin": "levin",
+  "steve paxton": "steve_paxton",
+  "ana mendieta": "ana_mendieta",
+  "bell hooks": "bell_hooks",
+};
+
+function normalizePersonName(value) {
+  return String(value)
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/\p{M}/gu, "")
+    .replace(/[^a-z0-9 ]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function getNetworkNodeIds(src) {
+  const ids = new Set();
+  const re = /\{ id: "([^"]+)"/g;
+  let match;
+  while ((match = re.exec(src))) ids.add(match[1]);
+  return ids;
+}
+
+function getAuthorIndex(src) {
+  const authors = new Map();
+  const re = /\{ id: "([^"]+)",\s+label: "((?:[^"\\]|\\.)*)",\s+cat: "(author|facilitator)"/g;
+  let match;
+  while ((match = re.exec(src))) {
+    authors.set(match[1], {
+      label: match[2].replace(/\\n/g, " ").trim(),
+      cat: match[3],
+    });
+  }
+  return authors;
+}
+
+function resolveAuthorForVideo(video, authors) {
+  if (VIDEO_AUTHOR_OVERRIDES[video.id]) return VIDEO_AUTHOR_OVERRIDES[video.id];
+  const speaker = String(video.speaker || "").trim();
+  if (!speaker || speaker === "AI Fluency Course") return null;
+
+  const normalizedSpeaker = normalizePersonName(speaker);
+  if (SPEAKER_AUTHOR_OVERRIDES[normalizedSpeaker]) {
+    return SPEAKER_AUTHOR_OVERRIDES[normalizedSpeaker];
+  }
+
+  for (const [id, meta] of authors) {
+    const normalizedLabel = normalizePersonName(meta.label);
+    if (
+      normalizedSpeaker === normalizedLabel
+      || normalizedSpeaker.includes(normalizedLabel)
+      || normalizedLabel.includes(normalizedSpeaker)
+    ) {
+      return id;
+    }
+  }
+
+  const last = normalizedSpeaker.split(" ").pop();
+  const matches = [...authors.entries()].filter(
+    ([, meta]) => normalizePersonName(meta.label).split(" ").pop() === last
+  );
+  if (matches.length === 1) return matches[0][0];
+  return null;
+}
+
+function parseWeightedEdges(src) {
+  const start = src.indexOf("const EDGES = [");
+  const end = src.indexOf("\nconst TYPED_EDGES", start);
+  const block = src.slice(start, end);
+  const edges = new Map();
+  const re = /\["([^"]+)", "([^"]+)", ([0-9.]+)\]/g;
+  let match;
+  while ((match = re.exec(block))) {
+    edges.set(`${match[1]}|${match[2]}`, parseFloat(match[3]));
+  }
+  return edges;
+}
+
+function parseTypedEdges(src) {
+  const start = src.indexOf("const TYPED_EDGES = [");
+  const end = src.indexOf("\n];", start);
+  const block = src.slice(start, end);
+  const typed = new Set();
+  const re = /\["([^"]+)", "([^"]+)", "([^"]+)"\]/g;
+  let match;
+  while ((match = re.exec(block))) typed.add(`${match[1]}|${match[2]}|${match[3]}`);
+  return typed;
+}
+
+function hasUndirectedEdge(edges, a, b) {
+  return edges.has(`${a}|${b}`) || edges.has(`${b}|${a}`);
+}
+
+function syncVideoAuthorEdges(videos) {
+  const networkPath = path.join(ROOT, "hybrid-network.js");
+  if (!fs.existsSync(networkPath)) return;
+  let src = fs.readFileSync(networkPath, "utf8");
+  const nodeIds = getNetworkNodeIds(src);
+  const authors = getAuthorIndex(src);
+  const edges = parseWeightedEdges(src);
+  const typed = parseTypedEdges(src);
+
+  const newEdges = [];
+  const newTyped = [];
+  let upgraded = 0;
+
+  for (const video of videos) {
+    const videoNodeId = networkNodeId(video.id);
+    if (!nodeIds.has(videoNodeId)) continue;
+    const authorId = resolveAuthorForVideo(video, authors);
+    if (!authorId || !nodeIds.has(authorId)) continue;
+
+    if (!hasUndirectedEdge(edges, videoNodeId, authorId)) {
+      newEdges.push(`  ["${videoNodeId}", "${authorId}", 0.98],`);
+      edges.set(`${videoNodeId}|${authorId}`, 0.98);
+    } else {
+      for (const key of [`${videoNodeId}|${authorId}`, `${authorId}|${videoNodeId}`]) {
+        if (edges.has(key) && edges.get(key) < 0.98) {
+          const [a, b] = key.split("|");
+          src = src.replace(
+            new RegExp(`(\\["${a}", "${b}", )([0-9.]+)(\\])`, "g"),
+            (_, pre, _w, post) => `${pre}0.98${post}`
+          );
+          upgraded++;
+          edges.set(key, 0.98);
+        }
+      }
+    }
+
+    const typedKey = `${videoNodeId}|${authorId}|instantiates`;
+    if (!typed.has(typedKey)) {
+      newTyped.push(`  ["${videoNodeId}", "${authorId}", "instantiates"],`);
+      typed.add(typedKey);
+    }
+  }
+
+  if (newEdges.length) {
+    const edgesStart = src.indexOf("const EDGES = [");
+    const edgesEnd = src.indexOf("\nconst TYPED_EDGES = [", edgesStart);
+    const insertAt = src.lastIndexOf("\n];", edgesEnd);
+    src = `${src.slice(0, insertAt)}\n${newEdges.join("\n")}${src.slice(insertAt)}`;
+  }
+  if (newTyped.length) {
+    const typedStart = src.indexOf("const TYPED_EDGES = [");
+    const typedEnd = src.indexOf("\n];", typedStart);
+    src = `${src.slice(0, typedEnd)}\n${newTyped.join("\n")}${src.slice(typedEnd)}`;
+  }
+
+  if (newEdges.length || newTyped.length || upgraded) {
+    fs.writeFileSync(networkPath, src);
+    console.log(
+      `Synced author-video links: ${newEdges.length} new edges, ${newTyped.length} typed, ${upgraded} upgraded`
+    );
+  }
+}
+
+function syncVideoNetworkLabels(videos) {
+  const networkPath = path.join(ROOT, "hybrid-network.js");
+  if (!fs.existsSync(networkPath)) return;
+  let src = fs.readFileSync(networkPath, "utf8");
+  let changed = 0;
+  for (const video of videos) {
+    const nodeId = networkNodeId(video.id);
+    const fullLabel = escapeNetworkLabel(videoDisplayLabel(video));
+    const shortLabel = escapeNetworkLabel(videoNetworkShortLabel(video));
+    const withFull = new RegExp(
+      `(\\{ id: "${nodeId}", label: ")(?:[^"\\\\]|\\\\.)*(", fullLabel: ")(?:[^"\\\\]|\\\\.)*(", cat: ")(?:practice|video)(")`,
+      "g"
+    );
+    const withoutFull = new RegExp(
+      `(\\{ id: "${nodeId}", label: ")(?:[^"\\\\]|\\\\.)*(", cat: ")(?:practice|video)(")`,
+      "g"
+    );
+    const next = src.replace(withFull, `$1${shortLabel}$2${fullLabel}$3video$4`)
+      .replace(withoutFull, `$1${shortLabel}", fullLabel: "${fullLabel}$2video$3`);
+    if (next !== src) changed++;
+    src = next;
+  }
+  if (changed) {
+    fs.writeFileSync(networkPath, src);
+    conceptLabelCache = null;
+    console.log(`Synced ${changed} video labels in hybrid-network.js`);
+  }
 }
 
 function buildNetworkGraphData(videos) {
@@ -252,385 +952,103 @@ function buildNetworkGraphData(videos) {
   ];
   const edges = [];
   const conceptSeen = new Set();
+  const videoConceptMap = new Map();
 
   for (const video of videos) {
     const nodeId = networkNodeId(video.id);
     const transcript = loadTranscript(video.transcript);
     const concepts = videoConcepts(video, transcript);
-    const shortLabel = String(video.speaker || video.title)
-      .split("—")[0]
-      .trim()
-      .split(" ")
-      .slice(-1)[0];
+    const displayLabel = videoDisplayLabel(video);
+    const speakerName = speakerDisplayName(video);
+    const speakerId = speakerKey(speakerName);
 
     nodes.push({
       id: nodeId,
-      label: shortLabel,
-      fullLabel: video.title,
+      label: displayLabel,
+      fullLabel: displayLabel,
       type: "video",
       poster: video.poster || null,
       url: `video-${video.id}.html`,
-      speaker: video.speaker || "",
+      speaker: speakerName,
+      speakerId,
     });
-    edges.push({ source: "hi_videos", target: nodeId });
+    edges.push({ source: "hi_videos", target: nodeId, kind: "hub" });
+    videoConceptMap.set(nodeId, new Set());
 
     for (const concept of concepts) {
       const cid = concept.conceptId;
+      videoConceptMap.get(nodeId).add(cid);
       if (!conceptSeen.has(cid)) {
         conceptSeen.add(cid);
         nodes.push({
           id: cid,
-          label: concept.label || cid.replace(/_/g, " "),
+          label: conceptDisplayLabel(cid, concept.label),
           type: "concept",
           url: `network.html#${cid}`,
         });
       }
-      edges.push({ source: nodeId, target: cid });
+      edges.push({ source: nodeId, target: cid, kind: "concept" });
+    }
+  }
+
+  const videoIds = [...videoConceptMap.keys()];
+  for (let i = 0; i < videoIds.length; i++) {
+    for (let j = i + 1; j < videoIds.length; j++) {
+      const a = videoIds[i];
+      const b = videoIds[j];
+      const setA = videoConceptMap.get(a);
+      const setB = videoConceptMap.get(b);
+      const shared = [...setA].filter((c) => setB.has(c));
+      const nodeA = nodes.find((n) => n.id === a);
+      const nodeB = nodes.find((n) => n.id === b);
+      const sameSpeaker =
+        nodeA?.speaker && nodeB?.speaker && nodeA.speaker === nodeB.speaker;
+      if (shared.length >= 1 || sameSpeaker) {
+        edges.push({
+          source: a,
+          target: b,
+          kind: "related",
+          shared: Math.max(shared.length, sameSpeaker ? 1 : 0),
+        });
+      }
     }
   }
 
   return { nodes, edges };
 }
 
+function buildConceptVideosIndex(videos) {
+  const byConcept = {};
+  for (const video of videos) {
+    const transcript = loadTranscript(video.transcript);
+    const concepts = videoConcepts(video, transcript);
+    const entry = {
+      id: video.id,
+      title: video.title,
+      speaker: video.speaker || "",
+      url: `video-${video.id}.html`,
+      poster: video.poster || null,
+    };
+    for (const concept of concepts) {
+      const cid = concept.conceptId;
+      if (!byConcept[cid]) byConcept[cid] = [];
+      if (!byConcept[cid].some((v) => v.id === video.id)) {
+        byConcept[cid].push(entry);
+      }
+    }
+  }
+  for (const cid of Object.keys(byConcept)) {
+    byConcept[cid].sort((a, b) => a.title.localeCompare(b.title));
+  }
+  return byConcept;
+}
+
 function networkVizScript(graphJson) {
+  const body = fs.readFileSync(path.join(ROOT, "scripts/video-network-viz.inc.js"), "utf8");
   return `  <script>
     (function () {
       const graph = ${graphJson};
-      const canvas = document.getElementById("videoNetworkCanvas");
-      if (!canvas || !graph.nodes.length) return;
-
-      const ctx = canvas.getContext("2d");
-      const dpr = window.devicePixelRatio || 1;
-      let width = 0;
-      let height = 0;
-      let hovered = null;
-      let images = {};
-      let raf = 0;
-
-      const THUMB_W = 92;
-      const THUMB_H = Math.round(THUMB_W * 9 / 16);
-
-      const palette = {
-        hub: getComputedStyle(document.documentElement).getPropertyValue("--net-hub").trim() || "#f4c430",
-        video: getComputedStyle(document.documentElement).getPropertyValue("--net-video").trim() || "#82c3ff",
-        concept: getComputedStyle(document.documentElement).getPropertyValue("--net-concept").trim() || "#4ec4c4",
-        edge: getComputedStyle(document.documentElement).getPropertyValue("--net-edge").trim() || "rgba(150,158,176,0.35)",
-        text: getComputedStyle(document.documentElement).getPropertyValue("--text").trim() || "#e8eaef",
-      };
-
-      function nodeRadius(node) {
-        if (node.type === "hub") return 34;
-        if (node.type === "concept") return 22;
-        return 0;
-      }
-
-      function videoPad(node) {
-        return hovered && hovered.id === node.id ? 3 : 0;
-      }
-
-      function videoRect(node) {
-        const pad = videoPad(node);
-        const w = THUMB_W + pad * 2;
-        const h = THUMB_H + pad * 2;
-        return {
-          x: node.x - w / 2,
-          y: node.y - h / 2,
-          w,
-          h,
-          innerW: THUMB_W,
-          innerH: THUMB_H,
-          pad,
-        };
-      }
-
-      function nodeHitRadius(node) {
-        if (node.type === "video") {
-          const rect = videoRect(node);
-          return Math.max(rect.w, rect.h) / 2 + 4;
-        }
-        return nodeRadius(node) + 4;
-      }
-
-      function roundRect(x, y, w, h, rad) {
-        if (typeof ctx.roundRect === "function") {
-          ctx.beginPath();
-          ctx.roundRect(x, y, w, h, rad);
-          return;
-        }
-        const r = Math.min(rad, w / 2, h / 2);
-        ctx.beginPath();
-        ctx.moveTo(x + r, y);
-        ctx.lineTo(x + w - r, y);
-        ctx.quadraticCurveTo(x + w, y, x + w, y + r);
-        ctx.lineTo(x + w, y + h - r);
-        ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
-        ctx.lineTo(x + r, y + h);
-        ctx.quadraticCurveTo(x, y + h, x, y + h - r);
-        ctx.lineTo(x, y + r);
-        ctx.quadraticCurveTo(x, y, x + r, y);
-        ctx.closePath();
-      }
-
-      function drawCoverImage(img, x, y, w, h) {
-        const iw = img.naturalWidth || img.width;
-        const ih = img.naturalHeight || img.height;
-        if (!iw || !ih) return;
-        const ir = iw / ih;
-        const tr = w / h;
-        let sx = 0;
-        let sy = 0;
-        let sw = iw;
-        let sh = ih;
-        if (ir > tr) {
-          sw = ih * tr;
-          sx = (iw - sw) / 2;
-        } else {
-          sh = iw / tr;
-          sy = (ih - sh) / 2;
-        }
-        ctx.drawImage(img, sx, sy, sw, sh, x, y, w, h);
-      }
-
-      function initLayout() {
-        const hub = graph.nodes.find((n) => n.id === "hi_videos");
-        if (hub) {
-          hub.x = width / 2;
-          hub.y = height / 2;
-          hub.vx = 0;
-          hub.vy = 0;
-          hub.fixed = true;
-        }
-        const videos = graph.nodes.filter((n) => n.type === "video");
-        const concepts = graph.nodes.filter((n) => n.type === "concept");
-        videos.forEach((node, i) => {
-          const angle = (i / videos.length) * Math.PI * 2 - Math.PI / 2;
-          const r = Math.min(width, height) * 0.32;
-          node.x = width / 2 + Math.cos(angle) * r;
-          node.y = height / 2 + Math.sin(angle) * r;
-          node.vx = 0;
-          node.vy = 0;
-        });
-        concepts.forEach((node, i) => {
-          const angle = (i / Math.max(concepts.length, 1)) * Math.PI * 2;
-          const r = Math.min(width, height) * 0.47;
-          node.x = width / 2 + Math.cos(angle) * r;
-          node.y = height / 2 + Math.sin(angle) * r;
-          node.vx = 0;
-          node.vy = 0;
-        });
-      }
-
-      function resize() {
-        const rect = canvas.getBoundingClientRect();
-        width = Math.max(rect.width, 320);
-        height = Math.max(rect.height, 440);
-        canvas.width = Math.floor(width * dpr);
-        canvas.height = Math.floor(height * dpr);
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-        initLayout();
-      }
-
-      function loadImages() {
-        graph.nodes.filter((n) => n.poster).forEach((node) => {
-          const img = new Image();
-          img.src = node.poster;
-          img.onload = () => { images[node.id] = img; draw(); };
-          images[node.id] = img;
-        });
-      }
-
-      function simulate() {
-        const damping = 0.86;
-        const repulsion = 5200;
-        const spring = 0.018;
-        const restHub = 145;
-        const restVideoConcept = 115;
-
-        for (let i = 0; i < graph.nodes.length; i++) {
-          for (let j = i + 1; j < graph.nodes.length; j++) {
-            const a = graph.nodes[i];
-            const b = graph.nodes[j];
-            let dx = b.x - a.x;
-            let dy = b.y - a.y;
-            let dist = Math.hypot(dx, dy) || 0.01;
-            const force = repulsion / (dist * dist);
-            const fx = (dx / dist) * force;
-            const fy = (dy / dist) * force;
-            if (!a.fixed) { a.vx -= fx; a.vy -= fy; }
-            if (!b.fixed) { b.vx += fx; b.vy += fy; }
-          }
-        }
-
-        graph.edges.forEach((edge) => {
-          const a = graph.nodes.find((n) => n.id === edge.source);
-          const b = graph.nodes.find((n) => n.id === edge.target);
-          if (!a || !b) return;
-          const dx = b.x - a.x;
-          const dy = b.y - a.y;
-          const dist = Math.hypot(dx, dy) || 0.01;
-          const rest = a.type === "hub" || b.type === "hub" ? restHub : restVideoConcept;
-          const force = (dist - rest) * spring;
-          const fx = (dx / dist) * force;
-          const fy = (dy / dist) * force;
-          if (!a.fixed) { a.vx += fx; a.vy += fy; }
-          if (!b.fixed) { b.vx -= fx; b.vy -= fy; }
-        });
-
-        graph.nodes.forEach((node) => {
-          if (node.fixed) return;
-          node.vx *= damping;
-          node.vy *= damping;
-          node.x += node.vx;
-          node.y += node.vy;
-          const margin = node.type === "video"
-            ? Math.max(THUMB_W, THUMB_H) / 2 + 16
-            : nodeRadius(node) + 10;
-          const labelRoom = node.type === "video" ? 28 : 18;
-          node.x = Math.max(margin, Math.min(width - margin, node.x));
-          node.y = Math.max(margin, Math.min(height - margin - labelRoom, node.y));
-        });
-      }
-
-      function pickNode(x, y) {
-        for (let i = graph.nodes.length - 1; i >= 0; i--) {
-          const node = graph.nodes[i];
-          if (node.type === "video") {
-            const rect = videoRect(node);
-            if (x >= rect.x && x <= rect.x + rect.w && y >= rect.y && y <= rect.y + rect.h) {
-              return node;
-            }
-            continue;
-          }
-          const r = nodeHitRadius(node);
-          if (Math.hypot(x - node.x, y - node.y) <= r) return node;
-        }
-        return null;
-      }
-
-      function wrapLabel(text, max) {
-        const words = String(text).split(/\\s+/);
-        const lines = [];
-        let line = "";
-        words.forEach((word) => {
-          const next = line ? line + " " + word : word;
-          if (next.length > max && line) {
-            lines.push(line);
-            line = word;
-          } else {
-            line = next;
-          }
-        });
-        if (line) lines.push(line);
-        return lines.slice(0, 2);
-      }
-
-      function draw() {
-        ctx.clearRect(0, 0, width, height);
-        graph.edges.forEach((edge) => {
-          const a = graph.nodes.find((n) => n.id === edge.source);
-          const b = graph.nodes.find((n) => n.id === edge.target);
-          if (!a || !b) return;
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(b.x, b.y);
-          ctx.strokeStyle = palette.edge;
-          ctx.lineWidth = hovered && (hovered.id === a.id || hovered.id === b.id) ? 2 : 1;
-          ctx.stroke();
-        });
-
-        graph.nodes.forEach((node) => {
-          const isHover = hovered && hovered.id === node.id;
-
-          if (node.type === "video") {
-            const rect = videoRect(node);
-            const ix = rect.x + rect.pad;
-            const iy = rect.y + rect.pad;
-            ctx.save();
-            ctx.fillStyle = "#07080c";
-            roundRect(rect.x, rect.y, rect.w, rect.h, 6);
-            ctx.fill();
-            if (images[node.id] && images[node.id].complete) {
-              ctx.save();
-              roundRect(ix, iy, THUMB_W, THUMB_H, 4);
-              ctx.clip();
-              drawCoverImage(images[node.id], ix, iy, THUMB_W, THUMB_H);
-              ctx.restore();
-            } else {
-              ctx.fillStyle = palette.video;
-              ctx.globalAlpha = 0.35;
-              roundRect(ix, iy, THUMB_W, THUMB_H, 4);
-              ctx.fill();
-              ctx.globalAlpha = 1;
-            }
-            ctx.lineWidth = isHover ? 2.5 : 1.5;
-            ctx.strokeStyle = isHover ? palette.hub : "rgba(255,255,255,0.28)";
-            roundRect(ix, iy, THUMB_W, THUMB_H, 4);
-            ctx.stroke();
-            ctx.fillStyle = palette.text;
-            ctx.font = '500 10px "IBM Plex Mono", monospace';
-            ctx.textAlign = "center";
-            ctx.textBaseline = "top";
-            const labelY = rect.y + rect.h + 5;
-            wrapLabel(node.fullLabel || node.label, 22).forEach((line, i) => {
-              ctx.fillText(line, node.x, labelY + i * 10);
-            });
-            ctx.restore();
-            return;
-          }
-
-          const r = nodeRadius(node);
-          ctx.save();
-          ctx.beginPath();
-          ctx.arc(node.x, node.y, r + (isHover ? 4 : 0), 0, Math.PI * 2);
-          ctx.fillStyle = node.type === "hub" ? palette.hub : palette.concept;
-          ctx.globalAlpha = node.type === "concept" ? 0.88 : 1;
-          ctx.fill();
-          ctx.globalAlpha = 1;
-          ctx.lineWidth = isHover ? 3 : 2;
-          ctx.strokeStyle = isHover ? palette.hub : "rgba(255,255,255,0.15)";
-          ctx.stroke();
-
-          if (node.type === "hub") {
-            ctx.fillStyle = "#0e1018";
-            ctx.font = '600 11px "IBM Plex Mono", monospace';
-            ctx.textAlign = "center";
-            ctx.textBaseline = "middle";
-            ctx.fillText("VIDEOS", node.x, node.y);
-          }
-
-          ctx.fillStyle = palette.text;
-          ctx.font = '500 10px "IBM Plex Mono", monospace';
-          ctx.textAlign = "center";
-          ctx.textBaseline = "top";
-          const labelY = node.y + r + 6;
-          wrapLabel(node.label, 18).forEach((line, i) => {
-            ctx.fillText(line, node.x, labelY + i * 10);
-          });
-          ctx.restore();
-        });
-      }
-
-      function loop() {
-        simulate();
-        draw();
-        raf = requestAnimationFrame(loop);
-      }
-
-      canvas.addEventListener("mousemove", (e) => {
-        const rect = canvas.getBoundingClientRect();
-        hovered = pickNode(e.clientX - rect.left, e.clientY - rect.top);
-        canvas.style.cursor = hovered && hovered.url ? "pointer" : "default";
-      });
-      canvas.addEventListener("mouseleave", () => { hovered = null; });
-      canvas.addEventListener("click", () => {
-        if (hovered && hovered.url) window.location.href = hovered.url;
-      });
-      window.addEventListener("resize", () => { resize(); });
-
-      resize();
-      loadImages();
-      loop();
-    })();
+${body}    })();
   </script>`;
 }
 
@@ -690,7 +1108,7 @@ function hubBadge(transcript) {
   if (conceptCount) {
     return `<span class="badge">${conceptCount} concepts</span>`;
   }
-  return `<span class="badge muted">Not ingested</span>`;
+  return `<span class="badge muted">Curated links</span>`;
 }
 
 function youtubeEmbedId(url) {
@@ -824,7 +1242,7 @@ function buildHub(videos) {
       const meta = [v.speaker, v.date].filter(Boolean).map(escapeHtml).join(" · ");
       const talkHref = voiceTalkHref(v);
       const conceptStrip = renderCardConcepts(videoConcepts(v, transcript));
-      const featured = index === 0 ? " featured" : "";
+      const featured = videos.length <= 4 && index === 0 ? " featured" : "";
       const caption = v.caption
         ? `<p class="card-caption">${escapeHtml(v.caption)}</p>`
         : "";
@@ -856,7 +1274,7 @@ function buildHub(videos) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hybrid Intelligences — Videos</title>
-  <meta name="description" content="Reels curated by Marlon Barrios Solano — content feeds the Hybrid Intelligences ontology.">
+  <meta name="description" content="Video reels linked to the Hybrid Intelligences ontology.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -866,6 +1284,11 @@ ${sharedStyles()}
       --net-video: #82c3ff;
       --net-concept: #4ec4c4;
       --net-edge: rgba(150, 158, 176, 0.35);
+      --net-label: #e8eaef;
+    }
+    body.light-mode {
+      --net-edge: rgba(50, 60, 78, 0.42);
+      --net-label: #1c2433;
     }
     main.videos-main {
       max-width: 72rem;
@@ -900,27 +1323,44 @@ ${sharedStyles()}
     }
     .network-section {
       margin-bottom: 2.5rem;
-      padding: 1.35rem 1.35rem 0.85rem;
-      border: 1px solid var(--border);
-      background:
-        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(244, 196, 48, 0.06), transparent 60%),
-        var(--panel);
-      border-radius: 12px;
+      padding: 0;
+      border: none;
+      background: transparent;
+      border-radius: 0;
     }
-    .network-section .section-head { margin-bottom: 0.55rem; }
     .network-wrap {
       position: relative;
-      margin-top: 0.35rem;
       border: 1px solid var(--border);
-      border-radius: 10px;
+      border-radius: 12px;
       overflow: hidden;
-      background: color-mix(in srgb, var(--bg) 92%, transparent);
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(244, 196, 48, 0.06), transparent 60%),
+        color-mix(in srgb, var(--panel) 92%, transparent);
+    }
+    header .network-intro {
+      margin-top: 0.65rem;
+      max-width: 36rem;
+    }
+    header .network-intro h2 {
+      margin: 0 0 0.15rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 400;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--title);
+    }
+    header .network-intro p {
+      margin: 0;
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.35;
     }
     #videoNetworkCanvas {
       display: block;
       width: 100%;
-      height: min(70vh, 580px);
-      min-height: 460px;
+      height: min(88vh, 920px);
+      min-height: 640px;
     }
     .network-legend {
       display: flex;
@@ -947,6 +1387,13 @@ ${sharedStyles()}
       background: var(--net-video);
     }
     .legend-dot.concept { background: var(--net-concept); }
+    .legend-line.related {
+      width: 1.15rem;
+      height: 2px;
+      background: var(--net-video);
+      opacity: 0.55;
+      flex-shrink: 0;
+    }
     .reels-section { margin-top: 0.5rem; }
     .reels-grid {
       display: grid;
@@ -1134,7 +1581,10 @@ ${sharedStyles()}
       <div class="brand-copy">
         <p class="eyebrow">Videos</p>
         <h1>Videos</h1>
-        <p class="meta">Reels curated by Marlon Barrios Solano</p>
+        <div class="network-intro">
+          <h2 id="video-network-heading">Video network</h2>
+          <p>Reels and ontology nodes — linked by shared concepts, drifting on elastic springs. Hover a thumbnail to enlarge. Click to open.</p>
+        </div>
       </div>
     </div>
     <div class="header-row">
@@ -1143,23 +1593,16 @@ ${headerNav()}
   </header>
   <main class="videos-main">
     <section class="network-section" aria-labelledby="video-network-heading">
-      <div class="section-head">
-        <h2 id="video-network-heading">Video network</h2>
-        <p>Each reel links to ontology concepts it develops — shared nodes show where the talks overlap. Click a thumbnail node or concept to open it.</p>
-      </div>
       <div class="network-wrap">
-        <canvas id="videoNetworkCanvas" role="img" aria-label="Network visualization of video reels and ontology concepts"></canvas>
+        <canvas id="videoNetworkCanvas" role="img" aria-label="Video network — reels linked to ontology concepts"></canvas>
         <div class="network-legend">
-          <span class="legend-item"><span class="legend-dot hub"></span> Videos hub</span>
-          <span class="legend-item"><span class="legend-dot video"></span> Reel (16:9 thumbnail)</span>
-          <span class="legend-item"><span class="legend-dot concept"></span> Ontology concept</span>
+          <span class="legend-item"><span class="legend-dot hub"></span> Hub</span>
+          <span class="legend-item"><span class="legend-dot video"></span> Reel · hover to enlarge</span>
+          <span class="legend-item"><span class="legend-line related"></span> Shared concept</span>
+          <span class="legend-item"><span class="legend-dot concept"></span> Ontology node</span>
         </div>
       </div>
     </section>
-
-    <div class="lede">
-      <p>Reels curated by <a href="https://marlonbarrios.github.io/">Marlon Barrios Solano</a>. Their content feeds the <a href="ontology.html">ontology</a>.</p>
-    </div>
 
     <section class="reels-section" aria-labelledby="reels-heading">
       <div class="section-head">
@@ -1188,6 +1631,16 @@ function main() {
 
   fs.writeFileSync(path.join(ROOT, "videos.html"), buildHub(videos));
   console.log("Wrote videos.html");
+
+  const conceptVideos = buildConceptVideosIndex(videos);
+  fs.writeFileSync(
+    path.join(ROOT, "concept-videos.json"),
+    JSON.stringify({ generated: new Date().toISOString(), byConcept: conceptVideos }, null, 2)
+  );
+  console.log("Wrote concept-videos.json");
+
+  syncVideoNetworkLabels(videos);
+  syncVideoAuthorEdges(videos);
 
   for (const video of videos) {
     const transcript = loadTranscript(video.transcript);

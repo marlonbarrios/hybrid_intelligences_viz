@@ -539,6 +539,12 @@
       padding: 0;
     }
     .related button:hover { text-decoration: underline; }
+    .related a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    .related a:hover { text-decoration: underline; }
+    .related ul.video-links { columns: 1; }
     .strength {
       color: var(--muted);
       font-family: "IBM Plex Mono", monospace;
@@ -609,8 +615,9 @@
       <a href="#browse-relation">Browse by relation</a>.
       The same vocabulary is the knowledge
       base for <a href="voice.html">Voice</a>, and from any concept you can
-      <a href="voice.html">Talk</a>, <a href="image.html">Make an image</a>, or create a
-      <a href="mini-pod.html">Mini-pod</a>.
+      <a href="voice.html">Talk</a>, <a href="image.html">Make an image</a>, create a
+      <a href="mini-pod.html">Mini-pod</a>, or open a
+      <a href="videos.html">curated video</a> when one is linked in the reel list.
       <a href="enact.html">Enact</a> offers cognitive prompts for a choreography of awareness — layers of the
       <a href="index.html">Hybrid Intelligences Hub</a>.
     </p>
@@ -619,6 +626,7 @@
         <a href="index.html">← Home</a>
         <a href="about.html">About</a>
         <a href="essays.html">Essays</a>
+        <a href="videos.html">Videos</a>
         <a href="views.html">Views</a>
         <a href="voice.html">Voice</a>
         <a href="image.html">Image</a>
@@ -711,6 +719,19 @@
     let selectedId = null;
     let searchQuery = "";
     let appReady = false;
+    let conceptVideos = {};
+
+    function escapeHtml(str) {
+      return String(str ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function videosForConcept(conceptId) {
+      return conceptVideos[conceptId] || [];
+    }
 
     function localId(uri) {
       if (!uri) return "";
@@ -1248,6 +1269,7 @@
       ].filter(Boolean);
 
       const catLabel = categories[concept.category]?.label || concept.category;
+      const curated = videosForConcept(concept.id);
       const external = [];
       if (concept.url && concept.url !== concept.wikiUrl) {
         external.push(`<a href="${concept.url}" target="_blank" rel="noopener noreferrer">External link ↗</a>`);
@@ -1270,6 +1292,21 @@
           <div class="actions view-links">
             ${viewActionLinks({ id: concept.id, category: concept.category })}
           </div>
+          ${
+            curated.length
+              ? `<div class="related">
+            <h4>Curated videos (${curated.length})</h4>
+            <ul class="video-links">${curated
+              .map(
+                (v) =>
+                  `<li><a href="${escapeHtml(v.url)}">${escapeHtml(v.title)}</a>${
+                    v.speaker ? ` <span class="strength">· ${escapeHtml(v.speaker)}</span>` : ""
+                  }</li>`
+              )
+              .join("")}</ul>
+          </div>`
+              : ""
+          }
           ${
             typedLines.length
               ? `<div class="related">
@@ -1351,9 +1388,16 @@
     async function boot() {
       initTheme();
       try {
-        const res = await fetch(ONTOLOGY_URI);
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const data = await res.json();
+        const [ontoRes, videosRes] = await Promise.all([
+          fetch(ONTOLOGY_URI),
+          fetch("concept-videos.json"),
+        ]);
+        if (!ontoRes.ok) throw new Error(`HTTP ${ontoRes.status}`);
+        if (videosRes.ok) {
+          const payload = await videosRes.json();
+          conceptVideos = payload.byConcept || {};
+        }
+        const data = await ontoRes.json();
         parseOntology(data);
         applyHash();
         render();

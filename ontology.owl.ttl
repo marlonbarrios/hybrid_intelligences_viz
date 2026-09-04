@@ -13,11 +13,11 @@
   dc:description "OWL 2 ontology of concepts, categories, and weighted relations from the Hybrid Intelligences program." ;
   owl:versionInfo "1.0.0" ;
   dc:date "2026-09-04"^^xsd:date ;
-  dc:modified "2026-09-04T16:15:33.523Z"^^xsd:dateTime ;
+  dc:modified "2026-09-04T19:31:52.459Z"^^xsd:dateTime ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  hi:nodeCount "243"^^xsd:integer ;
-  hi:edgeCount "2468"^^xsd:integer ;
-  hi:typedEdgeCount "124"^^xsd:integer .
+  hi:nodeCount "309"^^xsd:integer ;
+  hi:edgeCount "2773"^^xsd:integer ;
+  hi:typedEdgeCount "193"^^xsd:integer .
 
 hi:Concept a owl:Class ;
   rdfs:label "Concept"@en ;
@@ -93,6 +93,10 @@ hi:AuthorConcept a owl:Class ;
   rdfs:comment "Thinkers, artists, and researchers linked to concepts in the network."@en ;
   rdfs:subClassOf hi:Concept .
 
+hi:undefined a owl:Class ;
+  rdfs:label "Videos"@en ;
+  rdfs:subClassOf hi:Concept .
+
 hi:ProgramConcept owl:disjointWith hi:OrganizationConcept .
 hi:ProgramConcept owl:disjointWith hi:PremiseConcept .
 hi:ProgramConcept owl:disjointWith hi:ParticipantConcept .
@@ -105,6 +109,7 @@ hi:ProgramConcept owl:disjointWith hi:PhenomenonConcept .
 hi:ProgramConcept owl:disjointWith hi:DomainConcept .
 hi:ProgramConcept owl:disjointWith hi:FrameworkConcept .
 hi:ProgramConcept owl:disjointWith hi:AuthorConcept .
+hi:ProgramConcept owl:disjointWith hi:undefined .
 hi:OrganizationConcept owl:disjointWith hi:PremiseConcept .
 hi:OrganizationConcept owl:disjointWith hi:ParticipantConcept .
 hi:OrganizationConcept owl:disjointWith hi:BackgroundConcept .
@@ -116,6 +121,7 @@ hi:OrganizationConcept owl:disjointWith hi:PhenomenonConcept .
 hi:OrganizationConcept owl:disjointWith hi:DomainConcept .
 hi:OrganizationConcept owl:disjointWith hi:FrameworkConcept .
 hi:OrganizationConcept owl:disjointWith hi:AuthorConcept .
+hi:OrganizationConcept owl:disjointWith hi:undefined .
 hi:PremiseConcept owl:disjointWith hi:ParticipantConcept .
 hi:PremiseConcept owl:disjointWith hi:BackgroundConcept .
 hi:PremiseConcept owl:disjointWith hi:FacilitatorConcept .
@@ -126,6 +132,7 @@ hi:PremiseConcept owl:disjointWith hi:PhenomenonConcept .
 hi:PremiseConcept owl:disjointWith hi:DomainConcept .
 hi:PremiseConcept owl:disjointWith hi:FrameworkConcept .
 hi:PremiseConcept owl:disjointWith hi:AuthorConcept .
+hi:PremiseConcept owl:disjointWith hi:undefined .
 hi:ParticipantConcept owl:disjointWith hi:BackgroundConcept .
 hi:ParticipantConcept owl:disjointWith hi:FacilitatorConcept .
 hi:ParticipantConcept owl:disjointWith hi:PracticeConcept .
@@ -135,6 +142,7 @@ hi:ParticipantConcept owl:disjointWith hi:PhenomenonConcept .
 hi:ParticipantConcept owl:disjointWith hi:DomainConcept .
 hi:ParticipantConcept owl:disjointWith hi:FrameworkConcept .
 hi:ParticipantConcept owl:disjointWith hi:AuthorConcept .
+hi:ParticipantConcept owl:disjointWith hi:undefined .
 hi:BackgroundConcept owl:disjointWith hi:FacilitatorConcept .
 hi:BackgroundConcept owl:disjointWith hi:PracticeConcept .
 hi:BackgroundConcept owl:disjointWith hi:TensionConcept .
@@ -143,6 +151,7 @@ hi:BackgroundConcept owl:disjointWith hi:PhenomenonConcept .
 hi:BackgroundConcept owl:disjointWith hi:DomainConcept .
 hi:BackgroundConcept owl:disjointWith hi:FrameworkConcept .
 hi:BackgroundConcept owl:disjointWith hi:AuthorConcept .
+hi:BackgroundConcept owl:disjointWith hi:undefined .
 hi:FacilitatorConcept owl:disjointWith hi:PracticeConcept .
 hi:FacilitatorConcept owl:disjointWith hi:TensionConcept .
 hi:FacilitatorConcept owl:disjointWith hi:QualityConcept .
@@ -150,27 +159,35 @@ hi:FacilitatorConcept owl:disjointWith hi:PhenomenonConcept .
 hi:FacilitatorConcept owl:disjointWith hi:DomainConcept .
 hi:FacilitatorConcept owl:disjointWith hi:FrameworkConcept .
 hi:FacilitatorConcept owl:disjointWith hi:AuthorConcept .
+hi:FacilitatorConcept owl:disjointWith hi:undefined .
 hi:PracticeConcept owl:disjointWith hi:TensionConcept .
 hi:PracticeConcept owl:disjointWith hi:QualityConcept .
 hi:PracticeConcept owl:disjointWith hi:PhenomenonConcept .
 hi:PracticeConcept owl:disjointWith hi:DomainConcept .
 hi:PracticeConcept owl:disjointWith hi:FrameworkConcept .
 hi:PracticeConcept owl:disjointWith hi:AuthorConcept .
+hi:PracticeConcept owl:disjointWith hi:undefined .
 hi:TensionConcept owl:disjointWith hi:QualityConcept .
 hi:TensionConcept owl:disjointWith hi:PhenomenonConcept .
 hi:TensionConcept owl:disjointWith hi:DomainConcept .
 hi:TensionConcept owl:disjointWith hi:FrameworkConcept .
 hi:TensionConcept owl:disjointWith hi:AuthorConcept .
+hi:TensionConcept owl:disjointWith hi:undefined .
 hi:QualityConcept owl:disjointWith hi:PhenomenonConcept .
 hi:QualityConcept owl:disjointWith hi:DomainConcept .
 hi:QualityConcept owl:disjointWith hi:FrameworkConcept .
 hi:QualityConcept owl:disjointWith hi:AuthorConcept .
+hi:QualityConcept owl:disjointWith hi:undefined .
 hi:PhenomenonConcept owl:disjointWith hi:DomainConcept .
 hi:PhenomenonConcept owl:disjointWith hi:FrameworkConcept .
 hi:PhenomenonConcept owl:disjointWith hi:AuthorConcept .
+hi:PhenomenonConcept owl:disjointWith hi:undefined .
 hi:DomainConcept owl:disjointWith hi:FrameworkConcept .
 hi:DomainConcept owl:disjointWith hi:AuthorConcept .
+hi:DomainConcept owl:disjointWith hi:undefined .
 hi:FrameworkConcept owl:disjointWith hi:AuthorConcept .
+hi:FrameworkConcept owl:disjointWith hi:undefined .
+hi:AuthorConcept owl:disjointWith hi:undefined .
 
 hi:NetworkRelation a owl:Class ;
   rdfs:label "Network relation"@en ;
@@ -315,7 +332,7 @@ hi:edgeCount a owl:DatatypeProperty ;
 hi:scheme a owl:NamedIndividual, skos:ConceptScheme ;
   rdfs:label "Hybrid Intelligences Concept Scheme"@en ;
   skos:prefLabel "Hybrid Intelligences Concept Scheme"@en ;
-  skos:hasTopConcept hi:category/program, hi:category/organization, hi:category/premise, hi:category/participant, hi:category/background, hi:category/facilitator, hi:category/practice, hi:category/tension, hi:category/quality, hi:category/phenomenon, hi:category/domain, hi:category/framework, hi:category/author .
+  skos:hasTopConcept hi:category/program, hi:category/organization, hi:category/premise, hi:category/participant, hi:category/background, hi:category/facilitator, hi:category/practice, hi:category/tension, hi:category/quality, hi:category/phenomenon, hi:category/domain, hi:category/framework, hi:category/author, hi:category/video .
 
 hi:category/program a owl:NamedIndividual, hi:CategoryConcept, hi:ProgramConcept ;
   rdfs:label "Program"@en ;
@@ -433,6 +450,14 @@ hi:category/author a owl:NamedIndividual, hi:CategoryConcept, hi:AuthorConcept ;
   skos:topConceptOf hi:scheme ;
   hi:ringFraction "0.95"^^xsd:decimal ;
   hi:ringOrder "12"^^xsd:integer .
+
+hi:category/video a owl:NamedIndividual, hi:CategoryConcept, hi:undefined ;
+  rdfs:label "Videos"@en ;
+  skos:prefLabel "Videos"@en ;
+  skos:inScheme hi:scheme ;
+  skos:topConceptOf hi:scheme ;
+  hi:ringFraction "0.98"^^xsd:decimal ;
+  hi:ringOrder "13"^^xsd:integer .
 
 hi:coupling a owl:NamedIndividual, hi:PremiseConcept ;
   rdfs:label "Intelligence as Coupling"@en ;
@@ -1949,6 +1974,34 @@ hi:friston a owl:NamedIndividual, hi:AuthorConcept ;
   schema:sameAs <https://en.wikipedia.org/wiki/Karl_Friston>
  .
 
+hi:levin a owl:NamedIndividual, hi:AuthorConcept ;
+  rdfs:label "Michael Levin"@en ;
+  skos:prefLabel "Michael Levin"@en ;
+  skos:definition "Developmental and synthetic biologist—diverse intelligences, basal cognition, morphogenesis, and intelligence distributed beyond brains in biological and synthetic systems."@en ;
+  skos:broader hi:category/author ;
+  hi:inCategory hi:category/author ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.2"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Michael_Levin_(biologist)> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Michael_Levin_(biologist)>
+ .
+
+hi:batson a owl:NamedIndividual, hi:AuthorConcept ;
+  rdfs:label "Glenna Batson"@en ;
+  skos:prefLabel "Glenna Batson"@en ;
+  skos:definition "Dance scientist and somatic educator—minds in motion, embodied awareness, and the intelligence of the moving body in dance and hybrid practice."@en ;
+  skos:broader hi:category/author ;
+  hi:inCategory hi:category/author ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.1"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Glenna_Batson> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Glenna_Batson>
+ .
+
 hi:embodied a owl:NamedIndividual, hi:QualityConcept ;
   rdfs:label "Embodied"@en ;
   skos:prefLabel "Embodied"@en ;
@@ -2488,6 +2541,32 @@ hi:interdisciplinary_art a owl:NamedIndividual, hi:DomainConcept ;
   schema:sameAs <https://en.wikipedia.org/wiki/Interdisciplinary_arts>
  .
 
+hi:performance_art a owl:NamedIndividual, hi:DomainConcept ;
+  rdfs:label "Performance Art"@en ;
+  skos:prefLabel "Performance Art"@en ;
+  skos:definition "Art enacted in and through the live body, duration, and audience—movement, gesture, voice, and presence as media; spans dance, theater, ritual, and intermedia events where meaning is co-produced in real time."@en ;
+  skos:broader hi:category/domain ;
+  hi:inCategory hi:category/domain ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Performance_art>
+ .
+
+hi:visual_arts a owl:NamedIndividual, hi:DomainConcept ;
+  rdfs:label "Visual Arts"@en ;
+  skos:prefLabel "Visual Arts"@en ;
+  skos:definition "Art organized through sight—painting, sculpture, photography, installation, and new media; form, color, space, and image as fields of inquiry, curation, and public meaning."@en ;
+  skos:broader hi:category/domain ;
+  hi:inCategory hi:category/domain ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Visual_arts>
+ .
+
 hi:generative_arts a owl:NamedIndividual, hi:DomainConcept ;
   rdfs:label "Generative Arts"@en ;
   skos:prefLabel "Generative Arts"@en ;
@@ -2873,12 +2952,12 @@ hi:hi_videos a owl:NamedIndividual, hi:PracticeConcept ;
   schema:url <videos.html>
  .
 
-hi:video_hayles_integrated_cognition a owl:NamedIndividual, hi:PracticeConcept ;
+hi:video_hayles_integrated_cognition a owl:NamedIndividual, hi:undefined ;
   rdfs:label "Hayles · ICF"@en ;
   skos:prefLabel "Hayles · ICF"@en ;
   skos:definition "Katherine Hayles — Consciousness Is Not Necessary for Cognition. Podcast interview on the integrated cognitive framework, How We Became Posthuman, widening the circle of care, nonconscious cognition, holobionts, and human–AI relationality. Video on YouTube; ingest matches speech to ontology concepts."@en ;
-  skos:broader hi:category/practice ;
-  hi:inCategory hi:category/practice ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
   hi:schemeMember hi:scheme ;
   skos:inScheme hi:scheme ;
   hi:networkWeight "1.45"^^xsd:decimal
@@ -2888,12 +2967,12 @@ hi:video_hayles_integrated_cognition a owl:NamedIndividual, hi:PracticeConcept ;
   schema:sameAs <https://www.youtube.com/watch?v=W_W-yKNB6IU>
  .
 
-hi:video_hayles_bacteria_ai a owl:NamedIndividual, hi:PracticeConcept ;
-  rdfs:label "Hayles · Bacteria to AI"@en ;
-  skos:prefLabel "Hayles · Bacteria to AI"@en ;
+hi:video_hayles_bacteria_ai a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Hayles · Bacteria"@en ;
+  skos:prefLabel "Hayles · Bacteria"@en ;
   skos:definition "Katherine Hayles on Urgent Futures with Jesse Damiani (March 2025) — on Bacteria to AI: integrated cognitive framework (ICF), nonconscious cognition, distributed agency in cognitive assemblages, LLM Umwelten, sympoiesis, reversible internalities, and posthuman relationality. Video on YouTube; ingest matches speech to ontology concepts."@en ;
-  skos:broader hi:category/practice ;
-  hi:inCategory hi:category/practice ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
   hi:schemeMember hi:scheme ;
   skos:inScheme hi:scheme ;
   hi:networkWeight "1.45"^^xsd:decimal
@@ -2903,12 +2982,12 @@ hi:video_hayles_bacteria_ai a owl:NamedIndividual, hi:PracticeConcept ;
   schema:sameAs <https://www.youtube.com/watch?v=PGFNREZTXQQ>
  .
 
-hi:video_clark_experience_machine a owl:NamedIndividual, hi:PracticeConcept ;
-  rdfs:label "Clark · Predictive Brain"@en ;
-  skos:prefLabel "Clark · Predictive Brain"@en ;
+hi:video_clark_experience_machine a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Clark · Experience"@en ;
+  skos:prefLabel "Clark · Experience"@en ;
   skos:definition "Andy Clark — The Experience Machine (Royal Institution). Lecture on predictive processing: brains as prediction machines, controlled hallucination, precision weighting, Karl Friston and active inference, computational psychiatry, chronic pain, placebo, and nudging the predictive brain. Video on YouTube; ingest matches speech to ontology concepts."@en ;
-  skos:broader hi:category/practice ;
-  hi:inCategory hi:category/practice ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
   hi:schemeMember hi:scheme ;
   skos:inScheme hi:scheme ;
   hi:networkWeight "1.45"^^xsd:decimal
@@ -2916,6 +2995,936 @@ hi:video_clark_experience_machine a owl:NamedIndividual, hi:PracticeConcept ;
   schema:url <video-clark-experience-machine.html> ;
   schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/clark-experience-machine.jpg> ;
   schema:sameAs <https://www.youtube.com/watch?v=A1Ghrd7NBtk>
+ .
+
+hi:video_ai_fluency_generative_ai a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Gen AI · Fluency"@en ;
+  skos:prefLabel "Gen AI · Fluency"@en ;
+  skos:definition "What is generative AI? (Deep Dive) — AI Fluency — AI Fluency Course. Lesson 3A from AI Fluency: Framework & Foundations — a deep dive on what generative AI is and how it works. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-ai-fluency-generative-ai.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/ai-fluency-generative-ai.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=RyvXxApfHkk>
+ .
+
+hi:video_karla_expanding_possibilities a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Karla · Space"@en ;
+  skos:prefLabel "Karla · Space"@en ;
+  skos:definition "Expanding the Space of Possibilities — Karla Saldaña Ochoa. Karla Saldaña Ochoa on architecture, AI, space, memory, and embodiment — expanding what hybrid creative practice can become. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-karla-expanding-possibilities.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/karla-expanding-possibilities.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=GDoYdJTCAKs>
+ .
+
+hi:video_gallagher_4e_cognition a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Gallagher · 4E"@en ;
+  skos:prefLabel "Gallagher · 4E"@en ;
+  skos:definition "Prof. Shaun Gallagher on 4E Cognition — Shaun Gallagher. Shaun Gallagher on embodied, embedded, enactive, and extended cognition — 4E as a framework for mind, action, and the social world. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-gallagher-4e-cognition.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/gallagher-4e-cognition.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=IT0HDtARXto>
+ .
+
+hi:video_privacy_illusion_ai_data a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Privacy · Illusion"@en ;
+  skos:prefLabel "Privacy · Illusion"@en ;
+  skos:definition "The Privacy Illusion: AI, Data & Who Really Controls Your Information. On AI, data extraction, surveillance, and who actually controls personal information in the age of large-scale machine learning. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-privacy-illusion-ai-data.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/privacy-illusion-ai-data.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=8UpCJrThLwo>
+ .
+
+hi:video_friston_brain_constructs_reality a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Friston · Reality"@en ;
+  skos:prefLabel "Friston · Reality"@en ;
+  skos:definition "How the brain constructs reality — Karl Friston on consciousness and neuroscience — Karl Friston. Karl Friston on predictive brains, the free energy principle, active inference, and how neural inference shapes conscious experience. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-friston-brain-constructs-reality.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/friston-brain-constructs-reality.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=82T2Pmen3zU>
+ .
+
+hi:video_levin_diverse_intelligences a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Levin · Diverse"@en ;
+  skos:prefLabel "Levin · Diverse"@en ;
+  skos:definition "Diverse Intelligences: Origins, Possibilities, and Diseases of Minds — Michael Levin. Michael Levin on diverse intelligences beyond brains — morphogenesis, basal cognition, and new frontiers for minds biological and synthetic. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-levin-diverse-intelligences.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/levin-diverse-intelligences.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=-elegwQQOww>
+ .
+
+hi:video_levin_intelligence_without_brains a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Levin · No Brain"@en ;
+  skos:prefLabel "Levin · No Brain"@en ;
+  skos:definition "Intelligence Without Brains: A Radical New Idea — Michael Levin. Michael Levin on intelligence distributed beyond nervous systems — collective behavior, regeneration, and cognition in living systems. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-levin-intelligence-without-brains.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/levin-intelligence-without-brains.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=J-HDHwEJ2z8>
+ .
+
+hi:video_thompson_embodied_cognition a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Thompson · Embodied"@en ;
+  skos:prefLabel "Thompson · Embodied"@en ;
+  skos:definition "BS 198 Embodied Cognition with Evan Thompson — Evan Thompson. Brain Science podcast — Evan Thompson on enactivism, lived experience, mindfulness, and embodied approaches to mind and life. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-thompson-embodied-cognition.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/thompson-embodied-cognition.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=wguCdqXCGpg>
+ .
+
+hi:video_varela_god_computers a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Varela · Computers"@en ;
+  skos:prefLabel "Varela · Computers"@en ;
+  skos:definition "Francisco Varela — God & Computers: Minds, Machines, and Metaphysics — Francisco Varela. A.I. Lab 1997 lecture series — Varela on enactivism, autopoiesis, cognition, and the metaphysics of minds and machines. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-varela-god-computers.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/varela-god-computers.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=xhS9ffDcLOk>
+ .
+
+hi:video_mini_brains_150k a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "150k · Mini-Brains"@en ;
+  skos:prefLabel "150k · Mini-Brains"@en ;
+  skos:definition "Your Brain Is 150,000 Mini-Brains. On cortical columns, distributed neural computation, and how the brain organizes intelligence from many local processing units. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-mini-brains-150k.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/mini-brains-150k.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=Dykkubb-Qus>
+ .
+
+hi:video_understanding_ai_inner_thoughts a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "AI Inner Thoughts"@en ;
+  skos:prefLabel "AI Inner Thoughts"@en ;
+  skos:definition "Understanding the inner thoughts of AI. On interpretability, model internals, and what we can know about how large AI systems represent and process information. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-understanding-ai-inner-thoughts.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/understanding-ai-inner-thoughts.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=1DtMiRKg-cs>
+ .
+
+hi:video_visualizing_transformers_attention a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Transformers & Attention"@en ;
+  skos:prefLabel "Transformers & Attention"@en ;
+  skos:definition "Visualizing transformers and attention. Talk for TNG Big Tech Day '24 — making transformer architectures and attention mechanisms visible and intuitive. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-visualizing-transformers-attention.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/visualizing-transformers-attention.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=KJtZARuO3JY>
+ .
+
+hi:video_am_i_ai_consciousness_doc a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "AM I? Documentary"@en ;
+  skos:prefLabel "AM I? Documentary"@en ;
+  skos:definition "AM I? — A Documentary About AI Consciousness. Documentary exploring whether AI systems can be conscious — philosophy, neuroscience, and the politics of machine minds. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-am-i-ai-consciousness-doc.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/am-i-ai-consciousness-doc.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=KbTvUOx2A6c>
+ .
+
+hi:video_creative_workers_ai_impact a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Creative Workers"@en ;
+  skos:prefLabel "Creative Workers"@en ;
+  skos:definition "How Creative Workers are Impacted by AI. On generative AI and creative labor — how artists, designers, and cultural workers navigate coupling with new tools. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-creative-workers-ai-impact.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/creative-workers-ai-impact.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=kj1SpD-YldQ>
+ .
+
+hi:video_thinking_game_documentary a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Thinking Game"@en ;
+  skos:prefLabel "Thinking Game"@en ;
+  skos:definition "The Thinking Game — Full Documentary. Tribeca Film Festival official selection — documentary on AI research, ambition, and the humans building systems that think. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-thinking-game-documentary.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/thinking-game-documentary.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=d95J8yzvjbQ>
+ .
+
+hi:video_noe_out_of_our_heads a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Noë · Out of"@en ;
+  skos:prefLabel "Noë · Out of"@en ;
+  skos:definition "Out of Our Heads — Alva Noë — Alva Noë. Alva Noë on embodied cognition and consciousness — why mind is not confined to the brain, drawing on Out of Our Heads and enactive approaches to perception and action. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-noe-out-of-our-heads.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/noe-out-of-our-heads.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=af3Vq-C1ck8>
+ .
+
+hi:video_aguilera_what_is_intelligence a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Arcas · What is"@en ;
+  skos:prefLabel "Arcas · What is"@en ;
+  skos:definition "What is Intelligence? — Blaise Agüera y Arcas — Blaise Agüera y Arcas. Blaise Agüera y Arcas on intelligence, evolution, symbiosis, and AI — Long Now Talk on possible minds and what counts as cognition in biological and synthetic systems. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-aguilera-what-is-intelligence.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/aguilera-what-is-intelligence.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=KhSJuqDUJME>
+ .
+
+hi:video_mendieta_decolonial_feminist a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Mendieta · Decolonial"@en ;
+  skos:prefLabel "Mendieta · Decolonial"@en ;
+  skos:definition "Ana Mendieta: Decolonialized Feminist and Artist — ana_mendieta. On Mendieta's body-earth works, feminist practice, and decolonial art. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-mendieta-decolonial-feminist.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/mendieta-decolonial-feminist.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=nVk4UBA6HGQ>
+ .
+
+hi:video_escobar_pluriverse a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Escobar · Designs for"@en ;
+  skos:prefLabel "Escobar · Designs for"@en ;
+  skos:definition "Arturo Escobar — Designs for the Pluriverse — escobar. Clark University Atwood Lecture on pluriversal design and alternatives to one-world modernity. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-escobar-pluriverse.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/escobar-pluriverse.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=8Ouy7aN6XPs>
+ .
+
+hi:video_akomolafe_animism a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Akomolafe · Animism —"@en ;
+  skos:prefLabel "Akomolafe · Animism —"@en ;
+  skos:definition "Animism — Bayo Akomolafe and Daniel Foor — akomolafe. Conversation on animism, ecology, and worlds beyond extractive modernity. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-akomolafe-animism.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/akomolafe-animism.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=5cuJnFZo_oA>
+ .
+
+hi:video_bell_hooks_speaking_freely a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "hooks · Speaking Free…"@en ;
+  skos:prefLabel "hooks · Speaking Free…"@en ;
+  skos:definition "Speaking Freely — bell hooks — bell_hooks. bell hooks on love, freedom, pedagogy, and cultural critique. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-bell-hooks-speaking-freely.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/bell-hooks-speaking-freely.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=g2bmnwehlpA>
+ .
+
+hi:video_sousa_santos_decolonising a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Santos · Decolonising …"@en ;
+  skos:prefLabel "Santos · Decolonising …"@en ;
+  skos:definition "Boaventura de Sousa Santos — Decolonising the Curriculum — sousa_santos. Epistemologies of the South and decolonial approaches to knowledge and university practice. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-sousa-santos-decolonising.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/sousa-santos-decolonising.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=HIjbgX7lY4M>
+ .
+
+hi:video_latour_once_out_of_nature a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Latour · Once Out"@en ;
+  skos:prefLabel "Latour · Once Out"@en ;
+  skos:definition "Bruno Latour — Once Out of Nature — latour. Natural religion, ecology of practices, and rethinking nature in the Anthropocene. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-latour-once-out-of-nature.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/latour-once-out-of-nature.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=MC3E6vdQEzk>
+ .
+
+hi:video_chalmers_talking_to_ai a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Chalmers · When We"@en ;
+  skos:prefLabel "Chalmers · When We"@en ;
+  skos:definition "David Chalmers — When We Talk to AI, What Are We Talking To? — chalmers. UC Berkeley — consciousness, philosophy of mind, and large language models. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-chalmers-talking-to-ai.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/chalmers-talking-to-ai.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=uUjJOMcNU9w>
+ .
+
+hi:video_kirsh_thinking_with_body a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Kirsh · Thinking and"@en ;
+  skos:prefLabel "Kirsh · Thinking and"@en ;
+  skos:definition "David Kirsh — Thinking and Creating with the Body — kirsh. Extended and embodied cognition — how bodies think, arrange, and create in the world. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-kirsh-thinking-with-body.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/kirsh-thinking-with-body.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=NOrkD7koecg>
+ .
+
+hi:video_haraway_chthulucene a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Haraway · Staying with"@en ;
+  skos:prefLabel "Haraway · Staying with"@en ;
+  skos:definition "Donna Haraway — Staying with the Trouble — haraway. Making kin in the Chthulucene — multispecies response-ability and posthuman futures. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-haraway-chthulucene.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/haraway-chthulucene.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=GrYA7sMQaBQ>
+ .
+
+hi:video_rosch_prototype_cognition a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Rosch · Prototype Cog…"@en ;
+  skos:prefLabel "Rosch · Prototype Cog…"@en ;
+  skos:definition "Eleanor Rosch — Prototype Cognition — rosch. Why a robin is more of a bird than a penguin — prototypes, categories, and embodied mind. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-rosch-prototype-cognition.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/rosch-prototype-cognition.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=cL2Z2cJlcJ0>
+ .
+
+hi:video_cuffari_linguistic_bodies a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Cuffari · Linguistic Bo…"@en ;
+  skos:prefLabel "Cuffari · Linguistic Bo…"@en ;
+  skos:definition "Elena Clare Cuffari — Linguistic Bodies — cuffari. Enactivist linguistics — language as participatory sense-making between bodies. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-cuffari-linguistic-bodies.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/cuffari-linguistic-bodies.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=mJxtO6am5ZI>
+ .
+
+hi:video_di_paolo_enactivism a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Paolo · Ontologizing …"@en ;
+  skos:prefLabel "Paolo · Ontologizing …"@en ;
+  skos:definition "Ezequiel Di Paolo — Ontologizing Enactivism — di_paolo. Dialogue on enactivism, worldmaking, and the ontology of living cognition. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-di-paolo-enactivism.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/di-paolo-enactivism.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=c1_0RnN_1xM>
+ .
+
+hi:video_fanon_colonization_mind a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Fanon · Colonization …"@en ;
+  skos:prefLabel "Fanon · Colonization …"@en ;
+  skos:definition "Frantz Fanon — Colonization and the Mind — fanon. On Fanon's analysis of colonial violence, psychiatry, and liberation. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-fanon-colonization-mind.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/fanon-colonization-mind.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=M0_AUXD-1bc>
+ .
+
+hi:video_bateson_ecology_of_mind a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Bateson · Ecology of"@en ;
+  skos:prefLabel "Bateson · Ecology of"@en ;
+  skos:definition "Gregory Bateson — Ecology of Mind — bateson. Introduction to Bateson's ecology of mind — systems, learning, and relational cognition. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-bateson-ecology-of-mind.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/bateson-ecology-of-mind.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=KePJVhhOELA>
+ .
+
+hi:video_de_jaegher_participatory_sense a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Jaegher · Participatory…"@en ;
+  skos:prefLabel "Jaegher · Participatory…"@en ;
+  skos:definition "Hanne De Jaegher — Participatory Sense-Making — de_jaegher. Introduction to participatory sense-making and social enaction. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-de-jaegher-participatory-sense.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/de-jaegher-participatory-sense.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=AiFuQD-ZWy4>
+ .
+
+hi:video_maturana_interview a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Maturana · Interview"@en ;
+  skos:prefLabel "Maturana · Interview"@en ;
+  skos:definition "Humberto Maturana — Interview — maturana. Autopoiesis, cognition, and the biology of knowing. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-maturana-interview.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/maturana-interview.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=fQFlceVouPA>
+ .
+
+hi:video_uexkuell_umwelt a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Uexküll · Umwelt and"@en ;
+  skos:prefLabel "Uexküll · Umwelt and"@en ;
+  skos:definition "Jakob von Uexküll — Umwelt and Biosemiotics — uexkuell. Introduction to Umwelt theory and the organism's meaningful world. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-uexkuell-umwelt.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/uexkuell-umwelt.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=G_0jJfliUvQ>
+ .
+
+hi:video_gibson_ecological_psychology a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Gibson · Ecological Ps…"@en ;
+  skos:prefLabel "Gibson · Ecological Ps…"@en ;
+  skos:definition "James J. Gibson — Ecological Psychology — gibson. Affordances, direct perception, and the ecological approach to psychology. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-gibson-ecological-psychology.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/gibson-ecological-psychology.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=fmPD0xF766k>
+ .
+
+hi:video_cage_433_lifetime a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Cage · 4'33\" and"@en ;
+  skos:prefLabel "Cage · 4'33\" and"@en ;
+  skos:definition "John Cage — 4'33\" and a Lifetime of Music — cage. Chance operations, silence, and indeterminacy as perceptual and compositional method. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-cage-433-lifetime.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/cage-433-lifetime.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=Y7q8iQPxLBY>
+ .
+
+hi:video_munoz_queer_utopianism a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Muñoz · Queer Utopian…"@en ;
+  skos:prefLabel "Muñoz · Queer Utopian…"@en ;
+  skos:definition "José Esteban Muñoz — Queer Utopianism — munoz. Cruising utopia, performance, and queer futurity against the tyranny of the present. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-munoz-queer-utopianism.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/munoz-queer-utopianism.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=DHLxmCe4GpI>
+ .
+
+hi:video_barad_meeting_universe a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Barad · Meeting the"@en ;
+  skos:prefLabel "Barad · Meeting the"@en ;
+  skos:definition "Karen Barad — Meeting the Universe Halfway — barad. Agential realism, intra-action, and quantum physics as philosophy of matter. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-barad-meeting-universe.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/barad-meeting-universe.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=JQlZAyAjcZQ>
+ .
+
+hi:video_crawford_ai_planet a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Crawford · AI and"@en ;
+  skos:prefLabel "Crawford · AI and"@en ;
+  skos:definition "Kate Crawford — AI and the Planet — crawford. Atlas of AI — extraction, energy, labor, and the material politics of machine learning. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-crawford-ai-planet.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/crawford-ai-planet.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=tuqEro3NPaI>
+ .
+
+hi:video_malafouris_embodied_patterns a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Malafouris · Embodied Patt…"@en ;
+  skos:prefLabel "Malafouris · Embodied Patt…"@en ;
+  skos:definition "Lambros Malafouris — Embodied Patterns — malafouris. Material engagement — how things shape minds and cognitive archaeology of making. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-malafouris-embodied-patterns.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/malafouris-embodied-patterns.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=n1BH4tdSvds>
+ .
+
+hi:video_shapiro_embodied_cognition a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Shapiro · Embodied Cogn…"@en ;
+  skos:prefLabel "Shapiro · Embodied Cogn…"@en ;
+  skos:definition "Lawrence Shapiro — Embodied Cognition — shapiro. Full interview on embodied cognition and the body as constraint and resource for mind. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-shapiro-embodied-cognition.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/shapiro-embodied-cognition.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=aJ6FY8oOwJE>
+ .
+
+hi:video_leigh_bowery_tate a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Bowery · Tate Highligh…"@en ;
+  skos:prefLabel "Bowery · Tate Highligh…"@en ;
+  skos:definition "Leigh Bowery — Tate Highlights — leigh_bowery. Performance, fashion, and club culture as radical embodiment and social sculpture. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-leigh-bowery-tate.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/leigh-bowery-tate.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=8r4GwWAQN8s>
+ .
+
+hi:video_margulis_symbiotic_earth a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Margulis · Symbiotic Ear…"@en ;
+  skos:prefLabel "Margulis · Symbiotic Ear…"@en ;
+  skos:definition "Lynn Margulis — Symbiotic Earth — margulis. Graduate seminar footage — symbiosis, holobionts, and evolution as cooperative process. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-margulis-symbiotic-earth.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/margulis-symbiotic-earth.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=AJSENoONB10>
+ .
+
+hi:video_duchamp_art_dada a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Duchamp · Art and"@en ;
+  skos:prefLabel "Duchamp · Art and"@en ;
+  skos:definition "Marcel Duchamp — Art and Dada (1956) — duchamp. Archive interview on readymades, choice, and conceptual art. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-duchamp-art-dada.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/duchamp-art-dada.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=Wuf_GHmjxLM>
+ .
+
+hi:video_boden_creativity_ai a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Boden · Creativity &"@en ;
+  skos:prefLabel "Boden · Creativity &"@en ;
+  skos:definition "Margaret Boden — Creativity & AI — boden. Creativity as novelty plus value — combinational, exploratory, and transformational forms in AI and art. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-boden-creativity-ai.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/boden-creativity-ai.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=5dEXIOiAsaw>
+ .
+
+hi:video_merleau_ponty_phenomenology a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "MerleauPonty · Merleau-Ponty…"@en ;
+  skos:prefLabel "MerleauPonty · Merleau-Ponty…"@en ;
+  skos:definition "Merleau-Ponty — Phenomenology of Perception — merleau_ponty. Lived body, perception, and phenomenological approaches to embodied experience. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-merleau-ponty-phenomenology.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/merleau-ponty-phenomenology.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=JFj8kWm_N-Y>
+ .
+
+hi:video_foucault_prison_1975 a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Foucault · We Live"@en ;
+  skos:prefLabel "Foucault · We Live"@en ;
+  skos:definition "Michel Foucault — We Live in a Prison (1975) — foucault. Archive footage on power, discipline, and institutions that shape what can be known and done. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-foucault-prison-1975.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/foucault-prison-1975.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=kQsoX_Yv0hE>
+ .
+
+hi:video_shanahan_consciousness_ai a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Shanahan · Consciousness…"@en ;
+  skos:prefLabel "Shanahan · Consciousness…"@en ;
+  skos:definition "Murray Shanahan — Consciousness and AI — shanahan. Philosophy of AI, consciousness, and reasoning in artificial systems. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-shanahan-consciousness-ai.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/shanahan-consciousness-ai.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=v1Py_hWcmkU>
+ .
+
+hi:video_nagarjuna_emptiness a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Ngrjuna · Philosophy of"@en ;
+  skos:prefLabel "Ngrjuna · Philosophy of"@en ;
+  skos:definition "Nāgārjuna — Philosophy of Emptiness — nagarjuna. Thupten Jinpa on Madhyamaka emptiness and why it matters for cognition and reality. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-nagarjuna-emptiness.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/nagarjuna-emptiness.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=awzUd3wzTCM>
+ .
+
+hi:video_butler_parable_climate a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Butler · Parable and"@en ;
+  skos:prefLabel "Butler · Parable and"@en ;
+  skos:definition "Octavia Butler — Parable and Climate Chaos — butler. Butler on Parable books, Afrofuturism, and imagining futures under ecological collapse. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-butler-parable-climate.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/butler-parable-climate.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=sv5m3tnT9wk>
+ .
+
+hi:video_freire_incredible_conversation a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Freire · An Incredible"@en ;
+  skos:prefLabel "Freire · An Incredible"@en ;
+  skos:definition "Paulo Freire — An Incredible Conversation — freire. Archive conversation on pedagogy of the oppressed, literacy, and freedom as practice. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-freire-incredible-conversation.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/freire-incredible-conversation.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=aFWjnkFypFA>
+ .
+
+hi:video_wilson_state_space a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Wilson · State Space"@en ;
+  skos:prefLabel "Wilson · State Space"@en ;
+  skos:definition "Robert A. Wilson — State Space Theory — wilson. MIND 2019 — extended mind, boundaries of cognition, and philosophical psychology. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-wilson-state-space.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/wilson-state-space.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=u1qWPYQHsvo>
+ .
+
+hi:video_brooks_humanoid_robots a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Brooks · Humanoid Robo…"@en ;
+  skos:prefLabel "Brooks · Humanoid Robo…"@en ;
+  skos:definition "Rodney Brooks — Humanoid Robots and AI Hype — brooks. Subsumption architecture, embodied robotics, and intelligence without representation. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-brooks-humanoid-robots.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/brooks-humanoid-robots.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=6qxO13-3-Gk>
+ .
+
+hi:video_braidotti_posthuman_knowledge a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Braidotti · Posthuman Kno…"@en ;
+  skos:prefLabel "Braidotti · Posthuman Kno…"@en ;
+  skos:definition "Rosi Braidotti — Posthuman Knowledge — braidotti. Posthuman subjectivity, nomadic theory, and knowledge after the human. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-braidotti-posthuman-knowledge.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/braidotti-posthuman-knowledge.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=0CewnVzOg5w>
+ .
+
+hi:video_saul_leiter_color a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Leiter · Life and Work"@en ;
+  skos:prefLabel "Leiter · Life and Work"@en ;
+  skos:definition "Saul Leiter — Life and Work — saul_leiter. Color street photography, painterly vision, and everyday urban perception. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-saul-leiter-color.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/saul-leiter-color.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=RbtnUY7j__A>
+ .
+
+hi:video_paxton_contact_improv a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Paxton · Contact Impro…"@en ;
+  skos:prefLabel "Paxton · Contact Impro…"@en ;
+  skos:definition "Steve Paxton — Contact Improvisation — steve_paxton. Contact improvisation, weight-sharing, and democratic intelligence of bodies in motion. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-paxton-contact-improv.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/paxton-contact-improv.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=O3wgG1qPRTY>
+ .
+
+hi:video_trisha_brown_intensive a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Brown · Trisha Brown"@en ;
+  skos:prefLabel "Brown · Trisha Brown"@en ;
+  skos:definition "Trisha Brown Dance Company — Summer Intensive — trisha_brown. Postmodern dance, ordinary movement, and somatic intelligence in choreography. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-trisha-brown-intensive.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/trisha-brown-intensive.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=zPOMha3cIzo>
+ .
+
+hi:video_vera_molnar_generative a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Molnár · Life and Work"@en ;
+  skos:prefLabel "Molnár · Life and Work"@en ;
+  skos:definition "Vera Molnár — Life and Work — vera_molnar. Pioneer of computer and generative art — algorithms, chance, and systematic creativity. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-vera-molnar-generative.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/vera-molnar-generative.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=8tNESHtfkr0>
+ .
+
+hi:video_forsythe_imagining_lines a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Forsythe · Imagining Lin…"@en ;
+  skos:prefLabel "Forsythe · Imagining Lin…"@en ;
+  skos:definition "William Forsythe — Imagining Lines — forsythe. Choreographic objects, lines, and movement as distributed cognition. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-forsythe-imagining-lines.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/forsythe-imagining-lines.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=6X29OjcBHG8>
+ .
+
+hi:video_yoko_ono_interview a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Ono · Interview"@en ;
+  skos:prefLabel "Ono · Interview"@en ;
+  skos:definition "Yoko Ono — Interview — yoko_ono. Fluxus, instruction pieces, and art as participatory worldmaking. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-yoko-ono-interview.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/yoko-ono-interview.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=o2cA9kGjoHc>
+ .
+
+hi:video_batson_minds_in_motion a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Batson · Minds"@en ;
+  skos:prefLabel "Batson · Minds"@en ;
+  skos:definition "Minds in Motion — Glenna Batson — Glenna Batson. Conversation on somatic awareness, movement science, and minds in motion — dance, embodiment, and the intelligence of the moving body. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-batson-minds-in-motion.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/batson-minds-in-motion.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=gQxpRLup3w4>
+ .
+
+hi:video_forsythe_synchronous_objects_hellerau a owl:NamedIndividual, hi:undefined ;
+  rdfs:label "Forsythe · Sync Objects"@en ;
+  skos:prefLabel "Forsythe · Sync Objects"@en ;
+  skos:definition "William Forsythe on Synchronous Objects at The Hellerau in Dresden, Germany — choreographic objects, data visualization, and the Motion Bank as distributed movement knowledge. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-forsythe-synchronous-objects-hellerau.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/forsythe-synchronous-objects-hellerau.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=xqlq3q5RMrc>
  .
 
 hi:essay_1 a owl:NamedIndividual, hi:PracticeConcept ;
@@ -4537,6 +5546,7 @@ hi:ai_ml hi:relatedTo hi:jasmine .
 hi:choreography_d hi:relatedTo hi:choreography .
 hi:dance hi:relatedTo hi:choreography_d .
 hi:dance hi:relatedTo hi:choreography .
+hi:dance hi:relatedTo hi:performance_art .
 hi:dance hi:relatedTo hi:choreo_knowledge .
 hi:dance hi:relatedTo hi:somatics .
 hi:dance hi:relatedTo hi:interdisciplinary_art .
@@ -4564,6 +5574,24 @@ hi:interdisciplinary_art hi:relatedTo hi:came .
 hi:interdisciplinary_art hi:relatedTo hi:cam .
 hi:interdisciplinary_art hi:relatedTo hi:turbado_marabou .
 hi:interdisciplinary_art hi:relatedTo hi:hi_program .
+hi:interdisciplinary_art hi:relatedTo hi:performance_art .
+hi:interdisciplinary_art hi:relatedTo hi:visual_arts .
+hi:performance_art hi:relatedTo hi:art .
+hi:performance_art hi:relatedTo hi:dance .
+hi:performance_art hi:relatedTo hi:choreography_d .
+hi:performance_art hi:relatedTo hi:choreography .
+hi:performance_art hi:relatedTo hi:creative_embodiment .
+hi:performance_art hi:relatedTo hi:somatics .
+hi:performance_art hi:relatedTo hi:body .
+hi:performance_art hi:relatedTo hi:creative .
+hi:performance_art hi:relatedTo hi:visual_arts .
+hi:performance_art hi:relatedTo hi:fluxus .
+hi:visual_arts hi:relatedTo hi:art .
+hi:visual_arts hi:relatedTo hi:curation .
+hi:visual_arts hi:relatedTo hi:generative_arts .
+hi:visual_arts hi:relatedTo hi:ai_art .
+hi:visual_arts hi:relatedTo hi:creative .
+hi:visual_arts hi:relatedTo hi:creative_embodiment .
 hi:generative_arts hi:relatedTo hi:art .
 hi:generative_arts hi:relatedTo hi:creative .
 hi:generative_arts hi:relatedTo hi:creativity .
@@ -4634,6 +5662,7 @@ hi:art_medicine hi:relatedTo hi:erika .
 hi:art_medicine hi:relatedTo hi:jackie_larson .
 hi:art_medicine hi:relatedTo hi:andrew_hix .
 hi:curation hi:relatedTo hi:art .
+hi:curation hi:relatedTo hi:visual_arts .
 hi:curation hi:relatedTo hi:motion_bank .
 hi:curation hi:relatedTo hi:interdisciplinary_art .
 hi:curation hi:relatedTo hi:storytelling .
@@ -4651,6 +5680,7 @@ hi:forsythe hi:relatedTo hi:choreography .
 hi:duchamp hi:relatedTo hi:art .
 hi:duchamp hi:relatedTo hi:creative .
 hi:duchamp hi:relatedTo hi:curation .
+hi:duchamp hi:relatedTo hi:visual_arts .
 hi:duchamp hi:relatedTo hi:interdisciplinary_art .
 hi:duchamp hi:relatedTo hi:intellectual_property .
 hi:duchamp hi:relatedTo hi:abstraction .
@@ -4659,6 +5689,7 @@ hi:duchamp hi:relatedTo hi:cage .
 hi:duchamp hi:relatedTo hi:yoko_ono .
 hi:duchamp hi:relatedTo hi:fluxus .
 hi:saul_leiter hi:relatedTo hi:art .
+hi:saul_leiter hi:relatedTo hi:visual_arts .
 hi:saul_leiter hi:relatedTo hi:creative .
 hi:saul_leiter hi:relatedTo hi:abstraction .
 hi:saul_leiter hi:relatedTo hi:creative_embodiment .
@@ -4669,6 +5700,7 @@ hi:saul_leiter hi:relatedTo hi:perception_politics .
 hi:saul_leiter hi:relatedTo hi:duchamp .
 hi:saul_leiter hi:relatedTo hi:cage .
 hi:vera_molnar hi:relatedTo hi:generative_arts .
+hi:vera_molnar hi:relatedTo hi:visual_arts .
 hi:vera_molnar hi:relatedTo hi:creativity .
 hi:vera_molnar hi:relatedTo hi:art .
 hi:vera_molnar hi:relatedTo hi:creative .
@@ -4685,6 +5717,8 @@ hi:vera_molnar hi:relatedTo hi:duchamp .
 hi:vera_molnar hi:relatedTo hi:intellectual_property .
 hi:vera_molnar hi:relatedTo hi:curation .
 hi:ana_mendieta hi:relatedTo hi:art .
+hi:ana_mendieta hi:relatedTo hi:performance_art .
+hi:ana_mendieta hi:relatedTo hi:visual_arts .
 hi:ana_mendieta hi:relatedTo hi:creative .
 hi:ana_mendieta hi:relatedTo hi:creative_embodiment .
 hi:ana_mendieta hi:relatedTo hi:embodiment .
@@ -4711,6 +5745,7 @@ hi:ana_mendieta hi:relatedTo hi:trisha_brown .
 hi:ana_mendieta hi:relatedTo hi:escobar .
 hi:ana_mendieta hi:relatedTo hi:leigh_bowery .
 hi:leigh_bowery hi:relatedTo hi:art .
+hi:leigh_bowery hi:relatedTo hi:performance_art .
 hi:leigh_bowery hi:relatedTo hi:creative .
 hi:leigh_bowery hi:relatedTo hi:queer_theory .
 hi:leigh_bowery hi:relatedTo hi:munoz .
@@ -4737,6 +5772,7 @@ hi:leigh_bowery hi:relatedTo hi:cage .
 hi:leigh_bowery hi:relatedTo hi:duchamp .
 hi:cage hi:relatedTo hi:music .
 hi:cage hi:relatedTo hi:art .
+hi:cage hi:relatedTo hi:performance_art .
 hi:cage hi:relatedTo hi:creative .
 hi:cage hi:relatedTo hi:enacted .
 hi:cage hi:relatedTo hi:rehearsal .
@@ -4744,6 +5780,7 @@ hi:cage hi:relatedTo hi:interdisciplinary_art .
 hi:cage hi:relatedTo hi:yoko_ono .
 hi:cage hi:relatedTo hi:fluxus .
 hi:yoko_ono hi:relatedTo hi:art .
+hi:yoko_ono hi:relatedTo hi:performance_art .
 hi:yoko_ono hi:relatedTo hi:interdisciplinary_art .
 hi:yoko_ono hi:relatedTo hi:creative .
 hi:yoko_ono hi:relatedTo hi:community .
@@ -4751,6 +5788,7 @@ hi:yoko_ono hi:relatedTo hi:cultural_imagination .
 hi:yoko_ono hi:relatedTo hi:de_jaegher .
 hi:yoko_ono hi:relatedTo hi:fluxus .
 hi:trisha_brown hi:relatedTo hi:dance .
+hi:trisha_brown hi:relatedTo hi:performance_art .
 hi:trisha_brown hi:relatedTo hi:choreography_d .
 hi:trisha_brown hi:relatedTo hi:choreography .
 hi:trisha_brown hi:relatedTo hi:choreo_knowledge .
@@ -4765,6 +5803,7 @@ hi:trisha_brown hi:relatedTo hi:steve_paxton .
 hi:trisha_brown hi:relatedTo hi:judson_church .
 hi:steve_paxton hi:relatedTo hi:judson_church .
 hi:steve_paxton hi:relatedTo hi:trisha_brown .
+hi:steve_paxton hi:relatedTo hi:performance_art .
 hi:steve_paxton hi:relatedTo hi:dance .
 hi:steve_paxton hi:relatedTo hi:choreography .
 hi:steve_paxton hi:relatedTo hi:choreography_d .
@@ -5228,6 +6267,7 @@ hi:bell_hooks hi:relatedTo hi:track_ethics .
 hi:bell_hooks hi:relatedTo hi:storytelling .
 hi:bell_hooks hi:relatedTo hi:braidotti .
 hi:munoz hi:relatedTo hi:futurity .
+hi:munoz hi:relatedTo hi:performance_art .
 hi:munoz hi:relatedTo hi:speculative_futures .
 hi:munoz hi:relatedTo hi:cultural_imagination .
 hi:munoz hi:relatedTo hi:track_future .
@@ -5378,6 +6418,8 @@ hi:afrofuturism hi:relatedTo hi:turbado_marabou .
 hi:fluxus hi:relatedTo hi:cage .
 hi:fluxus hi:relatedTo hi:yoko_ono .
 hi:fluxus hi:relatedTo hi:duchamp .
+hi:fluxus hi:relatedTo hi:performance_art .
+hi:fluxus hi:relatedTo hi:visual_arts .
 hi:fluxus hi:relatedTo hi:art .
 hi:fluxus hi:relatedTo hi:creative .
 hi:fluxus hi:relatedTo hi:interdisciplinary_art .
@@ -5548,6 +6590,18 @@ hi:friston hi:relatedTo hi:cybernetics .
 hi:friston hi:relatedTo hi:synthetic_cognition .
 hi:friston hi:relatedTo hi:physical_ai .
 hi:friston hi:relatedTo hi:ai .
+hi:levin hi:relatedTo hi:synthetic_cognition .
+hi:levin hi:relatedTo hi:distributed .
+hi:levin hi:relatedTo hi:holobiont .
+hi:levin hi:relatedTo hi:symbiosis .
+hi:levin hi:relatedTo hi:consciousness .
+hi:levin hi:relatedTo hi:margulis .
+hi:levin hi:relatedTo hi:ai .
+hi:batson hi:relatedTo hi:somatics .
+hi:batson hi:relatedTo hi:dance .
+hi:batson hi:relatedTo hi:embodiment .
+hi:batson hi:relatedTo hi:body .
+hi:batson hi:relatedTo hi:marlon .
 hi:friston hi:relatedTo hi:possible_minds .
 hi:friston hi:relatedTo hi:brooks .
 hi:cs hi:relatedTo hi:assemblage .
@@ -5781,9 +6835,6 @@ hi:hi_videos hi:relatedTo hi:hi_program .
 hi:hi_videos hi:relatedTo hi:creative_embodiment .
 hi:hi_videos hi:relatedTo hi:coupling .
 hi:mini_pod hi:relatedTo hi:hi_videos .
-hi:hi_videos hi:relatedTo hi:video_hayles_integrated_cognition .
-hi:hi_videos hi:relatedTo hi:video_hayles_bacteria_ai .
-hi:hi_videos hi:relatedTo hi:video_clark_experience_machine .
 hi:video_hayles_integrated_cognition hi:relatedTo hi:hayles .
 hi:video_hayles_integrated_cognition hi:relatedTo hi:llm .
 hi:video_hayles_integrated_cognition hi:relatedTo hi:gen_ai .
@@ -5817,6 +6868,269 @@ hi:video_clark_experience_machine hi:relatedTo hi:enactivism .
 hi:video_clark_experience_machine hi:relatedTo hi:extended .
 hi:video_clark_experience_machine hi:relatedTo hi:consciousness .
 hi:video_clark_experience_machine hi:relatedTo hi:coupling .
+hi:video_ai_fluency_generative_ai hi:relatedTo hi:gen_ai .
+hi:video_ai_fluency_generative_ai hi:relatedTo hi:llm .
+hi:video_ai_fluency_generative_ai hi:relatedTo hi:ai .
+hi:video_ai_fluency_generative_ai hi:relatedTo hi:machine_learning .
+hi:video_karla_expanding_possibilities hi:relatedTo hi:karla .
+hi:video_karla_expanding_possibilities hi:relatedTo hi:architecture .
+hi:video_karla_expanding_possibilities hi:relatedTo hi:creative_embodiment .
+hi:video_karla_expanding_possibilities hi:relatedTo hi:ai .
+hi:video_karla_expanding_possibilities hi:relatedTo hi:track_space .
+hi:video_gallagher_4e_cognition hi:relatedTo hi:gallagher .
+hi:video_gallagher_4e_cognition hi:relatedTo hi:4e .
+hi:video_gallagher_4e_cognition hi:relatedTo hi:embodied .
+hi:video_gallagher_4e_cognition hi:relatedTo hi:enactivism .
+hi:video_gallagher_4e_cognition hi:relatedTo hi:extended .
+hi:video_privacy_illusion_ai_data hi:relatedTo hi:crawford .
+hi:video_privacy_illusion_ai_data hi:relatedTo hi:ai .
+hi:video_privacy_illusion_ai_data hi:relatedTo hi:llm .
+hi:video_privacy_illusion_ai_data hi:relatedTo hi:track_ethics .
+hi:video_privacy_illusion_ai_data hi:relatedTo hi:epistemology .
+hi:video_friston_brain_constructs_reality hi:relatedTo hi:friston .
+hi:video_friston_brain_constructs_reality hi:relatedTo hi:active_inference .
+hi:video_friston_brain_constructs_reality hi:relatedTo hi:consciousness .
+hi:video_friston_brain_constructs_reality hi:relatedTo hi:clark .
+hi:video_friston_brain_constructs_reality hi:relatedTo hi:embodied .
+hi:video_levin_diverse_intelligences hi:relatedTo hi:levin .
+hi:video_levin_diverse_intelligences hi:relatedTo hi:synthetic_cognition .
+hi:video_levin_diverse_intelligences hi:relatedTo hi:distributed .
+hi:video_levin_diverse_intelligences hi:relatedTo hi:holobiont .
+hi:video_levin_diverse_intelligences hi:relatedTo hi:symbiosis .
+hi:video_levin_diverse_intelligences hi:relatedTo hi:consciousness .
+hi:video_levin_intelligence_without_brains hi:relatedTo hi:levin .
+hi:video_levin_intelligence_without_brains hi:relatedTo hi:synthetic_cognition .
+hi:video_levin_intelligence_without_brains hi:relatedTo hi:distributed .
+hi:video_levin_intelligence_without_brains hi:relatedTo hi:holobiont .
+hi:video_levin_intelligence_without_brains hi:relatedTo hi:margulis .
+hi:video_levin_intelligence_without_brains hi:relatedTo hi:ai .
+hi:video_thompson_embodied_cognition hi:relatedTo hi:thompson .
+hi:video_thompson_embodied_cognition hi:relatedTo hi:enactivism .
+hi:video_thompson_embodied_cognition hi:relatedTo hi:4e .
+hi:video_thompson_embodied_cognition hi:relatedTo hi:embodied .
+hi:video_thompson_embodied_cognition hi:relatedTo hi:friston .
+hi:video_varela_god_computers hi:relatedTo hi:varela .
+hi:video_varela_god_computers hi:relatedTo hi:enactivism .
+hi:video_varela_god_computers hi:relatedTo hi:autopoiesis .
+hi:video_varela_god_computers hi:relatedTo hi:4e .
+hi:video_varela_god_computers hi:relatedTo hi:essay_4 .
+hi:video_mini_brains_150k hi:relatedTo hi:neural_networks .
+hi:video_mini_brains_150k hi:relatedTo hi:distributed .
+hi:video_mini_brains_150k hi:relatedTo hi:embodied .
+hi:video_mini_brains_150k hi:relatedTo hi:consciousness .
+hi:video_understanding_ai_inner_thoughts hi:relatedTo hi:ai_interpretability .
+hi:video_understanding_ai_inner_thoughts hi:relatedTo hi:llm .
+hi:video_understanding_ai_inner_thoughts hi:relatedTo hi:neural_networks .
+hi:video_understanding_ai_inner_thoughts hi:relatedTo hi:aguilera_arcas .
+hi:video_visualizing_transformers_attention hi:relatedTo hi:transformers .
+hi:video_visualizing_transformers_attention hi:relatedTo hi:llm .
+hi:video_visualizing_transformers_attention hi:relatedTo hi:neural_networks .
+hi:video_visualizing_transformers_attention hi:relatedTo hi:machine_learning .
+hi:video_am_i_ai_consciousness_doc hi:relatedTo hi:consciousness .
+hi:video_am_i_ai_consciousness_doc hi:relatedTo hi:chalmers .
+hi:video_am_i_ai_consciousness_doc hi:relatedTo hi:ai .
+hi:video_am_i_ai_consciousness_doc hi:relatedTo hi:synthetic_cognition .
+hi:video_creative_workers_ai_impact hi:relatedTo hi:creative_ai .
+hi:video_creative_workers_ai_impact hi:relatedTo hi:creative .
+hi:video_creative_workers_ai_impact hi:relatedTo hi:gen_ai .
+hi:video_creative_workers_ai_impact hi:relatedTo hi:creative_embodiment .
+hi:video_thinking_game_documentary hi:relatedTo hi:ai .
+hi:video_thinking_game_documentary hi:relatedTo hi:possible_minds .
+hi:video_thinking_game_documentary hi:relatedTo hi:shanahan .
+hi:video_thinking_game_documentary hi:relatedTo hi:agi .
+hi:video_noe_out_of_our_heads hi:relatedTo hi:noe .
+hi:video_noe_out_of_our_heads hi:relatedTo hi:embodied .
+hi:video_noe_out_of_our_heads hi:relatedTo hi:enactivism .
+hi:video_noe_out_of_our_heads hi:relatedTo hi:4e .
+hi:video_noe_out_of_our_heads hi:relatedTo hi:consciousness .
+hi:video_aguilera_what_is_intelligence hi:relatedTo hi:aguilera_arcas .
+hi:video_aguilera_what_is_intelligence hi:relatedTo hi:possible_minds .
+hi:video_aguilera_what_is_intelligence hi:relatedTo hi:ai .
+hi:video_aguilera_what_is_intelligence hi:relatedTo hi:symbiosis .
+hi:video_aguilera_what_is_intelligence hi:relatedTo hi:holobiont .
+hi:video_mendieta_decolonial_feminist hi:relatedTo hi:ana_mendieta .
+hi:video_mendieta_decolonial_feminist hi:relatedTo hi:art .
+hi:video_mendieta_decolonial_feminist hi:relatedTo hi:creative_embodiment .
+hi:video_mendieta_decolonial_feminist hi:relatedTo hi:body .
+hi:video_escobar_pluriverse hi:relatedTo hi:escobar .
+hi:video_escobar_pluriverse hi:relatedTo hi:pluriversal .
+hi:video_escobar_pluriverse hi:relatedTo hi:design_thinking .
+hi:video_escobar_pluriverse hi:relatedTo hi:cultural_critical .
+hi:video_akomolafe_animism hi:relatedTo hi:akomolafe .
+hi:video_akomolafe_animism hi:relatedTo hi:cultural_critical .
+hi:video_akomolafe_animism hi:relatedTo hi:hybrid .
+hi:video_akomolafe_animism hi:relatedTo hi:philosophy .
+hi:video_bell_hooks_speaking_freely hi:relatedTo hi:bell_hooks .
+hi:video_bell_hooks_speaking_freely hi:relatedTo hi:cultural_critical .
+hi:video_bell_hooks_speaking_freely hi:relatedTo hi:pedagogy .
+hi:video_bell_hooks_speaking_freely hi:relatedTo hi:freire .
+hi:video_sousa_santos_decolonising hi:relatedTo hi:sousa_santos .
+hi:video_sousa_santos_decolonising hi:relatedTo hi:epistemologies_south .
+hi:video_sousa_santos_decolonising hi:relatedTo hi:epistemology .
+hi:video_sousa_santos_decolonising hi:relatedTo hi:freire .
+hi:video_latour_once_out_of_nature hi:relatedTo hi:latour .
+hi:video_latour_once_out_of_nature hi:relatedTo hi:assemblage .
+hi:video_latour_once_out_of_nature hi:relatedTo hi:distributed .
+hi:video_latour_once_out_of_nature hi:relatedTo hi:technical_agency .
+hi:video_chalmers_talking_to_ai hi:relatedTo hi:chalmers .
+hi:video_chalmers_talking_to_ai hi:relatedTo hi:extended .
+hi:video_chalmers_talking_to_ai hi:relatedTo hi:clark .
+hi:video_chalmers_talking_to_ai hi:relatedTo hi:agi .
+hi:video_kirsh_thinking_with_body hi:relatedTo hi:kirsh .
+hi:video_kirsh_thinking_with_body hi:relatedTo hi:choreo_knowledge .
+hi:video_kirsh_thinking_with_body hi:relatedTo hi:extended .
+hi:video_kirsh_thinking_with_body hi:relatedTo hi:distributed .
+hi:video_haraway_chthulucene hi:relatedTo hi:haraway .
+hi:video_haraway_chthulucene hi:relatedTo hi:cyborg .
+hi:video_haraway_chthulucene hi:relatedTo hi:technosymbiosis .
+hi:video_haraway_chthulucene hi:relatedTo hi:hybrid .
+hi:video_rosch_prototype_cognition hi:relatedTo hi:rosch .
+hi:video_rosch_prototype_cognition hi:relatedTo hi:buddhism .
+hi:video_rosch_prototype_cognition hi:relatedTo hi:enacted .
+hi:video_rosch_prototype_cognition hi:relatedTo hi:enactivism .
+hi:video_cuffari_linguistic_bodies hi:relatedTo hi:cuffari .
+hi:video_cuffari_linguistic_bodies hi:relatedTo hi:enactivism .
+hi:video_cuffari_linguistic_bodies hi:relatedTo hi:di_paolo .
+hi:video_cuffari_linguistic_bodies hi:relatedTo hi:de_jaegher .
+hi:video_di_paolo_enactivism hi:relatedTo hi:di_paolo .
+hi:video_di_paolo_enactivism hi:relatedTo hi:enactivism .
+hi:video_di_paolo_enactivism hi:relatedTo hi:cuffari .
+hi:video_di_paolo_enactivism hi:relatedTo hi:autopoiesis .
+hi:video_fanon_colonization_mind hi:relatedTo hi:fanon .
+hi:video_fanon_colonization_mind hi:relatedTo hi:cultural_critical .
+hi:video_fanon_colonization_mind hi:relatedTo hi:critical .
+hi:video_fanon_colonization_mind hi:relatedTo hi:perception_politics .
+hi:video_bateson_ecology_of_mind hi:relatedTo hi:bateson .
+hi:video_bateson_ecology_of_mind hi:relatedTo hi:ecology .
+hi:video_bateson_ecology_of_mind hi:relatedTo hi:cybernetics .
+hi:video_bateson_ecology_of_mind hi:relatedTo hi:ecology_d .
+hi:video_de_jaegher_participatory_sense hi:relatedTo hi:de_jaegher .
+hi:video_de_jaegher_participatory_sense hi:relatedTo hi:enactivism .
+hi:video_de_jaegher_participatory_sense hi:relatedTo hi:coupling .
+hi:video_de_jaegher_participatory_sense hi:relatedTo hi:di_paolo .
+hi:video_maturana_interview hi:relatedTo hi:maturana .
+hi:video_maturana_interview hi:relatedTo hi:autopoiesis .
+hi:video_maturana_interview hi:relatedTo hi:varela .
+hi:video_maturana_interview hi:relatedTo hi:coupling .
+hi:video_uexkuell_umwelt hi:relatedTo hi:uexkuell .
+hi:video_uexkuell_umwelt hi:relatedTo hi:umwelt .
+hi:video_uexkuell_umwelt hi:relatedTo hi:ecology .
+hi:video_uexkuell_umwelt hi:relatedTo hi:varela .
+hi:video_gibson_ecological_psychology hi:relatedTo hi:gibson .
+hi:video_gibson_ecological_psychology hi:relatedTo hi:embedded .
+hi:video_gibson_ecological_psychology hi:relatedTo hi:architecture .
+hi:video_gibson_ecological_psychology hi:relatedTo hi:ecology .
+hi:video_cage_433_lifetime hi:relatedTo hi:cage .
+hi:video_cage_433_lifetime hi:relatedTo hi:music .
+hi:video_cage_433_lifetime hi:relatedTo hi:fluxus .
+hi:video_cage_433_lifetime hi:relatedTo hi:creative .
+hi:video_munoz_queer_utopianism hi:relatedTo hi:munoz .
+hi:video_munoz_queer_utopianism hi:relatedTo hi:futurity .
+hi:video_munoz_queer_utopianism hi:relatedTo hi:speculative_futures .
+hi:video_munoz_queer_utopianism hi:relatedTo hi:cultural_imagination .
+hi:video_barad_meeting_universe hi:relatedTo hi:barad .
+hi:video_barad_meeting_universe hi:relatedTo hi:haraway .
+hi:video_barad_meeting_universe hi:relatedTo hi:coupling .
+hi:video_barad_meeting_universe hi:relatedTo hi:assemblage .
+hi:video_crawford_ai_planet hi:relatedTo hi:crawford .
+hi:video_crawford_ai_planet hi:relatedTo hi:ai .
+hi:video_crawford_ai_planet hi:relatedTo hi:perception_politics .
+hi:video_crawford_ai_planet hi:relatedTo hi:gen_ai .
+hi:video_malafouris_embodied_patterns hi:relatedTo hi:malafouris .
+hi:video_malafouris_embodied_patterns hi:relatedTo hi:extended .
+hi:video_malafouris_embodied_patterns hi:relatedTo hi:extended_q .
+hi:video_malafouris_embodied_patterns hi:relatedTo hi:synthetic_cognition .
+hi:video_shapiro_embodied_cognition hi:relatedTo hi:shapiro .
+hi:video_shapiro_embodied_cognition hi:relatedTo hi:enactivism .
+hi:video_shapiro_embodied_cognition hi:relatedTo hi:embodied .
+hi:video_shapiro_embodied_cognition hi:relatedTo hi:embedded .
+hi:video_leigh_bowery_tate hi:relatedTo hi:leigh_bowery .
+hi:video_leigh_bowery_tate hi:relatedTo hi:art .
+hi:video_leigh_bowery_tate hi:relatedTo hi:queer_theory .
+hi:video_leigh_bowery_tate hi:relatedTo hi:creative .
+hi:video_margulis_symbiotic_earth hi:relatedTo hi:margulis .
+hi:video_margulis_symbiotic_earth hi:relatedTo hi:symbiosis .
+hi:video_margulis_symbiotic_earth hi:relatedTo hi:technosymbiosis .
+hi:video_margulis_symbiotic_earth hi:relatedTo hi:ecology_d .
+hi:video_duchamp_art_dada hi:relatedTo hi:duchamp .
+hi:video_duchamp_art_dada hi:relatedTo hi:art .
+hi:video_duchamp_art_dada hi:relatedTo hi:creative .
+hi:video_duchamp_art_dada hi:relatedTo hi:curation .
+hi:video_boden_creativity_ai hi:relatedTo hi:boden .
+hi:video_boden_creativity_ai hi:relatedTo hi:ai .
+hi:video_boden_creativity_ai hi:relatedTo hi:creative_ai .
+hi:video_boden_creativity_ai hi:relatedTo hi:creativity .
+hi:video_merleau_ponty_phenomenology hi:relatedTo hi:merleau_ponty .
+hi:video_merleau_ponty_phenomenology hi:relatedTo hi:enactivism .
+hi:video_merleau_ponty_phenomenology hi:relatedTo hi:embodiment .
+hi:video_merleau_ponty_phenomenology hi:relatedTo hi:embodied .
+hi:video_foucault_prison_1975 hi:relatedTo hi:foucault .
+hi:video_foucault_prison_1975 hi:relatedTo hi:perception_politics .
+hi:video_foucault_prison_1975 hi:relatedTo hi:critical .
+hi:video_foucault_prison_1975 hi:relatedTo hi:philosophy .
+hi:video_shanahan_consciousness_ai hi:relatedTo hi:shanahan .
+hi:video_shanahan_consciousness_ai hi:relatedTo hi:possible_minds .
+hi:video_nagarjuna_emptiness hi:relatedTo hi:nagarjuna .
+hi:video_nagarjuna_emptiness hi:relatedTo hi:buddhism .
+hi:video_nagarjuna_emptiness hi:relatedTo hi:philosophy .
+hi:video_nagarjuna_emptiness hi:relatedTo hi:epistemology .
+hi:video_butler_parable_climate hi:relatedTo hi:butler .
+hi:video_butler_parable_climate hi:relatedTo hi:afrofuturism .
+hi:video_butler_parable_climate hi:relatedTo hi:speculative_futures .
+hi:video_butler_parable_climate hi:relatedTo hi:futurity .
+hi:video_freire_incredible_conversation hi:relatedTo hi:freire .
+hi:video_freire_incredible_conversation hi:relatedTo hi:cultural_critical .
+hi:video_freire_incredible_conversation hi:relatedTo hi:critical .
+hi:video_freire_incredible_conversation hi:relatedTo hi:literacies .
+hi:video_wilson_state_space hi:relatedTo hi:wilson .
+hi:video_wilson_state_space hi:relatedTo hi:situated .
+hi:video_wilson_state_space hi:relatedTo hi:extended .
+hi:video_wilson_state_space hi:relatedTo hi:embedded .
+hi:video_brooks_humanoid_robots hi:relatedTo hi:brooks .
+hi:video_brooks_humanoid_robots hi:relatedTo hi:4e .
+hi:video_brooks_humanoid_robots hi:relatedTo hi:embodied .
+hi:video_brooks_humanoid_robots hi:relatedTo hi:affordances .
+hi:video_braidotti_posthuman_knowledge hi:relatedTo hi:braidotti .
+hi:video_braidotti_posthuman_knowledge hi:relatedTo hi:hybrid .
+hi:video_braidotti_posthuman_knowledge hi:relatedTo hi:philosophy .
+hi:video_braidotti_posthuman_knowledge hi:relatedTo hi:cultural_critical .
+hi:video_saul_leiter_color hi:relatedTo hi:saul_leiter .
+hi:video_saul_leiter_color hi:relatedTo hi:art .
+hi:video_saul_leiter_color hi:relatedTo hi:abstraction .
+hi:video_saul_leiter_color hi:relatedTo hi:creative .
+hi:video_paxton_contact_improv hi:relatedTo hi:steve_paxton .
+hi:video_paxton_contact_improv hi:relatedTo hi:judson_church .
+hi:video_paxton_contact_improv hi:relatedTo hi:trisha_brown .
+hi:video_paxton_contact_improv hi:relatedTo hi:dance .
+hi:video_trisha_brown_intensive hi:relatedTo hi:trisha_brown .
+hi:video_trisha_brown_intensive hi:relatedTo hi:dance .
+hi:video_trisha_brown_intensive hi:relatedTo hi:choreography_d .
+hi:video_trisha_brown_intensive hi:relatedTo hi:choreography .
+hi:video_vera_molnar_generative hi:relatedTo hi:vera_molnar .
+hi:video_vera_molnar_generative hi:relatedTo hi:generative_arts .
+hi:video_vera_molnar_generative hi:relatedTo hi:abstraction .
+hi:video_vera_molnar_generative hi:relatedTo hi:creativity .
+hi:video_forsythe_imagining_lines hi:relatedTo hi:forsythe .
+hi:video_forsythe_imagining_lines hi:relatedTo hi:choreo_knowledge .
+hi:video_forsythe_imagining_lines hi:relatedTo hi:choreo_object .
+hi:video_forsythe_imagining_lines hi:relatedTo hi:motion_bank .
+hi:video_yoko_ono_interview hi:relatedTo hi:yoko_ono .
+hi:video_yoko_ono_interview hi:relatedTo hi:fluxus .
+hi:video_yoko_ono_interview hi:relatedTo hi:art .
+hi:video_yoko_ono_interview hi:relatedTo hi:interdisciplinary_art .
+hi:video_batson_minds_in_motion hi:relatedTo hi:batson .
+hi:video_batson_minds_in_motion hi:relatedTo hi:somatics .
+hi:video_batson_minds_in_motion hi:relatedTo hi:dance .
+hi:video_batson_minds_in_motion hi:relatedTo hi:embodiment .
+hi:video_batson_minds_in_motion hi:relatedTo hi:marlon .
+hi:video_batson_minds_in_motion hi:relatedTo hi:body .
+hi:video_forsythe_synchronous_objects_hellerau hi:relatedTo hi:forsythe .
+hi:video_forsythe_synchronous_objects_hellerau hi:relatedTo hi:choreo_knowledge .
+hi:video_forsythe_synchronous_objects_hellerau hi:relatedTo hi:choreo_object .
+hi:video_forsythe_synchronous_objects_hellerau hi:relatedTo hi:motion_bank .
+hi:video_forsythe_synchronous_objects_hellerau hi:relatedTo hi:choreography .
+hi:video_forsythe_synchronous_objects_hellerau hi:relatedTo hi:distributed .
+hi:video_forsythe_synchronous_objects_hellerau hi:relatedTo hi:marlon .
 hi:essay_1 hi:relatedTo hi:essay_2 .
 hi:essay_1 hi:relatedTo hi:essay_3 .
 hi:essay_1 hi:relatedTo hi:essay_4 .
@@ -6307,6 +7621,72 @@ hi:video_hayles_bacteria_ai hi:develops hi:umwelt .
 hi:video_hayles_bacteria_ai hi:instantiates hi:hayles .
 hi:video_clark_experience_machine hi:develops hi:active_inference .
 hi:video_clark_experience_machine hi:instantiates hi:clark .
+hi:video_ai_fluency_generative_ai hi:develops hi:gen_ai .
+hi:video_karla_expanding_possibilities hi:instantiates hi:karla .
+hi:video_gallagher_4e_cognition hi:instantiates hi:gallagher .
+hi:video_gallagher_4e_cognition hi:develops hi:4e .
+hi:video_friston_brain_constructs_reality hi:instantiates hi:friston .
+hi:video_friston_brain_constructs_reality hi:develops hi:active_inference .
+hi:video_levin_diverse_intelligences hi:instantiates hi:levin .
+hi:video_levin_diverse_intelligences hi:develops hi:synthetic_cognition .
+hi:video_levin_intelligence_without_brains hi:instantiates hi:levin .
+hi:video_thompson_embodied_cognition hi:instantiates hi:thompson .
+hi:video_thompson_embodied_cognition hi:develops hi:enactivism .
+hi:video_varela_god_computers hi:instantiates hi:varela .
+hi:video_varela_god_computers hi:develops hi:enactivism .
+hi:video_understanding_ai_inner_thoughts hi:develops hi:ai_interpretability .
+hi:video_visualizing_transformers_attention hi:develops hi:transformers .
+hi:video_noe_out_of_our_heads hi:instantiates hi:noe .
+hi:video_noe_out_of_our_heads hi:develops hi:enactivism .
+hi:video_aguilera_what_is_intelligence hi:instantiates hi:aguilera_arcas .
+hi:video_aguilera_what_is_intelligence hi:develops hi:possible_minds .
+hi:video_mendieta_decolonial_feminist hi:instantiates hi:ana_mendieta .
+hi:video_escobar_pluriverse hi:instantiates hi:escobar .
+hi:video_akomolafe_animism hi:instantiates hi:akomolafe .
+hi:video_bell_hooks_speaking_freely hi:instantiates hi:bell_hooks .
+hi:video_sousa_santos_decolonising hi:instantiates hi:sousa_santos .
+hi:video_latour_once_out_of_nature hi:instantiates hi:latour .
+hi:video_chalmers_talking_to_ai hi:instantiates hi:chalmers .
+hi:video_kirsh_thinking_with_body hi:instantiates hi:kirsh .
+hi:video_haraway_chthulucene hi:instantiates hi:haraway .
+hi:video_rosch_prototype_cognition hi:instantiates hi:rosch .
+hi:video_cuffari_linguistic_bodies hi:instantiates hi:cuffari .
+hi:video_di_paolo_enactivism hi:instantiates hi:di_paolo .
+hi:video_fanon_colonization_mind hi:instantiates hi:fanon .
+hi:video_bateson_ecology_of_mind hi:instantiates hi:bateson .
+hi:video_de_jaegher_participatory_sense hi:instantiates hi:de_jaegher .
+hi:video_maturana_interview hi:instantiates hi:maturana .
+hi:video_uexkuell_umwelt hi:instantiates hi:uexkuell .
+hi:video_gibson_ecological_psychology hi:instantiates hi:gibson .
+hi:video_cage_433_lifetime hi:instantiates hi:cage .
+hi:video_munoz_queer_utopianism hi:instantiates hi:munoz .
+hi:video_barad_meeting_universe hi:instantiates hi:barad .
+hi:video_crawford_ai_planet hi:instantiates hi:crawford .
+hi:video_malafouris_embodied_patterns hi:instantiates hi:malafouris .
+hi:video_shapiro_embodied_cognition hi:instantiates hi:shapiro .
+hi:video_leigh_bowery_tate hi:instantiates hi:leigh_bowery .
+hi:video_margulis_symbiotic_earth hi:instantiates hi:margulis .
+hi:video_duchamp_art_dada hi:instantiates hi:duchamp .
+hi:video_boden_creativity_ai hi:instantiates hi:boden .
+hi:video_merleau_ponty_phenomenology hi:instantiates hi:merleau_ponty .
+hi:video_foucault_prison_1975 hi:instantiates hi:foucault .
+hi:video_shanahan_consciousness_ai hi:instantiates hi:shanahan .
+hi:video_nagarjuna_emptiness hi:instantiates hi:nagarjuna .
+hi:video_butler_parable_climate hi:instantiates hi:butler .
+hi:video_freire_incredible_conversation hi:instantiates hi:freire .
+hi:video_wilson_state_space hi:instantiates hi:wilson .
+hi:video_brooks_humanoid_robots hi:instantiates hi:brooks .
+hi:video_braidotti_posthuman_knowledge hi:instantiates hi:braidotti .
+hi:video_saul_leiter_color hi:instantiates hi:saul_leiter .
+hi:video_paxton_contact_improv hi:instantiates hi:steve_paxton .
+hi:video_trisha_brown_intensive hi:instantiates hi:trisha_brown .
+hi:video_vera_molnar_generative hi:instantiates hi:vera_molnar .
+hi:video_forsythe_imagining_lines hi:instantiates hi:forsythe .
+hi:video_yoko_ono_interview hi:instantiates hi:yoko_ono .
+hi:video_batson_minds_in_motion hi:instantiates hi:batson .
+hi:video_batson_minds_in_motion hi:develops hi:somatics .
+hi:video_batson_minds_in_motion hi:instantiates hi:marlon .
+hi:video_forsythe_synchronous_objects_hellerau hi:instantiates hi:forsythe .
 hi:enact hi:enacts hi:coupling .
 hi:enact hi:enacts hi:embodiment .
 hi:vipassana hi:enacts hi:enactivism .
@@ -6324,6 +7704,9 @@ hi:hybrid hi:emergesFrom hi:assemblage .
 hi:enactivism hi:emergesFrom hi:autopoiesis .
 hi:cognition hi:emergesFrom hi:embodiment .
 hi:hi_hub hi:emergesFrom hi:ontology_kb .
+hi:video_privacy_illusion_ai_data hi:instantiates hi:crawford .
+hi:video_am_i_ai_consciousness_doc hi:instantiates hi:chalmers .
+hi:video_thinking_game_documentary hi:instantiates hi:shanahan .
 
 hi:rel-coupling-hybrid a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:coupling ;
@@ -10355,6 +11738,11 @@ hi:rel-dance-choreography a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationTarget hi:choreography ;
   hi:relationStrength "0.85"^^xsd:decimal .
 
+hi:rel-dance-performance_art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:dance ;
+  hi:relationTarget hi:performance_art ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
 hi:rel-dance-choreo_knowledge a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:dance ;
   hi:relationTarget hi:choreo_knowledge ;
@@ -10488,6 +11876,96 @@ hi:rel-interdisciplinary_art-turbado_marabou a owl:NamedIndividual, hi:NetworkRe
 hi:rel-interdisciplinary_art-hi_program a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:interdisciplinary_art ;
   hi:relationTarget hi:hi_program ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-interdisciplinary_art-performance_art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interdisciplinary_art ;
+  hi:relationTarget hi:performance_art ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-interdisciplinary_art-visual_arts a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interdisciplinary_art ;
+  hi:relationTarget hi:visual_arts ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-performance_art-art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:performance_art ;
+  hi:relationTarget hi:art ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-performance_art-dance a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:performance_art ;
+  hi:relationTarget hi:dance ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-performance_art-choreography_d a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:performance_art ;
+  hi:relationTarget hi:choreography_d ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-performance_art-choreography a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:performance_art ;
+  hi:relationTarget hi:choreography ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-performance_art-creative_embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:performance_art ;
+  hi:relationTarget hi:creative_embodiment ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-performance_art-somatics a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:performance_art ;
+  hi:relationTarget hi:somatics ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-performance_art-body a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:performance_art ;
+  hi:relationTarget hi:body ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-performance_art-creative a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:performance_art ;
+  hi:relationTarget hi:creative ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-performance_art-visual_arts a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:performance_art ;
+  hi:relationTarget hi:visual_arts ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-performance_art-fluxus a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:performance_art ;
+  hi:relationTarget hi:fluxus ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-visual_arts-art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:visual_arts ;
+  hi:relationTarget hi:art ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-visual_arts-curation a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:visual_arts ;
+  hi:relationTarget hi:curation ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-visual_arts-generative_arts a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:visual_arts ;
+  hi:relationTarget hi:generative_arts ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-visual_arts-ai_art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:visual_arts ;
+  hi:relationTarget hi:ai_art ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-visual_arts-creative a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:visual_arts ;
+  hi:relationTarget hi:creative ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-visual_arts-creative_embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:visual_arts ;
+  hi:relationTarget hi:creative_embodiment ;
   hi:relationStrength "0.75"^^xsd:decimal .
 
 hi:rel-generative_arts-art a owl:NamedIndividual, hi:NetworkRelation ;
@@ -10840,6 +12318,11 @@ hi:rel-curation-art a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationTarget hi:art ;
   hi:relationStrength "0.9"^^xsd:decimal .
 
+hi:rel-curation-visual_arts a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:curation ;
+  hi:relationTarget hi:visual_arts ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
 hi:rel-curation-motion_bank a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:curation ;
   hi:relationTarget hi:motion_bank ;
@@ -10925,6 +12408,11 @@ hi:rel-duchamp-curation a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationTarget hi:curation ;
   hi:relationStrength "0.9"^^xsd:decimal .
 
+hi:rel-duchamp-visual_arts a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:duchamp ;
+  hi:relationTarget hi:visual_arts ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
 hi:rel-duchamp-interdisciplinary_art a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:duchamp ;
   hi:relationTarget hi:interdisciplinary_art ;
@@ -10963,6 +12451,11 @@ hi:rel-duchamp-fluxus a owl:NamedIndividual, hi:NetworkRelation ;
 hi:rel-saul_leiter-art a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:saul_leiter ;
   hi:relationTarget hi:art ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-saul_leiter-visual_arts a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:saul_leiter ;
+  hi:relationTarget hi:visual_arts ;
   hi:relationStrength "0.95"^^xsd:decimal .
 
 hi:rel-saul_leiter-creative a owl:NamedIndividual, hi:NetworkRelation ;
@@ -11014,6 +12507,11 @@ hi:rel-vera_molnar-generative_arts a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:vera_molnar ;
   hi:relationTarget hi:generative_arts ;
   hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-vera_molnar-visual_arts a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:vera_molnar ;
+  hi:relationTarget hi:visual_arts ;
+  hi:relationStrength "0.9"^^xsd:decimal .
 
 hi:rel-vera_molnar-creativity a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:vera_molnar ;
@@ -11094,6 +12592,16 @@ hi:rel-ana_mendieta-art a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:ana_mendieta ;
   hi:relationTarget hi:art ;
   hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-ana_mendieta-performance_art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:ana_mendieta ;
+  hi:relationTarget hi:performance_art ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-ana_mendieta-visual_arts a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:ana_mendieta ;
+  hi:relationTarget hi:visual_arts ;
+  hi:relationStrength "0.85"^^xsd:decimal .
 
 hi:rel-ana_mendieta-creative a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:ana_mendieta ;
@@ -11223,6 +12731,11 @@ hi:rel-ana_mendieta-leigh_bowery a owl:NamedIndividual, hi:NetworkRelation ;
 hi:rel-leigh_bowery-art a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:leigh_bowery ;
   hi:relationTarget hi:art ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-leigh_bowery-performance_art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:leigh_bowery ;
+  hi:relationTarget hi:performance_art ;
   hi:relationStrength "0.95"^^xsd:decimal .
 
 hi:rel-leigh_bowery-creative a owl:NamedIndividual, hi:NetworkRelation ;
@@ -11355,6 +12868,11 @@ hi:rel-cage-art a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationTarget hi:art ;
   hi:relationStrength "0.85"^^xsd:decimal .
 
+hi:rel-cage-performance_art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cage ;
+  hi:relationTarget hi:performance_art ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
 hi:rel-cage-creative a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:cage ;
   hi:relationTarget hi:creative ;
@@ -11388,6 +12906,11 @@ hi:rel-cage-fluxus a owl:NamedIndividual, hi:NetworkRelation ;
 hi:rel-yoko_ono-art a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:yoko_ono ;
   hi:relationTarget hi:art ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-yoko_ono-performance_art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:yoko_ono ;
+  hi:relationTarget hi:performance_art ;
   hi:relationStrength "0.9"^^xsd:decimal .
 
 hi:rel-yoko_ono-interdisciplinary_art a owl:NamedIndividual, hi:NetworkRelation ;
@@ -11424,6 +12947,11 @@ hi:rel-trisha_brown-dance a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:trisha_brown ;
   hi:relationTarget hi:dance ;
   hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-trisha_brown-performance_art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:trisha_brown ;
+  hi:relationTarget hi:performance_art ;
+  hi:relationStrength "0.9"^^xsd:decimal .
 
 hi:rel-trisha_brown-choreography_d a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:trisha_brown ;
@@ -11494,6 +13022,11 @@ hi:rel-steve_paxton-trisha_brown a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:steve_paxton ;
   hi:relationTarget hi:trisha_brown ;
   hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-steve_paxton-performance_art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:steve_paxton ;
+  hi:relationTarget hi:performance_art ;
+  hi:relationStrength "0.9"^^xsd:decimal .
 
 hi:rel-steve_paxton-dance a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:steve_paxton ;
@@ -13810,6 +15343,11 @@ hi:rel-munoz-futurity a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationTarget hi:futurity ;
   hi:relationStrength "0.95"^^xsd:decimal .
 
+hi:rel-munoz-performance_art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:munoz ;
+  hi:relationTarget hi:performance_art ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
 hi:rel-munoz-speculative_futures a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:munoz ;
   hi:relationTarget hi:speculative_futures ;
@@ -14559,6 +16097,16 @@ hi:rel-fluxus-duchamp a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:fluxus ;
   hi:relationTarget hi:duchamp ;
   hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-fluxus-performance_art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:fluxus ;
+  hi:relationTarget hi:performance_art ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-fluxus-visual_arts a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:fluxus ;
+  hi:relationTarget hi:visual_arts ;
+  hi:relationStrength "0.85"^^xsd:decimal .
 
 hi:rel-fluxus-art a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:fluxus ;
@@ -15409,6 +16957,66 @@ hi:rel-friston-ai a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:friston ;
   hi:relationTarget hi:ai ;
   hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-levin-synthetic_cognition a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:levin ;
+  hi:relationTarget hi:synthetic_cognition ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-levin-distributed a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:levin ;
+  hi:relationTarget hi:distributed ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-levin-holobiont a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:levin ;
+  hi:relationTarget hi:holobiont ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-levin-symbiosis a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:levin ;
+  hi:relationTarget hi:symbiosis ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-levin-consciousness a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:levin ;
+  hi:relationTarget hi:consciousness ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-levin-margulis a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:levin ;
+  hi:relationTarget hi:margulis ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-levin-ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:levin ;
+  hi:relationTarget hi:ai ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-batson-somatics a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:batson ;
+  hi:relationTarget hi:somatics ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-batson-dance a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:batson ;
+  hi:relationTarget hi:dance ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-batson-embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:batson ;
+  hi:relationTarget hi:embodiment ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-batson-body a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:batson ;
+  hi:relationTarget hi:body ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-batson-marlon a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:batson ;
+  hi:relationTarget hi:marlon ;
+  hi:relationStrength "0.85"^^xsd:decimal .
 
 hi:rel-friston-possible_minds a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:friston ;
@@ -16575,21 +18183,6 @@ hi:rel-mini_pod-hi_videos a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationTarget hi:hi_videos ;
   hi:relationStrength "0.75"^^xsd:decimal .
 
-hi:rel-hi_videos-video_hayles_integrated_cognition a owl:NamedIndividual, hi:NetworkRelation ;
-  hi:relationSource hi:hi_videos ;
-  hi:relationTarget hi:video_hayles_integrated_cognition ;
-  hi:relationStrength "0.98"^^xsd:decimal .
-
-hi:rel-hi_videos-video_hayles_bacteria_ai a owl:NamedIndividual, hi:NetworkRelation ;
-  hi:relationSource hi:hi_videos ;
-  hi:relationTarget hi:video_hayles_bacteria_ai ;
-  hi:relationStrength "0.98"^^xsd:decimal .
-
-hi:rel-hi_videos-video_clark_experience_machine a owl:NamedIndividual, hi:NetworkRelation ;
-  hi:relationSource hi:hi_videos ;
-  hi:relationTarget hi:video_clark_experience_machine ;
-  hi:relationStrength "0.98"^^xsd:decimal .
-
 hi:rel-video_hayles_integrated_cognition-hayles a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:video_hayles_integrated_cognition ;
   hi:relationTarget hi:hayles ;
@@ -16754,6 +18347,1321 @@ hi:rel-video_clark_experience_machine-coupling a owl:NamedIndividual, hi:Network
   hi:relationSource hi:video_clark_experience_machine ;
   hi:relationTarget hi:coupling ;
   hi:relationStrength "0.78"^^xsd:decimal .
+
+hi:rel-video_ai_fluency_generative_ai-gen_ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_ai_fluency_generative_ai ;
+  hi:relationTarget hi:gen_ai ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-video_ai_fluency_generative_ai-llm a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_ai_fluency_generative_ai ;
+  hi:relationTarget hi:llm ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-video_ai_fluency_generative_ai-ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_ai_fluency_generative_ai ;
+  hi:relationTarget hi:ai ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_ai_fluency_generative_ai-machine_learning a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_ai_fluency_generative_ai ;
+  hi:relationTarget hi:machine_learning ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-video_karla_expanding_possibilities-karla a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_karla_expanding_possibilities ;
+  hi:relationTarget hi:karla ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_karla_expanding_possibilities-architecture a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_karla_expanding_possibilities ;
+  hi:relationTarget hi:architecture ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-video_karla_expanding_possibilities-creative_embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_karla_expanding_possibilities ;
+  hi:relationTarget hi:creative_embodiment ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_karla_expanding_possibilities-ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_karla_expanding_possibilities ;
+  hi:relationTarget hi:ai ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-video_karla_expanding_possibilities-track_space a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_karla_expanding_possibilities ;
+  hi:relationTarget hi:track_space ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-video_gallagher_4e_cognition-gallagher a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_gallagher_4e_cognition ;
+  hi:relationTarget hi:gallagher ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_gallagher_4e_cognition-4e a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_gallagher_4e_cognition ;
+  hi:relationTarget hi:4e ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-video_gallagher_4e_cognition-embodied a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_gallagher_4e_cognition ;
+  hi:relationTarget hi:embodied ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_gallagher_4e_cognition-enactivism a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_gallagher_4e_cognition ;
+  hi:relationTarget hi:enactivism ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_gallagher_4e_cognition-extended a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_gallagher_4e_cognition ;
+  hi:relationTarget hi:extended ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-video_privacy_illusion_ai_data-crawford a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_privacy_illusion_ai_data ;
+  hi:relationTarget hi:crawford ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_privacy_illusion_ai_data-ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_privacy_illusion_ai_data ;
+  hi:relationTarget hi:ai ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_privacy_illusion_ai_data-llm a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_privacy_illusion_ai_data ;
+  hi:relationTarget hi:llm ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-video_privacy_illusion_ai_data-track_ethics a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_privacy_illusion_ai_data ;
+  hi:relationTarget hi:track_ethics ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_privacy_illusion_ai_data-epistemology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_privacy_illusion_ai_data ;
+  hi:relationTarget hi:epistemology ;
+  hi:relationStrength "0.78"^^xsd:decimal .
+
+hi:rel-video_friston_brain_constructs_reality-friston a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_friston_brain_constructs_reality ;
+  hi:relationTarget hi:friston ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_friston_brain_constructs_reality-active_inference a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_friston_brain_constructs_reality ;
+  hi:relationTarget hi:active_inference ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-video_friston_brain_constructs_reality-consciousness a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_friston_brain_constructs_reality ;
+  hi:relationTarget hi:consciousness ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_friston_brain_constructs_reality-clark a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_friston_brain_constructs_reality ;
+  hi:relationTarget hi:clark ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-video_friston_brain_constructs_reality-embodied a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_friston_brain_constructs_reality ;
+  hi:relationTarget hi:embodied ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-video_levin_diverse_intelligences-levin a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_levin_diverse_intelligences ;
+  hi:relationTarget hi:levin ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_levin_diverse_intelligences-synthetic_cognition a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_levin_diverse_intelligences ;
+  hi:relationTarget hi:synthetic_cognition ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_levin_diverse_intelligences-distributed a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_levin_diverse_intelligences ;
+  hi:relationTarget hi:distributed ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_levin_diverse_intelligences-holobiont a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_levin_diverse_intelligences ;
+  hi:relationTarget hi:holobiont ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-video_levin_diverse_intelligences-symbiosis a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_levin_diverse_intelligences ;
+  hi:relationTarget hi:symbiosis ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-video_levin_diverse_intelligences-consciousness a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_levin_diverse_intelligences ;
+  hi:relationTarget hi:consciousness ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-video_levin_intelligence_without_brains-levin a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_levin_intelligence_without_brains ;
+  hi:relationTarget hi:levin ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_levin_intelligence_without_brains-synthetic_cognition a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_levin_intelligence_without_brains ;
+  hi:relationTarget hi:synthetic_cognition ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-video_levin_intelligence_without_brains-distributed a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_levin_intelligence_without_brains ;
+  hi:relationTarget hi:distributed ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_levin_intelligence_without_brains-holobiont a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_levin_intelligence_without_brains ;
+  hi:relationTarget hi:holobiont ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-video_levin_intelligence_without_brains-margulis a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_levin_intelligence_without_brains ;
+  hi:relationTarget hi:margulis ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-video_levin_intelligence_without_brains-ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_levin_intelligence_without_brains ;
+  hi:relationTarget hi:ai ;
+  hi:relationStrength "0.78"^^xsd:decimal .
+
+hi:rel-video_thompson_embodied_cognition-thompson a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_thompson_embodied_cognition ;
+  hi:relationTarget hi:thompson ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_thompson_embodied_cognition-enactivism a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_thompson_embodied_cognition ;
+  hi:relationTarget hi:enactivism ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-video_thompson_embodied_cognition-4e a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_thompson_embodied_cognition ;
+  hi:relationTarget hi:4e ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-video_thompson_embodied_cognition-embodied a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_thompson_embodied_cognition ;
+  hi:relationTarget hi:embodied ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_thompson_embodied_cognition-friston a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_thompson_embodied_cognition ;
+  hi:relationTarget hi:friston ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-video_varela_god_computers-varela a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_varela_god_computers ;
+  hi:relationTarget hi:varela ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_varela_god_computers-enactivism a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_varela_god_computers ;
+  hi:relationTarget hi:enactivism ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-video_varela_god_computers-autopoiesis a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_varela_god_computers ;
+  hi:relationTarget hi:autopoiesis ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_varela_god_computers-4e a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_varela_god_computers ;
+  hi:relationTarget hi:4e ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_varela_god_computers-essay_4 a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_varela_god_computers ;
+  hi:relationTarget hi:essay_4 ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-video_mini_brains_150k-neural_networks a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_mini_brains_150k ;
+  hi:relationTarget hi:neural_networks ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_mini_brains_150k-distributed a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_mini_brains_150k ;
+  hi:relationTarget hi:distributed ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_mini_brains_150k-embodied a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_mini_brains_150k ;
+  hi:relationTarget hi:embodied ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-video_mini_brains_150k-consciousness a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_mini_brains_150k ;
+  hi:relationTarget hi:consciousness ;
+  hi:relationStrength "0.78"^^xsd:decimal .
+
+hi:rel-video_understanding_ai_inner_thoughts-ai_interpretability a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_understanding_ai_inner_thoughts ;
+  hi:relationTarget hi:ai_interpretability ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-video_understanding_ai_inner_thoughts-llm a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_understanding_ai_inner_thoughts ;
+  hi:relationTarget hi:llm ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_understanding_ai_inner_thoughts-neural_networks a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_understanding_ai_inner_thoughts ;
+  hi:relationTarget hi:neural_networks ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_understanding_ai_inner_thoughts-aguilera_arcas a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_understanding_ai_inner_thoughts ;
+  hi:relationTarget hi:aguilera_arcas ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-video_visualizing_transformers_attention-transformers a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_visualizing_transformers_attention ;
+  hi:relationTarget hi:transformers ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_visualizing_transformers_attention-llm a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_visualizing_transformers_attention ;
+  hi:relationTarget hi:llm ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-video_visualizing_transformers_attention-neural_networks a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_visualizing_transformers_attention ;
+  hi:relationTarget hi:neural_networks ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_visualizing_transformers_attention-machine_learning a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_visualizing_transformers_attention ;
+  hi:relationTarget hi:machine_learning ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_am_i_ai_consciousness_doc-consciousness a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_am_i_ai_consciousness_doc ;
+  hi:relationTarget hi:consciousness ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-video_am_i_ai_consciousness_doc-chalmers a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_am_i_ai_consciousness_doc ;
+  hi:relationTarget hi:chalmers ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_am_i_ai_consciousness_doc-ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_am_i_ai_consciousness_doc ;
+  hi:relationTarget hi:ai ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_am_i_ai_consciousness_doc-synthetic_cognition a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_am_i_ai_consciousness_doc ;
+  hi:relationTarget hi:synthetic_cognition ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-video_creative_workers_ai_impact-creative_ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_creative_workers_ai_impact ;
+  hi:relationTarget hi:creative_ai ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-video_creative_workers_ai_impact-creative a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_creative_workers_ai_impact ;
+  hi:relationTarget hi:creative ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_creative_workers_ai_impact-gen_ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_creative_workers_ai_impact ;
+  hi:relationTarget hi:gen_ai ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_creative_workers_ai_impact-creative_embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_creative_workers_ai_impact ;
+  hi:relationTarget hi:creative_embodiment ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-video_thinking_game_documentary-ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_thinking_game_documentary ;
+  hi:relationTarget hi:ai ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-video_thinking_game_documentary-possible_minds a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_thinking_game_documentary ;
+  hi:relationTarget hi:possible_minds ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_thinking_game_documentary-shanahan a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_thinking_game_documentary ;
+  hi:relationTarget hi:shanahan ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_thinking_game_documentary-agi a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_thinking_game_documentary ;
+  hi:relationTarget hi:agi ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-video_noe_out_of_our_heads-noe a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_noe_out_of_our_heads ;
+  hi:relationTarget hi:noe ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_noe_out_of_our_heads-embodied a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_noe_out_of_our_heads ;
+  hi:relationTarget hi:embodied ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-video_noe_out_of_our_heads-enactivism a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_noe_out_of_our_heads ;
+  hi:relationTarget hi:enactivism ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-video_noe_out_of_our_heads-4e a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_noe_out_of_our_heads ;
+  hi:relationTarget hi:4e ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_noe_out_of_our_heads-consciousness a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_noe_out_of_our_heads ;
+  hi:relationTarget hi:consciousness ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-video_aguilera_what_is_intelligence-aguilera_arcas a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_aguilera_what_is_intelligence ;
+  hi:relationTarget hi:aguilera_arcas ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_aguilera_what_is_intelligence-possible_minds a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_aguilera_what_is_intelligence ;
+  hi:relationTarget hi:possible_minds ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-video_aguilera_what_is_intelligence-ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_aguilera_what_is_intelligence ;
+  hi:relationTarget hi:ai ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-video_aguilera_what_is_intelligence-symbiosis a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_aguilera_what_is_intelligence ;
+  hi:relationTarget hi:symbiosis ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_aguilera_what_is_intelligence-holobiont a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_aguilera_what_is_intelligence ;
+  hi:relationTarget hi:holobiont ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-video_mendieta_decolonial_feminist-ana_mendieta a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_mendieta_decolonial_feminist ;
+  hi:relationTarget hi:ana_mendieta ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_mendieta_decolonial_feminist-art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_mendieta_decolonial_feminist ;
+  hi:relationTarget hi:art ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_mendieta_decolonial_feminist-creative_embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_mendieta_decolonial_feminist ;
+  hi:relationTarget hi:creative_embodiment ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_mendieta_decolonial_feminist-body a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_mendieta_decolonial_feminist ;
+  hi:relationTarget hi:body ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_escobar_pluriverse-escobar a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_escobar_pluriverse ;
+  hi:relationTarget hi:escobar ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_escobar_pluriverse-pluriversal a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_escobar_pluriverse ;
+  hi:relationTarget hi:pluriversal ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_escobar_pluriverse-design_thinking a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_escobar_pluriverse ;
+  hi:relationTarget hi:design_thinking ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_escobar_pluriverse-cultural_critical a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_escobar_pluriverse ;
+  hi:relationTarget hi:cultural_critical ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_akomolafe_animism-akomolafe a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_akomolafe_animism ;
+  hi:relationTarget hi:akomolafe ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_akomolafe_animism-cultural_critical a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_akomolafe_animism ;
+  hi:relationTarget hi:cultural_critical ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_akomolafe_animism-hybrid a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_akomolafe_animism ;
+  hi:relationTarget hi:hybrid ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_akomolafe_animism-philosophy a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_akomolafe_animism ;
+  hi:relationTarget hi:philosophy ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_bell_hooks_speaking_freely-bell_hooks a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_bell_hooks_speaking_freely ;
+  hi:relationTarget hi:bell_hooks ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_bell_hooks_speaking_freely-cultural_critical a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_bell_hooks_speaking_freely ;
+  hi:relationTarget hi:cultural_critical ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_bell_hooks_speaking_freely-pedagogy a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_bell_hooks_speaking_freely ;
+  hi:relationTarget hi:pedagogy ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_bell_hooks_speaking_freely-freire a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_bell_hooks_speaking_freely ;
+  hi:relationTarget hi:freire ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_sousa_santos_decolonising-sousa_santos a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_sousa_santos_decolonising ;
+  hi:relationTarget hi:sousa_santos ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_sousa_santos_decolonising-epistemologies_south a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_sousa_santos_decolonising ;
+  hi:relationTarget hi:epistemologies_south ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_sousa_santos_decolonising-epistemology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_sousa_santos_decolonising ;
+  hi:relationTarget hi:epistemology ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_sousa_santos_decolonising-freire a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_sousa_santos_decolonising ;
+  hi:relationTarget hi:freire ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_latour_once_out_of_nature-latour a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_latour_once_out_of_nature ;
+  hi:relationTarget hi:latour ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_latour_once_out_of_nature-assemblage a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_latour_once_out_of_nature ;
+  hi:relationTarget hi:assemblage ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_latour_once_out_of_nature-distributed a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_latour_once_out_of_nature ;
+  hi:relationTarget hi:distributed ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_latour_once_out_of_nature-technical_agency a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_latour_once_out_of_nature ;
+  hi:relationTarget hi:technical_agency ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_chalmers_talking_to_ai-chalmers a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_chalmers_talking_to_ai ;
+  hi:relationTarget hi:chalmers ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_chalmers_talking_to_ai-extended a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_chalmers_talking_to_ai ;
+  hi:relationTarget hi:extended ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_chalmers_talking_to_ai-clark a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_chalmers_talking_to_ai ;
+  hi:relationTarget hi:clark ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_chalmers_talking_to_ai-agi a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_chalmers_talking_to_ai ;
+  hi:relationTarget hi:agi ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_kirsh_thinking_with_body-kirsh a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_kirsh_thinking_with_body ;
+  hi:relationTarget hi:kirsh ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_kirsh_thinking_with_body-choreo_knowledge a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_kirsh_thinking_with_body ;
+  hi:relationTarget hi:choreo_knowledge ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_kirsh_thinking_with_body-extended a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_kirsh_thinking_with_body ;
+  hi:relationTarget hi:extended ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_kirsh_thinking_with_body-distributed a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_kirsh_thinking_with_body ;
+  hi:relationTarget hi:distributed ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_haraway_chthulucene-haraway a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_haraway_chthulucene ;
+  hi:relationTarget hi:haraway ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_haraway_chthulucene-cyborg a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_haraway_chthulucene ;
+  hi:relationTarget hi:cyborg ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_haraway_chthulucene-technosymbiosis a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_haraway_chthulucene ;
+  hi:relationTarget hi:technosymbiosis ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_haraway_chthulucene-hybrid a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_haraway_chthulucene ;
+  hi:relationTarget hi:hybrid ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_rosch_prototype_cognition-rosch a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_rosch_prototype_cognition ;
+  hi:relationTarget hi:rosch ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_rosch_prototype_cognition-buddhism a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_rosch_prototype_cognition ;
+  hi:relationTarget hi:buddhism ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_rosch_prototype_cognition-enacted a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_rosch_prototype_cognition ;
+  hi:relationTarget hi:enacted ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_rosch_prototype_cognition-enactivism a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_rosch_prototype_cognition ;
+  hi:relationTarget hi:enactivism ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_cuffari_linguistic_bodies-cuffari a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_cuffari_linguistic_bodies ;
+  hi:relationTarget hi:cuffari ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_cuffari_linguistic_bodies-enactivism a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_cuffari_linguistic_bodies ;
+  hi:relationTarget hi:enactivism ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_cuffari_linguistic_bodies-di_paolo a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_cuffari_linguistic_bodies ;
+  hi:relationTarget hi:di_paolo ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_cuffari_linguistic_bodies-de_jaegher a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_cuffari_linguistic_bodies ;
+  hi:relationTarget hi:de_jaegher ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_di_paolo_enactivism-di_paolo a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_di_paolo_enactivism ;
+  hi:relationTarget hi:di_paolo ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_di_paolo_enactivism-enactivism a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_di_paolo_enactivism ;
+  hi:relationTarget hi:enactivism ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_di_paolo_enactivism-cuffari a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_di_paolo_enactivism ;
+  hi:relationTarget hi:cuffari ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_di_paolo_enactivism-autopoiesis a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_di_paolo_enactivism ;
+  hi:relationTarget hi:autopoiesis ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_fanon_colonization_mind-fanon a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_fanon_colonization_mind ;
+  hi:relationTarget hi:fanon ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_fanon_colonization_mind-cultural_critical a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_fanon_colonization_mind ;
+  hi:relationTarget hi:cultural_critical ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_fanon_colonization_mind-critical a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_fanon_colonization_mind ;
+  hi:relationTarget hi:critical ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_fanon_colonization_mind-perception_politics a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_fanon_colonization_mind ;
+  hi:relationTarget hi:perception_politics ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_bateson_ecology_of_mind-bateson a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_bateson_ecology_of_mind ;
+  hi:relationTarget hi:bateson ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_bateson_ecology_of_mind-ecology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_bateson_ecology_of_mind ;
+  hi:relationTarget hi:ecology ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_bateson_ecology_of_mind-cybernetics a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_bateson_ecology_of_mind ;
+  hi:relationTarget hi:cybernetics ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_bateson_ecology_of_mind-ecology_d a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_bateson_ecology_of_mind ;
+  hi:relationTarget hi:ecology_d ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_de_jaegher_participatory_sense-de_jaegher a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_de_jaegher_participatory_sense ;
+  hi:relationTarget hi:de_jaegher ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_de_jaegher_participatory_sense-enactivism a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_de_jaegher_participatory_sense ;
+  hi:relationTarget hi:enactivism ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_de_jaegher_participatory_sense-coupling a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_de_jaegher_participatory_sense ;
+  hi:relationTarget hi:coupling ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_de_jaegher_participatory_sense-di_paolo a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_de_jaegher_participatory_sense ;
+  hi:relationTarget hi:di_paolo ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_maturana_interview-maturana a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_maturana_interview ;
+  hi:relationTarget hi:maturana ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_maturana_interview-autopoiesis a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_maturana_interview ;
+  hi:relationTarget hi:autopoiesis ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_maturana_interview-varela a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_maturana_interview ;
+  hi:relationTarget hi:varela ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_maturana_interview-coupling a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_maturana_interview ;
+  hi:relationTarget hi:coupling ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_uexkuell_umwelt-uexkuell a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_uexkuell_umwelt ;
+  hi:relationTarget hi:uexkuell ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_uexkuell_umwelt-umwelt a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_uexkuell_umwelt ;
+  hi:relationTarget hi:umwelt ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_uexkuell_umwelt-ecology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_uexkuell_umwelt ;
+  hi:relationTarget hi:ecology ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_uexkuell_umwelt-varela a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_uexkuell_umwelt ;
+  hi:relationTarget hi:varela ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_gibson_ecological_psychology-gibson a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_gibson_ecological_psychology ;
+  hi:relationTarget hi:gibson ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_gibson_ecological_psychology-embedded a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_gibson_ecological_psychology ;
+  hi:relationTarget hi:embedded ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_gibson_ecological_psychology-architecture a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_gibson_ecological_psychology ;
+  hi:relationTarget hi:architecture ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_gibson_ecological_psychology-ecology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_gibson_ecological_psychology ;
+  hi:relationTarget hi:ecology ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_cage_433_lifetime-cage a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_cage_433_lifetime ;
+  hi:relationTarget hi:cage ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_cage_433_lifetime-music a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_cage_433_lifetime ;
+  hi:relationTarget hi:music ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_cage_433_lifetime-fluxus a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_cage_433_lifetime ;
+  hi:relationTarget hi:fluxus ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_cage_433_lifetime-creative a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_cage_433_lifetime ;
+  hi:relationTarget hi:creative ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_munoz_queer_utopianism-munoz a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_munoz_queer_utopianism ;
+  hi:relationTarget hi:munoz ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_munoz_queer_utopianism-futurity a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_munoz_queer_utopianism ;
+  hi:relationTarget hi:futurity ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_munoz_queer_utopianism-speculative_futures a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_munoz_queer_utopianism ;
+  hi:relationTarget hi:speculative_futures ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_munoz_queer_utopianism-cultural_imagination a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_munoz_queer_utopianism ;
+  hi:relationTarget hi:cultural_imagination ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_barad_meeting_universe-barad a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_barad_meeting_universe ;
+  hi:relationTarget hi:barad ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_barad_meeting_universe-haraway a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_barad_meeting_universe ;
+  hi:relationTarget hi:haraway ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_barad_meeting_universe-coupling a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_barad_meeting_universe ;
+  hi:relationTarget hi:coupling ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_barad_meeting_universe-assemblage a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_barad_meeting_universe ;
+  hi:relationTarget hi:assemblage ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_crawford_ai_planet-crawford a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_crawford_ai_planet ;
+  hi:relationTarget hi:crawford ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_crawford_ai_planet-ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_crawford_ai_planet ;
+  hi:relationTarget hi:ai ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_crawford_ai_planet-perception_politics a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_crawford_ai_planet ;
+  hi:relationTarget hi:perception_politics ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_crawford_ai_planet-gen_ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_crawford_ai_planet ;
+  hi:relationTarget hi:gen_ai ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_malafouris_embodied_patterns-malafouris a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_malafouris_embodied_patterns ;
+  hi:relationTarget hi:malafouris ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_malafouris_embodied_patterns-extended a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_malafouris_embodied_patterns ;
+  hi:relationTarget hi:extended ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_malafouris_embodied_patterns-extended_q a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_malafouris_embodied_patterns ;
+  hi:relationTarget hi:extended_q ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_malafouris_embodied_patterns-synthetic_cognition a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_malafouris_embodied_patterns ;
+  hi:relationTarget hi:synthetic_cognition ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_shapiro_embodied_cognition-shapiro a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_shapiro_embodied_cognition ;
+  hi:relationTarget hi:shapiro ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_shapiro_embodied_cognition-enactivism a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_shapiro_embodied_cognition ;
+  hi:relationTarget hi:enactivism ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_shapiro_embodied_cognition-embodied a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_shapiro_embodied_cognition ;
+  hi:relationTarget hi:embodied ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_shapiro_embodied_cognition-embedded a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_shapiro_embodied_cognition ;
+  hi:relationTarget hi:embedded ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_leigh_bowery_tate-leigh_bowery a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_leigh_bowery_tate ;
+  hi:relationTarget hi:leigh_bowery ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_leigh_bowery_tate-art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_leigh_bowery_tate ;
+  hi:relationTarget hi:art ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_leigh_bowery_tate-queer_theory a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_leigh_bowery_tate ;
+  hi:relationTarget hi:queer_theory ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_leigh_bowery_tate-creative a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_leigh_bowery_tate ;
+  hi:relationTarget hi:creative ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_margulis_symbiotic_earth-margulis a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_margulis_symbiotic_earth ;
+  hi:relationTarget hi:margulis ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_margulis_symbiotic_earth-symbiosis a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_margulis_symbiotic_earth ;
+  hi:relationTarget hi:symbiosis ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_margulis_symbiotic_earth-technosymbiosis a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_margulis_symbiotic_earth ;
+  hi:relationTarget hi:technosymbiosis ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_margulis_symbiotic_earth-ecology_d a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_margulis_symbiotic_earth ;
+  hi:relationTarget hi:ecology_d ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_duchamp_art_dada-duchamp a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_duchamp_art_dada ;
+  hi:relationTarget hi:duchamp ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_duchamp_art_dada-art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_duchamp_art_dada ;
+  hi:relationTarget hi:art ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_duchamp_art_dada-creative a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_duchamp_art_dada ;
+  hi:relationTarget hi:creative ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_duchamp_art_dada-curation a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_duchamp_art_dada ;
+  hi:relationTarget hi:curation ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_boden_creativity_ai-boden a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_boden_creativity_ai ;
+  hi:relationTarget hi:boden ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_boden_creativity_ai-ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_boden_creativity_ai ;
+  hi:relationTarget hi:ai ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_boden_creativity_ai-creative_ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_boden_creativity_ai ;
+  hi:relationTarget hi:creative_ai ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_boden_creativity_ai-creativity a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_boden_creativity_ai ;
+  hi:relationTarget hi:creativity ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_merleau_ponty_phenomenology-merleau_ponty a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_merleau_ponty_phenomenology ;
+  hi:relationTarget hi:merleau_ponty ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_merleau_ponty_phenomenology-enactivism a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_merleau_ponty_phenomenology ;
+  hi:relationTarget hi:enactivism ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_merleau_ponty_phenomenology-embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_merleau_ponty_phenomenology ;
+  hi:relationTarget hi:embodiment ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_merleau_ponty_phenomenology-embodied a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_merleau_ponty_phenomenology ;
+  hi:relationTarget hi:embodied ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_foucault_prison_1975-foucault a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_foucault_prison_1975 ;
+  hi:relationTarget hi:foucault ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_foucault_prison_1975-perception_politics a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_foucault_prison_1975 ;
+  hi:relationTarget hi:perception_politics ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_foucault_prison_1975-critical a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_foucault_prison_1975 ;
+  hi:relationTarget hi:critical ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_foucault_prison_1975-philosophy a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_foucault_prison_1975 ;
+  hi:relationTarget hi:philosophy ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_shanahan_consciousness_ai-shanahan a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_shanahan_consciousness_ai ;
+  hi:relationTarget hi:shanahan ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_shanahan_consciousness_ai-possible_minds a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_shanahan_consciousness_ai ;
+  hi:relationTarget hi:possible_minds ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_nagarjuna_emptiness-nagarjuna a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_nagarjuna_emptiness ;
+  hi:relationTarget hi:nagarjuna ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_nagarjuna_emptiness-buddhism a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_nagarjuna_emptiness ;
+  hi:relationTarget hi:buddhism ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_nagarjuna_emptiness-philosophy a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_nagarjuna_emptiness ;
+  hi:relationTarget hi:philosophy ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_nagarjuna_emptiness-epistemology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_nagarjuna_emptiness ;
+  hi:relationTarget hi:epistemology ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_butler_parable_climate-butler a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_butler_parable_climate ;
+  hi:relationTarget hi:butler ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_butler_parable_climate-afrofuturism a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_butler_parable_climate ;
+  hi:relationTarget hi:afrofuturism ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_butler_parable_climate-speculative_futures a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_butler_parable_climate ;
+  hi:relationTarget hi:speculative_futures ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_butler_parable_climate-futurity a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_butler_parable_climate ;
+  hi:relationTarget hi:futurity ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_freire_incredible_conversation-freire a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_freire_incredible_conversation ;
+  hi:relationTarget hi:freire ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_freire_incredible_conversation-cultural_critical a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_freire_incredible_conversation ;
+  hi:relationTarget hi:cultural_critical ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_freire_incredible_conversation-critical a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_freire_incredible_conversation ;
+  hi:relationTarget hi:critical ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_freire_incredible_conversation-literacies a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_freire_incredible_conversation ;
+  hi:relationTarget hi:literacies ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_wilson_state_space-wilson a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_wilson_state_space ;
+  hi:relationTarget hi:wilson ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_wilson_state_space-situated a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_wilson_state_space ;
+  hi:relationTarget hi:situated ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_wilson_state_space-extended a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_wilson_state_space ;
+  hi:relationTarget hi:extended ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_wilson_state_space-embedded a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_wilson_state_space ;
+  hi:relationTarget hi:embedded ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_brooks_humanoid_robots-brooks a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_brooks_humanoid_robots ;
+  hi:relationTarget hi:brooks ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_brooks_humanoid_robots-4e a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_brooks_humanoid_robots ;
+  hi:relationTarget hi:4e ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_brooks_humanoid_robots-embodied a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_brooks_humanoid_robots ;
+  hi:relationTarget hi:embodied ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_brooks_humanoid_robots-affordances a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_brooks_humanoid_robots ;
+  hi:relationTarget hi:affordances ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_braidotti_posthuman_knowledge-braidotti a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_braidotti_posthuman_knowledge ;
+  hi:relationTarget hi:braidotti ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_braidotti_posthuman_knowledge-hybrid a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_braidotti_posthuman_knowledge ;
+  hi:relationTarget hi:hybrid ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_braidotti_posthuman_knowledge-philosophy a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_braidotti_posthuman_knowledge ;
+  hi:relationTarget hi:philosophy ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_braidotti_posthuman_knowledge-cultural_critical a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_braidotti_posthuman_knowledge ;
+  hi:relationTarget hi:cultural_critical ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_saul_leiter_color-saul_leiter a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_saul_leiter_color ;
+  hi:relationTarget hi:saul_leiter ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_saul_leiter_color-art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_saul_leiter_color ;
+  hi:relationTarget hi:art ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_saul_leiter_color-abstraction a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_saul_leiter_color ;
+  hi:relationTarget hi:abstraction ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_saul_leiter_color-creative a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_saul_leiter_color ;
+  hi:relationTarget hi:creative ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_paxton_contact_improv-steve_paxton a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_paxton_contact_improv ;
+  hi:relationTarget hi:steve_paxton ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_paxton_contact_improv-judson_church a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_paxton_contact_improv ;
+  hi:relationTarget hi:judson_church ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_paxton_contact_improv-trisha_brown a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_paxton_contact_improv ;
+  hi:relationTarget hi:trisha_brown ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_paxton_contact_improv-dance a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_paxton_contact_improv ;
+  hi:relationTarget hi:dance ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_trisha_brown_intensive-trisha_brown a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_trisha_brown_intensive ;
+  hi:relationTarget hi:trisha_brown ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_trisha_brown_intensive-dance a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_trisha_brown_intensive ;
+  hi:relationTarget hi:dance ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_trisha_brown_intensive-choreography_d a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_trisha_brown_intensive ;
+  hi:relationTarget hi:choreography_d ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_trisha_brown_intensive-choreography a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_trisha_brown_intensive ;
+  hi:relationTarget hi:choreography ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_vera_molnar_generative-vera_molnar a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_vera_molnar_generative ;
+  hi:relationTarget hi:vera_molnar ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_vera_molnar_generative-generative_arts a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_vera_molnar_generative ;
+  hi:relationTarget hi:generative_arts ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_vera_molnar_generative-abstraction a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_vera_molnar_generative ;
+  hi:relationTarget hi:abstraction ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_vera_molnar_generative-creativity a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_vera_molnar_generative ;
+  hi:relationTarget hi:creativity ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_forsythe_imagining_lines-forsythe a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_forsythe_imagining_lines ;
+  hi:relationTarget hi:forsythe ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_forsythe_imagining_lines-choreo_knowledge a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_forsythe_imagining_lines ;
+  hi:relationTarget hi:choreo_knowledge ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_forsythe_imagining_lines-choreo_object a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_forsythe_imagining_lines ;
+  hi:relationTarget hi:choreo_object ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_forsythe_imagining_lines-motion_bank a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_forsythe_imagining_lines ;
+  hi:relationTarget hi:motion_bank ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_yoko_ono_interview-yoko_ono a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_yoko_ono_interview ;
+  hi:relationTarget hi:yoko_ono ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_yoko_ono_interview-fluxus a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_yoko_ono_interview ;
+  hi:relationTarget hi:fluxus ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_yoko_ono_interview-art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_yoko_ono_interview ;
+  hi:relationTarget hi:art ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_yoko_ono_interview-interdisciplinary_art a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_yoko_ono_interview ;
+  hi:relationTarget hi:interdisciplinary_art ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_batson_minds_in_motion-batson a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_batson_minds_in_motion ;
+  hi:relationTarget hi:batson ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_batson_minds_in_motion-somatics a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_batson_minds_in_motion ;
+  hi:relationTarget hi:somatics ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_batson_minds_in_motion-dance a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_batson_minds_in_motion ;
+  hi:relationTarget hi:dance ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-video_batson_minds_in_motion-embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_batson_minds_in_motion ;
+  hi:relationTarget hi:embodiment ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_batson_minds_in_motion-marlon a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_batson_minds_in_motion ;
+  hi:relationTarget hi:marlon ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_batson_minds_in_motion-body a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_batson_minds_in_motion ;
+  hi:relationTarget hi:body ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-video_forsythe_synchronous_objects_hellerau-forsythe a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_forsythe_synchronous_objects_hellerau ;
+  hi:relationTarget hi:forsythe ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_forsythe_synchronous_objects_hellerau-choreo_knowledge a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_forsythe_synchronous_objects_hellerau ;
+  hi:relationTarget hi:choreo_knowledge ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-video_forsythe_synchronous_objects_hellerau-choreo_object a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_forsythe_synchronous_objects_hellerau ;
+  hi:relationTarget hi:choreo_object ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-video_forsythe_synchronous_objects_hellerau-motion_bank a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_forsythe_synchronous_objects_hellerau ;
+  hi:relationTarget hi:motion_bank ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-video_forsythe_synchronous_objects_hellerau-choreography a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_forsythe_synchronous_objects_hellerau ;
+  hi:relationTarget hi:choreography ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_forsythe_synchronous_objects_hellerau-distributed a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_forsythe_synchronous_objects_hellerau ;
+  hi:relationTarget hi:distributed ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-video_forsythe_synchronous_objects_hellerau-marlon a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_forsythe_synchronous_objects_hellerau ;
+  hi:relationTarget hi:marlon ;
+  hi:relationStrength "0.88"^^xsd:decimal .
 
 hi:rel-essay_1-essay_2 a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:essay_1 ;
@@ -19307,6 +22215,402 @@ hi:rel-video_clark_experience_machine-clark-instantiates a owl:NamedIndividual, 
   hi:relationType hi:instantiates ;
   hi:relationStrength "0.9"^^xsd:decimal .
 
+hi:rel-video_ai_fluency_generative_ai-gen_ai-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_ai_fluency_generative_ai ;
+  hi:relationTarget hi:gen_ai ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_karla_expanding_possibilities-karla-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_karla_expanding_possibilities ;
+  hi:relationTarget hi:karla ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_gallagher_4e_cognition-gallagher-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_gallagher_4e_cognition ;
+  hi:relationTarget hi:gallagher ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_gallagher_4e_cognition-4e-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_gallagher_4e_cognition ;
+  hi:relationTarget hi:4e ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_friston_brain_constructs_reality-friston-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_friston_brain_constructs_reality ;
+  hi:relationTarget hi:friston ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_friston_brain_constructs_reality-active_inference-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_friston_brain_constructs_reality ;
+  hi:relationTarget hi:active_inference ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_levin_diverse_intelligences-levin-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_levin_diverse_intelligences ;
+  hi:relationTarget hi:levin ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_levin_diverse_intelligences-synthetic_cognition-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_levin_diverse_intelligences ;
+  hi:relationTarget hi:synthetic_cognition ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_levin_intelligence_without_brains-levin-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_levin_intelligence_without_brains ;
+  hi:relationTarget hi:levin ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_thompson_embodied_cognition-thompson-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_thompson_embodied_cognition ;
+  hi:relationTarget hi:thompson ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_thompson_embodied_cognition-enactivism-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_thompson_embodied_cognition ;
+  hi:relationTarget hi:enactivism ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_varela_god_computers-varela-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_varela_god_computers ;
+  hi:relationTarget hi:varela ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_varela_god_computers-enactivism-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_varela_god_computers ;
+  hi:relationTarget hi:enactivism ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_understanding_ai_inner_thoughts-ai_interpretability-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_understanding_ai_inner_thoughts ;
+  hi:relationTarget hi:ai_interpretability ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_visualizing_transformers_attention-transformers-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_visualizing_transformers_attention ;
+  hi:relationTarget hi:transformers ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_noe_out_of_our_heads-noe-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_noe_out_of_our_heads ;
+  hi:relationTarget hi:noe ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_noe_out_of_our_heads-enactivism-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_noe_out_of_our_heads ;
+  hi:relationTarget hi:enactivism ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_aguilera_what_is_intelligence-aguilera_arcas-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_aguilera_what_is_intelligence ;
+  hi:relationTarget hi:aguilera_arcas ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_aguilera_what_is_intelligence-possible_minds-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_aguilera_what_is_intelligence ;
+  hi:relationTarget hi:possible_minds ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_mendieta_decolonial_feminist-ana_mendieta-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_mendieta_decolonial_feminist ;
+  hi:relationTarget hi:ana_mendieta ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_escobar_pluriverse-escobar-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_escobar_pluriverse ;
+  hi:relationTarget hi:escobar ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_akomolafe_animism-akomolafe-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_akomolafe_animism ;
+  hi:relationTarget hi:akomolafe ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_bell_hooks_speaking_freely-bell_hooks-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_bell_hooks_speaking_freely ;
+  hi:relationTarget hi:bell_hooks ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_sousa_santos_decolonising-sousa_santos-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_sousa_santos_decolonising ;
+  hi:relationTarget hi:sousa_santos ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_latour_once_out_of_nature-latour-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_latour_once_out_of_nature ;
+  hi:relationTarget hi:latour ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_chalmers_talking_to_ai-chalmers-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_chalmers_talking_to_ai ;
+  hi:relationTarget hi:chalmers ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_kirsh_thinking_with_body-kirsh-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_kirsh_thinking_with_body ;
+  hi:relationTarget hi:kirsh ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_haraway_chthulucene-haraway-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_haraway_chthulucene ;
+  hi:relationTarget hi:haraway ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_rosch_prototype_cognition-rosch-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_rosch_prototype_cognition ;
+  hi:relationTarget hi:rosch ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_cuffari_linguistic_bodies-cuffari-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_cuffari_linguistic_bodies ;
+  hi:relationTarget hi:cuffari ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_di_paolo_enactivism-di_paolo-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_di_paolo_enactivism ;
+  hi:relationTarget hi:di_paolo ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_fanon_colonization_mind-fanon-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_fanon_colonization_mind ;
+  hi:relationTarget hi:fanon ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_bateson_ecology_of_mind-bateson-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_bateson_ecology_of_mind ;
+  hi:relationTarget hi:bateson ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_de_jaegher_participatory_sense-de_jaegher-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_de_jaegher_participatory_sense ;
+  hi:relationTarget hi:de_jaegher ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_maturana_interview-maturana-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_maturana_interview ;
+  hi:relationTarget hi:maturana ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_uexkuell_umwelt-uexkuell-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_uexkuell_umwelt ;
+  hi:relationTarget hi:uexkuell ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_gibson_ecological_psychology-gibson-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_gibson_ecological_psychology ;
+  hi:relationTarget hi:gibson ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_cage_433_lifetime-cage-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_cage_433_lifetime ;
+  hi:relationTarget hi:cage ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_munoz_queer_utopianism-munoz-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_munoz_queer_utopianism ;
+  hi:relationTarget hi:munoz ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_barad_meeting_universe-barad-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_barad_meeting_universe ;
+  hi:relationTarget hi:barad ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_crawford_ai_planet-crawford-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_crawford_ai_planet ;
+  hi:relationTarget hi:crawford ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_malafouris_embodied_patterns-malafouris-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_malafouris_embodied_patterns ;
+  hi:relationTarget hi:malafouris ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_shapiro_embodied_cognition-shapiro-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_shapiro_embodied_cognition ;
+  hi:relationTarget hi:shapiro ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_leigh_bowery_tate-leigh_bowery-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_leigh_bowery_tate ;
+  hi:relationTarget hi:leigh_bowery ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_margulis_symbiotic_earth-margulis-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_margulis_symbiotic_earth ;
+  hi:relationTarget hi:margulis ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_duchamp_art_dada-duchamp-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_duchamp_art_dada ;
+  hi:relationTarget hi:duchamp ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_boden_creativity_ai-boden-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_boden_creativity_ai ;
+  hi:relationTarget hi:boden ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_merleau_ponty_phenomenology-merleau_ponty-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_merleau_ponty_phenomenology ;
+  hi:relationTarget hi:merleau_ponty ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_foucault_prison_1975-foucault-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_foucault_prison_1975 ;
+  hi:relationTarget hi:foucault ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_shanahan_consciousness_ai-shanahan-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_shanahan_consciousness_ai ;
+  hi:relationTarget hi:shanahan ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_nagarjuna_emptiness-nagarjuna-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_nagarjuna_emptiness ;
+  hi:relationTarget hi:nagarjuna ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_butler_parable_climate-butler-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_butler_parable_climate ;
+  hi:relationTarget hi:butler ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_freire_incredible_conversation-freire-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_freire_incredible_conversation ;
+  hi:relationTarget hi:freire ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_wilson_state_space-wilson-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_wilson_state_space ;
+  hi:relationTarget hi:wilson ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_brooks_humanoid_robots-brooks-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_brooks_humanoid_robots ;
+  hi:relationTarget hi:brooks ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_braidotti_posthuman_knowledge-braidotti-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_braidotti_posthuman_knowledge ;
+  hi:relationTarget hi:braidotti ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_saul_leiter_color-saul_leiter-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_saul_leiter_color ;
+  hi:relationTarget hi:saul_leiter ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_paxton_contact_improv-steve_paxton-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_paxton_contact_improv ;
+  hi:relationTarget hi:steve_paxton ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_trisha_brown_intensive-trisha_brown-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_trisha_brown_intensive ;
+  hi:relationTarget hi:trisha_brown ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_vera_molnar_generative-vera_molnar-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_vera_molnar_generative ;
+  hi:relationTarget hi:vera_molnar ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_forsythe_imagining_lines-forsythe-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_forsythe_imagining_lines ;
+  hi:relationTarget hi:forsythe ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_yoko_ono_interview-yoko_ono-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_yoko_ono_interview ;
+  hi:relationTarget hi:yoko_ono ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_batson_minds_in_motion-batson-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_batson_minds_in_motion ;
+  hi:relationTarget hi:batson ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_batson_minds_in_motion-somatics-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_batson_minds_in_motion ;
+  hi:relationTarget hi:somatics ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_batson_minds_in_motion-marlon-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_batson_minds_in_motion ;
+  hi:relationTarget hi:marlon ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_forsythe_synchronous_objects_hellerau-forsythe-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_forsythe_synchronous_objects_hellerau ;
+  hi:relationTarget hi:forsythe ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
 hi:rel-enact-coupling-enacts a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:enact ;
   hi:relationTarget hi:coupling ;
@@ -19407,4 +22711,22 @@ hi:rel-hi_hub-ontology_kb-emergesFrom a owl:NamedIndividual, hi:NetworkRelation 
   hi:relationSource hi:hi_hub ;
   hi:relationTarget hi:ontology_kb ;
   hi:relationType hi:emergesFrom ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_privacy_illusion_ai_data-crawford-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_privacy_illusion_ai_data ;
+  hi:relationTarget hi:crawford ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_am_i_ai_consciousness_doc-chalmers-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_am_i_ai_consciousness_doc ;
+  hi:relationTarget hi:chalmers ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_thinking_game_documentary-shanahan-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_thinking_game_documentary ;
+  hi:relationTarget hi:shanahan ;
+  hi:relationType hi:instantiates ;
   hi:relationStrength "0.9"^^xsd:decimal .

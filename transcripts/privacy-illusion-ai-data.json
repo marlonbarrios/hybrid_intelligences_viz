@@ -1,0 +1,7 @@
+{
+  "videoId": "8UpCJrThLwo",
+  "text": "",
+  "source": "pending",
+  "ingestedAt": "2026-09-04T17:27:54.819Z",
+  "note": "Run: python3 scripts/import-youtube-captions.py privacy-illusion-ai-data"
+}

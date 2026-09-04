@@ -4,6 +4,7 @@
  *
  *   node ingest-video.js --id hayles-bacteria-ai --build
  *   node ingest-video.js --id hayles-bacteria-ai --match-only --build
+  node ingest-video.js --id hayles-bacteria-ai --captions-only
  *   node ingest-video.js --add path/to/talk.mp4 --title "My Talk" --speaker "Name"
  *
  * YouTube: fetches captions automatically.
@@ -66,6 +67,7 @@ function parseArgs(argv) {
     else if (a === "--caption") opts.caption = argv[++i];
     else if (a === "--build") opts.build = true;
     else if (a === "--match-only") opts.matchOnly = true;
+    else if (a === "--captions-only") opts.captionsOnly = true;
     else if (a === "--help" || a === "-h") opts.help = true;
   }
   return opts;
@@ -196,7 +198,36 @@ async function fetchYoutubeCaptions(youtubeUrl) {
   const xml = await capRes.text();
   const parsed = parseCaptionXml(xml);
   if (!parsed.text) throw new Error("Caption track was empty.");
+
   return { ...parsed, source: "youtube", videoId, language: track.languageCode || "en" };
+}
+
+function fetchYoutubeCaptionsViaPython(youtubeUrl) {
+  const videoId = youtubeVideoId(youtubeUrl);
+  if (!videoId) throw new Error(`Invalid YouTube URL: ${youtubeUrl}`);
+  const script = path.join(ROOT, "scripts", "import-youtube-captions.py");
+  if (!fs.existsSync(script)) return null;
+  const manifest = loadManifest();
+  const video = manifest.videos.find((v) => youtubeVideoId(v.youtube) === videoId);
+  if (!video) return null;
+  const r = spawnSync("python3", [script, video.id], { cwd: ROOT, encoding: "utf8" });
+  if (r.status !== 0) return null;
+  const existing = loadExistingTranscript(video);
+  if (existing?.text) return existing;
+  return null;
+}
+
+async function fetchYoutubeCaptionsWithFallback(youtubeUrl) {
+  try {
+    return await fetchYoutubeCaptions(youtubeUrl);
+  } catch (err) {
+    const viaPython = fetchYoutubeCaptionsViaPython(youtubeUrl);
+    if (viaPython?.text) {
+      console.log("Fetched captions via scripts/import-youtube-captions.py");
+      return viaPython;
+    }
+    throw err;
+  }
 }
 
 function extractAudio(videoPath, outPath) {
@@ -390,7 +421,7 @@ async function resolveSpeech(video, matchOnly) {
 
   if (video.youtube) {
     console.log("Fetching YouTube captions…");
-    return fetchYoutubeCaptions(video.youtube);
+    return fetchYoutubeCaptionsWithFallback(video.youtube);
   }
 
   const { media, isVideo } = resolveMediaPath(video);
@@ -417,6 +448,32 @@ async function resolveSpeech(video, matchOnly) {
 
 async function ingestOne(video, opts) {
   ensureDirs();
+  const outPath = transcriptPath(video);
+  if (!video.transcript) {
+    video.transcript = `transcripts/${video.id}.json`;
+    const manifest = loadManifest();
+    const entry = manifest.videos.find((v) => v.id === video.id);
+    if (entry) {
+      entry.transcript = video.transcript;
+      saveManifest(manifest);
+    }
+  }
+
+  if (opts.captionsOnly) {
+    const speech = await resolveSpeech(video, false);
+    const transcript = {
+      videoId: video.id,
+      text: speech.text || "",
+      segments: speech.segments || [],
+      ingestedAt: new Date().toISOString(),
+      source: speech.source || (video.youtube ? "youtube" : "whisper"),
+      note: "Imported from YouTube captions",
+    };
+    fs.writeFileSync(outPath, JSON.stringify(transcript, null, 2) + "\n");
+    console.log(`Wrote ${path.relative(ROOT, outPath)} (${transcript.text.length} characters, captions only)`);
+    return;
+  }
+
   const speech = await resolveSpeech(video, opts.matchOnly);
   const text = speech.text || "";
 
@@ -437,16 +494,6 @@ async function ingestOne(video, opts) {
     matchModel: "gpt-4o-mini",
   };
 
-  const outPath = transcriptPath(video);
-  if (!video.transcript) {
-    video.transcript = `transcripts/${video.id}.json`;
-    const manifest = loadManifest();
-    const entry = manifest.videos.find((v) => v.id === video.id);
-    if (entry) {
-      entry.transcript = video.transcript;
-      saveManifest(manifest);
-    }
-  }
   fs.writeFileSync(outPath, JSON.stringify(transcript, null, 2) + "\n");
   console.log(`Wrote ${path.relative(ROOT, outPath)} (text stored internally, not published)`);
 

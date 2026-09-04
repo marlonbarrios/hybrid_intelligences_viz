@@ -1,0 +1,7 @@
+{
+  "videoId": "JQlZAyAjcZQ",
+  "text": "",
+  "source": "pending",
+  "ingestedAt": "2026-09-04T18:24:17.329Z",
+  "note": "Run: python3 scripts/import-youtube-captions.py barad-meeting-universe"
+}

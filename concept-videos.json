@@ -1,0 +1,2067 @@
+{
+  "generated": "2026-09-04T19:17:21.476Z",
+  "byConcept": {
+    "hayles": [
+      {
+        "id": "hayles-bacteria-ai",
+        "title": "Katherine Hayles — Bacteria to AI (Urgent Futures)",
+        "speaker": "Katherine Hayles",
+        "url": "video-hayles-bacteria-ai.html",
+        "poster": "screenshots/hayles-bacteria-ai.jpg"
+      },
+      {
+        "id": "hayles-integrated-cognition",
+        "title": "Katherine Hayles — Consciousness Is Not Necessary for Cognition",
+        "speaker": "Katherine Hayles",
+        "url": "video-hayles-integrated-cognition.html",
+        "poster": "screenshots/hayles-integrated-cognition.jpg"
+      }
+    ],
+    "assemblage": [
+      {
+        "id": "latour-once-out-of-nature",
+        "title": "Bruno Latour — Once Out of Nature",
+        "speaker": "Bruno Latour",
+        "url": "video-latour-once-out-of-nature.html",
+        "poster": "screenshots/latour-once-out-of-nature.jpg"
+      },
+      {
+        "id": "barad-meeting-universe",
+        "title": "Karen Barad — Meeting the Universe Halfway",
+        "speaker": "Karen Barad",
+        "url": "video-barad-meeting-universe.html",
+        "poster": "screenshots/barad-meeting-universe.jpg"
+      },
+      {
+        "id": "hayles-bacteria-ai",
+        "title": "Katherine Hayles — Bacteria to AI (Urgent Futures)",
+        "speaker": "Katherine Hayles",
+        "url": "video-hayles-bacteria-ai.html",
+        "poster": "screenshots/hayles-bacteria-ai.jpg"
+      },
+      {
+        "id": "hayles-integrated-cognition",
+        "title": "Katherine Hayles — Consciousness Is Not Necessary for Cognition",
+        "speaker": "Katherine Hayles",
+        "url": "video-hayles-integrated-cognition.html",
+        "poster": "screenshots/hayles-integrated-cognition.jpg"
+      }
+    ],
+    "posthumanism": [
+      {
+        "id": "hayles-integrated-cognition",
+        "title": "Katherine Hayles — Consciousness Is Not Necessary for Cognition",
+        "speaker": "Katherine Hayles",
+        "url": "video-hayles-integrated-cognition.html",
+        "poster": "screenshots/hayles-integrated-cognition.jpg"
+      }
+    ],
+    "llm": [
+      {
+        "id": "hayles-bacteria-ai",
+        "title": "Katherine Hayles — Bacteria to AI (Urgent Futures)",
+        "speaker": "Katherine Hayles",
+        "url": "video-hayles-bacteria-ai.html",
+        "poster": "screenshots/hayles-bacteria-ai.jpg"
+      },
+      {
+        "id": "hayles-integrated-cognition",
+        "title": "Katherine Hayles — Consciousness Is Not Necessary for Cognition",
+        "speaker": "Katherine Hayles",
+        "url": "video-hayles-integrated-cognition.html",
+        "poster": "screenshots/hayles-integrated-cognition.jpg"
+      },
+      {
+        "id": "privacy-illusion-ai-data",
+        "title": "The Privacy Illusion: AI, Data & Who Really Controls Your Information",
+        "speaker": "",
+        "url": "video-privacy-illusion-ai-data.html",
+        "poster": "screenshots/privacy-illusion-ai-data.jpg"
+      },
+      {
+        "id": "understanding-ai-inner-thoughts",
+        "title": "Understanding the inner thoughts of AI",
+        "speaker": "",
+        "url": "video-understanding-ai-inner-thoughts.html",
+        "poster": "screenshots/understanding-ai-inner-thoughts.jpg"
+      },
+      {
+        "id": "visualizing-transformers-attention",
+        "title": "Visualizing transformers and attention",
+        "speaker": "",
+        "url": "video-visualizing-transformers-attention.html",
+        "poster": "screenshots/visualizing-transformers-attention.jpg"
+      },
+      {
+        "id": "ai-fluency-generative-ai",
+        "title": "What is generative AI? (Deep Dive) — AI Fluency",
+        "speaker": "AI Fluency Course",
+        "url": "video-ai-fluency-generative-ai.html",
+        "poster": "screenshots/ai-fluency-generative-ai.jpg"
+      }
+    ],
+    "umwelt": [
+      {
+        "id": "uexkuell-umwelt",
+        "title": "Jakob von Uexküll — Umwelt and Biosemiotics",
+        "speaker": "Jakob von Uexküll",
+        "url": "video-uexkuell-umwelt.html",
+        "poster": "screenshots/uexkuell-umwelt.jpg"
+      },
+      {
+        "id": "hayles-bacteria-ai",
+        "title": "Katherine Hayles — Bacteria to AI (Urgent Futures)",
+        "speaker": "Katherine Hayles",
+        "url": "video-hayles-bacteria-ai.html",
+        "poster": "screenshots/hayles-bacteria-ai.jpg"
+      }
+    ],
+    "clark": [
+      {
+        "id": "clark-experience-machine",
+        "title": "Andy Clark — The Experience Machine (Predictive Brains)",
+        "speaker": "Andy Clark",
+        "url": "video-clark-experience-machine.html",
+        "poster": "screenshots/clark-experience-machine.jpg"
+      },
+      {
+        "id": "chalmers-talking-to-ai",
+        "title": "David Chalmers — When We Talk to AI, What Are We Talking To?",
+        "speaker": "David Chalmers",
+        "url": "video-chalmers-talking-to-ai.html",
+        "poster": "screenshots/chalmers-talking-to-ai.jpg"
+      },
+      {
+        "id": "friston-brain-constructs-reality",
+        "title": "How the brain constructs reality — Karl Friston on consciousness and neuroscience",
+        "speaker": "Karl Friston",
+        "url": "video-friston-brain-constructs-reality.html",
+        "poster": "screenshots/friston-brain-constructs-reality.jpg"
+      }
+    ],
+    "active_inference": [
+      {
+        "id": "clark-experience-machine",
+        "title": "Andy Clark — The Experience Machine (Predictive Brains)",
+        "speaker": "Andy Clark",
+        "url": "video-clark-experience-machine.html",
+        "poster": "screenshots/clark-experience-machine.jpg"
+      },
+      {
+        "id": "friston-brain-constructs-reality",
+        "title": "How the brain constructs reality — Karl Friston on consciousness and neuroscience",
+        "speaker": "Karl Friston",
+        "url": "video-friston-brain-constructs-reality.html",
+        "poster": "screenshots/friston-brain-constructs-reality.jpg"
+      }
+    ],
+    "friston": [
+      {
+        "id": "clark-experience-machine",
+        "title": "Andy Clark — The Experience Machine (Predictive Brains)",
+        "speaker": "Andy Clark",
+        "url": "video-clark-experience-machine.html",
+        "poster": "screenshots/clark-experience-machine.jpg"
+      },
+      {
+        "id": "friston-brain-constructs-reality",
+        "title": "How the brain constructs reality — Karl Friston on consciousness and neuroscience",
+        "speaker": "Karl Friston",
+        "url": "video-friston-brain-constructs-reality.html",
+        "poster": "screenshots/friston-brain-constructs-reality.jpg"
+      }
+    ],
+    "embodied": [
+      {
+        "id": "clark-experience-machine",
+        "title": "Andy Clark — The Experience Machine (Predictive Brains)",
+        "speaker": "Andy Clark",
+        "url": "video-clark-experience-machine.html",
+        "poster": "screenshots/clark-experience-machine.jpg"
+      },
+      {
+        "id": "thompson-embodied-cognition",
+        "title": "BS 198 Embodied Cognition with Evan Thompson",
+        "speaker": "Evan Thompson",
+        "url": "video-thompson-embodied-cognition.html",
+        "poster": "screenshots/thompson-embodied-cognition.jpg"
+      },
+      {
+        "id": "shapiro-embodied-cognition",
+        "title": "Lawrence Shapiro — Embodied Cognition",
+        "speaker": "Lawrence Shapiro",
+        "url": "video-shapiro-embodied-cognition.html",
+        "poster": "screenshots/shapiro-embodied-cognition.jpg"
+      },
+      {
+        "id": "merleau-ponty-phenomenology",
+        "title": "Maurice Merleau-Ponty — Merleau-Ponty — Phenomenology of Perception",
+        "speaker": "Maurice Merleau-Ponty",
+        "url": "video-merleau-ponty-phenomenology.html",
+        "poster": "screenshots/merleau-ponty-phenomenology.jpg"
+      },
+      {
+        "id": "noe-out-of-our-heads",
+        "title": "Out of Our Heads — Alva Noë",
+        "speaker": "Alva Noë",
+        "url": "video-noe-out-of-our-heads.html",
+        "poster": "screenshots/noe-out-of-our-heads.jpg"
+      },
+      {
+        "id": "gallagher-4e-cognition",
+        "title": "Prof. Shaun Gallagher on 4E Cognition",
+        "speaker": "Shaun Gallagher",
+        "url": "video-gallagher-4e-cognition.html",
+        "poster": "screenshots/gallagher-4e-cognition.jpg"
+      },
+      {
+        "id": "brooks-humanoid-robots",
+        "title": "Rodney Brooks — Humanoid Robots and AI Hype",
+        "speaker": "Rodney Brooks",
+        "url": "video-brooks-humanoid-robots.html",
+        "poster": "screenshots/brooks-humanoid-robots.jpg"
+      },
+      {
+        "id": "mini-brains-150k",
+        "title": "Your Brain Is 150,000 Mini-Brains",
+        "speaker": "",
+        "url": "video-mini-brains-150k.html",
+        "poster": "screenshots/mini-brains-150k.jpg"
+      }
+    ],
+    "gen_ai": [
+      {
+        "id": "creative-workers-ai-impact",
+        "title": "How Creative Workers are Impacted by AI",
+        "speaker": "",
+        "url": "video-creative-workers-ai-impact.html",
+        "poster": "screenshots/creative-workers-ai-impact.jpg"
+      },
+      {
+        "id": "crawford-ai-planet",
+        "title": "Kate Crawford — AI and the Planet",
+        "speaker": "Kate Crawford",
+        "url": "video-crawford-ai-planet.html",
+        "poster": "screenshots/crawford-ai-planet.jpg"
+      },
+      {
+        "id": "ai-fluency-generative-ai",
+        "title": "What is generative AI? (Deep Dive) — AI Fluency",
+        "speaker": "AI Fluency Course",
+        "url": "video-ai-fluency-generative-ai.html",
+        "poster": "screenshots/ai-fluency-generative-ai.jpg"
+      }
+    ],
+    "ai": [
+      {
+        "id": "am-i-ai-consciousness-doc",
+        "title": "AM I? — A Documentary About AI Consciousness",
+        "speaker": "",
+        "url": "video-am-i-ai-consciousness-doc.html",
+        "poster": "screenshots/am-i-ai-consciousness-doc.jpg"
+      },
+      {
+        "id": "karla-expanding-possibilities",
+        "title": "Expanding the Space of Possibilities",
+        "speaker": "Karla Saldaña Ochoa",
+        "url": "video-karla-expanding-possibilities.html",
+        "poster": "screenshots/karla-expanding-possibilities.jpg"
+      },
+      {
+        "id": "crawford-ai-planet",
+        "title": "Kate Crawford — AI and the Planet",
+        "speaker": "Kate Crawford",
+        "url": "video-crawford-ai-planet.html",
+        "poster": "screenshots/crawford-ai-planet.jpg"
+      },
+      {
+        "id": "boden-creativity-ai",
+        "title": "Margaret Boden — Creativity & AI",
+        "speaker": "Margaret Boden",
+        "url": "video-boden-creativity-ai.html",
+        "poster": "screenshots/boden-creativity-ai.jpg"
+      },
+      {
+        "id": "privacy-illusion-ai-data",
+        "title": "The Privacy Illusion: AI, Data & Who Really Controls Your Information",
+        "speaker": "",
+        "url": "video-privacy-illusion-ai-data.html",
+        "poster": "screenshots/privacy-illusion-ai-data.jpg"
+      },
+      {
+        "id": "thinking-game-documentary",
+        "title": "The Thinking Game — Full Documentary",
+        "speaker": "",
+        "url": "video-thinking-game-documentary.html",
+        "poster": "screenshots/thinking-game-documentary.jpg"
+      },
+      {
+        "id": "ai-fluency-generative-ai",
+        "title": "What is generative AI? (Deep Dive) — AI Fluency",
+        "speaker": "AI Fluency Course",
+        "url": "video-ai-fluency-generative-ai.html",
+        "poster": "screenshots/ai-fluency-generative-ai.jpg"
+      },
+      {
+        "id": "aguilera-what-is-intelligence",
+        "title": "What is Intelligence? — Blaise Agüera y Arcas",
+        "speaker": "Blaise Agüera y Arcas",
+        "url": "video-aguilera-what-is-intelligence.html",
+        "poster": "screenshots/aguilera-what-is-intelligence.jpg"
+      }
+    ],
+    "machine_learning": [
+      {
+        "id": "visualizing-transformers-attention",
+        "title": "Visualizing transformers and attention",
+        "speaker": "",
+        "url": "video-visualizing-transformers-attention.html",
+        "poster": "screenshots/visualizing-transformers-attention.jpg"
+      },
+      {
+        "id": "ai-fluency-generative-ai",
+        "title": "What is generative AI? (Deep Dive) — AI Fluency",
+        "speaker": "AI Fluency Course",
+        "url": "video-ai-fluency-generative-ai.html",
+        "poster": "screenshots/ai-fluency-generative-ai.jpg"
+      }
+    ],
+    "karla": [
+      {
+        "id": "karla-expanding-possibilities",
+        "title": "Expanding the Space of Possibilities",
+        "speaker": "Karla Saldaña Ochoa",
+        "url": "video-karla-expanding-possibilities.html",
+        "poster": "screenshots/karla-expanding-possibilities.jpg"
+      }
+    ],
+    "architecture": [
+      {
+        "id": "karla-expanding-possibilities",
+        "title": "Expanding the Space of Possibilities",
+        "speaker": "Karla Saldaña Ochoa",
+        "url": "video-karla-expanding-possibilities.html",
+        "poster": "screenshots/karla-expanding-possibilities.jpg"
+      },
+      {
+        "id": "gibson-ecological-psychology",
+        "title": "James J. Gibson — Ecological Psychology",
+        "speaker": "James J. Gibson",
+        "url": "video-gibson-ecological-psychology.html",
+        "poster": "screenshots/gibson-ecological-psychology.jpg"
+      }
+    ],
+    "creative_embodiment": [
+      {
+        "id": "mendieta-decolonial-feminist",
+        "title": "Ana Mendieta: Decolonialized Feminist and Artist",
+        "speaker": "Ana Mendieta",
+        "url": "video-mendieta-decolonial-feminist.html",
+        "poster": "screenshots/mendieta-decolonial-feminist.jpg"
+      },
+      {
+        "id": "karla-expanding-possibilities",
+        "title": "Expanding the Space of Possibilities",
+        "speaker": "Karla Saldaña Ochoa",
+        "url": "video-karla-expanding-possibilities.html",
+        "poster": "screenshots/karla-expanding-possibilities.jpg"
+      },
+      {
+        "id": "creative-workers-ai-impact",
+        "title": "How Creative Workers are Impacted by AI",
+        "speaker": "",
+        "url": "video-creative-workers-ai-impact.html",
+        "poster": "screenshots/creative-workers-ai-impact.jpg"
+      }
+    ],
+    "gallagher": [
+      {
+        "id": "gallagher-4e-cognition",
+        "title": "Prof. Shaun Gallagher on 4E Cognition",
+        "speaker": "Shaun Gallagher",
+        "url": "video-gallagher-4e-cognition.html",
+        "poster": "screenshots/gallagher-4e-cognition.jpg"
+      }
+    ],
+    "4e": [
+      {
+        "id": "thompson-embodied-cognition",
+        "title": "BS 198 Embodied Cognition with Evan Thompson",
+        "speaker": "Evan Thompson",
+        "url": "video-thompson-embodied-cognition.html",
+        "poster": "screenshots/thompson-embodied-cognition.jpg"
+      },
+      {
+        "id": "varela-god-computers",
+        "title": "Francisco Varela — God & Computers: Minds, Machines, and Metaphysics",
+        "speaker": "Francisco Varela",
+        "url": "video-varela-god-computers.html",
+        "poster": "screenshots/varela-god-computers.jpg"
+      },
+      {
+        "id": "noe-out-of-our-heads",
+        "title": "Out of Our Heads — Alva Noë",
+        "speaker": "Alva Noë",
+        "url": "video-noe-out-of-our-heads.html",
+        "poster": "screenshots/noe-out-of-our-heads.jpg"
+      },
+      {
+        "id": "gallagher-4e-cognition",
+        "title": "Prof. Shaun Gallagher on 4E Cognition",
+        "speaker": "Shaun Gallagher",
+        "url": "video-gallagher-4e-cognition.html",
+        "poster": "screenshots/gallagher-4e-cognition.jpg"
+      },
+      {
+        "id": "brooks-humanoid-robots",
+        "title": "Rodney Brooks — Humanoid Robots and AI Hype",
+        "speaker": "Rodney Brooks",
+        "url": "video-brooks-humanoid-robots.html",
+        "poster": "screenshots/brooks-humanoid-robots.jpg"
+      }
+    ],
+    "enactivism": [
+      {
+        "id": "thompson-embodied-cognition",
+        "title": "BS 198 Embodied Cognition with Evan Thompson",
+        "speaker": "Evan Thompson",
+        "url": "video-thompson-embodied-cognition.html",
+        "poster": "screenshots/thompson-embodied-cognition.jpg"
+      },
+      {
+        "id": "rosch-prototype-cognition",
+        "title": "Eleanor Rosch — Prototype Cognition",
+        "speaker": "Eleanor Rosch",
+        "url": "video-rosch-prototype-cognition.html",
+        "poster": "screenshots/rosch-prototype-cognition.jpg"
+      },
+      {
+        "id": "cuffari-linguistic-bodies",
+        "title": "Elena Clare Cuffari — Linguistic Bodies",
+        "speaker": "Elena Clare Cuffari",
+        "url": "video-cuffari-linguistic-bodies.html",
+        "poster": "screenshots/cuffari-linguistic-bodies.jpg"
+      },
+      {
+        "id": "di-paolo-enactivism",
+        "title": "Ezequiel Di Paolo — Ontologizing Enactivism",
+        "speaker": "Ezequiel Di Paolo",
+        "url": "video-di-paolo-enactivism.html",
+        "poster": "screenshots/di-paolo-enactivism.jpg"
+      },
+      {
+        "id": "varela-god-computers",
+        "title": "Francisco Varela — God & Computers: Minds, Machines, and Metaphysics",
+        "speaker": "Francisco Varela",
+        "url": "video-varela-god-computers.html",
+        "poster": "screenshots/varela-god-computers.jpg"
+      },
+      {
+        "id": "de-jaegher-participatory-sense",
+        "title": "Hanne De Jaegher — Participatory Sense-Making",
+        "speaker": "Hanne De Jaegher",
+        "url": "video-de-jaegher-participatory-sense.html",
+        "poster": "screenshots/de-jaegher-participatory-sense.jpg"
+      },
+      {
+        "id": "shapiro-embodied-cognition",
+        "title": "Lawrence Shapiro — Embodied Cognition",
+        "speaker": "Lawrence Shapiro",
+        "url": "video-shapiro-embodied-cognition.html",
+        "poster": "screenshots/shapiro-embodied-cognition.jpg"
+      },
+      {
+        "id": "merleau-ponty-phenomenology",
+        "title": "Maurice Merleau-Ponty — Merleau-Ponty — Phenomenology of Perception",
+        "speaker": "Maurice Merleau-Ponty",
+        "url": "video-merleau-ponty-phenomenology.html",
+        "poster": "screenshots/merleau-ponty-phenomenology.jpg"
+      },
+      {
+        "id": "noe-out-of-our-heads",
+        "title": "Out of Our Heads — Alva Noë",
+        "speaker": "Alva Noë",
+        "url": "video-noe-out-of-our-heads.html",
+        "poster": "screenshots/noe-out-of-our-heads.jpg"
+      },
+      {
+        "id": "gallagher-4e-cognition",
+        "title": "Prof. Shaun Gallagher on 4E Cognition",
+        "speaker": "Shaun Gallagher",
+        "url": "video-gallagher-4e-cognition.html",
+        "poster": "screenshots/gallagher-4e-cognition.jpg"
+      }
+    ],
+    "crawford": [
+      {
+        "id": "crawford-ai-planet",
+        "title": "Kate Crawford — AI and the Planet",
+        "speaker": "Kate Crawford",
+        "url": "video-crawford-ai-planet.html",
+        "poster": "screenshots/crawford-ai-planet.jpg"
+      },
+      {
+        "id": "privacy-illusion-ai-data",
+        "title": "The Privacy Illusion: AI, Data & Who Really Controls Your Information",
+        "speaker": "",
+        "url": "video-privacy-illusion-ai-data.html",
+        "poster": "screenshots/privacy-illusion-ai-data.jpg"
+      }
+    ],
+    "track_ethics": [
+      {
+        "id": "privacy-illusion-ai-data",
+        "title": "The Privacy Illusion: AI, Data & Who Really Controls Your Information",
+        "speaker": "",
+        "url": "video-privacy-illusion-ai-data.html",
+        "poster": "screenshots/privacy-illusion-ai-data.jpg"
+      }
+    ],
+    "consciousness": [
+      {
+        "id": "am-i-ai-consciousness-doc",
+        "title": "AM I? — A Documentary About AI Consciousness",
+        "speaker": "",
+        "url": "video-am-i-ai-consciousness-doc.html",
+        "poster": "screenshots/am-i-ai-consciousness-doc.jpg"
+      },
+      {
+        "id": "friston-brain-constructs-reality",
+        "title": "How the brain constructs reality — Karl Friston on consciousness and neuroscience",
+        "speaker": "Karl Friston",
+        "url": "video-friston-brain-constructs-reality.html",
+        "poster": "screenshots/friston-brain-constructs-reality.jpg"
+      },
+      {
+        "id": "mini-brains-150k",
+        "title": "Your Brain Is 150,000 Mini-Brains",
+        "speaker": "",
+        "url": "video-mini-brains-150k.html",
+        "poster": "screenshots/mini-brains-150k.jpg"
+      }
+    ],
+    "synthetic_cognition": [
+      {
+        "id": "am-i-ai-consciousness-doc",
+        "title": "AM I? — A Documentary About AI Consciousness",
+        "speaker": "",
+        "url": "video-am-i-ai-consciousness-doc.html",
+        "poster": "screenshots/am-i-ai-consciousness-doc.jpg"
+      },
+      {
+        "id": "levin-diverse-intelligences",
+        "title": "Diverse Intelligences: Origins, Possibilities, and Diseases of Minds",
+        "speaker": "Michael Levin",
+        "url": "video-levin-diverse-intelligences.html",
+        "poster": "screenshots/levin-diverse-intelligences.jpg"
+      },
+      {
+        "id": "levin-intelligence-without-brains",
+        "title": "Intelligence Without Brains: A Radical New Idea",
+        "speaker": "Michael Levin",
+        "url": "video-levin-intelligence-without-brains.html",
+        "poster": "screenshots/levin-intelligence-without-brains.jpg"
+      },
+      {
+        "id": "malafouris-embodied-patterns",
+        "title": "Lambros Malafouris — Embodied Patterns",
+        "speaker": "Lambros Malafouris",
+        "url": "video-malafouris-embodied-patterns.html",
+        "poster": "screenshots/malafouris-embodied-patterns.jpg"
+      }
+    ],
+    "distributed": [
+      {
+        "id": "latour-once-out-of-nature",
+        "title": "Bruno Latour — Once Out of Nature",
+        "speaker": "Bruno Latour",
+        "url": "video-latour-once-out-of-nature.html",
+        "poster": "screenshots/latour-once-out-of-nature.jpg"
+      },
+      {
+        "id": "kirsh-thinking-with-body",
+        "title": "David Kirsh — Thinking and Creating with the Body",
+        "speaker": "David Kirsh",
+        "url": "video-kirsh-thinking-with-body.html",
+        "poster": "screenshots/kirsh-thinking-with-body.jpg"
+      },
+      {
+        "id": "levin-diverse-intelligences",
+        "title": "Diverse Intelligences: Origins, Possibilities, and Diseases of Minds",
+        "speaker": "Michael Levin",
+        "url": "video-levin-diverse-intelligences.html",
+        "poster": "screenshots/levin-diverse-intelligences.jpg"
+      },
+      {
+        "id": "levin-intelligence-without-brains",
+        "title": "Intelligence Without Brains: A Radical New Idea",
+        "speaker": "Michael Levin",
+        "url": "video-levin-intelligence-without-brains.html",
+        "poster": "screenshots/levin-intelligence-without-brains.jpg"
+      },
+      {
+        "id": "mini-brains-150k",
+        "title": "Your Brain Is 150,000 Mini-Brains",
+        "speaker": "",
+        "url": "video-mini-brains-150k.html",
+        "poster": "screenshots/mini-brains-150k.jpg"
+      }
+    ],
+    "holobiont": [
+      {
+        "id": "levin-diverse-intelligences",
+        "title": "Diverse Intelligences: Origins, Possibilities, and Diseases of Minds",
+        "speaker": "Michael Levin",
+        "url": "video-levin-diverse-intelligences.html",
+        "poster": "screenshots/levin-diverse-intelligences.jpg"
+      },
+      {
+        "id": "levin-intelligence-without-brains",
+        "title": "Intelligence Without Brains: A Radical New Idea",
+        "speaker": "Michael Levin",
+        "url": "video-levin-intelligence-without-brains.html",
+        "poster": "screenshots/levin-intelligence-without-brains.jpg"
+      }
+    ],
+    "symbiosis": [
+      {
+        "id": "levin-diverse-intelligences",
+        "title": "Diverse Intelligences: Origins, Possibilities, and Diseases of Minds",
+        "speaker": "Michael Levin",
+        "url": "video-levin-diverse-intelligences.html",
+        "poster": "screenshots/levin-diverse-intelligences.jpg"
+      },
+      {
+        "id": "margulis-symbiotic-earth",
+        "title": "Lynn Margulis — Symbiotic Earth",
+        "speaker": "Lynn Margulis",
+        "url": "video-margulis-symbiotic-earth.html",
+        "poster": "screenshots/margulis-symbiotic-earth.jpg"
+      },
+      {
+        "id": "aguilera-what-is-intelligence",
+        "title": "What is Intelligence? — Blaise Agüera y Arcas",
+        "speaker": "Blaise Agüera y Arcas",
+        "url": "video-aguilera-what-is-intelligence.html",
+        "poster": "screenshots/aguilera-what-is-intelligence.jpg"
+      }
+    ],
+    "margulis": [
+      {
+        "id": "levin-intelligence-without-brains",
+        "title": "Intelligence Without Brains: A Radical New Idea",
+        "speaker": "Michael Levin",
+        "url": "video-levin-intelligence-without-brains.html",
+        "poster": "screenshots/levin-intelligence-without-brains.jpg"
+      },
+      {
+        "id": "margulis-symbiotic-earth",
+        "title": "Lynn Margulis — Symbiotic Earth",
+        "speaker": "Lynn Margulis",
+        "url": "video-margulis-symbiotic-earth.html",
+        "poster": "screenshots/margulis-symbiotic-earth.jpg"
+      }
+    ],
+    "thompson": [
+      {
+        "id": "thompson-embodied-cognition",
+        "title": "BS 198 Embodied Cognition with Evan Thompson",
+        "speaker": "Evan Thompson",
+        "url": "video-thompson-embodied-cognition.html",
+        "poster": "screenshots/thompson-embodied-cognition.jpg"
+      }
+    ],
+    "varela": [
+      {
+        "id": "varela-god-computers",
+        "title": "Francisco Varela — God & Computers: Minds, Machines, and Metaphysics",
+        "speaker": "Francisco Varela",
+        "url": "video-varela-god-computers.html",
+        "poster": "screenshots/varela-god-computers.jpg"
+      },
+      {
+        "id": "maturana-interview",
+        "title": "Humberto Maturana — Interview",
+        "speaker": "Humberto Maturana",
+        "url": "video-maturana-interview.html",
+        "poster": "screenshots/maturana-interview.jpg"
+      },
+      {
+        "id": "uexkuell-umwelt",
+        "title": "Jakob von Uexküll — Umwelt and Biosemiotics",
+        "speaker": "Jakob von Uexküll",
+        "url": "video-uexkuell-umwelt.html",
+        "poster": "screenshots/uexkuell-umwelt.jpg"
+      }
+    ],
+    "autopoiesis": [
+      {
+        "id": "di-paolo-enactivism",
+        "title": "Ezequiel Di Paolo — Ontologizing Enactivism",
+        "speaker": "Ezequiel Di Paolo",
+        "url": "video-di-paolo-enactivism.html",
+        "poster": "screenshots/di-paolo-enactivism.jpg"
+      },
+      {
+        "id": "varela-god-computers",
+        "title": "Francisco Varela — God & Computers: Minds, Machines, and Metaphysics",
+        "speaker": "Francisco Varela",
+        "url": "video-varela-god-computers.html",
+        "poster": "screenshots/varela-god-computers.jpg"
+      },
+      {
+        "id": "maturana-interview",
+        "title": "Humberto Maturana — Interview",
+        "speaker": "Humberto Maturana",
+        "url": "video-maturana-interview.html",
+        "poster": "screenshots/maturana-interview.jpg"
+      }
+    ],
+    "neural_networks": [
+      {
+        "id": "understanding-ai-inner-thoughts",
+        "title": "Understanding the inner thoughts of AI",
+        "speaker": "",
+        "url": "video-understanding-ai-inner-thoughts.html",
+        "poster": "screenshots/understanding-ai-inner-thoughts.jpg"
+      },
+      {
+        "id": "visualizing-transformers-attention",
+        "title": "Visualizing transformers and attention",
+        "speaker": "",
+        "url": "video-visualizing-transformers-attention.html",
+        "poster": "screenshots/visualizing-transformers-attention.jpg"
+      },
+      {
+        "id": "mini-brains-150k",
+        "title": "Your Brain Is 150,000 Mini-Brains",
+        "speaker": "",
+        "url": "video-mini-brains-150k.html",
+        "poster": "screenshots/mini-brains-150k.jpg"
+      }
+    ],
+    "ai_interpretability": [
+      {
+        "id": "understanding-ai-inner-thoughts",
+        "title": "Understanding the inner thoughts of AI",
+        "speaker": "",
+        "url": "video-understanding-ai-inner-thoughts.html",
+        "poster": "screenshots/understanding-ai-inner-thoughts.jpg"
+      }
+    ],
+    "aguilera_arcas": [
+      {
+        "id": "understanding-ai-inner-thoughts",
+        "title": "Understanding the inner thoughts of AI",
+        "speaker": "",
+        "url": "video-understanding-ai-inner-thoughts.html",
+        "poster": "screenshots/understanding-ai-inner-thoughts.jpg"
+      },
+      {
+        "id": "aguilera-what-is-intelligence",
+        "title": "What is Intelligence? — Blaise Agüera y Arcas",
+        "speaker": "Blaise Agüera y Arcas",
+        "url": "video-aguilera-what-is-intelligence.html",
+        "poster": "screenshots/aguilera-what-is-intelligence.jpg"
+      }
+    ],
+    "transformers": [
+      {
+        "id": "visualizing-transformers-attention",
+        "title": "Visualizing transformers and attention",
+        "speaker": "",
+        "url": "video-visualizing-transformers-attention.html",
+        "poster": "screenshots/visualizing-transformers-attention.jpg"
+      }
+    ],
+    "chalmers": [
+      {
+        "id": "am-i-ai-consciousness-doc",
+        "title": "AM I? — A Documentary About AI Consciousness",
+        "speaker": "",
+        "url": "video-am-i-ai-consciousness-doc.html",
+        "poster": "screenshots/am-i-ai-consciousness-doc.jpg"
+      },
+      {
+        "id": "chalmers-talking-to-ai",
+        "title": "David Chalmers — When We Talk to AI, What Are We Talking To?",
+        "speaker": "David Chalmers",
+        "url": "video-chalmers-talking-to-ai.html",
+        "poster": "screenshots/chalmers-talking-to-ai.jpg"
+      }
+    ],
+    "creative_ai": [
+      {
+        "id": "creative-workers-ai-impact",
+        "title": "How Creative Workers are Impacted by AI",
+        "speaker": "",
+        "url": "video-creative-workers-ai-impact.html",
+        "poster": "screenshots/creative-workers-ai-impact.jpg"
+      },
+      {
+        "id": "boden-creativity-ai",
+        "title": "Margaret Boden — Creativity & AI",
+        "speaker": "Margaret Boden",
+        "url": "video-boden-creativity-ai.html",
+        "poster": "screenshots/boden-creativity-ai.jpg"
+      }
+    ],
+    "creative": [
+      {
+        "id": "creative-workers-ai-impact",
+        "title": "How Creative Workers are Impacted by AI",
+        "speaker": "",
+        "url": "video-creative-workers-ai-impact.html",
+        "poster": "screenshots/creative-workers-ai-impact.jpg"
+      },
+      {
+        "id": "cage-433-lifetime",
+        "title": "John Cage — 4'33\" and a Lifetime of Music",
+        "speaker": "John Cage",
+        "url": "video-cage-433-lifetime.html",
+        "poster": "screenshots/cage-433-lifetime.jpg"
+      },
+      {
+        "id": "leigh-bowery-tate",
+        "title": "Leigh Bowery — Tate Highlights",
+        "speaker": "Leigh Bowery",
+        "url": "video-leigh-bowery-tate.html",
+        "poster": "screenshots/leigh-bowery-tate.jpg"
+      },
+      {
+        "id": "duchamp-art-dada",
+        "title": "Marcel Duchamp — Art and Dada (1956)",
+        "speaker": "Marcel Duchamp",
+        "url": "video-duchamp-art-dada.html",
+        "poster": "screenshots/duchamp-art-dada.jpg"
+      },
+      {
+        "id": "saul-leiter-color",
+        "title": "Saul Leiter — Life and Work",
+        "speaker": "Saul Leiter",
+        "url": "video-saul-leiter-color.html",
+        "poster": "screenshots/saul-leiter-color.jpg"
+      }
+    ],
+    "possible_minds": [
+      {
+        "id": "shanahan-consciousness-ai",
+        "title": "Murray Shanahan — Consciousness and AI",
+        "speaker": "Murray Shanahan",
+        "url": "video-shanahan-consciousness-ai.html",
+        "poster": "screenshots/shanahan-consciousness-ai.jpg"
+      },
+      {
+        "id": "thinking-game-documentary",
+        "title": "The Thinking Game — Full Documentary",
+        "speaker": "",
+        "url": "video-thinking-game-documentary.html",
+        "poster": "screenshots/thinking-game-documentary.jpg"
+      },
+      {
+        "id": "aguilera-what-is-intelligence",
+        "title": "What is Intelligence? — Blaise Agüera y Arcas",
+        "speaker": "Blaise Agüera y Arcas",
+        "url": "video-aguilera-what-is-intelligence.html",
+        "poster": "screenshots/aguilera-what-is-intelligence.jpg"
+      }
+    ],
+    "shanahan": [
+      {
+        "id": "shanahan-consciousness-ai",
+        "title": "Murray Shanahan — Consciousness and AI",
+        "speaker": "Murray Shanahan",
+        "url": "video-shanahan-consciousness-ai.html",
+        "poster": "screenshots/shanahan-consciousness-ai.jpg"
+      },
+      {
+        "id": "thinking-game-documentary",
+        "title": "The Thinking Game — Full Documentary",
+        "speaker": "",
+        "url": "video-thinking-game-documentary.html",
+        "poster": "screenshots/thinking-game-documentary.jpg"
+      }
+    ],
+    "agi": [
+      {
+        "id": "chalmers-talking-to-ai",
+        "title": "David Chalmers — When We Talk to AI, What Are We Talking To?",
+        "speaker": "David Chalmers",
+        "url": "video-chalmers-talking-to-ai.html",
+        "poster": "screenshots/chalmers-talking-to-ai.jpg"
+      },
+      {
+        "id": "thinking-game-documentary",
+        "title": "The Thinking Game — Full Documentary",
+        "speaker": "",
+        "url": "video-thinking-game-documentary.html",
+        "poster": "screenshots/thinking-game-documentary.jpg"
+      }
+    ],
+    "noe": [
+      {
+        "id": "noe-out-of-our-heads",
+        "title": "Out of Our Heads — Alva Noë",
+        "speaker": "Alva Noë",
+        "url": "video-noe-out-of-our-heads.html",
+        "poster": "screenshots/noe-out-of-our-heads.jpg"
+      }
+    ],
+    "ana_mendieta": [
+      {
+        "id": "mendieta-decolonial-feminist",
+        "title": "Ana Mendieta: Decolonialized Feminist and Artist",
+        "speaker": "Ana Mendieta",
+        "url": "video-mendieta-decolonial-feminist.html",
+        "poster": "screenshots/mendieta-decolonial-feminist.jpg"
+      }
+    ],
+    "art": [
+      {
+        "id": "mendieta-decolonial-feminist",
+        "title": "Ana Mendieta: Decolonialized Feminist and Artist",
+        "speaker": "Ana Mendieta",
+        "url": "video-mendieta-decolonial-feminist.html",
+        "poster": "screenshots/mendieta-decolonial-feminist.jpg"
+      },
+      {
+        "id": "leigh-bowery-tate",
+        "title": "Leigh Bowery — Tate Highlights",
+        "speaker": "Leigh Bowery",
+        "url": "video-leigh-bowery-tate.html",
+        "poster": "screenshots/leigh-bowery-tate.jpg"
+      },
+      {
+        "id": "duchamp-art-dada",
+        "title": "Marcel Duchamp — Art and Dada (1956)",
+        "speaker": "Marcel Duchamp",
+        "url": "video-duchamp-art-dada.html",
+        "poster": "screenshots/duchamp-art-dada.jpg"
+      },
+      {
+        "id": "saul-leiter-color",
+        "title": "Saul Leiter — Life and Work",
+        "speaker": "Saul Leiter",
+        "url": "video-saul-leiter-color.html",
+        "poster": "screenshots/saul-leiter-color.jpg"
+      },
+      {
+        "id": "yoko-ono-interview",
+        "title": "Yoko Ono — Interview",
+        "speaker": "Yoko Ono",
+        "url": "video-yoko-ono-interview.html",
+        "poster": "screenshots/yoko-ono-interview.jpg"
+      }
+    ],
+    "body": [
+      {
+        "id": "mendieta-decolonial-feminist",
+        "title": "Ana Mendieta: Decolonialized Feminist and Artist",
+        "speaker": "Ana Mendieta",
+        "url": "video-mendieta-decolonial-feminist.html",
+        "poster": "screenshots/mendieta-decolonial-feminist.jpg"
+      }
+    ],
+    "escobar": [
+      {
+        "id": "escobar-pluriverse",
+        "title": "Arturo Escobar — Designs for the Pluriverse",
+        "speaker": "Arturo Escobar",
+        "url": "video-escobar-pluriverse.html",
+        "poster": "screenshots/escobar-pluriverse.jpg"
+      }
+    ],
+    "pluriversal": [
+      {
+        "id": "escobar-pluriverse",
+        "title": "Arturo Escobar — Designs for the Pluriverse",
+        "speaker": "Arturo Escobar",
+        "url": "video-escobar-pluriverse.html",
+        "poster": "screenshots/escobar-pluriverse.jpg"
+      }
+    ],
+    "design_thinking": [
+      {
+        "id": "escobar-pluriverse",
+        "title": "Arturo Escobar — Designs for the Pluriverse",
+        "speaker": "Arturo Escobar",
+        "url": "video-escobar-pluriverse.html",
+        "poster": "screenshots/escobar-pluriverse.jpg"
+      }
+    ],
+    "cultural_critical": [
+      {
+        "id": "escobar-pluriverse",
+        "title": "Arturo Escobar — Designs for the Pluriverse",
+        "speaker": "Arturo Escobar",
+        "url": "video-escobar-pluriverse.html",
+        "poster": "screenshots/escobar-pluriverse.jpg"
+      },
+      {
+        "id": "akomolafe-animism",
+        "title": "Bayo Akomolafe — Animism — Bayo Akomolafe and Daniel Foor",
+        "speaker": "Bayo Akomolafe",
+        "url": "video-akomolafe-animism.html",
+        "poster": "screenshots/akomolafe-animism.jpg"
+      },
+      {
+        "id": "bell-hooks-speaking-freely",
+        "title": "bell hooks — Speaking Freely — bell hooks",
+        "speaker": "bell hooks",
+        "url": "video-bell-hooks-speaking-freely.html",
+        "poster": "screenshots/bell-hooks-speaking-freely.jpg"
+      },
+      {
+        "id": "fanon-colonization-mind",
+        "title": "Frantz Fanon — Colonization and the Mind",
+        "speaker": "Frantz Fanon",
+        "url": "video-fanon-colonization-mind.html",
+        "poster": "screenshots/fanon-colonization-mind.jpg"
+      },
+      {
+        "id": "freire-incredible-conversation",
+        "title": "Paulo Freire — An Incredible Conversation",
+        "speaker": "Paulo Freire",
+        "url": "video-freire-incredible-conversation.html",
+        "poster": "screenshots/freire-incredible-conversation.jpg"
+      },
+      {
+        "id": "braidotti-posthuman-knowledge",
+        "title": "Rosi Braidotti — Posthuman Knowledge",
+        "speaker": "Rosi Braidotti",
+        "url": "video-braidotti-posthuman-knowledge.html",
+        "poster": "screenshots/braidotti-posthuman-knowledge.jpg"
+      }
+    ],
+    "akomolafe": [
+      {
+        "id": "akomolafe-animism",
+        "title": "Bayo Akomolafe — Animism — Bayo Akomolafe and Daniel Foor",
+        "speaker": "Bayo Akomolafe",
+        "url": "video-akomolafe-animism.html",
+        "poster": "screenshots/akomolafe-animism.jpg"
+      }
+    ],
+    "hybrid": [
+      {
+        "id": "akomolafe-animism",
+        "title": "Bayo Akomolafe — Animism — Bayo Akomolafe and Daniel Foor",
+        "speaker": "Bayo Akomolafe",
+        "url": "video-akomolafe-animism.html",
+        "poster": "screenshots/akomolafe-animism.jpg"
+      },
+      {
+        "id": "haraway-chthulucene",
+        "title": "Donna Haraway — Staying with the Trouble",
+        "speaker": "Donna Haraway",
+        "url": "video-haraway-chthulucene.html",
+        "poster": "screenshots/haraway-chthulucene.jpg"
+      },
+      {
+        "id": "braidotti-posthuman-knowledge",
+        "title": "Rosi Braidotti — Posthuman Knowledge",
+        "speaker": "Rosi Braidotti",
+        "url": "video-braidotti-posthuman-knowledge.html",
+        "poster": "screenshots/braidotti-posthuman-knowledge.jpg"
+      }
+    ],
+    "philosophy": [
+      {
+        "id": "akomolafe-animism",
+        "title": "Bayo Akomolafe — Animism — Bayo Akomolafe and Daniel Foor",
+        "speaker": "Bayo Akomolafe",
+        "url": "video-akomolafe-animism.html",
+        "poster": "screenshots/akomolafe-animism.jpg"
+      },
+      {
+        "id": "foucault-prison-1975",
+        "title": "Michel Foucault — We Live in a Prison (1975)",
+        "speaker": "Michel Foucault",
+        "url": "video-foucault-prison-1975.html",
+        "poster": "screenshots/foucault-prison-1975.jpg"
+      },
+      {
+        "id": "nagarjuna-emptiness",
+        "title": "Nāgārjuna — Philosophy of Emptiness",
+        "speaker": "Nāgārjuna",
+        "url": "video-nagarjuna-emptiness.html",
+        "poster": "screenshots/nagarjuna-emptiness.jpg"
+      },
+      {
+        "id": "braidotti-posthuman-knowledge",
+        "title": "Rosi Braidotti — Posthuman Knowledge",
+        "speaker": "Rosi Braidotti",
+        "url": "video-braidotti-posthuman-knowledge.html",
+        "poster": "screenshots/braidotti-posthuman-knowledge.jpg"
+      }
+    ],
+    "bell_hooks": [
+      {
+        "id": "bell-hooks-speaking-freely",
+        "title": "bell hooks — Speaking Freely — bell hooks",
+        "speaker": "bell hooks",
+        "url": "video-bell-hooks-speaking-freely.html",
+        "poster": "screenshots/bell-hooks-speaking-freely.jpg"
+      }
+    ],
+    "pedagogy": [
+      {
+        "id": "bell-hooks-speaking-freely",
+        "title": "bell hooks — Speaking Freely — bell hooks",
+        "speaker": "bell hooks",
+        "url": "video-bell-hooks-speaking-freely.html",
+        "poster": "screenshots/bell-hooks-speaking-freely.jpg"
+      }
+    ],
+    "freire": [
+      {
+        "id": "bell-hooks-speaking-freely",
+        "title": "bell hooks — Speaking Freely — bell hooks",
+        "speaker": "bell hooks",
+        "url": "video-bell-hooks-speaking-freely.html",
+        "poster": "screenshots/bell-hooks-speaking-freely.jpg"
+      },
+      {
+        "id": "sousa-santos-decolonising",
+        "title": "Boaventura de Sousa Santos — Decolonising the Curriculum",
+        "speaker": "Boaventura de Sousa Santos",
+        "url": "video-sousa-santos-decolonising.html",
+        "poster": "screenshots/sousa-santos-decolonising.jpg"
+      },
+      {
+        "id": "freire-incredible-conversation",
+        "title": "Paulo Freire — An Incredible Conversation",
+        "speaker": "Paulo Freire",
+        "url": "video-freire-incredible-conversation.html",
+        "poster": "screenshots/freire-incredible-conversation.jpg"
+      }
+    ],
+    "sousa_santos": [
+      {
+        "id": "sousa-santos-decolonising",
+        "title": "Boaventura de Sousa Santos — Decolonising the Curriculum",
+        "speaker": "Boaventura de Sousa Santos",
+        "url": "video-sousa-santos-decolonising.html",
+        "poster": "screenshots/sousa-santos-decolonising.jpg"
+      }
+    ],
+    "epistemologies_south": [
+      {
+        "id": "sousa-santos-decolonising",
+        "title": "Boaventura de Sousa Santos — Decolonising the Curriculum",
+        "speaker": "Boaventura de Sousa Santos",
+        "url": "video-sousa-santos-decolonising.html",
+        "poster": "screenshots/sousa-santos-decolonising.jpg"
+      }
+    ],
+    "epistemology": [
+      {
+        "id": "sousa-santos-decolonising",
+        "title": "Boaventura de Sousa Santos — Decolonising the Curriculum",
+        "speaker": "Boaventura de Sousa Santos",
+        "url": "video-sousa-santos-decolonising.html",
+        "poster": "screenshots/sousa-santos-decolonising.jpg"
+      },
+      {
+        "id": "nagarjuna-emptiness",
+        "title": "Nāgārjuna — Philosophy of Emptiness",
+        "speaker": "Nāgārjuna",
+        "url": "video-nagarjuna-emptiness.html",
+        "poster": "screenshots/nagarjuna-emptiness.jpg"
+      }
+    ],
+    "latour": [
+      {
+        "id": "latour-once-out-of-nature",
+        "title": "Bruno Latour — Once Out of Nature",
+        "speaker": "Bruno Latour",
+        "url": "video-latour-once-out-of-nature.html",
+        "poster": "screenshots/latour-once-out-of-nature.jpg"
+      }
+    ],
+    "technical_agency": [
+      {
+        "id": "latour-once-out-of-nature",
+        "title": "Bruno Latour — Once Out of Nature",
+        "speaker": "Bruno Latour",
+        "url": "video-latour-once-out-of-nature.html",
+        "poster": "screenshots/latour-once-out-of-nature.jpg"
+      }
+    ],
+    "extended": [
+      {
+        "id": "chalmers-talking-to-ai",
+        "title": "David Chalmers — When We Talk to AI, What Are We Talking To?",
+        "speaker": "David Chalmers",
+        "url": "video-chalmers-talking-to-ai.html",
+        "poster": "screenshots/chalmers-talking-to-ai.jpg"
+      },
+      {
+        "id": "kirsh-thinking-with-body",
+        "title": "David Kirsh — Thinking and Creating with the Body",
+        "speaker": "David Kirsh",
+        "url": "video-kirsh-thinking-with-body.html",
+        "poster": "screenshots/kirsh-thinking-with-body.jpg"
+      },
+      {
+        "id": "malafouris-embodied-patterns",
+        "title": "Lambros Malafouris — Embodied Patterns",
+        "speaker": "Lambros Malafouris",
+        "url": "video-malafouris-embodied-patterns.html",
+        "poster": "screenshots/malafouris-embodied-patterns.jpg"
+      },
+      {
+        "id": "wilson-state-space",
+        "title": "Robert A. Wilson — State Space Theory",
+        "speaker": "Robert A. Wilson",
+        "url": "video-wilson-state-space.html",
+        "poster": "screenshots/wilson-state-space.jpg"
+      }
+    ],
+    "kirsh": [
+      {
+        "id": "kirsh-thinking-with-body",
+        "title": "David Kirsh — Thinking and Creating with the Body",
+        "speaker": "David Kirsh",
+        "url": "video-kirsh-thinking-with-body.html",
+        "poster": "screenshots/kirsh-thinking-with-body.jpg"
+      }
+    ],
+    "choreo_knowledge": [
+      {
+        "id": "kirsh-thinking-with-body",
+        "title": "David Kirsh — Thinking and Creating with the Body",
+        "speaker": "David Kirsh",
+        "url": "video-kirsh-thinking-with-body.html",
+        "poster": "screenshots/kirsh-thinking-with-body.jpg"
+      },
+      {
+        "id": "forsythe-imagining-lines",
+        "title": "William Forsythe — Imagining Lines",
+        "speaker": "William Forsythe",
+        "url": "video-forsythe-imagining-lines.html",
+        "poster": "screenshots/forsythe-imagining-lines.jpg"
+      },
+      {
+        "id": "forsythe-synchronous-objects-hellerau",
+        "title": "William Forsythe on Synchronous Objects, The Hellerau in Dresden, Germany",
+        "speaker": "William Forsythe",
+        "url": "video-forsythe-synchronous-objects-hellerau.html",
+        "poster": "screenshots/forsythe-synchronous-objects-hellerau.jpg"
+      }
+    ],
+    "haraway": [
+      {
+        "id": "haraway-chthulucene",
+        "title": "Donna Haraway — Staying with the Trouble",
+        "speaker": "Donna Haraway",
+        "url": "video-haraway-chthulucene.html",
+        "poster": "screenshots/haraway-chthulucene.jpg"
+      },
+      {
+        "id": "barad-meeting-universe",
+        "title": "Karen Barad — Meeting the Universe Halfway",
+        "speaker": "Karen Barad",
+        "url": "video-barad-meeting-universe.html",
+        "poster": "screenshots/barad-meeting-universe.jpg"
+      }
+    ],
+    "cyborg": [
+      {
+        "id": "haraway-chthulucene",
+        "title": "Donna Haraway — Staying with the Trouble",
+        "speaker": "Donna Haraway",
+        "url": "video-haraway-chthulucene.html",
+        "poster": "screenshots/haraway-chthulucene.jpg"
+      }
+    ],
+    "technosymbiosis": [
+      {
+        "id": "haraway-chthulucene",
+        "title": "Donna Haraway — Staying with the Trouble",
+        "speaker": "Donna Haraway",
+        "url": "video-haraway-chthulucene.html",
+        "poster": "screenshots/haraway-chthulucene.jpg"
+      },
+      {
+        "id": "margulis-symbiotic-earth",
+        "title": "Lynn Margulis — Symbiotic Earth",
+        "speaker": "Lynn Margulis",
+        "url": "video-margulis-symbiotic-earth.html",
+        "poster": "screenshots/margulis-symbiotic-earth.jpg"
+      }
+    ],
+    "rosch": [
+      {
+        "id": "rosch-prototype-cognition",
+        "title": "Eleanor Rosch — Prototype Cognition",
+        "speaker": "Eleanor Rosch",
+        "url": "video-rosch-prototype-cognition.html",
+        "poster": "screenshots/rosch-prototype-cognition.jpg"
+      }
+    ],
+    "buddhism": [
+      {
+        "id": "rosch-prototype-cognition",
+        "title": "Eleanor Rosch — Prototype Cognition",
+        "speaker": "Eleanor Rosch",
+        "url": "video-rosch-prototype-cognition.html",
+        "poster": "screenshots/rosch-prototype-cognition.jpg"
+      },
+      {
+        "id": "nagarjuna-emptiness",
+        "title": "Nāgārjuna — Philosophy of Emptiness",
+        "speaker": "Nāgārjuna",
+        "url": "video-nagarjuna-emptiness.html",
+        "poster": "screenshots/nagarjuna-emptiness.jpg"
+      }
+    ],
+    "enacted": [
+      {
+        "id": "rosch-prototype-cognition",
+        "title": "Eleanor Rosch — Prototype Cognition",
+        "speaker": "Eleanor Rosch",
+        "url": "video-rosch-prototype-cognition.html",
+        "poster": "screenshots/rosch-prototype-cognition.jpg"
+      }
+    ],
+    "cuffari": [
+      {
+        "id": "cuffari-linguistic-bodies",
+        "title": "Elena Clare Cuffari — Linguistic Bodies",
+        "speaker": "Elena Clare Cuffari",
+        "url": "video-cuffari-linguistic-bodies.html",
+        "poster": "screenshots/cuffari-linguistic-bodies.jpg"
+      },
+      {
+        "id": "di-paolo-enactivism",
+        "title": "Ezequiel Di Paolo — Ontologizing Enactivism",
+        "speaker": "Ezequiel Di Paolo",
+        "url": "video-di-paolo-enactivism.html",
+        "poster": "screenshots/di-paolo-enactivism.jpg"
+      }
+    ],
+    "di_paolo": [
+      {
+        "id": "cuffari-linguistic-bodies",
+        "title": "Elena Clare Cuffari — Linguistic Bodies",
+        "speaker": "Elena Clare Cuffari",
+        "url": "video-cuffari-linguistic-bodies.html",
+        "poster": "screenshots/cuffari-linguistic-bodies.jpg"
+      },
+      {
+        "id": "di-paolo-enactivism",
+        "title": "Ezequiel Di Paolo — Ontologizing Enactivism",
+        "speaker": "Ezequiel Di Paolo",
+        "url": "video-di-paolo-enactivism.html",
+        "poster": "screenshots/di-paolo-enactivism.jpg"
+      },
+      {
+        "id": "de-jaegher-participatory-sense",
+        "title": "Hanne De Jaegher — Participatory Sense-Making",
+        "speaker": "Hanne De Jaegher",
+        "url": "video-de-jaegher-participatory-sense.html",
+        "poster": "screenshots/de-jaegher-participatory-sense.jpg"
+      }
+    ],
+    "de_jaegher": [
+      {
+        "id": "cuffari-linguistic-bodies",
+        "title": "Elena Clare Cuffari — Linguistic Bodies",
+        "speaker": "Elena Clare Cuffari",
+        "url": "video-cuffari-linguistic-bodies.html",
+        "poster": "screenshots/cuffari-linguistic-bodies.jpg"
+      },
+      {
+        "id": "de-jaegher-participatory-sense",
+        "title": "Hanne De Jaegher — Participatory Sense-Making",
+        "speaker": "Hanne De Jaegher",
+        "url": "video-de-jaegher-participatory-sense.html",
+        "poster": "screenshots/de-jaegher-participatory-sense.jpg"
+      }
+    ],
+    "fanon": [
+      {
+        "id": "fanon-colonization-mind",
+        "title": "Frantz Fanon — Colonization and the Mind",
+        "speaker": "Frantz Fanon",
+        "url": "video-fanon-colonization-mind.html",
+        "poster": "screenshots/fanon-colonization-mind.jpg"
+      }
+    ],
+    "critical": [
+      {
+        "id": "fanon-colonization-mind",
+        "title": "Frantz Fanon — Colonization and the Mind",
+        "speaker": "Frantz Fanon",
+        "url": "video-fanon-colonization-mind.html",
+        "poster": "screenshots/fanon-colonization-mind.jpg"
+      },
+      {
+        "id": "foucault-prison-1975",
+        "title": "Michel Foucault — We Live in a Prison (1975)",
+        "speaker": "Michel Foucault",
+        "url": "video-foucault-prison-1975.html",
+        "poster": "screenshots/foucault-prison-1975.jpg"
+      },
+      {
+        "id": "freire-incredible-conversation",
+        "title": "Paulo Freire — An Incredible Conversation",
+        "speaker": "Paulo Freire",
+        "url": "video-freire-incredible-conversation.html",
+        "poster": "screenshots/freire-incredible-conversation.jpg"
+      }
+    ],
+    "perception_politics": [
+      {
+        "id": "fanon-colonization-mind",
+        "title": "Frantz Fanon — Colonization and the Mind",
+        "speaker": "Frantz Fanon",
+        "url": "video-fanon-colonization-mind.html",
+        "poster": "screenshots/fanon-colonization-mind.jpg"
+      },
+      {
+        "id": "crawford-ai-planet",
+        "title": "Kate Crawford — AI and the Planet",
+        "speaker": "Kate Crawford",
+        "url": "video-crawford-ai-planet.html",
+        "poster": "screenshots/crawford-ai-planet.jpg"
+      },
+      {
+        "id": "foucault-prison-1975",
+        "title": "Michel Foucault — We Live in a Prison (1975)",
+        "speaker": "Michel Foucault",
+        "url": "video-foucault-prison-1975.html",
+        "poster": "screenshots/foucault-prison-1975.jpg"
+      }
+    ],
+    "bateson": [
+      {
+        "id": "bateson-ecology-of-mind",
+        "title": "Gregory Bateson — Ecology of Mind",
+        "speaker": "Gregory Bateson",
+        "url": "video-bateson-ecology-of-mind.html",
+        "poster": "screenshots/bateson-ecology-of-mind.jpg"
+      }
+    ],
+    "ecology": [
+      {
+        "id": "bateson-ecology-of-mind",
+        "title": "Gregory Bateson — Ecology of Mind",
+        "speaker": "Gregory Bateson",
+        "url": "video-bateson-ecology-of-mind.html",
+        "poster": "screenshots/bateson-ecology-of-mind.jpg"
+      },
+      {
+        "id": "uexkuell-umwelt",
+        "title": "Jakob von Uexküll — Umwelt and Biosemiotics",
+        "speaker": "Jakob von Uexküll",
+        "url": "video-uexkuell-umwelt.html",
+        "poster": "screenshots/uexkuell-umwelt.jpg"
+      },
+      {
+        "id": "gibson-ecological-psychology",
+        "title": "James J. Gibson — Ecological Psychology",
+        "speaker": "James J. Gibson",
+        "url": "video-gibson-ecological-psychology.html",
+        "poster": "screenshots/gibson-ecological-psychology.jpg"
+      }
+    ],
+    "cybernetics": [
+      {
+        "id": "bateson-ecology-of-mind",
+        "title": "Gregory Bateson — Ecology of Mind",
+        "speaker": "Gregory Bateson",
+        "url": "video-bateson-ecology-of-mind.html",
+        "poster": "screenshots/bateson-ecology-of-mind.jpg"
+      }
+    ],
+    "ecology_d": [
+      {
+        "id": "bateson-ecology-of-mind",
+        "title": "Gregory Bateson — Ecology of Mind",
+        "speaker": "Gregory Bateson",
+        "url": "video-bateson-ecology-of-mind.html",
+        "poster": "screenshots/bateson-ecology-of-mind.jpg"
+      },
+      {
+        "id": "margulis-symbiotic-earth",
+        "title": "Lynn Margulis — Symbiotic Earth",
+        "speaker": "Lynn Margulis",
+        "url": "video-margulis-symbiotic-earth.html",
+        "poster": "screenshots/margulis-symbiotic-earth.jpg"
+      }
+    ],
+    "coupling": [
+      {
+        "id": "de-jaegher-participatory-sense",
+        "title": "Hanne De Jaegher — Participatory Sense-Making",
+        "speaker": "Hanne De Jaegher",
+        "url": "video-de-jaegher-participatory-sense.html",
+        "poster": "screenshots/de-jaegher-participatory-sense.jpg"
+      },
+      {
+        "id": "maturana-interview",
+        "title": "Humberto Maturana — Interview",
+        "speaker": "Humberto Maturana",
+        "url": "video-maturana-interview.html",
+        "poster": "screenshots/maturana-interview.jpg"
+      },
+      {
+        "id": "barad-meeting-universe",
+        "title": "Karen Barad — Meeting the Universe Halfway",
+        "speaker": "Karen Barad",
+        "url": "video-barad-meeting-universe.html",
+        "poster": "screenshots/barad-meeting-universe.jpg"
+      }
+    ],
+    "maturana": [
+      {
+        "id": "maturana-interview",
+        "title": "Humberto Maturana — Interview",
+        "speaker": "Humberto Maturana",
+        "url": "video-maturana-interview.html",
+        "poster": "screenshots/maturana-interview.jpg"
+      }
+    ],
+    "uexkuell": [
+      {
+        "id": "uexkuell-umwelt",
+        "title": "Jakob von Uexküll — Umwelt and Biosemiotics",
+        "speaker": "Jakob von Uexküll",
+        "url": "video-uexkuell-umwelt.html",
+        "poster": "screenshots/uexkuell-umwelt.jpg"
+      }
+    ],
+    "gibson": [
+      {
+        "id": "gibson-ecological-psychology",
+        "title": "James J. Gibson — Ecological Psychology",
+        "speaker": "James J. Gibson",
+        "url": "video-gibson-ecological-psychology.html",
+        "poster": "screenshots/gibson-ecological-psychology.jpg"
+      }
+    ],
+    "embedded": [
+      {
+        "id": "gibson-ecological-psychology",
+        "title": "James J. Gibson — Ecological Psychology",
+        "speaker": "James J. Gibson",
+        "url": "video-gibson-ecological-psychology.html",
+        "poster": "screenshots/gibson-ecological-psychology.jpg"
+      },
+      {
+        "id": "shapiro-embodied-cognition",
+        "title": "Lawrence Shapiro — Embodied Cognition",
+        "speaker": "Lawrence Shapiro",
+        "url": "video-shapiro-embodied-cognition.html",
+        "poster": "screenshots/shapiro-embodied-cognition.jpg"
+      },
+      {
+        "id": "wilson-state-space",
+        "title": "Robert A. Wilson — State Space Theory",
+        "speaker": "Robert A. Wilson",
+        "url": "video-wilson-state-space.html",
+        "poster": "screenshots/wilson-state-space.jpg"
+      }
+    ],
+    "cage": [
+      {
+        "id": "cage-433-lifetime",
+        "title": "John Cage — 4'33\" and a Lifetime of Music",
+        "speaker": "John Cage",
+        "url": "video-cage-433-lifetime.html",
+        "poster": "screenshots/cage-433-lifetime.jpg"
+      }
+    ],
+    "music": [
+      {
+        "id": "cage-433-lifetime",
+        "title": "John Cage — 4'33\" and a Lifetime of Music",
+        "speaker": "John Cage",
+        "url": "video-cage-433-lifetime.html",
+        "poster": "screenshots/cage-433-lifetime.jpg"
+      }
+    ],
+    "fluxus": [
+      {
+        "id": "cage-433-lifetime",
+        "title": "John Cage — 4'33\" and a Lifetime of Music",
+        "speaker": "John Cage",
+        "url": "video-cage-433-lifetime.html",
+        "poster": "screenshots/cage-433-lifetime.jpg"
+      },
+      {
+        "id": "yoko-ono-interview",
+        "title": "Yoko Ono — Interview",
+        "speaker": "Yoko Ono",
+        "url": "video-yoko-ono-interview.html",
+        "poster": "screenshots/yoko-ono-interview.jpg"
+      }
+    ],
+    "munoz": [
+      {
+        "id": "munoz-queer-utopianism",
+        "title": "José Esteban Muñoz — Queer Utopianism",
+        "speaker": "José Esteban Muñoz",
+        "url": "video-munoz-queer-utopianism.html",
+        "poster": "screenshots/munoz-queer-utopianism.jpg"
+      }
+    ],
+    "futurity": [
+      {
+        "id": "munoz-queer-utopianism",
+        "title": "José Esteban Muñoz — Queer Utopianism",
+        "speaker": "José Esteban Muñoz",
+        "url": "video-munoz-queer-utopianism.html",
+        "poster": "screenshots/munoz-queer-utopianism.jpg"
+      },
+      {
+        "id": "butler-parable-climate",
+        "title": "Octavia Butler — Parable and Climate Chaos",
+        "speaker": "Octavia Butler",
+        "url": "video-butler-parable-climate.html",
+        "poster": "screenshots/butler-parable-climate.jpg"
+      }
+    ],
+    "speculative_futures": [
+      {
+        "id": "munoz-queer-utopianism",
+        "title": "José Esteban Muñoz — Queer Utopianism",
+        "speaker": "José Esteban Muñoz",
+        "url": "video-munoz-queer-utopianism.html",
+        "poster": "screenshots/munoz-queer-utopianism.jpg"
+      },
+      {
+        "id": "butler-parable-climate",
+        "title": "Octavia Butler — Parable and Climate Chaos",
+        "speaker": "Octavia Butler",
+        "url": "video-butler-parable-climate.html",
+        "poster": "screenshots/butler-parable-climate.jpg"
+      }
+    ],
+    "cultural_imagination": [
+      {
+        "id": "munoz-queer-utopianism",
+        "title": "José Esteban Muñoz — Queer Utopianism",
+        "speaker": "José Esteban Muñoz",
+        "url": "video-munoz-queer-utopianism.html",
+        "poster": "screenshots/munoz-queer-utopianism.jpg"
+      }
+    ],
+    "barad": [
+      {
+        "id": "barad-meeting-universe",
+        "title": "Karen Barad — Meeting the Universe Halfway",
+        "speaker": "Karen Barad",
+        "url": "video-barad-meeting-universe.html",
+        "poster": "screenshots/barad-meeting-universe.jpg"
+      }
+    ],
+    "malafouris": [
+      {
+        "id": "malafouris-embodied-patterns",
+        "title": "Lambros Malafouris — Embodied Patterns",
+        "speaker": "Lambros Malafouris",
+        "url": "video-malafouris-embodied-patterns.html",
+        "poster": "screenshots/malafouris-embodied-patterns.jpg"
+      }
+    ],
+    "extended_q": [
+      {
+        "id": "malafouris-embodied-patterns",
+        "title": "Lambros Malafouris — Embodied Patterns",
+        "speaker": "Lambros Malafouris",
+        "url": "video-malafouris-embodied-patterns.html",
+        "poster": "screenshots/malafouris-embodied-patterns.jpg"
+      }
+    ],
+    "shapiro": [
+      {
+        "id": "shapiro-embodied-cognition",
+        "title": "Lawrence Shapiro — Embodied Cognition",
+        "speaker": "Lawrence Shapiro",
+        "url": "video-shapiro-embodied-cognition.html",
+        "poster": "screenshots/shapiro-embodied-cognition.jpg"
+      }
+    ],
+    "leigh_bowery": [
+      {
+        "id": "leigh-bowery-tate",
+        "title": "Leigh Bowery — Tate Highlights",
+        "speaker": "Leigh Bowery",
+        "url": "video-leigh-bowery-tate.html",
+        "poster": "screenshots/leigh-bowery-tate.jpg"
+      }
+    ],
+    "queer_theory": [
+      {
+        "id": "leigh-bowery-tate",
+        "title": "Leigh Bowery — Tate Highlights",
+        "speaker": "Leigh Bowery",
+        "url": "video-leigh-bowery-tate.html",
+        "poster": "screenshots/leigh-bowery-tate.jpg"
+      }
+    ],
+    "duchamp": [
+      {
+        "id": "duchamp-art-dada",
+        "title": "Marcel Duchamp — Art and Dada (1956)",
+        "speaker": "Marcel Duchamp",
+        "url": "video-duchamp-art-dada.html",
+        "poster": "screenshots/duchamp-art-dada.jpg"
+      }
+    ],
+    "curation": [
+      {
+        "id": "duchamp-art-dada",
+        "title": "Marcel Duchamp — Art and Dada (1956)",
+        "speaker": "Marcel Duchamp",
+        "url": "video-duchamp-art-dada.html",
+        "poster": "screenshots/duchamp-art-dada.jpg"
+      }
+    ],
+    "boden": [
+      {
+        "id": "boden-creativity-ai",
+        "title": "Margaret Boden — Creativity & AI",
+        "speaker": "Margaret Boden",
+        "url": "video-boden-creativity-ai.html",
+        "poster": "screenshots/boden-creativity-ai.jpg"
+      }
+    ],
+    "creativity": [
+      {
+        "id": "boden-creativity-ai",
+        "title": "Margaret Boden — Creativity & AI",
+        "speaker": "Margaret Boden",
+        "url": "video-boden-creativity-ai.html",
+        "poster": "screenshots/boden-creativity-ai.jpg"
+      },
+      {
+        "id": "vera-molnar-generative",
+        "title": "Vera Molnár — Life and Work",
+        "speaker": "Vera Molnár",
+        "url": "video-vera-molnar-generative.html",
+        "poster": "screenshots/vera-molnar-generative.jpg"
+      }
+    ],
+    "merleau_ponty": [
+      {
+        "id": "merleau-ponty-phenomenology",
+        "title": "Maurice Merleau-Ponty — Merleau-Ponty — Phenomenology of Perception",
+        "speaker": "Maurice Merleau-Ponty",
+        "url": "video-merleau-ponty-phenomenology.html",
+        "poster": "screenshots/merleau-ponty-phenomenology.jpg"
+      }
+    ],
+    "embodiment": [
+      {
+        "id": "merleau-ponty-phenomenology",
+        "title": "Maurice Merleau-Ponty — Merleau-Ponty — Phenomenology of Perception",
+        "speaker": "Maurice Merleau-Ponty",
+        "url": "video-merleau-ponty-phenomenology.html",
+        "poster": "screenshots/merleau-ponty-phenomenology.jpg"
+      },
+      {
+        "id": "batson-minds-in-motion",
+        "title": "Minds in Motion — Glenna Batson",
+        "speaker": "Glenna Batson",
+        "url": "video-batson-minds-in-motion.html",
+        "poster": "screenshots/batson-minds-in-motion.jpg"
+      }
+    ],
+    "foucault": [
+      {
+        "id": "foucault-prison-1975",
+        "title": "Michel Foucault — We Live in a Prison (1975)",
+        "speaker": "Michel Foucault",
+        "url": "video-foucault-prison-1975.html",
+        "poster": "screenshots/foucault-prison-1975.jpg"
+      }
+    ],
+    "nagarjuna": [
+      {
+        "id": "nagarjuna-emptiness",
+        "title": "Nāgārjuna — Philosophy of Emptiness",
+        "speaker": "Nāgārjuna",
+        "url": "video-nagarjuna-emptiness.html",
+        "poster": "screenshots/nagarjuna-emptiness.jpg"
+      }
+    ],
+    "butler": [
+      {
+        "id": "butler-parable-climate",
+        "title": "Octavia Butler — Parable and Climate Chaos",
+        "speaker": "Octavia Butler",
+        "url": "video-butler-parable-climate.html",
+        "poster": "screenshots/butler-parable-climate.jpg"
+      }
+    ],
+    "afrofuturism": [
+      {
+        "id": "butler-parable-climate",
+        "title": "Octavia Butler — Parable and Climate Chaos",
+        "speaker": "Octavia Butler",
+        "url": "video-butler-parable-climate.html",
+        "poster": "screenshots/butler-parable-climate.jpg"
+      }
+    ],
+    "literacies": [
+      {
+        "id": "freire-incredible-conversation",
+        "title": "Paulo Freire — An Incredible Conversation",
+        "speaker": "Paulo Freire",
+        "url": "video-freire-incredible-conversation.html",
+        "poster": "screenshots/freire-incredible-conversation.jpg"
+      }
+    ],
+    "wilson": [
+      {
+        "id": "wilson-state-space",
+        "title": "Robert A. Wilson — State Space Theory",
+        "speaker": "Robert A. Wilson",
+        "url": "video-wilson-state-space.html",
+        "poster": "screenshots/wilson-state-space.jpg"
+      }
+    ],
+    "situated": [
+      {
+        "id": "wilson-state-space",
+        "title": "Robert A. Wilson — State Space Theory",
+        "speaker": "Robert A. Wilson",
+        "url": "video-wilson-state-space.html",
+        "poster": "screenshots/wilson-state-space.jpg"
+      }
+    ],
+    "brooks": [
+      {
+        "id": "brooks-humanoid-robots",
+        "title": "Rodney Brooks — Humanoid Robots and AI Hype",
+        "speaker": "Rodney Brooks",
+        "url": "video-brooks-humanoid-robots.html",
+        "poster": "screenshots/brooks-humanoid-robots.jpg"
+      }
+    ],
+    "affordances": [
+      {
+        "id": "brooks-humanoid-robots",
+        "title": "Rodney Brooks — Humanoid Robots and AI Hype",
+        "speaker": "Rodney Brooks",
+        "url": "video-brooks-humanoid-robots.html",
+        "poster": "screenshots/brooks-humanoid-robots.jpg"
+      }
+    ],
+    "braidotti": [
+      {
+        "id": "braidotti-posthuman-knowledge",
+        "title": "Rosi Braidotti — Posthuman Knowledge",
+        "speaker": "Rosi Braidotti",
+        "url": "video-braidotti-posthuman-knowledge.html",
+        "poster": "screenshots/braidotti-posthuman-knowledge.jpg"
+      }
+    ],
+    "saul_leiter": [
+      {
+        "id": "saul-leiter-color",
+        "title": "Saul Leiter — Life and Work",
+        "speaker": "Saul Leiter",
+        "url": "video-saul-leiter-color.html",
+        "poster": "screenshots/saul-leiter-color.jpg"
+      }
+    ],
+    "abstraction": [
+      {
+        "id": "saul-leiter-color",
+        "title": "Saul Leiter — Life and Work",
+        "speaker": "Saul Leiter",
+        "url": "video-saul-leiter-color.html",
+        "poster": "screenshots/saul-leiter-color.jpg"
+      },
+      {
+        "id": "vera-molnar-generative",
+        "title": "Vera Molnár — Life and Work",
+        "speaker": "Vera Molnár",
+        "url": "video-vera-molnar-generative.html",
+        "poster": "screenshots/vera-molnar-generative.jpg"
+      }
+    ],
+    "steve_paxton": [
+      {
+        "id": "paxton-contact-improv",
+        "title": "Steve Paxton — Contact Improvisation",
+        "speaker": "Steve Paxton",
+        "url": "video-paxton-contact-improv.html",
+        "poster": "screenshots/paxton-contact-improv.jpg"
+      }
+    ],
+    "judson_church": [
+      {
+        "id": "paxton-contact-improv",
+        "title": "Steve Paxton — Contact Improvisation",
+        "speaker": "Steve Paxton",
+        "url": "video-paxton-contact-improv.html",
+        "poster": "screenshots/paxton-contact-improv.jpg"
+      }
+    ],
+    "trisha_brown": [
+      {
+        "id": "paxton-contact-improv",
+        "title": "Steve Paxton — Contact Improvisation",
+        "speaker": "Steve Paxton",
+        "url": "video-paxton-contact-improv.html",
+        "poster": "screenshots/paxton-contact-improv.jpg"
+      },
+      {
+        "id": "trisha-brown-intensive",
+        "title": "Trisha Brown Dance Company — Summer Intensive",
+        "speaker": "Trisha Brown",
+        "url": "video-trisha-brown-intensive.html",
+        "poster": "screenshots/trisha-brown-intensive.jpg"
+      }
+    ],
+    "dance": [
+      {
+        "id": "batson-minds-in-motion",
+        "title": "Minds in Motion — Glenna Batson",
+        "speaker": "Glenna Batson",
+        "url": "video-batson-minds-in-motion.html",
+        "poster": "screenshots/batson-minds-in-motion.jpg"
+      },
+      {
+        "id": "paxton-contact-improv",
+        "title": "Steve Paxton — Contact Improvisation",
+        "speaker": "Steve Paxton",
+        "url": "video-paxton-contact-improv.html",
+        "poster": "screenshots/paxton-contact-improv.jpg"
+      },
+      {
+        "id": "trisha-brown-intensive",
+        "title": "Trisha Brown Dance Company — Summer Intensive",
+        "speaker": "Trisha Brown",
+        "url": "video-trisha-brown-intensive.html",
+        "poster": "screenshots/trisha-brown-intensive.jpg"
+      }
+    ],
+    "choreography_d": [
+      {
+        "id": "trisha-brown-intensive",
+        "title": "Trisha Brown Dance Company — Summer Intensive",
+        "speaker": "Trisha Brown",
+        "url": "video-trisha-brown-intensive.html",
+        "poster": "screenshots/trisha-brown-intensive.jpg"
+      }
+    ],
+    "choreography": [
+      {
+        "id": "trisha-brown-intensive",
+        "title": "Trisha Brown Dance Company — Summer Intensive",
+        "speaker": "Trisha Brown",
+        "url": "video-trisha-brown-intensive.html",
+        "poster": "screenshots/trisha-brown-intensive.jpg"
+      }
+    ],
+    "vera_molnar": [
+      {
+        "id": "vera-molnar-generative",
+        "title": "Vera Molnár — Life and Work",
+        "speaker": "Vera Molnár",
+        "url": "video-vera-molnar-generative.html",
+        "poster": "screenshots/vera-molnar-generative.jpg"
+      }
+    ],
+    "generative_arts": [
+      {
+        "id": "vera-molnar-generative",
+        "title": "Vera Molnár — Life and Work",
+        "speaker": "Vera Molnár",
+        "url": "video-vera-molnar-generative.html",
+        "poster": "screenshots/vera-molnar-generative.jpg"
+      }
+    ],
+    "forsythe": [
+      {
+        "id": "forsythe-imagining-lines",
+        "title": "William Forsythe — Imagining Lines",
+        "speaker": "William Forsythe",
+        "url": "video-forsythe-imagining-lines.html",
+        "poster": "screenshots/forsythe-imagining-lines.jpg"
+      },
+      {
+        "id": "forsythe-synchronous-objects-hellerau",
+        "title": "William Forsythe on Synchronous Objects, The Hellerau in Dresden, Germany",
+        "speaker": "William Forsythe",
+        "url": "video-forsythe-synchronous-objects-hellerau.html",
+        "poster": "screenshots/forsythe-synchronous-objects-hellerau.jpg"
+      }
+    ],
+    "choreo_object": [
+      {
+        "id": "forsythe-imagining-lines",
+        "title": "William Forsythe — Imagining Lines",
+        "speaker": "William Forsythe",
+        "url": "video-forsythe-imagining-lines.html",
+        "poster": "screenshots/forsythe-imagining-lines.jpg"
+      },
+      {
+        "id": "forsythe-synchronous-objects-hellerau",
+        "title": "William Forsythe on Synchronous Objects, The Hellerau in Dresden, Germany",
+        "speaker": "William Forsythe",
+        "url": "video-forsythe-synchronous-objects-hellerau.html",
+        "poster": "screenshots/forsythe-synchronous-objects-hellerau.jpg"
+      }
+    ],
+    "motion_bank": [
+      {
+        "id": "forsythe-imagining-lines",
+        "title": "William Forsythe — Imagining Lines",
+        "speaker": "William Forsythe",
+        "url": "video-forsythe-imagining-lines.html",
+        "poster": "screenshots/forsythe-imagining-lines.jpg"
+      },
+      {
+        "id": "forsythe-synchronous-objects-hellerau",
+        "title": "William Forsythe on Synchronous Objects, The Hellerau in Dresden, Germany",
+        "speaker": "William Forsythe",
+        "url": "video-forsythe-synchronous-objects-hellerau.html",
+        "poster": "screenshots/forsythe-synchronous-objects-hellerau.jpg"
+      }
+    ],
+    "yoko_ono": [
+      {
+        "id": "yoko-ono-interview",
+        "title": "Yoko Ono — Interview",
+        "speaker": "Yoko Ono",
+        "url": "video-yoko-ono-interview.html",
+        "poster": "screenshots/yoko-ono-interview.jpg"
+      }
+    ],
+    "interdisciplinary_art": [
+      {
+        "id": "yoko-ono-interview",
+        "title": "Yoko Ono — Interview",
+        "speaker": "Yoko Ono",
+        "url": "video-yoko-ono-interview.html",
+        "poster": "screenshots/yoko-ono-interview.jpg"
+      }
+    ],
+    "somatics": [
+      {
+        "id": "batson-minds-in-motion",
+        "title": "Minds in Motion — Glenna Batson",
+        "speaker": "Glenna Batson",
+        "url": "video-batson-minds-in-motion.html",
+        "poster": "screenshots/batson-minds-in-motion.jpg"
+      }
+    ],
+    "marlon": [
+      {
+        "id": "batson-minds-in-motion",
+        "title": "Minds in Motion — Glenna Batson",
+        "speaker": "Glenna Batson",
+        "url": "video-batson-minds-in-motion.html",
+        "poster": "screenshots/batson-minds-in-motion.jpg"
+      }
+    ]
+  }
+}

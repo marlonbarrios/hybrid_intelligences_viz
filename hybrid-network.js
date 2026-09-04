@@ -15,11 +15,12 @@ const CATEGORY_META = {
   domain:       { label: "Domains",        ring: 0.80 },
   framework:    { label: "Conceptual Models", ring: 0.87 },
   author:       { label: "Authors/Artists", ring: 0.95 },
+  video:        { label: "Videos",         ring: 0.98 },
 };
 
 const RING_ORDER = [
   "program", "organization", "premise", "participant", "background", "facilitator",
-  "practice", "tension", "quality", "phenomenon", "domain", "framework", "author",
+  "practice", "tension", "quality", "phenomenon", "domain", "framework", "author", "video",
 ];
 
 // Shared ring palette — identical in dark and light mode
@@ -31,6 +32,7 @@ const RING_COLORS = {
   phenomenon:   [168, 140, 228],
   domain:       [228, 130, 148],
   practice:     [240, 158,  96],
+  video:        [130, 195, 255],
   program:      [255, 178,  96],
   organization: [255, 140, 110],
   participant:  [255, 196, 140],
@@ -140,6 +142,7 @@ const HIVE_URL = "hive.html";
 const DAG_URL = "dag.html";
 const PATH_URL = "path.html";
 const ESSAYS_URL = "essays.html";
+const VIDEOS_URL = "videos.html";
 const ESSAY1_URL = "essay.html";
 const ESSAY2_URL = "essay-2.html";
 const ESSAY3_URL = "essay-3.html";
@@ -417,6 +420,19 @@ const RING_SOUNDS = {
     dur: 1.2,
     peak: 0.053,
     pan: [-0.3, 0.55],
+  },
+  video: {
+    label: "Videos",
+    hz: [196, 247, 311],
+    wave: "sine",
+    detune: 8,
+    brightness: 0.62,
+    space: 0.42,
+    warmth: 0.72,
+    drift: 0.28,
+    dur: 1.14,
+    peak: 0.05,
+    pan: [-0.35, 0.45],
   },
   author: {
     label: "Authors/Artists",
@@ -918,6 +934,12 @@ const NODES = [
   { id: "friston",            label: "Karl\nFriston",                 cat: "author",     weight: 1.2,
     desc: "Theoretical neuroscientist—architect of the free energy principle and active inference; frames brain, body, and behavior as variational Bayesian inference minimizing surprise.",
     url: "https://en.wikipedia.org/wiki/Karl_Friston", linkLabel: "Wikipedia ↗" },
+  { id: "levin",              label: "Michael\nLevin",                cat: "author",     weight: 1.2,
+    desc: "Developmental and synthetic biologist—diverse intelligences, basal cognition, morphogenesis, and intelligence distributed beyond brains in biological and synthetic systems.",
+    url: "https://en.wikipedia.org/wiki/Michael_Levin_(biologist)", linkLabel: "Wikipedia ↗" },
+  { id: "batson",             label: "Glenna\nBatson",                cat: "author",     weight: 1.1,
+    desc: "Dance scientist and somatic educator—minds in motion, embodied awareness, and the intelligence of the moving body in dance and hybrid practice.",
+    url: "https://en.wikipedia.org/wiki/Glenna_Batson", linkLabel: "Wikipedia ↗" },
 
   { id: "embodied",           label: "Embodied",                      cat: "quality",    weight: 1.3,
     desc: "Cognition depends on sensorimotor capacities of living bodies and their substrates." },
@@ -1010,6 +1032,10 @@ const NODES = [
     desc: "Narrative as a technology for sense-making—stories shape what can be remembered, felt, believed, and acted upon." },
   { id: "interdisciplinary_art", label: "Interdisciplinary\nArt",   cat: "domain",     weight: 1.4,
     desc: "Art that crosses disciplines—movement, sound, image, code, and institution woven into hybrid forms of inquiry." },
+  { id: "performance_art",    label: "Performance\nArt",              cat: "domain",     weight: 1.4,
+    desc: "Art enacted in and through the live body, duration, and audience—movement, gesture, voice, and presence as media; spans dance, theater, ritual, and intermedia events where meaning is co-produced in real time." },
+  { id: "visual_arts",        label: "Visual\nArts",                  cat: "domain",     weight: 1.4,
+    desc: "Art organized through sight—painting, sculpture, photography, installation, and new media; form, color, space, and image as fields of inquiry, curation, and public meaning." },
   { id: "generative_arts",    label: "Generative\nArts",              cat: "domain",     weight: 1.4,
     desc: "Art produced through systems with partial autonomy—algorithms, rules, chance, and computational processes that generate form, sound, movement, or image; spans pre-digital and digital practices and connects to generative AI as a contemporary extension of rule-based and learned creation.",
     url: "https://en.wikipedia.org/wiki/Generative_art", linkLabel: "Wikipedia ↗" },
@@ -1081,21 +1107,331 @@ const NODES = [
   { id: "hi_videos",          label: "Videos",                        cat: "practice",   weight: 1.5,
     desc: "The video publishing layer of the Hybrid Intelligences Hub. Talks and performances whose speech is ingested against the ontology — YouTube captions or Whisper transcription, then concept matching proposes edges for hybrid-network.js. The transcript stays internal; published pages show matched concepts and network links.",
     url: "videos.html", linkLabel: "Open videos →" },
-  { id: "video_hayles_integrated_cognition", label: "Hayles · ICF", cat: "practice",   weight: 1.45,
+  { id: "video_hayles_integrated_cognition", label: "Hayles ·\nICF", fullLabel: "Katherine Hayles — Consciousness Is Not Necessary for Cognition", cat: "video",   weight: 1.45,
     desc: "Katherine Hayles — Consciousness Is Not Necessary for Cognition. Podcast interview on the integrated cognitive framework, How We Became Posthuman, widening the circle of care, nonconscious cognition, holobionts, and human–AI relationality. Video on YouTube; ingest matches speech to ontology concepts.",
     url: "video-hayles-integrated-cognition.html", linkLabel: "Open video page →",
     watchUrl: "https://www.youtube.com/watch?v=W_W-yKNB6IU", watchLabel: "Watch on YouTube ↗",
     poster: "screenshots/hayles-integrated-cognition.jpg" },
-  { id: "video_hayles_bacteria_ai", label: "Hayles · Bacteria\nto AI", cat: "practice",   weight: 1.45,
+  { id: "video_hayles_bacteria_ai", label: "Hayles ·\nBacteria", fullLabel: "Katherine Hayles — Bacteria to AI (Urgent Futures)", cat: "video",   weight: 1.45,
     desc: "Katherine Hayles on Urgent Futures with Jesse Damiani (March 2025) — on Bacteria to AI: integrated cognitive framework (ICF), nonconscious cognition, distributed agency in cognitive assemblages, LLM Umwelten, sympoiesis, reversible internalities, and posthuman relationality. Video on YouTube; ingest matches speech to ontology concepts.",
     url: "video-hayles-bacteria-ai.html", linkLabel: "Open video page →",
     watchUrl: "https://www.youtube.com/watch?v=PGFNREZTXQQ", watchLabel: "Watch on YouTube ↗",
     poster: "screenshots/hayles-bacteria-ai.jpg" },
-  { id: "video_clark_experience_machine", label: "Clark · Predictive\nBrain", cat: "practice",   weight: 1.45,
+  { id: "video_clark_experience_machine", label: "Clark ·\nExperience", fullLabel: "Andy Clark — The Experience Machine (Predictive Brains)", cat: "video",   weight: 1.45,
     desc: "Andy Clark — The Experience Machine (Royal Institution). Lecture on predictive processing: brains as prediction machines, controlled hallucination, precision weighting, Karl Friston and active inference, computational psychiatry, chronic pain, placebo, and nudging the predictive brain. Video on YouTube; ingest matches speech to ontology concepts.",
     url: "video-clark-experience-machine.html", linkLabel: "Open video page →",
     watchUrl: "https://www.youtube.com/watch?v=A1Ghrd7NBtk", watchLabel: "Watch on YouTube ↗",
     poster: "screenshots/clark-experience-machine.jpg" },
+  { id: "video_ai_fluency_generative_ai", label: "Gen AI ·\nFluency", fullLabel: "What is generative AI? (Deep Dive) — AI Fluency", cat: "video",   weight: 1.4,
+    desc: "What is generative AI? (Deep Dive) — AI Fluency — AI Fluency Course. Lesson 3A from AI Fluency: Framework & Foundations — a deep dive on what generative AI is and how it works. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-ai-fluency-generative-ai.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=RyvXxApfHkk", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/ai-fluency-generative-ai.jpg" },
+  { id: "video_karla_expanding_possibilities", label: "Karla ·\nSpace", fullLabel: "Expanding the Space of Possibilities", cat: "video",   weight: 1.4,
+    desc: "Expanding the Space of Possibilities — Karla Saldaña Ochoa. Karla Saldaña Ochoa on architecture, AI, space, memory, and embodiment — expanding what hybrid creative practice can become. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-karla-expanding-possibilities.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=GDoYdJTCAKs", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/karla-expanding-possibilities.jpg" },
+  { id: "video_gallagher_4e_cognition", label: "Gallagher ·\n4E", fullLabel: "Prof. Shaun Gallagher on 4E Cognition", cat: "video",   weight: 1.4,
+    desc: "Prof. Shaun Gallagher on 4E Cognition — Shaun Gallagher. Shaun Gallagher on embodied, embedded, enactive, and extended cognition — 4E as a framework for mind, action, and the social world. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-gallagher-4e-cognition.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=IT0HDtARXto", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/gallagher-4e-cognition.jpg" },
+  { id: "video_privacy_illusion_ai_data", label: "Privacy ·\nIllusion", fullLabel: "The Privacy Illusion: AI, Data & Who Really Controls Your Information", cat: "video",   weight: 1.4,
+    desc: "The Privacy Illusion: AI, Data & Who Really Controls Your Information. On AI, data extraction, surveillance, and who actually controls personal information in the age of large-scale machine learning. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-privacy-illusion-ai-data.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=8UpCJrThLwo", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/privacy-illusion-ai-data.jpg" },
+  { id: "video_friston_brain_constructs_reality", label: "Friston ·\nReality", fullLabel: "How the brain constructs reality — Karl Friston on consciousness and neuroscience", cat: "video",   weight: 1.4,
+    desc: "How the brain constructs reality — Karl Friston on consciousness and neuroscience — Karl Friston. Karl Friston on predictive brains, the free energy principle, active inference, and how neural inference shapes conscious experience. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-friston-brain-constructs-reality.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=82T2Pmen3zU", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/friston-brain-constructs-reality.jpg" },
+  { id: "video_levin_diverse_intelligences", label: "Levin ·\nDiverse", fullLabel: "Diverse Intelligences: Origins, Possibilities, and Diseases of Minds", cat: "video",   weight: 1.4,
+    desc: "Diverse Intelligences: Origins, Possibilities, and Diseases of Minds — Michael Levin. Michael Levin on diverse intelligences beyond brains — morphogenesis, basal cognition, and new frontiers for minds biological and synthetic. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-levin-diverse-intelligences.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=-elegwQQOww", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/levin-diverse-intelligences.jpg" },
+  { id: "video_levin_intelligence_without_brains", label: "Levin ·\nNo Brain", fullLabel: "Intelligence Without Brains: A Radical New Idea", cat: "video",   weight: 1.4,
+    desc: "Intelligence Without Brains: A Radical New Idea — Michael Levin. Michael Levin on intelligence distributed beyond nervous systems — collective behavior, regeneration, and cognition in living systems. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-levin-intelligence-without-brains.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=J-HDHwEJ2z8", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/levin-intelligence-without-brains.jpg" },
+  { id: "video_thompson_embodied_cognition", label: "Thompson ·\nEmbodied", fullLabel: "BS 198 Embodied Cognition with Evan Thompson", cat: "video",   weight: 1.4,
+    desc: "BS 198 Embodied Cognition with Evan Thompson — Evan Thompson. Brain Science podcast — Evan Thompson on enactivism, lived experience, mindfulness, and embodied approaches to mind and life. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-thompson-embodied-cognition.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=wguCdqXCGpg", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/thompson-embodied-cognition.jpg" },
+  { id: "video_varela_god_computers", label: "Varela ·\nComputers", fullLabel: "Francisco Varela — God & Computers: Minds, Machines, and Metaphysics", cat: "video",   weight: 1.4,
+    desc: "Francisco Varela — God & Computers: Minds, Machines, and Metaphysics — Francisco Varela. A.I. Lab 1997 lecture series — Varela on enactivism, autopoiesis, cognition, and the metaphysics of minds and machines. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-varela-god-computers.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=xhS9ffDcLOk", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/varela-god-computers.jpg" },
+  { id: "video_mini_brains_150k", label: "150k ·\nMini-Brains", fullLabel: "Your Brain Is 150,000 Mini-Brains", cat: "video",   weight: 1.4,
+    desc: "Your Brain Is 150,000 Mini-Brains. On cortical columns, distributed neural computation, and how the brain organizes intelligence from many local processing units. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-mini-brains-150k.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=Dykkubb-Qus", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/mini-brains-150k.jpg" },
+  { id: "video_understanding_ai_inner_thoughts", label: "AI Inner\nThoughts", fullLabel: "Understanding the inner thoughts of AI", cat: "video",   weight: 1.4,
+    desc: "Understanding the inner thoughts of AI. On interpretability, model internals, and what we can know about how large AI systems represent and process information. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-understanding-ai-inner-thoughts.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=1DtMiRKg-cs", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/understanding-ai-inner-thoughts.jpg" },
+  { id: "video_visualizing_transformers_attention", label: "Transformers\n& Attention", fullLabel: "Visualizing transformers and attention", cat: "video",   weight: 1.4,
+    desc: "Visualizing transformers and attention. Talk for TNG Big Tech Day '24 — making transformer architectures and attention mechanisms visible and intuitive. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-visualizing-transformers-attention.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=KJtZARuO3JY", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/visualizing-transformers-attention.jpg" },
+  { id: "video_am_i_ai_consciousness_doc", label: "AM I?\nDocumentary", fullLabel: "AM I? — A Documentary About AI Consciousness", cat: "video",   weight: 1.4,
+    desc: "AM I? — A Documentary About AI Consciousness. Documentary exploring whether AI systems can be conscious — philosophy, neuroscience, and the politics of machine minds. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-am-i-ai-consciousness-doc.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=KbTvUOx2A6c", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/am-i-ai-consciousness-doc.jpg" },
+  { id: "video_creative_workers_ai_impact", label: "Creative\nWorkers", fullLabel: "How Creative Workers are Impacted by AI", cat: "video",   weight: 1.4,
+    desc: "How Creative Workers are Impacted by AI. On generative AI and creative labor — how artists, designers, and cultural workers navigate coupling with new tools. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-creative-workers-ai-impact.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=kj1SpD-YldQ", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/creative-workers-ai-impact.jpg" },
+  { id: "video_thinking_game_documentary", label: "Thinking\nGame", fullLabel: "The Thinking Game — Full Documentary", cat: "video",   weight: 1.4,
+    desc: "The Thinking Game — Full Documentary. Tribeca Film Festival official selection — documentary on AI research, ambition, and the humans building systems that think. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-thinking-game-documentary.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=d95J8yzvjbQ", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/thinking-game-documentary.jpg" },
+  { id: "video_noe_out_of_our_heads", label: "Noë ·\nOut of", fullLabel: "Out of Our Heads — Alva Noë", cat: "video",   weight: 1.4,
+    desc: "Out of Our Heads — Alva Noë — Alva Noë. Alva Noë on embodied cognition and consciousness — why mind is not confined to the brain, drawing on Out of Our Heads and enactive approaches to perception and action. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-noe-out-of-our-heads.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=af3Vq-C1ck8", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/noe-out-of-our-heads.jpg" },
+  { id: "video_aguilera_what_is_intelligence", label: "Arcas ·\nWhat is", fullLabel: "What is Intelligence? — Blaise Agüera y Arcas", cat: "video",   weight: 1.4,
+    desc: "What is Intelligence? — Blaise Agüera y Arcas — Blaise Agüera y Arcas. Blaise Agüera y Arcas on intelligence, evolution, symbiosis, and AI — Long Now Talk on possible minds and what counts as cognition in biological and synthetic systems. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-aguilera-what-is-intelligence.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=KhSJuqDUJME", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/aguilera-what-is-intelligence.jpg" },
+  { id: "video_mendieta_decolonial_feminist", label: "Mendieta ·\nDecolonial", fullLabel: "Ana Mendieta: Decolonialized Feminist and Artist", cat: "video",   weight: 1.4,
+    desc: "Ana Mendieta: Decolonialized Feminist and Artist — ana_mendieta. On Mendieta's body-earth works, feminist practice, and decolonial art. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-mendieta-decolonial-feminist.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=nVk4UBA6HGQ", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/mendieta-decolonial-feminist.jpg" },
+  { id: "video_escobar_pluriverse", label: "Escobar ·\nDesigns for", fullLabel: "Arturo Escobar — Designs for the Pluriverse", cat: "video",   weight: 1.4,
+    desc: "Arturo Escobar — Designs for the Pluriverse — escobar. Clark University Atwood Lecture on pluriversal design and alternatives to one-world modernity. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-escobar-pluriverse.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=8Ouy7aN6XPs", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/escobar-pluriverse.jpg" },
+  { id: "video_akomolafe_animism", label: "Akomolafe ·\nAnimism —", fullLabel: "Bayo Akomolafe — Animism — Bayo Akomolafe and Daniel Foor", cat: "video",   weight: 1.4,
+    desc: "Animism — Bayo Akomolafe and Daniel Foor — akomolafe. Conversation on animism, ecology, and worlds beyond extractive modernity. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-akomolafe-animism.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=5cuJnFZo_oA", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/akomolafe-animism.jpg" },
+  { id: "video_bell_hooks_speaking_freely", label: "hooks ·\nSpeaking Free…", fullLabel: "bell hooks — Speaking Freely — bell hooks", cat: "video",   weight: 1.4,
+    desc: "Speaking Freely — bell hooks — bell_hooks. bell hooks on love, freedom, pedagogy, and cultural critique. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-bell-hooks-speaking-freely.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=g2bmnwehlpA", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/bell-hooks-speaking-freely.jpg" },
+  { id: "video_sousa_santos_decolonising", label: "Santos ·\nDecolonising …", fullLabel: "Boaventura de Sousa Santos — Decolonising the Curriculum", cat: "video",   weight: 1.4,
+    desc: "Boaventura de Sousa Santos — Decolonising the Curriculum — sousa_santos. Epistemologies of the South and decolonial approaches to knowledge and university practice. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-sousa-santos-decolonising.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=HIjbgX7lY4M", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/sousa-santos-decolonising.jpg" },
+  { id: "video_latour_once_out_of_nature", label: "Latour ·\nOnce Out", fullLabel: "Bruno Latour — Once Out of Nature", cat: "video",   weight: 1.4,
+    desc: "Bruno Latour — Once Out of Nature — latour. Natural religion, ecology of practices, and rethinking nature in the Anthropocene. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-latour-once-out-of-nature.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=MC3E6vdQEzk", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/latour-once-out-of-nature.jpg" },
+  { id: "video_chalmers_talking_to_ai", label: "Chalmers ·\nWhen We", fullLabel: "David Chalmers — When We Talk to AI, What Are We Talking To?", cat: "video",   weight: 1.4,
+    desc: "David Chalmers — When We Talk to AI, What Are We Talking To? — chalmers. UC Berkeley — consciousness, philosophy of mind, and large language models. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-chalmers-talking-to-ai.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=uUjJOMcNU9w", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/chalmers-talking-to-ai.jpg" },
+  { id: "video_kirsh_thinking_with_body", label: "Kirsh ·\nThinking and", fullLabel: "David Kirsh — Thinking and Creating with the Body", cat: "video",   weight: 1.4,
+    desc: "David Kirsh — Thinking and Creating with the Body — kirsh. Extended and embodied cognition — how bodies think, arrange, and create in the world. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-kirsh-thinking-with-body.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=NOrkD7koecg", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/kirsh-thinking-with-body.jpg" },
+  { id: "video_haraway_chthulucene", label: "Haraway ·\nStaying with", fullLabel: "Donna Haraway — Staying with the Trouble", cat: "video",   weight: 1.4,
+    desc: "Donna Haraway — Staying with the Trouble — haraway. Making kin in the Chthulucene — multispecies response-ability and posthuman futures. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-haraway-chthulucene.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=GrYA7sMQaBQ", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/haraway-chthulucene.jpg" },
+  { id: "video_rosch_prototype_cognition", label: "Rosch ·\nPrototype Cog…", fullLabel: "Eleanor Rosch — Prototype Cognition", cat: "video",   weight: 1.4,
+    desc: "Eleanor Rosch — Prototype Cognition — rosch. Why a robin is more of a bird than a penguin — prototypes, categories, and embodied mind. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-rosch-prototype-cognition.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=cL2Z2cJlcJ0", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/rosch-prototype-cognition.jpg" },
+  { id: "video_cuffari_linguistic_bodies", label: "Cuffari ·\nLinguistic Bo…", fullLabel: "Elena Clare Cuffari — Linguistic Bodies", cat: "video",   weight: 1.4,
+    desc: "Elena Clare Cuffari — Linguistic Bodies — cuffari. Enactivist linguistics — language as participatory sense-making between bodies. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-cuffari-linguistic-bodies.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=mJxtO6am5ZI", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/cuffari-linguistic-bodies.jpg" },
+  { id: "video_di_paolo_enactivism", label: "Paolo ·\nOntologizing …", fullLabel: "Ezequiel Di Paolo — Ontologizing Enactivism", cat: "video",   weight: 1.4,
+    desc: "Ezequiel Di Paolo — Ontologizing Enactivism — di_paolo. Dialogue on enactivism, worldmaking, and the ontology of living cognition. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-di-paolo-enactivism.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=c1_0RnN_1xM", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/di-paolo-enactivism.jpg" },
+  { id: "video_fanon_colonization_mind", label: "Fanon ·\nColonization …", fullLabel: "Frantz Fanon — Colonization and the Mind", cat: "video",   weight: 1.4,
+    desc: "Frantz Fanon — Colonization and the Mind — fanon. On Fanon's analysis of colonial violence, psychiatry, and liberation. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-fanon-colonization-mind.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=M0_AUXD-1bc", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/fanon-colonization-mind.jpg" },
+  { id: "video_bateson_ecology_of_mind", label: "Bateson ·\nEcology of", fullLabel: "Gregory Bateson — Ecology of Mind", cat: "video",   weight: 1.4,
+    desc: "Gregory Bateson — Ecology of Mind — bateson. Introduction to Bateson's ecology of mind — systems, learning, and relational cognition. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-bateson-ecology-of-mind.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=KePJVhhOELA", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/bateson-ecology-of-mind.jpg" },
+  { id: "video_de_jaegher_participatory_sense", label: "Jaegher ·\nParticipatory…", fullLabel: "Hanne De Jaegher — Participatory Sense-Making", cat: "video",   weight: 1.4,
+    desc: "Hanne De Jaegher — Participatory Sense-Making — de_jaegher. Introduction to participatory sense-making and social enaction. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-de-jaegher-participatory-sense.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=AiFuQD-ZWy4", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/de-jaegher-participatory-sense.jpg" },
+  { id: "video_maturana_interview", label: "Maturana ·\nInterview", fullLabel: "Humberto Maturana — Interview", cat: "video",   weight: 1.4,
+    desc: "Humberto Maturana — Interview — maturana. Autopoiesis, cognition, and the biology of knowing. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-maturana-interview.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=fQFlceVouPA", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/maturana-interview.jpg" },
+  { id: "video_uexkuell_umwelt", label: "Uexküll ·\nUmwelt and", fullLabel: "Jakob von Uexküll — Umwelt and Biosemiotics", cat: "video",   weight: 1.4,
+    desc: "Jakob von Uexküll — Umwelt and Biosemiotics — uexkuell. Introduction to Umwelt theory and the organism's meaningful world. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-uexkuell-umwelt.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=G_0jJfliUvQ", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/uexkuell-umwelt.jpg" },
+  { id: "video_gibson_ecological_psychology", label: "Gibson ·\nEcological Ps…", fullLabel: "James J. Gibson — Ecological Psychology", cat: "video",   weight: 1.4,
+    desc: "James J. Gibson — Ecological Psychology — gibson. Affordances, direct perception, and the ecological approach to psychology. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-gibson-ecological-psychology.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=fmPD0xF766k", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/gibson-ecological-psychology.jpg" },
+  { id: "video_cage_433_lifetime", label: "Cage ·\n4'33\" and", fullLabel: "John Cage — 4'33\" and a Lifetime of Music", cat: "video",   weight: 1.4,
+    desc: "John Cage — 4'33\" and a Lifetime of Music — cage. Chance operations, silence, and indeterminacy as perceptual and compositional method. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-cage-433-lifetime.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=Y7q8iQPxLBY", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/cage-433-lifetime.jpg" },
+  { id: "video_munoz_queer_utopianism", label: "Muñoz ·\nQueer Utopian…", fullLabel: "José Esteban Muñoz — Queer Utopianism", cat: "video",   weight: 1.4,
+    desc: "José Esteban Muñoz — Queer Utopianism — munoz. Cruising utopia, performance, and queer futurity against the tyranny of the present. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-munoz-queer-utopianism.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=DHLxmCe4GpI", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/munoz-queer-utopianism.jpg" },
+  { id: "video_barad_meeting_universe", label: "Barad ·\nMeeting the", fullLabel: "Karen Barad — Meeting the Universe Halfway", cat: "video",   weight: 1.4,
+    desc: "Karen Barad — Meeting the Universe Halfway — barad. Agential realism, intra-action, and quantum physics as philosophy of matter. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-barad-meeting-universe.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=JQlZAyAjcZQ", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/barad-meeting-universe.jpg" },
+  { id: "video_crawford_ai_planet", label: "Crawford ·\nAI and", fullLabel: "Kate Crawford — AI and the Planet", cat: "video",   weight: 1.4,
+    desc: "Kate Crawford — AI and the Planet — crawford. Atlas of AI — extraction, energy, labor, and the material politics of machine learning. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-crawford-ai-planet.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=tuqEro3NPaI", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/crawford-ai-planet.jpg" },
+  { id: "video_malafouris_embodied_patterns", label: "Malafouris ·\nEmbodied Patt…", fullLabel: "Lambros Malafouris — Embodied Patterns", cat: "video",   weight: 1.4,
+    desc: "Lambros Malafouris — Embodied Patterns — malafouris. Material engagement — how things shape minds and cognitive archaeology of making. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-malafouris-embodied-patterns.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=n1BH4tdSvds", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/malafouris-embodied-patterns.jpg" },
+  { id: "video_shapiro_embodied_cognition", label: "Shapiro ·\nEmbodied Cogn…", fullLabel: "Lawrence Shapiro — Embodied Cognition", cat: "video",   weight: 1.4,
+    desc: "Lawrence Shapiro — Embodied Cognition — shapiro. Full interview on embodied cognition and the body as constraint and resource for mind. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-shapiro-embodied-cognition.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=aJ6FY8oOwJE", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/shapiro-embodied-cognition.jpg" },
+  { id: "video_leigh_bowery_tate", label: "Bowery ·\nTate Highligh…", fullLabel: "Leigh Bowery — Tate Highlights", cat: "video",   weight: 1.4,
+    desc: "Leigh Bowery — Tate Highlights — leigh_bowery. Performance, fashion, and club culture as radical embodiment and social sculpture. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-leigh-bowery-tate.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=8r4GwWAQN8s", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/leigh-bowery-tate.jpg" },
+  { id: "video_margulis_symbiotic_earth", label: "Margulis ·\nSymbiotic Ear…", fullLabel: "Lynn Margulis — Symbiotic Earth", cat: "video",   weight: 1.4,
+    desc: "Lynn Margulis — Symbiotic Earth — margulis. Graduate seminar footage — symbiosis, holobionts, and evolution as cooperative process. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-margulis-symbiotic-earth.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=AJSENoONB10", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/margulis-symbiotic-earth.jpg" },
+  { id: "video_duchamp_art_dada", label: "Duchamp ·\nArt and", fullLabel: "Marcel Duchamp — Art and Dada (1956)", cat: "video",   weight: 1.4,
+    desc: "Marcel Duchamp — Art and Dada (1956) — duchamp. Archive interview on readymades, choice, and conceptual art. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-duchamp-art-dada.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=Wuf_GHmjxLM", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/duchamp-art-dada.jpg" },
+  { id: "video_boden_creativity_ai", label: "Boden ·\nCreativity &", fullLabel: "Margaret Boden — Creativity & AI", cat: "video",   weight: 1.4,
+    desc: "Margaret Boden — Creativity & AI — boden. Creativity as novelty plus value — combinational, exploratory, and transformational forms in AI and art. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-boden-creativity-ai.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=5dEXIOiAsaw", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/boden-creativity-ai.jpg" },
+  { id: "video_merleau_ponty_phenomenology", label: "MerleauPonty ·\nMerleau-Ponty…", fullLabel: "Maurice Merleau-Ponty — Merleau-Ponty — Phenomenology of Perception", cat: "video",   weight: 1.4,
+    desc: "Merleau-Ponty — Phenomenology of Perception — merleau_ponty. Lived body, perception, and phenomenological approaches to embodied experience. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-merleau-ponty-phenomenology.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=JFj8kWm_N-Y", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/merleau-ponty-phenomenology.jpg" },
+  { id: "video_foucault_prison_1975", label: "Foucault ·\nWe Live", fullLabel: "Michel Foucault — We Live in a Prison (1975)", cat: "video",   weight: 1.4,
+    desc: "Michel Foucault — We Live in a Prison (1975) — foucault. Archive footage on power, discipline, and institutions that shape what can be known and done. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-foucault-prison-1975.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=kQsoX_Yv0hE", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/foucault-prison-1975.jpg" },
+  { id: "video_shanahan_consciousness_ai", label: "Shanahan ·\nConsciousness…", fullLabel: "Murray Shanahan — Consciousness and AI", cat: "video",   weight: 1.4,
+    desc: "Murray Shanahan — Consciousness and AI — shanahan. Philosophy of AI, consciousness, and reasoning in artificial systems. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-shanahan-consciousness-ai.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=v1Py_hWcmkU", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/shanahan-consciousness-ai.jpg" },
+  { id: "video_nagarjuna_emptiness", label: "Ngrjuna ·\nPhilosophy of", fullLabel: "Nāgārjuna — Philosophy of Emptiness", cat: "video",   weight: 1.4,
+    desc: "Nāgārjuna — Philosophy of Emptiness — nagarjuna. Thupten Jinpa on Madhyamaka emptiness and why it matters for cognition and reality. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-nagarjuna-emptiness.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=awzUd3wzTCM", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/nagarjuna-emptiness.jpg" },
+  { id: "video_butler_parable_climate", label: "Butler ·\nParable and", fullLabel: "Octavia Butler — Parable and Climate Chaos", cat: "video",   weight: 1.4,
+    desc: "Octavia Butler — Parable and Climate Chaos — butler. Butler on Parable books, Afrofuturism, and imagining futures under ecological collapse. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-butler-parable-climate.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=sv5m3tnT9wk", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/butler-parable-climate.jpg" },
+  { id: "video_freire_incredible_conversation", label: "Freire ·\nAn Incredible", fullLabel: "Paulo Freire — An Incredible Conversation", cat: "video",   weight: 1.4,
+    desc: "Paulo Freire — An Incredible Conversation — freire. Archive conversation on pedagogy of the oppressed, literacy, and freedom as practice. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-freire-incredible-conversation.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=aFWjnkFypFA", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/freire-incredible-conversation.jpg" },
+  { id: "video_wilson_state_space", label: "Wilson ·\nState Space", fullLabel: "Robert A. Wilson — State Space Theory", cat: "video",   weight: 1.4,
+    desc: "Robert A. Wilson — State Space Theory — wilson. MIND 2019 — extended mind, boundaries of cognition, and philosophical psychology. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-wilson-state-space.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=u1qWPYQHsvo", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/wilson-state-space.jpg" },
+  { id: "video_brooks_humanoid_robots", label: "Brooks ·\nHumanoid Robo…", fullLabel: "Rodney Brooks — Humanoid Robots and AI Hype", cat: "video",   weight: 1.4,
+    desc: "Rodney Brooks — Humanoid Robots and AI Hype — brooks. Subsumption architecture, embodied robotics, and intelligence without representation. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-brooks-humanoid-robots.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=6qxO13-3-Gk", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/brooks-humanoid-robots.jpg" },
+  { id: "video_braidotti_posthuman_knowledge", label: "Braidotti ·\nPosthuman Kno…", fullLabel: "Rosi Braidotti — Posthuman Knowledge", cat: "video",   weight: 1.4,
+    desc: "Rosi Braidotti — Posthuman Knowledge — braidotti. Posthuman subjectivity, nomadic theory, and knowledge after the human. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-braidotti-posthuman-knowledge.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=0CewnVzOg5w", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/braidotti-posthuman-knowledge.jpg" },
+  { id: "video_saul_leiter_color", label: "Leiter ·\nLife and Work", fullLabel: "Saul Leiter — Life and Work", cat: "video",   weight: 1.4,
+    desc: "Saul Leiter — Life and Work — saul_leiter. Color street photography, painterly vision, and everyday urban perception. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-saul-leiter-color.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=RbtnUY7j__A", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/saul-leiter-color.jpg" },
+  { id: "video_paxton_contact_improv", label: "Paxton ·\nContact Impro…", fullLabel: "Steve Paxton — Contact Improvisation", cat: "video",   weight: 1.4,
+    desc: "Steve Paxton — Contact Improvisation — steve_paxton. Contact improvisation, weight-sharing, and democratic intelligence of bodies in motion. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-paxton-contact-improv.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=O3wgG1qPRTY", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/paxton-contact-improv.jpg" },
+  { id: "video_trisha_brown_intensive", label: "Brown ·\nTrisha Brown", fullLabel: "Trisha Brown Dance Company — Summer Intensive", cat: "video",   weight: 1.4,
+    desc: "Trisha Brown Dance Company — Summer Intensive — trisha_brown. Postmodern dance, ordinary movement, and somatic intelligence in choreography. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-trisha-brown-intensive.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=zPOMha3cIzo", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/trisha-brown-intensive.jpg" },
+  { id: "video_vera_molnar_generative", label: "Molnár ·\nLife and Work", fullLabel: "Vera Molnár — Life and Work", cat: "video",   weight: 1.4,
+    desc: "Vera Molnár — Life and Work — vera_molnar. Pioneer of computer and generative art — algorithms, chance, and systematic creativity. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-vera-molnar-generative.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=8tNESHtfkr0", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/vera-molnar-generative.jpg" },
+  { id: "video_forsythe_imagining_lines", label: "Forsythe ·\nImagining Lin…", fullLabel: "William Forsythe — Imagining Lines", cat: "video",   weight: 1.4,
+    desc: "William Forsythe — Imagining Lines — forsythe. Choreographic objects, lines, and movement as distributed cognition. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-forsythe-imagining-lines.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=6X29OjcBHG8", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/forsythe-imagining-lines.jpg" },
+  { id: "video_yoko_ono_interview", label: "Ono ·\nInterview", fullLabel: "Yoko Ono — Interview", cat: "video",   weight: 1.4,
+    desc: "Yoko Ono — Interview — yoko_ono. Fluxus, instruction pieces, and art as participatory worldmaking. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-yoko-ono-interview.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=o2cA9kGjoHc", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/yoko-ono-interview.jpg" },
+  { id: "video_batson_minds_in_motion", label: "Batson ·\nMinds", fullLabel: "Minds in Motion — Glenna Batson", cat: "video",   weight: 1.4,
+    desc: "Minds in Motion — Glenna Batson — Glenna Batson. Conversation on somatic awareness, movement science, and minds in motion — dance, embodiment, and the intelligence of the moving body. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-batson-minds-in-motion.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=gQxpRLup3w4", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/batson-minds-in-motion.jpg" },
+  { id: "video_forsythe_synchronous_objects_hellerau", label: "Forsythe ·\nSync Objects", fullLabel: "William Forsythe on Synchronous Objects, The Hellerau in Dresden, Germany", cat: "video",   weight: 1.4,
+    desc: "William Forsythe on Synchronous Objects at The Hellerau in Dresden, Germany — choreographic objects, data visualization, and the Motion Bank as distributed movement knowledge. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-forsythe-synchronous-objects-hellerau.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=xqlq3q5RMrc", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/forsythe-synchronous-objects-hellerau.jpg" },
   { id: "essay_1",            label: "Essay 1",                        cat: "practice",   weight: 1.55,
     desc: "Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI — Essay 1 by Marlon Barrios Solano (July 10, 2026). Traces a lineage from Unstablelandscape (early 2000s real-time dance–technology) through Essay 4 (2005) to generative AI. Develops intelligence as coupling, embodiment as nested ecology, and cognition as distributed across assemblages. Performative architecture and affordances; Brooks's embodied robotics and Hayles's cognitive nonconscious; Paxton, Forsythe's choreographic object, and Synchronous Objects; juggling as reflex training. First-person argument that hybrid intelligence extends designed cognitive systems into language models and cognitive architectures.",
     url: "essay.html", linkLabel: "Read Essay 1 →" },
@@ -1407,6 +1743,8 @@ const WIKIPEDIA = {
   music: "Music",
   storytelling: "Storytelling",
   interdisciplinary_art: "Interdisciplinary_arts",
+  performance_art: "Performance_art",
+  visual_arts: "Visual_arts",
   generative_arts: "Generative_art",
   ai_art: "Artificial_intelligence_art",
   pedagogy: "Pedagogy",
@@ -2335,6 +2673,7 @@ const EDGES = [
   ["choreography_d", "choreography", 0.9],
   ["dance", "choreography_d", 0.9],
   ["dance", "choreography", 0.85],
+  ["dance", "performance_art", 0.85],
   ["dance", "choreo_knowledge", 0.75],
   ["dance", "somatics", 0.8],
   ["dance", "interdisciplinary_art", 0.75],
@@ -2362,6 +2701,24 @@ const EDGES = [
   ["interdisciplinary_art", "cam", 0.85],
   ["interdisciplinary_art", "turbado_marabou", 0.85],
   ["interdisciplinary_art", "hi_program", 0.75],
+  ["interdisciplinary_art", "performance_art", 0.85],
+  ["interdisciplinary_art", "visual_arts", 0.85],
+  ["performance_art", "art", 0.9],
+  ["performance_art", "dance", 0.9],
+  ["performance_art", "choreography_d", 0.85],
+  ["performance_art", "choreography", 0.85],
+  ["performance_art", "creative_embodiment", 0.85],
+  ["performance_art", "somatics", 0.8],
+  ["performance_art", "body", 0.8],
+  ["performance_art", "creative", 0.85],
+  ["performance_art", "visual_arts", 0.8],
+  ["performance_art", "fluxus", 0.85],
+  ["visual_arts", "art", 0.95],
+  ["visual_arts", "curation", 0.85],
+  ["visual_arts", "generative_arts", 0.85],
+  ["visual_arts", "ai_art", 0.8],
+  ["visual_arts", "creative", 0.85],
+  ["visual_arts", "creative_embodiment", 0.75],
   ["generative_arts", "art", 0.95],
   ["generative_arts", "creative", 0.9],
   ["generative_arts", "creativity", 0.9],
@@ -2435,6 +2792,7 @@ const EDGES = [
   ["art_medicine", "andrew_hix", 0.9],
 
   ["curation", "art", 0.9],
+  ["curation", "visual_arts", 0.85],
   ["curation", "motion_bank", 0.9],
   ["curation", "interdisciplinary_art", 0.85],
   ["curation", "storytelling", 0.8],
@@ -2454,6 +2812,7 @@ const EDGES = [
   ["duchamp", "art", 0.95],
   ["duchamp", "creative", 0.9],
   ["duchamp", "curation", 0.9],
+  ["duchamp", "visual_arts", 0.95],
   ["duchamp", "interdisciplinary_art", 0.85],
   ["duchamp", "intellectual_property", 0.85],
   ["duchamp", "abstraction", 0.8],
@@ -2463,6 +2822,7 @@ const EDGES = [
   ["duchamp", "fluxus", 0.9],
 
   ["saul_leiter", "art", 0.95],
+  ["saul_leiter", "visual_arts", 0.95],
   ["saul_leiter", "creative", 0.85],
   ["saul_leiter", "abstraction", 0.9],
   ["saul_leiter", "creative_embodiment", 0.8],
@@ -2473,6 +2833,7 @@ const EDGES = [
   ["saul_leiter", "duchamp", 0.7],
   ["saul_leiter", "cage", 0.75],
   ["vera_molnar", "generative_arts", 0.95],
+  ["vera_molnar", "visual_arts", 0.9],
   ["vera_molnar", "creativity", 0.9],
   ["vera_molnar", "art", 0.9],
   ["vera_molnar", "creative", 0.85],
@@ -2490,6 +2851,8 @@ const EDGES = [
   ["vera_molnar", "curation", 0.8],
 
   ["ana_mendieta", "art", 0.95],
+  ["ana_mendieta", "performance_art", 0.95],
+  ["ana_mendieta", "visual_arts", 0.85],
   ["ana_mendieta", "creative", 0.9],
   ["ana_mendieta", "creative_embodiment", 0.95],
   ["ana_mendieta", "embodiment", 0.9],
@@ -2517,6 +2880,7 @@ const EDGES = [
   ["ana_mendieta", "leigh_bowery", 0.7],
 
   ["leigh_bowery", "art", 0.95],
+  ["leigh_bowery", "performance_art", 0.95],
   ["leigh_bowery", "creative", 0.9],
   ["leigh_bowery", "queer_theory", 0.95],
   ["leigh_bowery", "munoz", 0.9],
@@ -2544,6 +2908,7 @@ const EDGES = [
 
   ["cage", "music", 0.95],
   ["cage", "art", 0.85],
+  ["cage", "performance_art", 0.9],
   ["cage", "creative", 0.9],
   ["cage", "enacted", 0.85],
   ["cage", "rehearsal", 0.8],
@@ -2552,6 +2917,7 @@ const EDGES = [
   ["cage", "fluxus", 0.95],
 
   ["yoko_ono", "art", 0.9],
+  ["yoko_ono", "performance_art", 0.9],
   ["yoko_ono", "interdisciplinary_art", 0.9],
   ["yoko_ono", "creative", 0.85],
   ["yoko_ono", "community", 0.8],
@@ -2560,6 +2926,7 @@ const EDGES = [
   ["yoko_ono", "fluxus", 0.95],
 
   ["trisha_brown", "dance", 0.95],
+  ["trisha_brown", "performance_art", 0.9],
   ["trisha_brown", "choreography_d", 0.95],
   ["trisha_brown", "choreography", 0.95],
   ["trisha_brown", "choreo_knowledge", 0.7],
@@ -2575,6 +2942,7 @@ const EDGES = [
 
   ["steve_paxton", "judson_church", 0.95],
   ["steve_paxton", "trisha_brown", 0.95],
+  ["steve_paxton", "performance_art", 0.9],
   ["steve_paxton", "dance", 0.95],
   ["steve_paxton", "choreography", 0.95],
   ["steve_paxton", "choreography_d", 0.95],
@@ -3060,6 +3428,7 @@ const EDGES = [
   ["bell_hooks", "braidotti", 0.75],
 
   ["munoz", "futurity", 0.95],
+  ["munoz", "performance_art", 0.85],
   ["munoz", "speculative_futures", 0.9],
   ["munoz", "cultural_imagination", 0.9],
   ["munoz", "track_future", 0.85],
@@ -3221,6 +3590,8 @@ const EDGES = [
   ["fluxus", "cage", 0.95],
   ["fluxus", "yoko_ono", 0.95],
   ["fluxus", "duchamp", 0.9],
+  ["fluxus", "performance_art", 0.9],
+  ["fluxus", "visual_arts", 0.85],
   ["fluxus", "art", 0.9],
   ["fluxus", "creative", 0.9],
   ["fluxus", "interdisciplinary_art", 0.95],
@@ -3400,6 +3771,18 @@ const EDGES = [
   ["friston", "synthetic_cognition", 0.8],
   ["friston", "physical_ai", 0.75],
   ["friston", "ai", 0.75],
+  ["levin", "synthetic_cognition", 0.95],
+  ["levin", "distributed", 0.9],
+  ["levin", "holobiont", 0.88],
+  ["levin", "symbiosis", 0.85],
+  ["levin", "consciousness", 0.82],
+  ["levin", "margulis", 0.85],
+  ["levin", "ai", 0.8],
+  ["batson", "somatics", 0.95],
+  ["batson", "dance", 0.92],
+  ["batson", "embodiment", 0.9],
+  ["batson", "body", 0.88],
+  ["batson", "marlon", 0.85],
   ["friston", "possible_minds", 0.75],
   ["friston", "brooks", 0.7],
 
@@ -3649,9 +4032,70 @@ const EDGES = [
   ["hi_videos", "creative_embodiment", 0.85],
   ["hi_videos", "coupling", 0.82],
   ["mini_pod", "hi_videos", 0.75],
-  ["hi_videos", "video_hayles_integrated_cognition", 0.98],
-  ["hi_videos", "video_hayles_bacteria_ai", 0.98],
-  ["hi_videos", "video_clark_experience_machine", 0.98],
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   ["video_hayles_integrated_cognition", "hayles", 0.98],
   ["video_hayles_integrated_cognition", "llm", 0.88],
   ["video_hayles_integrated_cognition", "gen_ai", 0.86],
@@ -3685,6 +4129,269 @@ const EDGES = [
   ["video_clark_experience_machine", "extended", 0.82],
   ["video_clark_experience_machine", "consciousness", 0.8],
   ["video_clark_experience_machine", "coupling", 0.78],
+  ["video_ai_fluency_generative_ai", "gen_ai", 0.95],
+  ["video_ai_fluency_generative_ai", "llm", 0.92],
+  ["video_ai_fluency_generative_ai", "ai", 0.88],
+  ["video_ai_fluency_generative_ai", "machine_learning", 0.85],
+  ["video_karla_expanding_possibilities", "karla", 0.98],
+  ["video_karla_expanding_possibilities", "architecture", 0.92],
+  ["video_karla_expanding_possibilities", "creative_embodiment", 0.88],
+  ["video_karla_expanding_possibilities", "ai", 0.85],
+  ["video_karla_expanding_possibilities", "track_space", 0.85],
+  ["video_gallagher_4e_cognition", "gallagher", 0.98],
+  ["video_gallagher_4e_cognition", "4e", 0.95],
+  ["video_gallagher_4e_cognition", "embodied", 0.9],
+  ["video_gallagher_4e_cognition", "enactivism", 0.88],
+  ["video_gallagher_4e_cognition", "extended", 0.85],
+  ["video_privacy_illusion_ai_data", "crawford", 0.98],
+  ["video_privacy_illusion_ai_data", "ai", 0.88],
+  ["video_privacy_illusion_ai_data", "llm", 0.82],
+  ["video_privacy_illusion_ai_data", "track_ethics", 0.9],
+  ["video_privacy_illusion_ai_data", "epistemology", 0.78],
+  ["video_friston_brain_constructs_reality", "friston", 0.98],
+  ["video_friston_brain_constructs_reality", "active_inference", 0.95],
+  ["video_friston_brain_constructs_reality", "consciousness", 0.9],
+  ["video_friston_brain_constructs_reality", "clark", 0.85],
+  ["video_friston_brain_constructs_reality", "embodied", 0.82],
+  ["video_levin_diverse_intelligences", "levin", 0.98],
+  ["video_levin_diverse_intelligences", "synthetic_cognition", 0.9],
+  ["video_levin_diverse_intelligences", "distributed", 0.88],
+  ["video_levin_diverse_intelligences", "holobiont", 0.85],
+  ["video_levin_diverse_intelligences", "symbiosis", 0.85],
+  ["video_levin_diverse_intelligences", "consciousness", 0.8],
+  ["video_levin_intelligence_without_brains", "levin", 0.98],
+  ["video_levin_intelligence_without_brains", "synthetic_cognition", 0.92],
+  ["video_levin_intelligence_without_brains", "distributed", 0.9],
+  ["video_levin_intelligence_without_brains", "holobiont", 0.85],
+  ["video_levin_intelligence_without_brains", "margulis", 0.82],
+  ["video_levin_intelligence_without_brains", "ai", 0.78],
+  ["video_thompson_embodied_cognition", "thompson", 0.98],
+  ["video_thompson_embodied_cognition", "enactivism", 0.95],
+  ["video_thompson_embodied_cognition", "4e", 0.92],
+  ["video_thompson_embodied_cognition", "embodied", 0.9],
+  ["video_thompson_embodied_cognition", "friston", 0.85],
+  ["video_varela_god_computers", "varela", 0.98],
+  ["video_varela_god_computers", "enactivism", 0.95],
+  ["video_varela_god_computers", "autopoiesis", 0.9],
+  ["video_varela_god_computers", "4e", 0.88],
+  ["video_varela_god_computers", "essay_4", 0.82],
+  ["video_mini_brains_150k", "neural_networks", 0.9],
+  ["video_mini_brains_150k", "distributed", 0.88],
+  ["video_mini_brains_150k", "embodied", 0.82],
+  ["video_mini_brains_150k", "consciousness", 0.78],
+  ["video_understanding_ai_inner_thoughts", "ai_interpretability", 0.95],
+  ["video_understanding_ai_inner_thoughts", "llm", 0.9],
+  ["video_understanding_ai_inner_thoughts", "neural_networks", 0.88],
+  ["video_understanding_ai_inner_thoughts", "aguilera_arcas", 0.82],
+  ["video_visualizing_transformers_attention", "transformers", 0.98],
+  ["video_visualizing_transformers_attention", "llm", 0.92],
+  ["video_visualizing_transformers_attention", "neural_networks", 0.9],
+  ["video_visualizing_transformers_attention", "machine_learning", 0.88],
+  ["video_am_i_ai_consciousness_doc", "consciousness", 0.95],
+  ["video_am_i_ai_consciousness_doc", "chalmers", 0.98],
+  ["video_am_i_ai_consciousness_doc", "ai", 0.9],
+  ["video_am_i_ai_consciousness_doc", "synthetic_cognition", 0.85],
+  ["video_creative_workers_ai_impact", "creative_ai", 0.92],
+  ["video_creative_workers_ai_impact", "creative", 0.9],
+  ["video_creative_workers_ai_impact", "gen_ai", 0.88],
+  ["video_creative_workers_ai_impact", "creative_embodiment", 0.85],
+  ["video_thinking_game_documentary", "ai", 0.92],
+  ["video_thinking_game_documentary", "possible_minds", 0.88],
+  ["video_thinking_game_documentary", "shanahan", 0.98],
+  ["video_thinking_game_documentary", "agi", 0.82],
+  ["video_noe_out_of_our_heads", "noe", 0.98],
+  ["video_noe_out_of_our_heads", "embodied", 0.95],
+  ["video_noe_out_of_our_heads", "enactivism", 0.92],
+  ["video_noe_out_of_our_heads", "4e", 0.88],
+  ["video_noe_out_of_our_heads", "consciousness", 0.85],
+  ["video_aguilera_what_is_intelligence", "aguilera_arcas", 0.98],
+  ["video_aguilera_what_is_intelligence", "possible_minds", 0.95],
+  ["video_aguilera_what_is_intelligence", "ai", 0.92],
+  ["video_aguilera_what_is_intelligence", "symbiosis", 0.88],
+  ["video_aguilera_what_is_intelligence", "holobiont", 0.85],
+  ["video_mendieta_decolonial_feminist", "ana_mendieta", 0.98],
+  ["video_mendieta_decolonial_feminist", "art", 0.88],
+  ["video_mendieta_decolonial_feminist", "creative_embodiment", 0.88],
+  ["video_mendieta_decolonial_feminist", "body", 0.88],
+  ["video_escobar_pluriverse", "escobar", 0.98],
+  ["video_escobar_pluriverse", "pluriversal", 0.88],
+  ["video_escobar_pluriverse", "design_thinking", 0.88],
+  ["video_escobar_pluriverse", "cultural_critical", 0.88],
+  ["video_akomolafe_animism", "akomolafe", 0.98],
+  ["video_akomolafe_animism", "cultural_critical", 0.88],
+  ["video_akomolafe_animism", "hybrid", 0.88],
+  ["video_akomolafe_animism", "philosophy", 0.88],
+  ["video_bell_hooks_speaking_freely", "bell_hooks", 0.98],
+  ["video_bell_hooks_speaking_freely", "cultural_critical", 0.88],
+  ["video_bell_hooks_speaking_freely", "pedagogy", 0.88],
+  ["video_bell_hooks_speaking_freely", "freire", 0.88],
+  ["video_sousa_santos_decolonising", "sousa_santos", 0.98],
+  ["video_sousa_santos_decolonising", "epistemologies_south", 0.88],
+  ["video_sousa_santos_decolonising", "epistemology", 0.88],
+  ["video_sousa_santos_decolonising", "freire", 0.88],
+  ["video_latour_once_out_of_nature", "latour", 0.98],
+  ["video_latour_once_out_of_nature", "assemblage", 0.88],
+  ["video_latour_once_out_of_nature", "distributed", 0.88],
+  ["video_latour_once_out_of_nature", "technical_agency", 0.88],
+  ["video_chalmers_talking_to_ai", "chalmers", 0.98],
+  ["video_chalmers_talking_to_ai", "extended", 0.88],
+  ["video_chalmers_talking_to_ai", "clark", 0.88],
+  ["video_chalmers_talking_to_ai", "agi", 0.88],
+  ["video_kirsh_thinking_with_body", "kirsh", 0.98],
+  ["video_kirsh_thinking_with_body", "choreo_knowledge", 0.88],
+  ["video_kirsh_thinking_with_body", "extended", 0.88],
+  ["video_kirsh_thinking_with_body", "distributed", 0.88],
+  ["video_haraway_chthulucene", "haraway", 0.98],
+  ["video_haraway_chthulucene", "cyborg", 0.88],
+  ["video_haraway_chthulucene", "technosymbiosis", 0.88],
+  ["video_haraway_chthulucene", "hybrid", 0.88],
+  ["video_rosch_prototype_cognition", "rosch", 0.98],
+  ["video_rosch_prototype_cognition", "buddhism", 0.88],
+  ["video_rosch_prototype_cognition", "enacted", 0.88],
+  ["video_rosch_prototype_cognition", "enactivism", 0.88],
+  ["video_cuffari_linguistic_bodies", "cuffari", 0.98],
+  ["video_cuffari_linguistic_bodies", "enactivism", 0.88],
+  ["video_cuffari_linguistic_bodies", "di_paolo", 0.88],
+  ["video_cuffari_linguistic_bodies", "de_jaegher", 0.88],
+  ["video_di_paolo_enactivism", "di_paolo", 0.98],
+  ["video_di_paolo_enactivism", "enactivism", 0.88],
+  ["video_di_paolo_enactivism", "cuffari", 0.88],
+  ["video_di_paolo_enactivism", "autopoiesis", 0.88],
+  ["video_fanon_colonization_mind", "fanon", 0.98],
+  ["video_fanon_colonization_mind", "cultural_critical", 0.88],
+  ["video_fanon_colonization_mind", "critical", 0.88],
+  ["video_fanon_colonization_mind", "perception_politics", 0.88],
+  ["video_bateson_ecology_of_mind", "bateson", 0.98],
+  ["video_bateson_ecology_of_mind", "ecology", 0.88],
+  ["video_bateson_ecology_of_mind", "cybernetics", 0.88],
+  ["video_bateson_ecology_of_mind", "ecology_d", 0.88],
+  ["video_de_jaegher_participatory_sense", "de_jaegher", 0.98],
+  ["video_de_jaegher_participatory_sense", "enactivism", 0.88],
+  ["video_de_jaegher_participatory_sense", "coupling", 0.88],
+  ["video_de_jaegher_participatory_sense", "di_paolo", 0.88],
+  ["video_maturana_interview", "maturana", 0.98],
+  ["video_maturana_interview", "autopoiesis", 0.88],
+  ["video_maturana_interview", "varela", 0.88],
+  ["video_maturana_interview", "coupling", 0.88],
+  ["video_uexkuell_umwelt", "uexkuell", 0.98],
+  ["video_uexkuell_umwelt", "umwelt", 0.88],
+  ["video_uexkuell_umwelt", "ecology", 0.88],
+  ["video_uexkuell_umwelt", "varela", 0.88],
+  ["video_gibson_ecological_psychology", "gibson", 0.98],
+  ["video_gibson_ecological_psychology", "embedded", 0.88],
+  ["video_gibson_ecological_psychology", "architecture", 0.88],
+  ["video_gibson_ecological_psychology", "ecology", 0.88],
+  ["video_cage_433_lifetime", "cage", 0.98],
+  ["video_cage_433_lifetime", "music", 0.88],
+  ["video_cage_433_lifetime", "fluxus", 0.88],
+  ["video_cage_433_lifetime", "creative", 0.88],
+  ["video_munoz_queer_utopianism", "munoz", 0.98],
+  ["video_munoz_queer_utopianism", "futurity", 0.88],
+  ["video_munoz_queer_utopianism", "speculative_futures", 0.88],
+  ["video_munoz_queer_utopianism", "cultural_imagination", 0.88],
+  ["video_barad_meeting_universe", "barad", 0.98],
+  ["video_barad_meeting_universe", "haraway", 0.88],
+  ["video_barad_meeting_universe", "coupling", 0.88],
+  ["video_barad_meeting_universe", "assemblage", 0.88],
+  ["video_crawford_ai_planet", "crawford", 0.98],
+  ["video_crawford_ai_planet", "ai", 0.88],
+  ["video_crawford_ai_planet", "perception_politics", 0.88],
+  ["video_crawford_ai_planet", "gen_ai", 0.88],
+  ["video_malafouris_embodied_patterns", "malafouris", 0.98],
+  ["video_malafouris_embodied_patterns", "extended", 0.88],
+  ["video_malafouris_embodied_patterns", "extended_q", 0.88],
+  ["video_malafouris_embodied_patterns", "synthetic_cognition", 0.88],
+  ["video_shapiro_embodied_cognition", "shapiro", 0.98],
+  ["video_shapiro_embodied_cognition", "enactivism", 0.88],
+  ["video_shapiro_embodied_cognition", "embodied", 0.88],
+  ["video_shapiro_embodied_cognition", "embedded", 0.88],
+  ["video_leigh_bowery_tate", "leigh_bowery", 0.98],
+  ["video_leigh_bowery_tate", "art", 0.88],
+  ["video_leigh_bowery_tate", "queer_theory", 0.88],
+  ["video_leigh_bowery_tate", "creative", 0.88],
+  ["video_margulis_symbiotic_earth", "margulis", 0.98],
+  ["video_margulis_symbiotic_earth", "symbiosis", 0.88],
+  ["video_margulis_symbiotic_earth", "technosymbiosis", 0.88],
+  ["video_margulis_symbiotic_earth", "ecology_d", 0.88],
+  ["video_duchamp_art_dada", "duchamp", 0.98],
+  ["video_duchamp_art_dada", "art", 0.88],
+  ["video_duchamp_art_dada", "creative", 0.88],
+  ["video_duchamp_art_dada", "curation", 0.88],
+  ["video_boden_creativity_ai", "boden", 0.98],
+  ["video_boden_creativity_ai", "ai", 0.88],
+  ["video_boden_creativity_ai", "creative_ai", 0.88],
+  ["video_boden_creativity_ai", "creativity", 0.88],
+  ["video_merleau_ponty_phenomenology", "merleau_ponty", 0.98],
+  ["video_merleau_ponty_phenomenology", "enactivism", 0.88],
+  ["video_merleau_ponty_phenomenology", "embodiment", 0.88],
+  ["video_merleau_ponty_phenomenology", "embodied", 0.88],
+  ["video_foucault_prison_1975", "foucault", 0.98],
+  ["video_foucault_prison_1975", "perception_politics", 0.88],
+  ["video_foucault_prison_1975", "critical", 0.88],
+  ["video_foucault_prison_1975", "philosophy", 0.88],
+  ["video_shanahan_consciousness_ai", "shanahan", 0.98],
+  ["video_shanahan_consciousness_ai", "possible_minds", 0.88],
+  ["video_nagarjuna_emptiness", "nagarjuna", 0.98],
+  ["video_nagarjuna_emptiness", "buddhism", 0.88],
+  ["video_nagarjuna_emptiness", "philosophy", 0.88],
+  ["video_nagarjuna_emptiness", "epistemology", 0.88],
+  ["video_butler_parable_climate", "butler", 0.98],
+  ["video_butler_parable_climate", "afrofuturism", 0.88],
+  ["video_butler_parable_climate", "speculative_futures", 0.88],
+  ["video_butler_parable_climate", "futurity", 0.88],
+  ["video_freire_incredible_conversation", "freire", 0.98],
+  ["video_freire_incredible_conversation", "cultural_critical", 0.88],
+  ["video_freire_incredible_conversation", "critical", 0.88],
+  ["video_freire_incredible_conversation", "literacies", 0.88],
+  ["video_wilson_state_space", "wilson", 0.98],
+  ["video_wilson_state_space", "situated", 0.88],
+  ["video_wilson_state_space", "extended", 0.88],
+  ["video_wilson_state_space", "embedded", 0.88],
+  ["video_brooks_humanoid_robots", "brooks", 0.98],
+  ["video_brooks_humanoid_robots", "4e", 0.88],
+  ["video_brooks_humanoid_robots", "embodied", 0.88],
+  ["video_brooks_humanoid_robots", "affordances", 0.88],
+  ["video_braidotti_posthuman_knowledge", "braidotti", 0.98],
+  ["video_braidotti_posthuman_knowledge", "hybrid", 0.88],
+  ["video_braidotti_posthuman_knowledge", "philosophy", 0.88],
+  ["video_braidotti_posthuman_knowledge", "cultural_critical", 0.88],
+  ["video_saul_leiter_color", "saul_leiter", 0.98],
+  ["video_saul_leiter_color", "art", 0.88],
+  ["video_saul_leiter_color", "abstraction", 0.88],
+  ["video_saul_leiter_color", "creative", 0.88],
+  ["video_paxton_contact_improv", "steve_paxton", 0.98],
+  ["video_paxton_contact_improv", "judson_church", 0.88],
+  ["video_paxton_contact_improv", "trisha_brown", 0.88],
+  ["video_paxton_contact_improv", "dance", 0.88],
+  ["video_trisha_brown_intensive", "trisha_brown", 0.98],
+  ["video_trisha_brown_intensive", "dance", 0.88],
+  ["video_trisha_brown_intensive", "choreography_d", 0.88],
+  ["video_trisha_brown_intensive", "choreography", 0.88],
+  ["video_vera_molnar_generative", "vera_molnar", 0.98],
+  ["video_vera_molnar_generative", "generative_arts", 0.88],
+  ["video_vera_molnar_generative", "abstraction", 0.88],
+  ["video_vera_molnar_generative", "creativity", 0.88],
+  ["video_forsythe_imagining_lines", "forsythe", 0.98],
+  ["video_forsythe_imagining_lines", "choreo_knowledge", 0.88],
+  ["video_forsythe_imagining_lines", "choreo_object", 0.88],
+  ["video_forsythe_imagining_lines", "motion_bank", 0.88],
+  ["video_yoko_ono_interview", "yoko_ono", 0.98],
+  ["video_yoko_ono_interview", "fluxus", 0.88],
+  ["video_yoko_ono_interview", "art", 0.88],
+  ["video_yoko_ono_interview", "interdisciplinary_art", 0.88],
+  ["video_batson_minds_in_motion", "batson", 0.98],
+  ["video_batson_minds_in_motion", "somatics", 0.98],
+  ["video_batson_minds_in_motion", "dance", 0.92],
+  ["video_batson_minds_in_motion", "embodiment", 0.9],
+  ["video_batson_minds_in_motion", "marlon", 0.88],
+  ["video_batson_minds_in_motion", "body", 0.85],
+  ["video_forsythe_synchronous_objects_hellerau", "forsythe", 0.98],
+  ["video_forsythe_synchronous_objects_hellerau", "choreo_knowledge", 0.92],
+  ["video_forsythe_synchronous_objects_hellerau", "choreo_object", 0.95],
+  ["video_forsythe_synchronous_objects_hellerau", "motion_bank", 0.95],
+  ["video_forsythe_synchronous_objects_hellerau", "choreography", 0.88],
+  ["video_forsythe_synchronous_objects_hellerau", "distributed", 0.85],
+  ["video_forsythe_synchronous_objects_hellerau", "marlon", 0.88],
   ["essay_1", "essay_2", 0.9],
   ["essay_1", "essay_3", 0.88],
   ["essay_1", "essay_4", 0.86],
@@ -4215,6 +4922,72 @@ const TYPED_EDGES = [
   ["video_hayles_bacteria_ai", "hayles", "instantiates"],
   ["video_clark_experience_machine", "active_inference", "develops"],
   ["video_clark_experience_machine", "clark", "instantiates"],
+  ["video_ai_fluency_generative_ai", "gen_ai", "develops"],
+  ["video_karla_expanding_possibilities", "karla", "instantiates"],
+  ["video_gallagher_4e_cognition", "gallagher", "instantiates"],
+  ["video_gallagher_4e_cognition", "4e", "develops"],
+  ["video_friston_brain_constructs_reality", "friston", "instantiates"],
+  ["video_friston_brain_constructs_reality", "active_inference", "develops"],
+  ["video_levin_diverse_intelligences", "levin", "instantiates"],
+  ["video_levin_diverse_intelligences", "synthetic_cognition", "develops"],
+  ["video_levin_intelligence_without_brains", "levin", "instantiates"],
+  ["video_thompson_embodied_cognition", "thompson", "instantiates"],
+  ["video_thompson_embodied_cognition", "enactivism", "develops"],
+  ["video_varela_god_computers", "varela", "instantiates"],
+  ["video_varela_god_computers", "enactivism", "develops"],
+  ["video_understanding_ai_inner_thoughts", "ai_interpretability", "develops"],
+  ["video_visualizing_transformers_attention", "transformers", "develops"],
+  ["video_noe_out_of_our_heads", "noe", "instantiates"],
+  ["video_noe_out_of_our_heads", "enactivism", "develops"],
+  ["video_aguilera_what_is_intelligence", "aguilera_arcas", "instantiates"],
+  ["video_aguilera_what_is_intelligence", "possible_minds", "develops"],
+  ["video_mendieta_decolonial_feminist", "ana_mendieta", "instantiates"],
+  ["video_escobar_pluriverse", "escobar", "instantiates"],
+  ["video_akomolafe_animism", "akomolafe", "instantiates"],
+  ["video_bell_hooks_speaking_freely", "bell_hooks", "instantiates"],
+  ["video_sousa_santos_decolonising", "sousa_santos", "instantiates"],
+  ["video_latour_once_out_of_nature", "latour", "instantiates"],
+  ["video_chalmers_talking_to_ai", "chalmers", "instantiates"],
+  ["video_kirsh_thinking_with_body", "kirsh", "instantiates"],
+  ["video_haraway_chthulucene", "haraway", "instantiates"],
+  ["video_rosch_prototype_cognition", "rosch", "instantiates"],
+  ["video_cuffari_linguistic_bodies", "cuffari", "instantiates"],
+  ["video_di_paolo_enactivism", "di_paolo", "instantiates"],
+  ["video_fanon_colonization_mind", "fanon", "instantiates"],
+  ["video_bateson_ecology_of_mind", "bateson", "instantiates"],
+  ["video_de_jaegher_participatory_sense", "de_jaegher", "instantiates"],
+  ["video_maturana_interview", "maturana", "instantiates"],
+  ["video_uexkuell_umwelt", "uexkuell", "instantiates"],
+  ["video_gibson_ecological_psychology", "gibson", "instantiates"],
+  ["video_cage_433_lifetime", "cage", "instantiates"],
+  ["video_munoz_queer_utopianism", "munoz", "instantiates"],
+  ["video_barad_meeting_universe", "barad", "instantiates"],
+  ["video_crawford_ai_planet", "crawford", "instantiates"],
+  ["video_malafouris_embodied_patterns", "malafouris", "instantiates"],
+  ["video_shapiro_embodied_cognition", "shapiro", "instantiates"],
+  ["video_leigh_bowery_tate", "leigh_bowery", "instantiates"],
+  ["video_margulis_symbiotic_earth", "margulis", "instantiates"],
+  ["video_duchamp_art_dada", "duchamp", "instantiates"],
+  ["video_boden_creativity_ai", "boden", "instantiates"],
+  ["video_merleau_ponty_phenomenology", "merleau_ponty", "instantiates"],
+  ["video_foucault_prison_1975", "foucault", "instantiates"],
+  ["video_shanahan_consciousness_ai", "shanahan", "instantiates"],
+  ["video_nagarjuna_emptiness", "nagarjuna", "instantiates"],
+  ["video_butler_parable_climate", "butler", "instantiates"],
+  ["video_freire_incredible_conversation", "freire", "instantiates"],
+  ["video_wilson_state_space", "wilson", "instantiates"],
+  ["video_brooks_humanoid_robots", "brooks", "instantiates"],
+  ["video_braidotti_posthuman_knowledge", "braidotti", "instantiates"],
+  ["video_saul_leiter_color", "saul_leiter", "instantiates"],
+  ["video_paxton_contact_improv", "steve_paxton", "instantiates"],
+  ["video_trisha_brown_intensive", "trisha_brown", "instantiates"],
+  ["video_vera_molnar_generative", "vera_molnar", "instantiates"],
+  ["video_forsythe_imagining_lines", "forsythe", "instantiates"],
+  ["video_yoko_ono_interview", "yoko_ono", "instantiates"],
+  ["video_batson_minds_in_motion", "batson", "instantiates"],
+  ["video_batson_minds_in_motion", "somatics", "develops"],
+  ["video_batson_minds_in_motion", "marlon", "instantiates"],
+  ["video_forsythe_synchronous_objects_hellerau", "forsythe", "instantiates"],
   ["enact", "coupling", "enacts"],
   ["enact", "embodiment", "enacts"],
   ["vipassana", "enactivism", "enacts"],
@@ -4232,6 +5005,9 @@ const TYPED_EDGES = [
   ["enactivism", "autopoiesis", "emergesFrom"],
   ["cognition", "embodiment", "emergesFrom"],
   ["hi_hub", "ontology_kb", "emergesFrom"],
+  ["video_privacy_illusion_ai_data", "crawford", "instantiates"],
+  ["video_am_i_ai_consciousness_doc", "chalmers", "instantiates"],
+  ["video_thinking_game_documentary", "shanahan", "instantiates"],
 ];
 
 let nodes = [];
@@ -5520,16 +6296,33 @@ function drawNodeCircles() {
 }
 
 function nodeLabelLayout(n, isActive) {
-  const lines = n.label.split("\n");
-  const lineH = 12;
-  const labelR = n.radius + 14;
+  const isVideoLeaf = n.cat === "video";
+  const raw = isVideoLeaf ? (n.fullLabel || n.label) : n.label;
+  const labelSize = isVideoLeaf ? (isActive ? 9 : 8) : (isActive ? 11 : 9);
+  let lines = String(raw).split("\n");
+  if (lines.length === 1 && lines[0].includes(" — ")) {
+    lines = lines[0].split(" — ").slice(0, 2);
+  } else if (lines.length === 1 && lines[0].length > (isVideoLeaf ? 34 : 30)) {
+    textSize(labelSize);
+    lines = wrapText(lines[0], isVideoLeaf ? 108 : 128, labelSize).slice(0, isVideoLeaf ? 3 : 2);
+  }
+  const lineH = isVideoLeaf ? 11 : 12;
   const baseAngle = atan2(n.y - layoutCenter.y, n.x - layoutCenter.x);
   const outward = n.id !== "coupling";
-  const lx = outward ? n.x + cos(baseAngle) * labelR * 0.3 : n.x;
-  const ly = outward ? n.y + sin(baseAngle) * labelR * 0.3 + n.radius + 8 : n.y + n.radius + 16;
+  let lx;
+  let ly;
+  if (isVideoLeaf && outward) {
+    const push = 20 + n.radius * 1.6;
+    lx = n.x + cos(baseAngle) * push;
+    ly = n.y + sin(baseAngle) * push;
+  } else {
+    const labelR = n.radius + 14;
+    lx = outward ? n.x + cos(baseAngle) * labelR * 0.3 : n.x;
+    ly = outward ? n.y + sin(baseAngle) * labelR * 0.3 + n.radius + 8 : n.y + n.radius + 16;
+  }
   const startY = ly - (lines.length - 1) * lineH / 2;
 
-  return { lines, lineH, lx, startY };
+  return { lines, lineH, lx, startY, labelSize, isVideoLeaf };
 }
 
 function drawNodeLabels() {
@@ -5556,19 +6349,29 @@ function drawNodeLabels() {
     ) {
       continue;
     }
-    const { lines, lineH, lx, startY } = nodeLabelLayout(n, isActive);
-    const labelAlpha = scaleNodeAlpha(catFocus === null
+    const { lines, lineH, lx, startY, labelSize, isVideoLeaf } = nodeLabelLayout(n, isActive);
+    let labelAlpha = scaleNodeAlpha(catFocus === null
       ? (dim ? (hoverFocus ? t.labelDimHover : t.labelDim) : 255)
       : catDim && catHL
         ? t.labelDimCategory
         : 50 + catFocus * 205);
+    if (isVideoLeaf && !isActive && !nodeHighlighted(n)) {
+      labelAlpha = max(labelAlpha, catFocus === null ? 145 : labelAlpha);
+    }
 
-    setTextFill(labelAlpha);
-    noStroke();
     textAlign(CENTER, CENTER);
-    textSize(catFocus === null ? (isActive ? 11 : 9) : 8 + catFocus * 3);
+    textSize(isVideoLeaf ? labelSize : (catFocus === null ? labelSize : 8 + catFocus * 3));
     for (let i = 0; i < lines.length; i++) {
-      text(lines[i], lx, startY + i * lineH);
+      const ty = startY + i * lineH;
+      if (isVideoLeaf) {
+        fill(...t.bg, labelAlpha * 0.9);
+        stroke(...t.bg, labelAlpha * 0.9);
+        strokeWeight(3.2);
+        text(lines[i], lx, ty);
+      }
+      setTextFill(labelAlpha);
+      noStroke();
+      text(lines[i], lx, ty);
     }
   }
 }
@@ -5692,6 +6495,7 @@ function drawMobileMenu() {
     { id: "link", label: "Home", url: HOME_URL },
     { id: "link", label: "About", url: ABOUT_URL },
     { id: "link", label: "Essays", url: ESSAYS_URL },
+    { id: "link", label: "Videos", url: VIDEOS_URL },
     { id: "link", label: "Ontology", url: ONTOLOGY_URL },
     { id: "link", label: "Views", url: VIEWS_URL },
     { id: "link", label: "Chord", url: CHORD_URL },
@@ -5821,6 +6625,7 @@ function drawUI() {
     { url: HOME_URL, label: "Home" },
     { url: ABOUT_URL, label: "About" },
     { url: ESSAYS_URL, label: "Essays" },
+    { url: VIDEOS_URL, label: "Videos" },
     { url: ONTOLOGY_URL, label: "Ontology" },
     { url: VIEWS_URL, label: "Views" },
     { url: VOICE_URL, label: "Voice" },
@@ -6146,13 +6951,50 @@ function preloadPosterImages() {
   }
 }
 
+function truncateToWidth(str, maxW, sz) {
+  textSize(sz);
+  const s = String(str);
+  if (textWidth(s) <= maxW) return s;
+  let cut = s;
+  while (cut.length > 1 && textWidth(cut + "…") > maxW) {
+    cut = cut.slice(0, -1);
+  }
+  return cut + "…";
+}
+
 function detailPosterBlock(n, panelW) {
   const img = posterImages[n?.id];
-  if (!img || img.width <= 0) return { height: 0, img: null, imgW: 0, imgH: 0 };
-  const imgW = panelW - 28;
-  const rawH = imgW * (img.height / img.width);
-  const imgH = min(rawH, isMobileLayout() ? 96 : 112);
-  return { height: imgH + 12, img, imgW, imgH };
+  if (!img || img.width <= 0) return { height: 0, img: null, imgW: 0, imgH: 0, imgX: 14 };
+  const slotW = panelW - 28;
+  const maxH = isMobileLayout() ? 96 : 112;
+  const ir = img.width / img.height;
+  let imgW = slotW;
+  let imgH = imgW / ir;
+  if (imgH > maxH) {
+    imgH = maxH;
+    imgW = imgH * ir;
+  }
+  const imgX = 14 + (slotW - imgW) / 2;
+  return { height: imgH + 12, img, imgW, imgH, imgX };
+}
+
+function curatedVideosFor(nodeId) {
+  const seen = new Set();
+  const out = [];
+  for (const edge of EDGES) {
+    const a = edge[0];
+    const b = edge[1];
+    let vid = null;
+    if (a === nodeId && b.startsWith("video_")) vid = b;
+    else if (b === nodeId && a.startsWith("video_")) vid = a;
+    if (!vid || seen.has(vid)) continue;
+    const node = NODES.find((n) => n.id === vid);
+    if (node?.url) {
+      seen.add(vid);
+      out.push(node);
+    }
+  }
+  return out.sort((a, b) => a.label.localeCompare(b.label));
 }
 
 function detailPanelLayout(n) {
@@ -6164,13 +7006,17 @@ function detailPanelLayout(n) {
   const wikiUrl = n?.wikiUrl || (n?.url?.includes("wikipedia.org") ? n.url : null);
   const primaryUrl = n?.url && n.url !== wikiUrl ? n.url : null;
   const watchUrl = n?.watchUrl || null;
-  const linkCount = 3 + (primaryUrl ? 1 : 0) + (watchUrl ? 1 : 0) + (wikiUrl ? 1 : 0) + 1 + 4;
+  const curatedCount = n ? min(8, curatedVideosFor(n.id).length) : 0;
+  const linkCount = 3 + (primaryUrl ? 1 : 0) + (watchUrl ? 1 : 0) + (wikiUrl ? 1 : 0) + 1 + 4 + curatedCount;
   const hasLink = linkCount > 0;
   const typedCount = n ? min(4, typedPhrasesFor(n).length) : 0;
   const poster = detailPosterBlock(n, panelW);
+  const titleText = n ? String(n.label).replace(/\n/g, " ") : "";
+  const titleLineCount = n ? min(2, max(1, titleText.length > 34 ? 2 : 1)) : 1;
+  const titleExtra = (titleLineCount - 1) * 15;
   const panelH = mobile
-    ? min(108 + poster.height + linkCount * 18 + typedCount * 14, 280 + poster.height)
-    : 108 + poster.height + linkCount * 20 + typedCount * 15;
+    ? min(108 + titleExtra + poster.height + linkCount * 18 + typedCount * 14, 320 + poster.height)
+    : 108 + titleExtra + poster.height + linkCount * 20 + typedCount * 15;
   return { panelW, x: 16, y: height - toggleH - panelH, panelH, hasLink, linkCount, wikiUrl, primaryUrl, watchUrl, typedCount, poster };
 }
 
@@ -6197,33 +7043,42 @@ function drawDetailPanel(n) {
   detailPanelLinks = [];
   const { panelW, x, y, panelH, hasLink, linkCount, wikiUrl, primaryUrl, watchUrl, typedCount, poster } = detailPanelLayout(n);
   const phrases = typedPhrasesFor(n).slice(0, 4);
+  const textW = panelW - 28;
 
   fill(...t.panel, panelAlpha * 0.96);
   stroke(...ringColor(n.cat), 140);
   strokeWeight(1.5);
   rect(x, y, panelW, panelH, 6);
 
+  drawingContext.save();
+  drawingContext.beginPath();
+  drawingContext.rect(x + 1, y + 1, panelW - 2, panelH - 2);
+  drawingContext.clip();
+
   fill(...ringColor(n.cat));
   noStroke();
   textAlign(LEFT, TOP);
   textSize(10);
-  text(CATEGORY_META[n.cat].label.toUpperCase(), x + 14, y + 12);
+  text(truncateToWidth(CATEGORY_META[n.cat].label.toUpperCase(), textW, 10), x + 14, y + 12);
 
   fill(...t.panelTitle);
   textSize(13);
   textStyle(BOLD);
-  text(n.label.replace(/\n/g, " "), x + 14, y + 28);
+  const titleLines = wrapText((n.fullLabel || n.label).replace(/\n/g, " "), textW, 13).slice(0, 2);
+  titleLines.forEach((line, i) => {
+    text(line, x + 14, y + 28 + i * 15);
+  });
   textStyle(NORMAL);
 
-  let ty = y + 48;
+  let ty = y + 48 + (titleLines.length - 1) * 15;
   if (poster.img) {
-    image(poster.img, x + 14, ty, poster.imgW, poster.imgH);
+    image(poster.img, x + poster.imgX, ty, poster.imgW, poster.imgH);
     ty += poster.height;
   }
 
   fill(...t.panelBody);
   textSize(10);
-  const wrapped = wrapText(n.desc, panelW - 28, 10);
+  const wrapped = wrapText(n.desc, textW, 10);
   const extraLinks = 1 + (primaryUrl ? 1 : 0) + (wikiUrl ? 1 : 0);
   const maxLines = hasLink ? max(2, 4 - extraLinks) : 3;
   for (const line of wrapped.slice(0, maxLines)) {
@@ -6234,7 +7089,7 @@ function drawDetailPanel(n) {
     fill(...t.title);
     textSize(9);
     for (const phrase of phrases) {
-      text(phrase.text, x + 14, ty);
+      text(truncateToWidth(phrase.text, textW, 9), x + 14, ty);
       ty += 14;
     }
   }
@@ -6245,8 +7100,9 @@ function drawDetailPanel(n) {
   function drawPanelLink(url, label) {
     textSize(10);
     fill(...linkCol);
-    text(label, x + 14, linkY);
-    const tw = textWidth(label);
+    const display = truncateToWidth(label, textW, 10);
+    text(display, x + 14, linkY);
+    const tw = min(textWidth(display), textW);
     stroke(...linkCol, 200);
     strokeWeight(0.8);
     line(x + 14, linkY + 11, x + 14 + tw, linkY + 11);
@@ -6258,6 +7114,9 @@ function drawDetailPanel(n) {
   drawPanelLink(voiceTalkUrl(n.id, n.label), "Talk about this");
   drawPanelLink(imageObjectUrl(n.id, n.label), "Make an image");
   drawPanelLink(podcastObjectUrl(n.id, n.label), "Mini-pod");
+  for (const v of curatedVideosFor(n.id).slice(0, 8)) {
+    drawPanelLink(v.url, `Video · ${v.label.replace(/\n/g, " ")} →`);
+  }
   if (primaryUrl) {
     drawPanelLink(primaryUrl, n.linkLabel || "Open external link ↗");
   }
@@ -6278,7 +7137,13 @@ function drawDetailPanel(n) {
   fill(...t.panelMuted);
   textSize(9);
   const typedNote = typedCount ? ` · ${typedCount} typed` : "";
-  text(`${connCount} connections${typedNote}${hasLink ? " · click link to open" : " highlighted on hover"}`, x + 14, y + panelH - 14);
+  text(
+    truncateToWidth(`${connCount} connections${typedNote}${hasLink ? " · click link to open" : " highlighted on hover"}`, textW, 9),
+    x + 14,
+    y + panelH - 14
+  );
+
+  drawingContext.restore();
 }
 
 function wrapText(str, maxW, sz) {
