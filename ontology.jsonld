@@ -62,12 +62,12 @@
         "foaf:name": "Marlon Barrios Solano",
         "foaf:homepage": "https://marlonbarrios.github.io/"
       },
-      "dc:date": "2026-09-03",
-      "dc:modified": "2026-09-03T19:29:10.018Z",
+      "dc:date": "2026-09-04",
+      "dc:modified": "2026-09-04T16:15:33.519Z",
       "owl:versionInfo": "1.0.0",
-      "hi:nodeCount": 239,
-      "hi:edgeCount": 2410,
-      "hi:typedEdgeCount": 114
+      "hi:nodeCount": 243,
+      "hi:edgeCount": 2468,
+      "hi:typedEdgeCount": 124
     },
     {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme",
@@ -224,7 +224,7 @@
         "hi:Category"
       ],
       "skos:prefLabel": "Practices",
-      "skos:definition": "Methods and habits—rehearsal, somatics, pedagogy, cultural critique, conversational AI, Mini-pod, concept image, and the ontology as a knowledge base for the Hub.",
+      "skos:definition": "Methods and habits—rehearsal, somatics, pedagogy, cultural critique, conversational AI, Mini-pod, concept image, essays, videos, and the ontology as a knowledge base for the Hub.",
       "skos:inScheme": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
       },
@@ -12202,6 +12202,10 @@
           "hi:strength": 0.92
         },
         {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_videos",
+          "hi:strength": 0.88
+        },
+        {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#mini_pod",
           "hi:strength": 0.9
         },
@@ -12347,6 +12351,302 @@
       ]
     },
     {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_videos",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Videos",
+      "skos:definition": "The video publishing layer of the Hybrid Intelligences Hub. Talks and performances whose speech is ingested against the ontology — YouTube captions or Whisper transcription, then concept matching proposes edges for hybrid-network.js. The transcript stays internal; published pages show matched concepts and network links.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "practice",
+      "hi:weight": 1.5,
+      "schema:url": "videos.html",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#marlon",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_program",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative_embodiment",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_hayles_integrated_cognition",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_hayles_bacteria_ai",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_clark_experience_machine",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
+          "hi:strength": 0.9,
+          "hi:relationType": "participatesIn"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology_kb",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_hayles_integrated_cognition",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Hayles · ICF",
+      "skos:definition": "Katherine Hayles — Consciousness Is Not Necessary for Cognition. Podcast interview on the integrated cognitive framework, How We Became Posthuman, widening the circle of care, nonconscious cognition, holobionts, and human–AI relationality. Video on YouTube; ingest matches speech to ontology concepts.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "practice",
+      "hi:weight": 1.45,
+      "schema:url": "video-hayles-integrated-cognition.html",
+      "schema:image": "https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/hayles-integrated-cognition.jpg",
+      "schema:sameAs": "https://www.youtube.com/watch?v=W_W-yKNB6IU",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hayles",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#llm",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#gen_ai",
+          "hi:strength": 0.86
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
+          "hi:strength": 0.92
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#posthumanism",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#technosymbiosis",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#distributed",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#holobiont",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#symbiosis",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_1",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hayles",
+          "hi:strength": 0.9,
+          "hi:relationType": "instantiates"
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_hayles_bacteria_ai",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Hayles · Bacteria to AI",
+      "skos:definition": "Katherine Hayles on Urgent Futures with Jesse Damiani (March 2025) — on Bacteria to AI: integrated cognitive framework (ICF), nonconscious cognition, distributed agency in cognitive assemblages, LLM Umwelten, sympoiesis, reversible internalities, and posthuman relationality. Video on YouTube; ingest matches speech to ontology concepts.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "practice",
+      "hi:weight": 1.45,
+      "schema:url": "video-hayles-bacteria-ai.html",
+      "schema:image": "https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/hayles-bacteria-ai.jpg",
+      "schema:sameAs": "https://www.youtube.com/watch?v=PGFNREZTXQQ",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hayles",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#llm",
+          "hi:strength": 0.92
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#gen_ai",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#technosymbiosis",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#umwelt",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#posthumanism",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#distributed",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#holobiont",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#symbiosis",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_1",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_2",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#llm",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#umwelt",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hayles",
+          "hi:strength": 0.9,
+          "hi:relationType": "instantiates"
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_clark_experience_machine",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Clark · Predictive Brain",
+      "skos:definition": "Andy Clark — The Experience Machine (Royal Institution). Lecture on predictive processing: brains as prediction machines, controlled hallucination, precision weighting, Karl Friston and active inference, computational psychiatry, chronic pain, placebo, and nudging the predictive brain. Video on YouTube; ingest matches speech to ontology concepts.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "practice",
+      "hi:weight": 1.45,
+      "schema:url": "video-clark-experience-machine.html",
+      "schema:image": "https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/clark-experience-machine.jpg",
+      "schema:sameAs": "https://www.youtube.com/watch?v=A1Ghrd7NBtk",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#clark",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#active_inference",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#friston",
+          "hi:strength": 0.92
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embodied",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#4e",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#enactivism",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#extended",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#consciousness",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
+          "hi:strength": 0.78
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#active_inference",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#clark",
+          "hi:strength": 0.9,
+          "hi:relationType": "instantiates"
+        }
+      ]
+    },
+    {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_1",
       "@type": [
         "skos:Concept",
@@ -12398,11 +12698,71 @@
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hayles",
-          "hi:strength": 0.85
+          "hi:strength": 0.88
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
           "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#gen_ai",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#distributed",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative_embodiment",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#architecture",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#affordances",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#gibson",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#choreography",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#brooks",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#physical_ai",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#forsythe",
+          "hi:strength": 0.86
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#choreo_object",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#steve_paxton",
+          "hi:strength": 0.84
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#juggling",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#clark",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#dance",
+          "hi:strength": 0.8
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hybrid",
@@ -12833,6 +13193,10 @@
       "schema:url": "mini-pod.html",
       "skos:related": [
         {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_videos",
+          "hi:strength": 0.75
+        },
+        {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#conversational_ai",
           "hi:strength": 0.95
         },
@@ -13070,7 +13434,7 @@
         "hi:NetworkNode"
       ],
       "skos:prefLabel": "Hybrid Intelligences Hub",
-      "skos:definition": "The public Hybrid Intelligences tool: a dynamic cognitive assemblage created by Marlon Barrios Solano as Maker-in-Residence at CAME. Not a brochure and not a chatbot in isolation — a hybrid instrument in which essays, ontology, network visualization, conversational AI, concept images, Mini-pods, and Enact couple. The ontology is the knowledge base that grounds Voice; from any concept one can talk, generate an image, or create a short spoken episode. Enact offers cognitive prompts for a choreography of awareness. Also called this site, this platform, or this knowledge architecture. When asked what the Hub or this tool is, describe it as that assemblage and refer to its layers by name.",
+      "skos:definition": "The public Hybrid Intelligences tool: a dynamic cognitive assemblage created by Marlon Barrios Solano as Maker-in-Residence at CAME. Not a brochure and not a chatbot in isolation — a hybrid instrument in which essays, videos, ontology, network visualization, conversational AI, concept images, Mini-pods, and Enact couple. The ontology is the knowledge base that grounds Voice; from any concept one can talk, generate an image, or create a short spoken episode. Enact offers cognitive prompts for a choreography of awareness. Also called this site, this platform, or this knowledge architecture. When asked what the Hub or this tool is, describe it as that assemblage and refer to its layers by name.",
       "skos:broader": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/program"
       },
@@ -13136,6 +13500,10 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_essays",
           "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_videos",
+          "hi:strength": 0.92
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#concept_image",

@@ -11,10 +11,10 @@
   rdfs:label "Hybrid Intelligences Ontology" ;
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   owl:versionInfo "1.0.0" ;
-  dc:date "2026-09-03"^^xsd:date ;
-  dc:modified "2026-09-03T19:29:10.021Z"^^xsd:dateTime ;
-  hi:nodeCount "239"^^xsd:integer ;
-  hi:edgeCount "2410"^^xsd:integer .
+  dc:date "2026-09-04"^^xsd:date ;
+  dc:modified "2026-09-04T16:15:33.520Z"^^xsd:dateTime ;
+  hi:nodeCount "243"^^xsd:integer ;
+  hi:edgeCount "2468"^^xsd:integer .
 
 hi:scheme a skos:ConceptScheme ;
   skos:prefLabel "Hybrid Intelligences Concept Scheme" ;
@@ -70,7 +70,7 @@ hi:category/facilitator a skos:Concept, hi:Category ;
 
 hi:category/practice a skos:Concept, hi:Category ;
   skos:prefLabel "Practices" ;
-  skos:definition "Methods and habits—rehearsal, somatics, pedagogy, cultural critique, conversational AI, Mini-pod, concept image, and the ontology as a knowledge base for the Hub." ;
+  skos:definition "Methods and habits—rehearsal, somatics, pedagogy, cultural critique, conversational AI, Mini-pod, concept image, essays, videos, and the ontology as a knowledge base for the Hub." ;
   skos:inScheme hi:scheme ;
   skos:topConceptOf hi:scheme ;
   hi:ringFraction "0.51"^^xsd:decimal ;
@@ -2194,6 +2194,56 @@ hi:hi_essays a skos:Concept, hi:NetworkNode ;
   schema:url <essays.html>
  .
 
+hi:hi_videos a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Videos" ;
+  skos:definition "The video publishing layer of the Hybrid Intelligences Hub. Talks and performances whose speech is ingested against the ontology — YouTube captions or Whisper transcription, then concept matching proposes edges for hybrid-network.js. The transcript stays internal; published pages show matched concepts and network links." ;
+  skos:broader hi:category/practice ;
+  skos:inScheme hi:scheme ;
+  hi:category "practice" ;
+  hi:weight "1.5"^^xsd:decimal
+ ;
+  schema:url <videos.html>
+ .
+
+hi:video_hayles_integrated_cognition a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Hayles · ICF" ;
+  skos:definition "Katherine Hayles — Consciousness Is Not Necessary for Cognition. Podcast interview on the integrated cognitive framework, How We Became Posthuman, widening the circle of care, nonconscious cognition, holobionts, and human–AI relationality. Video on YouTube; ingest matches speech to ontology concepts." ;
+  skos:broader hi:category/practice ;
+  skos:inScheme hi:scheme ;
+  hi:category "practice" ;
+  hi:weight "1.45"^^xsd:decimal
+ ;
+  schema:url <video-hayles-integrated-cognition.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/hayles-integrated-cognition.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=W_W-yKNB6IU>
+ .
+
+hi:video_hayles_bacteria_ai a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Hayles · Bacteria to AI" ;
+  skos:definition "Katherine Hayles on Urgent Futures with Jesse Damiani (March 2025) — on Bacteria to AI: integrated cognitive framework (ICF), nonconscious cognition, distributed agency in cognitive assemblages, LLM Umwelten, sympoiesis, reversible internalities, and posthuman relationality. Video on YouTube; ingest matches speech to ontology concepts." ;
+  skos:broader hi:category/practice ;
+  skos:inScheme hi:scheme ;
+  hi:category "practice" ;
+  hi:weight "1.45"^^xsd:decimal
+ ;
+  schema:url <video-hayles-bacteria-ai.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/hayles-bacteria-ai.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=PGFNREZTXQQ>
+ .
+
+hi:video_clark_experience_machine a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Clark · Predictive Brain" ;
+  skos:definition "Andy Clark — The Experience Machine (Royal Institution). Lecture on predictive processing: brains as prediction machines, controlled hallucination, precision weighting, Karl Friston and active inference, computational psychiatry, chronic pain, placebo, and nudging the predictive brain. Video on YouTube; ingest matches speech to ontology concepts." ;
+  skos:broader hi:category/practice ;
+  skos:inScheme hi:scheme ;
+  hi:category "practice" ;
+  hi:weight "1.45"^^xsd:decimal
+ ;
+  schema:url <video-clark-experience-machine.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/clark-experience-machine.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=A1Ghrd7NBtk>
+ .
+
 hi:essay_1 a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Essay 1" ;
   skos:definition "Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI — Essay 1 by Marlon Barrios Solano (July 10, 2026). Traces a lineage from Unstablelandscape (early 2000s real-time dance–technology) through Essay 4 (2005) to generative AI. Develops intelligence as coupling, embodiment as nested ecology, and cognition as distributed across assemblages. Performative architecture and affordances; Brooks's embodied robotics and Hayles's cognitive nonconscious; Paxton, Forsythe's choreographic object, and Synchronous Objects; juggling as reflex training. First-person argument that hybrid intelligence extends designed cognitive systems into language models and cognitive architectures." ;
@@ -2295,7 +2345,7 @@ hi:lobby_showcase a skos:Concept, hi:NetworkNode ;
 
 hi:hi_hub a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Hybrid Intelligences Hub" ;
-  skos:definition "The public Hybrid Intelligences tool: a dynamic cognitive assemblage created by Marlon Barrios Solano as Maker-in-Residence at CAME. Not a brochure and not a chatbot in isolation — a hybrid instrument in which essays, ontology, network visualization, conversational AI, concept images, Mini-pods, and Enact couple. The ontology is the knowledge base that grounds Voice; from any concept one can talk, generate an image, or create a short spoken episode. Enact offers cognitive prompts for a choreography of awareness. Also called this site, this platform, or this knowledge architecture. When asked what the Hub or this tool is, describe it as that assemblage and refer to its layers by name." ;
+  skos:definition "The public Hybrid Intelligences tool: a dynamic cognitive assemblage created by Marlon Barrios Solano as Maker-in-Residence at CAME. Not a brochure and not a chatbot in isolation — a hybrid instrument in which essays, videos, ontology, network visualization, conversational AI, concept images, Mini-pods, and Enact couple. The ontology is the knowledge base that grounds Voice; from any concept one can talk, generate an image, or create a short spoken episode. Enact offers cognitive prompts for a choreography of awareness. Also called this site, this platform, or this knowledge architecture. When asked what the Hub or this tool is, describe it as that assemblage and refer to its layers by name." ;
   skos:broader hi:category/program ;
   skos:inScheme hi:scheme ;
   hi:category "program" ;
@@ -14993,6 +15043,12 @@ hi:rel-hi_hub-hi_essays a hi:Relation ;
   hi:strength "0.95"^^xsd:decimal ;
   skos:relatedMatch hi:hi_essays .
 
+hi:rel-hi_hub-hi_videos a hi:Relation ;
+  hi:source hi:hi_hub ;
+  hi:target hi:hi_videos ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:hi_videos .
+
 hi:rel-hi_hub-concept_image a hi:Relation ;
   hi:source hi:hi_hub ;
   hi:target hi:concept_image ;
@@ -15040,6 +15096,12 @@ hi:rel-ontology_kb-hi_essays a hi:Relation ;
   hi:target hi:hi_essays ;
   hi:strength "0.92"^^xsd:decimal ;
   skos:relatedMatch hi:hi_essays .
+
+hi:rel-ontology_kb-hi_videos a hi:Relation ;
+  hi:source hi:ontology_kb ;
+  hi:target hi:hi_videos ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:hi_videos .
 
 hi:rel-ontology_kb-mini_pod a hi:Relation ;
   hi:source hi:ontology_kb ;
@@ -15143,6 +15205,252 @@ hi:rel-hi_essays-essay_4 a hi:Relation ;
   hi:strength "0.98"^^xsd:decimal ;
   skos:relatedMatch hi:essay_4 .
 
+hi:rel-hi_videos-marlon a hi:Relation ;
+  hi:source hi:hi_videos ;
+  hi:target hi:marlon ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:marlon .
+
+hi:rel-hi_videos-hi_program a hi:Relation ;
+  hi:source hi:hi_videos ;
+  hi:target hi:hi_program ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:hi_program .
+
+hi:rel-hi_videos-creative_embodiment a hi:Relation ;
+  hi:source hi:hi_videos ;
+  hi:target hi:creative_embodiment ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:creative_embodiment .
+
+hi:rel-hi_videos-coupling a hi:Relation ;
+  hi:source hi:hi_videos ;
+  hi:target hi:coupling ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:coupling .
+
+hi:rel-mini_pod-hi_videos a hi:Relation ;
+  hi:source hi:mini_pod ;
+  hi:target hi:hi_videos ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:hi_videos .
+
+hi:rel-hi_videos-video_hayles_integrated_cognition a hi:Relation ;
+  hi:source hi:hi_videos ;
+  hi:target hi:video_hayles_integrated_cognition ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:video_hayles_integrated_cognition .
+
+hi:rel-hi_videos-video_hayles_bacteria_ai a hi:Relation ;
+  hi:source hi:hi_videos ;
+  hi:target hi:video_hayles_bacteria_ai ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:video_hayles_bacteria_ai .
+
+hi:rel-hi_videos-video_clark_experience_machine a hi:Relation ;
+  hi:source hi:hi_videos ;
+  hi:target hi:video_clark_experience_machine ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:video_clark_experience_machine .
+
+hi:rel-video_hayles_integrated_cognition-hayles a hi:Relation ;
+  hi:source hi:video_hayles_integrated_cognition ;
+  hi:target hi:hayles ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:hayles .
+
+hi:rel-video_hayles_integrated_cognition-llm a hi:Relation ;
+  hi:source hi:video_hayles_integrated_cognition ;
+  hi:target hi:llm ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:llm .
+
+hi:rel-video_hayles_integrated_cognition-gen_ai a hi:Relation ;
+  hi:source hi:video_hayles_integrated_cognition ;
+  hi:target hi:gen_ai ;
+  hi:strength "0.86"^^xsd:decimal ;
+  skos:relatedMatch hi:gen_ai .
+
+hi:rel-video_hayles_integrated_cognition-assemblage a hi:Relation ;
+  hi:source hi:video_hayles_integrated_cognition ;
+  hi:target hi:assemblage ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:assemblage .
+
+hi:rel-video_hayles_integrated_cognition-posthumanism a hi:Relation ;
+  hi:source hi:video_hayles_integrated_cognition ;
+  hi:target hi:posthumanism ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:posthumanism .
+
+hi:rel-video_hayles_integrated_cognition-technosymbiosis a hi:Relation ;
+  hi:source hi:video_hayles_integrated_cognition ;
+  hi:target hi:technosymbiosis ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:technosymbiosis .
+
+hi:rel-video_hayles_integrated_cognition-distributed a hi:Relation ;
+  hi:source hi:video_hayles_integrated_cognition ;
+  hi:target hi:distributed ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:distributed .
+
+hi:rel-video_hayles_integrated_cognition-holobiont a hi:Relation ;
+  hi:source hi:video_hayles_integrated_cognition ;
+  hi:target hi:holobiont ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:holobiont .
+
+hi:rel-video_hayles_integrated_cognition-symbiosis a hi:Relation ;
+  hi:source hi:video_hayles_integrated_cognition ;
+  hi:target hi:symbiosis ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:symbiosis .
+
+hi:rel-video_hayles_integrated_cognition-coupling a hi:Relation ;
+  hi:source hi:video_hayles_integrated_cognition ;
+  hi:target hi:coupling ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:coupling .
+
+hi:rel-video_hayles_integrated_cognition-essay_1 a hi:Relation ;
+  hi:source hi:video_hayles_integrated_cognition ;
+  hi:target hi:essay_1 ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:essay_1 .
+
+hi:rel-video_hayles_bacteria_ai-hayles a hi:Relation ;
+  hi:source hi:video_hayles_bacteria_ai ;
+  hi:target hi:hayles ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:hayles .
+
+hi:rel-video_hayles_bacteria_ai-llm a hi:Relation ;
+  hi:source hi:video_hayles_bacteria_ai ;
+  hi:target hi:llm ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:llm .
+
+hi:rel-video_hayles_bacteria_ai-gen_ai a hi:Relation ;
+  hi:source hi:video_hayles_bacteria_ai ;
+  hi:target hi:gen_ai ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:gen_ai .
+
+hi:rel-video_hayles_bacteria_ai-assemblage a hi:Relation ;
+  hi:source hi:video_hayles_bacteria_ai ;
+  hi:target hi:assemblage ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:assemblage .
+
+hi:rel-video_hayles_bacteria_ai-technosymbiosis a hi:Relation ;
+  hi:source hi:video_hayles_bacteria_ai ;
+  hi:target hi:technosymbiosis ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:technosymbiosis .
+
+hi:rel-video_hayles_bacteria_ai-umwelt a hi:Relation ;
+  hi:source hi:video_hayles_bacteria_ai ;
+  hi:target hi:umwelt ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:umwelt .
+
+hi:rel-video_hayles_bacteria_ai-posthumanism a hi:Relation ;
+  hi:source hi:video_hayles_bacteria_ai ;
+  hi:target hi:posthumanism ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:posthumanism .
+
+hi:rel-video_hayles_bacteria_ai-distributed a hi:Relation ;
+  hi:source hi:video_hayles_bacteria_ai ;
+  hi:target hi:distributed ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:distributed .
+
+hi:rel-video_hayles_bacteria_ai-holobiont a hi:Relation ;
+  hi:source hi:video_hayles_bacteria_ai ;
+  hi:target hi:holobiont ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:holobiont .
+
+hi:rel-video_hayles_bacteria_ai-symbiosis a hi:Relation ;
+  hi:source hi:video_hayles_bacteria_ai ;
+  hi:target hi:symbiosis ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:symbiosis .
+
+hi:rel-video_hayles_bacteria_ai-coupling a hi:Relation ;
+  hi:source hi:video_hayles_bacteria_ai ;
+  hi:target hi:coupling ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:coupling .
+
+hi:rel-video_hayles_bacteria_ai-essay_1 a hi:Relation ;
+  hi:source hi:video_hayles_bacteria_ai ;
+  hi:target hi:essay_1 ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:essay_1 .
+
+hi:rel-video_hayles_bacteria_ai-essay_2 a hi:Relation ;
+  hi:source hi:video_hayles_bacteria_ai ;
+  hi:target hi:essay_2 ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:essay_2 .
+
+hi:rel-video_clark_experience_machine-clark a hi:Relation ;
+  hi:source hi:video_clark_experience_machine ;
+  hi:target hi:clark ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:clark .
+
+hi:rel-video_clark_experience_machine-active_inference a hi:Relation ;
+  hi:source hi:video_clark_experience_machine ;
+  hi:target hi:active_inference ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:active_inference .
+
+hi:rel-video_clark_experience_machine-friston a hi:Relation ;
+  hi:source hi:video_clark_experience_machine ;
+  hi:target hi:friston ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:friston .
+
+hi:rel-video_clark_experience_machine-embodied a hi:Relation ;
+  hi:source hi:video_clark_experience_machine ;
+  hi:target hi:embodied ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:embodied .
+
+hi:rel-video_clark_experience_machine-4e a hi:Relation ;
+  hi:source hi:video_clark_experience_machine ;
+  hi:target hi:4e ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:4e .
+
+hi:rel-video_clark_experience_machine-enactivism a hi:Relation ;
+  hi:source hi:video_clark_experience_machine ;
+  hi:target hi:enactivism ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:enactivism .
+
+hi:rel-video_clark_experience_machine-extended a hi:Relation ;
+  hi:source hi:video_clark_experience_machine ;
+  hi:target hi:extended ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:extended .
+
+hi:rel-video_clark_experience_machine-consciousness a hi:Relation ;
+  hi:source hi:video_clark_experience_machine ;
+  hi:target hi:consciousness ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:consciousness .
+
+hi:rel-video_clark_experience_machine-coupling a hi:Relation ;
+  hi:source hi:video_clark_experience_machine ;
+  hi:target hi:coupling ;
+  hi:strength "0.78"^^xsd:decimal ;
+  skos:relatedMatch hi:coupling .
+
 hi:rel-essay_1-essay_2 a hi:Relation ;
   hi:source hi:essay_1 ;
   hi:target hi:essay_2 ;
@@ -15212,7 +15520,7 @@ hi:rel-essay_1-coupling a hi:Relation ;
 hi:rel-essay_1-hayles a hi:Relation ;
   hi:source hi:essay_1 ;
   hi:target hi:hayles ;
-  hi:strength "0.85"^^xsd:decimal ;
+  hi:strength "0.88"^^xsd:decimal ;
   skos:relatedMatch hi:hayles .
 
 hi:rel-essay_1-hi_hub a hi:Relation ;
@@ -15220,6 +15528,96 @@ hi:rel-essay_1-hi_hub a hi:Relation ;
   hi:target hi:hi_hub ;
   hi:strength "0.85"^^xsd:decimal ;
   skos:relatedMatch hi:hi_hub .
+
+hi:rel-essay_1-gen_ai a hi:Relation ;
+  hi:source hi:essay_1 ;
+  hi:target hi:gen_ai ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:gen_ai .
+
+hi:rel-essay_1-distributed a hi:Relation ;
+  hi:source hi:essay_1 ;
+  hi:target hi:distributed ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:distributed .
+
+hi:rel-essay_1-creative_embodiment a hi:Relation ;
+  hi:source hi:essay_1 ;
+  hi:target hi:creative_embodiment ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:creative_embodiment .
+
+hi:rel-essay_1-architecture a hi:Relation ;
+  hi:source hi:essay_1 ;
+  hi:target hi:architecture ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:architecture .
+
+hi:rel-essay_1-affordances a hi:Relation ;
+  hi:source hi:essay_1 ;
+  hi:target hi:affordances ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:affordances .
+
+hi:rel-essay_1-gibson a hi:Relation ;
+  hi:source hi:essay_1 ;
+  hi:target hi:gibson ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:gibson .
+
+hi:rel-essay_1-choreography a hi:Relation ;
+  hi:source hi:essay_1 ;
+  hi:target hi:choreography ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:choreography .
+
+hi:rel-essay_1-brooks a hi:Relation ;
+  hi:source hi:essay_1 ;
+  hi:target hi:brooks ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:brooks .
+
+hi:rel-essay_1-physical_ai a hi:Relation ;
+  hi:source hi:essay_1 ;
+  hi:target hi:physical_ai ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:physical_ai .
+
+hi:rel-essay_1-forsythe a hi:Relation ;
+  hi:source hi:essay_1 ;
+  hi:target hi:forsythe ;
+  hi:strength "0.86"^^xsd:decimal ;
+  skos:relatedMatch hi:forsythe .
+
+hi:rel-essay_1-choreo_object a hi:Relation ;
+  hi:source hi:essay_1 ;
+  hi:target hi:choreo_object ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:choreo_object .
+
+hi:rel-essay_1-steve_paxton a hi:Relation ;
+  hi:source hi:essay_1 ;
+  hi:target hi:steve_paxton ;
+  hi:strength "0.84"^^xsd:decimal ;
+  skos:relatedMatch hi:steve_paxton .
+
+hi:rel-essay_1-juggling a hi:Relation ;
+  hi:source hi:essay_1 ;
+  hi:target hi:juggling ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:juggling .
+
+hi:rel-essay_1-clark a hi:Relation ;
+  hi:source hi:essay_1 ;
+  hi:target hi:clark ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:clark .
+
+hi:rel-essay_1-dance a hi:Relation ;
+  hi:source hi:essay_1 ;
+  hi:target hi:dance ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:dance .
 
 hi:rel-essay_2-marlon a hi:Relation ;
   hi:source hi:essay_2 ;
@@ -17585,6 +17983,11 @@ hi:rel-hi_essays-hi_hub-participatesIn a hi:Relation ;
   hi:target hi:hi_hub ;
   hi:relationType hi:participatesIn .
 
+hi:rel-hi_videos-hi_hub-participatesIn a hi:Relation ;
+  hi:source hi:hi_videos ;
+  hi:target hi:hi_hub ;
+  hi:relationType hi:participatesIn .
+
 hi:rel-ontology_kb-hi_hub-participatesIn a hi:Relation ;
   hi:source hi:ontology_kb ;
   hi:target hi:hi_hub ;
@@ -17829,6 +18232,51 @@ hi:rel-hi_essays-ontology_kb-develops a hi:Relation ;
   hi:source hi:hi_essays ;
   hi:target hi:ontology_kb ;
   hi:relationType hi:develops .
+
+hi:rel-hi_videos-ontology_kb-develops a hi:Relation ;
+  hi:source hi:hi_videos ;
+  hi:target hi:ontology_kb ;
+  hi:relationType hi:develops .
+
+hi:rel-video_hayles_integrated_cognition-assemblage-develops a hi:Relation ;
+  hi:source hi:video_hayles_integrated_cognition ;
+  hi:target hi:assemblage ;
+  hi:relationType hi:develops .
+
+hi:rel-video_hayles_integrated_cognition-hayles-instantiates a hi:Relation ;
+  hi:source hi:video_hayles_integrated_cognition ;
+  hi:target hi:hayles ;
+  hi:relationType hi:instantiates .
+
+hi:rel-video_hayles_bacteria_ai-assemblage-develops a hi:Relation ;
+  hi:source hi:video_hayles_bacteria_ai ;
+  hi:target hi:assemblage ;
+  hi:relationType hi:develops .
+
+hi:rel-video_hayles_bacteria_ai-llm-develops a hi:Relation ;
+  hi:source hi:video_hayles_bacteria_ai ;
+  hi:target hi:llm ;
+  hi:relationType hi:develops .
+
+hi:rel-video_hayles_bacteria_ai-umwelt-develops a hi:Relation ;
+  hi:source hi:video_hayles_bacteria_ai ;
+  hi:target hi:umwelt ;
+  hi:relationType hi:develops .
+
+hi:rel-video_hayles_bacteria_ai-hayles-instantiates a hi:Relation ;
+  hi:source hi:video_hayles_bacteria_ai ;
+  hi:target hi:hayles ;
+  hi:relationType hi:instantiates .
+
+hi:rel-video_clark_experience_machine-active_inference-develops a hi:Relation ;
+  hi:source hi:video_clark_experience_machine ;
+  hi:target hi:active_inference ;
+  hi:relationType hi:develops .
+
+hi:rel-video_clark_experience_machine-clark-instantiates a hi:Relation ;
+  hi:source hi:video_clark_experience_machine ;
+  hi:target hi:clark ;
+  hi:relationType hi:instantiates .
 
 hi:rel-enact-coupling-enacts a hi:Relation ;
   hi:source hi:enact ;

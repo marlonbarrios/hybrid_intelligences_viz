@@ -129,16 +129,80 @@ function buildFocusBlock(data, id) {
   const concept = findConcept(data, id);
   if (!concept) return "";
   const cat = concept.category ? (CATEGORY_LABEL[concept.category] || concept.category) : "";
+  const isVideo = id.startsWith("video_");
   const lines = [
-    "FOCUS NODE FOR THIS SESSION",
-    "The listener opened Voice from this ontology entry. Your first spoken turn MUST explain this concept from the definition below. Do not give a generic welcome instead of explaining it.",
+    isVideo ? "FOCUS VIDEO FOR THIS SESSION" : "FOCUS NODE FOR THIS SESSION",
+    isVideo
+      ? "The listener opened Voice to talk about this curated video reel. Explain what the video is from the definition below, then ground the conversation in the transcript excerpt when present. Do not give a generic welcome instead of engaging with the video."
+      : "The listener opened Voice from this ontology entry. Your first spoken turn MUST explain this concept from the definition below. Do not give a generic welcome instead of explaining it.",
     `Name: ${concept.label}`,
   ];
   if (cat) lines.push(`Category: ${cat}`);
   if (concept.definition) lines.push(`Definition: ${concept.definition}`);
   if (concept.related.length) lines.push(`Related: ${concept.related.join(", ")}`);
   lines.push("When a related line includes a verb (couples with, enables, mediates, develops), speak that relationship. Do not flatten it to 'is related to'.");
-  lines.push("If this is the Hybrid Intelligences Hub, say that you are its conversational AI layer: a dynamic cognitive assemblage created by Marlon Barrios Solano, in which essays, ontology, network, Voice, Image, Mini-pod, and Enact couple. If this is Conversational AI, say that you are that spoken companion, grounded in the ontology as knowledge base, then invite them to ask about any concept — including what this tool is. If this is Mini-pod, Concept Image, Enact, Ontology as Knowledge Base, Essays, or Network Visualization, explain that layer of the Hub and how it couples with the others. If this is the Hybrid Intelligences Program, a track, or the reception, speak in the past tense: the inaugural Creative B program was held July 13–30, 2026; say who co-led it, where it took place, and how it was organized. Then note that Hybrid Intelligences as a framework remains ongoing research in the present. Then invite them to go deeper or change the subject.");
+  if (isVideo) {
+    lines.push("This is a video node in the Hub's curated reels. The listener may ask what was said, argued, or exemplified in the recording.");
+  } else {
+    lines.push("If this is the Hybrid Intelligences Hub, say that you are its conversational AI layer: a dynamic cognitive assemblage created by Marlon Barrios Solano, in which essays, ontology, network, Voice, Image, Mini-pod, and Enact couple. If this is Conversational AI, say that you are that spoken companion, grounded in the ontology as knowledge base, then invite them to ask about any concept — including what this tool is. If this is Mini-pod, Concept Image, Enact, Ontology as Knowledge Base, Essays, or Network Visualization, explain that layer of the Hub and how it couples with the others. If this is the Hybrid Intelligences Program, a track, or the reception, speak in the past tense: the inaugural Creative B program was held July 13–30, 2026; say who co-led it, where it took place, and how it was organized. Then note that Hybrid Intelligences as a framework remains ongoing research in the present. Then invite them to go deeper or change the subject.");
+  }
+  let block = lines.join("\n") + "\n\n";
+  if (isVideo) block += buildVideoTranscriptBlock(id);
+  return block;
+}
+
+function videoManifestId(networkNodeId) {
+  if (!networkNodeId || !networkNodeId.startsWith("video_")) return null;
+  return networkNodeId.slice(6).replace(/_/g, "-");
+}
+
+function loadVideoContext(networkNodeId) {
+  const manifestId = videoManifestId(networkNodeId);
+  if (!manifestId) return null;
+  try {
+    const manifest = JSON.parse(
+      fs.readFileSync(path.join(__dirname, "..", "videos.json"), "utf8")
+    );
+    const video = (manifest.videos || []).find((v) => v.id === manifestId);
+    if (!video) return null;
+    const rel = video.transcript || `transcripts/${manifestId}.json`;
+    const file = path.join(__dirname, "..", rel);
+    if (!fs.existsSync(file)) return { video, transcript: null };
+    const transcript = JSON.parse(fs.readFileSync(file, "utf8"));
+    return { video, transcript };
+  } catch {
+    return null;
+  }
+}
+
+function buildVideoTranscriptBlock(networkNodeId) {
+  const ctx = loadVideoContext(networkNodeId);
+  if (!ctx) return "";
+  const lines = ["VIDEO CONTENT"];
+  if (ctx.video.title) lines.push(`Title: ${ctx.video.title}`);
+  if (ctx.video.speaker) lines.push(`Speaker: ${ctx.video.speaker}`);
+  if (ctx.video.caption) lines.push(`Summary: ${ctx.video.caption}`);
+  if (ctx.transcript?.matched?.length) {
+    lines.push(
+      `Matched concepts: ${ctx.transcript.matched
+        .slice(0, 12)
+        .map((m) => m.label || m.conceptId)
+        .join(", ")}`
+    );
+  }
+  if (ctx.transcript?.text) {
+    lines.push(
+      "Transcript excerpt (use to discuss what was said; summarize and quote briefly — do not read the entire transcript aloud):"
+    );
+    lines.push(ctx.transcript.text.slice(0, 10000));
+  } else {
+    lines.push(
+      "Transcript not ingested yet. Speak from the ontology definition; note that full speech content will be available after ingest."
+    );
+  }
+  lines.push(
+    "Answer questions about this video from the transcript and ontology. Connect arguments in the recording to Hybrid Intelligences concepts."
+  );
   return lines.join("\n") + "\n\n";
 }
 
@@ -242,5 +306,7 @@ module.exports = {
   buildOntologyDigest,
   findConcept,
   loadOntology,
+  loadVideoContext,
+  videoManifestId,
   CATEGORY_LABEL,
 };

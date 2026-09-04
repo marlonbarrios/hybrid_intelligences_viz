@@ -18,6 +18,7 @@ const OUT_OWL = path.join(ROOT, "ontology.owl.ttl");
 
 const BASE = "https://marlonbarrios.github.io/hybrid-intelligences/ontology#";
 const DOC = "https://marlonbarrios.github.io/hybrid-intelligences/ontology";
+const SITE = "https://marlonbarrios.github.io/hybrid_intelligences_viz";
 
 const CATEGORY_DESCS = {
   program: "The Hybrid Intelligences Hub (the public tool), the inaugural Creative B program (July 13–30, 2026), its three tracks, and public events.",
@@ -30,7 +31,7 @@ const CATEGORY_DESCS = {
   quality: "Traits of hybrid cognition—embodied, situated, distributed, critical.",
   phenomenon: "Observable dynamics—mediation, symbiosis, community, theory of mind.",
   domain: "Fields of practice and inquiry—art, law, ecology, AI, choreography.",
-  practice: "Methods and habits—rehearsal, somatics, pedagogy, cultural critique, conversational AI, Mini-pod, concept image, and the ontology as a knowledge base for the Hub.",
+  practice: "Methods and habits—rehearsal, somatics, pedagogy, cultural critique, conversational AI, Mini-pod, concept image, essays, videos, and the ontology as a knowledge base for the Hub.",
   author: "Thinkers, artists, and researchers linked to concepts in the network.",
   facilitator: "Hybrid Intelligences session leaders and guest facilitators.",
 };
@@ -187,8 +188,13 @@ function buildJsonLd({ NODES, EDGES, CATEGORY_META, RING_ORDER, TYPED_EDGES, REL
       "hi:weight": n.weight,
     };
     if (n.url) entry["schema:url"] = n.url;
-    if (n.wikiUrl && n.wikiUrl !== n.url) entry["schema:sameAs"] = n.wikiUrl;
-    else if (n.wikiUrl) entry["schema:sameAs"] = n.wikiUrl;
+    if (n.poster) entry["schema:image"] = `${SITE}/${n.poster}`;
+    const sameAs = [];
+    if (n.watchUrl) sameAs.push(n.watchUrl);
+    if (n.wikiUrl && n.wikiUrl !== n.url && n.wikiUrl !== n.watchUrl) sameAs.push(n.wikiUrl);
+    else if (n.wikiUrl && !n.watchUrl) sameAs.push(n.wikiUrl);
+    if (sameAs.length === 1) entry["schema:sameAs"] = sameAs[0];
+    else if (sameAs.length > 1) entry["schema:sameAs"] = sameAs;
     if (relatedBySource[n.id]?.length) {
       entry["skos:related"] = relatedBySource[n.id];
     }
@@ -276,7 +282,9 @@ function buildTurtle({ NODES, EDGES, CATEGORY_META, RING_ORDER, TYPED_EDGES, REL
   for (const n of NODES) {
     const extras = [];
     if (n.url) extras.push(`schema:url <${n.url}>`);
-    if (n.wikiUrl) extras.push(`schema:sameAs <${n.wikiUrl}>`);
+    if (n.poster) extras.push(`schema:image <${SITE}/${n.poster}>`);
+    if (n.watchUrl) extras.push(`schema:sameAs <${n.watchUrl}>`);
+    if (n.wikiUrl && n.wikiUrl !== n.watchUrl) extras.push(`schema:sameAs <${n.wikiUrl}>`);
     lines.push(`hi:${n.id} a skos:Concept, hi:NetworkNode ;`);
     lines.push(`  skos:prefLabel "${turtleEscape(cleanLabel(n.label))}" ;`);
     lines.push(`  skos:definition "${turtleEscape(n.desc)}" ;`);
@@ -490,7 +498,9 @@ function buildOwlTurtle({ NODES, EDGES, CATEGORY_META, RING_ORDER, TYPED_EDGES, 
     const cls = CAT_CLASS[n.cat];
     const extras = [];
     if (n.url) extras.push(`schema:url <${n.url}>`);
-    if (n.wikiUrl) extras.push(`schema:sameAs <${n.wikiUrl}>`);
+    if (n.poster) extras.push(`schema:image <${SITE}/${n.poster}>`);
+    if (n.watchUrl) extras.push(`schema:sameAs <${n.watchUrl}>`);
+    if (n.wikiUrl && n.wikiUrl !== n.watchUrl) extras.push(`schema:sameAs <${n.wikiUrl}>`);
 
     lines.push(`hi:${n.id} a owl:NamedIndividual, hi:${cls} ;`);
     lines.push(`  rdfs:label "${turtleEscape(cleanLabel(n.label))}"@en ;`);

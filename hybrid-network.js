@@ -124,6 +124,7 @@ let mouseOnLegend = false;
 let mouseOnRelationLegend = false;
 let hoveredLegendHeader = false;
 let detailPanelLinks = [];
+let posterImages = {};
 let uiLinks = [];
 let mobileMenuOpen = false;
 let mobileHits = [];
@@ -1077,6 +1078,24 @@ const NODES = [
   { id: "hi_essays",          label: "Essays",                        cat: "practice",   weight: 1.5,
     desc: "The publishing layer of the Hybrid Intelligences Hub. The four essays published now are by Marlon Barrios Solano: Essay 1 (cognitive assemblages and complex embodiment), Essay 2 (My Umwelt, in conversation with GPT-5.5), Essay 3 (ontology, knowledge graph, and cognitive assemblage), and Essay 4 (Designing Unstable Landscapes — improvisational dance within cognitive systems). Guest collaborations will feed the ontology as the section grows. Writing here is not illustration after the fact; it is knowledge that becomes concepts, relations, and prompts for Voice, Image, Mini-pod, and Enact.",
     url: "essays.html", linkLabel: "Open essays →" },
+  { id: "hi_videos",          label: "Videos",                        cat: "practice",   weight: 1.5,
+    desc: "The video publishing layer of the Hybrid Intelligences Hub. Talks and performances whose speech is ingested against the ontology — YouTube captions or Whisper transcription, then concept matching proposes edges for hybrid-network.js. The transcript stays internal; published pages show matched concepts and network links.",
+    url: "videos.html", linkLabel: "Open videos →" },
+  { id: "video_hayles_integrated_cognition", label: "Hayles · ICF", cat: "practice",   weight: 1.45,
+    desc: "Katherine Hayles — Consciousness Is Not Necessary for Cognition. Podcast interview on the integrated cognitive framework, How We Became Posthuman, widening the circle of care, nonconscious cognition, holobionts, and human–AI relationality. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-hayles-integrated-cognition.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=W_W-yKNB6IU", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/hayles-integrated-cognition.jpg" },
+  { id: "video_hayles_bacteria_ai", label: "Hayles · Bacteria\nto AI", cat: "practice",   weight: 1.45,
+    desc: "Katherine Hayles on Urgent Futures with Jesse Damiani (March 2025) — on Bacteria to AI: integrated cognitive framework (ICF), nonconscious cognition, distributed agency in cognitive assemblages, LLM Umwelten, sympoiesis, reversible internalities, and posthuman relationality. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-hayles-bacteria-ai.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=PGFNREZTXQQ", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/hayles-bacteria-ai.jpg" },
+  { id: "video_clark_experience_machine", label: "Clark · Predictive\nBrain", cat: "practice",   weight: 1.45,
+    desc: "Andy Clark — The Experience Machine (Royal Institution). Lecture on predictive processing: brains as prediction machines, controlled hallucination, precision weighting, Karl Friston and active inference, computational psychiatry, chronic pain, placebo, and nudging the predictive brain. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-clark-experience-machine.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=A1Ghrd7NBtk", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/clark-experience-machine.jpg" },
   { id: "essay_1",            label: "Essay 1",                        cat: "practice",   weight: 1.55,
     desc: "Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI — Essay 1 by Marlon Barrios Solano (July 10, 2026). Traces a lineage from Unstablelandscape (early 2000s real-time dance–technology) through Essay 4 (2005) to generative AI. Develops intelligence as coupling, embodiment as nested ecology, and cognition as distributed across assemblages. Performative architecture and affordances; Brooks's embodied robotics and Hayles's cognitive nonconscious; Paxton, Forsythe's choreographic object, and Synchronous Objects; juggling as reflex training. First-person argument that hybrid intelligence extends designed cognitive systems into language models and cognitive architectures.",
     url: "essay.html", linkLabel: "Read Essay 1 →" },
@@ -1106,7 +1125,7 @@ const NODES = [
     url: "showcase.html", linkLabel: "Open showcase →" },
 
   { id: "hi_hub",             label: "Hybrid Intelligences\nHub",     cat: "program",  weight: 2.15,
-    desc: "The public Hybrid Intelligences tool: a dynamic cognitive assemblage created by Marlon Barrios Solano as Maker-in-Residence at CAME. Not a brochure and not a chatbot in isolation — a hybrid instrument in which essays, ontology, network visualization, conversational AI, concept images, Mini-pods, and Enact couple. The ontology is the knowledge base that grounds Voice; from any concept one can talk, generate an image, or create a short spoken episode. Enact offers cognitive prompts for a choreography of awareness. Also called this site, this platform, or this knowledge architecture. When asked what the Hub or this tool is, describe it as that assemblage and refer to its layers by name.",
+    desc: "The public Hybrid Intelligences tool: a dynamic cognitive assemblage created by Marlon Barrios Solano as Maker-in-Residence at CAME. Not a brochure and not a chatbot in isolation — a hybrid instrument in which essays, videos, ontology, network visualization, conversational AI, concept images, Mini-pods, and Enact couple. The ontology is the knowledge base that grounds Voice; from any concept one can talk, generate an image, or create a short spoken episode. Enact offers cognitive prompts for a choreography of awareness. Also called this site, this platform, or this knowledge architecture. When asked what the Hub or this tool is, describe it as that assemblage and refer to its layers by name.",
     url: "index.html", linkLabel: "Open Home →" },
   { id: "hi_program",         label: "Hybrid Intelligences\nProgram", cat: "program",  weight: 2.2,
     desc: "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI — the inaugural University of Florida Creative B program, held July 13–30, 2026. It was co-led by Marlon Barrios Solano and Erika Moore; hosted by CAME and CAM in the College of the Arts, in partnership with IGNITE at the Wertheim Laboratory. It had three tracks: Space & Memory (Mondays), Future Lab (Wednesdays), and Ethics & Leadership (Thursdays), and closed with a public reception. The program treated intelligence as coupling across bodies, tools, institutions, and worlds, and rehearsed hybrid cognition through embodiment, ethics, and creative practice. Hybrid Intelligences remains an ongoing research framework. Its public site is the Hybrid Intelligences Hub — a dynamic cognitive assemblage of concepts, essays, visualization, conversational AI, Image, Mini-pod, Enact, documentation, and program materials.",
@@ -3598,6 +3617,7 @@ const EDGES = [
   ["hi_hub", "ontology_kb", 1.0],
   ["hi_hub", "network_viz", 0.98],
   ["hi_hub", "hi_essays", 0.95],
+  ["hi_hub", "hi_videos", 0.92],
   ["hi_hub", "concept_image", 0.95],
   ["hi_hub", "mini_pod", 0.98],
   ["hi_hub", "enact", 0.95],
@@ -3606,6 +3626,7 @@ const EDGES = [
   ["ontology_kb", "conversational_ai", 0.98],
   ["ontology_kb", "network_viz", 0.95],
   ["ontology_kb", "hi_essays", 0.92],
+  ["ontology_kb", "hi_videos", 0.88],
   ["ontology_kb", "mini_pod", 0.9],
   ["ontology_kb", "concept_image", 0.9],
   ["ontology_kb", "assemblage", 0.88],
@@ -3623,6 +3644,47 @@ const EDGES = [
   ["hi_essays", "essay_2", 0.98],
   ["hi_essays", "essay_3", 0.98],
   ["hi_essays", "essay_4", 0.98],
+  ["hi_videos", "marlon", 0.9],
+  ["hi_videos", "hi_program", 0.9],
+  ["hi_videos", "creative_embodiment", 0.85],
+  ["hi_videos", "coupling", 0.82],
+  ["mini_pod", "hi_videos", 0.75],
+  ["hi_videos", "video_hayles_integrated_cognition", 0.98],
+  ["hi_videos", "video_hayles_bacteria_ai", 0.98],
+  ["hi_videos", "video_clark_experience_machine", 0.98],
+  ["video_hayles_integrated_cognition", "hayles", 0.98],
+  ["video_hayles_integrated_cognition", "llm", 0.88],
+  ["video_hayles_integrated_cognition", "gen_ai", 0.86],
+  ["video_hayles_integrated_cognition", "assemblage", 0.92],
+  ["video_hayles_integrated_cognition", "posthumanism", 0.9],
+  ["video_hayles_integrated_cognition", "technosymbiosis", 0.85],
+  ["video_hayles_integrated_cognition", "distributed", 0.85],
+  ["video_hayles_integrated_cognition", "holobiont", 0.82],
+  ["video_hayles_integrated_cognition", "symbiosis", 0.85],
+  ["video_hayles_integrated_cognition", "coupling", 0.82],
+  ["video_hayles_integrated_cognition", "essay_1", 0.85],
+  ["video_hayles_bacteria_ai", "hayles", 0.98],
+  ["video_hayles_bacteria_ai", "llm", 0.92],
+  ["video_hayles_bacteria_ai", "gen_ai", 0.9],
+  ["video_hayles_bacteria_ai", "assemblage", 0.95],
+  ["video_hayles_bacteria_ai", "technosymbiosis", 0.88],
+  ["video_hayles_bacteria_ai", "umwelt", 0.9],
+  ["video_hayles_bacteria_ai", "posthumanism", 0.85],
+  ["video_hayles_bacteria_ai", "distributed", 0.88],
+  ["video_hayles_bacteria_ai", "holobiont", 0.82],
+  ["video_hayles_bacteria_ai", "symbiosis", 0.85],
+  ["video_hayles_bacteria_ai", "coupling", 0.85],
+  ["video_hayles_bacteria_ai", "essay_1", 0.82],
+  ["video_hayles_bacteria_ai", "essay_2", 0.85],
+  ["video_clark_experience_machine", "clark", 0.98],
+  ["video_clark_experience_machine", "active_inference", 0.95],
+  ["video_clark_experience_machine", "friston", 0.92],
+  ["video_clark_experience_machine", "embodied", 0.88],
+  ["video_clark_experience_machine", "4e", 0.85],
+  ["video_clark_experience_machine", "enactivism", 0.85],
+  ["video_clark_experience_machine", "extended", 0.82],
+  ["video_clark_experience_machine", "consciousness", 0.8],
+  ["video_clark_experience_machine", "coupling", 0.78],
   ["essay_1", "essay_2", 0.9],
   ["essay_1", "essay_3", 0.88],
   ["essay_1", "essay_4", 0.86],
@@ -4094,6 +4156,7 @@ const TYPED_EDGES = [
   ["conversational_ai", "hi_hub", "participatesIn"],
   ["enact", "hi_hub", "participatesIn"],
   ["hi_essays", "hi_hub", "participatesIn"],
+  ["hi_videos", "hi_hub", "participatesIn"],
   ["ontology_kb", "hi_hub", "participatesIn"],
   ["network_viz", "hi_hub", "participatesIn"],
   ["concept_image", "hi_hub", "participatesIn"],
@@ -4143,6 +4206,15 @@ const TYPED_EDGES = [
   ["essay_4", "humanism", "critiques"],
   ["thompson", "autopoiesis", "develops"],
   ["hi_essays", "ontology_kb", "develops"],
+  ["hi_videos", "ontology_kb", "develops"],
+  ["video_hayles_integrated_cognition", "assemblage", "develops"],
+  ["video_hayles_integrated_cognition", "hayles", "instantiates"],
+  ["video_hayles_bacteria_ai", "assemblage", "develops"],
+  ["video_hayles_bacteria_ai", "llm", "develops"],
+  ["video_hayles_bacteria_ai", "umwelt", "develops"],
+  ["video_hayles_bacteria_ai", "hayles", "instantiates"],
+  ["video_clark_experience_machine", "active_inference", "develops"],
+  ["video_clark_experience_machine", "clark", "instantiates"],
   ["enact", "coupling", "enacts"],
   ["enact", "embodiment", "enacts"],
   ["vipassana", "enactivism", "enacts"],
@@ -4301,6 +4373,7 @@ function setup() {
   } catch (_) {}
   setTheme(themeMode);
   initGraph();
+  preloadPosterImages();
   applyHashSelection();
   window.addEventListener("hashchange", applyHashSelection);
 }
@@ -6062,6 +6135,26 @@ function podcastObjectUrl(id, label) {
   return `${MINI_POD_URL}?id=${encodeURIComponent(id)}&name=${encodeURIComponent(name)}`;
 }
 
+function preloadPosterImages() {
+  for (const n of NODES) {
+    if (!n.poster) continue;
+    loadImage(
+      n.poster,
+      (img) => { posterImages[n.id] = img; },
+      () => { posterImages[n.id] = null; }
+    );
+  }
+}
+
+function detailPosterBlock(n, panelW) {
+  const img = posterImages[n?.id];
+  if (!img || img.width <= 0) return { height: 0, img: null, imgW: 0, imgH: 0 };
+  const imgW = panelW - 28;
+  const rawH = imgW * (img.height / img.width);
+  const imgH = min(rawH, isMobileLayout() ? 96 : 112);
+  return { height: imgH + 12, img, imgW, imgH };
+}
+
 function detailPanelLayout(n) {
   const panelW = min(360, width - 32);
   const mobile = isMobileLayout();
@@ -6070,13 +6163,15 @@ function detailPanelLayout(n) {
     : toggleLayout().bottom + toggleLayout().btnH + toggleLayout().padY * 2 + 12;
   const wikiUrl = n?.wikiUrl || (n?.url?.includes("wikipedia.org") ? n.url : null);
   const primaryUrl = n?.url && n.url !== wikiUrl ? n.url : null;
-  const linkCount = 3 + (primaryUrl ? 1 : 0) + (wikiUrl ? 1 : 0) + 1 + 4;
+  const watchUrl = n?.watchUrl || null;
+  const linkCount = 3 + (primaryUrl ? 1 : 0) + (watchUrl ? 1 : 0) + (wikiUrl ? 1 : 0) + 1 + 4;
   const hasLink = linkCount > 0;
   const typedCount = n ? min(4, typedPhrasesFor(n).length) : 0;
+  const poster = detailPosterBlock(n, panelW);
   const panelH = mobile
-    ? min(108 + linkCount * 18 + typedCount * 14, 280)
-    : 108 + linkCount * 20 + typedCount * 15;
-  return { panelW, x: 16, y: height - toggleH - panelH, panelH, hasLink, linkCount, wikiUrl, primaryUrl, typedCount };
+    ? min(108 + poster.height + linkCount * 18 + typedCount * 14, 280 + poster.height)
+    : 108 + poster.height + linkCount * 20 + typedCount * 15;
+  return { panelW, x: 16, y: height - toggleH - panelH, panelH, hasLink, linkCount, wikiUrl, primaryUrl, watchUrl, typedCount, poster };
 }
 
 function hitDetailPanelLink(mx, my) {
@@ -6100,7 +6195,7 @@ function hitUiLink(mx, my) {
 function drawDetailPanel(n) {
   const t = theme();
   detailPanelLinks = [];
-  const { panelW, x, y, panelH, hasLink, linkCount, wikiUrl, primaryUrl, typedCount } = detailPanelLayout(n);
+  const { panelW, x, y, panelH, hasLink, linkCount, wikiUrl, primaryUrl, watchUrl, typedCount, poster } = detailPanelLayout(n);
   const phrases = typedPhrasesFor(n).slice(0, 4);
 
   fill(...t.panel, panelAlpha * 0.96);
@@ -6120,10 +6215,15 @@ function drawDetailPanel(n) {
   text(n.label.replace(/\n/g, " "), x + 14, y + 28);
   textStyle(NORMAL);
 
+  let ty = y + 48;
+  if (poster.img) {
+    image(poster.img, x + 14, ty, poster.imgW, poster.imgH);
+    ty += poster.height;
+  }
+
   fill(...t.panelBody);
   textSize(10);
   const wrapped = wrapText(n.desc, panelW - 28, 10);
-  let ty = y + 48;
   const extraLinks = 1 + (primaryUrl ? 1 : 0) + (wikiUrl ? 1 : 0);
   const maxLines = hasLink ? max(2, 4 - extraLinks) : 3;
   for (const line of wrapped.slice(0, maxLines)) {
@@ -6160,6 +6260,9 @@ function drawDetailPanel(n) {
   drawPanelLink(podcastObjectUrl(n.id, n.label), "Mini-pod");
   if (primaryUrl) {
     drawPanelLink(primaryUrl, n.linkLabel || "Open external link ↗");
+  }
+  if (watchUrl) {
+    drawPanelLink(watchUrl, n.watchLabel || "Watch on YouTube ↗");
   }
   if (wikiUrl) {
     drawPanelLink(wikiUrl, "Wikipedia ↗");

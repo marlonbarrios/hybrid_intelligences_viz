@@ -1,0 +1,37 @@
+{
+  "videos": [
+    {
+      "id": "hayles-integrated-cognition",
+      "title": "Katherine Hayles — Consciousness Is Not Necessary for Cognition",
+      "youtube": "https://www.youtube.com/watch?v=W_W-yKNB6IU",
+      "poster": "screenshots/hayles-integrated-cognition.jpg",
+      "date": "2025-01-01",
+      "speaker": "Katherine Hayles",
+      "caption": "On the integrated cognitive framework, How We Became Posthuman, widening the circle of care, nonconscious cognition, and relationality with synthetic intelligence.",
+      "credit": "Podcast interview",
+      "transcript": "transcripts/hayles-integrated-cognition.json"
+    },
+    {
+      "id": "hayles-bacteria-ai",
+      "title": "Katherine Hayles — Bacteria to AI (Urgent Futures)",
+      "youtube": "https://www.youtube.com/watch?v=PGFNREZTXQQ",
+      "poster": "screenshots/hayles-bacteria-ai.jpg",
+      "date": "2025-03-01",
+      "speaker": "Katherine Hayles",
+      "caption": "Katherine Hayles on Urgent Futures with Jesse Damiani — integrated cognitive framework, nonconscious cognition, LLMs, Umwelt, sympoiesis, and posthuman futures in the era of AI.",
+      "credit": "Urgent Futures · Reality Studies",
+      "transcript": "transcripts/hayles-bacteria-ai.json"
+    },
+    {
+      "id": "clark-experience-machine",
+      "title": "Andy Clark — The Experience Machine (Predictive Brains)",
+      "youtube": "https://www.youtube.com/watch?v=A1Ghrd7NBtk",
+      "poster": "screenshots/clark-experience-machine.jpg",
+      "date": "2024-01-01",
+      "speaker": "Andy Clark",
+      "caption": "Royal Institution lecture on predictive processing — brains as prediction machines, controlled hallucination, precision weighting, Karl Friston and active inference, chronic pain, placebo, and hacking the predictive brain.",
+      "credit": "Royal Institution · The Experience Machine",
+      "transcript": "transcripts/clark-experience-machine.json"
+    }
+  ]
+}

@@ -481,6 +481,27 @@
       return String(value);
     }
 
+    function videoManifestId(networkNodeId) {
+      if (!networkNodeId || !networkNodeId.startsWith("video_")) return null;
+      return networkNodeId.slice(6).replace(/_/g, "-");
+    }
+
+    async function loadVideoTranscriptExcerpt(networkNodeId) {
+      const manifestId = videoManifestId(networkNodeId);
+      if (!manifestId) return null;
+      try {
+        const res = await fetch("transcripts/" + manifestId + ".json");
+        if (!res.ok) return null;
+        const data = await res.json();
+        return {
+          excerpt: (data.text || "").slice(0, 4000),
+          matched: (data.matched || []).slice(0, 8).map((m) => m.label || m.conceptId),
+        };
+      } catch (_) {
+        return null;
+      }
+    }
+
     async function loadTalkEntry() {
       const topic = talkTopic();
       if (!topic || topic.id === "topic") return topic;
@@ -506,13 +527,18 @@
           .slice(0, 8)
           .map((rel) => rel.label)
           .filter(Boolean);
-        return {
+        const entry = {
           id: topic.id,
           name: textOf(item["skos:prefLabel"]) || topic.name,
           definition: textOf(item["skos:definition"]),
           category: item["hi:category"] || "",
           related,
+          isVideo: topic.id.startsWith("video_"),
         };
+        if (entry.isVideo) {
+          entry.video = await loadVideoTranscriptExcerpt(topic.id);
+        }
+        return entry;
       } catch (_) {
         return topic;
       }
@@ -558,12 +584,28 @@
       const topic = ontologyEntry || talkTopic();
       if (topic && topic.name) {
         const cat = topic.category ? (CATEGORY_LABEL[topic.category] || topic.category) : "";
-        let text = "The listener opened Voice from a Hybrid Intelligences ontology node. Explain this entry first. Use it as source of truth. Do not give a generic welcome instead of explaining it.\n";
+        const isVideo = topic.isVideo || (topic.id && topic.id.startsWith("video_"));
+        let text = isVideo
+          ? "The listener opened Voice to talk about this curated video reel. Introduce the video from the ontology entry, then speak about what was said using the transcript excerpt when present. Do not give a generic welcome.\n"
+          : "The listener opened Voice from a Hybrid Intelligences ontology node. Explain this entry first. Use it as source of truth. Do not give a generic welcome instead of explaining it.\n";
         text += "Name: " + topic.name + "\n";
         if (cat) text += "Category: " + cat + "\n";
         if (topic.definition) text += "Definition: " + topic.definition + "\n";
         if (topic.related && topic.related.length) text += "Related: " + topic.related.join(", ") + "\n";
-        text += "Today's date is " + new Date().toISOString().slice(0, 10) + ". Speak in a few short sentences about what this is, grounded in that definition. If it is the program, a track, or the reception, use the past tense: the inaugural Hybrid Intelligences Creative B program was held July 13–30, 2026; say who co-led it, where it took place, and how it was organized. Then note that Hybrid Intelligences as a framework remains ongoing research in the present. Keep theory in the present tense. If it is Conversational AI, say that you are that spoken companion, grounded in the ontology. Mention one or two related concepts if useful. Then tell them how to talk with you: on a keyboard they must hold Space to speak; on a phone they press and hold Hold to speak; you can only hear them while they hold, and they release to send. Then stop and wait. If they start speaking while you talk, stop immediately.";
+        if (isVideo && topic.video) {
+          if (topic.video.matched && topic.video.matched.length) {
+            text += "Matched concepts: " + topic.video.matched.join(", ") + "\n";
+          }
+          if (topic.video.excerpt) {
+            text += "Transcript excerpt:\n" + topic.video.excerpt + "\n";
+          }
+        }
+        text += "Today's date is " + new Date().toISOString().slice(0, 10) + ". ";
+        if (isVideo) {
+          text += "In a few short sentences, say what this video is and one thing worth hearing from it, grounded in the transcript when available. Then tell them how to talk with you: on a keyboard they must hold Space to speak; on a phone they press and hold Hold to speak; you can only hear them while they hold, and they release to send. Then stop and wait. If they start speaking while you talk, stop immediately.";
+        } else {
+          text += "Speak in a few short sentences about what this is, grounded in that definition. If it is the program, a track, or the reception, use the past tense: the inaugural Hybrid Intelligences Creative B program was held July 13–30, 2026; say who co-led it, where it took place, and how it was organized. Then note that Hybrid Intelligences as a framework remains ongoing research in the present. Keep theory in the present tense. If it is Conversational AI, say that you are that spoken companion, grounded in the ontology. Mention one or two related concepts if useful. Then tell them how to talk with you: on a keyboard they must hold Space to speak; on a phone they press and hold Hold to speak; you can only hear them while they hold, and they release to send. Then stop and wait. If they start speaking while you talk, stop immediately.";
+        }
         return text;
       }
       return "The listener just connected. Today's date is " + new Date().toISOString().slice(0, 10) + ". Speak first so they know you are live. Welcome them to Hybrid Intelligences as the conversational AI for this knowledge architecture. The inaugural Creative B program was held July 13–30, 2026 — that program is past; the framework and research continue in the present. Then tell them how to talk with you: on a keyboard they must hold Space to speak; on a phone they press and hold Hold to speak; you can only hear them while they hold, and they release to send. Keep that instruction to one short sentence. Then stop and wait. If they start speaking while you greet them, stop immediately.";
@@ -1044,9 +1086,12 @@
       const caption = document.querySelector("p.caption");
       if (caption) {
         const safeName = topic.name.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-        caption.innerHTML = "Press <strong>Talk</strong> and allow the microphone. The voice will start from the ontology entry for <strong>" +
-          safeName +
-          "</strong>. After that, it can only hear you while you hold <strong>Space</strong> on a keyboard or <strong>Hold to speak</strong> on a phone. Release to send. Use <strong>PDF ↓</strong> to save the transcript.";
+        const isVideo = topic.id && topic.id.startsWith("video_");
+        caption.innerHTML = isVideo
+          ? "Press <strong>Talk</strong> and allow the microphone. Voice will start from this video's ontology entry and ingested speech. After that, hold <strong>Space</strong> or <strong>Hold to speak</strong> to ask about what was said."
+          : "Press <strong>Talk</strong> and allow the microphone. The voice will start from the ontology entry for <strong>" +
+            safeName +
+            "</strong>. After that, it can only hear you while you hold <strong>Space</strong> on a keyboard or <strong>Hold to speak</strong> on a phone. Release to send. Use <strong>PDF ↓</strong> to save the transcript.";
       }
     }
     if (window.location.protocol === "file:") {
