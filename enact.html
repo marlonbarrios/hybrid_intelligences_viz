@@ -196,6 +196,77 @@
       border-color: var(--border);
       color: var(--muted);
     }
+    .save-btn {
+      pointer-events: auto;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.55rem 0.85rem;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    .save-btn:hover:not(:disabled) { color: var(--title); border-color: var(--title); }
+    .save-btn:disabled { opacity: 0.45; cursor: default; }
+    .export-sheet {
+      position: fixed;
+      left: -9999px;
+      top: 0;
+      width: 720px;
+      padding: 2rem 2.25rem 2.5rem;
+      background: var(--panel);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+    }
+    .export-sheet img { height: 44px; width: auto; margin-bottom: 1rem; }
+    .export-brand {
+      margin: 0 0 0.35rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--title);
+    }
+    .export-layer {
+      margin: 0 0 1rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .export-source {
+      margin: 0 0 0.75rem;
+      font-size: 0.95rem;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+    .export-body {
+      margin: 0;
+      font-family: "Bricolage Grotesque", "IBM Plex Sans", system-ui, sans-serif;
+      font-size: 1.65rem;
+      font-weight: 500;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .export-meta {
+      margin: 0.85rem 0 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--title);
+    }
+    .export-stamp {
+      margin: 1.25rem 0 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.62rem;
+      color: var(--muted);
+    }
     .hint {
       margin: 0;
       font-family: "IBM Plex Mono", monospace;
@@ -285,6 +356,16 @@
     <p class="focus-note">Each invitation below is generated from this entry.</p>
   </section>
 
+  <div id="exportSheet" class="export-sheet" hidden aria-hidden="true">
+    <img src="logo.png" alt="">
+    <p class="export-brand">Hybrid Intelligences</p>
+    <p class="export-layer" id="exportLayer">Enact</p>
+    <p class="export-source" id="exportSource"></p>
+    <p class="export-body" id="exportBody"></p>
+    <p class="export-meta" id="exportMeta"></p>
+    <p class="export-stamp" id="exportStamp"></p>
+  </div>
+
   <main class="stage" id="stage" tabindex="0" role="button" aria-label="Show another invitation">
     <p class="card-source" id="cardSource" hidden></p>
     <p id="card" class="is-out" aria-live="polite"></p>
@@ -293,13 +374,17 @@
     <div class="dock-row">
       <label class="visually-hidden" for="langSelect">Language</label>
       <select id="langSelect" class="lang-select" aria-label="Language"></select>
+      <button type="button" class="save-btn" id="pdfBtn" hidden disabled>PDF ↓</button>
+      <button type="button" class="save-btn" id="pngBtn" hidden disabled>Image ↓</button>
       <button type="button" class="sound-btn" id="soundBtn" aria-pressed="true" aria-label="Turn sound off">Sound on</button>
     </div>
     <p class="hint" id="hint">Press Space for your first invitation.</p>
   </div>
 
+  <script src="scripts/hi-card-export.js"></script>
   <script src="realtime-config.js"></script>
   <script>
+    const PAGE_LAYER = "Enact";
     const LANGUAGES = [
       { id: "en", name: "English", native: "English" },
       { id: "es", name: "Spanish", native: "Español" },
@@ -350,6 +435,13 @@
     const focusTitle = document.getElementById("focusTitle");
     const focusDef = document.getElementById("focusDef");
     const cardSource = document.getElementById("cardSource");
+    const pdfBtn = document.getElementById("pdfBtn");
+    const pngBtn = document.getElementById("pngBtn");
+    const exportSheet = document.getElementById("exportSheet");
+    const exportSource = document.getElementById("exportSource");
+    const exportBody = document.getElementById("exportBody");
+    const exportMeta = document.getElementById("exportMeta");
+    const exportStamp = document.getElementById("exportStamp");
     const soundBtn = document.getElementById("soundBtn");
     const langSelect = document.getElementById("langSelect");
     let currentLang = LANGUAGES[0];
@@ -367,6 +459,67 @@
         id: (q.get("id") || q.get("talk") || "").trim().toLowerCase().replace(/[^a-z0-9_]/g, ""),
         name: (q.get("name") || "").trim(),
       };
+    }
+
+    function syncExportButtons() {
+      const ready = hasGenerated && !card.classList.contains("is-awaiting") && String(card.textContent || "").trim();
+      pdfBtn.hidden = !ready;
+      pngBtn.hidden = !ready;
+      pdfBtn.disabled = !ready;
+      pngBtn.disabled = !ready;
+    }
+
+    function updateExportSheet() {
+      const body = String(card.textContent || "").trim();
+      if (!body || !hasGenerated) return;
+      exportBody.textContent = body;
+      exportMeta.textContent = cardSource.hidden ? "" : cardSource.textContent;
+      exportStamp.textContent = new Date().toLocaleString(undefined, { dateStyle: "long", timeStyle: "short" });
+      if (focusConceptId) {
+        let source = "Ontology · " + focusConceptName;
+        if (focusConceptCat) source += " · " + focusConceptCat;
+        if (focusConceptDef) source += "\n" + focusConceptDef;
+        exportSource.textContent = source;
+      } else {
+        exportSource.textContent = "Open " + PAGE_LAYER.toLowerCase();
+      }
+      syncExportButtons();
+    }
+
+    function exportSlug() {
+      return (focusConceptId || PAGE_LAYER.toLowerCase()).replace(/[^a-z0-9]+/g, "-");
+    }
+
+    function downloadCardPdf() {
+      try {
+        window.HiCardExport.downloadPdf({
+          layer: PAGE_LAYER,
+          slug: exportSlug(),
+          conceptId: focusConceptId,
+          conceptLabel: focusConceptName,
+          conceptCategory: focusConceptCat,
+          conceptDefinition: focusConceptDef,
+          body: card.textContent,
+          meta: cardSource.hidden ? "" : cardSource.textContent,
+        });
+      } catch (err) {
+        hint.textContent = err.message || "Could not save PDF.";
+      }
+    }
+
+    async function downloadCardPng() {
+      try {
+        exportSheet.hidden = false;
+        const fileStamp = new Date().toISOString().slice(0, 10);
+        await window.HiCardExport.downloadPng(
+          exportSheet,
+          "hybrid-intelligences-" + exportSlug() + "-" + fileStamp + ".png"
+        );
+      } catch (err) {
+        hint.textContent = err.message || "Could not save image.";
+      } finally {
+        exportSheet.hidden = true;
+      }
     }
 
     function showFocusPanel(label, definition, category) {
@@ -872,6 +1025,7 @@
         card.classList.add("is-awaiting");
         card.textContent = error || "Could not generate. Press Space to try again.";
         hint.textContent = "Press Space to try again.";
+        syncExportButtons();
         busy = false;
         return;
       }
@@ -882,6 +1036,7 @@
       hasGenerated = true;
       remember(text);
       updateCardSource();
+      updateExportSheet();
       busy = false;
       if (soundOn && gestured) {
         heardCurrent = true;
@@ -939,6 +1094,14 @@
       }
       idleHint();
     });
+    pdfBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      downloadCardPdf();
+    });
+    pngBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      downloadCardPng();
+    });
     document.getElementById("stage").addEventListener("click", requestNext);
     window.addEventListener("keydown", (e) => {
       if (e.target === langSelect) return;
@@ -951,6 +1114,7 @@
     loadFocusFromOntology().then(() => {
       showAwaitingCard();
       idleHint();
+      syncExportButtons();
     });
   </script>
 </body>
