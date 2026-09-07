@@ -892,6 +892,10 @@
     function requestNext() {
       gestured = true;
       if (busy) return;
+      if (!hasGenerated || card.classList.contains("is-awaiting")) {
+        nextCard();
+        return;
+      }
       if (soundOn && card.textContent && !heardCurrent) {
         heardCurrent = true;
         speak(card.textContent);
@@ -927,7 +931,7 @@
       if (!soundOn) {
         stopSpeak();
         teardownVoice();
-      } else if (card.textContent) {
+      } else if (hasGenerated && card.textContent && !card.classList.contains("is-awaiting")) {
         gestured = true;
         heardCurrent = true;
         speak(card.textContent);
