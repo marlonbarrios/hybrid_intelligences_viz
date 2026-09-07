@@ -1,4 +1,9 @@
-const { loadOntology, findConcept, buildEnactFocusBlock } = require("./ontology-context");
+const {
+  loadOntology,
+  findConcept,
+  buildEnactFocusBlock,
+  buildEnactFocusFromConcept,
+} = require("./ontology-context");
 
 function applyCors(res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -46,7 +51,6 @@ async function pipeCompletionStream(response, res) {
   const reader = response.body.getReader();
   const decoder = new TextDecoder();
   let buffer = "";
-  let full = "";
   while (true) {
     const { done, value } = await reader.read();
     if (done) break;
@@ -62,14 +66,10 @@ async function pipeCompletionStream(response, res) {
         const json = JSON.parse(payload);
         const piece =
           json.choices && json.choices[0] && json.choices[0].delta && json.choices[0].delta.content;
-        if (piece) {
-          full += piece;
-          res.write(piece);
-        }
+        if (piece) res.write(piece);
       } catch (_) {}
     }
   }
-  return full;
 }
 
 function pickConcept() {
@@ -116,67 +116,102 @@ function conceptIdFromReq(req, body) {
   }
 }
 
-function resolveConcept(req, body) {
-  const requestedId = conceptIdFromReq(req, body);
-  if (!requestedId) return { concept: pickConcept(), focused: false, focusBlock: "" };
-  try {
-    const data = loadOntology();
-    const concept = findConcept(data, requestedId);
-    if (concept) {
-      return {
-        concept,
-        focused: true,
-        focusBlock: buildEnactFocusBlock(data, requestedId),
-      };
-    }
-  } catch (_) {}
-  const label = clip(body.conceptName || body.name || requestedId.replace(/_/g, " "), 120);
+function relatedFromBody(body) {
+  return []
+    .concat(body.related || body.conceptRelated || [])
+    .map((item) => clip(typeof item === "string" ? item : item && item.label, 120))
+    .filter(Boolean)
+    .slice(0, 8);
+}
+
+function conceptFromBody(body, requestedId) {
   return {
-    concept: { id: requestedId, label, definition: "", category: "", related: [] },
-    focused: true,
-    focusBlock:
-      "FOCAL ONTOLOGY NODE FOR THIS ENACT CARD\n" +
-      "The reader opened Enact from this ontology entry.\n" +
-      `Name: ${label}\n` +
-      "Ground the invitation in what this name suggests within Hybrid Intelligences.\n\n",
+    id: requestedId,
+    label: clip(body.conceptName || body.name || requestedId.replace(/_/g, " "), 120),
+    definition: clip(body.definition || body.conceptDefinition || "", 1400),
+    category: clip(body.category || body.conceptCategory || "", 80),
+    related: relatedFromBody(body),
   };
 }
 
-function enactStyleRules() {
-  return [
-    "Output ONLY the card: one short sentence. About eight to fourteen words. No second sentence. No title, no quotes, no numbering, no explanation.",
+function mergeConcept(serverConcept, clientConcept) {
+  if (!serverConcept) return clientConcept;
+  return {
+    id: serverConcept.id || clientConcept.id,
+    label: serverConcept.label || clientConcept.label,
+    definition: serverConcept.definition || clientConcept.definition,
+    category: serverConcept.category || clientConcept.category,
+    related: serverConcept.related && serverConcept.related.length
+      ? serverConcept.related
+      : clientConcept.related,
+  };
+}
+
+function resolveConcept(req, body) {
+  const requestedId = conceptIdFromReq(req, body);
+  if (!requestedId) return { concept: pickConcept(), focused: false, focusBlock: "" };
+
+  const clientConcept = conceptFromBody(body, requestedId);
+  let serverConcept = null;
+  let data = null;
+  try {
+    data = loadOntology();
+    serverConcept = findConcept(data, requestedId);
+  } catch (_) {}
+
+  const concept = mergeConcept(serverConcept, clientConcept);
+  let focusBlock = "";
+  if (data && serverConcept) {
+    focusBlock = buildEnactFocusBlock(data, requestedId);
+  }
+  if (!focusBlock) {
+    focusBlock = buildEnactFocusFromConcept(concept);
+  }
+
+  return { concept, focused: true, focusBlock };
+}
+
+function enactStyleRules(focused) {
+  const rules = [
+    "Output ONLY the card: one short sentence. About eight to sixteen words. No second sentence. No title, no quotes, no numbering, no explanation.",
     "The reader is with a computer or phone right now, in coupling with an intelligent machine that is not organic.",
     "Invite a small choreography of awareness using what is always available: touch, sight, breath, weight, the screen, the hands.",
-    "Sometimes remind them that these words travel through networks of data, cables, servers, and signals.",
-    "Sometimes remind them that their body is not a sealed human interior: cells, metabolism, symbiotic lives.",
-    "Hold machine intelligence and living process in the same field.",
-    "Do not assume a fair, a plate, a glass, food, a badge, a crowd, or a demo.",
-    "The change is attention — a tiny dance of looking, touching, or breathing — not a new task, not a performance, not leaving.",
     "Concrete. Doable in under twenty seconds. Present tense. Not utopian, not dystopian, not self-help, not productivity.",
     "Do not mention ChatGPT, Hybrid Intelligences, fairs, or that you are generating a card.",
-    "Do not lecture. Do not list science. One felt reminder is enough.",
+    "Do not lecture. One felt reminder is enough.",
   ];
+  if (!focused) {
+    rules.splice(
+      2,
+      0,
+      "Sometimes remind them that these words travel through networks of data, cables, servers, and signals.",
+      "Sometimes remind them that their body is not a sealed human interior: cells, metabolism, symbiotic lives.",
+      "Hold machine intelligence and living process in the same field.",
+      "Do not assume a fair, a plate, a glass, food, a badge, a crowd, or a demo.",
+      "The change is attention — a tiny dance of looking, touching, or breathing — not a new task, not a performance, not leaving."
+    );
+  }
+  return rules;
 }
 
 function enactSystemPrompt(concept, recent, language, focused, focusBlock) {
-  const style = enactStyleRules();
   const lines = [];
 
   if (focused && focusBlock) {
     lines.push(
-      "You write Hybrid Intelligences Enact cards, in the spirit of Brian Eno's Oblique Strategies.",
+      "You write Hybrid Intelligences Enact cards — short embodied invitations in the spirit of Oblique Strategies.",
       focusBlock.trim(),
-      "Write ONE Enact invitation that grows from the focal ontology node above. The reader should feel that concept in their body and attention — not hear a definition of it.",
-      ...style
+      "CRITICAL: The card MUST be generated from the ontology node above. Generic mindfulness or breath exercises that ignore the definition are wrong.",
+      ...enactStyleRules(true)
     );
   } else {
     lines.push(
       "You write Hybrid Intelligences Enact cards, in the spirit of Brian Eno's Oblique Strategies.",
       "Ground them in coupling, complex embodiment, techno-symbiosis, cognitive assemblages, and a hybrid epistemology beyond the human.",
-      ...style
+      ...enactStyleRules(false)
     );
     if (concept) {
-      lines.push("Let this ontology concept color the card without naming it unless the name is ordinary English: " + concept.label + ".");
+      lines.push("Let this ontology concept color the card: " + concept.label + ".");
       if (concept.definition) lines.push("Sense of it: " + clip(concept.definition, 280));
       if (concept.related && concept.related.length) {
         lines.push("Nearby ideas (do not list them): " + concept.related.slice(0, 6).join("; ") + ".");
@@ -199,7 +234,18 @@ function enactSystemPrompt(concept, recent, language, focused, focusBlock) {
 
 function enactUserPrompt(concept, focused) {
   if (focused && concept && concept.label) {
-    return "Write one Enact invitation grounded in the ontology node " + concept.label + ".";
+    let msg =
+      "Write one Enact invitation generated from this Hybrid Intelligences ontology entry: " +
+      concept.label +
+      ".";
+    if (concept.definition) {
+      msg += " Source definition: " + clip(concept.definition, 420);
+    }
+    if (concept.related && concept.related.length) {
+      msg += " Related: " + concept.related.slice(0, 5).join("; ") + ".";
+    }
+    msg += " The reader must be able to tell this card came from that ontology source.";
+    return msg;
   }
   return "One new Enact card.";
 }
@@ -232,7 +278,8 @@ module.exports = async function handler(req, res) {
   const { concept, focused, focusBlock } = resolveConcept(req, body);
 
   const stream = wantsStream(req);
-  const temperature = focused ? 0.88 : 1.05;
+  const temperature = focused ? 0.72 : 1.05;
+  const maxTokens = focused ? 65 : 55;
 
   try {
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
@@ -244,7 +291,7 @@ module.exports = async function handler(req, res) {
       body: JSON.stringify({
         model: "gpt-4o-mini",
         temperature,
-        max_tokens: 55,
+        max_tokens: maxTokens,
         stream: stream,
         messages: [
           { role: "system", content: enactSystemPrompt(concept, recent, language, focused, focusBlock) },
@@ -265,6 +312,10 @@ module.exports = async function handler(req, res) {
     if (stream) {
       res.setHeader("Content-Type", "text/plain; charset=utf-8");
       res.setHeader("Cache-Control", "no-cache");
+      if (focused && concept) {
+        res.setHeader("X-HI-Concept-Id", concept.id || "");
+        res.setHeader("X-HI-Concept-Label", concept.label || "");
+      }
       res.status(200);
       await pipeCompletionStream(response, res);
       res.end();
@@ -277,7 +328,12 @@ module.exports = async function handler(req, res) {
       res.status(502).json({ error: "The card was empty." });
       return;
     }
-    res.status(200).json({ prompt: text, conceptId: focused && concept ? concept.id : undefined, label: concept && concept.label });
+    res.status(200).json({
+      prompt: text,
+      conceptId: focused && concept ? concept.id : undefined,
+      label: concept && concept.label,
+      focused: !!focused,
+    });
   } catch (err) {
     res.status(500).json({ error: err.message || "Failed to generate a card." });
   }

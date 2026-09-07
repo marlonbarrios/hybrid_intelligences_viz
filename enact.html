@@ -68,24 +68,56 @@
       text-transform: uppercase;
       color: var(--title);
     }
-    .focus-label {
-      margin: 0 auto;
-      max-width: 36rem;
-      padding: 0 1.5rem 0.35rem;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.72rem;
-      line-height: 1.45;
-      color: var(--muted);
-      text-align: center;
+    .focus-panel {
+      margin: 0 1.5rem 0.5rem;
+      max-width: 40rem;
+      padding: 1rem 1.25rem 1.1rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--panel);
+      text-align: left;
     }
-    .focus-def {
-      display: block;
-      margin-top: 0.35rem;
+    .focus-kicker {
+      margin: 0 0 0.35rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--title);
+    }
+    .focus-title {
+      margin: 0 0 0.45rem;
       font-family: "IBM Plex Sans", system-ui, sans-serif;
-      font-size: 0.82rem;
-      line-height: 1.45;
+      font-size: 1.15rem;
+      font-weight: 500;
+      line-height: 1.25;
       color: var(--text);
-      opacity: 0.82;
+    }
+    .focus-title a { color: var(--link); text-decoration: none; }
+    .focus-title a:hover { text-decoration: underline; }
+    .focus-def {
+      margin: 0 0 0.55rem;
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+    .focus-note {
+      margin: 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.04em;
+      color: var(--title);
+    }
+    .card-source {
+      margin: 0 auto 0.85rem;
+      max-width: 16em;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-align: center;
+      color: var(--title);
     }
     .header-links {
       display: flex;
@@ -234,9 +266,15 @@
     </div>
   </header>
 
-  <p class="focus-label" id="focusLabel" hidden></p>
+  <section class="focus-panel" id="focusPanel" hidden aria-label="Ontology source">
+    <p class="focus-kicker">Ontology source</p>
+    <h2 class="focus-title" id="focusTitle"></h2>
+    <p class="focus-def" id="focusDef"></p>
+    <p class="focus-note">Each invitation below is generated from this entry.</p>
+  </section>
 
   <main class="stage" id="stage" tabindex="0" role="button" aria-label="Show another invitation">
+    <p class="card-source" id="cardSource" hidden></p>
     <p id="card" class="is-out" aria-live="polite"></p>
   </main>
   <div class="dock">
@@ -322,12 +360,18 @@
     let voiceConnecting = null;
     const card = document.getElementById("card");
     const hint = document.getElementById("hint");
-    const focusLabel = document.getElementById("focusLabel");
+    const focusPanel = document.getElementById("focusPanel");
+    const focusTitle = document.getElementById("focusTitle");
+    const focusDef = document.getElementById("focusDef");
+    const cardSource = document.getElementById("cardSource");
     const soundBtn = document.getElementById("soundBtn");
     const langSelect = document.getElementById("langSelect");
     let currentLang = LANGUAGES[0];
     let focusConceptId = "";
     let focusConceptName = "";
+    let focusConceptDef = "";
+    let focusConceptCat = "";
+    let focusConceptRelated = [];
     const player = new Audio();
     player.preload = "auto";
 
@@ -339,17 +383,54 @@
       };
     }
 
+    function showFocusPanel(label, definition, category) {
+      focusPanel.hidden = false;
+      focusTitle.innerHTML =
+        "<a href=\"ontology.html#" + encodeURIComponent(focusConceptId) + "\">" +
+        String(label || focusConceptName).replace(/</g, "&lt;") +
+        "</a>";
+      if (category) {
+        focusDef.textContent = category + " · " + (definition || "");
+      } else {
+        focusDef.textContent = definition || "";
+      }
+      updateCardSource();
+    }
+
+    function updateCardSource() {
+      if (!focusConceptId) {
+        cardSource.hidden = true;
+        cardSource.textContent = "";
+        return;
+      }
+      cardSource.hidden = false;
+      cardSource.textContent = "Generated from ontology · " + focusConceptName;
+    }
+
     function initFocusConcept() {
       const { id, name } = params();
       if (!id) return;
       focusConceptId = id;
       focusConceptName = name || id.replace(/_/g, " ");
       document.title = "Enact · " + focusConceptName + " — Hybrid Intelligences";
-      focusLabel.hidden = false;
-      focusLabel.innerHTML =
-        "From ontology · <a href=\"ontology.html#" + encodeURIComponent(id) + "\">" +
-        focusConceptName.replace(/</g, "&lt;") +
-        "</a>";
+      showFocusPanel(focusConceptName, "", "");
+    }
+
+    function enactRequestBody() {
+      const body = {
+        recent: recent.slice(-8),
+        language: currentLang.name,
+        languageNative: currentLang.native,
+      };
+      if (!focusConceptId) return body;
+      body.conceptId = focusConceptId;
+      body.id = focusConceptId;
+      body.conceptName = focusConceptName;
+      body.name = focusConceptName;
+      if (focusConceptDef) body.definition = focusConceptDef;
+      if (focusConceptCat) body.category = focusConceptCat;
+      if (focusConceptRelated.length) body.related = focusConceptRelated;
+      return body;
     }
 
     function localId(iri) {
@@ -371,27 +452,32 @@
       try {
         const res = await fetch("ontology.jsonld");
         const data = await res.json();
-        const item = (data["@graph"] || []).find((entry) => localId(entry["@id"]) === focusConceptId);
+        const graph = data["@graph"] || [];
+        const item = graph.find((entry) => localId(entry["@id"]) === focusConceptId);
         if (!item) return;
         const label = textOf(item["skos:prefLabel"]) || focusConceptName;
         const definition = textOf(item["skos:definition"]);
+        const category = item["hi:category"] || "";
         focusConceptName = label;
+        focusConceptDef = definition;
+        focusConceptCat = category;
+        focusConceptRelated = []
+          .concat(item["skos:related"] || [])
+          .map((rel) => {
+            const relId = localId(rel);
+            const relItem = graph.find((entry) => localId(entry["@id"]) === relId);
+            return relItem ? textOf(relItem["skos:prefLabel"]) : relId;
+          })
+          .filter(Boolean)
+          .slice(0, 8);
         document.title = "Enact · " + label + " — Hybrid Intelligences";
-        let html =
-          "From ontology · <a href=\"ontology.html#" + encodeURIComponent(focusConceptId) + "\">" +
-          label.replace(/</g, "&lt;") +
-          "</a>";
-        if (definition) {
-          const short = definition.length > 220 ? definition.slice(0, 217).replace(/\s+\S*$/, "") + "…" : definition;
-          html += "<span class=\"focus-def\">" + short.replace(/</g, "&lt;") + "</span>";
-        }
-        focusLabel.innerHTML = html;
+        showFocusPanel(label, definition, category);
       } catch (_) {}
     }
 
     function focusedHint() {
       if (!focusConceptId) return;
-      hint.textContent = "Invitations grounded in " + focusConceptName + ". Tap for another.";
+      hint.textContent = "Another invitation from " + focusConceptName + ". Tap for the next.";
     }
 
     function applyTheme(mode) {
@@ -711,29 +797,33 @@
 
     async function streamOntoCard() {
       const url = enactUrl();
-      if (!url) return "";
+      if (!url) return { text: "", error: "No API URL." };
       const res = await fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Accept: "text/plain",
+          Accept: focusConceptId ? "application/json" : "text/plain",
         },
-        body: JSON.stringify({
-            recent: recent.slice(-8),
-            language: currentLang.name,
-            languageNative: currentLang.native,
-            conceptId: focusConceptId || undefined,
-            id: focusConceptId || undefined,
-            conceptName: focusConceptName || undefined,
-            name: focusConceptName || undefined,
-          }),
+        body: JSON.stringify(enactRequestBody()),
       });
-      if (!res.ok || !res.body) return "";
+      if (!res.ok) {
+        let message = "Could not generate from the ontology.";
+        try {
+          const data = await res.json();
+          message = data.error || message;
+        } catch (_) {}
+        return { text: "", error: message };
+      }
       const type = res.headers.get("content-type") || "";
       if (type.includes("application/json")) {
         const data = await res.json();
-        return data.prompt ? typeOntoCard(data.prompt) : "";
+        if (!data.prompt) return { text: "", error: data.error || "The card was empty." };
+        const text = await typeOntoCard(data.prompt);
+        if (data.label) focusConceptName = data.label;
+        updateCardSource();
+        return { text, error: "" };
       }
+      if (!res.body) return { text: "", error: "No response body." };
       card.classList.add("is-streaming");
       const reader = res.body.getReader();
       const decoder = new TextDecoder();
@@ -750,10 +840,15 @@
       }
       card.classList.remove("is-streaming");
       const text = finishCard(full);
-      if (!text) return "";
-      if (pieces <= 1) return typeOntoCard(text);
+      if (!text) return { text: "", error: "The card was empty." };
+      if (pieces <= 1) {
+        const typed = await typeOntoCard(text);
+        updateCardSource();
+        return { text: typed, error: "" };
+      }
       card.textContent = text;
-      return text;
+      updateCardSource();
+      return { text, error: "" };
     }
 
     async function nextCard() {
@@ -761,28 +856,44 @@
       busy = true;
       stopSpeak();
       heardCurrent = false;
-      hint.textContent = "Listening for another invitation…";
+      hint.textContent = focusConceptId
+        ? "Generating from " + focusConceptName + "…"
+        : "Listening for another invitation…";
       await fadeOut();
       card.textContent = "";
       card.classList.remove("is-out");
       let text = "";
+      let error = "";
       try {
-        text = await streamOntoCard();
-      } catch (_) {
-        text = "";
+        const result = await streamOntoCard();
+        text = result.text;
+        error = result.error;
+      } catch (err) {
+        error = err.message || "Generation failed.";
       }
-      if (!text) text = await typeOntoCard(unusedFallback());
-      else if (!card.textContent) card.textContent = text;
-      remember(text);
+      if (!text) {
+        if (focusConceptId) {
+          text = error || "Could not generate from this ontology entry.";
+          card.textContent = text;
+          card.classList.remove("is-streaming");
+          hint.textContent = "Tap to try again.";
+        } else {
+          text = await typeOntoCard(unusedFallback());
+        }
+      } else if (!card.textContent) {
+        card.textContent = text;
+      }
+      if (text && !error) remember(text);
+      updateCardSource();
       busy = false;
-      if (soundOn && gestured) {
+      if (soundOn && gestured && text && !error) {
         heardCurrent = true;
         speak(text);
         hint.textContent = "Tap, click, or press Space for another invitation.";
       } else {
         heardCurrent = false;
         idleHint();
-        if (focusConceptId) focusedHint();
+        if (focusConceptId && !error) focusedHint();
       }
     }
 

@@ -300,30 +300,39 @@ function podcastInstructions(focusId) {
   return focus ? `${podcastBaseInstructions()}\n\n${focus}` : podcastBaseInstructions();
 }
 
-function buildEnactFocusBlock(data, id) {
-  const concept = findConcept(data, id);
-  if (!concept) return "";
+function buildEnactFocusFromConcept(concept) {
+  if (!concept || !concept.label) return "";
   const cat = concept.category ? (CATEGORY_LABEL[concept.category] || concept.category) : "";
+  const related = [].concat(concept.related || []).filter(Boolean);
   const lines = [
     "FOCAL ONTOLOGY NODE FOR THIS ENACT CARD",
-    "The reader opened Enact from this Hybrid Intelligences ontology entry. Every invitation must grow from this node — its definition, category, and relations — not from generic mindfulness.",
+    "SOURCE: Hybrid Intelligences ontology — SKOS concept scheme and knowledge graph.",
+    "The reader opened Enact from this entry. Generate the invitation ONLY from this node.",
     `Name: ${concept.label}`,
   ];
   if (cat) lines.push(`Category: ${cat}`);
   if (concept.definition) lines.push(`Definition: ${concept.definition}`);
-  if (concept.related.length) lines.push(`Related: ${concept.related.join(", ")}`);
+  if (related.length) lines.push(`Related: ${related.join(", ")}`);
   lines.push(
-    "Translate this concept into a tiny choreography of awareness: touch, breath, sight, weight, screen, hands, network, cells, or coupling.",
-    "The card should feel like this concept without naming or explaining it. Do not quote the definition.",
-    "If a related line includes a verb (couples with, enables, mediates, enacts), let that relation shape the invitation."
+    "The invitation must use imagery, verbs, or relations drawn from the definition and related nodes above.",
+    "Someone who knows this ontology entry should recognize which concept shaped the card.",
+    "Translate into one tiny choreography of awareness — touch, breath, sight, weight, screen, hands, network, cells, or coupling.",
+    "One short sentence. Do not paste or paraphrase the definition as a lecture."
   );
   return lines.join("\n") + "\n\n";
+}
+
+function buildEnactFocusBlock(data, id) {
+  const concept = findConcept(data, id);
+  if (!concept) return "";
+  return buildEnactFocusFromConcept(concept);
 }
 
 module.exports = {
   ontologyInstructions,
   podcastInstructions,
   buildEnactFocusBlock,
+  buildEnactFocusFromConcept,
   buildOntologyDigest,
   findConcept,
   loadOntology,
