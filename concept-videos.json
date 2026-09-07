@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-04T19:17:21.476Z",
+  "generated": "2026-09-07T16:03:29.490Z",
   "byConcept": {
     "hayles": [
       {
@@ -280,6 +280,13 @@
         "speaker": "Margaret Boden",
         "url": "video-boden-creativity-ai.html",
         "poster": "screenshots/boden-creativity-ai.jpg"
+      },
+      {
+        "id": "bostrom-superintelligence-google",
+        "title": "Nick Bostrom — Superintelligence (Talks at Google)",
+        "speaker": "Nick Bostrom",
+        "url": "video-bostrom-superintelligence-google.html",
+        "poster": "screenshots/bostrom-superintelligence-google.jpg"
       },
       {
         "id": "privacy-illusion-ai-data",
@@ -852,6 +859,13 @@
         "poster": "screenshots/shanahan-consciousness-ai.jpg"
       },
       {
+        "id": "bostrom-superintelligence-google",
+        "title": "Nick Bostrom — Superintelligence (Talks at Google)",
+        "speaker": "Nick Bostrom",
+        "url": "video-bostrom-superintelligence-google.html",
+        "poster": "screenshots/bostrom-superintelligence-google.jpg"
+      },
+      {
         "id": "thinking-game-documentary",
         "title": "The Thinking Game — Full Documentary",
         "speaker": "",
@@ -889,6 +903,13 @@
         "speaker": "David Chalmers",
         "url": "video-chalmers-talking-to-ai.html",
         "poster": "screenshots/chalmers-talking-to-ai.jpg"
+      },
+      {
+        "id": "bostrom-superintelligence-google",
+        "title": "Nick Bostrom — Superintelligence (Talks at Google)",
+        "speaker": "Nick Bostrom",
+        "url": "video-bostrom-superintelligence-google.html",
+        "poster": "screenshots/bostrom-superintelligence-google.jpg"
       },
       {
         "id": "thinking-game-documentary",
@@ -1744,6 +1765,15 @@
         "speaker": "Vera Molnár",
         "url": "video-vera-molnar-generative.html",
         "poster": "screenshots/vera-molnar-generative.jpg"
+      }
+    ],
+    "bostrom": [
+      {
+        "id": "bostrom-superintelligence-google",
+        "title": "Nick Bostrom — Superintelligence (Talks at Google)",
+        "speaker": "Nick Bostrom",
+        "url": "video-bostrom-superintelligence-google.html",
+        "poster": "screenshots/bostrom-superintelligence-google.jpg"
       }
     ],
     "merleau_ponty": [

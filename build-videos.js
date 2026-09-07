@@ -518,6 +518,14 @@ const VIDEO_FALLBACK_CONCEPTS = {
     { conceptId: "shanahan", label: "shanahan" },
     { conceptId: "possible_minds", label: "possible_minds" },
   ],
+  "bostrom-superintelligence-google": [
+    { conceptId: "bostrom", label: "Nick Bostrom" },
+    { conceptId: "agi", label: "AGI" },
+    { conceptId: "ai", label: "AI" },
+    { conceptId: "possible_minds", label: "Space of Possible Minds" },
+    { conceptId: "track_ethics", label: "Ethics & Leadership" },
+    { conceptId: "speculative_futures", label: "Speculative Futures" },
+  ],
   "nagarjuna-emptiness": [
     { conceptId: "nagarjuna", label: "nagarjuna" },
     { conceptId: "buddhism", label: "buddhism" },

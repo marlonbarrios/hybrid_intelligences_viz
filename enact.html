@@ -68,6 +68,16 @@
       text-transform: uppercase;
       color: var(--title);
     }
+    .focus-label {
+      margin: 0 auto;
+      max-width: 36rem;
+      padding: 0 1.5rem 0.35rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      line-height: 1.45;
+      color: var(--muted);
+      text-align: center;
+    }
     .header-links {
       display: flex;
       flex-wrap: wrap;
@@ -215,6 +225,8 @@
     </div>
   </header>
 
+  <p class="focus-label" id="focusLabel" hidden></p>
+
   <main class="stage" id="stage" tabindex="0" role="button" aria-label="Show another invitation">
     <p id="card" class="is-out" aria-live="polite"></p>
   </main>
@@ -301,11 +313,35 @@
     let voiceConnecting = null;
     const card = document.getElementById("card");
     const hint = document.getElementById("hint");
+    const focusLabel = document.getElementById("focusLabel");
     const soundBtn = document.getElementById("soundBtn");
     const langSelect = document.getElementById("langSelect");
     let currentLang = LANGUAGES[0];
+    let focusConceptId = "";
+    let focusConceptName = "";
     const player = new Audio();
     player.preload = "auto";
+
+    function params() {
+      const q = new URLSearchParams(location.search);
+      return {
+        id: (q.get("id") || q.get("talk") || "").trim().toLowerCase().replace(/[^a-z0-9_]/g, ""),
+        name: (q.get("name") || "").trim(),
+      };
+    }
+
+    function initFocusConcept() {
+      const { id, name } = params();
+      if (!id) return;
+      focusConceptId = id;
+      focusConceptName = name || id.replace(/_/g, " ");
+      document.title = "Enact · " + focusConceptName + " — Hybrid Intelligences";
+      focusLabel.hidden = false;
+      focusLabel.innerHTML =
+        "From ontology · <a href=\"ontology.html#" + encodeURIComponent(id) + "\">" +
+        focusConceptName.replace(/</g, "&lt;") +
+        "</a>";
+    }
 
     function applyTheme(mode) {
       document.body.classList.toggle("light-mode", mode === "light");
@@ -631,6 +667,7 @@
             recent: recent.slice(-8),
             language: currentLang.name,
             languageNative: currentLang.native,
+            conceptId: focusConceptId || undefined,
           }),
       });
       if (!res.ok || !res.body) return "";
@@ -703,6 +740,7 @@
     }
 
     initTheme();
+    initFocusConcept();
     fillLanguages();
     syncSoundButton();
     langSelect.addEventListener("click", (e) => e.stopPropagation());

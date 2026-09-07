@@ -92,7 +92,25 @@ function pickConcept() {
   }
 }
 
-function enactSystemPrompt(concept, recent, language) {
+function normalizeConceptId(raw) {
+  return String(raw || "")
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9_]/g, "");
+}
+
+function resolveConcept(body) {
+  const id = normalizeConceptId(body.conceptId || body.id);
+  if (!id) return { concept: pickConcept(), focused: false };
+  try {
+    const data = loadOntology();
+    const concept = findConcept(data, id);
+    if (concept) return { concept, focused: true };
+  } catch (_) {}
+  return { concept: pickConcept(), focused: false };
+}
+
+function enactSystemPrompt(concept, recent, language, focused) {
   const lines = [
     "You write Hybrid Intelligences Enact cards, in the spirit of Brian Eno's Oblique Strategies.",
     "Ground them in coupling, complex embodiment, techno-symbiosis, cognitive assemblages, and a hybrid epistemology beyond the human.",
@@ -116,8 +134,16 @@ function enactSystemPrompt(concept, recent, language) {
     lines.push("Write the card in English.");
   }
   if (concept) {
+    if (focused) {
+      lines.push(
+        "The listener opened Enact from this ontology node. The invitation MUST be grounded in this concept — its definition and felt sense — without lecturing or explaining it."
+      );
+    }
     lines.push("Let this ontology concept color the card without naming it unless the name is ordinary English: " + concept.label + ".");
     if (concept.definition) lines.push("Sense of it: " + clip(concept.definition, 280));
+    if (concept.related && concept.related.length) {
+      lines.push("Nearby ideas (do not list them): " + concept.related.slice(0, 6).join("; ") + ".");
+    }
   }
   if (recent && recent.length) {
     lines.push("Do not repeat or paraphrase these recent cards: " + recent.map((c) => clip(c, 80)).join(" | "));
@@ -150,7 +176,7 @@ module.exports = async function handler(req, res) {
     name: clip(body.language || body.languageName || "English", 60),
     native: clip(body.languageNative || "", 60),
   };
-  const concept = pickConcept();
+  const { concept, focused } = resolveConcept(body);
 
   const stream = wantsStream(req);
 
@@ -167,7 +193,7 @@ module.exports = async function handler(req, res) {
         max_tokens: 55,
         stream: stream,
         messages: [
-          { role: "system", content: enactSystemPrompt(concept, recent, language) },
+          { role: "system", content: enactSystemPrompt(concept, recent, language, focused) },
           { role: "user", content: "One new Enact card." },
         ],
       }),

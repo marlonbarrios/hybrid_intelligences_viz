@@ -529,6 +529,17 @@
       "transcript": "transcripts/boden-creativity-ai.json"
     },
     {
+      "id": "bostrom-superintelligence-google",
+      "title": "Nick Bostrom — Superintelligence (Talks at Google)",
+      "youtube": "https://www.youtube.com/watch?v=pywF6ZzsghI",
+      "poster": "screenshots/bostrom-superintelligence-google.jpg",
+      "date": "2014-08-01",
+      "speaker": "Nick Bostrom",
+      "caption": "Paths, dangers, and strategies for machine superintelligence — alignment, control, and existential risk from the Future of Humanity Institute.",
+      "credit": "Talks at Google",
+      "transcript": "transcripts/bostrom-superintelligence-google.json"
+    },
+    {
       "id": "merleau-ponty-phenomenology",
       "title": "Maurice Merleau-Ponty — Merleau-Ponty — Phenomenology of Perception",
       "youtube": "https://www.youtube.com/watch?v=JFj8kWm_N-Y",

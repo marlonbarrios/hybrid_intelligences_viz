@@ -1244,6 +1244,14 @@
       return `mini-pod.html?${params.toString()}`;
     }
 
+    function enactHref(concept) {
+      const params = new URLSearchParams({
+        id: concept.id,
+        name: concept.label,
+      });
+      return `enact.html?${params.toString()}`;
+    }
+
     function renderDetail(concept) {
       const related = (relatedById[concept.id] || [])
         .map((r) => ({ ...r, concept: conceptById[r.id] }))
@@ -1287,6 +1295,7 @@
             <a href="${voiceTalkHref(concept)}">Talk about this</a>
             <a href="${imageHref(concept)}">Make an image</a>
             <a href="${podcastHref(concept)}">Mini-pod</a>
+            <a href="${enactHref(concept)}">Enact</a>
             ${external.join("")}
           </div>
           <div class="actions view-links">

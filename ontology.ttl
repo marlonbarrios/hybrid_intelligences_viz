@@ -11,10 +11,10 @@
   rdfs:label "Hybrid Intelligences Ontology" ;
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   owl:versionInfo "1.0.0" ;
-  dc:date "2026-09-04"^^xsd:date ;
-  dc:modified "2026-09-04T19:31:52.456Z"^^xsd:dateTime ;
-  hi:nodeCount "309"^^xsd:integer ;
-  hi:edgeCount "2773"^^xsd:integer .
+  dc:date "2026-09-07"^^xsd:date ;
+  dc:modified "2026-09-07T16:03:29.588Z"^^xsd:dateTime ;
+  hi:nodeCount "312"^^xsd:integer ;
+  hi:edgeCount "2828"^^xsd:integer .
 
 hi:scheme a skos:ConceptScheme ;
   skos:prefLabel "Hybrid Intelligences Concept Scheme" ;
@@ -1008,6 +1008,18 @@ hi:shanahan a skos:Concept, hi:NetworkNode ;
   schema:sameAs <https://en.wikipedia.org/wiki/Murray_Shanahan>
  .
 
+hi:bostrom a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Nick Bostrom" ;
+  skos:definition "Philosopher at the University of Oxford—founder of the Future of Humanity Institute. Author of Superintelligence: Paths, Dangers, Strategies and Deep Utopia; research on existential risk, AI alignment, digital sentience, the simulation argument, and long-term technological strategy." ;
+  skos:broader hi:category/author ;
+  skos:inScheme hi:scheme ;
+  hi:category "author" ;
+  hi:weight "1.2"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Nick_Bostrom> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Nick_Bostrom>
+ .
+
 hi:boden a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Margaret Boden" ;
   skos:definition "Philosopher and cognitive scientist—pioneer of AI and creativity studies; author of The Creative Mind, defining creativity as novelty plus value and mapping combinational, exploratory, and transformational forms across computational models, art, and the space of possible minds." ;
@@ -1354,6 +1366,18 @@ hi:crawford a skos:Concept, hi:NetworkNode ;
  ;
   schema:url <https://en.wikipedia.org/wiki/Kate_Crawford> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Kate_Crawford>
+ .
+
+hi:carissa_veliz a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Carissa Véliz" ;
+  skos:definition "Philosopher and AI ethicist at the University of Oxford (Institute for Ethics in AI)—Privacy Is Power (2020) on data extraction, autonomy, and democratic reform of the data economy; Prophecy (2026) on prediction, algorithmic forecasting, and power from ancient oracles to AI." ;
+  skos:broader hi:category/author ;
+  skos:inScheme hi:scheme ;
+  hi:category "author" ;
+  hi:weight "1.2"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Carissa_V%C3%A9liz> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Carissa_V%C3%A9liz>
  .
 
 hi:aguilera_arcas a skos:Concept, hi:NetworkNode ;
@@ -2880,6 +2904,19 @@ hi:video_boden_creativity_ai a skos:Concept, hi:NetworkNode ;
   schema:url <video-boden-creativity-ai.html> ;
   schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/boden-creativity-ai.jpg> ;
   schema:sameAs <https://www.youtube.com/watch?v=5dEXIOiAsaw>
+ .
+
+hi:video_bostrom_superintelligence_google a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Bostrom · Superintellig…" ;
+  skos:definition "Nick Bostrom — Superintelligence (Talks at Google) — bostrom. Paths, dangers, and strategies for machine superintelligence — alignment, control, and existential risk. Video on YouTube; ingest matches speech to ontology concepts." ;
+  skos:broader hi:category/video ;
+  skos:inScheme hi:scheme ;
+  hi:category "video" ;
+  hi:weight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-bostrom-superintelligence-google.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/bostrom-superintelligence-google.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=pywF6ZzsghI>
  .
 
 hi:video_merleau_ponty_phenomenology a skos:Concept, hi:NetworkNode ;
@@ -11648,6 +11685,150 @@ hi:rel-shanahan-possible_minds a hi:Relation ;
   hi:strength "0.95"^^xsd:decimal ;
   skos:relatedMatch hi:possible_minds .
 
+hi:rel-bostrom-agi a hi:Relation ;
+  hi:source hi:bostrom ;
+  hi:target hi:agi ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:agi .
+
+hi:rel-bostrom-possible_minds a hi:Relation ;
+  hi:source hi:bostrom ;
+  hi:target hi:possible_minds ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:possible_minds .
+
+hi:rel-bostrom-shanahan a hi:Relation ;
+  hi:source hi:bostrom ;
+  hi:target hi:shanahan ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:shanahan .
+
+hi:rel-bostrom-chalmers a hi:Relation ;
+  hi:source hi:bostrom ;
+  hi:target hi:chalmers ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:chalmers .
+
+hi:rel-bostrom-ai a hi:Relation ;
+  hi:source hi:bostrom ;
+  hi:target hi:ai ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-bostrom-gen_ai a hi:Relation ;
+  hi:source hi:bostrom ;
+  hi:target hi:gen_ai ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:gen_ai .
+
+hi:rel-bostrom-llm a hi:Relation ;
+  hi:source hi:bostrom ;
+  hi:target hi:llm ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:llm .
+
+hi:rel-bostrom-track_ethics a hi:Relation ;
+  hi:source hi:bostrom ;
+  hi:target hi:track_ethics ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:track_ethics .
+
+hi:rel-bostrom-track_future a hi:Relation ;
+  hi:source hi:bostrom ;
+  hi:target hi:track_future ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:track_future .
+
+hi:rel-bostrom-speculative_futures a hi:Relation ;
+  hi:source hi:bostrom ;
+  hi:target hi:speculative_futures ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:speculative_futures .
+
+hi:rel-bostrom-cameron a hi:Relation ;
+  hi:source hi:bostrom ;
+  hi:target hi:cameron ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:cameron .
+
+hi:rel-bostrom-aguilera_arcas a hi:Relation ;
+  hi:source hi:bostrom ;
+  hi:target hi:aguilera_arcas ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:aguilera_arcas .
+
+hi:rel-bostrom-intelligence a hi:Relation ;
+  hi:source hi:bostrom ;
+  hi:target hi:intelligence ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:intelligence .
+
+hi:rel-bostrom-synthetic_cognition a hi:Relation ;
+  hi:source hi:bostrom ;
+  hi:target hi:synthetic_cognition ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:synthetic_cognition .
+
+hi:rel-bostrom-consciousness a hi:Relation ;
+  hi:source hi:bostrom ;
+  hi:target hi:consciousness ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:consciousness .
+
+hi:rel-bostrom-philosophy a hi:Relation ;
+  hi:source hi:bostrom ;
+  hi:target hi:philosophy ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:philosophy .
+
+hi:rel-bostrom-ethical_imagination a hi:Relation ;
+  hi:source hi:bostrom ;
+  hi:target hi:ethical_imagination ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:ethical_imagination .
+
+hi:rel-bostrom-futurity a hi:Relation ;
+  hi:source hi:bostrom ;
+  hi:target hi:futurity ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:futurity .
+
+hi:rel-bostrom-posthumanism a hi:Relation ;
+  hi:source hi:bostrom ;
+  hi:target hi:posthumanism ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:posthumanism .
+
+hi:rel-bostrom-hybrid a hi:Relation ;
+  hi:source hi:bostrom ;
+  hi:target hi:hybrid ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:hybrid .
+
+hi:rel-bostrom-boden a hi:Relation ;
+  hi:source hi:bostrom ;
+  hi:target hi:boden ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:boden .
+
+hi:rel-bostrom-video_bostrom_superintelligence_google a hi:Relation ;
+  hi:source hi:bostrom ;
+  hi:target hi:video_bostrom_superintelligence_google ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:video_bostrom_superintelligence_google .
+
+hi:rel-bostrom-video_thinking_game_documentary a hi:Relation ;
+  hi:source hi:bostrom ;
+  hi:target hi:video_thinking_game_documentary ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:video_thinking_game_documentary .
+
+hi:rel-bostrom-video_am_i_ai_consciousness_doc a hi:Relation ;
+  hi:source hi:bostrom ;
+  hi:target hi:video_am_i_ai_consciousness_doc ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:video_am_i_ai_consciousness_doc .
+
 hi:rel-boden-ai a hi:Relation ;
   hi:source hi:boden ;
   hi:target hi:ai ;
@@ -13736,6 +13917,12 @@ hi:rel-speculative_futures-shanahan a hi:Relation ;
   hi:strength "0.8"^^xsd:decimal ;
   skos:relatedMatch hi:shanahan .
 
+hi:rel-speculative_futures-bostrom a hi:Relation ;
+  hi:source hi:speculative_futures ;
+  hi:target hi:bostrom ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:bostrom .
+
 hi:rel-speculative_futures-jackie_larson a hi:Relation ;
   hi:source hi:speculative_futures ;
   hi:target hi:jackie_larson ;
@@ -15565,6 +15752,138 @@ hi:rel-crawford-hybrid a hi:Relation ;
   hi:target hi:hybrid ;
   hi:strength "0.8"^^xsd:decimal ;
   skos:relatedMatch hi:hybrid .
+
+hi:rel-carissa_veliz-track_ethics a hi:Relation ;
+  hi:source hi:carissa_veliz ;
+  hi:target hi:track_ethics ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:track_ethics .
+
+hi:rel-carissa_veliz-ai a hi:Relation ;
+  hi:source hi:carissa_veliz ;
+  hi:target hi:ai ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-carissa_veliz-gen_ai a hi:Relation ;
+  hi:source hi:carissa_veliz ;
+  hi:target hi:gen_ai ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:gen_ai .
+
+hi:rel-carissa_veliz-llm a hi:Relation ;
+  hi:source hi:carissa_veliz ;
+  hi:target hi:llm ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:llm .
+
+hi:rel-carissa_veliz-law a hi:Relation ;
+  hi:source hi:carissa_veliz ;
+  hi:target hi:law ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:law .
+
+hi:rel-carissa_veliz-intellectual_property a hi:Relation ;
+  hi:source hi:carissa_veliz ;
+  hi:target hi:intellectual_property ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:intellectual_property .
+
+hi:rel-carissa_veliz-crawford a hi:Relation ;
+  hi:source hi:carissa_veliz ;
+  hi:target hi:crawford ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:crawford .
+
+hi:rel-carissa_veliz-jasmine a hi:Relation ;
+  hi:source hi:carissa_veliz ;
+  hi:target hi:jasmine ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:jasmine .
+
+hi:rel-carissa_veliz-foucault a hi:Relation ;
+  hi:source hi:carissa_veliz ;
+  hi:target hi:foucault ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:foucault .
+
+hi:rel-carissa_veliz-critical a hi:Relation ;
+  hi:source hi:carissa_veliz ;
+  hi:target hi:critical ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:critical .
+
+hi:rel-carissa_veliz-cultural_critical a hi:Relation ;
+  hi:source hi:carissa_veliz ;
+  hi:target hi:cultural_critical ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:cultural_critical .
+
+hi:rel-carissa_veliz-perception_politics a hi:Relation ;
+  hi:source hi:carissa_veliz ;
+  hi:target hi:perception_politics ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:perception_politics .
+
+hi:rel-carissa_veliz-distributed a hi:Relation ;
+  hi:source hi:carissa_veliz ;
+  hi:target hi:distributed ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:distributed .
+
+hi:rel-carissa_veliz-situated a hi:Relation ;
+  hi:source hi:carissa_veliz ;
+  hi:target hi:situated ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:situated .
+
+hi:rel-carissa_veliz-technical_agency a hi:Relation ;
+  hi:source hi:carissa_veliz ;
+  hi:target hi:technical_agency ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:technical_agency .
+
+hi:rel-carissa_veliz-epistemology a hi:Relation ;
+  hi:source hi:carissa_veliz ;
+  hi:target hi:epistemology ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:epistemology .
+
+hi:rel-carissa_veliz-ai_impact_ethics a hi:Relation ;
+  hi:source hi:carissa_veliz ;
+  hi:target hi:ai_impact_ethics ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_impact_ethics .
+
+hi:rel-carissa_veliz-mediation a hi:Relation ;
+  hi:source hi:carissa_veliz ;
+  hi:target hi:mediation ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:mediation .
+
+hi:rel-carissa_veliz-social_change a hi:Relation ;
+  hi:source hi:carissa_veliz ;
+  hi:target hi:social_change ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:social_change .
+
+hi:rel-carissa_veliz-cameron a hi:Relation ;
+  hi:source hi:carissa_veliz ;
+  hi:target hi:cameron ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:cameron .
+
+hi:rel-carissa_veliz-hybrid a hi:Relation ;
+  hi:source hi:carissa_veliz ;
+  hi:target hi:hybrid ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:hybrid .
+
+hi:rel-carissa_veliz-video_privacy_illusion_ai_data a hi:Relation ;
+  hi:source hi:carissa_veliz ;
+  hi:target hi:video_privacy_illusion_ai_data ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:video_privacy_illusion_ai_data .
 
 hi:rel-aguilera_arcas-ai a hi:Relation ;
   hi:source hi:aguilera_arcas ;
@@ -17713,6 +18032,54 @@ hi:rel-video_boden_creativity_ai-creativity a hi:Relation ;
   hi:target hi:creativity ;
   hi:strength "0.88"^^xsd:decimal ;
   skos:relatedMatch hi:creativity .
+
+hi:rel-video_bostrom_superintelligence_google-bostrom a hi:Relation ;
+  hi:source hi:video_bostrom_superintelligence_google ;
+  hi:target hi:bostrom ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:bostrom .
+
+hi:rel-video_bostrom_superintelligence_google-agi a hi:Relation ;
+  hi:source hi:video_bostrom_superintelligence_google ;
+  hi:target hi:agi ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:agi .
+
+hi:rel-video_bostrom_superintelligence_google-ai a hi:Relation ;
+  hi:source hi:video_bostrom_superintelligence_google ;
+  hi:target hi:ai ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-video_bostrom_superintelligence_google-possible_minds a hi:Relation ;
+  hi:source hi:video_bostrom_superintelligence_google ;
+  hi:target hi:possible_minds ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:possible_minds .
+
+hi:rel-video_bostrom_superintelligence_google-track_ethics a hi:Relation ;
+  hi:source hi:video_bostrom_superintelligence_google ;
+  hi:target hi:track_ethics ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:track_ethics .
+
+hi:rel-video_bostrom_superintelligence_google-track_future a hi:Relation ;
+  hi:source hi:video_bostrom_superintelligence_google ;
+  hi:target hi:track_future ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:track_future .
+
+hi:rel-video_bostrom_superintelligence_google-speculative_futures a hi:Relation ;
+  hi:source hi:video_bostrom_superintelligence_google ;
+  hi:target hi:speculative_futures ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:speculative_futures .
+
+hi:rel-video_bostrom_superintelligence_google-shanahan a hi:Relation ;
+  hi:source hi:video_bostrom_superintelligence_google ;
+  hi:target hi:shanahan ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:shanahan .
 
 hi:rel-video_merleau_ponty_phenomenology-merleau_ponty a hi:Relation ;
   hi:source hi:video_merleau_ponty_phenomenology ;
@@ -21202,6 +21569,11 @@ hi:rel-video_boden_creativity_ai-boden-instantiates a hi:Relation ;
   hi:target hi:boden ;
   hi:relationType hi:instantiates .
 
+hi:rel-video_bostrom_superintelligence_google-bostrom-instantiates a hi:Relation ;
+  hi:source hi:video_bostrom_superintelligence_google ;
+  hi:target hi:bostrom ;
+  hi:relationType hi:instantiates .
+
 hi:rel-video_merleau_ponty_phenomenology-merleau_ponty-instantiates a hi:Relation ;
   hi:source hi:video_merleau_ponty_phenomenology ;
   hi:target hi:merleau_ponty ;
@@ -21386,6 +21758,26 @@ hi:rel-video_privacy_illusion_ai_data-crawford-instantiates a hi:Relation ;
   hi:source hi:video_privacy_illusion_ai_data ;
   hi:target hi:crawford ;
   hi:relationType hi:instantiates .
+
+hi:rel-carissa_veliz-perception_politics-critiques a hi:Relation ;
+  hi:source hi:carissa_veliz ;
+  hi:target hi:perception_politics ;
+  hi:relationType hi:critiques .
+
+hi:rel-carissa_veliz-track_ethics-develops a hi:Relation ;
+  hi:source hi:carissa_veliz ;
+  hi:target hi:track_ethics ;
+  hi:relationType hi:develops .
+
+hi:rel-bostrom-agi-proposes a hi:Relation ;
+  hi:source hi:bostrom ;
+  hi:target hi:agi ;
+  hi:relationType hi:proposes .
+
+hi:rel-bostrom-speculative_futures-develops a hi:Relation ;
+  hi:source hi:bostrom ;
+  hi:target hi:speculative_futures ;
+  hi:relationType hi:develops .
 
 hi:rel-video_am_i_ai_consciousness_doc-chalmers-instantiates a hi:Relation ;
   hi:source hi:video_am_i_ai_consciousness_doc ;

@@ -829,6 +829,9 @@ const NODES = [
   { id: "shanahan",           label: "Murray\nShanahan",              cat: "author",     weight: 1.1,
     desc: "The space of possible minds—mapping diverse cognitive organizations beyond human consciousness.",
     url: "https://en.wikipedia.org/wiki/Murray_Shanahan", linkLabel: "Wikipedia ↗" },
+  { id: "bostrom",            label: "Nick\nBostrom",                 cat: "author",     weight: 1.2,
+    desc: "Philosopher at the University of Oxford—founder of the Future of Humanity Institute. Author of Superintelligence: Paths, Dangers, Strategies and Deep Utopia; research on existential risk, AI alignment, digital sentience, the simulation argument, and long-term technological strategy.",
+    url: "https://en.wikipedia.org/wiki/Nick_Bostrom", linkLabel: "Wikipedia ↗" },
   { id: "boden",              label: "Margaret\nBoden",               cat: "author",     weight: 1.2,
     desc: "Philosopher and cognitive scientist—pioneer of AI and creativity studies; author of The Creative Mind, defining creativity as novelty plus value and mapping combinational, exploratory, and transformational forms across computational models, art, and the space of possible minds.",
     url: "https://en.wikipedia.org/wiki/Margaret_Boden", linkLabel: "Wikipedia ↗" },
@@ -916,6 +919,9 @@ const NODES = [
   { id: "crawford",           label: "Kate\nCrawford",                cat: "author",     weight: 1.3,
     desc: "Scholar of AI, politics, and culture—Atlas of AI. The three E’s of AI impact: environmental, ethics, and epistemological—extraction, labor, infrastructure, classification, and the material-ecological conditions of artificial intelligence.",
     url: "https://en.wikipedia.org/wiki/Kate_Crawford", linkLabel: "Wikipedia ↗" },
+  { id: "carissa_veliz",      label: "Carissa\nVéliz",                cat: "author",     weight: 1.2,
+    desc: "Philosopher and AI ethicist at the University of Oxford (Institute for Ethics in AI)—Privacy Is Power (2020) on data extraction, autonomy, and democratic reform of the data economy; Prophecy (2026) on prediction, algorithmic forecasting, and power from ancient oracles to AI.",
+    url: "https://en.wikipedia.org/wiki/Carissa_V%C3%A9liz", linkLabel: "Wikipedia ↗" },
   { id: "aguilera_arcas",     label: "Blaise Agüera\ny Arcas",        cat: "author",     weight: 1.2,
     desc: "AI researcher and author of What Is Intelligence?—work on neural computing, active inference, federated learning, artificial life, and symbiotic models of mind linking evolution, sociality, and machine intelligence.",
     url: "https://en.wikipedia.org/wiki/Blaise_Ag%C3%BCera_y_Arcas", linkLabel: "Wikipedia ↗" },
@@ -1347,6 +1353,11 @@ const NODES = [
     url: "video-boden-creativity-ai.html", linkLabel: "Open video page →",
     watchUrl: "https://www.youtube.com/watch?v=5dEXIOiAsaw", watchLabel: "Watch on YouTube ↗",
     poster: "screenshots/boden-creativity-ai.jpg" },
+  { id: "video_bostrom_superintelligence_google", label: "Bostrom ·\nSuperintellig…", fullLabel: "Nick Bostrom — Superintelligence (Talks at Google)", cat: "video",   weight: 1.4,
+    desc: "Nick Bostrom — Superintelligence (Talks at Google) — bostrom. Paths, dangers, and strategies for machine superintelligence — alignment, control, and existential risk. Video on YouTube; ingest matches speech to ontology concepts.",
+    url: "video-bostrom-superintelligence-google.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=pywF6ZzsghI", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/bostrom-superintelligence-google.jpg" },
   { id: "video_merleau_ponty_phenomenology", label: "MerleauPonty ·\nMerleau-Ponty…", fullLabel: "Maurice Merleau-Ponty — Merleau-Ponty — Phenomenology of Perception", cat: "video",   weight: 1.4,
     desc: "Merleau-Ponty — Phenomenology of Perception — merleau_ponty. Lived body, perception, and phenomenological approaches to embodied experience. Video on YouTube; ingest matches speech to ontology concepts.",
     url: "video-merleau-ponty-phenomenology.html", linkLabel: "Open video page →",
@@ -1668,6 +1679,7 @@ const WIKIPEDIA = {
   de_jaegher: "Hanne_De_Jaegher",
   di_paolo: "Ezequiel_Di_Paolo",
   shanahan: "Murray_Shanahan",
+  bostrom: "Nick_Bostrom",
   boden: "Margaret_Boden",
   shapiro: "Lawrence_Shapiro_(philosopher)",
   kirsh: "David_Kirsh",
@@ -1697,6 +1709,7 @@ const WIKIPEDIA = {
   munoz: "Jos%C3%A9_Esteban_Mu%C3%B1oz",
   escobar: "Arturo_Escobar",
   crawford: "Kate_Crawford",
+  carissa_veliz: "Carissa_V%C3%A9liz",
   aguilera_arcas: "Blaise_Ag%C3%BCera_y_Arcas",
   butler: "Octavia_E._Butler",
   sousa_santos: "Boaventura_de_Sousa_Santos",
@@ -3197,6 +3210,30 @@ const EDGES = [
   ["di_paolo", "maturana", 0.75],
   ["di_paolo", "varela", 0.8],
   ["shanahan", "possible_minds", 0.95],
+  ["bostrom", "agi", 0.95],
+  ["bostrom", "possible_minds", 0.95],
+  ["bostrom", "shanahan", 0.9],
+  ["bostrom", "chalmers", 0.85],
+  ["bostrom", "ai", 0.95],
+  ["bostrom", "gen_ai", 0.85],
+  ["bostrom", "llm", 0.8],
+  ["bostrom", "track_ethics", 0.9],
+  ["bostrom", "track_future", 0.9],
+  ["bostrom", "speculative_futures", 0.9],
+  ["bostrom", "cameron", 0.85],
+  ["bostrom", "aguilera_arcas", 0.8],
+  ["bostrom", "intelligence", 0.9],
+  ["bostrom", "synthetic_cognition", 0.85],
+  ["bostrom", "consciousness", 0.8],
+  ["bostrom", "philosophy", 0.85],
+  ["bostrom", "ethical_imagination", 0.85],
+  ["bostrom", "futurity", 0.85],
+  ["bostrom", "posthumanism", 0.75],
+  ["bostrom", "hybrid", 0.75],
+  ["bostrom", "boden", 0.75],
+  ["bostrom", "video_bostrom_superintelligence_google", 0.98],
+  ["bostrom", "video_thinking_game_documentary", 0.8],
+  ["bostrom", "video_am_i_ai_consciousness_doc", 0.75],
   ["boden", "ai", 0.95],
   ["boden", "gen_ai", 0.85],
   ["boden", "ai_ml", 0.9],
@@ -3567,6 +3604,7 @@ const EDGES = [
   ["speculative_futures", "interdisciplinary_art", 0.85],
   ["speculative_futures", "storytelling", 0.8],
   ["speculative_futures", "shanahan", 0.8],
+  ["speculative_futures", "bostrom", 0.9],
   ["speculative_futures", "jackie_larson", 0.8],
   ["speculative_futures", "andrew_hix", 0.75],
   ["speculative_futures", "turbado_marabou", 0.75],
@@ -3894,6 +3932,29 @@ const EDGES = [
   ["crawford", "creative_embodiment", 0.8],
   ["crawford", "mediation", 0.8],
   ["crawford", "hybrid", 0.8],
+
+  ["carissa_veliz", "track_ethics", 0.95],
+  ["carissa_veliz", "ai", 0.9],
+  ["carissa_veliz", "gen_ai", 0.85],
+  ["carissa_veliz", "llm", 0.8],
+  ["carissa_veliz", "law", 0.9],
+  ["carissa_veliz", "intellectual_property", 0.85],
+  ["carissa_veliz", "crawford", 0.9],
+  ["carissa_veliz", "jasmine", 0.85],
+  ["carissa_veliz", "foucault", 0.85],
+  ["carissa_veliz", "critical", 0.9],
+  ["carissa_veliz", "cultural_critical", 0.9],
+  ["carissa_veliz", "perception_politics", 0.95],
+  ["carissa_veliz", "distributed", 0.9],
+  ["carissa_veliz", "situated", 0.85],
+  ["carissa_veliz", "technical_agency", 0.9],
+  ["carissa_veliz", "epistemology", 0.85],
+  ["carissa_veliz", "ai_impact_ethics", 0.9],
+  ["carissa_veliz", "mediation", 0.8],
+  ["carissa_veliz", "social_change", 0.85],
+  ["carissa_veliz", "cameron", 0.8],
+  ["carissa_veliz", "hybrid", 0.75],
+  ["carissa_veliz", "video_privacy_illusion_ai_data", 0.85],
 
   ["aguilera_arcas", "ai", 0.95],
   ["aguilera_arcas", "gen_ai", 0.9],
@@ -4321,6 +4382,14 @@ const EDGES = [
   ["video_boden_creativity_ai", "ai", 0.88],
   ["video_boden_creativity_ai", "creative_ai", 0.88],
   ["video_boden_creativity_ai", "creativity", 0.88],
+  ["video_bostrom_superintelligence_google", "bostrom", 0.98],
+  ["video_bostrom_superintelligence_google", "agi", 0.92],
+  ["video_bostrom_superintelligence_google", "ai", 0.9],
+  ["video_bostrom_superintelligence_google", "possible_minds", 0.88],
+  ["video_bostrom_superintelligence_google", "track_ethics", 0.9],
+  ["video_bostrom_superintelligence_google", "track_future", 0.88],
+  ["video_bostrom_superintelligence_google", "speculative_futures", 0.85],
+  ["video_bostrom_superintelligence_google", "shanahan", 0.85],
   ["video_merleau_ponty_phenomenology", "merleau_ponty", 0.98],
   ["video_merleau_ponty_phenomenology", "enactivism", 0.88],
   ["video_merleau_ponty_phenomenology", "embodiment", 0.88],
@@ -4969,6 +5038,7 @@ const TYPED_EDGES = [
   ["video_margulis_symbiotic_earth", "margulis", "instantiates"],
   ["video_duchamp_art_dada", "duchamp", "instantiates"],
   ["video_boden_creativity_ai", "boden", "instantiates"],
+  ["video_bostrom_superintelligence_google", "bostrom", "instantiates"],
   ["video_merleau_ponty_phenomenology", "merleau_ponty", "instantiates"],
   ["video_foucault_prison_1975", "foucault", "instantiates"],
   ["video_shanahan_consciousness_ai", "shanahan", "instantiates"],
@@ -5006,6 +5076,10 @@ const TYPED_EDGES = [
   ["cognition", "embodiment", "emergesFrom"],
   ["hi_hub", "ontology_kb", "emergesFrom"],
   ["video_privacy_illusion_ai_data", "crawford", "instantiates"],
+  ["carissa_veliz", "perception_politics", "critiques"],
+  ["carissa_veliz", "track_ethics", "develops"],
+  ["bostrom", "agi", "proposes"],
+  ["bostrom", "speculative_futures", "develops"],
   ["video_am_i_ai_consciousness_doc", "chalmers", "instantiates"],
   ["video_thinking_game_documentary", "shanahan", "instantiates"],
 ];
@@ -6940,6 +7014,11 @@ function podcastObjectUrl(id, label) {
   return `${MINI_POD_URL}?id=${encodeURIComponent(id)}&name=${encodeURIComponent(name)}`;
 }
 
+function enactObjectUrl(id, label) {
+  const name = String(label || id).replace(/\n/g, " ").replace(/\s+/g, " ").trim();
+  return `${ENACT_URL}?id=${encodeURIComponent(id)}&name=${encodeURIComponent(name)}`;
+}
+
 function preloadPosterImages() {
   for (const n of NODES) {
     if (!n.poster) continue;
@@ -7007,7 +7086,7 @@ function detailPanelLayout(n) {
   const primaryUrl = n?.url && n.url !== wikiUrl ? n.url : null;
   const watchUrl = n?.watchUrl || null;
   const curatedCount = n ? min(8, curatedVideosFor(n.id).length) : 0;
-  const linkCount = 3 + (primaryUrl ? 1 : 0) + (watchUrl ? 1 : 0) + (wikiUrl ? 1 : 0) + 1 + 4 + curatedCount;
+  const linkCount = 4 + (primaryUrl ? 1 : 0) + (watchUrl ? 1 : 0) + (wikiUrl ? 1 : 0) + 1 + 4 + curatedCount;
   const hasLink = linkCount > 0;
   const typedCount = n ? min(4, typedPhrasesFor(n).length) : 0;
   const poster = detailPosterBlock(n, panelW);
@@ -7114,6 +7193,7 @@ function drawDetailPanel(n) {
   drawPanelLink(voiceTalkUrl(n.id, n.label), "Talk about this");
   drawPanelLink(imageObjectUrl(n.id, n.label), "Make an image");
   drawPanelLink(podcastObjectUrl(n.id, n.label), "Mini-pod");
+  drawPanelLink(enactObjectUrl(n.id, n.label), "Enact");
   for (const v of curatedVideosFor(n.id).slice(0, 8)) {
     drawPanelLink(v.url, `Video · ${v.label.replace(/\n/g, " ")} →`);
   }
