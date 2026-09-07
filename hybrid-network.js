@@ -154,6 +154,7 @@ const VOICE_URL = "voice.html";
 const IMAGE_URL = "image.html";
 const MINI_POD_URL = "mini-pod.html";
 const ENACT_URL = "enact.html";
+const SPECULATE_URL = "speculate.html";
 const SLIDES_URL = "slides.html";
 const SHOWCASE_URL = "showcase.html";
 const CREATIVE_B_URL = "creative-b.html";
@@ -1464,6 +1465,9 @@ const NODES = [
   { id: "enact",              label: "Enact",                         cat: "practice",   weight: 1.5,
     desc: "Cognitive prompts for a choreography of awareness — short invitations, in the spirit of Oblique Strategies, generated from Hybrid Intelligences. Grounded in this coupling: you, the computer, an intelligent non-organic machine, data moving through networks, and a body of cells, metabolism, and symbionts. Touch, sight, breath. A hybrid epistemology beyond the human, as a tiny dance of attention, not a lecture. Tap for another. Marin can speak the invitation.",
     url: "enact.html", linkLabel: "Open Enact →" },
+  { id: "speculate",          label: "Speculate",                     cat: "practice",   weight: 1.5,
+    desc: "Possible futures generated from the Hybrid Intelligences ontology — brief speculations that begin in the future and trace a concept forward across time. Each piece picks a framework (dialectic, phenomenological, teleological, utopian, dystopian) and a horizon (ten years to ten thousand years). Open Speculate for open-ended futures; open from any ontology entry to ground the prediction in that node.",
+    url: "speculate.html", linkLabel: "Open Speculate →" },
   { id: "pendular_umwelt",    label: "My Pendular\nUmwelt",           cat: "practice",   weight: 1.5,
     desc: "Speculative web work by Marlon Barrios Solano, developed during the open labs of the inaugural Hybrid Intelligences program, July 2026. GPT-4o writes from a proposed computational Umwelt and reads aloud; p5.js pendulums inscribe the words along branching trails — folds of speed and path that poetically stage a large language model’s possible world (a Latentwelt of tokens, embeddings, and continuations) rather than a still map. The work lets a model self-report an Umwelt while physics and type refuse to keep that speech still.",
     url: "showcase.html#pendular-umwelt", linkLabel: "Open in showcase →" },
@@ -4065,6 +4069,7 @@ const EDGES = [
   ["hi_hub", "concept_image", 0.95],
   ["hi_hub", "mini_pod", 0.98],
   ["hi_hub", "enact", 0.95],
+  ["hi_hub", "speculate", 0.94],
   ["hi_hub", "llm", 0.8],
   ["hi_hub", "ai", 0.8],
   ["ontology_kb", "conversational_ai", 0.98],
@@ -4556,6 +4561,14 @@ const EDGES = [
   ["enact", "conversational_ai", 0.8],
   ["enact", "mini_pod", 0.78],
   ["enact", "marlon", 0.8],
+  ["speculate", "hi_hub", 0.94],
+  ["speculate", "speculative_futures", 0.95],
+  ["speculate", "futurity", 0.9],
+  ["speculate", "coupling", 0.85],
+  ["speculate", "enact", 0.82],
+  ["speculate", "conversational_ai", 0.8],
+  ["speculate", "ontology_kb", 0.88],
+  ["speculate", "marlon", 0.78],
   ["hi_program", "marlon", 0.95],
   ["marlon", "came", 0.95],
   ["marlon", "cota", 0.9],
@@ -6580,6 +6593,7 @@ function drawMobileMenu() {
     { id: "link", label: "Image", url: IMAGE_URL },
     { id: "link", label: "Mini-pod", url: MINI_POD_URL },
     { id: "link", label: "Enact", url: ENACT_URL },
+    { id: "link", label: "Speculate", url: SPECULATE_URL },
     { id: "link", label: "Creative B", url: CREATIVE_B_URL },
     { id: "link", label: "Scan QR Code", url: SCAN_QR_URL },
     { id: "link", label: "GitHub \u2197", url: GITHUB_URL },
@@ -6706,6 +6720,7 @@ function drawUI() {
     { url: IMAGE_URL, label: "Image" },
     { url: MINI_POD_URL, label: "Mini-pod" },
     { url: ENACT_URL, label: "Enact" },
+    { url: SPECULATE_URL, label: "Speculate" },
     { url: CREATIVE_B_URL, label: "Creative B" },
     { url: SCAN_QR_URL, label: "Scan QR Code" },
     { url: GITHUB_URL, label: "GitHub \u2197" },
@@ -7019,6 +7034,11 @@ function enactObjectUrl(id, label) {
   return `${ENACT_URL}?id=${encodeURIComponent(id)}&name=${encodeURIComponent(name)}`;
 }
 
+function speculateObjectUrl(id, label) {
+  const name = String(label || id).replace(/\n/g, " ").replace(/\s+/g, " ").trim();
+  return `${SPECULATE_URL}?id=${encodeURIComponent(id)}&name=${encodeURIComponent(name)}`;
+}
+
 function preloadPosterImages() {
   for (const n of NODES) {
     if (!n.poster) continue;
@@ -7086,7 +7106,7 @@ function detailPanelLayout(n) {
   const primaryUrl = n?.url && n.url !== wikiUrl ? n.url : null;
   const watchUrl = n?.watchUrl || null;
   const curatedCount = n ? min(8, curatedVideosFor(n.id).length) : 0;
-  const linkCount = 4 + (primaryUrl ? 1 : 0) + (watchUrl ? 1 : 0) + (wikiUrl ? 1 : 0) + 1 + 4 + curatedCount;
+  const linkCount = 5 + (primaryUrl ? 1 : 0) + (watchUrl ? 1 : 0) + (wikiUrl ? 1 : 0) + 1 + 4 + curatedCount;
   const hasLink = linkCount > 0;
   const typedCount = n ? min(4, typedPhrasesFor(n).length) : 0;
   const poster = detailPosterBlock(n, panelW);
@@ -7194,6 +7214,7 @@ function drawDetailPanel(n) {
   drawPanelLink(imageObjectUrl(n.id, n.label), "Make an image");
   drawPanelLink(podcastObjectUrl(n.id, n.label), "Mini-pod");
   drawPanelLink(enactObjectUrl(n.id, n.label), "Enact");
+  drawPanelLink(speculateObjectUrl(n.id, n.label), "Speculate");
   for (const v of curatedVideosFor(n.id).slice(0, 8)) {
     drawPanelLink(v.url, `Video · ${v.label.replace(/\n/g, " ")} →`);
   }

@@ -176,6 +176,7 @@ function headerNav() {
     ["image.html", "Image"],
     ["mini-pod.html", "Mini-pod"],
     ["enact.html", "Enact"],
+    ["speculate.html", "Speculate"],
     ["creative-b.html", "Creative B"],
     ["scan-qr.html", "Scan QR Code"],
   ];

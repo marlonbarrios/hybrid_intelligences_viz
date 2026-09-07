@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hybrid Intelligences — Enact</title>
-  <meta name="description" content="Cognitive prompts for a choreography of awareness — Hybrid Intelligences invitations in the spirit of Oblique Strategies.">
+  <title>Hybrid Intelligences — Speculate</title>
+  <meta name="description" content="Possible futures generated from the Hybrid Intelligences ontology — dialectic, phenomenological, teleological, utopian, and dystopian speculations across time.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500&family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #0e1018;
@@ -110,14 +110,24 @@
       color: var(--title);
     }
     .card-source {
-      margin: 0 auto 0.85rem;
-      max-width: 16em;
+      margin: 0 auto 0.35rem;
+      max-width: 28em;
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.68rem;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       text-align: center;
       color: var(--title);
+    }
+    .card-meta {
+      margin: 0 auto 0.75rem;
+      max-width: 28em;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-align: center;
+      color: var(--muted);
     }
     .header-links {
       display: flex;
@@ -216,13 +226,12 @@
     .stage:focus { outline: none; }
     #card {
       margin: 0 auto;
-      max-width: 16em;
-      font-family: "Bricolage Grotesque", "IBM Plex Sans", "Noto Sans", "Hiragino Sans", "PingFang SC", "Apple SD Gothic Neo", system-ui, sans-serif;
-      font-optical-sizing: auto;
-      font-weight: 500;
-      font-size: clamp(2.05rem, 7.2vw, 5.1rem);
-      line-height: 1.12;
-      letter-spacing: -0.035em;
+      max-width: 28em;
+      font-family: "IBM Plex Serif", "IBM Plex Sans", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.25rem, 3.8vw, 1.65rem);
+      line-height: 1.55;
+      letter-spacing: 0.01em;
       text-wrap: pretty;
       color: var(--text);
       opacity: 1;
@@ -262,7 +271,7 @@
       <a class="site-logo" href="index.html" aria-label="Hybrid Intelligences home">
         <img src="logo.png" alt="Hybrid Intelligences">
       </a>
-      <p class="eyebrow">Enact</p>
+      <p class="eyebrow">Speculate</p>
     </div>
     <div class="header-links">
       <a href="index.html">Home</a>
@@ -272,8 +281,8 @@
       <a href="ontology.html">Ontology</a>
       <a href="views.html">Views</a>
       <a href="voice.html">Voice</a>
+      <a href="enact.html">Enact</a>
       <a href="mini-pod.html">Mini-pod</a>
-      <a href="speculate.html">Speculate</a>
       <button type="button" class="theme-btn" id="themeBtn" aria-label="Toggle theme">Theme</button>
     </div>
   </header>
@@ -282,11 +291,12 @@
     <p class="focus-kicker">Ontology source</p>
     <h2 class="focus-title" id="focusTitle"></h2>
     <p class="focus-def" id="focusDef"></p>
-    <p class="focus-note">Each invitation below is generated from this entry.</p>
+    <p class="focus-note">Each speculation below is generated from this entry.</p>
   </section>
 
-  <main class="stage" id="stage" tabindex="0" role="button" aria-label="Show another invitation">
+  <main class="stage" id="stage" tabindex="0" role="button" aria-label="Generate another speculation">
     <p class="card-source" id="cardSource" hidden></p>
+    <p class="card-meta" id="cardMeta" hidden></p>
     <p id="card" class="is-out" aria-live="polite"></p>
   </main>
   <div class="dock">
@@ -295,7 +305,7 @@
       <select id="langSelect" class="lang-select" aria-label="Language"></select>
       <button type="button" class="sound-btn" id="soundBtn" aria-pressed="true" aria-label="Turn sound off">Sound on</button>
     </div>
-    <p class="hint" id="hint">Press Space for your first invitation.</p>
+    <p class="hint" id="hint">Press Space for your first speculation.</p>
   </div>
 
   <script src="realtime-config.js"></script>
@@ -332,11 +342,13 @@
 
     const FADE_MS = 700;
     const recent = [];
+    const recentFrameworks = [];
+    const recentHorizons = [];
     let busy = false;
     let gestured = false;
     let hasGenerated = false;
     let heardCurrent = false;
-    let soundOn = localStorage.getItem("hi-enact-sound") !== "off";
+    let soundOn = localStorage.getItem("hi-speculate-sound") !== "off";
     let speakGen = 0;
     let objectUrl = "";
     let pc = null;
@@ -350,6 +362,7 @@
     const focusTitle = document.getElementById("focusTitle");
     const focusDef = document.getElementById("focusDef");
     const cardSource = document.getElementById("cardSource");
+    const cardMeta = document.getElementById("cardMeta");
     const soundBtn = document.getElementById("soundBtn");
     const langSelect = document.getElementById("langSelect");
     let currentLang = LANGUAGES[0];
@@ -384,26 +397,38 @@
     }
 
     function updateCardSource() {
-      if (!focusConceptId || !hasGenerated) {
+      if (!hasGenerated) {
         cardSource.hidden = true;
         cardSource.textContent = "";
         return;
       }
       cardSource.hidden = false;
-      cardSource.textContent = "Generated from ontology · " + focusConceptName;
+      cardSource.textContent = focusConceptId
+        ? "Generated from ontology · " + focusConceptName
+        : "Open speculation";
     }
 
     function awaitingMessage() {
       if (focusConceptId) {
-        return "Press Space to generate an invitation from this ontology entry.";
+        return "Press Space to speculate a possible future from this ontology entry.";
       }
-      return "Press Space for your first invitation.";
+      return "Press Space for your first open-ended speculation.";
     }
 
     function showAwaitingCard() {
       card.classList.add("is-awaiting");
       card.classList.remove("is-out", "is-streaming");
       card.textContent = awaitingMessage();
+    }
+
+    function updateSpecMeta(framework, horizon) {
+      if (!framework && !horizon) {
+        cardMeta.hidden = true;
+        cardMeta.textContent = "";
+        return;
+      }
+      cardMeta.hidden = false;
+      cardMeta.textContent = [framework, horizon].filter(Boolean).join(" · ");
     }
 
     function initFocusConcept() {
@@ -415,11 +440,13 @@
       showFocusPanel(focusConceptName, "", "");
     }
 
-    function enactRequestBody() {
+    function speculateRequestBody() {
       const body = {
         recent: recent.slice(-8),
         language: currentLang.name,
         languageNative: currentLang.native,
+        recentFrameworks: recentFrameworks.slice(-5),
+        recentHorizons: recentHorizons.slice(-5),
       };
       if (!focusConceptId) return body;
       body.conceptId = focusConceptId;
@@ -505,7 +532,7 @@
 
     function applyLanguage(lang) {
       currentLang = lang;
-      localStorage.setItem("hi-enact-lang", lang.id);
+      localStorage.setItem("hi-speculate-lang", lang.id);
       document.documentElement.lang = lang.id === "zh-Hant" ? "zh-Hant" : lang.id;
       card.setAttribute("dir", lang.rtl ? "rtl" : "ltr");
       langSelect.value = lang.id;
@@ -516,7 +543,7 @@
         const label = lang.id === "en" ? lang.native : lang.native + " · " + lang.name;
         return "<option value=\"" + lang.id + "\">" + label + "</option>";
       }).join("");
-      applyLanguage(findLanguage(localStorage.getItem("hi-enact-lang") || browserLanguageId()));
+      applyLanguage(findLanguage(localStorage.getItem("hi-speculate-lang") || browserLanguageId()));
     }
 
     function syncSoundButton() {
@@ -528,16 +555,16 @@
     function idleHint() {
       if (!hasGenerated) {
         hint.textContent = focusConceptId
-          ? "Press Space to generate from " + focusConceptName + "."
-          : "Press Space for your first invitation.";
+          ? "Press Space to speculate from " + focusConceptName + "."
+          : "Press Space for your first speculation.";
         return;
       }
       if (!soundOn) {
-        hint.textContent = "Press Space for another invitation.";
+        hint.textContent = "Press Space for another speculation.";
         return;
       }
       hint.textContent = heardCurrent
-        ? "Press Space for another invitation."
+        ? "Press Space for another speculation."
         : "Press Space to hear it. Press again for another.";
     }
 
@@ -555,8 +582,8 @@
       return origin + path;
     }
 
-    function enactUrl() {
-      let url = apiUrl("/api/enact");
+    function speculateUrl() {
+      let url = apiUrl("/api/speculate");
       if (url && focusConceptId) {
         url += (url.includes("?") ? "&" : "?") + "id=" + encodeURIComponent(focusConceptId);
       }
@@ -570,7 +597,7 @@
     function tokenUrl() {
       const base = apiUrl("/api/token");
       if (!base) return "";
-      return base + (base.includes("?") ? "&" : "?") + "mode=enact";
+      return base + (base.includes("?") ? "&" : "?") + "mode=speculate";
     }
 
     function fadeMs() {
@@ -724,7 +751,7 @@
       dc.send(JSON.stringify({
         type: "response.create",
         response: {
-          instructions: "Speak this invitation exactly in " + currentLang.name + ", and nothing else:\n\n" + text,
+          instructions: "Speak this speculation exactly in " + currentLang.name + ", and nothing else:\n\n" + text,
         },
       }));
       return true;
@@ -765,12 +792,12 @@
       return String(raw || "").replace(/^["“]+/, "").replace(/\s+/g, " ");
     }
 
-    function finishCard(raw) {
-      return showPartial(raw).replace(/["”]+$/g, "").replace(/^\s*card\s*\d*[:.\-]\s*/i, "").trim();
+    function finishSpec(raw) {
+      return showPartial(raw).replace(/["”]+$/g, "").replace(/^\s*(speculation|future)\s*\d*[:.\-]\s*/i, "").trim();
     }
 
     async function typeOntoCard(text) {
-      const finalText = finishCard(text);
+      const finalText = finishSpec(text);
       if (!finalText) return "";
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         card.textContent = finalText;
@@ -790,57 +817,37 @@
     }
 
     async function streamOntoCard() {
-      const url = enactUrl();
+      const url = speculateUrl();
       if (!url) return { text: "", error: "No API URL." };
       const res = await fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Accept: focusConceptId ? "application/json" : "text/plain",
+          Accept: "application/json",
         },
-        body: JSON.stringify(enactRequestBody()),
+        body: JSON.stringify(speculateRequestBody()),
       });
       if (!res.ok) {
-        let message = "Could not generate from the ontology.";
+        let message = "Could not generate a speculation.";
         try {
           const data = await res.json();
           message = data.error || message;
         } catch (_) {}
         return { text: "", error: message };
       }
-      const type = res.headers.get("content-type") || "";
-      if (type.includes("application/json")) {
-        const data = await res.json();
-        if (!data.prompt) return { text: "", error: data.error || "The card was empty." };
-        const text = await typeOntoCard(data.prompt);
-        if (data.label) focusConceptName = data.label;
-        updateCardSource();
-        return { text, error: "" };
+      const data = await res.json();
+      if (!data.prompt) return { text: "", error: data.error || "The speculation was empty." };
+      if (data.frameworkId) {
+        recentFrameworks.push(data.frameworkId);
+        if (recentFrameworks.length > 8) recentFrameworks.shift();
       }
-      if (!res.body) return { text: "", error: "No response body." };
-      card.classList.add("is-streaming");
-      const reader = res.body.getReader();
-      const decoder = new TextDecoder();
-      let full = "";
-      let pieces = 0;
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        const piece = decoder.decode(value, { stream: true });
-        if (!piece) continue;
-        pieces += 1;
-        full += piece;
-        card.textContent = showPartial(full);
+      if (data.horizonId) {
+        recentHorizons.push(data.horizonId);
+        if (recentHorizons.length > 8) recentHorizons.shift();
       }
-      card.classList.remove("is-streaming");
-      const text = finishCard(full);
-      if (!text) return { text: "", error: "The card was empty." };
-      if (pieces <= 1) {
-        const typed = await typeOntoCard(text);
-        updateCardSource();
-        return { text: typed, error: "" };
-      }
-      card.textContent = text;
+      updateSpecMeta(data.framework, data.horizon);
+      const text = await typeOntoCard(data.prompt);
+      if (data.label) focusConceptName = data.label;
       updateCardSource();
       return { text, error: "" };
     }
@@ -851,8 +858,8 @@
       stopSpeak();
       heardCurrent = false;
       hint.textContent = focusConceptId
-        ? "Generating from " + focusConceptName + "…"
-        : "Generating your invitation…";
+        ? "Speculating from " + focusConceptName + "…"
+        : "Speculating…";
       if (hasGenerated) {
         await fadeOut();
         card.textContent = "";
@@ -927,7 +934,7 @@
     soundBtn.addEventListener("click", (e) => {
       e.stopPropagation();
       soundOn = !soundOn;
-      localStorage.setItem("hi-enact-sound", soundOn ? "on" : "off");
+      localStorage.setItem("hi-speculate-sound", soundOn ? "on" : "off");
       syncSoundButton();
       if (!soundOn) {
         stopSpeak();

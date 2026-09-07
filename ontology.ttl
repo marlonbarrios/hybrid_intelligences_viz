@@ -12,9 +12,9 @@
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   owl:versionInfo "1.0.0" ;
   dc:date "2026-09-07"^^xsd:date ;
-  dc:modified "2026-09-07T16:03:29.588Z"^^xsd:dateTime ;
-  hi:nodeCount "312"^^xsd:integer ;
-  hi:edgeCount "2828"^^xsd:integer .
+  dc:modified "2026-09-07T16:50:36.744Z"^^xsd:dateTime ;
+  hi:nodeCount "313"^^xsd:integer ;
+  hi:edgeCount "2837"^^xsd:integer .
 
 hi:scheme a skos:ConceptScheme ;
   skos:prefLabel "Hybrid Intelligences Concept Scheme" ;
@@ -3215,6 +3215,17 @@ hi:enact a skos:Concept, hi:NetworkNode ;
   hi:weight "1.5"^^xsd:decimal
  ;
   schema:url <enact.html>
+ .
+
+hi:speculate a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Speculate" ;
+  skos:definition "Possible futures generated from the Hybrid Intelligences ontology — brief speculations that begin in the future and trace a concept forward across time. Each piece picks a framework (dialectic, phenomenological, teleological, utopian, dystopian) and a horizon (ten years to ten thousand years). Open Speculate for open-ended futures; open from any ontology entry to ground the prediction in that node." ;
+  skos:broader hi:category/practice ;
+  skos:inScheme hi:scheme ;
+  hi:category "practice" ;
+  hi:weight "1.5"^^xsd:decimal
+ ;
+  schema:url <speculate.html>
  .
 
 hi:pendular_umwelt a skos:Concept, hi:NetworkNode ;
@@ -16515,6 +16526,12 @@ hi:rel-hi_hub-enact a hi:Relation ;
   hi:strength "0.95"^^xsd:decimal ;
   skos:relatedMatch hi:enact .
 
+hi:rel-hi_hub-speculate a hi:Relation ;
+  hi:source hi:hi_hub ;
+  hi:target hi:speculate ;
+  hi:strength "0.94"^^xsd:decimal ;
+  skos:relatedMatch hi:speculate .
+
 hi:rel-hi_hub-llm a hi:Relation ;
   hi:source hi:hi_hub ;
   hi:target hi:llm ;
@@ -19075,6 +19092,54 @@ hi:rel-enact-marlon a hi:Relation ;
   hi:source hi:enact ;
   hi:target hi:marlon ;
   hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:marlon .
+
+hi:rel-speculate-hi_hub a hi:Relation ;
+  hi:source hi:speculate ;
+  hi:target hi:hi_hub ;
+  hi:strength "0.94"^^xsd:decimal ;
+  skos:relatedMatch hi:hi_hub .
+
+hi:rel-speculate-speculative_futures a hi:Relation ;
+  hi:source hi:speculate ;
+  hi:target hi:speculative_futures ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:speculative_futures .
+
+hi:rel-speculate-futurity a hi:Relation ;
+  hi:source hi:speculate ;
+  hi:target hi:futurity ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:futurity .
+
+hi:rel-speculate-coupling a hi:Relation ;
+  hi:source hi:speculate ;
+  hi:target hi:coupling ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:coupling .
+
+hi:rel-speculate-enact a hi:Relation ;
+  hi:source hi:speculate ;
+  hi:target hi:enact ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:enact .
+
+hi:rel-speculate-conversational_ai a hi:Relation ;
+  hi:source hi:speculate ;
+  hi:target hi:conversational_ai ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:conversational_ai .
+
+hi:rel-speculate-ontology_kb a hi:Relation ;
+  hi:source hi:speculate ;
+  hi:target hi:ontology_kb ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:ontology_kb .
+
+hi:rel-speculate-marlon a hi:Relation ;
+  hi:source hi:speculate ;
+  hi:target hi:marlon ;
+  hi:strength "0.78"^^xsd:decimal ;
   skos:relatedMatch hi:marlon .
 
 hi:rel-hi_program-marlon a hi:Relation ;

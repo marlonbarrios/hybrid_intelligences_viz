@@ -14,6 +14,7 @@ const path = require("path");
 const tokenHandler = require("./api/token");
 const imageHandler = require("./api/image");
 const enactHandler = require("./api/enact");
+const speculateHandler = require("./api/speculate");
 const speechHandler = require("./api/speech");
 
 const ROOT = __dirname;
@@ -161,6 +162,7 @@ const server = http.createServer((req, res) => {
     urlPath === "/api/token" ? tokenHandler
     : urlPath === "/api/image" ? imageHandler
     : urlPath === "/api/enact" ? enactHandler
+    : urlPath === "/api/speculate" ? speculateHandler
     : urlPath === "/api/speech" ? speechHandler
     : null;
   if (handler) {
@@ -181,6 +183,7 @@ server.listen(PORT, "127.0.0.1", () => {
   console.log(`Voice: http://localhost:${PORT}/voice.html`);
   console.log(`Image: http://localhost:${PORT}/image.html`);
   console.log(`Enact: http://localhost:${PORT}/enact.html`);
+  console.log(`Speculate: http://localhost:${PORT}/speculate.html`);
   if (!process.env.OPENAI_API_KEY) {
     console.warn("OPENAI_API_KEY is not set. Copy .env.example to .env, or Talk / Make an image / Mini-pod / Enact will fail until you paste a deployed Vercel URL.");
   }

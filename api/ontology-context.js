@@ -328,11 +328,39 @@ function buildEnactFocusBlock(data, id) {
   return buildEnactFocusFromConcept(concept);
 }
 
+function buildSpeculateFocusFromConcept(concept) {
+  if (!concept || !concept.label) return "";
+  const cat = concept.category ? (CATEGORY_LABEL[concept.category] || concept.category) : "";
+  const related = [].concat(concept.related || []).filter(Boolean);
+  const lines = [
+    "FOCAL ONTOLOGY NODE FOR THIS FUTURE SPECULATION",
+    "SOURCE: Hybrid Intelligences ontology — SKOS concept scheme and knowledge graph.",
+    "The reader opened Speculate from this entry. The future you write must grow from this node.",
+    `Name: ${concept.label}`,
+  ];
+  if (cat) lines.push(`Category: ${cat}`);
+  if (concept.definition) lines.push(`Definition: ${concept.definition}`);
+  if (related.length) lines.push(`Related: ${related.join(", ")}`);
+  lines.push(
+    "Speculate how this concept reshapes worlds, bodies, institutions, or intelligences over time.",
+    "Hold coupling, embodiment, and hybrid cognition in view — not generic sci-fi wallpaper."
+  );
+  return lines.join("\n") + "\n\n";
+}
+
+function buildSpeculateFocusBlock(data, id) {
+  const concept = findConcept(data, id);
+  if (!concept) return "";
+  return buildSpeculateFocusFromConcept(concept);
+}
+
 module.exports = {
   ontologyInstructions,
   podcastInstructions,
   buildEnactFocusBlock,
   buildEnactFocusFromConcept,
+  buildSpeculateFocusBlock,
+  buildSpeculateFocusFromConcept,
   buildOntologyDigest,
   findConcept,
   loadOntology,

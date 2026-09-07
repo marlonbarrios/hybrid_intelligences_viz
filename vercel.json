@@ -7,6 +7,10 @@
       "includeFiles": "ontology.jsonld",
       "maxDuration": 20
     },
+    "api/speculate.js": {
+      "includeFiles": "ontology.jsonld",
+      "maxDuration": 25
+    },
     "api/speech.js": {
       "maxDuration": 20
     }

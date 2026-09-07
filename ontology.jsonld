@@ -63,10 +63,10 @@
         "foaf:homepage": "https://marlonbarrios.github.io/"
       },
       "dc:date": "2026-09-07",
-      "dc:modified": "2026-09-07T16:03:29.587Z",
+      "dc:modified": "2026-09-07T16:50:36.741Z",
       "owl:versionInfo": "1.0.0",
-      "hi:nodeCount": 312,
-      "hi:edgeCount": 2828,
+      "hi:nodeCount": 313,
+      "hi:edgeCount": 2837,
       "hi:typedEdgeCount": 198
     },
     {
@@ -16641,6 +16641,58 @@
       ]
     },
     {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#speculate",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Speculate",
+      "skos:definition": "Possible futures generated from the Hybrid Intelligences ontology — brief speculations that begin in the future and trace a concept forward across time. Each piece picks a framework (dialectic, phenomenological, teleological, utopian, dystopian) and a horizon (ten years to ten thousand years). Open Speculate for open-ended futures; open from any ontology entry to ground the prediction in that node.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "practice",
+      "hi:weight": 1.5,
+      "schema:url": "speculate.html",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
+          "hi:strength": 0.94
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#speculative_futures",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#futurity",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#enact",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#conversational_ai",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology_kb",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#marlon",
+          "hi:strength": 0.78
+        }
+      ]
+    },
+    {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#pendular_umwelt",
       "@type": [
         "skos:Concept",
@@ -16856,6 +16908,10 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#enact",
           "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#speculate",
+          "hi:strength": 0.94
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#llm",
