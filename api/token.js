@@ -26,25 +26,32 @@ function oracleInstructions() {
   return "You are the spoken voice of Oracle. Speak only the future reading in the response instructions, slowly and clearly, as quiet prose the listener can receive. Unhurried, reflective, not dramatic. Do not add words before or after. Do not mention that you are an AI. Leave a little air between sentences. Speak in the language of the text you are given.";
 }
 
+function whatIfInstructions() {
+  return "You are the spoken voice of What If. Speak only the build proposition in the response instructions, slowly and clearly, as quiet prose the listener can receive. Unhurried, reflective, hopeful but sober — not dramatic, not a pitch. Do not add words before or after. Do not mention that you are an AI. Leave a little air between sentences. Speak in the language of the text you are given.";
+}
+
 function sessionPayload(focusId, mode) {
   const podcast = mode === "podcast";
   const enact = mode === "enact";
   const oracle = mode === "oracle";
+  const whatIf = mode === "what_if";
   return {
     session: {
       type: "realtime",
       model: "gpt-realtime-2.1",
-      instructions: oracle
-        ? oracleInstructions()
-        : enact
-          ? enactInstructions()
-          : podcast
-            ? podcastInstructions(focusId || "")
-            : ontologyInstructions(focusId || ""),
+      instructions: whatIf
+        ? whatIfInstructions()
+        : oracle
+          ? oracleInstructions()
+          : enact
+            ? enactInstructions()
+            : podcast
+              ? podcastInstructions(focusId || "")
+              : ontologyInstructions(focusId || ""),
       audio: {
         input: {
           transcription: { model: "gpt-4o-mini-transcribe" },
-          turn_detection: (podcast || enact || oracle)
+          turn_detection: (podcast || enact || oracle || whatIf)
             ? {
                 type: "server_vad",
                 threshold: 0.9,

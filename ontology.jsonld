@@ -63,11 +63,11 @@
         "foaf:homepage": "https://marlonbarrios.github.io/"
       },
       "dc:date": "2026-09-07",
-      "dc:modified": "2026-09-07T17:23:33.091Z",
+      "dc:modified": "2026-09-07T17:30:29.666Z",
       "owl:versionInfo": "1.0.0",
-      "hi:nodeCount": 327,
-      "hi:edgeCount": 2999,
-      "hi:typedEdgeCount": 217
+      "hi:nodeCount": 330,
+      "hi:edgeCount": 3021,
+      "hi:typedEdgeCount": 220
     },
     {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme",
@@ -1961,6 +1961,54 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_nick_land_accelerationism",
           "hi:strength": 0.9
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#two_loops_model",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Two Loops Model",
+      "skos:definition": "Berkana Institute model of systemic change: dominant systems rise, mature, stabilize, and decline; in the transition, innovators nurture emergent alternatives while hospice workers help dying systems release. A map for moments when extractive institutions exhaust people yet new human-centered systems are not yet visible.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/framework"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "framework",
+      "hi:weight": 1.45,
+      "schema:url": "https://www.berkana.org/articles/two-loops/",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#berkana_institute",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#futurity",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#rehearsal",
+          "hi:strength": 0.78
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#what_if",
+          "hi:strength": 0.96
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#arendt",
+          "hi:strength": 0.72
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#freire",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#escobar",
+          "hi:strength": 0.72
         }
       ]
     },
@@ -8062,6 +8110,10 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_carissa_veliz_prophecy_ted",
           "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#what_if",
+          "hi:strength": 0.82
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#perception_politics",
@@ -17723,6 +17775,10 @@
           "hi:strength": 0.82
         },
         {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#what_if",
+          "hi:strength": 0.88
+        },
+        {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#conversational_ai",
           "hi:strength": 0.8
         },
@@ -17733,6 +17789,80 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#marlon",
           "hi:strength": 0.78
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#what_if",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "What If",
+      "skos:definition": "What do we need to build? — brief design propositions generated from the Hybrid Intelligences ontology in the spirit of the Berkana Two Loops model. When education, technology, and information systems optimized for extraction and fragmented attention are in decline, this layer asks what new systems would be optimized for human flourishing — whole attention, imagination, health, and community across difference, especially amid AI. Each card rotates a design lens, a scale of action, and a domain. Distinct from Oracle's distant futures: grounded in what is needed now.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "practice",
+      "hi:weight": 1.5,
+      "schema:url": "what-if.html",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
+          "hi:strength": 0.94
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#two_loops_model",
+          "hi:strength": 0.96
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#oracle",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#enact",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#literacies",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#conversational_ai",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology_kb",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#track_ethics",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#marlon",
+          "hi:strength": 0.78
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#carissa_veliz",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#two_loops_model",
+          "hi:strength": 0.9,
+          "hi:relationType": "instantiates"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
+          "hi:strength": 0.9,
+          "hi:relationType": "participatesIn"
         }
       ]
     },
@@ -18375,6 +18505,39 @@
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
           "hi:strength": 0.9,
           "hi:relationType": "constrains"
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#berkana_institute",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Berkana Institute",
+      "skos:definition": "Organization (with Deborah Frieze and Meg Wheatley) that developed the Two Loops model and communities of practice for leading from the emerging future — hospice for dying systems, pioneers for what is being born.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/organization"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "organization",
+      "hi:weight": 1.25,
+      "schema:url": "https://www.berkana.org/",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#two_loops_model",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#what_if",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#two_loops_model",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
         }
       ]
     },

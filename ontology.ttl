@@ -12,9 +12,9 @@
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   owl:versionInfo "1.0.0" ;
   dc:date "2026-09-07"^^xsd:date ;
-  dc:modified "2026-09-07T17:23:33.092Z"^^xsd:dateTime ;
-  hi:nodeCount "327"^^xsd:integer ;
-  hi:edgeCount "2999"^^xsd:integer .
+  dc:modified "2026-09-07T17:30:29.667Z"^^xsd:dateTime ;
+  hi:nodeCount "330"^^xsd:integer ;
+  hi:edgeCount "3021"^^xsd:integer .
 
 hi:scheme a skos:ConceptScheme ;
   skos:prefLabel "Hybrid Intelligences Concept Scheme" ;
@@ -392,6 +392,17 @@ hi:dark_enlightenment a skos:Concept, hi:NetworkNode ;
  ;
   schema:url <https://en.wikipedia.org/wiki/Dark_Enlightenment> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Dark_Enlightenment>
+ .
+
+hi:two_loops_model a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Two Loops Model" ;
+  skos:definition "Berkana Institute model of systemic change: dominant systems rise, mature, stabilize, and decline; in the transition, innovators nurture emergent alternatives while hospice workers help dying systems release. A map for moments when extractive institutions exhaust people yet new human-centered systems are not yet visible." ;
+  skos:broader hi:category/framework ;
+  skos:inScheme hi:scheme ;
+  hi:category "framework" ;
+  hi:weight "1.45"^^xsd:decimal
+ ;
+  schema:url <https://www.berkana.org/articles/two-loops/>
  .
 
 hi:possible_minds a skos:Concept, hi:NetworkNode ;
@@ -3403,6 +3414,17 @@ hi:oracle a skos:Concept, hi:NetworkNode ;
   schema:url <oracle.html>
  .
 
+hi:what_if a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "What If" ;
+  skos:definition "What do we need to build? — brief design propositions generated from the Hybrid Intelligences ontology in the spirit of the Berkana Two Loops model. When education, technology, and information systems optimized for extraction and fragmented attention are in decline, this layer asks what new systems would be optimized for human flourishing — whole attention, imagination, health, and community across difference, especially amid AI. Each card rotates a design lens, a scale of action, and a domain. Distinct from Oracle's distant futures: grounded in what is needed now." ;
+  skos:broader hi:category/practice ;
+  skos:inScheme hi:scheme ;
+  hi:category "practice" ;
+  hi:weight "1.5"^^xsd:decimal
+ ;
+  schema:url <what-if.html>
+ .
+
 hi:pendular_umwelt a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "My Pendular Umwelt" ;
   skos:definition "Speculative web work by Marlon Barrios Solano, developed during the open labs of the inaugural Hybrid Intelligences program, July 2026. GPT-4o writes from a proposed computational Umwelt and reads aloud; p5.js pendulums inscribe the words along branching trails — folds of speed and path that poetically stage a large language model’s possible world (a Latentwelt of tokens, embeddings, and continuations) rather than a still map. The work lets a model self-report an Umwelt while physics and type refuse to keep that speech still." ;
@@ -3514,6 +3536,17 @@ hi:came a skos:Concept, hi:NetworkNode ;
  ;
   schema:url <https://arts.ufl.edu/came/> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Entrepreneurship>
+ .
+
+hi:berkana_institute a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Berkana Institute" ;
+  skos:definition "Organization (with Deborah Frieze and Meg Wheatley) that developed the Two Loops model and communities of practice for leading from the emerging future — hospice for dying systems, pioneers for what is being born." ;
+  skos:broader hi:category/organization ;
+  skos:inScheme hi:scheme ;
+  hi:category "organization" ;
+  hi:weight "1.25"^^xsd:decimal
+ ;
+  schema:url <https://www.berkana.org/>
  .
 
 hi:cam a skos:Concept, hi:NetworkNode ;
@@ -20271,6 +20304,12 @@ hi:rel-oracle-enact a hi:Relation ;
   hi:strength "0.82"^^xsd:decimal ;
   skos:relatedMatch hi:enact .
 
+hi:rel-oracle-what_if a hi:Relation ;
+  hi:source hi:oracle ;
+  hi:target hi:what_if ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:what_if .
+
 hi:rel-oracle-conversational_ai a hi:Relation ;
   hi:source hi:oracle ;
   hi:target hi:conversational_ai ;
@@ -20288,6 +20327,132 @@ hi:rel-oracle-marlon a hi:Relation ;
   hi:target hi:marlon ;
   hi:strength "0.78"^^xsd:decimal ;
   skos:relatedMatch hi:marlon .
+
+hi:rel-what_if-hi_hub a hi:Relation ;
+  hi:source hi:what_if ;
+  hi:target hi:hi_hub ;
+  hi:strength "0.94"^^xsd:decimal ;
+  skos:relatedMatch hi:hi_hub .
+
+hi:rel-what_if-two_loops_model a hi:Relation ;
+  hi:source hi:what_if ;
+  hi:target hi:two_loops_model ;
+  hi:strength "0.96"^^xsd:decimal ;
+  skos:relatedMatch hi:two_loops_model .
+
+hi:rel-what_if-oracle a hi:Relation ;
+  hi:source hi:what_if ;
+  hi:target hi:oracle ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:oracle .
+
+hi:rel-what_if-enact a hi:Relation ;
+  hi:source hi:what_if ;
+  hi:target hi:enact ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:enact .
+
+hi:rel-what_if-coupling a hi:Relation ;
+  hi:source hi:what_if ;
+  hi:target hi:coupling ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:coupling .
+
+hi:rel-what_if-literacies a hi:Relation ;
+  hi:source hi:what_if ;
+  hi:target hi:literacies ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:literacies .
+
+hi:rel-what_if-conversational_ai a hi:Relation ;
+  hi:source hi:what_if ;
+  hi:target hi:conversational_ai ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:conversational_ai .
+
+hi:rel-what_if-ontology_kb a hi:Relation ;
+  hi:source hi:what_if ;
+  hi:target hi:ontology_kb ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:ontology_kb .
+
+hi:rel-what_if-track_ethics a hi:Relation ;
+  hi:source hi:what_if ;
+  hi:target hi:track_ethics ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:track_ethics .
+
+hi:rel-what_if-marlon a hi:Relation ;
+  hi:source hi:what_if ;
+  hi:target hi:marlon ;
+  hi:strength "0.78"^^xsd:decimal ;
+  skos:relatedMatch hi:marlon .
+
+hi:rel-two_loops_model-berkana_institute a hi:Relation ;
+  hi:source hi:two_loops_model ;
+  hi:target hi:berkana_institute ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:berkana_institute .
+
+hi:rel-two_loops_model-futurity a hi:Relation ;
+  hi:source hi:two_loops_model ;
+  hi:target hi:futurity ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:futurity .
+
+hi:rel-two_loops_model-rehearsal a hi:Relation ;
+  hi:source hi:two_loops_model ;
+  hi:target hi:rehearsal ;
+  hi:strength "0.78"^^xsd:decimal ;
+  skos:relatedMatch hi:rehearsal .
+
+hi:rel-two_loops_model-what_if a hi:Relation ;
+  hi:source hi:two_loops_model ;
+  hi:target hi:what_if ;
+  hi:strength "0.96"^^xsd:decimal ;
+  skos:relatedMatch hi:what_if .
+
+hi:rel-berkana_institute-two_loops_model a hi:Relation ;
+  hi:source hi:berkana_institute ;
+  hi:target hi:two_loops_model ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:two_loops_model .
+
+hi:rel-berkana_institute-what_if a hi:Relation ;
+  hi:source hi:berkana_institute ;
+  hi:target hi:what_if ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:what_if .
+
+hi:rel-two_loops_model-arendt a hi:Relation ;
+  hi:source hi:two_loops_model ;
+  hi:target hi:arendt ;
+  hi:strength "0.72"^^xsd:decimal ;
+  skos:relatedMatch hi:arendt .
+
+hi:rel-two_loops_model-freire a hi:Relation ;
+  hi:source hi:two_loops_model ;
+  hi:target hi:freire ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:freire .
+
+hi:rel-two_loops_model-escobar a hi:Relation ;
+  hi:source hi:two_loops_model ;
+  hi:target hi:escobar ;
+  hi:strength "0.72"^^xsd:decimal ;
+  skos:relatedMatch hi:escobar .
+
+hi:rel-carissa_veliz-what_if a hi:Relation ;
+  hi:source hi:carissa_veliz ;
+  hi:target hi:what_if ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:what_if .
+
+hi:rel-what_if-carissa_veliz a hi:Relation ;
+  hi:source hi:what_if ;
+  hi:target hi:carissa_veliz ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:carissa_veliz .
 
 hi:rel-hi_program-marlon a hi:Relation ;
   hi:source hi:hi_program ;
@@ -22835,6 +23000,21 @@ hi:rel-video_carissa_veliz_prophecy_ted-oracle-develops a hi:Relation ;
   hi:source hi:video_carissa_veliz_prophecy_ted ;
   hi:target hi:oracle ;
   hi:relationType hi:develops .
+
+hi:rel-berkana_institute-two_loops_model-develops a hi:Relation ;
+  hi:source hi:berkana_institute ;
+  hi:target hi:two_loops_model ;
+  hi:relationType hi:develops .
+
+hi:rel-what_if-two_loops_model-instantiates a hi:Relation ;
+  hi:source hi:what_if ;
+  hi:target hi:two_loops_model ;
+  hi:relationType hi:instantiates .
+
+hi:rel-what_if-hi_hub-participatesIn a hi:Relation ;
+  hi:source hi:what_if ;
+  hi:target hi:hi_hub ;
+  hi:relationType hi:participatesIn .
 
 hi:rel-video_merleau_ponty_phenomenology-merleau_ponty-instantiates a hi:Relation ;
   hi:source hi:video_merleau_ponty_phenomenology ;

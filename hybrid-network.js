@@ -155,6 +155,7 @@ const IMAGE_URL = "image.html";
 const MINI_POD_URL = "mini-pod.html";
 const ENACT_URL = "enact.html";
 const ORACLE_URL = "oracle.html";
+const WHAT_IF_URL = "what-if.html";
 const SLIDES_URL = "slides.html";
 const SHOWCASE_URL = "showcase.html";
 const CREATIVE_B_URL = "creative-b.html";
@@ -680,6 +681,9 @@ const NODES = [
   { id: "dark_enlightenment", label: "Dark\nEnlightenment",           cat: "framework",  weight: 1.25,
     desc: "Neoreactionary and accelerationist current—critiques of democratic modernity, egalitarianism, and Enlightenment universalism; associated with exit, techno-capital, libertarian authoritarianism, and post-democratic governance imaginaries. Central to debates on AI, futurity, and who gets to steer hybrid intelligences.",
     url: "https://en.wikipedia.org/wiki/Dark_Enlightenment", linkLabel: "Wikipedia ↗" },
+  { id: "two_loops_model",    label: "Two Loops\nModel",              cat: "framework",  weight: 1.45,
+    desc: "Berkana Institute model of systemic change: dominant systems rise, mature, stabilize, and decline; in the transition, innovators nurture emergent alternatives while hospice workers help dying systems release. A map for moments when extractive institutions exhaust people yet new human-centered systems are not yet visible.",
+    url: "https://www.berkana.org/articles/two-loops/", linkLabel: "Berkana · Two Loops ↗" },
   { id: "possible_minds",     label: "Space of\nPossible Minds",      cat: "framework",  weight: 1.4,
     desc: "Intelligence as a vast landscape of cognitive organizations—not a ladder with humans at the top.",
     url: "essay.html", linkLabel: "Read Essay 1 →" },
@@ -1524,6 +1528,9 @@ const NODES = [
   { id: "oracle",             label: "Oracle",                        cat: "practice",   weight: 1.5,
     desc: "Possible futures generated from the Hybrid Intelligences ontology — brief oracle readings that begin in the future and trace a concept forward across time. Each piece rotates a framework (dialectic, phenomenological, teleological, utopian, dystopian), a horizon (ten years to ten thousand years), and an axis: labor and leisure, gender and sexuality, hybrid bodies and species, synthetic psychology, cognitive assemblage, governance and democracy, epistemics and daily life, or space and new technologies. Open Oracle for open-ended futures; open from any ontology entry to ground the prediction in that node.",
     url: "oracle.html", linkLabel: "Open Oracle →" },
+  { id: "what_if",            label: "What If",                       cat: "practice",   weight: 1.5,
+    desc: "What do we need to build? — brief design propositions generated from the Hybrid Intelligences ontology in the spirit of the Berkana Two Loops model. When education, technology, and information systems optimized for extraction and fragmented attention are in decline, this layer asks what new systems would be optimized for human flourishing — whole attention, imagination, health, and community across difference, especially amid AI. Each card rotates a design lens, a scale of action, and a domain. Distinct from Oracle's distant futures: grounded in what is needed now.",
+    url: "what-if.html", linkLabel: "Open What If →" },
   { id: "pendular_umwelt",    label: "My Pendular\nUmwelt",           cat: "practice",   weight: 1.5,
     desc: "Speculative web work by Marlon Barrios Solano, developed during the open labs of the inaugural Hybrid Intelligences program, July 2026. GPT-4o writes from a proposed computational Umwelt and reads aloud; p5.js pendulums inscribe the words along branching trails — folds of speed and path that poetically stage a large language model’s possible world (a Latentwelt of tokens, embeddings, and continuations) rather than a still map. The work lets a model self-report an Umwelt while physics and type refuse to keep that speech still.",
     url: "showcase.html#pendular-umwelt", linkLabel: "Open in showcase →" },
@@ -1552,6 +1559,9 @@ const NODES = [
   { id: "came",               label: "CAME",                          cat: "organization",  weight: 1.35,
     desc: "Center for Arts, Migration and Entrepreneurship — lead host of the inaugural Hybrid Intelligences program within the College of the Arts; entrepreneurship and strategic vision across arts, migration, and interdisciplinary innovation.",
     url: "https://arts.ufl.edu/came/", linkLabel: "CAME at UF ↗" },
+  { id: "berkana_institute",  label: "Berkana\nInstitute",            cat: "organization",  weight: 1.25,
+    desc: "Organization (with Deborah Frieze and Meg Wheatley) that developed the Two Loops model and communities of practice for leading from the emerging future — hospice for dying systems, pioneers for what is being born.",
+    url: "https://www.berkana.org/", linkLabel: "Berkana Institute ↗" },
   { id: "cam",                label: "CAM",                           cat: "organization",  weight: 1.35,
     desc: "Center for Arts in Medicine — within the College of the Arts; advancing education, research, and practice at the intersections of the arts and health.",
     url: "https://arts.ufl.edu/programs-schools/center-for-arts-in-medicine/", linkLabel: "Center for Arts in Medicine ↗" },
@@ -4798,9 +4808,31 @@ const EDGES = [
   ["oracle", "futurity", 0.9],
   ["oracle", "coupling", 0.85],
   ["oracle", "enact", 0.82],
+  ["oracle", "what_if", 0.88],
   ["oracle", "conversational_ai", 0.8],
   ["oracle", "ontology_kb", 0.88],
   ["oracle", "marlon", 0.78],
+  ["what_if", "hi_hub", 0.94],
+  ["what_if", "two_loops_model", 0.96],
+  ["what_if", "oracle", 0.88],
+  ["what_if", "enact", 0.85],
+  ["what_if", "coupling", 0.88],
+  ["what_if", "literacies", 0.82],
+  ["what_if", "conversational_ai", 0.82],
+  ["what_if", "ontology_kb", 0.9],
+  ["what_if", "track_ethics", 0.85],
+  ["what_if", "marlon", 0.78],
+  ["two_loops_model", "berkana_institute", 0.95],
+  ["two_loops_model", "futurity", 0.82],
+  ["two_loops_model", "rehearsal", 0.78],
+  ["two_loops_model", "what_if", 0.96],
+  ["berkana_institute", "two_loops_model", 0.95],
+  ["berkana_institute", "what_if", 0.88],
+  ["two_loops_model", "arendt", 0.72],
+  ["two_loops_model", "freire", 0.75],
+  ["two_loops_model", "escobar", 0.72],
+  ["carissa_veliz", "what_if", 0.82],
+  ["what_if", "carissa_veliz", 0.8],
   ["hi_program", "marlon", 0.95],
   ["marlon", "came", 0.95],
   ["marlon", "cota", 0.9],
@@ -5294,6 +5326,9 @@ const TYPED_EDGES = [
   ["video_nick_land_accelerationism", "dark_enlightenment", "develops"],
   ["video_carissa_veliz_prophecy_ted", "carissa_veliz", "instantiates"],
   ["video_carissa_veliz_prophecy_ted", "oracle", "develops"],
+  ["berkana_institute", "two_loops_model", "develops"],
+  ["what_if", "two_loops_model", "instantiates"],
+  ["what_if", "hi_hub", "participatesIn"],
   ["video_merleau_ponty_phenomenology", "merleau_ponty", "instantiates"],
   ["video_foucault_prison_1975", "foucault", "instantiates"],
   ["video_shanahan_consciousness_ai", "shanahan", "instantiates"],
@@ -6845,6 +6880,7 @@ function drawMobileMenu() {
     { id: "link", label: "Mini-pod", url: MINI_POD_URL },
     { id: "link", label: "Enact", url: ENACT_URL },
     { id: "link", label: "Oracle", url: ORACLE_URL },
+    { id: "link", label: "What If", url: WHAT_IF_URL },
     { id: "link", label: "Creative B", url: CREATIVE_B_URL },
     { id: "link", label: "Scan QR Code", url: SCAN_QR_URL },
     { id: "link", label: "GitHub \u2197", url: GITHUB_URL },
@@ -6972,6 +7008,7 @@ function drawUI() {
     { url: MINI_POD_URL, label: "Mini-pod" },
     { url: ENACT_URL, label: "Enact" },
     { url: ORACLE_URL, label: "Oracle" },
+    { url: WHAT_IF_URL, label: "What If" },
     { url: CREATIVE_B_URL, label: "Creative B" },
     { url: SCAN_QR_URL, label: "Scan QR Code" },
     { url: GITHUB_URL, label: "GitHub \u2197" },
@@ -7290,6 +7327,11 @@ function oracleObjectUrl(id, label) {
   return `${ORACLE_URL}?id=${encodeURIComponent(id)}&name=${encodeURIComponent(name)}`;
 }
 
+function whatIfObjectUrl(id, label) {
+  const name = String(label || id).replace(/\n/g, " ").replace(/\s+/g, " ").trim();
+  return `${WHAT_IF_URL}?id=${encodeURIComponent(id)}&name=${encodeURIComponent(name)}`;
+}
+
 function preloadPosterImages() {
   for (const n of NODES) {
     if (!n.poster) continue;
@@ -7466,6 +7508,7 @@ function drawDetailPanel(n) {
   drawPanelLink(podcastObjectUrl(n.id, n.label), "Mini-pod");
   drawPanelLink(enactObjectUrl(n.id, n.label), "Enact");
   drawPanelLink(oracleObjectUrl(n.id, n.label), "Oracle");
+  drawPanelLink(whatIfObjectUrl(n.id, n.label), "What If");
   for (const v of curatedVideosFor(n.id).slice(0, 8)) {
     drawPanelLink(v.url, `Video · ${v.label.replace(/\n/g, " ")} →`);
   }

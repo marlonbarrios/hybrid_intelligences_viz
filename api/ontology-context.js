@@ -355,6 +355,33 @@ function buildOracleFocusBlock(data, id) {
   return buildOracleFocusFromConcept(concept);
 }
 
+function buildWhatIfFocusFromConcept(concept) {
+  if (!concept || !concept.label) return "";
+  const cat = concept.category ? (CATEGORY_LABEL[concept.category] || concept.category) : "";
+  const related = [].concat(concept.related || []).filter(Boolean);
+  const lines = [
+    "FOCAL ONTOLOGY NODE FOR THIS WHAT IF PROPOSITION",
+    "SOURCE: Hybrid Intelligences ontology — SKOS concept scheme and knowledge graph.",
+    "The reader opened What If from this entry. The build proposition must grow from this node.",
+    `Name: ${concept.label}`,
+  ];
+  if (cat) lines.push(`Category: ${cat}`);
+  if (concept.definition) lines.push(`Definition: ${concept.definition}`);
+  if (related.length) lines.push(`Related: ${related.join(", ")}`);
+  lines.push(
+    "Translate this concept into something worth building now — a practice, institution, tool, or commons — optimized for human flourishing.",
+    "Hold the Two Loops moment: declining extractive systems, emergent human-centered alternatives.",
+    "Hold coupling, embodiment, and hybrid cognition in view — not generic tech solutionism."
+  );
+  return lines.join("\n") + "\n\n";
+}
+
+function buildWhatIfFocusBlock(data, id) {
+  const concept = findConcept(data, id);
+  if (!concept) return "";
+  return buildWhatIfFocusFromConcept(concept);
+}
+
 module.exports = {
   ontologyInstructions,
   podcastInstructions,
@@ -362,6 +389,8 @@ module.exports = {
   buildEnactFocusFromConcept,
   buildOracleFocusBlock,
   buildOracleFocusFromConcept,
+  buildWhatIfFocusBlock,
+  buildWhatIfFocusFromConcept,
   buildOntologyDigest,
   findConcept,
   loadOntology,
