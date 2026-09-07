@@ -300,9 +300,30 @@ function podcastInstructions(focusId) {
   return focus ? `${podcastBaseInstructions()}\n\n${focus}` : podcastBaseInstructions();
 }
 
+function buildEnactFocusBlock(data, id) {
+  const concept = findConcept(data, id);
+  if (!concept) return "";
+  const cat = concept.category ? (CATEGORY_LABEL[concept.category] || concept.category) : "";
+  const lines = [
+    "FOCAL ONTOLOGY NODE FOR THIS ENACT CARD",
+    "The reader opened Enact from this Hybrid Intelligences ontology entry. Every invitation must grow from this node — its definition, category, and relations — not from generic mindfulness.",
+    `Name: ${concept.label}`,
+  ];
+  if (cat) lines.push(`Category: ${cat}`);
+  if (concept.definition) lines.push(`Definition: ${concept.definition}`);
+  if (concept.related.length) lines.push(`Related: ${concept.related.join(", ")}`);
+  lines.push(
+    "Translate this concept into a tiny choreography of awareness: touch, breath, sight, weight, screen, hands, network, cells, or coupling.",
+    "The card should feel like this concept without naming or explaining it. Do not quote the definition.",
+    "If a related line includes a verb (couples with, enables, mediates, enacts), let that relation shape the invitation."
+  );
+  return lines.join("\n") + "\n\n";
+}
+
 module.exports = {
   ontologyInstructions,
   podcastInstructions,
+  buildEnactFocusBlock,
   buildOntologyDigest,
   findConcept,
   loadOntology,

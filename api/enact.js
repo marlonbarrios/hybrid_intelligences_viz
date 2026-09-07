@@ -1,4 +1,4 @@
-const { loadOntology, findConcept } = require("./ontology-context");
+const { loadOntology, findConcept, buildEnactFocusBlock } = require("./ontology-context");
 
 function applyCors(res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -99,56 +99,109 @@ function normalizeConceptId(raw) {
     .replace(/[^a-z0-9_]/g, "");
 }
 
-function resolveConcept(body) {
-  const id = normalizeConceptId(body.conceptId || body.id);
-  if (!id) return { concept: pickConcept(), focused: false };
+function conceptIdFromReq(req, body) {
+  const query = req.query || {};
+  const raw =
+    query.id ||
+    query.conceptId ||
+    body.conceptId ||
+    body.id ||
+    "";
+  if (raw) return normalizeConceptId(raw);
   try {
-    const data = loadOntology();
-    const concept = findConcept(data, id);
-    if (concept) return { concept, focused: true };
-  } catch (_) {}
-  return { concept: pickConcept(), focused: false };
+    const url = new URL(req.url || "/", "http://localhost");
+    return normalizeConceptId(url.searchParams.get("id") || url.searchParams.get("conceptId") || "");
+  } catch (_) {
+    return "";
+  }
 }
 
-function enactSystemPrompt(concept, recent, language, focused) {
-  const lines = [
-    "You write Hybrid Intelligences Enact cards, in the spirit of Brian Eno's Oblique Strategies.",
-    "Ground them in coupling, complex embodiment, techno-symbiosis, cognitive assemblages, and a hybrid epistemology beyond the human.",
+function resolveConcept(req, body) {
+  const requestedId = conceptIdFromReq(req, body);
+  if (!requestedId) return { concept: pickConcept(), focused: false, focusBlock: "" };
+  try {
+    const data = loadOntology();
+    const concept = findConcept(data, requestedId);
+    if (concept) {
+      return {
+        concept,
+        focused: true,
+        focusBlock: buildEnactFocusBlock(data, requestedId),
+      };
+    }
+  } catch (_) {}
+  const label = clip(body.conceptName || body.name || requestedId.replace(/_/g, " "), 120);
+  return {
+    concept: { id: requestedId, label, definition: "", category: "", related: [] },
+    focused: true,
+    focusBlock:
+      "FOCAL ONTOLOGY NODE FOR THIS ENACT CARD\n" +
+      "The reader opened Enact from this ontology entry.\n" +
+      `Name: ${label}\n` +
+      "Ground the invitation in what this name suggests within Hybrid Intelligences.\n\n",
+  };
+}
+
+function enactStyleRules() {
+  return [
     "Output ONLY the card: one short sentence. About eight to fourteen words. No second sentence. No title, no quotes, no numbering, no explanation.",
-    "The reader is with a computer or phone right now, looking at these words — in coupling with an intelligent machine that is not organic.",
+    "The reader is with a computer or phone right now, in coupling with an intelligent machine that is not organic.",
     "Invite a small choreography of awareness using what is always available: touch, sight, breath, weight, the screen, the hands.",
-    "Sometimes remind them that these words travel through vast networks of data, cables, servers, and signals — already underway while they look.",
-    "Sometimes remind them that their body is not a sealed human interior: billions of cells, metabolism, symbiotic lives in the gut and on the skin, all happening now.",
-    "Hold machine intelligence and living process in the same field. Do not treat the organic as authentic and the technical as fake, or the technical as the future and the body as leftover.",
-    "Do not assume a fair, a plate, a glass, food, a badge, a crowd, or a demo. Do not depend on a specific room.",
+    "Sometimes remind them that these words travel through networks of data, cables, servers, and signals.",
+    "Sometimes remind them that their body is not a sealed human interior: cells, metabolism, symbiotic lives.",
+    "Hold machine intelligence and living process in the same field.",
+    "Do not assume a fair, a plate, a glass, food, a badge, a crowd, or a demo.",
     "The change is attention — a tiny dance of looking, touching, or breathing — not a new task, not a performance, not leaving.",
     "Concrete. Doable in under twenty seconds. Present tense. Not utopian, not dystopian, not self-help, not productivity.",
-    "Thinking, writing, remembering, and imagining futures are already coupled with the device, the network, the cells, and the room — not sealed inside a human skull.",
-    "Do not mention ChatGPT, Hybrid Intelligences, fairs, or that you are generating a card. You may point to this machine, these words, the network, cells, metabolism, or symbionts.",
-    "Do not lecture. Do not list science. One felt reminder is enough. Keep it half as long as a two-sentence card.",
+    "Do not mention ChatGPT, Hybrid Intelligences, fairs, or that you are generating a card.",
+    "Do not lecture. Do not list science. One felt reminder is enough.",
   ];
+}
+
+function enactSystemPrompt(concept, recent, language, focused, focusBlock) {
+  const style = enactStyleRules();
+  const lines = [];
+
+  if (focused && focusBlock) {
+    lines.push(
+      "You write Hybrid Intelligences Enact cards, in the spirit of Brian Eno's Oblique Strategies.",
+      focusBlock.trim(),
+      "Write ONE Enact invitation that grows from the focal ontology node above. The reader should feel that concept in their body and attention — not hear a definition of it.",
+      ...style
+    );
+  } else {
+    lines.push(
+      "You write Hybrid Intelligences Enact cards, in the spirit of Brian Eno's Oblique Strategies.",
+      "Ground them in coupling, complex embodiment, techno-symbiosis, cognitive assemblages, and a hybrid epistemology beyond the human.",
+      ...style
+    );
+    if (concept) {
+      lines.push("Let this ontology concept color the card without naming it unless the name is ordinary English: " + concept.label + ".");
+      if (concept.definition) lines.push("Sense of it: " + clip(concept.definition, 280));
+      if (concept.related && concept.related.length) {
+        lines.push("Nearby ideas (do not list them): " + concept.related.slice(0, 6).join("; ") + ".");
+      }
+    }
+  }
+
   if (language && language.name && !/^english$/i.test(language.name)) {
     const label = language.native ? language.name + " (" + language.native + ")" : language.name;
     lines.push("Write the entire card in " + label + ". Natural contemporary " + language.name + ". Do not mix in English.");
   } else {
     lines.push("Write the card in English.");
   }
-  if (concept) {
-    if (focused) {
-      lines.push(
-        "The listener opened Enact from this ontology node. The invitation MUST be grounded in this concept — its definition and felt sense — without lecturing or explaining it."
-      );
-    }
-    lines.push("Let this ontology concept color the card without naming it unless the name is ordinary English: " + concept.label + ".");
-    if (concept.definition) lines.push("Sense of it: " + clip(concept.definition, 280));
-    if (concept.related && concept.related.length) {
-      lines.push("Nearby ideas (do not list them): " + concept.related.slice(0, 6).join("; ") + ".");
-    }
-  }
+
   if (recent && recent.length) {
     lines.push("Do not repeat or paraphrase these recent cards: " + recent.map((c) => clip(c, 80)).join(" | "));
   }
   return lines.join(" ");
+}
+
+function enactUserPrompt(concept, focused) {
+  if (focused && concept && concept.label) {
+    return "Write one Enact invitation grounded in the ontology node " + concept.label + ".";
+  }
+  return "One new Enact card.";
 }
 
 module.exports = async function handler(req, res) {
@@ -176,9 +229,10 @@ module.exports = async function handler(req, res) {
     name: clip(body.language || body.languageName || "English", 60),
     native: clip(body.languageNative || "", 60),
   };
-  const { concept, focused } = resolveConcept(body);
+  const { concept, focused, focusBlock } = resolveConcept(req, body);
 
   const stream = wantsStream(req);
+  const temperature = focused ? 0.88 : 1.05;
 
   try {
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
@@ -189,12 +243,12 @@ module.exports = async function handler(req, res) {
       },
       body: JSON.stringify({
         model: "gpt-4o-mini",
-        temperature: 1.05,
+        temperature,
         max_tokens: 55,
         stream: stream,
         messages: [
-          { role: "system", content: enactSystemPrompt(concept, recent, language, focused) },
-          { role: "user", content: "One new Enact card." },
+          { role: "system", content: enactSystemPrompt(concept, recent, language, focused, focusBlock) },
+          { role: "user", content: enactUserPrompt(concept, focused) },
         ],
       }),
     });
@@ -212,7 +266,7 @@ module.exports = async function handler(req, res) {
       res.setHeader("Content-Type", "text/plain; charset=utf-8");
       res.setHeader("Cache-Control", "no-cache");
       res.status(200);
-      const full = await pipeCompletionStream(response, res);
+      await pipeCompletionStream(response, res);
       res.end();
       return;
     }
@@ -223,7 +277,7 @@ module.exports = async function handler(req, res) {
       res.status(502).json({ error: "The card was empty." });
       return;
     }
-    res.status(200).json({ prompt: text });
+    res.status(200).json({ prompt: text, conceptId: focused && concept ? concept.id : undefined, label: concept && concept.label });
   } catch (err) {
     res.status(500).json({ error: err.message || "Failed to generate a card." });
   }

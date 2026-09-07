@@ -78,6 +78,15 @@
       color: var(--muted);
       text-align: center;
     }
+    .focus-def {
+      display: block;
+      margin-top: 0.35rem;
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      font-size: 0.82rem;
+      line-height: 1.45;
+      color: var(--text);
+      opacity: 0.82;
+    }
     .header-links {
       display: flex;
       flex-wrap: wrap;
@@ -343,6 +352,48 @@
         "</a>";
     }
 
+    function localId(iri) {
+      if (!iri) return "";
+      const value = typeof iri === "string" ? iri : iri["@id"] || "";
+      return (value.split("#")[1] || "").replace(/^category\//, "");
+    }
+
+    function textOf(value) {
+      if (!value) return "";
+      if (typeof value === "string") return value;
+      if (Array.isArray(value)) return textOf(value[0]);
+      if (typeof value === "object") return value["@value"] || "";
+      return String(value);
+    }
+
+    async function loadFocusFromOntology() {
+      if (!focusConceptId) return;
+      try {
+        const res = await fetch("ontology.jsonld");
+        const data = await res.json();
+        const item = (data["@graph"] || []).find((entry) => localId(entry["@id"]) === focusConceptId);
+        if (!item) return;
+        const label = textOf(item["skos:prefLabel"]) || focusConceptName;
+        const definition = textOf(item["skos:definition"]);
+        focusConceptName = label;
+        document.title = "Enact · " + label + " — Hybrid Intelligences";
+        let html =
+          "From ontology · <a href=\"ontology.html#" + encodeURIComponent(focusConceptId) + "\">" +
+          label.replace(/</g, "&lt;") +
+          "</a>";
+        if (definition) {
+          const short = definition.length > 220 ? definition.slice(0, 217).replace(/\s+\S*$/, "") + "…" : definition;
+          html += "<span class=\"focus-def\">" + short.replace(/</g, "&lt;") + "</span>";
+        }
+        focusLabel.innerHTML = html;
+      } catch (_) {}
+    }
+
+    function focusedHint() {
+      if (!focusConceptId) return;
+      hint.textContent = "Invitations grounded in " + focusConceptName + ". Tap for another.";
+    }
+
     function applyTheme(mode) {
       document.body.classList.toggle("light-mode", mode === "light");
       localStorage.setItem("hi-theme", mode);
@@ -425,7 +476,11 @@
     }
 
     function enactUrl() {
-      return apiUrl("/api/enact");
+      let url = apiUrl("/api/enact");
+      if (url && focusConceptId) {
+        url += (url.includes("?") ? "&" : "?") + "id=" + encodeURIComponent(focusConceptId);
+      }
+      return url;
     }
 
     function speechUrl() {
@@ -668,6 +723,9 @@
             language: currentLang.name,
             languageNative: currentLang.native,
             conceptId: focusConceptId || undefined,
+            id: focusConceptId || undefined,
+            conceptName: focusConceptName || undefined,
+            name: focusConceptName || undefined,
           }),
       });
       if (!res.ok || !res.body) return "";
@@ -724,6 +782,7 @@
       } else {
         heardCurrent = false;
         idleHint();
+        if (focusConceptId) focusedHint();
       }
     }
 
@@ -740,7 +799,12 @@
     }
 
     initTheme();
-    initFocusConcept();
+    const bootParams = params();
+    if (bootParams.id) {
+      focusConceptId = bootParams.id;
+      focusConceptName = bootParams.name || bootParams.id.replace(/_/g, " ");
+      initFocusConcept();
+    }
     fillLanguages();
     syncSoundButton();
     langSelect.addEventListener("click", (e) => e.stopPropagation());
@@ -776,7 +840,10 @@
       }
     });
     window.addEventListener("pagehide", teardownVoice);
-    nextCard();
+    loadFocusFromOntology().then(() => {
+      if (focusConceptId) focusedHint();
+      nextCard();
+    });
   </script>
 </body>
 </html>
