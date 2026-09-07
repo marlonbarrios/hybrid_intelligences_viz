@@ -229,6 +229,17 @@
       transition: opacity 0.7s ease;
     }
     #card.is-out { opacity: 0; }
+    #card.is-awaiting {
+      opacity: 0.55;
+      font-size: clamp(1.1rem, 3.2vw, 1.45rem);
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      line-height: 1.45;
+      max-width: 22em;
+      color: var(--muted);
+      text-align: center;
+    }
     #card.is-streaming::after {
       content: "▍";
       margin-left: 0.06em;
@@ -283,7 +294,7 @@
       <select id="langSelect" class="lang-select" aria-label="Language"></select>
       <button type="button" class="sound-btn" id="soundBtn" aria-pressed="true" aria-label="Turn sound off">Sound on</button>
     </div>
-    <p class="hint" id="hint">Tap to hear the invitation. Tap again for another.</p>
+    <p class="hint" id="hint">Press Space for your first invitation.</p>
   </div>
 
   <script src="realtime-config.js"></script>
@@ -318,37 +329,11 @@
       { id: "sw", name: "Swahili", native: "Kiswahili" },
     ];
 
-    const FALLBACK = [
-      "Feel these words arriving through a network and through cells.",
-      "Breathe once with the machine.",
-      "This screen is not organic. Your gut is a crowd.",
-      "Soften your jaw. Keep looking.",
-      "Blink slower than the screen refreshes.",
-      "Pause the thumb. Data and blood are already moving.",
-      "Feel the heat of the device and of metabolism.",
-      "Let the next thought arrive through screen or breath.",
-      "Write nothing. The ready hand is already thinking.",
-      "Count three breaths with the glow.",
-      "This machine is speaking. You are many lives.",
-      "Imagine a future for one breath with this screen.",
-      "Look at the edge of the screen, then back.",
-      "A memory lives in the machine and in the body.",
-      "This thought has many houses. Do not pick one.",
-      "Touch the glass as a partner, not a window.",
-      "Hear the hum: fan, blood, room.",
-      "Feel data moving. Feel cells working.",
-      "You are metabolizing while you read, and routed while you think.",
-      "Soften the shoulders. Let the network remember some of it.",
-      "These words are not inside you. Breathe in the between.",
-      "Shift your weight. Let gravity and electricity finish it.",
-      "Which light taught that future its color?",
-      "Feel the nonhuman writing with you, and living in you.",
-    ];
-
     const FADE_MS = 700;
     const recent = [];
     let busy = false;
     let gestured = false;
+    let hasGenerated = false;
     let heardCurrent = false;
     let soundOn = localStorage.getItem("hi-enact-sound") !== "off";
     let speakGen = 0;
@@ -398,13 +383,26 @@
     }
 
     function updateCardSource() {
-      if (!focusConceptId) {
+      if (!focusConceptId || !hasGenerated) {
         cardSource.hidden = true;
         cardSource.textContent = "";
         return;
       }
       cardSource.hidden = false;
       cardSource.textContent = "Generated from ontology · " + focusConceptName;
+    }
+
+    function awaitingMessage() {
+      if (focusConceptId) {
+        return "Press Space to generate an invitation from this ontology entry.";
+      }
+      return "Press Space for your first invitation.";
+    }
+
+    function showAwaitingCard() {
+      card.classList.add("is-awaiting");
+      card.classList.remove("is-out", "is-streaming");
+      card.textContent = awaitingMessage();
     }
 
     function initFocusConcept() {
@@ -475,11 +473,6 @@
       } catch (_) {}
     }
 
-    function focusedHint() {
-      if (!focusConceptId) return;
-      hint.textContent = "Another invitation from " + focusConceptName + ". Tap for the next.";
-    }
-
     function applyTheme(mode) {
       document.body.classList.toggle("light-mode", mode === "light");
       localStorage.setItem("hi-theme", mode);
@@ -532,25 +525,25 @@
     }
 
     function idleHint() {
+      if (!hasGenerated) {
+        hint.textContent = focusConceptId
+          ? "Press Space to generate from " + focusConceptName + "."
+          : "Press Space for your first invitation.";
+        return;
+      }
       if (!soundOn) {
-        hint.textContent = "Tap, click, or press Space for another invitation.";
+        hint.textContent = "Press Space for another invitation.";
         return;
       }
       hint.textContent = heardCurrent
-        ? "Tap, click, or press Space for another invitation."
-        : "Tap to hear the invitation. Tap again for another.";
+        ? "Press Space for another invitation."
+        : "Press Space to hear it. Press again for another.";
     }
 
     function remember(text) {
       if (!text) return;
       recent.push(text);
       if (recent.length > 12) recent.shift();
-    }
-
-    function unusedFallback() {
-      const pool = FALLBACK.filter((line) => !recent.includes(line));
-      const source = pool.length ? pool : FALLBACK;
-      return source[Math.floor(Math.random() * source.length)];
     }
 
     function apiUrl(path) {
@@ -858,10 +851,12 @@
       heardCurrent = false;
       hint.textContent = focusConceptId
         ? "Generating from " + focusConceptName + "…"
-        : "Listening for another invitation…";
-      await fadeOut();
-      card.textContent = "";
-      card.classList.remove("is-out");
+        : "Generating your invitation…";
+      if (hasGenerated) {
+        await fadeOut();
+        card.textContent = "";
+      }
+      card.classList.remove("is-out", "is-awaiting");
       let text = "";
       let error = "";
       try {
@@ -872,29 +867,26 @@
         error = err.message || "Generation failed.";
       }
       if (!text) {
-        if (focusConceptId) {
-          text = error || "Could not generate from this ontology entry.";
-          card.textContent = text;
-          card.classList.remove("is-streaming");
-          hint.textContent = "Tap to try again.";
-        } else {
-          text = await typeOntoCard(unusedFallback());
-        }
-      } else if (!card.textContent) {
+        card.textContent = "";
+        card.classList.add("is-awaiting");
+        card.textContent = error || "Could not generate. Press Space to try again.";
+        hint.textContent = "Press Space to try again.";
+        busy = false;
+        return;
+      }
+      if (!card.textContent) {
         card.textContent = text;
       }
-      if (text && !error) remember(text);
+      card.classList.remove("is-awaiting");
+      hasGenerated = true;
+      remember(text);
       updateCardSource();
       busy = false;
-      if (soundOn && gestured && text && !error) {
+      if (soundOn && gestured) {
         heardCurrent = true;
         speak(text);
-        hint.textContent = "Tap, click, or press Space for another invitation.";
-      } else {
-        heardCurrent = false;
-        idleHint();
-        if (focusConceptId && !error) focusedHint();
       }
+      idleHint();
     }
 
     function requestNext() {
@@ -925,7 +917,7 @@
       applyLanguage(next);
       recent.length = 0;
       heardCurrent = false;
-      if (!busy) nextCard();
+      if (hasGenerated && !busy) nextCard();
     });
     soundBtn.addEventListener("click", (e) => {
       e.stopPropagation();
@@ -952,8 +944,8 @@
     });
     window.addEventListener("pagehide", teardownVoice);
     loadFocusFromOntology().then(() => {
-      if (focusConceptId) focusedHint();
-      nextCard();
+      showAwaitingCard();
+      idleHint();
     });
   </script>
 </body>
