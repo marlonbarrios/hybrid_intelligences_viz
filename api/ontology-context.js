@@ -342,7 +342,8 @@ function buildSpeculateFocusFromConcept(concept) {
   if (concept.definition) lines.push(`Definition: ${concept.definition}`);
   if (related.length) lines.push(`Related: ${related.join(", ")}`);
   lines.push(
-    "Speculate how this concept reshapes worlds, bodies, institutions, or intelligences over time.",
+    "Speculate how this concept reshapes worlds, bodies, institutions, intelligences, and daily life over time.",
+    "Trace it through cognitive assemblages — maximizing hybridity across species, psychologies, machines, and polities.",
     "Hold coupling, embodiment, and hybrid cognition in view — not generic sci-fi wallpaper."
   );
   return lines.join("\n") + "\n\n";

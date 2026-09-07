@@ -13,6 +13,49 @@ const FRAMEWORKS = [
   { id: "dystopian", label: "dystopian", hint: "Lean toward fracture, capture, or loss — what happens when this concept is weaponized or neglected — without nihilism." },
 ];
 
+const AXES = [
+  {
+    id: "labor_leisure",
+    label: "labor & leisure",
+    hint: "How work, care, automation, rest, and play redistribute — who labors, who rests, and under what institutions.",
+  },
+  {
+    id: "gender_sexuality",
+    label: "gender & sexuality",
+    hint: "How gender, sexuality, kinship, and desire reorganize — new forms, freedoms, captures, or plural intimacies.",
+  },
+  {
+    id: "hybrid_bodies",
+    label: "hybrid bodies & species",
+    hint: "Bodies as ecologies — chimeras, holobionts, prosthetics, gene-lines, symbionts; human and nonhuman hybridity maximized.",
+  },
+  {
+    id: "synthetic_psychology",
+    label: "synthetic & hybrid psychology",
+    hint: "Minds as mixtures — organic affect with synthetic cognition, distributed psyche, coupling of human and machine interiority.",
+  },
+  {
+    id: "cognitive_assemblage",
+    label: "cognitive assemblage",
+    hint: "Intelligence maximized as assemblage — human, AI, institution, tool, and ecology thinking together, not sealed in skulls or chips.",
+  },
+  {
+    id: "governance",
+    label: "governance & democracy",
+    hint: "How polities rule — democracy transformed, eroded, or replaced by algorithmic, corporate, or pluriversal technogovernance.",
+  },
+  {
+    id: "epistemic_life",
+    label: "epistemics & daily life",
+    hint: "How hard knowledge is produced and how people actually live — routines, rituals, housing, food, attention, and felt reality.",
+  },
+  {
+    id: "space_technology",
+    label: "space & new technologies",
+    hint: "Off-world travel, orbital life, new infrastructures, and epistemic tools that remake what counts as knowledge and reach.",
+  },
+];
+
 const HORIZONS = [
   { id: "10y", label: "10 years", phrase: "In ten years" },
   { id: "40y", label: "40 years", phrase: "In forty years" },
@@ -129,25 +172,28 @@ function pickUnused(pool, recentIds, key) {
   return source[Math.floor(Math.random() * source.length)];
 }
 
-function speculateSystemPrompt(concept, focused, focusBlock, framework, horizon, language) {
+function speculateSystemPrompt(concept, focused, focusBlock, framework, horizon, axis, language) {
   const lines = [
-    "You write brief speculative futures for Hybrid Intelligences — possible worlds grounded in coupling, embodiment, hybrid cognition, and techno-symbiosis.",
-    "Output ONLY the speculation: two or three sentences, about 35 to 70 words total. No title, no quotes, no numbering, no meta-commentary.",
-    "Begin with the given horizon phrase (e.g. \"In ten years\" or \"In a thousand years\"). You may repeat \"in the future\" once if it fits naturally.",
-    `Framework for this piece: ${framework.label}. ${framework.hint}`,
+    "You write brief speculative futures for Hybrid Intelligences — possible worlds where hybridity is maximized through cognitive assemblages: coupling among bodies, species, machines, psychologies, institutions, and ecologies.",
+    "Output ONLY the speculation: three or four sentences, about 45 to 90 words total. No title, no quotes, no numbering, no meta-commentary.",
+    "Begin with the given horizon phrase (e.g. \"In ten years\" or \"In a thousand years\"). You may say \"in the future\" once if it fits.",
+    `Framework: ${framework.label}. ${framework.hint}`,
     `Time horizon: ${horizon.label}. Open with: ${horizon.phrase}`,
+    `Speculative axis for this piece: ${axis.label}. ${axis.hint}`,
+    "Weave the axis into the ontology or open theme — show how people live, not an abstract essay. Utopian and dystopian pressures may both appear within the chosen framework.",
+    "You may imply new technologies, epistemic regimes, space travel, or technogovernance only if they serve the axis and the focal concept — never as a generic laundry list.",
   ];
 
   if (focused && focusBlock) {
     lines.push(
       focusBlock.trim(),
-      "CRITICAL: This future must grow from the ontology node above — its definition, category, and relations.",
-      "Do not write generic AI hype. Trace the concept forward into bodies, institutions, ecologies, or intelligences."
+      "CRITICAL: This future must grow from the ontology node above — traced through the chosen axis into lived bodies, governance, knowledge, or ecologies.",
+      "Maximize hybridity: let the concept propagate through cognitive assemblages, not through generic AI hype."
     );
   } else {
     lines.push(
-      "No focal ontology node — speculate openly across hybrid intelligences: AI, embodiment, coupling, institutions, ecologies, and possible minds.",
-      "Stay within the Hub's concerns: not sealed-in-the-skull cognition, not pure tech optimism or doom."
+      "No focal ontology node — speculate openly across hybrid intelligences, maximizing coupling across labor, leisure, gender, sexuality, bodies, species, synthetic psychologies, governance, epistemics, and space.",
+      "Stay within the Hub: intelligence as assemblage, not sealed-in-the-skull cognition; neither pure tech utopia nor empty dystopia."
     );
   }
 
@@ -162,7 +208,8 @@ function speculateSystemPrompt(concept, focused, focusBlock, framework, horizon,
   return lines.join(" ");
 }
 
-function speculateUserPrompt(concept, focused, framework, horizon) {
+function speculateUserPrompt(concept, focused, framework, horizon, axis) {
+  const axisPart = " Axis: " + axis.label + ".";
   if (focused && concept && concept.label) {
     let msg =
       "Speculate a possible future from the ontology entry " +
@@ -171,8 +218,10 @@ function speculateUserPrompt(concept, focused, framework, horizon) {
       framework.label +
       ". Horizon: " +
       horizon.label +
-      ".";
+      "." +
+      axisPart;
     if (concept.definition) msg += " Source: " + clip(concept.definition, 420);
+    msg += " Maximize hybridity through cognitive assemblage along this axis. Show how people live.";
     return msg;
   }
   return (
@@ -180,7 +229,9 @@ function speculateUserPrompt(concept, focused, framework, horizon) {
     framework.label +
     ". Horizon: " +
     horizon.label +
-    "."
+    "." +
+    axisPart +
+    " Maximize hybridity through cognitive assemblage. Show how people live."
   );
 }
 
@@ -211,6 +262,7 @@ module.exports = async function handler(req, res) {
   const { concept, focused, focusBlock } = resolveConcept(req, body);
   const framework = pickUnused(FRAMEWORKS, body.recentFrameworks, "id");
   const horizon = pickUnused(HORIZONS, body.recentHorizons, "id");
+  const axis = pickUnused(AXES, body.recentAxes, "id");
 
   try {
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
@@ -222,13 +274,13 @@ module.exports = async function handler(req, res) {
       body: JSON.stringify({
         model: "gpt-4o-mini",
         temperature: focused ? 0.92 : 1.0,
-        max_tokens: 180,
+        max_tokens: 220,
         messages: [
           {
             role: "system",
-            content: speculateSystemPrompt(concept, focused, focusBlock, framework, horizon, language),
+            content: speculateSystemPrompt(concept, focused, focusBlock, framework, horizon, axis, language),
           },
-          { role: "user", content: speculateUserPrompt(concept, focused, framework, horizon) },
+          { role: "user", content: speculateUserPrompt(concept, focused, framework, horizon, axis) },
         ],
       }),
     });
@@ -258,6 +310,8 @@ module.exports = async function handler(req, res) {
       frameworkId: framework.id,
       horizon: horizon.label,
       horizonId: horizon.id,
+      axis: axis.label,
+      axisId: axis.id,
       conceptId: focused && concept ? concept.id : undefined,
       label: concept && concept.label,
       focused: !!focused,

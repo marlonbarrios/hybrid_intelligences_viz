@@ -63,7 +63,7 @@
         "foaf:homepage": "https://marlonbarrios.github.io/"
       },
       "dc:date": "2026-09-07",
-      "dc:modified": "2026-09-07T16:50:36.741Z",
+      "dc:modified": "2026-09-07T16:59:41.940Z",
       "owl:versionInfo": "1.0.0",
       "hi:nodeCount": 313,
       "hi:edgeCount": 2837,
@@ -16647,7 +16647,7 @@
         "hi:NetworkNode"
       ],
       "skos:prefLabel": "Speculate",
-      "skos:definition": "Possible futures generated from the Hybrid Intelligences ontology — brief speculations that begin in the future and trace a concept forward across time. Each piece picks a framework (dialectic, phenomenological, teleological, utopian, dystopian) and a horizon (ten years to ten thousand years). Open Speculate for open-ended futures; open from any ontology entry to ground the prediction in that node.",
+      "skos:definition": "Possible futures generated from the Hybrid Intelligences ontology — brief speculations that begin in the future and trace a concept forward across time. Each piece rotates a framework (dialectic, phenomenological, teleological, utopian, dystopian), a horizon (ten years to ten thousand years), and an axis: labor and leisure, gender and sexuality, hybrid bodies and species, synthetic psychology, cognitive assemblage, governance and democracy, epistemics and daily life, or space and new technologies. Open Speculate for open-ended futures; open from any ontology entry to ground the prediction in that node.",
       "skos:broader": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
       },

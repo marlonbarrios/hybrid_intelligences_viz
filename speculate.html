@@ -361,7 +361,7 @@
     <p class="focus-kicker">Ontology source</p>
     <h2 class="focus-title" id="focusTitle"></h2>
     <p class="focus-def" id="focusDef"></p>
-    <p class="focus-note">Each speculation below is generated from this entry.</p>
+    <p class="focus-note">Each speculation rotates a framework, time horizon, and axis — labor, bodies, governance, epistemics, space — generated from this entry when present.</p>
   </section>
 
   <div id="exportSheet" class="export-sheet" hidden aria-hidden="true">
@@ -428,6 +428,7 @@
     const recent = [];
     const recentFrameworks = [];
     const recentHorizons = [];
+    const recentAxes = [];
     let busy = false;
     let gestured = false;
     let hasGenerated = false;
@@ -578,14 +579,14 @@
       card.textContent = awaitingMessage();
     }
 
-    function updateSpecMeta(framework, horizon) {
-      if (!framework && !horizon) {
+    function updateSpecMeta(framework, horizon, axis) {
+      if (!framework && !horizon && !axis) {
         cardMeta.hidden = true;
         cardMeta.textContent = "";
         return;
       }
       cardMeta.hidden = false;
-      cardMeta.textContent = [framework, horizon].filter(Boolean).join(" · ");
+      cardMeta.textContent = [framework, horizon, axis].filter(Boolean).join(" · ");
     }
 
     function initFocusConcept() {
@@ -604,6 +605,7 @@
         languageNative: currentLang.native,
         recentFrameworks: recentFrameworks.slice(-5),
         recentHorizons: recentHorizons.slice(-5),
+        recentAxes: recentAxes.slice(-5),
       };
       if (!focusConceptId) return body;
       body.conceptId = focusConceptId;
@@ -1002,7 +1004,11 @@
         recentHorizons.push(data.horizonId);
         if (recentHorizons.length > 8) recentHorizons.shift();
       }
-      updateSpecMeta(data.framework, data.horizon);
+      if (data.axisId) {
+        recentAxes.push(data.axisId);
+        if (recentAxes.length > 8) recentAxes.shift();
+      }
+      updateSpecMeta(data.framework, data.horizon, data.axis);
       const text = await typeOntoCard(data.prompt);
       if (data.label) focusConceptName = data.label;
       updateCardSource();

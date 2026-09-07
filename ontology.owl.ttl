@@ -13,7 +13,7 @@
   dc:description "OWL 2 ontology of concepts, categories, and weighted relations from the Hybrid Intelligences program." ;
   owl:versionInfo "1.0.0" ;
   dc:date "2026-09-07"^^xsd:date ;
-  dc:modified "2026-09-07T16:50:36.754Z"^^xsd:dateTime ;
+  dc:modified "2026-09-07T16:59:41.945Z"^^xsd:dateTime ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   hi:nodeCount "313"^^xsd:integer ;
   hi:edgeCount "2837"^^xsd:integer ;
@@ -4064,7 +4064,7 @@ hi:enact a owl:NamedIndividual, hi:PracticeConcept ;
 hi:speculate a owl:NamedIndividual, hi:PracticeConcept ;
   rdfs:label "Speculate"@en ;
   skos:prefLabel "Speculate"@en ;
-  skos:definition "Possible futures generated from the Hybrid Intelligences ontology — brief speculations that begin in the future and trace a concept forward across time. Each piece picks a framework (dialectic, phenomenological, teleological, utopian, dystopian) and a horizon (ten years to ten thousand years). Open Speculate for open-ended futures; open from any ontology entry to ground the prediction in that node."@en ;
+  skos:definition "Possible futures generated from the Hybrid Intelligences ontology — brief speculations that begin in the future and trace a concept forward across time. Each piece rotates a framework (dialectic, phenomenological, teleological, utopian, dystopian), a horizon (ten years to ten thousand years), and an axis: labor and leisure, gender and sexuality, hybrid bodies and species, synthetic psychology, cognitive assemblage, governance and democracy, epistemics and daily life, or space and new technologies. Open Speculate for open-ended futures; open from any ontology entry to ground the prediction in that node."@en ;
   skos:broader hi:category/practice ;
   hi:inCategory hi:category/practice ;
   hi:schemeMember hi:scheme ;
