@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-07T16:03:29.490Z",
+  "generated": "2026-09-07T17:23:33.002Z",
   "byConcept": {
     "hayles": [
       {
@@ -243,6 +243,20 @@
         "speaker": "Kate Crawford",
         "url": "video-crawford-ai-planet.html",
         "poster": "screenshots/crawford-ai-planet.jpg"
+      },
+      {
+        "id": "peter-thiel-stagnation-ai",
+        "title": "Peter Thiel: The Stagnation of Science and the AI Revolution",
+        "speaker": "Peter Thiel",
+        "url": "video-peter-thiel-stagnation-ai.html",
+        "poster": "screenshots/peter-thiel-stagnation-ai.jpg"
+      },
+      {
+        "id": "sam-altman-lex-fridman-419",
+        "title": "Sam Altman: OpenAI, GPT-5, Sora, Board Saga, Elon Musk, Ilya, Power & AGI | Lex Fridman Podcast #419",
+        "speaker": "Sam Altman",
+        "url": "video-sam-altman-lex-fridman-419.html",
+        "poster": "screenshots/sam-altman-lex-fridman-419.jpg"
       },
       {
         "id": "ai-fluency-generative-ai",
@@ -517,6 +531,13 @@
     ],
     "track_ethics": [
       {
+        "id": "carissa-veliz-prophecy-ted",
+        "title": "Beware the Power of Prediction | Carissa Véliz | TED",
+        "speaker": "Carissa Véliz",
+        "url": "video-carissa-veliz-prophecy-ted.html",
+        "poster": "screenshots/carissa-veliz-prophecy-ted.jpg"
+      },
+      {
         "id": "privacy-illusion-ai-data",
         "title": "The Privacy Illusion: AI, Data & Who Really Controls Your Information",
         "speaker": "",
@@ -561,6 +582,13 @@
         "speaker": "Michael Levin",
         "url": "video-levin-diverse-intelligences.html",
         "poster": "screenshots/levin-diverse-intelligences.jpg"
+      },
+      {
+        "id": "elon-musk-neuralink-lex",
+        "title": "Elon Musk: Neuralink and the Future of Humanity | Lex Fridman Podcast #438",
+        "speaker": "Elon Musk",
+        "url": "video-elon-musk-neuralink-lex.html",
+        "poster": "screenshots/elon-musk-neuralink-lex.jpg"
       },
       {
         "id": "levin-intelligence-without-brains",
@@ -905,11 +933,25 @@
         "poster": "screenshots/chalmers-talking-to-ai.jpg"
       },
       {
+        "id": "elon-musk-neuralink-lex",
+        "title": "Elon Musk: Neuralink and the Future of Humanity | Lex Fridman Podcast #438",
+        "speaker": "Elon Musk",
+        "url": "video-elon-musk-neuralink-lex.html",
+        "poster": "screenshots/elon-musk-neuralink-lex.jpg"
+      },
+      {
         "id": "bostrom-superintelligence-google",
         "title": "Nick Bostrom — Superintelligence (Talks at Google)",
         "speaker": "Nick Bostrom",
         "url": "video-bostrom-superintelligence-google.html",
         "poster": "screenshots/bostrom-superintelligence-google.jpg"
+      },
+      {
+        "id": "sam-altman-lex-fridman-419",
+        "title": "Sam Altman: OpenAI, GPT-5, Sora, Board Saga, Elon Musk, Ilya, Power & AGI | Lex Fridman Podcast #419",
+        "speaker": "Sam Altman",
+        "url": "video-sam-altman-lex-fridman-419.html",
+        "poster": "screenshots/sam-altman-lex-fridman-419.jpg"
       },
       {
         "id": "thinking-game-documentary",
@@ -1435,11 +1477,25 @@
     ],
     "perception_politics": [
       {
+        "id": "carissa-veliz-prophecy-ted",
+        "title": "Beware the Power of Prediction | Carissa Véliz | TED",
+        "speaker": "Carissa Véliz",
+        "url": "video-carissa-veliz-prophecy-ted.html",
+        "poster": "screenshots/carissa-veliz-prophecy-ted.jpg"
+      },
+      {
         "id": "fanon-colonization-mind",
         "title": "Frantz Fanon — Colonization and the Mind",
         "speaker": "Frantz Fanon",
         "url": "video-fanon-colonization-mind.html",
         "poster": "screenshots/fanon-colonization-mind.jpg"
+      },
+      {
+        "id": "arendt-zur-person-1964",
+        "title": "Hannah Arendt — Zur Person (1964)",
+        "speaker": "Hannah Arendt",
+        "url": "video-arendt-zur-person-1964.html",
+        "poster": "screenshots/arendt-zur-person-1964.jpg"
       },
       {
         "id": "crawford-ai-planet",
@@ -1489,6 +1545,13 @@
       }
     ],
     "cybernetics": [
+      {
+        "id": "nick-land-accelerationism",
+        "title": "Accelerationism, The Dark Enlightenment & The Strange Life of Nick Land",
+        "speaker": "Nick Land",
+        "url": "video-nick-land-accelerationism.html",
+        "poster": "screenshots/nick-land-accelerationism.jpg"
+      },
       {
         "id": "bateson-ecology-of-mind",
         "title": "Gregory Bateson — Ecology of Mind",
@@ -1631,6 +1694,13 @@
     ],
     "futurity": [
       {
+        "id": "nick-land-accelerationism",
+        "title": "Accelerationism, The Dark Enlightenment & The Strange Life of Nick Land",
+        "speaker": "Nick Land",
+        "url": "video-nick-land-accelerationism.html",
+        "poster": "screenshots/nick-land-accelerationism.jpg"
+      },
+      {
         "id": "munoz-queer-utopianism",
         "title": "José Esteban Muñoz — Queer Utopianism",
         "speaker": "José Esteban Muñoz",
@@ -1659,6 +1729,13 @@
         "speaker": "Octavia Butler",
         "url": "video-butler-parable-climate.html",
         "poster": "screenshots/butler-parable-climate.jpg"
+      },
+      {
+        "id": "sam-altman-lex-fridman-419",
+        "title": "Sam Altman: OpenAI, GPT-5, Sora, Board Saga, Elon Musk, Ilya, Power & AGI | Lex Fridman Podcast #419",
+        "speaker": "Sam Altman",
+        "url": "video-sam-altman-lex-fridman-419.html",
+        "poster": "screenshots/sam-altman-lex-fridman-419.jpg"
       }
     ],
     "cultural_imagination": [
@@ -2091,6 +2168,157 @@
         "speaker": "Glenna Batson",
         "url": "video-batson-minds-in-motion.html",
         "poster": "screenshots/batson-minds-in-motion.jpg"
+      }
+    ],
+    "arendt": [
+      {
+        "id": "arendt-zur-person-1964",
+        "title": "Hannah Arendt — Zur Person (1964)",
+        "speaker": "Hannah Arendt",
+        "url": "video-arendt-zur-person-1964.html",
+        "poster": "screenshots/arendt-zur-person-1964.jpg"
+      }
+    ],
+    "law": [
+      {
+        "id": "arendt-zur-person-1964",
+        "title": "Hannah Arendt — Zur Person (1964)",
+        "speaker": "Hannah Arendt",
+        "url": "video-arendt-zur-person-1964.html",
+        "poster": "screenshots/arendt-zur-person-1964.jpg"
+      }
+    ],
+    "community": [
+      {
+        "id": "arendt-zur-person-1964",
+        "title": "Hannah Arendt — Zur Person (1964)",
+        "speaker": "Hannah Arendt",
+        "url": "video-arendt-zur-person-1964.html",
+        "poster": "screenshots/arendt-zur-person-1964.jpg"
+      }
+    ],
+    "sam_altman": [
+      {
+        "id": "sam-altman-lex-fridman-419",
+        "title": "Sam Altman: OpenAI, GPT-5, Sora, Board Saga, Elon Musk, Ilya, Power & AGI | Lex Fridman Podcast #419",
+        "speaker": "Sam Altman",
+        "url": "video-sam-altman-lex-fridman-419.html",
+        "poster": "screenshots/sam-altman-lex-fridman-419.jpg"
+      }
+    ],
+    "dario_amodei": [
+      {
+        "id": "dario-amodei-ai-safety",
+        "title": "Anthropic CEO Dario Amodei: AI's Potential, OpenAI Rivalry, GenAI Business, Doomerism",
+        "speaker": "Dario Amodei",
+        "url": "video-dario-amodei-ai-safety.html",
+        "poster": "screenshots/dario-amodei-ai-safety.jpg"
+      }
+    ],
+    "anthropic": [
+      {
+        "id": "dario-amodei-ai-safety",
+        "title": "Anthropic CEO Dario Amodei: AI's Potential, OpenAI Rivalry, GenAI Business, Doomerism",
+        "speaker": "Dario Amodei",
+        "url": "video-dario-amodei-ai-safety.html",
+        "poster": "screenshots/dario-amodei-ai-safety.jpg"
+      }
+    ],
+    "constitutional_ai": [
+      {
+        "id": "dario-amodei-ai-safety",
+        "title": "Anthropic CEO Dario Amodei: AI's Potential, OpenAI Rivalry, GenAI Business, Doomerism",
+        "speaker": "Dario Amodei",
+        "url": "video-dario-amodei-ai-safety.html",
+        "poster": "screenshots/dario-amodei-ai-safety.jpg"
+      }
+    ],
+    "ai_alignment": [
+      {
+        "id": "dario-amodei-ai-safety",
+        "title": "Anthropic CEO Dario Amodei: AI's Potential, OpenAI Rivalry, GenAI Business, Doomerism",
+        "speaker": "Dario Amodei",
+        "url": "video-dario-amodei-ai-safety.html",
+        "poster": "screenshots/dario-amodei-ai-safety.jpg"
+      }
+    ],
+    "peter_thiel": [
+      {
+        "id": "peter-thiel-stagnation-ai",
+        "title": "Peter Thiel: The Stagnation of Science and the AI Revolution",
+        "speaker": "Peter Thiel",
+        "url": "video-peter-thiel-stagnation-ai.html",
+        "poster": "screenshots/peter-thiel-stagnation-ai.jpg"
+      }
+    ],
+    "dark_enlightenment": [
+      {
+        "id": "nick-land-accelerationism",
+        "title": "Accelerationism, The Dark Enlightenment & The Strange Life of Nick Land",
+        "speaker": "Nick Land",
+        "url": "video-nick-land-accelerationism.html",
+        "poster": "screenshots/nick-land-accelerationism.jpg"
+      },
+      {
+        "id": "peter-thiel-stagnation-ai",
+        "title": "Peter Thiel: The Stagnation of Science and the AI Revolution",
+        "speaker": "Peter Thiel",
+        "url": "video-peter-thiel-stagnation-ai.html",
+        "poster": "screenshots/peter-thiel-stagnation-ai.jpg"
+      }
+    ],
+    "entrepreneurship_vision": [
+      {
+        "id": "peter-thiel-stagnation-ai",
+        "title": "Peter Thiel: The Stagnation of Science and the AI Revolution",
+        "speaker": "Peter Thiel",
+        "url": "video-peter-thiel-stagnation-ai.html",
+        "poster": "screenshots/peter-thiel-stagnation-ai.jpg"
+      }
+    ],
+    "elon_musk": [
+      {
+        "id": "elon-musk-neuralink-lex",
+        "title": "Elon Musk: Neuralink and the Future of Humanity | Lex Fridman Podcast #438",
+        "speaker": "Elon Musk",
+        "url": "video-elon-musk-neuralink-lex.html",
+        "poster": "screenshots/elon-musk-neuralink-lex.jpg"
+      }
+    ],
+    "physical_ai": [
+      {
+        "id": "elon-musk-neuralink-lex",
+        "title": "Elon Musk: Neuralink and the Future of Humanity | Lex Fridman Podcast #438",
+        "speaker": "Elon Musk",
+        "url": "video-elon-musk-neuralink-lex.html",
+        "poster": "screenshots/elon-musk-neuralink-lex.jpg"
+      }
+    ],
+    "nick_land": [
+      {
+        "id": "nick-land-accelerationism",
+        "title": "Accelerationism, The Dark Enlightenment & The Strange Life of Nick Land",
+        "speaker": "Nick Land",
+        "url": "video-nick-land-accelerationism.html",
+        "poster": "screenshots/nick-land-accelerationism.jpg"
+      }
+    ],
+    "carissa_veliz": [
+      {
+        "id": "carissa-veliz-prophecy-ted",
+        "title": "Beware the Power of Prediction | Carissa Véliz | TED",
+        "speaker": "Carissa Véliz",
+        "url": "video-carissa-veliz-prophecy-ted.html",
+        "poster": "screenshots/carissa-veliz-prophecy-ted.jpg"
+      }
+    ],
+    "oracle": [
+      {
+        "id": "carissa-veliz-prophecy-ted",
+        "title": "Beware the Power of Prediction | Carissa Véliz | TED",
+        "speaker": "Carissa Véliz",
+        "url": "video-carissa-veliz-prophecy-ted.html",
+        "poster": "screenshots/carissa-veliz-prophecy-ted.jpg"
       }
     ]
   }

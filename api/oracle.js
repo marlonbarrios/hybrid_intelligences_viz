@@ -1,8 +1,8 @@
 const {
   loadOntology,
   findConcept,
-  buildSpeculateFocusBlock,
-  buildSpeculateFocusFromConcept,
+  buildOracleFocusBlock,
+  buildOracleFocusFromConcept,
 } = require("./ontology-context");
 
 const FRAMEWORKS = [
@@ -159,8 +159,8 @@ function resolveConcept(req, body) {
 
   const concept = mergeConcept(serverConcept, clientConcept);
   let focusBlock = "";
-  if (data && serverConcept) focusBlock = buildSpeculateFocusBlock(data, requestedId);
-  if (!focusBlock) focusBlock = buildSpeculateFocusFromConcept(concept);
+  if (data && serverConcept) focusBlock = buildOracleFocusBlock(data, requestedId);
+  if (!focusBlock) focusBlock = buildOracleFocusFromConcept(concept);
 
   return { concept, focused: true, focusBlock };
 }
@@ -172,9 +172,9 @@ function pickUnused(pool, recentIds, key) {
   return source[Math.floor(Math.random() * source.length)];
 }
 
-function speculateSystemPrompt(concept, focused, focusBlock, framework, horizon, axis, language) {
+function oracleSystemPrompt(concept, focused, focusBlock, framework, horizon, axis, language) {
   const lines = [
-    "You write brief speculative futures for Hybrid Intelligences — possible worlds where hybridity is maximized through cognitive assemblages: coupling among bodies, species, machines, psychologies, institutions, and ecologies.",
+    "You write brief oracle readings for Hybrid Intelligences — possible futures where hybridity is maximized through cognitive assemblages: coupling among bodies, species, machines, psychologies, institutions, and ecologies.",
     "Output ONLY the speculation: three or four sentences, about 45 to 90 words total. No title, no quotes, no numbering, no meta-commentary.",
     "Begin with the given horizon phrase (e.g. \"In ten years\" or \"In a thousand years\"). You may say \"in the future\" once if it fits.",
     `Framework: ${framework.label}. ${framework.hint}`,
@@ -192,7 +192,7 @@ function speculateSystemPrompt(concept, focused, focusBlock, framework, horizon,
     );
   } else {
     lines.push(
-      "No focal ontology node — speculate openly across hybrid intelligences, maximizing coupling across labor, leisure, gender, sexuality, bodies, species, synthetic psychologies, governance, epistemics, and space.",
+      "No focal ontology node — read openly across hybrid intelligences, maximizing coupling across labor, leisure, gender, sexuality, bodies, species, synthetic psychologies, governance, epistemics, and space.",
       "Stay within the Hub: intelligence as assemblage, not sealed-in-the-skull cognition; neither pure tech utopia nor empty dystopia."
     );
   }
@@ -208,11 +208,11 @@ function speculateSystemPrompt(concept, focused, focusBlock, framework, horizon,
   return lines.join(" ");
 }
 
-function speculateUserPrompt(concept, focused, framework, horizon, axis) {
+function oracleUserPrompt(concept, focused, framework, horizon, axis) {
   const axisPart = " Axis: " + axis.label + ".";
   if (focused && concept && concept.label) {
     let msg =
-      "Speculate a possible future from the ontology entry " +
+      "Deliver an oracle reading of a possible future from the ontology entry " +
       concept.label +
       ". Framework: " +
       framework.label +
@@ -225,7 +225,7 @@ function speculateUserPrompt(concept, focused, framework, horizon, axis) {
     return msg;
   }
   return (
-    "Speculate an open-ended possible future. Framework: " +
+    "Deliver an open-ended oracle reading of a possible future. Framework: " +
     framework.label +
     ". Horizon: " +
     horizon.label +
@@ -278,9 +278,9 @@ module.exports = async function handler(req, res) {
         messages: [
           {
             role: "system",
-            content: speculateSystemPrompt(concept, focused, focusBlock, framework, horizon, axis, language),
+            content: oracleSystemPrompt(concept, focused, focusBlock, framework, horizon, axis, language),
           },
-          { role: "user", content: speculateUserPrompt(concept, focused, framework, horizon, axis) },
+          { role: "user", content: oracleUserPrompt(concept, focused, framework, horizon, axis) },
         ],
       }),
     });

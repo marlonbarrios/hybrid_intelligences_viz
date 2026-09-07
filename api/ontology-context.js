@@ -328,31 +328,31 @@ function buildEnactFocusBlock(data, id) {
   return buildEnactFocusFromConcept(concept);
 }
 
-function buildSpeculateFocusFromConcept(concept) {
+function buildOracleFocusFromConcept(concept) {
   if (!concept || !concept.label) return "";
   const cat = concept.category ? (CATEGORY_LABEL[concept.category] || concept.category) : "";
   const related = [].concat(concept.related || []).filter(Boolean);
   const lines = [
-    "FOCAL ONTOLOGY NODE FOR THIS FUTURE SPECULATION",
+    "FOCAL ONTOLOGY NODE FOR THIS ORACLE READING",
     "SOURCE: Hybrid Intelligences ontology — SKOS concept scheme and knowledge graph.",
-    "The reader opened Speculate from this entry. The future you write must grow from this node.",
+    "The reader opened Oracle from this entry. The future you write must grow from this node.",
     `Name: ${concept.label}`,
   ];
   if (cat) lines.push(`Category: ${cat}`);
   if (concept.definition) lines.push(`Definition: ${concept.definition}`);
   if (related.length) lines.push(`Related: ${related.join(", ")}`);
   lines.push(
-    "Speculate how this concept reshapes worlds, bodies, institutions, intelligences, and daily life over time.",
+    "Trace how this concept reshapes worlds, bodies, institutions, intelligences, and daily life over time.",
     "Trace it through cognitive assemblages — maximizing hybridity across species, psychologies, machines, and polities.",
     "Hold coupling, embodiment, and hybrid cognition in view — not generic sci-fi wallpaper."
   );
   return lines.join("\n") + "\n\n";
 }
 
-function buildSpeculateFocusBlock(data, id) {
+function buildOracleFocusBlock(data, id) {
   const concept = findConcept(data, id);
   if (!concept) return "";
-  return buildSpeculateFocusFromConcept(concept);
+  return buildOracleFocusFromConcept(concept);
 }
 
 module.exports = {
@@ -360,8 +360,8 @@ module.exports = {
   podcastInstructions,
   buildEnactFocusBlock,
   buildEnactFocusFromConcept,
-  buildSpeculateFocusBlock,
-  buildSpeculateFocusFromConcept,
+  buildOracleFocusBlock,
+  buildOracleFocusFromConcept,
   buildOntologyDigest,
   findConcept,
   loadOntology,

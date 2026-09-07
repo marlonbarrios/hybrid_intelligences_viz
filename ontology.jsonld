@@ -63,11 +63,11 @@
         "foaf:homepage": "https://marlonbarrios.github.io/"
       },
       "dc:date": "2026-09-07",
-      "dc:modified": "2026-09-07T16:59:41.940Z",
+      "dc:modified": "2026-09-07T17:23:33.091Z",
       "owl:versionInfo": "1.0.0",
-      "hi:nodeCount": 313,
-      "hi:edgeCount": 2837,
-      "hi:typedEdgeCount": 198
+      "hi:nodeCount": 327,
+      "hi:edgeCount": 2999,
+      "hi:typedEdgeCount": 217
     },
     {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme",
@@ -1876,6 +1876,91 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#fanon",
           "hi:strength": 0.7
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#dark_enlightenment",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Dark Enlightenment",
+      "skos:definition": "Neoreactionary and accelerationist current—critiques of democratic modernity, egalitarianism, and Enlightenment universalism; associated with exit, techno-capital, libertarian authoritarianism, and post-democratic governance imaginaries. Central to debates on AI, futurity, and who gets to steer hybrid intelligences.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/framework"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "framework",
+      "hi:weight": 1.25,
+      "schema:url": "https://en.wikipedia.org/wiki/Dark_Enlightenment",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Dark_Enlightenment",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#nick_land",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#peter_thiel",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#universalism",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#humanism",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#law",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#futurity",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#speculative_futures",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#agi",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#critical",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cybernetics",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#oracle",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#track_future",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#posthumanism",
+          "hi:strength": 0.7
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#entrepreneurship_vision",
+          "hi:strength": 0.7
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_nick_land_accelerationism",
+          "hi:strength": 0.9
         }
       ]
     },
@@ -7975,6 +8060,10 @@
           "hi:strength": 0.85
         },
         {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_carissa_veliz_prophecy_ted",
+          "hi:strength": 0.98
+        },
+        {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#perception_politics",
           "hi:strength": 0.9,
           "hi:relationType": "critiques"
@@ -7983,6 +8072,409 @@
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#track_ethics",
           "hi:strength": 0.9,
           "hi:relationType": "develops"
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#nick_land",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Nick Land",
+      "skos:definition": "British philosopher and writer—former Warwick CCRU figure; accelerationism, cybernetic theory, and influence on neoreaction and Dark Enlightenment discourse. Writes on capitalism, intelligence, exit, and the coupling of technics with inhuman futures.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/author"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "author",
+      "hi:weight": 1.15,
+      "schema:url": "https://en.wikipedia.org/wiki/Nick_Land",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Nick_Land",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#dark_enlightenment",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cybernetics",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#agi",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#speculative_futures",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#futurity",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#crawford",
+          "hi:strength": 0.65
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_nick_land_accelerationism",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#dark_enlightenment",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#peter_thiel",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Peter Thiel",
+      "skos:definition": "Entrepreneur and investor—PayPal co-founder, Palantir, Founders Fund; prominent techno-libertarian voice on stagnation, competition, and anti-democratic strains in Silicon Valley. Associated with longevity, seasteading, and frontier AI investment.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/author"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "author",
+      "hi:weight": 1.15,
+      "schema:url": "https://en.wikipedia.org/wiki/Peter_Thiel",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Peter_Thiel",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#dark_enlightenment",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#nick_land",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#elon_musk",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#sam_altman",
+          "hi:strength": 0.7
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#agi",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#gen_ai",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#entrepreneurship_vision",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#track_future",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#speculative_futures",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#futurity",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_peter_thiel_stagnation_ai",
+          "hi:strength": 0.98
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#sam_altman",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Sam Altman",
+      "skos:definition": "CEO of OpenAI—central actor in AGI development, ChatGPT, and scaling large language models; shapes public discourse on artificial general intelligence, regulation, and the economic transformation of labor and cognition.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/author"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "author",
+      "hi:weight": 1.2,
+      "schema:url": "https://en.wikipedia.org/wiki/Sam_Altman",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Sam_Altman",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#gen_ai",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#llm",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#gpt",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#agi",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#transformers",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bostrom",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#dario_amodei",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#elon_musk",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#track_future",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#track_ethics",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#speculative_futures",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#futurity",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#entrepreneurship_vision",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_sam_altman_lex_fridman_419",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#gen_ai",
+          "hi:strength": 0.9,
+          "hi:relationType": "participatesIn"
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#dario_amodei",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Dario Amodei",
+      "skos:definition": "CEO and co-founder of Anthropic—former OpenAI VP of Research; leads work on Constitutional AI, AI safety, scaling laws, and responsible development of frontier models including Claude.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/author"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "author",
+      "hi:weight": 1.2,
+      "schema:url": "https://en.wikipedia.org/wiki/Dario_Amodei",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Dario_Amodei",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#anthropic",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#constitutional_ai",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_alignment",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#gen_ai",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#llm",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#sam_altman",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bostrom",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#crawford",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#track_ethics",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#carissa_veliz",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#agi",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#possible_minds",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_dario_amodei_ai_safety",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#anthropic",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#constitutional_ai",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#elon_musk",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Elon Musk",
+      "skos:definition": "Entrepreneur and technologist—Tesla, SpaceX, Neuralink, and xAI; shapes discourse on AGI, humanoid robotics, brain–computer interfaces, and off-world infrastructure. PayPal co-founder; vocal on AI risk, acceleration, and the coupling of capital with frontier technology.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/author"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "author",
+      "hi:weight": 1.2,
+      "schema:url": "https://en.wikipedia.org/wiki/Elon_Musk",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Elon_Musk",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#gen_ai",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#llm",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#agi",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#physical_ai",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#sam_altman",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#peter_thiel",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bostrom",
+          "hi:strength": 0.7
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#entrepreneurship_vision",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#track_future",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#speculative_futures",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#futurity",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#mediation",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#technical_agency",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#dark_enlightenment",
+          "hi:strength": 0.65
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hybrid",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#synthetic_cognition",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_elon_musk_neuralink_lex",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#physical_ai",
+          "hi:strength": 0.9,
+          "hi:relationType": "participatesIn"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#agi",
+          "hi:strength": 0.9,
+          "hi:relationType": "participatesIn"
         }
       ]
     },
@@ -8363,6 +8855,146 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#epistemologies_south",
           "hi:strength": 0.7
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#arendt",
+          "hi:strength": 0.85
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#arendt",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Hannah Arendt",
+      "skos:definition": "Political philosopher—The Human Condition, The Origins of Totalitarianism, and Eichmann in Jerusalem. Develops labor, work, and action; plurality, natality, and the public sphere; and the banality of evil as a warning against bureaucratic thoughtlessness in modern governance.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/author"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "author",
+      "hi:weight": 1.25,
+      "schema:url": "https://en.wikipedia.org/wiki/Hannah_Arendt",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Hannah_Arendt",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#law",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#philosophy",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#critical",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cultural_critical",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#perception_politics",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#community",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#social_change",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#track_ethics",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#humanism",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#universalism",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#foucault",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#fanon",
+          "hi:strength": 0.7
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#freire",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bell_hooks",
+          "hi:strength": 0.7
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#crawford",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#carissa_veliz",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#dark_enlightenment",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#mediation",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#storytelling",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ethical_imagination",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#oracle",
+          "hi:strength": 0.7
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essentialism",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#pedagogy",
+          "hi:strength": 0.7
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#technologies_of_self",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_arendt_zur_person_1964",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#community",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#perception_politics",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#dark_enlightenment",
+          "hi:strength": 0.9,
+          "hi:relationType": "critiques"
         }
       ]
     },
@@ -15987,6 +16619,414 @@
       ]
     },
     {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_arendt_zur_person_1964",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Arendt · Zur Person",
+      "skos:definition": "Hannah Arendt — Zur Person (1964) — arendt. Legendary interview with Günter Gaus on political theory, the Eichmann trial, plurality, and the banality of evil. Video on YouTube; ingest matches speech to ontology concepts.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/video"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "video",
+      "hi:weight": 1.4,
+      "schema:url": "video-arendt-zur-person-1964.html",
+      "schema:image": "https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/arendt-zur-person-1964.jpg",
+      "schema:sameAs": "https://www.youtube.com/watch?v=J9SyTEUi6Kw",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#arendt",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#foucault",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#law",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#perception_politics",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#community",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#track_ethics",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#dark_enlightenment",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#oracle",
+          "hi:strength": 0.7
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#arendt",
+          "hi:strength": 0.9,
+          "hi:relationType": "instantiates"
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_sam_altman_lex_fridman_419",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Altman · OpenAI & AGI",
+      "skos:definition": "Sam Altman — Lex Fridman #419 — sam_altman. OpenAI, AGI, power, safety, and the future of generative AI. Video on YouTube; ingest matches speech to ontology concepts.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/video"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "video",
+      "hi:weight": 1.4,
+      "schema:url": "video-sam-altman-lex-fridman-419.html",
+      "schema:image": "https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/sam-altman-lex-fridman-419.jpg",
+      "schema:sameAs": "https://www.youtube.com/watch?v=jvqFAi7vkBc",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#sam_altman",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#gen_ai",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#llm",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#gpt",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#agi",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bostrom",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#track_future",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#speculative_futures",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#sam_altman",
+          "hi:strength": 0.9,
+          "hi:relationType": "instantiates"
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_dario_amodei_ai_safety",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Amodei · AI Safety",
+      "skos:definition": "Dario Amodei — AI safety — dario_amodei. Constitutional AI, scaling, and responsible frontier models at Anthropic. Video on YouTube; ingest matches speech to ontology concepts.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/video"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "video",
+      "hi:weight": 1.4,
+      "schema:url": "video-dario-amodei-ai-safety.html",
+      "schema:image": "https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/dario-amodei-ai-safety.jpg",
+      "schema:sameAs": "https://www.youtube.com/watch?v=mYDSSRS-B5U",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#dario_amodei",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#anthropic",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#constitutional_ai",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_alignment",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#track_ethics",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bostrom",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#dario_amodei",
+          "hi:strength": 0.9,
+          "hi:relationType": "instantiates"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#constitutional_ai",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_peter_thiel_stagnation_ai",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Thiel · Stagnation &",
+      "skos:definition": "Peter Thiel — Stagnation and AI — peter_thiel. Atoms versus bits, techno-stagnation, and the LLM breakthrough. Video on YouTube; ingest matches speech to ontology concepts.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/video"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "video",
+      "hi:weight": 1.4,
+      "schema:url": "video-peter-thiel-stagnation-ai.html",
+      "schema:image": "https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/peter-thiel-stagnation-ai.jpg",
+      "schema:sameAs": "https://www.youtube.com/watch?v=iF2la6FxVQc",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#peter_thiel",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#dark_enlightenment",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#entrepreneurship_vision",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#agi",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#gen_ai",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#speculative_futures",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#elon_musk",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#peter_thiel",
+          "hi:strength": 0.9,
+          "hi:relationType": "instantiates"
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_elon_musk_neuralink_lex",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Musk · Neuralink &",
+      "skos:definition": "Elon Musk — Neuralink and the Future of Humanity — elon_musk. xAI, AGI, brain–computer interfaces, and hybrid bodies. Video on YouTube; ingest matches speech to ontology concepts.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/video"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "video",
+      "hi:weight": 1.4,
+      "schema:url": "video-elon-musk-neuralink-lex.html",
+      "schema:image": "https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/elon-musk-neuralink-lex.jpg",
+      "schema:sameAs": "https://www.youtube.com/watch?v=Kbk9BiPhm7o",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#elon_musk",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#physical_ai",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#agi",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#sam_altman",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#synthetic_cognition",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#speculative_futures",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#elon_musk",
+          "hi:strength": 0.9,
+          "hi:relationType": "instantiates"
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_nick_land_accelerationism",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Land · Acceleration…",
+      "skos:definition": "Nick Land — Accelerationism and Dark Enlightenment — nick_land. Cybernetics, exit, and neoreactionary futures. Video on YouTube; ingest matches speech to ontology concepts.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/video"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "video",
+      "hi:weight": 1.4,
+      "schema:url": "video-nick-land-accelerationism.html",
+      "schema:image": "https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/nick-land-accelerationism.jpg",
+      "schema:sameAs": "https://www.youtube.com/watch?v=TJISIwit0tk",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#nick_land",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#dark_enlightenment",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cybernetics",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#speculative_futures",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#futurity",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#nick_land",
+          "hi:strength": 0.9,
+          "hi:relationType": "instantiates"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#dark_enlightenment",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_carissa_veliz_prophecy_ted",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Véliz · Prophecy",
+      "skos:definition": "Carissa Véliz — Beware the Power of Prediction — carissa_veliz. Prophecy, algorithmic forecasting, and power from oracles to AI. Video on YouTube; ingest matches speech to ontology concepts.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/video"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "video",
+      "hi:weight": 1.4,
+      "schema:url": "video-carissa-veliz-prophecy-ted.html",
+      "schema:image": "https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/carissa-veliz-prophecy-ted.jpg",
+      "schema:sameAs": "https://www.youtube.com/watch?v=OS4wHmKtH-Q",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#carissa_veliz",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#oracle",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#perception_politics",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#track_ethics",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#law",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#arendt",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#carissa_veliz",
+          "hi:strength": 0.9,
+          "hi:relationType": "instantiates"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#oracle",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        }
+      ]
+    },
+    {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_1",
       "@type": [
         "skos:Concept",
@@ -16641,13 +17681,13 @@
       ]
     },
     {
-      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#speculate",
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#oracle",
       "@type": [
         "skos:Concept",
         "hi:NetworkNode"
       ],
-      "skos:prefLabel": "Speculate",
-      "skos:definition": "Possible futures generated from the Hybrid Intelligences ontology — brief speculations that begin in the future and trace a concept forward across time. Each piece rotates a framework (dialectic, phenomenological, teleological, utopian, dystopian), a horizon (ten years to ten thousand years), and an axis: labor and leisure, gender and sexuality, hybrid bodies and species, synthetic psychology, cognitive assemblage, governance and democracy, epistemics and daily life, or space and new technologies. Open Speculate for open-ended futures; open from any ontology entry to ground the prediction in that node.",
+      "skos:prefLabel": "Oracle",
+      "skos:definition": "Possible futures generated from the Hybrid Intelligences ontology — brief oracle readings that begin in the future and trace a concept forward across time. Each piece rotates a framework (dialectic, phenomenological, teleological, utopian, dystopian), a horizon (ten years to ten thousand years), and an axis: labor and leisure, gender and sexuality, hybrid bodies and species, synthetic psychology, cognitive assemblage, governance and democracy, epistemics and daily life, or space and new technologies. Open Oracle for open-ended futures; open from any ontology entry to ground the prediction in that node.",
       "skos:broader": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
       },
@@ -16656,8 +17696,12 @@
       },
       "hi:category": "practice",
       "hi:weight": 1.5,
-      "schema:url": "speculate.html",
+      "schema:url": "oracle.html",
       "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_carissa_veliz_prophecy_ted",
+          "hi:strength": 0.88
+        },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
           "hi:strength": 0.94
@@ -16910,7 +17954,7 @@
           "hi:strength": 0.95
         },
         {
-          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#speculate",
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#oracle",
           "hi:strength": 0.94
         },
         {

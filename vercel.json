@@ -7,7 +7,7 @@
       "includeFiles": "ontology.jsonld",
       "maxDuration": 20
     },
-    "api/speculate.js": {
+    "api/oracle.js": {
       "includeFiles": "ontology.jsonld",
       "maxDuration": 25
     },

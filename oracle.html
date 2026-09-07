@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hybrid Intelligences — Speculate</title>
+  <title>Hybrid Intelligences — Oracle</title>
   <meta name="description" content="Possible futures generated from the Hybrid Intelligences ontology — dialectic, phenomenological, teleological, utopian, and dystopian speculations across time.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
@@ -341,7 +341,7 @@
       <a class="site-logo" href="index.html" aria-label="Hybrid Intelligences home">
         <img src="logo.png" alt="Hybrid Intelligences">
       </a>
-      <p class="eyebrow">Speculate</p>
+      <p class="eyebrow">Oracle</p>
     </div>
     <div class="header-links">
       <a href="index.html">Home</a>
@@ -361,20 +361,20 @@
     <p class="focus-kicker">Ontology source</p>
     <h2 class="focus-title" id="focusTitle"></h2>
     <p class="focus-def" id="focusDef"></p>
-    <p class="focus-note">Each speculation rotates a framework, time horizon, and axis — labor, bodies, governance, epistemics, space — generated from this entry when present.</p>
+    <p class="focus-note">Each oracle reading rotates a framework, time horizon, and axis — labor, bodies, governance, epistemics, space — generated from this entry when present.</p>
   </section>
 
   <div id="exportSheet" class="export-sheet" hidden aria-hidden="true">
     <img src="logo.png" alt="">
     <p class="export-brand">Hybrid Intelligences</p>
-    <p class="export-layer" id="exportLayer">Speculate</p>
+    <p class="export-layer" id="exportLayer">Oracle</p>
     <p class="export-source" id="exportSource"></p>
     <p class="export-body" id="exportBody"></p>
     <p class="export-meta" id="exportMeta"></p>
     <p class="export-stamp" id="exportStamp"></p>
   </div>
 
-  <main class="stage" id="stage" tabindex="0" role="button" aria-label="Generate another speculation">
+  <main class="stage" id="stage" tabindex="0" role="button" aria-label="Generate another oracle reading">
     <p class="card-source" id="cardSource" hidden></p>
     <p class="card-meta" id="cardMeta" hidden></p>
     <p id="card" class="is-out" aria-live="polite"></p>
@@ -387,13 +387,13 @@
       <button type="button" class="save-btn" id="pngBtn" hidden disabled>Image ↓</button>
       <button type="button" class="sound-btn" id="soundBtn" aria-pressed="true" aria-label="Turn sound off">Sound on</button>
     </div>
-    <p class="hint" id="hint">Press Space for your first speculation.</p>
+    <p class="hint" id="hint">Press Space for your first oracle reading.</p>
   </div>
 
   <script src="scripts/hi-card-export.js"></script>
   <script src="realtime-config.js"></script>
   <script>
-    const PAGE_LAYER = "Speculate";
+    const PAGE_LAYER = "Oracle";
     const LANGUAGES = [
       { id: "en", name: "English", native: "English" },
       { id: "es", name: "Spanish", native: "Español" },
@@ -433,7 +433,7 @@
     let gestured = false;
     let hasGenerated = false;
     let heardCurrent = false;
-    let soundOn = localStorage.getItem("hi-speculate-sound") !== "off";
+    let soundOn = localStorage.getItem("hi-oracle-sound") !== "off";
     let speakGen = 0;
     let objectUrl = "";
     let pc = null;
@@ -563,14 +563,14 @@
       cardSource.hidden = false;
       cardSource.textContent = focusConceptId
         ? "Generated from ontology · " + focusConceptName
-        : "Open speculation";
+        : "Open oracle reading";
     }
 
     function awaitingMessage() {
       if (focusConceptId) {
-        return "Press Space to speculate a possible future from this ontology entry.";
+        return "Press Space for an oracle reading from this ontology entry.";
       }
-      return "Press Space for your first open-ended speculation.";
+      return "Press Space for your first open-ended oracle reading.";
     }
 
     function showAwaitingCard() {
@@ -598,7 +598,7 @@
       showFocusPanel(focusConceptName, "", "");
     }
 
-    function speculateRequestBody() {
+    function oracleRequestBody() {
       const body = {
         recent: recent.slice(-8),
         language: currentLang.name,
@@ -691,7 +691,7 @@
 
     function applyLanguage(lang) {
       currentLang = lang;
-      localStorage.setItem("hi-speculate-lang", lang.id);
+      localStorage.setItem("hi-oracle-lang", lang.id);
       document.documentElement.lang = lang.id === "zh-Hant" ? "zh-Hant" : lang.id;
       card.setAttribute("dir", lang.rtl ? "rtl" : "ltr");
       langSelect.value = lang.id;
@@ -702,7 +702,7 @@
         const label = lang.id === "en" ? lang.native : lang.native + " · " + lang.name;
         return "<option value=\"" + lang.id + "\">" + label + "</option>";
       }).join("");
-      applyLanguage(findLanguage(localStorage.getItem("hi-speculate-lang") || browserLanguageId()));
+      applyLanguage(findLanguage(localStorage.getItem("hi-oracle-lang") || browserLanguageId()));
     }
 
     function syncSoundButton() {
@@ -714,7 +714,7 @@
     function idleHint() {
       if (!hasGenerated) {
         hint.textContent = focusConceptId
-          ? "Press Space to speculate from " + focusConceptName + "."
+          ? "Press Space for an oracle reading from " + focusConceptName + "."
           : "Press Space for your first speculation.";
         return;
       }
@@ -741,8 +741,8 @@
       return origin + path;
     }
 
-    function speculateUrl() {
-      let url = apiUrl("/api/speculate");
+    function oracleUrl() {
+      let url = apiUrl("/api/oracle");
       if (url && focusConceptId) {
         url += (url.includes("?") ? "&" : "?") + "id=" + encodeURIComponent(focusConceptId);
       }
@@ -756,7 +756,7 @@
     function tokenUrl() {
       const base = apiUrl("/api/token");
       if (!base) return "";
-      return base + (base.includes("?") ? "&" : "?") + "mode=speculate";
+      return base + (base.includes("?") ? "&" : "?") + "mode=oracle";
     }
 
     function fadeMs() {
@@ -976,7 +976,7 @@
     }
 
     async function streamOntoCard() {
-      const url = speculateUrl();
+      const url = oracleUrl();
       if (!url) return { text: "", error: "No API URL." };
       const res = await fetch(url, {
         method: "POST",
@@ -984,7 +984,7 @@
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify(speculateRequestBody()),
+        body: JSON.stringify(oracleRequestBody()),
       });
       if (!res.ok) {
         let message = "Could not generate a speculation.";
@@ -1099,7 +1099,7 @@
     soundBtn.addEventListener("click", (e) => {
       e.stopPropagation();
       soundOn = !soundOn;
-      localStorage.setItem("hi-speculate-sound", soundOn ? "on" : "off");
+      localStorage.setItem("hi-oracle-sound", soundOn ? "on" : "off");
       syncSoundButton();
       if (!soundOn) {
         stopSpeak();

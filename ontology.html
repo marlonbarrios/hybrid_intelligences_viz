@@ -619,7 +619,7 @@
       <a href="mini-pod.html">Mini-pod</a>, or open a
       <a href="videos.html">curated video</a> when one is linked in the reel list.
       <a href="enact.html">Enact</a> offers cognitive prompts for a choreography of awareness;
-      <a href="speculate.html">Speculate</a> generates possible futures from ontology entries — layers of the
+      <a href="oracle.html">Oracle</a> generates possible futures from ontology entries — layers of the
       <a href="index.html">Hybrid Intelligences Hub</a>.
     </p>
     <div class="header-row">
@@ -633,7 +633,7 @@
         <a href="image.html">Image</a>
         <a href="mini-pod.html">Mini-pod</a>
         <a href="enact.html">Enact</a>
-        <a href="speculate.html">Speculate</a>
+        <a href="oracle.html">Oracle</a>
         <a href="creative-b.html">Creative B</a>
         <a href="scan-qr.html">Scan QR Code</a>
         <a href="https://github.com/marlonbarrios/hybrid_intelligences_viz" target="_blank" rel="noopener noreferrer"><span class="gh-icon" aria-hidden="true"></span>GitHub ↗</a>
@@ -1254,12 +1254,12 @@
       return `enact.html?${params.toString()}`;
     }
 
-    function speculateHref(concept) {
+    function oracleHref(concept) {
       const params = new URLSearchParams({
         id: concept.id,
         name: concept.label,
       });
-      return `speculate.html?${params.toString()}`;
+      return `oracle.html?${params.toString()}`;
     }
 
     function renderDetail(concept) {
@@ -1306,7 +1306,7 @@
             <a href="${imageHref(concept)}">Make an image</a>
             <a href="${podcastHref(concept)}">Mini-pod</a>
             <a href="${enactHref(concept)}">Enact</a>
-            <a href="${speculateHref(concept)}">Speculate</a>
+            <a href="${oracleHref(concept)}">Oracle</a>
             ${external.join("")}
           </div>
           <div class="actions view-links">

@@ -12,9 +12,9 @@
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   owl:versionInfo "1.0.0" ;
   dc:date "2026-09-07"^^xsd:date ;
-  dc:modified "2026-09-07T16:59:41.941Z"^^xsd:dateTime ;
-  hi:nodeCount "313"^^xsd:integer ;
-  hi:edgeCount "2837"^^xsd:integer .
+  dc:modified "2026-09-07T17:23:33.092Z"^^xsd:dateTime ;
+  hi:nodeCount "327"^^xsd:integer ;
+  hi:edgeCount "2999"^^xsd:integer .
 
 hi:scheme a skos:ConceptScheme ;
   skos:prefLabel "Hybrid Intelligences Concept Scheme" ;
@@ -380,6 +380,18 @@ hi:queer_theory a skos:Concept, hi:NetworkNode ;
  ;
   schema:url <https://en.wikipedia.org/wiki/Queer_theory> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Queer_theory>
+ .
+
+hi:dark_enlightenment a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Dark Enlightenment" ;
+  skos:definition "Neoreactionary and accelerationist current—critiques of democratic modernity, egalitarianism, and Enlightenment universalism; associated with exit, techno-capital, libertarian authoritarianism, and post-democratic governance imaginaries. Central to debates on AI, futurity, and who gets to steer hybrid intelligences." ;
+  skos:broader hi:category/framework ;
+  skos:inScheme hi:scheme ;
+  hi:category "framework" ;
+  hi:weight "1.25"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Dark_Enlightenment> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Dark_Enlightenment>
  .
 
 hi:possible_minds a skos:Concept, hi:NetworkNode ;
@@ -1380,6 +1392,66 @@ hi:carissa_veliz a skos:Concept, hi:NetworkNode ;
   schema:sameAs <https://en.wikipedia.org/wiki/Carissa_V%C3%A9liz>
  .
 
+hi:nick_land a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Nick Land" ;
+  skos:definition "British philosopher and writer—former Warwick CCRU figure; accelerationism, cybernetic theory, and influence on neoreaction and Dark Enlightenment discourse. Writes on capitalism, intelligence, exit, and the coupling of technics with inhuman futures." ;
+  skos:broader hi:category/author ;
+  skos:inScheme hi:scheme ;
+  hi:category "author" ;
+  hi:weight "1.15"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Nick_Land> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Nick_Land>
+ .
+
+hi:peter_thiel a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Peter Thiel" ;
+  skos:definition "Entrepreneur and investor—PayPal co-founder, Palantir, Founders Fund; prominent techno-libertarian voice on stagnation, competition, and anti-democratic strains in Silicon Valley. Associated with longevity, seasteading, and frontier AI investment." ;
+  skos:broader hi:category/author ;
+  skos:inScheme hi:scheme ;
+  hi:category "author" ;
+  hi:weight "1.15"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Peter_Thiel> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Peter_Thiel>
+ .
+
+hi:sam_altman a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Sam Altman" ;
+  skos:definition "CEO of OpenAI—central actor in AGI development, ChatGPT, and scaling large language models; shapes public discourse on artificial general intelligence, regulation, and the economic transformation of labor and cognition." ;
+  skos:broader hi:category/author ;
+  skos:inScheme hi:scheme ;
+  hi:category "author" ;
+  hi:weight "1.2"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Sam_Altman> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Sam_Altman>
+ .
+
+hi:dario_amodei a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Dario Amodei" ;
+  skos:definition "CEO and co-founder of Anthropic—former OpenAI VP of Research; leads work on Constitutional AI, AI safety, scaling laws, and responsible development of frontier models including Claude." ;
+  skos:broader hi:category/author ;
+  skos:inScheme hi:scheme ;
+  hi:category "author" ;
+  hi:weight "1.2"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Dario_Amodei> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Dario_Amodei>
+ .
+
+hi:elon_musk a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Elon Musk" ;
+  skos:definition "Entrepreneur and technologist—Tesla, SpaceX, Neuralink, and xAI; shapes discourse on AGI, humanoid robotics, brain–computer interfaces, and off-world infrastructure. PayPal co-founder; vocal on AI risk, acceleration, and the coupling of capital with frontier technology." ;
+  skos:broader hi:category/author ;
+  skos:inScheme hi:scheme ;
+  hi:category "author" ;
+  hi:weight "1.2"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Elon_Musk> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Elon_Musk>
+ .
+
 hi:aguilera_arcas a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Blaise Agüera y Arcas" ;
   skos:definition "AI researcher and author of What Is Intelligence?—work on neural computing, active inference, federated learning, artificial life, and symbiotic models of mind linking evolution, sociality, and machine intelligence." ;
@@ -1426,6 +1498,18 @@ hi:foucault a skos:Concept, hi:NetworkNode ;
  ;
   schema:url <https://en.wikipedia.org/wiki/Michel_Foucault> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Michel_Foucault>
+ .
+
+hi:arendt a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Hannah Arendt" ;
+  skos:definition "Political philosopher—The Human Condition, The Origins of Totalitarianism, and Eichmann in Jerusalem. Develops labor, work, and action; plurality, natality, and the public sphere; and the banality of evil as a warning against bureaucratic thoughtlessness in modern governance." ;
+  skos:broader hi:category/author ;
+  skos:inScheme hi:scheme ;
+  hi:category "author" ;
+  hi:weight "1.25"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Hannah_Arendt> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Hannah_Arendt>
  .
 
 hi:brooks a skos:Concept, hi:NetworkNode ;
@@ -3140,6 +3224,97 @@ hi:video_forsythe_synchronous_objects_hellerau a skos:Concept, hi:NetworkNode ;
   schema:sameAs <https://www.youtube.com/watch?v=xqlq3q5RMrc>
  .
 
+hi:video_arendt_zur_person_1964 a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Arendt · Zur Person" ;
+  skos:definition "Hannah Arendt — Zur Person (1964) — arendt. Legendary interview with Günter Gaus on political theory, the Eichmann trial, plurality, and the banality of evil. Video on YouTube; ingest matches speech to ontology concepts." ;
+  skos:broader hi:category/video ;
+  skos:inScheme hi:scheme ;
+  hi:category "video" ;
+  hi:weight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-arendt-zur-person-1964.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/arendt-zur-person-1964.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=J9SyTEUi6Kw>
+ .
+
+hi:video_sam_altman_lex_fridman_419 a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Altman · OpenAI & AGI" ;
+  skos:definition "Sam Altman — Lex Fridman #419 — sam_altman. OpenAI, AGI, power, safety, and the future of generative AI. Video on YouTube; ingest matches speech to ontology concepts." ;
+  skos:broader hi:category/video ;
+  skos:inScheme hi:scheme ;
+  hi:category "video" ;
+  hi:weight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-sam-altman-lex-fridman-419.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/sam-altman-lex-fridman-419.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=jvqFAi7vkBc>
+ .
+
+hi:video_dario_amodei_ai_safety a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Amodei · AI Safety" ;
+  skos:definition "Dario Amodei — AI safety — dario_amodei. Constitutional AI, scaling, and responsible frontier models at Anthropic. Video on YouTube; ingest matches speech to ontology concepts." ;
+  skos:broader hi:category/video ;
+  skos:inScheme hi:scheme ;
+  hi:category "video" ;
+  hi:weight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-dario-amodei-ai-safety.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/dario-amodei-ai-safety.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=mYDSSRS-B5U>
+ .
+
+hi:video_peter_thiel_stagnation_ai a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Thiel · Stagnation &" ;
+  skos:definition "Peter Thiel — Stagnation and AI — peter_thiel. Atoms versus bits, techno-stagnation, and the LLM breakthrough. Video on YouTube; ingest matches speech to ontology concepts." ;
+  skos:broader hi:category/video ;
+  skos:inScheme hi:scheme ;
+  hi:category "video" ;
+  hi:weight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-peter-thiel-stagnation-ai.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/peter-thiel-stagnation-ai.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=iF2la6FxVQc>
+ .
+
+hi:video_elon_musk_neuralink_lex a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Musk · Neuralink &" ;
+  skos:definition "Elon Musk — Neuralink and the Future of Humanity — elon_musk. xAI, AGI, brain–computer interfaces, and hybrid bodies. Video on YouTube; ingest matches speech to ontology concepts." ;
+  skos:broader hi:category/video ;
+  skos:inScheme hi:scheme ;
+  hi:category "video" ;
+  hi:weight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-elon-musk-neuralink-lex.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/elon-musk-neuralink-lex.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=Kbk9BiPhm7o>
+ .
+
+hi:video_nick_land_accelerationism a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Land · Acceleration…" ;
+  skos:definition "Nick Land — Accelerationism and Dark Enlightenment — nick_land. Cybernetics, exit, and neoreactionary futures. Video on YouTube; ingest matches speech to ontology concepts." ;
+  skos:broader hi:category/video ;
+  skos:inScheme hi:scheme ;
+  hi:category "video" ;
+  hi:weight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-nick-land-accelerationism.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/nick-land-accelerationism.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=TJISIwit0tk>
+ .
+
+hi:video_carissa_veliz_prophecy_ted a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Véliz · Prophecy" ;
+  skos:definition "Carissa Véliz — Beware the Power of Prediction — carissa_veliz. Prophecy, algorithmic forecasting, and power from oracles to AI. Video on YouTube; ingest matches speech to ontology concepts." ;
+  skos:broader hi:category/video ;
+  skos:inScheme hi:scheme ;
+  hi:category "video" ;
+  hi:weight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-carissa-veliz-prophecy-ted.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/carissa-veliz-prophecy-ted.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=OS4wHmKtH-Q>
+ .
+
 hi:essay_1 a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Essay 1" ;
   skos:definition "Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI — Essay 1 by Marlon Barrios Solano (July 10, 2026). Traces a lineage from Unstablelandscape (early 2000s real-time dance–technology) through Essay 4 (2005) to generative AI. Develops intelligence as coupling, embodiment as nested ecology, and cognition as distributed across assemblages. Performative architecture and affordances; Brooks's embodied robotics and Hayles's cognitive nonconscious; Paxton, Forsythe's choreographic object, and Synchronous Objects; juggling as reflex training. First-person argument that hybrid intelligence extends designed cognitive systems into language models and cognitive architectures." ;
@@ -3217,15 +3392,15 @@ hi:enact a skos:Concept, hi:NetworkNode ;
   schema:url <enact.html>
  .
 
-hi:speculate a skos:Concept, hi:NetworkNode ;
-  skos:prefLabel "Speculate" ;
-  skos:definition "Possible futures generated from the Hybrid Intelligences ontology — brief speculations that begin in the future and trace a concept forward across time. Each piece rotates a framework (dialectic, phenomenological, teleological, utopian, dystopian), a horizon (ten years to ten thousand years), and an axis: labor and leisure, gender and sexuality, hybrid bodies and species, synthetic psychology, cognitive assemblage, governance and democracy, epistemics and daily life, or space and new technologies. Open Speculate for open-ended futures; open from any ontology entry to ground the prediction in that node." ;
+hi:oracle a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Oracle" ;
+  skos:definition "Possible futures generated from the Hybrid Intelligences ontology — brief oracle readings that begin in the future and trace a concept forward across time. Each piece rotates a framework (dialectic, phenomenological, teleological, utopian, dystopian), a horizon (ten years to ten thousand years), and an axis: labor and leisure, gender and sexuality, hybrid bodies and species, synthetic psychology, cognitive assemblage, governance and democracy, epistemics and daily life, or space and new technologies. Open Oracle for open-ended futures; open from any ontology entry to ground the prediction in that node." ;
   skos:broader hi:category/practice ;
   skos:inScheme hi:scheme ;
   hi:category "practice" ;
   hi:weight "1.5"^^xsd:decimal
  ;
-  schema:url <speculate.html>
+  schema:url <oracle.html>
  .
 
 hi:pendular_umwelt a skos:Concept, hi:NetworkNode ;
@@ -8005,6 +8180,156 @@ hi:rel-foucault-epistemologies_south a hi:Relation ;
   hi:target hi:epistemologies_south ;
   hi:strength "0.7"^^xsd:decimal ;
   skos:relatedMatch hi:epistemologies_south .
+
+hi:rel-arendt-law a hi:Relation ;
+  hi:source hi:arendt ;
+  hi:target hi:law ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:law .
+
+hi:rel-arendt-philosophy a hi:Relation ;
+  hi:source hi:arendt ;
+  hi:target hi:philosophy ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:philosophy .
+
+hi:rel-arendt-critical a hi:Relation ;
+  hi:source hi:arendt ;
+  hi:target hi:critical ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:critical .
+
+hi:rel-arendt-cultural_critical a hi:Relation ;
+  hi:source hi:arendt ;
+  hi:target hi:cultural_critical ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:cultural_critical .
+
+hi:rel-arendt-perception_politics a hi:Relation ;
+  hi:source hi:arendt ;
+  hi:target hi:perception_politics ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:perception_politics .
+
+hi:rel-arendt-community a hi:Relation ;
+  hi:source hi:arendt ;
+  hi:target hi:community ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:community .
+
+hi:rel-arendt-social_change a hi:Relation ;
+  hi:source hi:arendt ;
+  hi:target hi:social_change ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:social_change .
+
+hi:rel-arendt-track_ethics a hi:Relation ;
+  hi:source hi:arendt ;
+  hi:target hi:track_ethics ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:track_ethics .
+
+hi:rel-arendt-humanism a hi:Relation ;
+  hi:source hi:arendt ;
+  hi:target hi:humanism ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:humanism .
+
+hi:rel-arendt-universalism a hi:Relation ;
+  hi:source hi:arendt ;
+  hi:target hi:universalism ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:universalism .
+
+hi:rel-arendt-foucault a hi:Relation ;
+  hi:source hi:arendt ;
+  hi:target hi:foucault ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:foucault .
+
+hi:rel-arendt-fanon a hi:Relation ;
+  hi:source hi:arendt ;
+  hi:target hi:fanon ;
+  hi:strength "0.7"^^xsd:decimal ;
+  skos:relatedMatch hi:fanon .
+
+hi:rel-arendt-freire a hi:Relation ;
+  hi:source hi:arendt ;
+  hi:target hi:freire ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:freire .
+
+hi:rel-arendt-bell_hooks a hi:Relation ;
+  hi:source hi:arendt ;
+  hi:target hi:bell_hooks ;
+  hi:strength "0.7"^^xsd:decimal ;
+  skos:relatedMatch hi:bell_hooks .
+
+hi:rel-arendt-crawford a hi:Relation ;
+  hi:source hi:arendt ;
+  hi:target hi:crawford ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:crawford .
+
+hi:rel-arendt-carissa_veliz a hi:Relation ;
+  hi:source hi:arendt ;
+  hi:target hi:carissa_veliz ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:carissa_veliz .
+
+hi:rel-arendt-dark_enlightenment a hi:Relation ;
+  hi:source hi:arendt ;
+  hi:target hi:dark_enlightenment ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:dark_enlightenment .
+
+hi:rel-arendt-mediation a hi:Relation ;
+  hi:source hi:arendt ;
+  hi:target hi:mediation ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:mediation .
+
+hi:rel-arendt-storytelling a hi:Relation ;
+  hi:source hi:arendt ;
+  hi:target hi:storytelling ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:storytelling .
+
+hi:rel-arendt-ethical_imagination a hi:Relation ;
+  hi:source hi:arendt ;
+  hi:target hi:ethical_imagination ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:ethical_imagination .
+
+hi:rel-arendt-oracle a hi:Relation ;
+  hi:source hi:arendt ;
+  hi:target hi:oracle ;
+  hi:strength "0.7"^^xsd:decimal ;
+  skos:relatedMatch hi:oracle .
+
+hi:rel-arendt-essentialism a hi:Relation ;
+  hi:source hi:arendt ;
+  hi:target hi:essentialism ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:essentialism .
+
+hi:rel-arendt-pedagogy a hi:Relation ;
+  hi:source hi:arendt ;
+  hi:target hi:pedagogy ;
+  hi:strength "0.7"^^xsd:decimal ;
+  skos:relatedMatch hi:pedagogy .
+
+hi:rel-arendt-technologies_of_self a hi:Relation ;
+  hi:source hi:arendt ;
+  hi:target hi:technologies_of_self ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:technologies_of_self .
+
+hi:rel-foucault-arendt a hi:Relation ;
+  hi:source hi:foucault ;
+  hi:target hi:arendt ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:arendt .
 
 hi:rel-ai_impact_epistemic-llm a hi:Relation ;
   hi:source hi:ai_impact_epistemic ;
@@ -15896,6 +16221,468 @@ hi:rel-carissa_veliz-video_privacy_illusion_ai_data a hi:Relation ;
   hi:strength "0.85"^^xsd:decimal ;
   skos:relatedMatch hi:video_privacy_illusion_ai_data .
 
+hi:rel-dark_enlightenment-nick_land a hi:Relation ;
+  hi:source hi:dark_enlightenment ;
+  hi:target hi:nick_land ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:nick_land .
+
+hi:rel-dark_enlightenment-peter_thiel a hi:Relation ;
+  hi:source hi:dark_enlightenment ;
+  hi:target hi:peter_thiel ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:peter_thiel .
+
+hi:rel-dark_enlightenment-universalism a hi:Relation ;
+  hi:source hi:dark_enlightenment ;
+  hi:target hi:universalism ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:universalism .
+
+hi:rel-dark_enlightenment-humanism a hi:Relation ;
+  hi:source hi:dark_enlightenment ;
+  hi:target hi:humanism ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:humanism .
+
+hi:rel-dark_enlightenment-law a hi:Relation ;
+  hi:source hi:dark_enlightenment ;
+  hi:target hi:law ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:law .
+
+hi:rel-dark_enlightenment-futurity a hi:Relation ;
+  hi:source hi:dark_enlightenment ;
+  hi:target hi:futurity ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:futurity .
+
+hi:rel-dark_enlightenment-speculative_futures a hi:Relation ;
+  hi:source hi:dark_enlightenment ;
+  hi:target hi:speculative_futures ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:speculative_futures .
+
+hi:rel-dark_enlightenment-ai a hi:Relation ;
+  hi:source hi:dark_enlightenment ;
+  hi:target hi:ai ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-dark_enlightenment-agi a hi:Relation ;
+  hi:source hi:dark_enlightenment ;
+  hi:target hi:agi ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:agi .
+
+hi:rel-dark_enlightenment-critical a hi:Relation ;
+  hi:source hi:dark_enlightenment ;
+  hi:target hi:critical ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:critical .
+
+hi:rel-dark_enlightenment-cybernetics a hi:Relation ;
+  hi:source hi:dark_enlightenment ;
+  hi:target hi:cybernetics ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:cybernetics .
+
+hi:rel-dark_enlightenment-oracle a hi:Relation ;
+  hi:source hi:dark_enlightenment ;
+  hi:target hi:oracle ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:oracle .
+
+hi:rel-dark_enlightenment-track_future a hi:Relation ;
+  hi:source hi:dark_enlightenment ;
+  hi:target hi:track_future ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:track_future .
+
+hi:rel-dark_enlightenment-posthumanism a hi:Relation ;
+  hi:source hi:dark_enlightenment ;
+  hi:target hi:posthumanism ;
+  hi:strength "0.7"^^xsd:decimal ;
+  skos:relatedMatch hi:posthumanism .
+
+hi:rel-dark_enlightenment-entrepreneurship_vision a hi:Relation ;
+  hi:source hi:dark_enlightenment ;
+  hi:target hi:entrepreneurship_vision ;
+  hi:strength "0.7"^^xsd:decimal ;
+  skos:relatedMatch hi:entrepreneurship_vision .
+
+hi:rel-nick_land-dark_enlightenment a hi:Relation ;
+  hi:source hi:nick_land ;
+  hi:target hi:dark_enlightenment ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:dark_enlightenment .
+
+hi:rel-nick_land-cybernetics a hi:Relation ;
+  hi:source hi:nick_land ;
+  hi:target hi:cybernetics ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:cybernetics .
+
+hi:rel-nick_land-ai a hi:Relation ;
+  hi:source hi:nick_land ;
+  hi:target hi:ai ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-nick_land-agi a hi:Relation ;
+  hi:source hi:nick_land ;
+  hi:target hi:agi ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:agi .
+
+hi:rel-nick_land-speculative_futures a hi:Relation ;
+  hi:source hi:nick_land ;
+  hi:target hi:speculative_futures ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:speculative_futures .
+
+hi:rel-nick_land-futurity a hi:Relation ;
+  hi:source hi:nick_land ;
+  hi:target hi:futurity ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:futurity .
+
+hi:rel-nick_land-crawford a hi:Relation ;
+  hi:source hi:nick_land ;
+  hi:target hi:crawford ;
+  hi:strength "0.65"^^xsd:decimal ;
+  skos:relatedMatch hi:crawford .
+
+hi:rel-peter_thiel-dark_enlightenment a hi:Relation ;
+  hi:source hi:peter_thiel ;
+  hi:target hi:dark_enlightenment ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:dark_enlightenment .
+
+hi:rel-peter_thiel-nick_land a hi:Relation ;
+  hi:source hi:peter_thiel ;
+  hi:target hi:nick_land ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:nick_land .
+
+hi:rel-peter_thiel-elon_musk a hi:Relation ;
+  hi:source hi:peter_thiel ;
+  hi:target hi:elon_musk ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:elon_musk .
+
+hi:rel-peter_thiel-sam_altman a hi:Relation ;
+  hi:source hi:peter_thiel ;
+  hi:target hi:sam_altman ;
+  hi:strength "0.7"^^xsd:decimal ;
+  skos:relatedMatch hi:sam_altman .
+
+hi:rel-peter_thiel-ai a hi:Relation ;
+  hi:source hi:peter_thiel ;
+  hi:target hi:ai ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-peter_thiel-agi a hi:Relation ;
+  hi:source hi:peter_thiel ;
+  hi:target hi:agi ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:agi .
+
+hi:rel-peter_thiel-gen_ai a hi:Relation ;
+  hi:source hi:peter_thiel ;
+  hi:target hi:gen_ai ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:gen_ai .
+
+hi:rel-peter_thiel-entrepreneurship_vision a hi:Relation ;
+  hi:source hi:peter_thiel ;
+  hi:target hi:entrepreneurship_vision ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:entrepreneurship_vision .
+
+hi:rel-peter_thiel-track_future a hi:Relation ;
+  hi:source hi:peter_thiel ;
+  hi:target hi:track_future ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:track_future .
+
+hi:rel-peter_thiel-speculative_futures a hi:Relation ;
+  hi:source hi:peter_thiel ;
+  hi:target hi:speculative_futures ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:speculative_futures .
+
+hi:rel-peter_thiel-futurity a hi:Relation ;
+  hi:source hi:peter_thiel ;
+  hi:target hi:futurity ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:futurity .
+
+hi:rel-sam_altman-ai a hi:Relation ;
+  hi:source hi:sam_altman ;
+  hi:target hi:ai ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-sam_altman-gen_ai a hi:Relation ;
+  hi:source hi:sam_altman ;
+  hi:target hi:gen_ai ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:gen_ai .
+
+hi:rel-sam_altman-llm a hi:Relation ;
+  hi:source hi:sam_altman ;
+  hi:target hi:llm ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:llm .
+
+hi:rel-sam_altman-gpt a hi:Relation ;
+  hi:source hi:sam_altman ;
+  hi:target hi:gpt ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:gpt .
+
+hi:rel-sam_altman-agi a hi:Relation ;
+  hi:source hi:sam_altman ;
+  hi:target hi:agi ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:agi .
+
+hi:rel-sam_altman-transformers a hi:Relation ;
+  hi:source hi:sam_altman ;
+  hi:target hi:transformers ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:transformers .
+
+hi:rel-sam_altman-bostrom a hi:Relation ;
+  hi:source hi:sam_altman ;
+  hi:target hi:bostrom ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:bostrom .
+
+hi:rel-sam_altman-dario_amodei a hi:Relation ;
+  hi:source hi:sam_altman ;
+  hi:target hi:dario_amodei ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:dario_amodei .
+
+hi:rel-sam_altman-elon_musk a hi:Relation ;
+  hi:source hi:sam_altman ;
+  hi:target hi:elon_musk ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:elon_musk .
+
+hi:rel-sam_altman-track_future a hi:Relation ;
+  hi:source hi:sam_altman ;
+  hi:target hi:track_future ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:track_future .
+
+hi:rel-sam_altman-track_ethics a hi:Relation ;
+  hi:source hi:sam_altman ;
+  hi:target hi:track_ethics ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:track_ethics .
+
+hi:rel-sam_altman-speculative_futures a hi:Relation ;
+  hi:source hi:sam_altman ;
+  hi:target hi:speculative_futures ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:speculative_futures .
+
+hi:rel-sam_altman-futurity a hi:Relation ;
+  hi:source hi:sam_altman ;
+  hi:target hi:futurity ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:futurity .
+
+hi:rel-sam_altman-entrepreneurship_vision a hi:Relation ;
+  hi:source hi:sam_altman ;
+  hi:target hi:entrepreneurship_vision ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:entrepreneurship_vision .
+
+hi:rel-dario_amodei-anthropic a hi:Relation ;
+  hi:source hi:dario_amodei ;
+  hi:target hi:anthropic ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:anthropic .
+
+hi:rel-dario_amodei-constitutional_ai a hi:Relation ;
+  hi:source hi:dario_amodei ;
+  hi:target hi:constitutional_ai ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:constitutional_ai .
+
+hi:rel-dario_amodei-ai_alignment a hi:Relation ;
+  hi:source hi:dario_amodei ;
+  hi:target hi:ai_alignment ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_alignment .
+
+hi:rel-dario_amodei-ai a hi:Relation ;
+  hi:source hi:dario_amodei ;
+  hi:target hi:ai ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-dario_amodei-gen_ai a hi:Relation ;
+  hi:source hi:dario_amodei ;
+  hi:target hi:gen_ai ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:gen_ai .
+
+hi:rel-dario_amodei-llm a hi:Relation ;
+  hi:source hi:dario_amodei ;
+  hi:target hi:llm ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:llm .
+
+hi:rel-dario_amodei-sam_altman a hi:Relation ;
+  hi:source hi:dario_amodei ;
+  hi:target hi:sam_altman ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:sam_altman .
+
+hi:rel-dario_amodei-bostrom a hi:Relation ;
+  hi:source hi:dario_amodei ;
+  hi:target hi:bostrom ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:bostrom .
+
+hi:rel-dario_amodei-crawford a hi:Relation ;
+  hi:source hi:dario_amodei ;
+  hi:target hi:crawford ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:crawford .
+
+hi:rel-dario_amodei-track_ethics a hi:Relation ;
+  hi:source hi:dario_amodei ;
+  hi:target hi:track_ethics ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:track_ethics .
+
+hi:rel-dario_amodei-carissa_veliz a hi:Relation ;
+  hi:source hi:dario_amodei ;
+  hi:target hi:carissa_veliz ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:carissa_veliz .
+
+hi:rel-dario_amodei-agi a hi:Relation ;
+  hi:source hi:dario_amodei ;
+  hi:target hi:agi ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:agi .
+
+hi:rel-dario_amodei-possible_minds a hi:Relation ;
+  hi:source hi:dario_amodei ;
+  hi:target hi:possible_minds ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:possible_minds .
+
+hi:rel-elon_musk-ai a hi:Relation ;
+  hi:source hi:elon_musk ;
+  hi:target hi:ai ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-elon_musk-gen_ai a hi:Relation ;
+  hi:source hi:elon_musk ;
+  hi:target hi:gen_ai ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:gen_ai .
+
+hi:rel-elon_musk-llm a hi:Relation ;
+  hi:source hi:elon_musk ;
+  hi:target hi:llm ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:llm .
+
+hi:rel-elon_musk-agi a hi:Relation ;
+  hi:source hi:elon_musk ;
+  hi:target hi:agi ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:agi .
+
+hi:rel-elon_musk-physical_ai a hi:Relation ;
+  hi:source hi:elon_musk ;
+  hi:target hi:physical_ai ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:physical_ai .
+
+hi:rel-elon_musk-sam_altman a hi:Relation ;
+  hi:source hi:elon_musk ;
+  hi:target hi:sam_altman ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:sam_altman .
+
+hi:rel-elon_musk-peter_thiel a hi:Relation ;
+  hi:source hi:elon_musk ;
+  hi:target hi:peter_thiel ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:peter_thiel .
+
+hi:rel-elon_musk-bostrom a hi:Relation ;
+  hi:source hi:elon_musk ;
+  hi:target hi:bostrom ;
+  hi:strength "0.7"^^xsd:decimal ;
+  skos:relatedMatch hi:bostrom .
+
+hi:rel-elon_musk-entrepreneurship_vision a hi:Relation ;
+  hi:source hi:elon_musk ;
+  hi:target hi:entrepreneurship_vision ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:entrepreneurship_vision .
+
+hi:rel-elon_musk-track_future a hi:Relation ;
+  hi:source hi:elon_musk ;
+  hi:target hi:track_future ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:track_future .
+
+hi:rel-elon_musk-speculative_futures a hi:Relation ;
+  hi:source hi:elon_musk ;
+  hi:target hi:speculative_futures ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:speculative_futures .
+
+hi:rel-elon_musk-futurity a hi:Relation ;
+  hi:source hi:elon_musk ;
+  hi:target hi:futurity ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:futurity .
+
+hi:rel-elon_musk-mediation a hi:Relation ;
+  hi:source hi:elon_musk ;
+  hi:target hi:mediation ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:mediation .
+
+hi:rel-elon_musk-technical_agency a hi:Relation ;
+  hi:source hi:elon_musk ;
+  hi:target hi:technical_agency ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:technical_agency .
+
+hi:rel-elon_musk-dark_enlightenment a hi:Relation ;
+  hi:source hi:elon_musk ;
+  hi:target hi:dark_enlightenment ;
+  hi:strength "0.65"^^xsd:decimal ;
+  skos:relatedMatch hi:dark_enlightenment .
+
+hi:rel-elon_musk-hybrid a hi:Relation ;
+  hi:source hi:elon_musk ;
+  hi:target hi:hybrid ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:hybrid .
+
+hi:rel-elon_musk-synthetic_cognition a hi:Relation ;
+  hi:source hi:elon_musk ;
+  hi:target hi:synthetic_cognition ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:synthetic_cognition .
+
 hi:rel-aguilera_arcas-ai a hi:Relation ;
   hi:source hi:aguilera_arcas ;
   hi:target hi:ai ;
@@ -16526,11 +17313,11 @@ hi:rel-hi_hub-enact a hi:Relation ;
   hi:strength "0.95"^^xsd:decimal ;
   skos:relatedMatch hi:enact .
 
-hi:rel-hi_hub-speculate a hi:Relation ;
+hi:rel-hi_hub-oracle a hi:Relation ;
   hi:source hi:hi_hub ;
-  hi:target hi:speculate ;
+  hi:target hi:oracle ;
   hi:strength "0.94"^^xsd:decimal ;
-  skos:relatedMatch hi:speculate .
+  skos:relatedMatch hi:oracle .
 
 hi:rel-hi_hub-llm a hi:Relation ;
   hi:source hi:hi_hub ;
@@ -18098,6 +18885,366 @@ hi:rel-video_bostrom_superintelligence_google-shanahan a hi:Relation ;
   hi:strength "0.85"^^xsd:decimal ;
   skos:relatedMatch hi:shanahan .
 
+hi:rel-video_arendt_zur_person_1964-arendt a hi:Relation ;
+  hi:source hi:video_arendt_zur_person_1964 ;
+  hi:target hi:arendt ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:arendt .
+
+hi:rel-video_arendt_zur_person_1964-foucault a hi:Relation ;
+  hi:source hi:video_arendt_zur_person_1964 ;
+  hi:target hi:foucault ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:foucault .
+
+hi:rel-video_arendt_zur_person_1964-law a hi:Relation ;
+  hi:source hi:video_arendt_zur_person_1964 ;
+  hi:target hi:law ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:law .
+
+hi:rel-video_arendt_zur_person_1964-perception_politics a hi:Relation ;
+  hi:source hi:video_arendt_zur_person_1964 ;
+  hi:target hi:perception_politics ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:perception_politics .
+
+hi:rel-video_arendt_zur_person_1964-community a hi:Relation ;
+  hi:source hi:video_arendt_zur_person_1964 ;
+  hi:target hi:community ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:community .
+
+hi:rel-video_arendt_zur_person_1964-track_ethics a hi:Relation ;
+  hi:source hi:video_arendt_zur_person_1964 ;
+  hi:target hi:track_ethics ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:track_ethics .
+
+hi:rel-video_arendt_zur_person_1964-dark_enlightenment a hi:Relation ;
+  hi:source hi:video_arendt_zur_person_1964 ;
+  hi:target hi:dark_enlightenment ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:dark_enlightenment .
+
+hi:rel-video_arendt_zur_person_1964-oracle a hi:Relation ;
+  hi:source hi:video_arendt_zur_person_1964 ;
+  hi:target hi:oracle ;
+  hi:strength "0.7"^^xsd:decimal ;
+  skos:relatedMatch hi:oracle .
+
+hi:rel-video_sam_altman_lex_fridman_419-sam_altman a hi:Relation ;
+  hi:source hi:video_sam_altman_lex_fridman_419 ;
+  hi:target hi:sam_altman ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:sam_altman .
+
+hi:rel-video_sam_altman_lex_fridman_419-ai a hi:Relation ;
+  hi:source hi:video_sam_altman_lex_fridman_419 ;
+  hi:target hi:ai ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-video_sam_altman_lex_fridman_419-gen_ai a hi:Relation ;
+  hi:source hi:video_sam_altman_lex_fridman_419 ;
+  hi:target hi:gen_ai ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:gen_ai .
+
+hi:rel-video_sam_altman_lex_fridman_419-llm a hi:Relation ;
+  hi:source hi:video_sam_altman_lex_fridman_419 ;
+  hi:target hi:llm ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:llm .
+
+hi:rel-video_sam_altman_lex_fridman_419-gpt a hi:Relation ;
+  hi:source hi:video_sam_altman_lex_fridman_419 ;
+  hi:target hi:gpt ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:gpt .
+
+hi:rel-video_sam_altman_lex_fridman_419-agi a hi:Relation ;
+  hi:source hi:video_sam_altman_lex_fridman_419 ;
+  hi:target hi:agi ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:agi .
+
+hi:rel-video_sam_altman_lex_fridman_419-bostrom a hi:Relation ;
+  hi:source hi:video_sam_altman_lex_fridman_419 ;
+  hi:target hi:bostrom ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:bostrom .
+
+hi:rel-video_sam_altman_lex_fridman_419-track_future a hi:Relation ;
+  hi:source hi:video_sam_altman_lex_fridman_419 ;
+  hi:target hi:track_future ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:track_future .
+
+hi:rel-video_sam_altman_lex_fridman_419-speculative_futures a hi:Relation ;
+  hi:source hi:video_sam_altman_lex_fridman_419 ;
+  hi:target hi:speculative_futures ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:speculative_futures .
+
+hi:rel-video_dario_amodei_ai_safety-dario_amodei a hi:Relation ;
+  hi:source hi:video_dario_amodei_ai_safety ;
+  hi:target hi:dario_amodei ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:dario_amodei .
+
+hi:rel-video_dario_amodei_ai_safety-anthropic a hi:Relation ;
+  hi:source hi:video_dario_amodei_ai_safety ;
+  hi:target hi:anthropic ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:anthropic .
+
+hi:rel-video_dario_amodei_ai_safety-constitutional_ai a hi:Relation ;
+  hi:source hi:video_dario_amodei_ai_safety ;
+  hi:target hi:constitutional_ai ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:constitutional_ai .
+
+hi:rel-video_dario_amodei_ai_safety-ai_alignment a hi:Relation ;
+  hi:source hi:video_dario_amodei_ai_safety ;
+  hi:target hi:ai_alignment ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_alignment .
+
+hi:rel-video_dario_amodei_ai_safety-ai a hi:Relation ;
+  hi:source hi:video_dario_amodei_ai_safety ;
+  hi:target hi:ai ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-video_dario_amodei_ai_safety-track_ethics a hi:Relation ;
+  hi:source hi:video_dario_amodei_ai_safety ;
+  hi:target hi:track_ethics ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:track_ethics .
+
+hi:rel-video_dario_amodei_ai_safety-bostrom a hi:Relation ;
+  hi:source hi:video_dario_amodei_ai_safety ;
+  hi:target hi:bostrom ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:bostrom .
+
+hi:rel-video_peter_thiel_stagnation_ai-peter_thiel a hi:Relation ;
+  hi:source hi:video_peter_thiel_stagnation_ai ;
+  hi:target hi:peter_thiel ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:peter_thiel .
+
+hi:rel-video_peter_thiel_stagnation_ai-dark_enlightenment a hi:Relation ;
+  hi:source hi:video_peter_thiel_stagnation_ai ;
+  hi:target hi:dark_enlightenment ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:dark_enlightenment .
+
+hi:rel-video_peter_thiel_stagnation_ai-entrepreneurship_vision a hi:Relation ;
+  hi:source hi:video_peter_thiel_stagnation_ai ;
+  hi:target hi:entrepreneurship_vision ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:entrepreneurship_vision .
+
+hi:rel-video_peter_thiel_stagnation_ai-ai a hi:Relation ;
+  hi:source hi:video_peter_thiel_stagnation_ai ;
+  hi:target hi:ai ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-video_peter_thiel_stagnation_ai-agi a hi:Relation ;
+  hi:source hi:video_peter_thiel_stagnation_ai ;
+  hi:target hi:agi ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:agi .
+
+hi:rel-video_peter_thiel_stagnation_ai-gen_ai a hi:Relation ;
+  hi:source hi:video_peter_thiel_stagnation_ai ;
+  hi:target hi:gen_ai ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:gen_ai .
+
+hi:rel-video_peter_thiel_stagnation_ai-speculative_futures a hi:Relation ;
+  hi:source hi:video_peter_thiel_stagnation_ai ;
+  hi:target hi:speculative_futures ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:speculative_futures .
+
+hi:rel-video_peter_thiel_stagnation_ai-elon_musk a hi:Relation ;
+  hi:source hi:video_peter_thiel_stagnation_ai ;
+  hi:target hi:elon_musk ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:elon_musk .
+
+hi:rel-video_elon_musk_neuralink_lex-elon_musk a hi:Relation ;
+  hi:source hi:video_elon_musk_neuralink_lex ;
+  hi:target hi:elon_musk ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:elon_musk .
+
+hi:rel-video_elon_musk_neuralink_lex-physical_ai a hi:Relation ;
+  hi:source hi:video_elon_musk_neuralink_lex ;
+  hi:target hi:physical_ai ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:physical_ai .
+
+hi:rel-video_elon_musk_neuralink_lex-agi a hi:Relation ;
+  hi:source hi:video_elon_musk_neuralink_lex ;
+  hi:target hi:agi ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:agi .
+
+hi:rel-video_elon_musk_neuralink_lex-ai a hi:Relation ;
+  hi:source hi:video_elon_musk_neuralink_lex ;
+  hi:target hi:ai ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-video_elon_musk_neuralink_lex-sam_altman a hi:Relation ;
+  hi:source hi:video_elon_musk_neuralink_lex ;
+  hi:target hi:sam_altman ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:sam_altman .
+
+hi:rel-video_elon_musk_neuralink_lex-synthetic_cognition a hi:Relation ;
+  hi:source hi:video_elon_musk_neuralink_lex ;
+  hi:target hi:synthetic_cognition ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:synthetic_cognition .
+
+hi:rel-video_elon_musk_neuralink_lex-speculative_futures a hi:Relation ;
+  hi:source hi:video_elon_musk_neuralink_lex ;
+  hi:target hi:speculative_futures ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:speculative_futures .
+
+hi:rel-video_nick_land_accelerationism-nick_land a hi:Relation ;
+  hi:source hi:video_nick_land_accelerationism ;
+  hi:target hi:nick_land ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:nick_land .
+
+hi:rel-video_nick_land_accelerationism-dark_enlightenment a hi:Relation ;
+  hi:source hi:video_nick_land_accelerationism ;
+  hi:target hi:dark_enlightenment ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:dark_enlightenment .
+
+hi:rel-video_nick_land_accelerationism-cybernetics a hi:Relation ;
+  hi:source hi:video_nick_land_accelerationism ;
+  hi:target hi:cybernetics ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:cybernetics .
+
+hi:rel-video_nick_land_accelerationism-speculative_futures a hi:Relation ;
+  hi:source hi:video_nick_land_accelerationism ;
+  hi:target hi:speculative_futures ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:speculative_futures .
+
+hi:rel-video_nick_land_accelerationism-futurity a hi:Relation ;
+  hi:source hi:video_nick_land_accelerationism ;
+  hi:target hi:futurity ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:futurity .
+
+hi:rel-video_carissa_veliz_prophecy_ted-carissa_veliz a hi:Relation ;
+  hi:source hi:video_carissa_veliz_prophecy_ted ;
+  hi:target hi:carissa_veliz ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:carissa_veliz .
+
+hi:rel-video_carissa_veliz_prophecy_ted-oracle a hi:Relation ;
+  hi:source hi:video_carissa_veliz_prophecy_ted ;
+  hi:target hi:oracle ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:oracle .
+
+hi:rel-video_carissa_veliz_prophecy_ted-perception_politics a hi:Relation ;
+  hi:source hi:video_carissa_veliz_prophecy_ted ;
+  hi:target hi:perception_politics ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:perception_politics .
+
+hi:rel-video_carissa_veliz_prophecy_ted-track_ethics a hi:Relation ;
+  hi:source hi:video_carissa_veliz_prophecy_ted ;
+  hi:target hi:track_ethics ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:track_ethics .
+
+hi:rel-video_carissa_veliz_prophecy_ted-ai a hi:Relation ;
+  hi:source hi:video_carissa_veliz_prophecy_ted ;
+  hi:target hi:ai ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-video_carissa_veliz_prophecy_ted-law a hi:Relation ;
+  hi:source hi:video_carissa_veliz_prophecy_ted ;
+  hi:target hi:law ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:law .
+
+hi:rel-video_carissa_veliz_prophecy_ted-arendt a hi:Relation ;
+  hi:source hi:video_carissa_veliz_prophecy_ted ;
+  hi:target hi:arendt ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:arendt .
+
+hi:rel-arendt-video_arendt_zur_person_1964 a hi:Relation ;
+  hi:source hi:arendt ;
+  hi:target hi:video_arendt_zur_person_1964 ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:video_arendt_zur_person_1964 .
+
+hi:rel-sam_altman-video_sam_altman_lex_fridman_419 a hi:Relation ;
+  hi:source hi:sam_altman ;
+  hi:target hi:video_sam_altman_lex_fridman_419 ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:video_sam_altman_lex_fridman_419 .
+
+hi:rel-dario_amodei-video_dario_amodei_ai_safety a hi:Relation ;
+  hi:source hi:dario_amodei ;
+  hi:target hi:video_dario_amodei_ai_safety ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:video_dario_amodei_ai_safety .
+
+hi:rel-peter_thiel-video_peter_thiel_stagnation_ai a hi:Relation ;
+  hi:source hi:peter_thiel ;
+  hi:target hi:video_peter_thiel_stagnation_ai ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:video_peter_thiel_stagnation_ai .
+
+hi:rel-elon_musk-video_elon_musk_neuralink_lex a hi:Relation ;
+  hi:source hi:elon_musk ;
+  hi:target hi:video_elon_musk_neuralink_lex ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:video_elon_musk_neuralink_lex .
+
+hi:rel-nick_land-video_nick_land_accelerationism a hi:Relation ;
+  hi:source hi:nick_land ;
+  hi:target hi:video_nick_land_accelerationism ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:video_nick_land_accelerationism .
+
+hi:rel-carissa_veliz-video_carissa_veliz_prophecy_ted a hi:Relation ;
+  hi:source hi:carissa_veliz ;
+  hi:target hi:video_carissa_veliz_prophecy_ted ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:video_carissa_veliz_prophecy_ted .
+
+hi:rel-dark_enlightenment-video_nick_land_accelerationism a hi:Relation ;
+  hi:source hi:dark_enlightenment ;
+  hi:target hi:video_nick_land_accelerationism ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:video_nick_land_accelerationism .
+
+hi:rel-oracle-video_carissa_veliz_prophecy_ted a hi:Relation ;
+  hi:source hi:oracle ;
+  hi:target hi:video_carissa_veliz_prophecy_ted ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:video_carissa_veliz_prophecy_ted .
+
 hi:rel-video_merleau_ponty_phenomenology-merleau_ponty a hi:Relation ;
   hi:source hi:video_merleau_ponty_phenomenology ;
   hi:target hi:merleau_ponty ;
@@ -19094,50 +20241,50 @@ hi:rel-enact-marlon a hi:Relation ;
   hi:strength "0.8"^^xsd:decimal ;
   skos:relatedMatch hi:marlon .
 
-hi:rel-speculate-hi_hub a hi:Relation ;
-  hi:source hi:speculate ;
+hi:rel-oracle-hi_hub a hi:Relation ;
+  hi:source hi:oracle ;
   hi:target hi:hi_hub ;
   hi:strength "0.94"^^xsd:decimal ;
   skos:relatedMatch hi:hi_hub .
 
-hi:rel-speculate-speculative_futures a hi:Relation ;
-  hi:source hi:speculate ;
+hi:rel-oracle-speculative_futures a hi:Relation ;
+  hi:source hi:oracle ;
   hi:target hi:speculative_futures ;
   hi:strength "0.95"^^xsd:decimal ;
   skos:relatedMatch hi:speculative_futures .
 
-hi:rel-speculate-futurity a hi:Relation ;
-  hi:source hi:speculate ;
+hi:rel-oracle-futurity a hi:Relation ;
+  hi:source hi:oracle ;
   hi:target hi:futurity ;
   hi:strength "0.9"^^xsd:decimal ;
   skos:relatedMatch hi:futurity .
 
-hi:rel-speculate-coupling a hi:Relation ;
-  hi:source hi:speculate ;
+hi:rel-oracle-coupling a hi:Relation ;
+  hi:source hi:oracle ;
   hi:target hi:coupling ;
   hi:strength "0.85"^^xsd:decimal ;
   skos:relatedMatch hi:coupling .
 
-hi:rel-speculate-enact a hi:Relation ;
-  hi:source hi:speculate ;
+hi:rel-oracle-enact a hi:Relation ;
+  hi:source hi:oracle ;
   hi:target hi:enact ;
   hi:strength "0.82"^^xsd:decimal ;
   skos:relatedMatch hi:enact .
 
-hi:rel-speculate-conversational_ai a hi:Relation ;
-  hi:source hi:speculate ;
+hi:rel-oracle-conversational_ai a hi:Relation ;
+  hi:source hi:oracle ;
   hi:target hi:conversational_ai ;
   hi:strength "0.8"^^xsd:decimal ;
   skos:relatedMatch hi:conversational_ai .
 
-hi:rel-speculate-ontology_kb a hi:Relation ;
-  hi:source hi:speculate ;
+hi:rel-oracle-ontology_kb a hi:Relation ;
+  hi:source hi:oracle ;
   hi:target hi:ontology_kb ;
   hi:strength "0.88"^^xsd:decimal ;
   skos:relatedMatch hi:ontology_kb .
 
-hi:rel-speculate-marlon a hi:Relation ;
-  hi:source hi:speculate ;
+hi:rel-oracle-marlon a hi:Relation ;
+  hi:source hi:oracle ;
   hi:target hi:marlon ;
   hi:strength "0.78"^^xsd:decimal ;
   skos:relatedMatch hi:marlon .
@@ -21639,6 +22786,56 @@ hi:rel-video_bostrom_superintelligence_google-bostrom-instantiates a hi:Relation
   hi:target hi:bostrom ;
   hi:relationType hi:instantiates .
 
+hi:rel-video_arendt_zur_person_1964-arendt-instantiates a hi:Relation ;
+  hi:source hi:video_arendt_zur_person_1964 ;
+  hi:target hi:arendt ;
+  hi:relationType hi:instantiates .
+
+hi:rel-video_sam_altman_lex_fridman_419-sam_altman-instantiates a hi:Relation ;
+  hi:source hi:video_sam_altman_lex_fridman_419 ;
+  hi:target hi:sam_altman ;
+  hi:relationType hi:instantiates .
+
+hi:rel-video_dario_amodei_ai_safety-dario_amodei-instantiates a hi:Relation ;
+  hi:source hi:video_dario_amodei_ai_safety ;
+  hi:target hi:dario_amodei ;
+  hi:relationType hi:instantiates .
+
+hi:rel-video_dario_amodei_ai_safety-constitutional_ai-develops a hi:Relation ;
+  hi:source hi:video_dario_amodei_ai_safety ;
+  hi:target hi:constitutional_ai ;
+  hi:relationType hi:develops .
+
+hi:rel-video_peter_thiel_stagnation_ai-peter_thiel-instantiates a hi:Relation ;
+  hi:source hi:video_peter_thiel_stagnation_ai ;
+  hi:target hi:peter_thiel ;
+  hi:relationType hi:instantiates .
+
+hi:rel-video_elon_musk_neuralink_lex-elon_musk-instantiates a hi:Relation ;
+  hi:source hi:video_elon_musk_neuralink_lex ;
+  hi:target hi:elon_musk ;
+  hi:relationType hi:instantiates .
+
+hi:rel-video_nick_land_accelerationism-nick_land-instantiates a hi:Relation ;
+  hi:source hi:video_nick_land_accelerationism ;
+  hi:target hi:nick_land ;
+  hi:relationType hi:instantiates .
+
+hi:rel-video_nick_land_accelerationism-dark_enlightenment-develops a hi:Relation ;
+  hi:source hi:video_nick_land_accelerationism ;
+  hi:target hi:dark_enlightenment ;
+  hi:relationType hi:develops .
+
+hi:rel-video_carissa_veliz_prophecy_ted-carissa_veliz-instantiates a hi:Relation ;
+  hi:source hi:video_carissa_veliz_prophecy_ted ;
+  hi:target hi:carissa_veliz ;
+  hi:relationType hi:instantiates .
+
+hi:rel-video_carissa_veliz_prophecy_ted-oracle-develops a hi:Relation ;
+  hi:source hi:video_carissa_veliz_prophecy_ted ;
+  hi:target hi:oracle ;
+  hi:relationType hi:develops .
+
 hi:rel-video_merleau_ponty_phenomenology-merleau_ponty-instantiates a hi:Relation ;
   hi:source hi:video_merleau_ponty_phenomenology ;
   hi:target hi:merleau_ponty ;
@@ -21843,6 +23040,51 @@ hi:rel-bostrom-speculative_futures-develops a hi:Relation ;
   hi:source hi:bostrom ;
   hi:target hi:speculative_futures ;
   hi:relationType hi:develops .
+
+hi:rel-nick_land-dark_enlightenment-develops a hi:Relation ;
+  hi:source hi:nick_land ;
+  hi:target hi:dark_enlightenment ;
+  hi:relationType hi:develops .
+
+hi:rel-dario_amodei-anthropic-develops a hi:Relation ;
+  hi:source hi:dario_amodei ;
+  hi:target hi:anthropic ;
+  hi:relationType hi:develops .
+
+hi:rel-dario_amodei-constitutional_ai-develops a hi:Relation ;
+  hi:source hi:dario_amodei ;
+  hi:target hi:constitutional_ai ;
+  hi:relationType hi:develops .
+
+hi:rel-sam_altman-gen_ai-participatesIn a hi:Relation ;
+  hi:source hi:sam_altman ;
+  hi:target hi:gen_ai ;
+  hi:relationType hi:participatesIn .
+
+hi:rel-elon_musk-physical_ai-participatesIn a hi:Relation ;
+  hi:source hi:elon_musk ;
+  hi:target hi:physical_ai ;
+  hi:relationType hi:participatesIn .
+
+hi:rel-elon_musk-agi-participatesIn a hi:Relation ;
+  hi:source hi:elon_musk ;
+  hi:target hi:agi ;
+  hi:relationType hi:participatesIn .
+
+hi:rel-arendt-community-develops a hi:Relation ;
+  hi:source hi:arendt ;
+  hi:target hi:community ;
+  hi:relationType hi:develops .
+
+hi:rel-arendt-perception_politics-develops a hi:Relation ;
+  hi:source hi:arendt ;
+  hi:target hi:perception_politics ;
+  hi:relationType hi:develops .
+
+hi:rel-arendt-dark_enlightenment-critiques a hi:Relation ;
+  hi:source hi:arendt ;
+  hi:target hi:dark_enlightenment ;
+  hi:relationType hi:critiques .
 
 hi:rel-video_am_i_ai_consciousness_doc-chalmers-instantiates a hi:Relation ;
   hi:source hi:video_am_i_ai_consciousness_doc ;

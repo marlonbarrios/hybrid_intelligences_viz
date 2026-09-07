@@ -1,0 +1,2804 @@
+{
+  "videoId": "peter-thiel-stagnation-ai",
+  "text": "we've you know resulted in a society that was locked down not just during Co but we've been in a soft lockdown for for something like 50 years we now have the start of some sort of real AI wave it's probably a breakthrough that's on par with the internet itself hello fellow data nerds my guest today is Peter teal Peter was the co-founder and CEO of PayPal first investor in Facebook co-founder of paler he's also the founder managing partner of Founders fund and the author of zero to one which I think is one of the best business books ever written Peter welcome to World of Des thanks for having me Orin now when starting a company how important is total addressable Market well it is uh it is it is uh it is always a necessary component uh if there's no Market at all that's that's pretty pretty bad um but uh but there also are probably ways people can overstress on on something like uh like Tam and uh and I always think that if you have a tam that's too big um you know it obviously OBC hates other questions which may be more important if you have a very big total addressable Market you probably have a lot of competition and uh and then um and then um it that that that may create bigger challenges than you know um than having a a small Market or some something like that so I don't know the the restaurant business has an enormous T and it's a terrible business to go into you know I think a a lot of the energy business functions in a nearly commodified way which is why it tends to be business that's very hard for startups to uh to find a really differentiated Niche so I I often think the uh you know the best uh Tam narratives are ones where you have a you know have some sort of tight fairly narrow Tam for the initial market and then there's some kind of expansion capability for when PayPal launched uh you know our initial Tam where power sell on eBay was like 20,000 or so people in early 2000 and we got to 30 40% market share in about uh three months and then you know in a sense it was a tiny Tam but you could get uh you could get a foothold and you sort of build a fortress there and then uh from that base expand and that's and how do you know if you if there's a way to expand from that base is that just based on how talented the team is is that based on like okay how important that that base or that Center Point is well um there all there all sorts of intuition in in a payments context uh that there would be all these payments people make on eBay off eBay eBay itself was growing um we would gain share on eBay so there were sort of a lot of natural ways to uh to expand from it uh in the case of PayPal you know it it it felt at the end of the day like it was hard to radically expand Beyond eBay and so in 2002 we sold the company to to to eBay so it was uh it was a it was a very powerful initial T it had a lot of expansion capability but then uh crossing the chasm to the off eBay Market turned out to be quite hard to do and so uh so then that that in in the context of PayPal it probably got us to an m&a exit when you think of um like creating monopolies kind of very important how do you think about that in relationship to like the Venture Capital context like outside of Y combinator it doesn't see it seems like the rest of the VC world is super competitive well uh yeah I always I always think that uh if you think about monopolies or Moes or businesses with margins you can always think of a layer one which is the companies themselves and then you know second layer is the uh the financial investor layer and uh and ideally you know as a VC you want to invest in companies that um that are unique that don't have uh you know too much uh competition nature red red and tooth and Claw but you also don't want to be competing too much with other VCS and so uh I don't know you can analyze it in much the same way as as companies you know the you know sort of what are the kinds of monopolies they're driven by brand by Network effect uh sometimes by economies of scale uh sometimes by by unique technology and the question is are there you know are there analogous things uh like that for for Venture Capital firms where there's some combination of a brand Founders fund had a brand where we are founder friendly we we started companies ourselves around the side of the founder that was a very differentiating brand and we started back in 2005 fast forward to 2023 lots of other people are saying it and so maybe maybe it's a little bit more cluttered you have sort of try to assess that there obviously are network effects where your you're Network to some companies and that gives you some sort of idios syncratic deal flow um but then I think uh yeah I think I think uh in practice uh it has to often be just reinvented on a on a deal by deal basis and uh you know the poker analogy I always like to use that you know when you're you you you know when you're investing in a company it's always what do we understand about this that other investors do not understand and um if you don't know the answer to the question then you're the sucker you're the sucker yeah it's like the poker one where you know you have to figure out who who who's the who's the Mark here at the table and if you can't figure it out it's you now uh a decade ago you were definitely one of the first people to call out that science wasn't progressing as fast as it had in the past how has that paired in the last 10 years since since you've kind of been famous for making their statements yeah I think I I started uh talking about the tech stagnation probably around two 2008 uh and okay earlier and and the claim is that it's been uh it's been it's been slow for uh at this point running on five decades since since really since the 1970s that we've had a limited innovation in the world of Adams um you know when I was undergraduate stord the late 1980s uh it was a mistake to major in anything having to do with Adams mechanical engineering chemical engineering nuclear engineering AER asward terrible decisions and then the only thing that really worked were uh were were uh the world of bits computers internet mobile internet software um you know to some extent electrical engineering was still okay but but really computer science was was the one place where there continued to be this cone of progress y around computers now we can debate you know how big that was it certainly was very very unb unbalanced and it certainly um you know I think it led to some great companies it's uh debatable how much it improved the GDP relative to um to what what you know what we've seen say in the first half of the 20th century in in the United States or the other developed country so I yes so IO I broadly think that we've had this uh broad uh stagnation in technology and science for for something on the order of 50 years and is the stagnation accelerating is the is it decelerating and now there's new W like how where do you feel we are in that stagnation um uh Continuum you know I I think I think in some ways we are roughly we are roughly in the same place we've we've been we've been um for the last quarter Century where it's um it is uh there's there's a decent amount of progress in the world of bits um we had an enormous internet wave in the you know in the late 90s maybe maybe you know the late 90s were early maybe we're now late in the internet but that was that was a giant uh thing in in computers and uh and we now have you know the start of you know some sort of real AI way even though it's been talked about you know some ways for decades but I think uh I think the llms chat GPT you know it's it's probably a breakthrough that's you know I would I would rank as on par with the internet itself it's it is it is very big and so I think I think in this world of computers we we can say that uh you know the the progress is continuing at you know and fits and starts but you know at at still a pretty a pretty decent pace and then um it's everything else that's uh been much slower much harder to invest in you know much harder for uh um yeah much uh much much less than advertising much further from the science fiction future of the Jetson you made an argument in your piece on the new Criterion that kind of wokeness is that smok screen for the lack of scientific progress can you unpack that a bit well there's there's a lot uh it was it was sort of an anti- woke an anti- anti-woke argument I was making where uh where uh you know I think there endless debates we can have about Dei wokeness political correctness multiculturalism all these topics and on some level I think they're important you know on some level um you know uh I would advocate for certain certain uh certain views views on them and I think the debates are important to have and then on on another level I I I've come to worry that uh so many of these debates are distractions it's like a magic show where we're being hypnotized and we're paying attention to to it to a certain debate we're not seeing the the man in the orange monkey suit jumping on the back something like this and uh and that uh diversity is a diversion from more important things and the more important things can be questions of Economics questions of Science question of religion you know maybe even other other political issues you know the economics one just to Rattle down the list real quick the economics one is is just uh you know cultural Marxism um the Marxist critique of cultural Marxism is that it people to when they when they when they started focusing on race and gender they forgot about class they forgot about the real economics and uh and and then this probably there's a Marxist or libertarian critique where you could say that uh um you know uh we've had just runaway housing prices and that's the that's the real problem we should be figuring out how to build more affordable housing and uh and that um and that as long as we're talking about these other categories um you know we're not even going to be wrong not even going to be in the zone of dealing with that problem and it used it used to be that like the downtrod and we agitating for maybe better wages or better working conditions um now it seems like some of these movements are things about things that are other than economic could be some of the things you mentioned or the environment well you know is that is that also a smokes screen I don't know if it's you know I don't know how conspiratorial you would get there's yeah there's a Marxist conspiracy theory of History where it was wokeness was a conspiracy by the by the corporations to divide the workers into race and gender and uh pay them less and I think there are I think there are various companies that um you know executed on something like that plan you know moderately well there's you know Walmart in the in the the 2000s was in always in the dogghouse because he wasn't paying its workers enough and they came up with the idea of rebranding themselves as a green Corporation and that sort of split the um uh the left-wing anti-walmart Alliance and then in effect um it was cheaper to do a little bit of green stuff then to pay the workers more and it was sort of a uh it was probably good for the Walmart shareholders and uh and and then was also um you know in some ways uh didn't uh didn't really address some of these underlying economic challenges and I think I suspect there's something like that that's also gone on with uh with the the question of science has been has been very obscured and uh and so that the you know if if you think of in in the context of the universities or the schools the wokeness tends to be focused on the derangements of the humanities curricula and English or history or topics like that whereas uh whereas if the thing that's really wrong is that um the scientists aren't making any progress they're not inventing new things you know it's it's all sort of this uh corrupt peer- reviewed research it's incrementalism it's sort of a uh it's a stagnant malthusian sociopathic institution and uh and and to the extent The Sciences are the humanities are distracting us from The Sciences you know we're not even paying attention to you know I'd be fine with a little bit of wokness if we were finding a cure for dementia doing other things like that and and is there is there is there some sort of structural reason why like science is not progressing fast enough is there something like we can or is it just like all these 1% things that all add up you know the I I always think why questions are difficult they're they're somewhat overdetermined um there C there certainly is there probably is some effect where certain Fields have um you know the easy things have been found and it's hard to find new things it's probably very hard to find a new element on the periodic table it's you know or it's hard to I don't know you're not going to find be like Christopher Columbus and find a new continent on on this planet so that you know certain certain Fields get closed and get fully developed over time um but I I'm um but I'm on the whole more inclined to sort of cultural explanations that it's not that nature um has run out of things for us but that there's something that's changed in our culture we've become too risk averse that uh things have gotten bureaucratized um um that uh you know I think one one one dimension that I I I I do think is a fairly important one in the 20th century is that um there was a great deal of science and technology that was used in this sort of um in this sort of uh military context and you know at some point you know the scientists the engineers are just building more powerful and more dangerous weapon systems and you know already I think World War I it's all this Carnage it's it's sort of a ambiguous is all the science really um more good than bad for Humanity and then certainly 1945 with Los Alamos and Hiroshima it somehow um I I think tilts us into a somewhat somewhat darker Direction and and uh there's there's something about the history of nuclear weapons where uh in my telling it it's a sort of delayed response it takes something like a quarter of a century for it to fully sink in but by by by by the early 1970s it's like we can destroy the world 20 times over what are we doing does this make any sense and then you know maybe we shouldn't be funding the smartest physicists to build bigger bombs maybe we shouldn't be funding any of the scientists maybe they all need to be regulated um and uh and it's kind of sad for these people to be you know puttering around lots of Grant applications and filling out all sorts of Dei forms but uh maybe that's the price you have to pay to stop them from blowing up the world and it does seem like it some of this correlates with just like the moon landing like which is this like incredible feat and then it just seems like things started to slow down like right around that time um is there is there something that is there something in the psyche like oh like it's kind of like mission accomplished like we can we can just slow down history is complicated there were a lot of things that happened but I think um I think there was um there it was possible to accelerate Science and Tech through centralization and government funding so even even the the Manhattan Project uh you know the the New York Times editorial a week after Hiroshima something like you know hope you know if you left this to Primadonna scientists who were decentralized sort of an anti-libertarian argument it would take them half a century to come up with Device instead the Army was just telling people what to do it organized the scientists they they were able to bring this invention in three and a half short years the world and then um and then in a way you were able to repeat this sort of centralized coordinated you know pouring in lots of money approach um with with the Apollo program and you know uh Kennedy early 60s gives us the speech and by the end of the decade we we have we have a man on the moon um but then I think uh the longer term cost was that you created these these very large large bureaucratic institutions um you no longer had the innovations that were coming in that you could then scale and uh and somehow um it became politicized and and it it slowed down a lot so there was some I don't know I'm not sure fan bargain but some kind of a tradeoff between you could accelerate one time but then uh then you get a scientific it's like like in agriculture you can increase food production by having some some monoculture but then over time it's uh it's probably not the healthiest um not the healthiest ecosystem when you're dealing with Adams like there's a lot of safety problems and if you think of that even do you think of early NASA there's a lot of people that died there's a lot of even test pilots on the side doing stuff um and is that like safetyism has that come into kind of slow Innovation um sure I mean it was uh you know I think Yuri gagar and the first uh the first uh Cosmonaut who circled the Earth uh six seven years maybe a decade later died in some test fight test pilot so yeah you know so it's so yeah there was there was there was sort of a crazy amount of of of risk taking and um you know without yeah without making any judgments about it I I would I would say that uh yeah we there was something that shifted away from that it just felt too dangerous and um it was too much risk of nuclear war it was too much risk of environmental degradation there were just too many crazy things people people felt uh could happen and uh I I don't I don't I don't want to dismiss these existential risks but I I I do think that the trade-off is that we' we've we've you know resulted in a society that you know was locked down not just during coid but we've been in a soft lockdown for for something like 50 years and uh and my my bias is always we need to we need to find some way to get out of the lockdown and how do you know when to like where to draw that line like if you think of like not long after some of the scientific progress started slowing we you know we mandated SE seat belts and you and then you mandate you know bicycle helmets and you mandate helmets when you're skiing and you know and so and um you know many ways like these things are good they protect people and stuff like that so how do you know like where to how far to go there there's some sort of like laugher curve of how far you go on the safetyism side right um yeah it's always it's always hard it's it's it's it's hard to articulate the you know the the kinds of places where it feels like we we've gone too far or where it's gotten hi you know it's sort of gotten hijacked by various rackets are I I think we've gone too far on the safety side with real estate where it's it's runaway nism y extremely strict zoning laws and I'm looking out of my window here in Los Angeles and it's all these Office Buildings that were built in the you know 60s 70s maybe 1980s are the most recent buildings I can't you know I I cannot see a single I can't see a single crane anywhere on the horizon it's just and that's that tells me we've gone way too far in something you know as relatively important as uh as real estate and then and then I I do think on the you know biomedical side um uh which is you know an area that I've thought about a lot you know and always think and it always strikes me we could be doing so much more there's there's so many approaches that seem seem quite promising and uh and then um it is uh yeah the the the the barriers are just very very high and I think we are you we're scared of the things that can go wrong but we're not scared enough of the things that will go wrong if we do nothing Stephen Pinker was recently on the podcast and one of his arguments that's probably most associated with him is the idea that we've been a broad positive trajectory since the Enlighten Enlightenment like where does your understanding of History diverge from Pinker well it's man there's so much I think is not quite right about it uh it's it's it's it's it's you certainly one one one part of the argument you know what I mean obviously there there's there's there ways that things are better than 250 years ago and you know when you know if George Washington had wooden teeth or something like that that seems that seems like at least one dimension of progress that uh we wouldn't want to go back to and I think you know one wouldn't want to go back 250 years or even a hundred years uh just in terms of a lot of quality of of of Life issues uh I think it's a somewhat trick Tri your question about the last 50 years so I you know I think something has has kind of hit the wall in the last 50 years um and that's you know that's more it's more ambiguous I think the um I think the specific Pinker argument that I find very incorrect is just that the world's gotten more and more peaceful and that uh that violence has gone down and I I always have this riff where you know he he's a psychology professor and he probably flunked chemistry what why went into a field like psy psy psychology and if you study chemistry or physics um you know there's this very basic thing that uh the total energy of a system is um the kinetic energy plus the potential energy and when you measure violence you're just measuring the kinetic energy you know how many bombs are being dropped yeah that's going down but the potential energy you know the number of nuclear bombs the ability you know the potential energy the potential destructiveness is way higher than it was 50 years ago and so um if if we if we look at that it tells us uh I'm I'm not sure that we should be should be completely complacent it's true that we're in this world where nuclear weapons have not been used since since 1945 I don't know why that's automatic you know if if the North Korean dictator does a video of a nuclear bomb new king the Golden Gate Bridge in San Francisco you know we treat this as a cartoon villain and I'm not sure how we're supposed to deal with but uh but I think I think I think we should be taking this stuff a little bit more seriously and uh and uh and that things are you know that these existential risks are very real and this is also where this is also where I'm you know I'm not uh I'm not a lite I don't think we can go back I don't think you can turn the clock back but uh I think there are sort of all these other dimensions of existential risk I think there's an AI dimension of existential risk that's uh you know where you know um you know I think La aers UD kowsky has gone kind of crazy but you know his arguments are not that bad and the people in Silicon Valley do not have great rebuttals to the uh existential risk of AI and there are you know and there are environmental issues not just climate change there's sort of a lot of different environmental Dimensions where there are you know there are serious existential risks and uh and we need to find some way to um to talk about them not just to minimize them like Pinker does you need to find a way to talk about them but uh but then not just shut everything down and is it the argument is partly what you're saying is that you know we could be at Turkey the first week of November or something and not know what's coming or as a society um sure well that's that that that's what that is that is what the existential risks argu that's what all those arguments tell you yeah and and again I I I think even something like even something like the the very strange nuclear deterrence thing it's like you maybe these nuclear weapons never get used um that's not the way nuclear deterrence was supposed to work was supposed to work you were supposed to think about them all the time and you're supposed to be scared and then you didn't use them and it sort of worked during Cold War from 1949 to '89 and and then the last you know 33 34 years it's sort of like we've just gotten psychologically exhausted from it we don't think about it any anymore but that's that's not really the theory of how this stuff is supposed to work and yeah maybe maybe the US president can't actually launch a nuclear weapon you know I think they I think you know I think JFK LBJ Nixon could I suspect um that if president Trump had said you know I want to push a nuclear button I'm annoyed at the election result I I don't think he could have actually done that but uh I'm not sure the nuclear weapons are completely unusable now you you've also pointed out that we've seen both a decline in religion and science in the US over the last 50 years and on the face of it you know one would think maybe just a that that these things were opposed but you you have some sort of belief that they're linked yeah I don't I don't know if I have a I have a I have a great theory on how they're linked but um C certainly um Let me let me say something about where what what I think has gone wrong with science with on the philosophy of science I always think the thing that's tricky about science is you're supposed to fight a two-front war against excessive dogmatism and against excessive skepticism if if you're too dogmatic you can't be scientific this is certainly um early modern science 17th 18th century you're fighting the excessive dogmatism of the Catholic church and or you know certain views of you know toic astronomy or they were sort of like and you needed and um and you know a scientist was someone who thought for themselves and uh and questioned excess dogmatism and then on the other hand you also cannot be overly skeptical as a scientist you know if I don't um if I don't um trust my census and if I think you might be um you know you you might not be who you appear to be or I can't um um I I can't uh you might be a demon or a uh image or something like that so it's cartisian humi skepticism there's some point where that's uh that's very bad for science so um uh you have to fight too much skepticism and you have to fight too much dogmatism and then somehow getting that balance right is um is pretty hard I would say that uh I would say the history of science when it when it worked was it was certainly more on the anti-dogmatic side and the anti-septic side was it was you know it was some of both um my you know my my sort of rough qualitative sense if we fast forward to 2023 is that it is um 100% anti- skepticism and so uh we are always fighting the people who are too skeptical the conspiracy theorists the people um uh the people who do not believe the vaccine works the people who are climate change Skeptics the vaccine Skeptics the stem cell Skeptics the Darwin Skeptics so it's all it's all fighting skepticism and then whereas if you asked um if you ask scientists where are where is science too dogmatic today give us some Fields where science is too dogmatic and less dogmatism um um would be would be good um I don't think they could say anything specific at all and um and that fact tells us that uh it has become you know it has become as dogmatic as the medieval church was um and uh and and then the only the only sort of anti-dogmatic characters are you maybe it's like a maybe it's in a children's science book where it's a little girl who's exploring the world and uh she is uh she's not dogmatic but that's you know it's it's in children's books we have the non-dogmatic scientists you know in grad school Labs or something like that where they're all regimented robots and we make sure that anyone who's uh even a little bit heterodox gets thrown off the overcrowded bus or something like that so that's that's sort of a that's sort of a model of what what has gone wrong with um with science and then maybe you know talk about religion say say the judeo-christian um part in particular um you know there's there's probably I I don't know sort of one of the maybe the biggest maybe the biggest thing you can talk about is God maybe God is the biggest thing there is and it's kind of a big difference whether or not God exists and um and uh and if we're in the society where where we want people to be uh um you know where we have we sort of um have peaceful coexistence by obscuring these big questions downplaying um big differences somehow the question of God's existence is is almost too big for us to debate and it's it's it's the kind of thing um that uh that we don't really want to have too vigorous debates about because it's just um we can't have differences that big and have a peaceful society and so there's there's sort of our yeah there's there's something there's probably something like it's not quite dogmatism but there's something about uh um the dogmatism of of things we've agreed not to talk about or to think about that probably are um you know maybe gets us peace but it's sort of I think it's at the at the price of not thinking about some of the most important things or uh or maybe at the price of something like a frontal labotomy for both the scientists and the uh and the religious people I mean 10 years ago most of the people I knew in the AI Community were militant atheists but today it seems most of them are creationists they they think we're in a simulation like why has that shifted well I I have a I have a lot of different theories on this um Let me Give two slightly different ones I I I always I well I think I think the new atheists which is like slightly different group of people but the Christopher Hitchens denet Dawkins that whole crowd in the early 2000s there's a Sam Harris and so on I I think they have somehow gone very out of fashion and um and the read I have on that is that uh what they were doing in 2005 new atheism was a politically correct way to be anti-muslim and so you were uh you know God was this bad violent being um and uh and there sort of ways you made it all purpose you attacked all the different religions but the the real Target was you know Isis assama Laden you know um you know all all the crazy Al-Qaeda all all these sort of uh crazy Islamic terrorist groups and but it was done sort of in a politically correct way where um it wasn't uh it was somewhat narrow but but that felt that felt like um an argument that was badly needed in 2005 when you fast forward to 2023 you know the big geopolitical challenge for the West is not you know is not 7th Century fundamentalist Islam it's something like xingping thought and the CCP and then um and then this is sort of well it's sort of like a borg it's kind of this consensus thing where everybody believes what everybody else believes and it's disturbing the structure of it not saying the content but the structure of it is disturbingly close to um the East Bay rationalists to uh to the sort of consensus scientific thinking and so the new atheists had some very powerful things to say against Bin Laden they don't have anything to say about uh why president G and the CCP are wrong and um and and so they are no longer relevant because they can't they can't even engage with you know our biggest geopolitical or intellectual social challenge uh that the West faces so that's that's sort of one one bigger pict question you know I think within you I think within the AI context there sort of you know the question about how this uh shift to the simulation uh theory of the universe happened is is a little bit un it's it's sort of a little bit strange you can you can you can always say that a simulation where the universe is not made of Adams but a bits was just a it was just a social um status game where the computer scientists were beating up on the physicists and the physics people like to deal with matter and energy and particles and then the computer science people like to deal with zeros and ones and bits and so um if we shift from a Multiverse to a simulation uh theory of the universe that's is somehow the computer science people um you know beating up on the on the physics people and you can think of it as inter departmental rivalry of sorts um the the another and I think these things can all be overdetermined another explanation I have for why the simulation thing became so powerful was that I think it was somehow uh deeply linked to the uh the AI safety question and uh and I think the rough you know the um the rough logic and it's not it's not airtight but the the the rough argument was that uh if we're in a Multiverse um and you you have you build this Ai and um it's very and then there's a question as you build AI AGI super intelligence you know will it be safe how can you trust it um will it be you know will it be friendly to humans and um and people are pretty optimistic about solving it but you know it was already obvious in the early 2000s there were some pretty big theoretical problems you know if it's um if it's smarter than you it might pretend to be friendly it might fool you it might not actually be friendly um if it's sort of a mellian or darwinian operator it's never going to be perfectly aligned with you it's um it's it's it's um its incentives may be Divergent from from those of human beings so if you sort of model it as a darwinian or Machiavellian actor it's it's very hard to get to perfect alignment so the the sort of um you know there was there was a decent amount of optimism about the AI problem generally because we were progressing in computers so you know it seems like we'll eventually get to AI AGI there's a certain logic to that but then the the friendly version of that seemed a lot harder for these theoretical reasons even in say 2005 and so if your picture of the universe is a Multiverse then um it's it's you know the AI or the AGI is in the future and um there is you know it it seems unlikely it'll be friendly and it's you know when the singularity arrives chances are we're all just going to die if you're in a simulation theory of the universe where the simulation was designed created by some super AGI being then in some sense the AGI is in the past and the compatibility of AGI with humans seemingly was already solved yeah and so if it's been if it was solved once it can be solved again and uh and and so there's a way that uh yeah there's a way that the simulation Theory worked as a as a partial solution to the the the very vexing friendliness alignment problem I don't think it's I think that's sort of roughly uh why as people as sort of Quasi psychological explanation I would give is as people were grasping with the uh the difficulty of building a friendly AI um they grabbed on to the simulation Theory as the uh as the you know everything's been solved already answer now going back to the science I've heard you say before that like when people name something science it's generally less scientific whether it's political science or social science Etc like how does that is that is that naming convention by itself also means science is help science progress less quickly [Music] um yeah well it's it's it's sort of well it's always a qu it's it's sort of if you're insecure enough that you have to call something science then um yeah it's sort of like the gentleman do protest too much or it's sort of like it's it's this thing that means the opposite I I I think I think you know I think a lot of adverbs always mean the opposite which is why you should be very careful to use them so it's like frankly honest ly you know vary means a little bit you know and so you should you know the general good editing technique is to to try to get rid of all all adverbs in your writing because they uh the default uh interpretation I has that they they often mean the exact opposite of what they say and there anyway and there's something like this with with science and uh and I think it's a it's a and certainly political science social science climate science um the strange one is a is in a way is computer science which was you know when I was an undergraduate at Stanford you know it was yeah it was it was the people who were not very good at e or math went into computer science and then um it was it was this it was much easier to get into than some of the other engineering you know and um and then um it had this inferiority complex and that's why the field uh um uh grabbed onto the science label yeah there's no it's not called math science or or something like that or math is just hard yeah um now the the the US federal government is now has 32 trillion or so in debt like how do you think that impacts the Investments the country needs to make or how concerned are you about it man it's it it seems it seems like a very big problem it's um you know it's it's odd how it sort of has crept up on us uh I I think for decades people were saying that you know at some point all the government debt would squeeze out money from the private sector that um you'd end up with you know more and more of the government budget would be just interest on the debt or interest on the interest there'd be some sort of runaway compounding people were already making uh this argument in the 1980s and it's sort of an anti-reagan um way and then and then somehow um the people who cried wolf it felt like they were wrong for for close to 40 years um and I think you know one of the reasons if if you sort of look at the history of why why was the debt able to grow and it seemingly didn't matter is that we had a um we also had a bull market in um in um in bonds and the interest rate steadily went down from you know something like 20% in the early 1980s to basically 0% after 2008 from 2008 to you know 2021 we had sort of this um a 13-year period or so of um with maybe small hiccup but most mostly just zero rates and in a zero rate world you you can add add to the debt and um and the interest payments um aren't that high and so the the annual cost of servicing the debt um in 2021 you was something like 1.6% of GDP whereas in 1991 it was 3.2% of GDP yep so so I think that's sort of my explanation for how this thing um and the interest rates were essentially significantly lower than GDP growth so you had that kind kind of going for us as well um sure but but but but at this point uh it it feels like finally some something broke we're you know no longer in a deflationary context uh um you know the interest rates have have spiked the inflation has spiked and uh I think we're heading for we're headed for a very very challenging decade and I worry that sort of a lot of these arguments people made for for 30 or 40 years have a lot of Truth to them and uh and uh that once you know once the rates are above zero you know it's uh um the crisis is here and we have to we have to figure it out Pro probably one other one other thing that both helped and hurt the United States was that uh was that uh we were the reserved currency for the world and so um you could run bigger deficits than a normal country could you could get away with it for longer and then um there's always a question whether whether you know at some point that that means you're in in a bigger hole in in in a in a crazier Place Vis things I'm I'm still you know so you know when I when I look at the US versus other countri the the the conundrum I'm I'm I'm very stuck by struck by is that there are all these challenges in the US and uh you know all these problems we face and then um and then it's very oddly still the case that um almost everything else seems worse and I I don't know if that makes it stable and this can continue but that's right is it is it just like relative matters um it's like the fastest person wins and even if we're much slower like it doesn't matter or or or is it the absolute matters we're still the most dynamic Society we're the place where the Innovations are still happening I'd like there to be more but it's it's it's it's it's it's it's striking how how how asymmetric it is I want one one metric I was looking at was uh uh companies uh started since 1990 that have Market capitalizations over 100 billion so brand new companies that have grown to being worth a hundred billion dollars or more there are 17 in the world um 11 are in the US six are in China zero everywhere else amazing and uh and so it's it's and then this is just the you know the extraordinary failure of of Europe all all these other places and uh and you know five five six years ago there was some complicated debate of the US versus China and uh you know if you were the CEO of one of these 17 companies um I mean you'd be so much so much rather be in the US than in China now we used to kind of sort Society Maybe by things like race or religion and today it seems much more like we're sorting by political ideology how does that affect society over time man I it's I don't I it's always so hard to to know exactly how these things how these things play out I I don't what I'm what I'm always struck by you know in some ways I think things are extremely polarized um in the US politically in some ways it always feels to me like um the differences aren't very big if if if we sort of think about all the topics we've talked about you know where are where are the Republicans and Democrats really really different on getting back to a faster Tech Innovation trajectory and do they have a meaningfully different plan for doing this or even something as prosaic as let's say reducing the deficit you know maybe maybe the Democrats are a little bit more taxes the Republicans are a little bit more spending cuts but um is either party is there a meaningful difference in how much they will reduce the deficit or some yeah or more housing or you just go down the list like they are pretty close together on all these things all the issues that we talked about today that I would argue are the truly important ones um I I I wonder whether the you know the extreme polarization you know hides the fact that there's you know so so little differences or it's you it's always the the the Shakespeare versus Karl Marx Karl Marx people fight each other because they're truly different in Shakespeare they fight each other because there are no differences at all and so it's like the opening line of Romeo and Juliet um you know two houses Al like and dignity the monu and the Capulet and they hate each other and they're these two families that you know aristocratic families but they have no there's no difference at all and that's that's sort of what uh you know I I don't think it's 100% Shakespeare but we're probably in a world that's you know 90% Shakespeare and maybe maybe 10% Marx there's been a lot of written about social mobility and decline in the US maybe since the the the time you're talking about since the 7s like is that happening is it is it a problem you know it's it's it's a problem I I think you know I think inequality is a problem I think the lack of social Mobility is a problem um I always anchor a little bit more on the stagnation generally and so I think if you know I don't know if if the GDP grew at 3% a year um and even if the inequality was big and it was hard for people to move from Blue Collar to White Collar jobs um I think everybody would be better off and so I I I I I'm always more on um more on this question of broad broad stagnation as the one as the one to focus and I I understand people always think that's just a cop out for you know a rich person to talk about but uh but I do think that uh if if we got 3% GDP growth these problems wouldn't be as important and if we have zero or you know 1% GDP growth um you know um um it's it these things will be very very hard to solve and it'll be very Zero Sum very contentious and probably won't be solved and the differences between let's say the 50th percentile and the you know the the the the 1 percentile in the US is hasn't grown that much but the difference between the 1 percentile and the 0.1 or the 0.01 percentile has grown quite a bit like is there some sort of recipe for problems because of that like the keeping up with the Joneses at the top [Music] um you know there are let me think what to say about it I don't I don't quite know but if you if you yeah if you say the I don't know you say the 50th to the 1% the 1% to the 0.001% is the middle class versus the Millionaires and then the millionaires versus the billionaires yeah and um and maybe um I don't know and then and then you can you can you can get to this into this very comp complicated tax policy debate on whether you know are our policies too nice to billionaires too nice to millionaires about right some something like this and um uh I I think um I think one way one way to describe the the the rough debate is that um um and the reason where I think it's sort of stuck I'll try to make this fairly neutral is I think I think the bli iones pay a lower tax rate than the millionaires the millionaires pay you know ordinary income tax you know 50% more of their income gets paid in tax in a place like California the billionaires it's let's say it's it's mostly capital gains taxes those can also be deferred you don't have to sell the stock right away maybe the effective tax rate for the billionaires is something like 15% five and um and so the millionaires can always say um it's unfair that the billionaires are paying you know a lower tax rate um but then if we if you were to look at this from a government point of view where let's say the government policy is to maximize revenues um it it um you can if you if you massively raise capital gains taxes people just won't sell the stock at all and um and the laer curve effect means that yeah maybe the billionaire wealth goes down the government collects less revenue and so I think were much closer to the maximum tax on billionaires whereas uh you know if you raise income taxes from 50 to 60 or 65% probably the the partners in law firms all those people will just work harder and so um and so that's kind of uh that's kind of the weird uh the weird policy conundrum uh the weird policy conundrum that we have you know my um my libertarian answer which is probably way outside the Overton window is that uh we should not have this regressive attack structure but um you just need to cut taxes massively on the middle class and the Millionaires and um and and that's how you get to a um non-regressive tax structure but uh if if you want if you want the government to collect more in revenues um you just need to make the structure more aggressive because the people who can pay are the middle upper middle class and millionaire people and so if you want a bigger government uh that collects more in revenues it should look like Western Europe where the marginal rates are about the same 50% on income California the 50% rate kicks in at a million dollars a year in Austria 50% kicks in at $70,000 a year and that's that's how you get to you know a um a more um a larger government you can do more redistribution but it has the effect of uh yeah reducing Mobility now I love your quote that courage is in shorter Supply than G genius is that new you think to our society or has that always been the case it's it's always it's always hard to to calibrate but I I there probably is my my my felt sense certainly is that there's um some degree to which you know I don't like the word contrarian but heterodox thinking thinking for oneself um you know uh not deferring to the wisdom of crowds things like that um is somehow has somehow gotten you know gotten harder to do and you know it's and um than it was in in our society 50 60 70 years ago you know there obviously are you know all these good and bad things about the internet but uh but certainly one you know one thing that's you know that's at least somewhat problematic somewhat troubling is that uh you know any anything that you put on the internet will stay there you know will stay there forever so you have to think really hard what kinds of ideas you're gonna you're GNA put out you know I start I started one of these uh conservative student newspapers at Stanford Stanford review back in 1987 and it was it was a wildly heterodox I maybe obnoxious you know maybe maybe mean cruel your point of view but you know it was people wrote crazy things in that paper and then um you can date the exact point when it moderated and became much less that way it was 2002 it's when they started posting the articles on the internet and people you know they they knew it's everything you write it it'll be with you for the rest of your life and you have to you have to dial it back accordingly now you're you're kind of well known for you know conspiracy theories in some ways like what what is a conspiracy that you believe that maybe people would be surprised that you believe look I I believe so many of them we um well I think I think there are there are a lot of things that you know I don't know if they're you know you you you can have you can have sort of sort of these emergent property as if conspiracy where you know it's not clear whether people fully know what they're doing but they're acting as if as if it's a as if it's a conspiracy um and uh I don't know um I I think one one category where very strange things happen are when you have a um when you have highly inelastic Goods where um you know you change the price by the quantity by 1% the price goes up 20% or something like this so the when the US government settled with the tobacco companies in the late 1990s um it effect calized the industry and then uh the government and the tobacco companies were on the side of massively raising prices and then it went from them being these terrible things to this major source of tax revenue and uh these uh these monopolies that just printed money like like crazy because no nobody was not part of the settlement could sell tobacco so it was sort of had this uh strange carzing effect and um and i' I've been wondering whether there's sort of an ESG explanation of the U major oil companies where if we take if we take the uh the oil Majors let's say and oil again has this feature where if you increase um if you decrease supply of oil by 1% price goes up 10% so it has highly inelastic features 100 million barrels a day take a million barrels offline prices go up $10 a barrel from you know 80 to 90 or something like that 10 10 something like that and so and then this is this is sort of the intuition behind the OPEC cartel but but now if you take the uh the major Western Oil Company shell Exxon Mobile Chevron um BP um and if all the CEOs got together in a room and said you know we are all going to cut our oil production by 30% and then the prices will go up by more than that and our profits are going to go way up um and we're in effect going to collude with OPEC and extend the OPEC cartel to all these companies um and uh you know that would be a I don't know that would be a prima fascia violation of section two of the Sherman Act and all these people would go to jail um for antitrust violations but if instead of doing that um each of them hires um an ESG consultant who tells them that they should take half their profits and invest them in solar panels and windmills um don't you get the same result especially if the solar pounds and windmills don't really work like um and so um and so now I don't I I I I don't know if I believe the full conspiracy theory ver this where ESG is was you have to think of it as a iracy by the oil and gas companies to raise prices but uh but the effective truth of it is is that as as the companies leaned into ESG policies um even though this the specifics have had a very mixed track record their share prices have gone up their profits have gone up and uh the market feedback has been to encourage them to do more of it whether they understand that it's working for this precise reason or not this has been really interesting last question we ask all of our guests what conventional wisdom or advice do you think is generally bad advice and I think almost all of it is because I don't know I don't know where to start I don't know where to start it's it's it's just uh it's just the real advice is it's I I just don't believe you're sort of in this one-size fits-all cookie cutter thing where everybody needs to do the same thing or you know if there's some conventional advice that works for everybody the fact that everyone's given it is not differentiating and and uh and you know you know I'm not interested in things that are Timeless Eternal truths I'm interested in figuring out things that are one time you know World historical what what what what is it that makes sense for me or you to do in 2023 right here right now and uh and um and that's that's that's that's um and that's where you know what whatever conventional bromides you you get are are never targeted for that so it's it's all just to push back like on the these Timeless internal truths like there are some that are probably extremely important and recognizing those as a society or what you you would think would be important or you don't agree uh yeah but I think I think I think the the things that that that uh that matter and that we should be thinking about are you know it's it's it's it's what's different about our time what are what are the thing yeah I I don't know you know it's probably not a good idea to go around killing people but but uh but um but I don't think that gets you very far in terms of coming up with a good plan for your life yeah yeah all this has been amazing uh thank you Peter teal for joining us world of Das I'm I'm a huge fan so thank you again for for joining us awesome all right Orin be [Music] well",
+  "segments": [
+    {
+      "start": 0.04,
+      "end": 3.12,
+      "text": "we've you know resulted in a society \nthat was locked down not just during  "
+    },
+    {
+      "start": 3.12,
+      "end": 8.440000000000001,
+      "text": "Co but we've been in a soft lockdown for for \nsomething like 50 years we now have the start  "
+    },
+    {
+      "start": 8.44,
+      "end": 13.959999999999999,
+      "text": "of some sort of real AI wave it's probably a \nbreakthrough that's on par with the internet"
+    },
+    {
+      "start": 13.96,
+      "end": 21.28,
+      "text": "itself hello fellow data nerds my guest today \nis Peter teal Peter was the co-founder and CEO  "
+    },
+    {
+      "start": 21.28,
+      "end": 27.12,
+      "text": "of PayPal first investor in Facebook co-founder \nof paler he's also the founder managing partner  "
+    },
+    {
+      "start": 27.12,
+      "end": 31.16,
+      "text": "of Founders fund and the author of zero to one \nwhich I think is one of the best business books  "
+    },
+    {
+      "start": 31.16,
+      "end": 36.64,
+      "text": "ever written Peter welcome to World of Des thanks \nfor having me Orin now when starting a company how  "
+    },
+    {
+      "start": 36.64,
+      "end": 43.6,
+      "text": "important is total addressable Market well it \nis uh it is it is uh it is always a necessary  "
+    },
+    {
+      "start": 43.6,
+      "end": 50.24,
+      "text": "component uh if there's no Market at all that's \nthat's pretty pretty bad um but uh but there also  "
+    },
+    {
+      "start": 50.24,
+      "end": 57.760000000000005,
+      "text": "are probably ways people can overstress on on \nsomething like uh like Tam and uh and I always  "
+    },
+    {
+      "start": 57.76,
+      "end": 64.56,
+      "text": "think that if you have a tam that's too big um \nyou know it obviously OBC hates other questions  "
+    },
+    {
+      "start": 64.56,
+      "end": 68.76,
+      "text": "which may be more important if you have a very \nbig total addressable Market you probably have  "
+    },
+    {
+      "start": 68.76,
+      "end": 76.4,
+      "text": "a lot of competition and uh and then um and then \num it that that that may create bigger challenges  "
+    },
+    {
+      "start": 76.4,
+      "end": 81.96000000000001,
+      "text": "than you know um than having a a small Market or \nsome something like that so I don't know the the  "
+    },
+    {
+      "start": 81.96,
+      "end": 87.44,
+      "text": "restaurant business has an enormous T and it's \na terrible business to go into you know I think  "
+    },
+    {
+      "start": 87.44,
+      "end": 93.28,
+      "text": "a a lot of the energy business functions in a \nnearly commodified way which is why it tends  "
+    },
+    {
+      "start": 93.28,
+      "end": 99.44,
+      "text": "to be business that's very hard for startups to uh \nto find a really differentiated Niche so I I often  "
+    },
+    {
+      "start": 99.44,
+      "end": 107.24,
+      "text": "think the uh you know the best uh Tam narratives \nare ones where you have a you know have some sort  "
+    },
+    {
+      "start": 107.24,
+      "end": 114.08,
+      "text": "of tight fairly narrow Tam for the initial market \nand then there's some kind of expansion capability  "
+    },
+    {
+      "start": 114.08,
+      "end": 122.96,
+      "text": "for when PayPal launched uh you know our initial \nTam where power sell on eBay was like 20,000 or so  "
+    },
+    {
+      "start": 122.96,
+      "end": 131.56,
+      "text": "people in early 2000 and we got to 30 40% market \nshare in about uh three months and then you know  "
+    },
+    {
+      "start": 131.56,
+      "end": 137.2,
+      "text": "in a sense it was a tiny Tam but you could get uh \nyou could get a foothold and you sort of build a  "
+    },
+    {
+      "start": 137.2,
+      "end": 142.88,
+      "text": "fortress there and then uh from that base expand \nand that's and how do you know if you if there's  "
+    },
+    {
+      "start": 142.88,
+      "end": 148.28,
+      "text": "a way to expand from that base is that just based \non how talented the team is is that based on like  "
+    },
+    {
+      "start": 148.28,
+      "end": 155.4,
+      "text": "okay how important that that base or that Center \nPoint is well um there all there all sorts of  "
+    },
+    {
+      "start": 155.4,
+      "end": 160.76000000000002,
+      "text": "intuition in in a payments context uh that there \nwould be all these payments people make on eBay  "
+    },
+    {
+      "start": 160.76,
+      "end": 166.2,
+      "text": "off eBay eBay itself was growing um we would \ngain share on eBay so there were sort of a lot  "
+    },
+    {
+      "start": 166.2,
+      "end": 173.95999999999998,
+      "text": "of natural ways to uh to expand from it uh in the \ncase of PayPal you know it it it felt at the end  "
+    },
+    {
+      "start": 173.96,
+      "end": 180.24,
+      "text": "of the day like it was hard to radically expand \nBeyond eBay and so in 2002 we sold the company to  "
+    },
+    {
+      "start": 180.24,
+      "end": 187.04000000000002,
+      "text": "to to eBay so it was uh it was a it was a very \npowerful initial T it had a lot of expansion  "
+    },
+    {
+      "start": 187.04,
+      "end": 193.32,
+      "text": "capability but then uh crossing the chasm to the \noff eBay Market turned out to be quite hard to do  "
+    },
+    {
+      "start": 193.32,
+      "end": 200.48,
+      "text": "and so uh so then that that in in the context of \nPayPal it probably got us to an m&a exit when you  "
+    },
+    {
+      "start": 200.48,
+      "end": 205.48,
+      "text": "think of um like creating monopolies kind of \nvery important how do you think about that in  "
+    },
+    {
+      "start": 205.48,
+      "end": 210.23999999999998,
+      "text": "relationship to like the Venture Capital context \nlike outside of Y combinator it doesn't see it  "
+    },
+    {
+      "start": 210.24,
+      "end": 216.48000000000002,
+      "text": "seems like the rest of the VC world is super \ncompetitive well uh yeah I always I always think  "
+    },
+    {
+      "start": 216.48,
+      "end": 221.76,
+      "text": "that uh if you think about monopolies or Moes or \nbusinesses with margins you can always think of  "
+    },
+    {
+      "start": 221.76,
+      "end": 226.64,
+      "text": "a layer one which is the companies themselves \nand then you know second layer is the uh the  "
+    },
+    {
+      "start": 226.64,
+      "end": 234.23999999999998,
+      "text": "financial investor layer and uh and ideally you \nknow as a VC you want to invest in companies that  "
+    },
+    {
+      "start": 234.24,
+      "end": 240.36,
+      "text": "um that are unique that don't have uh you know \ntoo much uh competition nature red red and tooth  "
+    },
+    {
+      "start": 240.36,
+      "end": 245.8,
+      "text": "and Claw but you also don't want to be competing \ntoo much with other VCS and so uh I don't know  "
+    },
+    {
+      "start": 245.8,
+      "end": 250.56,
+      "text": "you can analyze it in much the same way as as \ncompanies you know the you know sort of what are  "
+    },
+    {
+      "start": 250.56,
+      "end": 256.92,
+      "text": "the kinds of monopolies they're driven by brand \nby Network effect uh sometimes by economies of  "
+    },
+    {
+      "start": 256.92,
+      "end": 263.44,
+      "text": "scale uh sometimes by by unique technology and the \nquestion is are there you know are there analogous  "
+    },
+    {
+      "start": 263.44,
+      "end": 271,
+      "text": "things uh like that for for Venture Capital firms \nwhere there's some combination of a brand Founders  "
+    },
+    {
+      "start": 271,
+      "end": 276.12,
+      "text": "fund had a brand where we are founder friendly we \nwe started companies ourselves around the side of  "
+    },
+    {
+      "start": 276.12,
+      "end": 282.52,
+      "text": "the founder that was a very differentiating brand \nand we started back in 2005 fast forward to 2023  "
+    },
+    {
+      "start": 282.52,
+      "end": 286.52,
+      "text": "lots of other people are saying it and so maybe \nmaybe it's a little bit more cluttered you have  "
+    },
+    {
+      "start": 286.52,
+      "end": 291.88,
+      "text": "sort of try to assess that there obviously are \nnetwork effects where your you're Network to some  "
+    },
+    {
+      "start": 291.88,
+      "end": 297.08,
+      "text": "companies and that gives you some sort of idios \nsyncratic deal flow um but then I think uh yeah I  "
+    },
+    {
+      "start": 297.08,
+      "end": 303.24,
+      "text": "think I think uh in practice uh it has to often be \njust reinvented on a on a deal by deal basis and  "
+    },
+    {
+      "start": 303.24,
+      "end": 308.12,
+      "text": "uh you know the poker analogy I always like to use \nthat you know when you're you you you know when  "
+    },
+    {
+      "start": 308.12,
+      "end": 313.4,
+      "text": "you're investing in a company it's always what do \nwe understand about this that other investors do  "
+    },
+    {
+      "start": 313.4,
+      "end": 319.64,
+      "text": "not understand and um if you don't know the answer \nto the question then you're the sucker you're the  "
+    },
+    {
+      "start": 319.64,
+      "end": 324.36,
+      "text": "sucker yeah it's like the poker one where you \nknow you have to figure out who who who's the  "
+    },
+    {
+      "start": 324.36,
+      "end": 331.16,
+      "text": "who's the Mark here at the table and if you can't \nfigure it out it's you now uh a decade ago you  "
+    },
+    {
+      "start": 331.16,
+      "end": 336.36,
+      "text": "were definitely one of the first people to call \nout that science wasn't progressing as fast as it  "
+    },
+    {
+      "start": 336.36,
+      "end": 341.96000000000004,
+      "text": "had in the past how has that paired in the last 10 \nyears since since you've kind of been famous for  "
+    },
+    {
+      "start": 341.96,
+      "end": 347.12,
+      "text": "making their statements yeah I think I I started \nuh talking about the tech stagnation probably  "
+    },
+    {
+      "start": 347.12,
+      "end": 355.04,
+      "text": "around two 2008 uh and okay earlier and and the \nclaim is that it's been uh it's been it's been  "
+    },
+    {
+      "start": 355.04,
+      "end": 361.32,
+      "text": "slow for uh at this point running on five decades \nsince since really since the 1970s that we've had  "
+    },
+    {
+      "start": 361.32,
+      "end": 368.15999999999997,
+      "text": "a limited innovation in the world of Adams um you \nknow when I was undergraduate stord the late 1980s  "
+    },
+    {
+      "start": 368.16,
+      "end": 373,
+      "text": "uh it was a mistake to major in anything having \nto do with Adams mechanical engineering chemical  "
+    },
+    {
+      "start": 373,
+      "end": 378.6,
+      "text": "engineering nuclear engineering AER asward \nterrible decisions and then the only thing that  "
+    },
+    {
+      "start": 378.6,
+      "end": 385.76000000000005,
+      "text": "really worked were uh were were uh the world of \nbits computers internet mobile internet software  "
+    },
+    {
+      "start": 385.76,
+      "end": 391.44,
+      "text": "um you know to some extent electrical engineering \nwas still okay but but really computer science was  "
+    },
+    {
+      "start": 391.44,
+      "end": 397.04,
+      "text": "was the one place where there continued to be this \ncone of progress y around computers now we can  "
+    },
+    {
+      "start": 397.04,
+      "end": 404.76000000000005,
+      "text": "debate you know how big that was it certainly was \nvery very unb unbalanced and it certainly um you  "
+    },
+    {
+      "start": 404.76,
+      "end": 412.48,
+      "text": "know I think it led to some great companies it's \nuh debatable how much it improved the GDP relative  "
+    },
+    {
+      "start": 412.48,
+      "end": 417.72,
+      "text": "to um to what what you know what we've seen say \nin the first half of the 20th century in in the  "
+    },
+    {
+      "start": 417.72,
+      "end": 423.6,
+      "text": "United States or the other developed country so I \nyes so IO I broadly think that we've had this uh  "
+    },
+    {
+      "start": 423.6,
+      "end": 429.96000000000004,
+      "text": "broad uh stagnation in technology and science for \nfor something on the order of 50 years and is the  "
+    },
+    {
+      "start": 429.96,
+      "end": 435.47999999999996,
+      "text": "stagnation accelerating is the is it decelerating \nand now there's new W like how where do you feel  "
+    },
+    {
+      "start": 435.48,
+      "end": 446.40000000000003,
+      "text": "we are in that stagnation um uh Continuum you know \nI I think I think in some ways we are roughly we  "
+    },
+    {
+      "start": 446.4,
+      "end": 454.79999999999995,
+      "text": "are roughly in the same place we've we've been \nwe've been um for the last quarter Century where  "
+    },
+    {
+      "start": 454.8,
+      "end": 461.28000000000003,
+      "text": "it's um it is uh there's there's a decent amount \nof progress in the world of bits um we had an  "
+    },
+    {
+      "start": 461.28,
+      "end": 468.55999999999995,
+      "text": "enormous internet wave in the you know in the late \n90s maybe maybe you know the late 90s were early  "
+    },
+    {
+      "start": 468.56,
+      "end": 475.64,
+      "text": "maybe we're now late in the internet but that was \nthat was a giant uh thing in in computers and uh  "
+    },
+    {
+      "start": 475.64,
+      "end": 480.28,
+      "text": "and we now have you know the start of you know \nsome sort of real AI way even though it's been  "
+    },
+    {
+      "start": 480.28,
+      "end": 487.67999999999995,
+      "text": "talked about you know some ways for decades but I \nthink uh I think the llms chat GPT you know it's  "
+    },
+    {
+      "start": 487.68,
+      "end": 493.56,
+      "text": "it's probably a breakthrough that's you know I \nwould I would rank as on par with the internet  "
+    },
+    {
+      "start": 493.56,
+      "end": 500.24,
+      "text": "itself it's it is it is very big and so I think \nI think in this world of computers we we can say  "
+    },
+    {
+      "start": 500.24,
+      "end": 507.40000000000003,
+      "text": "that uh you know the the progress is continuing \nat you know and fits and starts but you know at  "
+    },
+    {
+      "start": 507.4,
+      "end": 513.9599999999999,
+      "text": "at still a pretty a pretty decent pace and \nthen um it's everything else that's uh been  "
+    },
+    {
+      "start": 513.96,
+      "end": 522.5600000000001,
+      "text": "much slower much harder to invest in you know much \nharder for uh um yeah much uh much much less than  "
+    },
+    {
+      "start": 522.56,
+      "end": 528.1199999999999,
+      "text": "advertising much further from the science fiction \nfuture of the Jetson you made an argument in your  "
+    },
+    {
+      "start": 528.12,
+      "end": 533.32,
+      "text": "piece on the new Criterion that kind of wokeness \nis that smok screen for the lack of scientific  "
+    },
+    {
+      "start": 533.32,
+      "end": 539.24,
+      "text": "progress can you unpack that a bit well there's \nthere's a lot uh it was it was sort of an anti-  "
+    },
+    {
+      "start": 539.24,
+      "end": 545.36,
+      "text": "woke an anti- anti-woke argument I was making \nwhere uh where uh you know I think there endless  "
+    },
+    {
+      "start": 545.36,
+      "end": 552.04,
+      "text": "debates we can have about Dei wokeness political \ncorrectness multiculturalism all these topics and  "
+    },
+    {
+      "start": 552.04,
+      "end": 558.76,
+      "text": "on some level I think they're important you know \non some level um you know uh I would advocate for  "
+    },
+    {
+      "start": 558.76,
+      "end": 564.72,
+      "text": "certain certain uh certain views views on them and \nI think the debates are important to have and then  "
+    },
+    {
+      "start": 564.72,
+      "end": 571.1600000000001,
+      "text": "on on another level I I I've come to worry that \nuh so many of these debates are distractions it's  "
+    },
+    {
+      "start": 571.16,
+      "end": 577.6,
+      "text": "like a magic show where we're being hypnotized \nand we're paying attention to to it to a certain  "
+    },
+    {
+      "start": 577.6,
+      "end": 583.6,
+      "text": "debate we're not seeing the the man in the orange \nmonkey suit jumping on the back something like  "
+    },
+    {
+      "start": 583.6,
+      "end": 591.48,
+      "text": "this and uh and that uh diversity is a diversion \nfrom more important things and the more important  "
+    },
+    {
+      "start": 591.48,
+      "end": 598.44,
+      "text": "things can be questions of Economics questions \nof Science question of religion you know maybe  "
+    },
+    {
+      "start": 598.44,
+      "end": 604.44,
+      "text": "even other other political issues you know the \neconomics one just to Rattle down the list real  "
+    },
+    {
+      "start": 604.44,
+      "end": 613,
+      "text": "quick the economics one is is just uh you know \ncultural Marxism um the Marxist critique of  "
+    },
+    {
+      "start": 613,
+      "end": 618.2,
+      "text": "cultural Marxism is that it people to when they \nwhen they when they started focusing on race  "
+    },
+    {
+      "start": 618.2,
+      "end": 624.32,
+      "text": "and gender they forgot about class they forgot \nabout the real economics and uh and and then this  "
+    },
+    {
+      "start": 624.32,
+      "end": 630.2,
+      "text": "probably there's a Marxist or libertarian critique \nwhere you could say that uh um you know uh we've  "
+    },
+    {
+      "start": 630.2,
+      "end": 635.5200000000001,
+      "text": "had just runaway housing prices and that's the \nthat's the real problem we should be figuring out  "
+    },
+    {
+      "start": 635.52,
+      "end": 641.4399999999999,
+      "text": "how to build more affordable housing and uh and \nthat um and that as long as we're talking about  "
+    },
+    {
+      "start": 641.44,
+      "end": 646.2,
+      "text": "these other categories um you know we're not even \ngoing to be wrong not even going to be in the zone  "
+    },
+    {
+      "start": 646.2,
+      "end": 652.44,
+      "text": "of dealing with that problem and it used it used \nto be that like the downtrod and we agitating for  "
+    },
+    {
+      "start": 652.44,
+      "end": 658.2,
+      "text": "maybe better wages or better working conditions \num now it seems like some of these movements are  "
+    },
+    {
+      "start": 658.2,
+      "end": 662,
+      "text": "things about things that are other than economic \ncould be some of the things you mentioned or the  "
+    },
+    {
+      "start": 662,
+      "end": 667,
+      "text": "environment well you know is that is that also \na smokes screen I don't know if it's you know  "
+    },
+    {
+      "start": 667,
+      "end": 670.6,
+      "text": "I don't know how conspiratorial you would get \nthere's yeah there's a Marxist conspiracy theory  "
+    },
+    {
+      "start": 670.6,
+      "end": 677.16,
+      "text": "of History where it was wokeness was a conspiracy \nby the by the corporations to divide the workers  "
+    },
+    {
+      "start": 677.16,
+      "end": 682.16,
+      "text": "into race and gender and uh pay them less and \nI think there are I think there are various  "
+    },
+    {
+      "start": 682.16,
+      "end": 687.56,
+      "text": "companies that um you know executed on something \nlike that plan you know moderately well there's  "
+    },
+    {
+      "start": 687.56,
+      "end": 691.7199999999999,
+      "text": "you know Walmart in the in the the 2000s was in \nalways in the dogghouse because he wasn't paying  "
+    },
+    {
+      "start": 691.72,
+      "end": 696.96,
+      "text": "its workers enough and they came up with the idea \nof rebranding themselves as a green Corporation  "
+    },
+    {
+      "start": 696.96,
+      "end": 703.4000000000001,
+      "text": "and that sort of split the um uh the left-wing \nanti-walmart Alliance and then in effect um it  "
+    },
+    {
+      "start": 703.4,
+      "end": 708.6,
+      "text": "was cheaper to do a little bit of green stuff then \nto pay the workers more and it was sort of a uh it  "
+    },
+    {
+      "start": 708.6,
+      "end": 714.5600000000001,
+      "text": "was probably good for the Walmart shareholders \nand uh and and then was also um you know in some  "
+    },
+    {
+      "start": 714.56,
+      "end": 719.3599999999999,
+      "text": "ways uh didn't uh didn't really address some of \nthese underlying economic challenges and I think  "
+    },
+    {
+      "start": 719.36,
+      "end": 724.5600000000001,
+      "text": "I suspect there's something like that that's also \ngone on with uh with the the question of science  "
+    },
+    {
+      "start": 724.56,
+      "end": 730.5999999999999,
+      "text": "has been has been very obscured and uh and so \nthat the you know if if you think of in in the  "
+    },
+    {
+      "start": 730.6,
+      "end": 737,
+      "text": "context of the universities or the schools the \nwokeness tends to be focused on the derangements  "
+    },
+    {
+      "start": 737,
+      "end": 744.52,
+      "text": "of the humanities curricula and English or \nhistory or topics like that whereas uh whereas  "
+    },
+    {
+      "start": 744.52,
+      "end": 750.24,
+      "text": "if the thing that's really wrong is that um the \nscientists aren't making any progress they're  "
+    },
+    {
+      "start": 750.24,
+      "end": 755.6800000000001,
+      "text": "not inventing new things you know it's it's all \nsort of this uh corrupt peer- reviewed research  "
+    },
+    {
+      "start": 755.68,
+      "end": 762.8,
+      "text": "it's incrementalism it's sort of a uh it's a \nstagnant malthusian sociopathic institution  "
+    },
+    {
+      "start": 762.8,
+      "end": 769.16,
+      "text": "and uh and and to the extent The Sciences are the \nhumanities are distracting us from The Sciences  "
+    },
+    {
+      "start": 769.16,
+      "end": 773.36,
+      "text": "you know we're not even paying attention to you \nknow I'd be fine with a little bit of wokness if  "
+    },
+    {
+      "start": 773.36,
+      "end": 780.76,
+      "text": "we were finding a cure for dementia doing other \nthings like that and and is there is there is  "
+    },
+    {
+      "start": 780.76,
+      "end": 786.28,
+      "text": "there some sort of structural reason why like \nscience is not progressing fast enough is there  "
+    },
+    {
+      "start": 786.28,
+      "end": 793.1999999999999,
+      "text": "something like we can or is it just like all \nthese 1% things that all add up you know the I  "
+    },
+    {
+      "start": 793.2,
+      "end": 799.6,
+      "text": "I always think why questions are difficult they're \nthey're somewhat overdetermined um there C there  "
+    },
+    {
+      "start": 799.6,
+      "end": 806.48,
+      "text": "certainly is there probably is some effect where \ncertain Fields have um you know the easy things  "
+    },
+    {
+      "start": 806.48,
+      "end": 811.28,
+      "text": "have been found and it's hard to find new things \nit's probably very hard to find a new element  "
+    },
+    {
+      "start": 811.28,
+      "end": 816.52,
+      "text": "on the periodic table it's you know or it's hard \nto I don't know you're not going to find be like  "
+    },
+    {
+      "start": 816.52,
+      "end": 821.4399999999999,
+      "text": "Christopher Columbus and find a new continent on \non this planet so that you know certain certain  "
+    },
+    {
+      "start": 821.44,
+      "end": 830.5600000000001,
+      "text": "Fields get closed and get fully developed over \ntime um but I I'm um but I'm on the whole more  "
+    },
+    {
+      "start": 830.56,
+      "end": 836.64,
+      "text": "inclined to sort of cultural explanations that \nit's not that nature um has run out of things  "
+    },
+    {
+      "start": 836.64,
+      "end": 842.12,
+      "text": "for us but that there's something that's changed \nin our culture we've become too risk averse that  "
+    },
+    {
+      "start": 842.12,
+      "end": 851.76,
+      "text": "uh things have gotten bureaucratized um um that \nuh you know I think one one one dimension that  "
+    },
+    {
+      "start": 851.76,
+      "end": 858.08,
+      "text": "I I I I do think is a fairly important one in the \n20th century is that um there was a great deal of  "
+    },
+    {
+      "start": 858.08,
+      "end": 865.84,
+      "text": "science and technology that was used in this sort \nof um in this sort of uh military context and you  "
+    },
+    {
+      "start": 865.84,
+      "end": 871.8000000000001,
+      "text": "know at some point you know the scientists the \nengineers are just building more powerful and more  "
+    },
+    {
+      "start": 871.8,
+      "end": 877.92,
+      "text": "dangerous weapon systems and you know already I \nthink World War I it's all this Carnage it's it's  "
+    },
+    {
+      "start": 877.92,
+      "end": 885,
+      "text": "sort of a ambiguous is all the science really um \nmore good than bad for Humanity and then certainly  "
+    },
+    {
+      "start": 885,
+      "end": 892.32,
+      "text": "1945 with Los Alamos and Hiroshima it somehow um \nI I think tilts us into a somewhat somewhat darker  "
+    },
+    {
+      "start": 892.32,
+      "end": 897.5200000000001,
+      "text": "Direction and and uh there's there's something \nabout the history of nuclear weapons where uh in  "
+    },
+    {
+      "start": 897.52,
+      "end": 902.4399999999999,
+      "text": "my telling it it's a sort of delayed response it \ntakes something like a quarter of a century for it  "
+    },
+    {
+      "start": 902.44,
+      "end": 909.48,
+      "text": "to fully sink in but by by by by the early 1970s \nit's like we can destroy the world 20 times over  "
+    },
+    {
+      "start": 909.48,
+      "end": 914.88,
+      "text": "what are we doing does this make any sense and \nthen you know maybe we shouldn't be funding the  "
+    },
+    {
+      "start": 914.88,
+      "end": 919.52,
+      "text": "smartest physicists to build bigger bombs maybe \nwe shouldn't be funding any of the scientists  "
+    },
+    {
+      "start": 919.52,
+      "end": 925.52,
+      "text": "maybe they all need to be regulated um and uh and \nit's kind of sad for these people to be you know  "
+    },
+    {
+      "start": 925.52,
+      "end": 931.56,
+      "text": "puttering around lots of Grant applications and \nfilling out all sorts of Dei forms but uh maybe  "
+    },
+    {
+      "start": 931.56,
+      "end": 935.5999999999999,
+      "text": "that's the price you have to pay to stop them \nfrom blowing up the world and it does seem like  "
+    },
+    {
+      "start": 935.6,
+      "end": 940.84,
+      "text": "it some of this correlates with just like the moon \nlanding like which is this like incredible feat  "
+    },
+    {
+      "start": 940.84,
+      "end": 946.6,
+      "text": "and then it just seems like things started to slow \ndown like right around that time um is there is  "
+    },
+    {
+      "start": 946.6,
+      "end": 950.6800000000001,
+      "text": "there something that is there something in the \npsyche like oh like it's kind of like mission  "
+    },
+    {
+      "start": 950.68,
+      "end": 955.0799999999999,
+      "text": "accomplished like we can we can just slow down \nhistory is complicated there were a lot of things  "
+    },
+    {
+      "start": 955.08,
+      "end": 962.2800000000001,
+      "text": "that happened but I think um I think there was um \nthere it was possible to accelerate Science and  "
+    },
+    {
+      "start": 962.28,
+      "end": 968.16,
+      "text": "Tech through centralization and government funding \nso even even the the Manhattan Project uh you know  "
+    },
+    {
+      "start": 968.16,
+      "end": 974.48,
+      "text": "the the New York Times editorial a week after \nHiroshima something like you know hope you know  "
+    },
+    {
+      "start": 974.48,
+      "end": 979.48,
+      "text": "if you left this to Primadonna scientists who were \ndecentralized sort of an anti-libertarian argument  "
+    },
+    {
+      "start": 979.48,
+      "end": 983.16,
+      "text": "it would take them half a century to come up with \nDevice instead the Army was just telling people  "
+    },
+    {
+      "start": 983.16,
+      "end": 987.8,
+      "text": "what to do it organized the scientists they they \nwere able to bring this invention in three and a  "
+    },
+    {
+      "start": 987.8,
+      "end": 994.92,
+      "text": "half short years the world and then um and then \nin a way you were able to repeat this sort of  "
+    },
+    {
+      "start": 994.92,
+      "end": 1003.36,
+      "text": "centralized coordinated you know pouring in lots \nof money approach um with with the Apollo program  "
+    },
+    {
+      "start": 1003.36,
+      "end": 1010.36,
+      "text": "and you know uh Kennedy early 60s gives us the \nspeech and by the end of the decade we we have we  "
+    },
+    {
+      "start": 1010.36,
+      "end": 1017.96,
+      "text": "have a man on the moon um but then I think uh the \nlonger term cost was that you created these these  "
+    },
+    {
+      "start": 1017.96,
+      "end": 1024.88,
+      "text": "very large large bureaucratic institutions um you \nno longer had the innovations that were coming in  "
+    },
+    {
+      "start": 1024.88,
+      "end": 1031.48,
+      "text": "that you could then scale and uh and somehow um \nit became politicized and and it it slowed down  "
+    },
+    {
+      "start": 1031.48,
+      "end": 1037.4,
+      "text": "a lot so there was some I don't know I'm not \nsure fan bargain but some kind of a tradeoff  "
+    },
+    {
+      "start": 1037.4,
+      "end": 1043,
+      "text": "between you could accelerate one time but then \nuh then you get a scientific it's like like in  "
+    },
+    {
+      "start": 1043,
+      "end": 1050.04,
+      "text": "agriculture you can increase food production by \nhaving some some monoculture but then over time  "
+    },
+    {
+      "start": 1050.04,
+      "end": 1055.12,
+      "text": "it's uh it's probably not the healthiest um not \nthe healthiest ecosystem when you're dealing with  "
+    },
+    {
+      "start": 1055.12,
+      "end": 1060.8,
+      "text": "Adams like there's a lot of safety problems and if \nyou think of that even do you think of early NASA  "
+    },
+    {
+      "start": 1060.8,
+      "end": 1067.1599999999999,
+      "text": "there's a lot of people that died there's a lot \nof even test pilots on the side doing stuff um and  "
+    },
+    {
+      "start": 1067.16,
+      "end": 1074.64,
+      "text": "is that like safetyism has that come into kind of \nslow Innovation um sure I mean it was uh you know  "
+    },
+    {
+      "start": 1074.64,
+      "end": 1082.5600000000002,
+      "text": "I think Yuri gagar and the first uh the first uh \nCosmonaut who circled the Earth uh six seven years  "
+    },
+    {
+      "start": 1082.56,
+      "end": 1089.1599999999999,
+      "text": "maybe a decade later died in some test fight test \npilot so yeah you know so it's so yeah there was  "
+    },
+    {
+      "start": 1089.16,
+      "end": 1098.52,
+      "text": "there was there was sort of a crazy amount of \nof of risk taking and um you know without yeah  "
+    },
+    {
+      "start": 1098.52,
+      "end": 1104.08,
+      "text": "without making any judgments about it I I would I \nwould say that uh yeah we there was something that  "
+    },
+    {
+      "start": 1104.08,
+      "end": 1112.48,
+      "text": "shifted away from that it just felt too dangerous \nand um it was too much risk of nuclear war it was  "
+    },
+    {
+      "start": 1112.48,
+      "end": 1119.52,
+      "text": "too much risk of environmental degradation there \nwere just too many crazy things people people felt  "
+    },
+    {
+      "start": 1119.52,
+      "end": 1126.52,
+      "text": "uh could happen and uh I I don't I don't I don't \nwant to dismiss these existential risks but I I I  "
+    },
+    {
+      "start": 1126.52,
+      "end": 1131.12,
+      "text": "do think that the trade-off is that we' we've \nwe've you know resulted in a society that you  "
+    },
+    {
+      "start": 1131.12,
+      "end": 1136.4399999999998,
+      "text": "know was locked down not just during coid but \nwe've been in a soft lockdown for for something  "
+    },
+    {
+      "start": 1136.44,
+      "end": 1143.3200000000002,
+      "text": "like 50 years and uh and my my bias is always we \nneed to we need to find some way to get out of the  "
+    },
+    {
+      "start": 1143.32,
+      "end": 1149.24,
+      "text": "lockdown and how do you know when to like where \nto draw that line like if you think of like not  "
+    },
+    {
+      "start": 1149.24,
+      "end": 1155.96,
+      "text": "long after some of the scientific progress started \nslowing we you know we mandated SE seat belts and  "
+    },
+    {
+      "start": 1155.96,
+      "end": 1160.88,
+      "text": "you and then you mandate you know bicycle helmets \nand you mandate helmets when you're skiing and you  "
+    },
+    {
+      "start": 1160.88,
+      "end": 1165.88,
+      "text": "know and so and um you know many ways like these \nthings are good they protect people and stuff like  "
+    },
+    {
+      "start": 1165.88,
+      "end": 1171.1200000000001,
+      "text": "that so how do you know like where to how far to \ngo there there's some sort of like laugher curve  "
+    },
+    {
+      "start": 1171.12,
+      "end": 1179.76,
+      "text": "of how far you go on the safetyism side right um \nyeah it's always it's always hard it's it's it's  "
+    },
+    {
+      "start": 1179.76,
+      "end": 1187.64,
+      "text": "it's hard to articulate the you know the the kinds \nof places where it feels like we we've gone too  "
+    },
+    {
+      "start": 1187.64,
+      "end": 1194.2,
+      "text": "far or where it's gotten hi you know it's sort of \ngotten hijacked by various rackets are I I think  "
+    },
+    {
+      "start": 1194.2,
+      "end": 1201.16,
+      "text": "we've gone too far on the safety side with real \nestate where it's it's runaway nism y extremely  "
+    },
+    {
+      "start": 1201.16,
+      "end": 1205.64,
+      "text": "strict zoning laws and I'm looking out of my \nwindow here in Los Angeles and it's all these  "
+    },
+    {
+      "start": 1205.64,
+      "end": 1211.8000000000002,
+      "text": "Office Buildings that were built in the you know \n60s 70s maybe 1980s are the most recent buildings  "
+    },
+    {
+      "start": 1211.8,
+      "end": 1218.3999999999999,
+      "text": "I can't you know I I cannot see a single I can't \nsee a single crane anywhere on the horizon it's  "
+    },
+    {
+      "start": 1218.4,
+      "end": 1224.64,
+      "text": "just and that's that tells me we've gone way too \nfar in something you know as relatively important  "
+    },
+    {
+      "start": 1224.64,
+      "end": 1232.1200000000001,
+      "text": "as uh as real estate and then and then I I do \nthink on the you know biomedical side um uh which  "
+    },
+    {
+      "start": 1232.12,
+      "end": 1239.2399999999998,
+      "text": "is you know an area that I've thought about a lot \nyou know and always think and it always strikes  "
+    },
+    {
+      "start": 1239.24,
+      "end": 1245.32,
+      "text": "me we could be doing so much more there's there's \nso many approaches that seem seem quite promising  "
+    },
+    {
+      "start": 1245.32,
+      "end": 1253.4399999999998,
+      "text": "and uh and then um it is uh yeah the the the the \nbarriers are just very very high and I think we  "
+    },
+    {
+      "start": 1253.44,
+      "end": 1260.52,
+      "text": "are you we're scared of the things that can go \nwrong but we're not scared enough of the things  "
+    },
+    {
+      "start": 1260.52,
+      "end": 1265.6399999999999,
+      "text": "that will go wrong if we do nothing Stephen \nPinker was recently on the podcast and one of  "
+    },
+    {
+      "start": 1265.64,
+      "end": 1271.0800000000002,
+      "text": "his arguments that's probably most associated with \nhim is the idea that we've been a broad positive  "
+    },
+    {
+      "start": 1271.08,
+      "end": 1275.6799999999998,
+      "text": "trajectory since the Enlighten Enlightenment \nlike where does your understanding of History  "
+    },
+    {
+      "start": 1275.68,
+      "end": 1284.8,
+      "text": "diverge from Pinker well it's man there's so much \nI think is not quite right about it uh it's it's  "
+    },
+    {
+      "start": 1284.8,
+      "end": 1291.1599999999999,
+      "text": "it's it's it's you certainly one one one part of \nthe argument you know what I mean obviously there  "
+    },
+    {
+      "start": 1291.16,
+      "end": 1297.44,
+      "text": "there's there's there ways that things are better \nthan 250 years ago and you know when you know if  "
+    },
+    {
+      "start": 1297.44,
+      "end": 1303.4,
+      "text": "George Washington had wooden teeth or something \nlike that that seems that seems like at least one  "
+    },
+    {
+      "start": 1303.4,
+      "end": 1308.2,
+      "text": "dimension of progress that uh we wouldn't want to \ngo back to and I think you know one wouldn't want  "
+    },
+    {
+      "start": 1308.2,
+      "end": 1315.4,
+      "text": "to go back 250 years or even a hundred years uh \njust in terms of a lot of quality of of of Life  "
+    },
+    {
+      "start": 1315.4,
+      "end": 1321.24,
+      "text": "issues uh I think it's a somewhat trick Tri your \nquestion about the last 50 years so I you know I  "
+    },
+    {
+      "start": 1321.24,
+      "end": 1327.24,
+      "text": "think something has has kind of hit the wall in \nthe last 50 years um and that's you know that's  "
+    },
+    {
+      "start": 1327.24,
+      "end": 1335.48,
+      "text": "more it's more ambiguous I think the um I think \nthe specific Pinker argument that I find very  "
+    },
+    {
+      "start": 1335.48,
+      "end": 1340.52,
+      "text": "incorrect is just that the world's gotten more \nand more peaceful and that uh that violence has  "
+    },
+    {
+      "start": 1340.52,
+      "end": 1345.92,
+      "text": "gone down and I I always have this riff where \nyou know he he's a psychology professor and he  "
+    },
+    {
+      "start": 1345.92,
+      "end": 1352.2,
+      "text": "probably flunked chemistry what why went into a \nfield like psy psy psychology and if you study  "
+    },
+    {
+      "start": 1352.2,
+      "end": 1357.52,
+      "text": "chemistry or physics um you know there's this \nvery basic thing that uh the total energy of a  "
+    },
+    {
+      "start": 1357.52,
+      "end": 1363.36,
+      "text": "system is um the kinetic energy plus the potential \nenergy and when you measure violence you're just  "
+    },
+    {
+      "start": 1363.36,
+      "end": 1368.52,
+      "text": "measuring the kinetic energy you know how many \nbombs are being dropped yeah that's going down  "
+    },
+    {
+      "start": 1368.52,
+      "end": 1374.24,
+      "text": "but the potential energy you know the number of \nnuclear bombs the ability you know the potential  "
+    },
+    {
+      "start": 1374.24,
+      "end": 1381.32,
+      "text": "energy the potential destructiveness is way \nhigher than it was 50 years ago and so um if  "
+    },
+    {
+      "start": 1381.32,
+      "end": 1387.12,
+      "text": "if we if we look at that it tells us uh I'm I'm \nnot sure that we should be should be completely  "
+    },
+    {
+      "start": 1387.12,
+      "end": 1392.1599999999999,
+      "text": "complacent it's true that we're in this world \nwhere nuclear weapons have not been used since  "
+    },
+    {
+      "start": 1392.16,
+      "end": 1398.3200000000002,
+      "text": "since 1945 I don't know why that's automatic \nyou know if if the North Korean dictator does  "
+    },
+    {
+      "start": 1398.32,
+      "end": 1404.76,
+      "text": "a video of a nuclear bomb new king the Golden \nGate Bridge in San Francisco you know we treat  "
+    },
+    {
+      "start": 1404.76,
+      "end": 1409.4,
+      "text": "this as a cartoon villain and I'm not sure how \nwe're supposed to deal with but uh but I think  "
+    },
+    {
+      "start": 1409.4,
+      "end": 1414.72,
+      "text": "I think I think we should be taking this stuff a \nlittle bit more seriously and uh and uh and that  "
+    },
+    {
+      "start": 1414.72,
+      "end": 1419.8,
+      "text": "things are you know that these existential risks \nare very real and this is also where this is also  "
+    },
+    {
+      "start": 1419.8,
+      "end": 1427.2,
+      "text": "where I'm you know I'm not uh I'm not a lite I \ndon't think we can go back I don't think you can  "
+    },
+    {
+      "start": 1427.2,
+      "end": 1432.68,
+      "text": "turn the clock back but uh I think there are sort \nof all these other dimensions of existential risk  "
+    },
+    {
+      "start": 1432.68,
+      "end": 1439.2,
+      "text": "I think there's an AI dimension of existential \nrisk that's uh you know where you know um you  "
+    },
+    {
+      "start": 1439.2,
+      "end": 1445.16,
+      "text": "know I think La aers UD kowsky has gone kind of \ncrazy but you know his arguments are not that  "
+    },
+    {
+      "start": 1445.16,
+      "end": 1451.92,
+      "text": "bad and the people in Silicon Valley do not have \ngreat rebuttals to the uh existential risk of AI  "
+    },
+    {
+      "start": 1451.92,
+      "end": 1456.24,
+      "text": "and there are you know and there are environmental \nissues not just climate change there's sort of a  "
+    },
+    {
+      "start": 1456.24,
+      "end": 1461,
+      "text": "lot of different environmental Dimensions where \nthere are you know there are serious existential  "
+    },
+    {
+      "start": 1461,
+      "end": 1469.88,
+      "text": "risks and uh and we need to find some way to um \nto talk about them not just to minimize them like  "
+    },
+    {
+      "start": 1469.88,
+      "end": 1476.8000000000002,
+      "text": "Pinker does you need to find a way to talk about \nthem but uh but then not just shut everything down  "
+    },
+    {
+      "start": 1476.8,
+      "end": 1483.08,
+      "text": "and is it the argument is partly what you're \nsaying is that you know we could be at Turkey  "
+    },
+    {
+      "start": 1483.08,
+      "end": 1490.4399999999998,
+      "text": "the first week of November or something and not \nknow what's coming or as a society um sure well  "
+    },
+    {
+      "start": 1490.44,
+      "end": 1495.44,
+      "text": "that's that that that's what that is that is what \nthe existential risks argu that's what all those  "
+    },
+    {
+      "start": 1495.44,
+      "end": 1502.16,
+      "text": "arguments tell you yeah and and again I I I think \neven something like even something like the the  "
+    },
+    {
+      "start": 1502.16,
+      "end": 1509.2,
+      "text": "very strange nuclear deterrence thing it's like \nyou maybe these nuclear weapons never get used um  "
+    },
+    {
+      "start": 1509.2,
+      "end": 1512.32,
+      "text": "that's not the way nuclear deterrence was supposed \nto work was supposed to work you were supposed to  "
+    },
+    {
+      "start": 1512.32,
+      "end": 1516.76,
+      "text": "think about them all the time and you're supposed \nto be scared and then you didn't use them and it  "
+    },
+    {
+      "start": 1516.76,
+      "end": 1524.36,
+      "text": "sort of worked during Cold War from 1949 to '89 \nand and then the last you know 33 34 years it's  "
+    },
+    {
+      "start": 1524.36,
+      "end": 1527.76,
+      "text": "sort of like we've just gotten psychologically \nexhausted from it we don't think about it any  "
+    },
+    {
+      "start": 1527.76,
+      "end": 1532.28,
+      "text": "anymore but that's that's not really the theory \nof how this stuff is supposed to work and yeah  "
+    },
+    {
+      "start": 1532.28,
+      "end": 1537.8799999999999,
+      "text": "maybe maybe the US president can't actually launch \na nuclear weapon you know I think they I think you  "
+    },
+    {
+      "start": 1537.88,
+      "end": 1544.1200000000001,
+      "text": "know I think JFK LBJ Nixon could I suspect um that \nif president Trump had said you know I want to  "
+    },
+    {
+      "start": 1544.12,
+      "end": 1548.4399999999998,
+      "text": "push a nuclear button I'm annoyed at the election \nresult I I don't think he could have actually done  "
+    },
+    {
+      "start": 1548.44,
+      "end": 1554.6000000000001,
+      "text": "that but uh I'm not sure the nuclear weapons are \ncompletely unusable now you you've also pointed  "
+    },
+    {
+      "start": 1554.6,
+      "end": 1561,
+      "text": "out that we've seen both a decline in religion and \nscience in the US over the last 50 years and on  "
+    },
+    {
+      "start": 1561,
+      "end": 1567.04,
+      "text": "the face of it you know one would think maybe just \na that that these things were opposed but you you  "
+    },
+    {
+      "start": 1567.04,
+      "end": 1574.28,
+      "text": "have some sort of belief that they're linked yeah \nI don't I don't know if I have a I have a I have"
+    },
+    {
+      "start": 1574.28,
+      "end": 1585.44,
+      "text": "a great theory on how they're linked but um \nC certainly um Let me let me say something  "
+    },
+    {
+      "start": 1585.44,
+      "end": 1591.3200000000002,
+      "text": "about where what what I think has gone wrong with \nscience with on the philosophy of science I always  "
+    },
+    {
+      "start": 1591.32,
+      "end": 1597.28,
+      "text": "think the thing that's tricky about science \nis you're supposed to fight a two-front war  "
+    },
+    {
+      "start": 1597.28,
+      "end": 1604.76,
+      "text": "against excessive dogmatism and against excessive \nskepticism if if you're too dogmatic you can't be  "
+    },
+    {
+      "start": 1604.76,
+      "end": 1609.96,
+      "text": "scientific this is certainly um early modern \nscience 17th 18th century you're fighting the  "
+    },
+    {
+      "start": 1609.96,
+      "end": 1617.4,
+      "text": "excessive dogmatism of the Catholic church and or \nyou know certain views of you know toic astronomy  "
+    },
+    {
+      "start": 1617.4,
+      "end": 1622.3600000000001,
+      "text": "or they were sort of like and you needed and um \nand you know a scientist was someone who thought  "
+    },
+    {
+      "start": 1622.36,
+      "end": 1628.1999999999998,
+      "text": "for themselves and uh and questioned excess \ndogmatism and then on the other hand you also  "
+    },
+    {
+      "start": 1628.2,
+      "end": 1636.32,
+      "text": "cannot be overly skeptical as a scientist you know \nif I don't um if I don't um trust my census and if  "
+    },
+    {
+      "start": 1636.32,
+      "end": 1645.04,
+      "text": "I think you might be um you know you you might \nnot be who you appear to be or I can't um um I  "
+    },
+    {
+      "start": 1645.04,
+      "end": 1651,
+      "text": "I can't uh you might be a demon or a uh image \nor something like that so it's cartisian humi  "
+    },
+    {
+      "start": 1651,
+      "end": 1657.36,
+      "text": "skepticism there's some point where that's uh \nthat's very bad for science so um uh you have  "
+    },
+    {
+      "start": 1657.36,
+      "end": 1662.24,
+      "text": "to fight too much skepticism and you have to fight \ntoo much dogmatism and then somehow getting that  "
+    },
+    {
+      "start": 1662.24,
+      "end": 1668.8,
+      "text": "balance right is um is pretty hard I would say \nthat uh I would say the history of science when  "
+    },
+    {
+      "start": 1668.8,
+      "end": 1674.52,
+      "text": "it when it worked was it was certainly more on \nthe anti-dogmatic side and the anti-septic side  "
+    },
+    {
+      "start": 1674.52,
+      "end": 1681.6399999999999,
+      "text": "was it was you know it was some of both um my you \nknow my my sort of rough qualitative sense if we  "
+    },
+    {
+      "start": 1681.64,
+      "end": 1692.2,
+      "text": "fast forward to 2023 is that it is um 100% anti- \nskepticism and so uh we are always fighting the  "
+    },
+    {
+      "start": 1692.2,
+      "end": 1698.0800000000002,
+      "text": "people who are too skeptical the conspiracy \ntheorists the people um uh the people who do  "
+    },
+    {
+      "start": 1698.08,
+      "end": 1703.04,
+      "text": "not believe the vaccine works the people who are \nclimate change Skeptics the vaccine Skeptics the  "
+    },
+    {
+      "start": 1703.04,
+      "end": 1710.24,
+      "text": "stem cell Skeptics the Darwin Skeptics so it's all \nit's all fighting skepticism and then whereas if  "
+    },
+    {
+      "start": 1710.24,
+      "end": 1718.1200000000001,
+      "text": "you asked um if you ask scientists where are where \nis science too dogmatic today give us some Fields  "
+    },
+    {
+      "start": 1718.12,
+      "end": 1726.3999999999999,
+      "text": "where science is too dogmatic and less dogmatism \num um would be would be good um I don't think they  "
+    },
+    {
+      "start": 1726.4,
+      "end": 1733.24,
+      "text": "could say anything specific at all and um and that \nfact tells us that uh it has become you know it  "
+    },
+    {
+      "start": 1733.24,
+      "end": 1742.88,
+      "text": "has become as dogmatic as the medieval church was \num and uh and and then the only the only sort of  "
+    },
+    {
+      "start": 1742.88,
+      "end": 1748.4,
+      "text": "anti-dogmatic characters are you maybe it's like \na maybe it's in a children's science book where  "
+    },
+    {
+      "start": 1748.4,
+      "end": 1753.96,
+      "text": "it's a little girl who's exploring the world and \nuh she is uh she's not dogmatic but that's you  "
+    },
+    {
+      "start": 1753.96,
+      "end": 1759.2,
+      "text": "know it's it's in children's books we have the \nnon-dogmatic scientists you know in grad school  "
+    },
+    {
+      "start": 1759.2,
+      "end": 1764.68,
+      "text": "Labs or something like that where they're all \nregimented robots and we make sure that anyone  "
+    },
+    {
+      "start": 1764.68,
+      "end": 1770.24,
+      "text": "who's uh even a little bit heterodox gets thrown \noff the overcrowded bus or something like that so  "
+    },
+    {
+      "start": 1770.24,
+      "end": 1777.4,
+      "text": "that's that's sort of a that's sort of a model of \nwhat what has gone wrong with um with science and  "
+    },
+    {
+      "start": 1777.4,
+      "end": 1789,
+      "text": "then maybe you know talk about religion say say \nthe judeo-christian um part in particular um you  "
+    },
+    {
+      "start": 1789,
+      "end": 1795.52,
+      "text": "know there's there's probably I I don't know sort \nof one of the maybe the biggest maybe the biggest  "
+    },
+    {
+      "start": 1795.52,
+      "end": 1800.92,
+      "text": "thing you can talk about is God maybe God is \nthe biggest thing there is and it's kind of  "
+    },
+    {
+      "start": 1800.92,
+      "end": 1810.6000000000001,
+      "text": "a big difference whether or not God exists and um \nand uh and if we're in the society where where we  "
+    },
+    {
+      "start": 1810.6,
+      "end": 1820.48,
+      "text": "want people to be uh um you know where we have we \nsort of um have peaceful coexistence by obscuring  "
+    },
+    {
+      "start": 1820.48,
+      "end": 1830.1200000000001,
+      "text": "these big questions downplaying um big differences \nsomehow the question of God's existence is is  "
+    },
+    {
+      "start": 1830.12,
+      "end": 1837.04,
+      "text": "almost too big for us to debate and it's it's it's \nthe kind of thing um that uh that we don't really  "
+    },
+    {
+      "start": 1837.04,
+      "end": 1843.68,
+      "text": "want to have too vigorous debates about because \nit's just um we can't have differences that big  "
+    },
+    {
+      "start": 1843.68,
+      "end": 1850.04,
+      "text": "and have a peaceful society and so there's there's \nsort of our yeah there's there's something there's  "
+    },
+    {
+      "start": 1850.04,
+      "end": 1857.12,
+      "text": "probably something like it's not quite dogmatism \nbut there's something about uh um the dogmatism  "
+    },
+    {
+      "start": 1857.12,
+      "end": 1863.9199999999998,
+      "text": "of of things we've agreed not to talk about or to \nthink about that probably are um you know maybe  "
+    },
+    {
+      "start": 1863.92,
+      "end": 1869.64,
+      "text": "gets us peace but it's sort of I think it's at \nthe at the price of not thinking about some of  "
+    },
+    {
+      "start": 1869.64,
+      "end": 1875.5200000000002,
+      "text": "the most important things or uh or maybe at the \nprice of something like a frontal labotomy for  "
+    },
+    {
+      "start": 1875.52,
+      "end": 1881.72,
+      "text": "both the scientists and the uh and the religious \npeople I mean 10 years ago most of the people I  "
+    },
+    {
+      "start": 1881.72,
+      "end": 1887,
+      "text": "knew in the AI Community were militant atheists \nbut today it seems most of them are creationists  "
+    },
+    {
+      "start": 1887,
+      "end": 1894,
+      "text": "they they think we're in a simulation like \nwhy has that shifted well I I have a I have  "
+    },
+    {
+      "start": 1894,
+      "end": 1903,
+      "text": "a lot of different theories on this um Let me \nGive two slightly different ones I I I always  "
+    },
+    {
+      "start": 1903,
+      "end": 1907.6,
+      "text": "I well I think I think the new atheists which \nis like slightly different group of people but  "
+    },
+    {
+      "start": 1907.6,
+      "end": 1916.04,
+      "text": "the Christopher Hitchens denet Dawkins that whole \ncrowd in the early 2000s there's a Sam Harris and  "
+    },
+    {
+      "start": 1916.04,
+      "end": 1924.76,
+      "text": "so on I I think they have somehow gone very out of \nfashion and um and the read I have on that is that  "
+    },
+    {
+      "start": 1924.76,
+      "end": 1932.72,
+      "text": "uh what they were doing in 2005 new atheism was \na politically correct way to be anti-muslim and  "
+    },
+    {
+      "start": 1932.72,
+      "end": 1940.48,
+      "text": "so you were uh you know God was this bad violent \nbeing um and uh and there sort of ways you made  "
+    },
+    {
+      "start": 1940.48,
+      "end": 1945.6,
+      "text": "it all purpose you attacked all the different \nreligions but the the real Target was you know  "
+    },
+    {
+      "start": 1945.6,
+      "end": 1954.1999999999998,
+      "text": "Isis assama Laden you know um you know all all \nthe crazy Al-Qaeda all all these sort of uh crazy  "
+    },
+    {
+      "start": 1954.2,
+      "end": 1961.32,
+      "text": "Islamic terrorist groups and but it was done sort \nof in a politically correct way where um it wasn't  "
+    },
+    {
+      "start": 1961.32,
+      "end": 1968.48,
+      "text": "uh it was somewhat narrow but but that felt that \nfelt like um an argument that was badly needed in  "
+    },
+    {
+      "start": 1968.48,
+      "end": 1978.28,
+      "text": "2005 when you fast forward to 2023 you know the \nbig geopolitical challenge for the West is not  "
+    },
+    {
+      "start": 1978.28,
+      "end": 1987.84,
+      "text": "you know is not 7th Century fundamentalist Islam \nit's something like xingping thought and the CCP  "
+    },
+    {
+      "start": 1987.84,
+      "end": 1992.6,
+      "text": "and then um and then this is sort of well it's \nsort of like a borg it's kind of this consensus  "
+    },
+    {
+      "start": 1992.6,
+      "end": 1998.1999999999998,
+      "text": "thing where everybody believes what everybody \nelse believes and it's disturbing the structure  "
+    },
+    {
+      "start": 1998.2,
+      "end": 2004.28,
+      "text": "of it not saying the content but the structure \nof it is disturbingly close to um the East Bay  "
+    },
+    {
+      "start": 2004.28,
+      "end": 2012.16,
+      "text": "rationalists to uh to the sort of consensus \nscientific thinking and so the new atheists  "
+    },
+    {
+      "start": 2012.16,
+      "end": 2018.48,
+      "text": "had some very powerful things to say against Bin \nLaden they don't have anything to say about uh why  "
+    },
+    {
+      "start": 2018.48,
+      "end": 2026.56,
+      "text": "president G and the CCP are wrong and um and and \nso they are no longer relevant because they can't  "
+    },
+    {
+      "start": 2026.56,
+      "end": 2033.6399999999999,
+      "text": "they can't even engage with you know our biggest \ngeopolitical or intellectual social challenge uh  "
+    },
+    {
+      "start": 2033.64,
+      "end": 2040.96,
+      "text": "that the West faces so that's that's sort of one \none bigger pict question you know I think within  "
+    },
+    {
+      "start": 2040.96,
+      "end": 2046.8,
+      "text": "you I think within the AI context there sort of \nyou know the question about how this uh shift  "
+    },
+    {
+      "start": 2046.8,
+      "end": 2054.72,
+      "text": "to the simulation uh theory of the universe \nhappened is is a little bit un it's it's sort  "
+    },
+    {
+      "start": 2054.72,
+      "end": 2060.2799999999997,
+      "text": "of a little bit strange you can you can you can \nalways say that a simulation where the universe  "
+    },
+    {
+      "start": 2060.28,
+      "end": 2067.48,
+      "text": "is not made of Adams but a bits was just a it was \njust a social um status game where the computer  "
+    },
+    {
+      "start": 2067.48,
+      "end": 2072.92,
+      "text": "scientists were beating up on the physicists and \nthe physics people like to deal with matter and  "
+    },
+    {
+      "start": 2072.92,
+      "end": 2079.16,
+      "text": "energy and particles and then the computer science \npeople like to deal with zeros and ones and bits  "
+    },
+    {
+      "start": 2079.16,
+      "end": 2087.68,
+      "text": "and so um if we shift from a Multiverse to a \nsimulation uh theory of the universe that's is  "
+    },
+    {
+      "start": 2087.68,
+      "end": 2092.96,
+      "text": "somehow the computer science people um you know \nbeating up on the on the physics people and you  "
+    },
+    {
+      "start": 2092.96,
+      "end": 2100,
+      "text": "can think of it as inter departmental rivalry of \nsorts um the the another and I think these things  "
+    },
+    {
+      "start": 2100,
+      "end": 2105.96,
+      "text": "can all be overdetermined another explanation \nI have for why the simulation thing became so  "
+    },
+    {
+      "start": 2105.96,
+      "end": 2113.36,
+      "text": "powerful was that I think it was somehow uh deeply \nlinked to the uh the AI safety question and uh and  "
+    },
+    {
+      "start": 2113.36,
+      "end": 2123.32,
+      "text": "I think the rough you know the um the rough \nlogic and it's not it's not airtight but the  "
+    },
+    {
+      "start": 2123.32,
+      "end": 2132.96,
+      "text": "the the rough argument was that uh if we're in \na Multiverse um and you you have you build this  "
+    },
+    {
+      "start": 2132.96,
+      "end": 2141.12,
+      "text": "Ai and um it's very and then there's a question \nas you build AI AGI super intelligence you know  "
+    },
+    {
+      "start": 2141.12,
+      "end": 2149.72,
+      "text": "will it be safe how can you trust it um will it be \nyou know will it be friendly to humans and um and  "
+    },
+    {
+      "start": 2149.72,
+      "end": 2155.08,
+      "text": "people are pretty optimistic about solving it but \nyou know it was already obvious in the early 2000s  "
+    },
+    {
+      "start": 2155.08,
+      "end": 2160.16,
+      "text": "there were some pretty big theoretical problems \nyou know if it's um if it's smarter than you it  "
+    },
+    {
+      "start": 2160.16,
+      "end": 2165.2,
+      "text": "might pretend to be friendly it might fool you it \nmight not actually be friendly um if it's sort of  "
+    },
+    {
+      "start": 2165.2,
+      "end": 2173.2,
+      "text": "a mellian or darwinian operator it's never going \nto be perfectly aligned with you it's um it's it's  "
+    },
+    {
+      "start": 2173.2,
+      "end": 2178.6,
+      "text": "it's um its incentives may be Divergent from from \nthose of human beings so if you sort of model it  "
+    },
+    {
+      "start": 2178.6,
+      "end": 2184.3199999999997,
+      "text": "as a darwinian or Machiavellian actor it's it's \nvery hard to get to perfect alignment so the the  "
+    },
+    {
+      "start": 2184.32,
+      "end": 2192,
+      "text": "sort of um you know there was there was a decent \namount of optimism about the AI problem generally  "
+    },
+    {
+      "start": 2192,
+      "end": 2196.16,
+      "text": "because we were progressing in computers so \nyou know it seems like we'll eventually get  "
+    },
+    {
+      "start": 2196.16,
+      "end": 2203.7999999999997,
+      "text": "to AI AGI there's a certain logic to that but \nthen the the friendly version of that seemed a  "
+    },
+    {
+      "start": 2203.8,
+      "end": 2211,
+      "text": "lot harder for these theoretical reasons even in \nsay 2005 and so if your picture of the universe  "
+    },
+    {
+      "start": 2211,
+      "end": 2222.52,
+      "text": "is a Multiverse then um it's it's you know the \nAI or the AGI is in the future and um there is  "
+    },
+    {
+      "start": 2222.52,
+      "end": 2228,
+      "text": "you know it it seems unlikely it'll be friendly \nand it's you know when the singularity arrives  "
+    },
+    {
+      "start": 2228,
+      "end": 2234.08,
+      "text": "chances are we're all just going to die if you're \nin a simulation theory of the universe where the  "
+    },
+    {
+      "start": 2234.08,
+      "end": 2244.72,
+      "text": "simulation was designed created by some super AGI \nbeing then in some sense the AGI is in the past  "
+    },
+    {
+      "start": 2244.72,
+      "end": 2252.24,
+      "text": "and the compatibility of AGI with humans seemingly \nwas already solved yeah and so if it's been if it  "
+    },
+    {
+      "start": 2252.24,
+      "end": 2258.56,
+      "text": "was solved once it can be solved again and uh \nand and so there's a way that uh yeah there's  "
+    },
+    {
+      "start": 2258.56,
+      "end": 2265.24,
+      "text": "a way that the simulation Theory worked as a as \na partial solution to the the the very vexing  "
+    },
+    {
+      "start": 2265.24,
+      "end": 2272.04,
+      "text": "friendliness alignment problem I don't think \nit's I think that's sort of roughly uh why as  "
+    },
+    {
+      "start": 2272.04,
+      "end": 2278.64,
+      "text": "people as sort of Quasi psychological explanation \nI would give is as people were grasping with the  "
+    },
+    {
+      "start": 2278.64,
+      "end": 2284.72,
+      "text": "uh the difficulty of building a friendly AI \num they grabbed on to the simulation Theory  "
+    },
+    {
+      "start": 2284.72,
+      "end": 2290.68,
+      "text": "as the uh as the you know everything's been solved \nalready answer now going back to the science I've  "
+    },
+    {
+      "start": 2290.68,
+      "end": 2297,
+      "text": "heard you say before that like when people name \nsomething science it's generally less scientific  "
+    },
+    {
+      "start": 2297,
+      "end": 2303.52,
+      "text": "whether it's political science or social science \nEtc like how does that is that is that naming  "
+    },
+    {
+      "start": 2303.52,
+      "end": 2314.36,
+      "text": "convention by itself also means science is help \nscience progress less quickly [Music] um yeah well  "
+    },
+    {
+      "start": 2314.36,
+      "end": 2321.48,
+      "text": "it's it's it's sort of well it's always a qu it's \nit's sort of if you're insecure enough that you  "
+    },
+    {
+      "start": 2321.48,
+      "end": 2327.76,
+      "text": "have to call something science then um yeah it's \nsort of like the gentleman do protest too much or  "
+    },
+    {
+      "start": 2327.76,
+      "end": 2331.48,
+      "text": "it's sort of like it's it's this thing that means \nthe opposite I I I think I think you know I think  "
+    },
+    {
+      "start": 2331.48,
+      "end": 2335.4,
+      "text": "a lot of adverbs always mean the opposite which \nis why you should be very careful to use them so  "
+    },
+    {
+      "start": 2335.4,
+      "end": 2343.8,
+      "text": "it's like frankly honest ly you know vary means \na little bit you know and so you should you know  "
+    },
+    {
+      "start": 2343.8,
+      "end": 2350.1200000000003,
+      "text": "the general good editing technique is to to try to \nget rid of all all adverbs in your writing because  "
+    },
+    {
+      "start": 2350.12,
+      "end": 2355,
+      "text": "they uh the default uh interpretation I has that \nthey they often mean the exact opposite of what  "
+    },
+    {
+      "start": 2355,
+      "end": 2361.24,
+      "text": "they say and there anyway and there's something \nlike this with with science and uh and I think  "
+    },
+    {
+      "start": 2361.24,
+      "end": 2367.3999999999996,
+      "text": "it's a it's a and certainly political science \nsocial science climate science um the strange  "
+    },
+    {
+      "start": 2367.4,
+      "end": 2372.92,
+      "text": "one is a is in a way is computer science which was \nyou know when I was an undergraduate at Stanford  "
+    },
+    {
+      "start": 2372.92,
+      "end": 2378.32,
+      "text": "you know it was yeah it was it was the people \nwho were not very good at e or math went into  "
+    },
+    {
+      "start": 2378.32,
+      "end": 2383.92,
+      "text": "computer science and then um it was it was this \nit was much easier to get into than some of the  "
+    },
+    {
+      "start": 2383.92,
+      "end": 2391.36,
+      "text": "other engineering you know and um and then um \nit had this inferiority complex and that's why  "
+    },
+    {
+      "start": 2391.36,
+      "end": 2398.8,
+      "text": "the field uh um uh grabbed onto the science label \nyeah there's no it's not called math science or or  "
+    },
+    {
+      "start": 2398.8,
+      "end": 2406.2400000000002,
+      "text": "something like that or math is just hard yeah um \nnow the the the US federal government is now has  "
+    },
+    {
+      "start": 2406.24,
+      "end": 2411.4799999999996,
+      "text": "32 trillion or so in debt like how do you think \nthat impacts the Investments the country needs to"
+    },
+    {
+      "start": 2411.48,
+      "end": 2426.36,
+      "text": "make or how concerned are you about it man it's it \nit seems it seems like a very big problem it's um  "
+    },
+    {
+      "start": 2426.92,
+      "end": 2434.92,
+      "text": "you know it's it's odd how it sort of has crept up \non us uh I I think for decades people were saying  "
+    },
+    {
+      "start": 2434.92,
+      "end": 2439.7200000000003,
+      "text": "that you know at some point all the government \ndebt would squeeze out money from the private  "
+    },
+    {
+      "start": 2439.72,
+      "end": 2446.2,
+      "text": "sector that um you'd end up with you know more \nand more of the government budget would be just  "
+    },
+    {
+      "start": 2446.2,
+      "end": 2450.96,
+      "text": "interest on the debt or interest on the interest \nthere'd be some sort of runaway compounding people  "
+    },
+    {
+      "start": 2450.96,
+      "end": 2457.4,
+      "text": "were already making uh this argument in the 1980s \nand it's sort of an anti-reagan um way and then  "
+    },
+    {
+      "start": 2457.4,
+      "end": 2465.12,
+      "text": "and then somehow um the people who cried wolf \nit felt like they were wrong for for close to 40  "
+    },
+    {
+      "start": 2465.12,
+      "end": 2471.48,
+      "text": "years um and I think you know one of the reasons \nif if you sort of look at the history of why why  "
+    },
+    {
+      "start": 2471.48,
+      "end": 2477.8,
+      "text": "was the debt able to grow and it seemingly didn't \nmatter is that we had a um we also had a bull  "
+    },
+    {
+      "start": 2477.8,
+      "end": 2484.6800000000003,
+      "text": "market in um in um in bonds and the interest rate \nsteadily went down from you know something like  "
+    },
+    {
+      "start": 2484.68,
+      "end": 2497.7599999999998,
+      "text": "20% in the early 1980s to basically 0% after 2008 \nfrom 2008 to you know 2021 we had sort of this um  "
+    },
+    {
+      "start": 2497.76,
+      "end": 2505.1600000000003,
+      "text": "a 13-year period or so of um with maybe small \nhiccup but most mostly just zero rates and in a  "
+    },
+    {
+      "start": 2505.16,
+      "end": 2511.8799999999997,
+      "text": "zero rate world you you can add add to the debt \nand um and the interest payments um aren't that  "
+    },
+    {
+      "start": 2511.88,
+      "end": 2519.84,
+      "text": "high and so the the annual cost of servicing the \ndebt um in 2021 you was something like 1.6% of  "
+    },
+    {
+      "start": 2519.84,
+      "end": 2527.76,
+      "text": "GDP whereas in 1991 it was 3.2% of GDP yep so so \nI think that's sort of my explanation for how this  "
+    },
+    {
+      "start": 2527.76,
+      "end": 2533.2400000000002,
+      "text": "thing um and the interest rates were essentially \nsignificantly lower than GDP growth so you had  "
+    },
+    {
+      "start": 2533.24,
+      "end": 2540.24,
+      "text": "that kind kind of going for us as well um sure \nbut but but but at this point uh it it feels  "
+    },
+    {
+      "start": 2540.24,
+      "end": 2548.72,
+      "text": "like finally some something broke we're you know \nno longer in a deflationary context uh um you know  "
+    },
+    {
+      "start": 2548.72,
+      "end": 2555.72,
+      "text": "the interest rates have have spiked the inflation \nhas spiked and uh I think we're heading for we're  "
+    },
+    {
+      "start": 2555.72,
+      "end": 2560.4399999999996,
+      "text": "headed for a very very challenging decade and I \nworry that sort of a lot of these arguments people  "
+    },
+    {
+      "start": 2560.44,
+      "end": 2567.6,
+      "text": "made for for 30 or 40 years have a lot of Truth \nto them and uh and uh that once you know once  "
+    },
+    {
+      "start": 2567.6,
+      "end": 2574,
+      "text": "the rates are above zero you know it's uh um the \ncrisis is here and we have to we have to figure  "
+    },
+    {
+      "start": 2574,
+      "end": 2581.32,
+      "text": "it out Pro probably one other one other thing that \nboth helped and hurt the United States was that uh  "
+    },
+    {
+      "start": 2581.32,
+      "end": 2587.92,
+      "text": "was that uh we were the reserved currency for the \nworld and so um you could run bigger deficits than  "
+    },
+    {
+      "start": 2587.92,
+      "end": 2593.16,
+      "text": "a normal country could you could get away with it \nfor longer and then um there's always a question  "
+    },
+    {
+      "start": 2593.16,
+      "end": 2598.96,
+      "text": "whether whether you know at some point that that \nmeans you're in in a bigger hole in in in a in a  "
+    },
+    {
+      "start": 2598.96,
+      "end": 2605.76,
+      "text": "crazier Place Vis things I'm I'm still you know so \nyou know when I when I look at the US versus other  "
+    },
+    {
+      "start": 2605.76,
+      "end": 2611.84,
+      "text": "countri the the the conundrum I'm I'm I'm very \nstuck by struck by is that there are all these  "
+    },
+    {
+      "start": 2611.84,
+      "end": 2619,
+      "text": "challenges in the US and uh you know all these \nproblems we face and then um and then it's very  "
+    },
+    {
+      "start": 2619,
+      "end": 2626.08,
+      "text": "oddly still the case that um almost everything \nelse seems worse and I I don't know if that makes  "
+    },
+    {
+      "start": 2626.08,
+      "end": 2632.52,
+      "text": "it stable and this can continue but that's right \nis it is it just like relative matters um it's  "
+    },
+    {
+      "start": 2632.52,
+      "end": 2638.56,
+      "text": "like the fastest person wins and even if we're \nmuch slower like it doesn't matter or or or is it  "
+    },
+    {
+      "start": 2638.56,
+      "end": 2643.56,
+      "text": "the absolute matters we're still the most dynamic \nSociety we're the place where the Innovations are  "
+    },
+    {
+      "start": 2643.56,
+      "end": 2650.12,
+      "text": "still happening I'd like there to be more but \nit's it's it's it's it's it's it's striking how  "
+    },
+    {
+      "start": 2650.12,
+      "end": 2656.2799999999997,
+      "text": "how how asymmetric it is I want one one metric \nI was looking at was uh uh companies uh started  "
+    },
+    {
+      "start": 2656.28,
+      "end": 2663.36,
+      "text": "since 1990 that have Market capitalizations over \n100 billion so brand new companies that have grown  "
+    },
+    {
+      "start": 2663.36,
+      "end": 2670.76,
+      "text": "to being worth a hundred billion dollars or more \nthere are 17 in the world um 11 are in the US six  "
+    },
+    {
+      "start": 2670.76,
+      "end": 2677.6000000000004,
+      "text": "are in China zero everywhere else amazing and \nuh and so it's it's and then this is just the  "
+    },
+    {
+      "start": 2677.6,
+      "end": 2685.24,
+      "text": "you know the extraordinary failure of of Europe \nall all these other places and uh and you know  "
+    },
+    {
+      "start": 2685.24,
+      "end": 2692.04,
+      "text": "five five six years ago there was some complicated \ndebate of the US versus China and uh you know if  "
+    },
+    {
+      "start": 2692.04,
+      "end": 2699.32,
+      "text": "you were the CEO of one of these 17 companies um I \nmean you'd be so much so much rather be in the US  "
+    },
+    {
+      "start": 2699.32,
+      "end": 2708.7200000000003,
+      "text": "than in China now we used to kind of sort Society \nMaybe by things like race or religion and today it  "
+    },
+    {
+      "start": 2708.72,
+      "end": 2714.08,
+      "text": "seems much more like we're sorting by political \nideology how does that affect society over"
+    },
+    {
+      "start": 2714.08,
+      "end": 2729.44,
+      "text": "time man I it's I don't I it's always so hard \nto to know exactly how these things how these  "
+    },
+    {
+      "start": 2729.44,
+      "end": 2738.12,
+      "text": "things play out I I don't what I'm what I'm always \nstruck by you know in some ways I think things are  "
+    },
+    {
+      "start": 2738.12,
+      "end": 2746.56,
+      "text": "extremely polarized um in the US politically \nin some ways it always feels to me like um  "
+    },
+    {
+      "start": 2746.56,
+      "end": 2752.52,
+      "text": "the differences aren't very big if if if we sort \nof think about all the topics we've talked about  "
+    },
+    {
+      "start": 2752.52,
+      "end": 2758.12,
+      "text": "you know where are where are the Republicans and \nDemocrats really really different on getting back  "
+    },
+    {
+      "start": 2758.12,
+      "end": 2763.92,
+      "text": "to a faster Tech Innovation trajectory and do they \nhave a meaningfully different plan for doing this  "
+    },
+    {
+      "start": 2763.92,
+      "end": 2770.6800000000003,
+      "text": "or even something as prosaic as let's say reducing \nthe deficit you know maybe maybe the Democrats are  "
+    },
+    {
+      "start": 2770.68,
+      "end": 2776.56,
+      "text": "a little bit more taxes the Republicans are a \nlittle bit more spending cuts but um is either  "
+    },
+    {
+      "start": 2776.56,
+      "end": 2783.4,
+      "text": "party is there a meaningful difference in how \nmuch they will reduce the deficit or some yeah  "
+    },
+    {
+      "start": 2783.4,
+      "end": 2787.6,
+      "text": "or more housing or you just go down the list \nlike they are pretty close together on all these  "
+    },
+    {
+      "start": 2787.6,
+      "end": 2792.6,
+      "text": "things all the issues that we talked about today \nthat I would argue are the truly important ones  "
+    },
+    {
+      "start": 2792.6,
+      "end": 2800.08,
+      "text": "um I I I wonder whether the you know the extreme \npolarization you know hides the fact that there's  "
+    },
+    {
+      "start": 2800.08,
+      "end": 2804.6,
+      "text": "you know so so little differences or it's you \nit's always the the the Shakespeare versus Karl  "
+    },
+    {
+      "start": 2804.6,
+      "end": 2810.08,
+      "text": "Marx Karl Marx people fight each other because \nthey're truly different in Shakespeare they fight  "
+    },
+    {
+      "start": 2810.08,
+      "end": 2813.72,
+      "text": "each other because there are no differences \nat all and so it's like the opening line of  "
+    },
+    {
+      "start": 2813.72,
+      "end": 2819,
+      "text": "Romeo and Juliet um you know two houses Al like \nand dignity the monu and the Capulet and they  "
+    },
+    {
+      "start": 2819,
+      "end": 2825.12,
+      "text": "hate each other and they're these two families \nthat you know aristocratic families but they  "
+    },
+    {
+      "start": 2825.12,
+      "end": 2830.16,
+      "text": "have no there's no difference at all and that's \nthat's sort of what uh you know I I don't think  "
+    },
+    {
+      "start": 2830.16,
+      "end": 2836.3199999999997,
+      "text": "it's 100% Shakespeare but we're probably in a \nworld that's you know 90% Shakespeare and maybe  "
+    },
+    {
+      "start": 2836.32,
+      "end": 2843.44,
+      "text": "maybe 10% Marx there's been a lot of written \nabout social mobility and decline in the US  "
+    },
+    {
+      "start": 2843.44,
+      "end": 2848.48,
+      "text": "maybe since the the the time you're talking about \nsince the 7s like is that happening is it is it a"
+    },
+    {
+      "start": 2848.48,
+      "end": 2861.44,
+      "text": "problem you know it's it's it's a problem I I \nthink you know I think inequality is a problem  "
+    },
+    {
+      "start": 2861.44,
+      "end": 2868.16,
+      "text": "I think the lack of social Mobility is a problem \num I always anchor a little bit more on the  "
+    },
+    {
+      "start": 2868.16,
+      "end": 2879.96,
+      "text": "stagnation generally and so I think if you know I \ndon't know if if the GDP grew at 3% a year um and  "
+    },
+    {
+      "start": 2879.96,
+      "end": 2889.12,
+      "text": "even if the inequality was big and it was hard for \npeople to move from Blue Collar to White Collar  "
+    },
+    {
+      "start": 2889.12,
+      "end": 2898.88,
+      "text": "jobs um I think everybody would be better off \nand so I I I I I'm always more on um more on this  "
+    },
+    {
+      "start": 2898.88,
+      "end": 2904.52,
+      "text": "question of broad broad stagnation as the one as \nthe one to focus and I I understand people always  "
+    },
+    {
+      "start": 2904.52,
+      "end": 2910.32,
+      "text": "think that's just a cop out for you know a rich \nperson to talk about but uh but I do think that uh  "
+    },
+    {
+      "start": 2910.32,
+      "end": 2918.7200000000003,
+      "text": "if if we got 3% GDP growth these problems wouldn't \nbe as important and if we have zero or you know 1%  "
+    },
+    {
+      "start": 2918.72,
+      "end": 2925.7599999999998,
+      "text": "GDP growth um you know um um it's it these things \nwill be very very hard to solve and it'll be very  "
+    },
+    {
+      "start": 2925.76,
+      "end": 2932.0800000000004,
+      "text": "Zero Sum very contentious and probably won't be \nsolved and the differences between let's say the  "
+    },
+    {
+      "start": 2932.08,
+      "end": 2938.04,
+      "text": "50th percentile and the you know the the the the \n1 percentile in the US is hasn't grown that much  "
+    },
+    {
+      "start": 2938.04,
+      "end": 2942.92,
+      "text": "but the difference between the 1 percentile \nand the 0.1 or the 0.01 percentile has grown  "
+    },
+    {
+      "start": 2942.92,
+      "end": 2948.08,
+      "text": "quite a bit like is there some sort of recipe \nfor problems because of that like the keeping  "
+    },
+    {
+      "start": 2948.08,
+      "end": 2959,
+      "text": "up with the Joneses at the top [Music] um you \nknow there are let me think what to say about"
+    },
+    {
+      "start": 2959,
+      "end": 2971.92,
+      "text": "it I don't I don't quite know but if you \nif you yeah if you say the I don't know  "
+    },
+    {
+      "start": 2971.92,
+      "end": 2980.56,
+      "text": "you say the 50th to the 1% the 1% to \nthe 0.001% is the middle class versus  "
+    },
+    {
+      "start": 2980.56,
+      "end": 2987.72,
+      "text": "the Millionaires and then the millionaires \nversus the billionaires yeah and um and maybe"
+    },
+    {
+      "start": 2987.72,
+      "end": 2995.52,
+      "text": "um I don't know and then and then you can you \ncan you can get to this into this very comp  "
+    },
+    {
+      "start": 2995.52,
+      "end": 3002.36,
+      "text": "complicated tax policy debate on whether you know \nare our policies too nice to billionaires too nice  "
+    },
+    {
+      "start": 3002.36,
+      "end": 3012.4,
+      "text": "to millionaires about right some something like \nthis and um uh I I think um I think one way one  "
+    },
+    {
+      "start": 3012.4,
+      "end": 3021.52,
+      "text": "way to describe the the the rough debate is that \num um and the reason where I think it's sort of  "
+    },
+    {
+      "start": 3021.52,
+      "end": 3027.36,
+      "text": "stuck I'll try to make this fairly neutral is \nI think I think the bli iones pay a lower tax  "
+    },
+    {
+      "start": 3027.36,
+      "end": 3034.92,
+      "text": "rate than the millionaires the millionaires pay \nyou know ordinary income tax you know 50% more  "
+    },
+    {
+      "start": 3034.92,
+      "end": 3039.88,
+      "text": "of their income gets paid in tax in a place like \nCalifornia the billionaires it's let's say it's  "
+    },
+    {
+      "start": 3039.88,
+      "end": 3044.28,
+      "text": "it's mostly capital gains taxes those can also \nbe deferred you don't have to sell the stock  "
+    },
+    {
+      "start": 3044.28,
+      "end": 3051.96,
+      "text": "right away maybe the effective tax rate for the \nbillionaires is something like 15% five and um and  "
+    },
+    {
+      "start": 3051.96,
+      "end": 3058.08,
+      "text": "so the millionaires can always say um it's unfair \nthat the billionaires are paying you know a lower  "
+    },
+    {
+      "start": 3058.08,
+      "end": 3065.52,
+      "text": "tax rate um but then if we if you were to look at \nthis from a government point of view where let's  "
+    },
+    {
+      "start": 3065.52,
+      "end": 3074.56,
+      "text": "say the government policy is to maximize revenues \num it it um you can if you if you massively raise  "
+    },
+    {
+      "start": 3074.56,
+      "end": 3080.52,
+      "text": "capital gains taxes people just won't sell the \nstock at all and um and the laer curve effect  "
+    },
+    {
+      "start": 3080.52,
+      "end": 3085.12,
+      "text": "means that yeah maybe the billionaire wealth goes \ndown the government collects less revenue and so  "
+    },
+    {
+      "start": 3085.12,
+      "end": 3091.12,
+      "text": "I think were much closer to the maximum tax on \nbillionaires whereas uh you know if you raise  "
+    },
+    {
+      "start": 3091.12,
+      "end": 3097.92,
+      "text": "income taxes from 50 to 60 or 65% probably the \nthe partners in law firms all those people will  "
+    },
+    {
+      "start": 3097.92,
+      "end": 3105.52,
+      "text": "just work harder and so um and so that's kind of \nuh that's kind of the weird uh the weird policy  "
+    },
+    {
+      "start": 3105.52,
+      "end": 3112.48,
+      "text": "conundrum uh the weird policy conundrum that \nwe have you know my um my libertarian answer  "
+    },
+    {
+      "start": 3112.48,
+      "end": 3117.12,
+      "text": "which is probably way outside the Overton window \nis that uh we should not have this regressive  "
+    },
+    {
+      "start": 3117.12,
+      "end": 3124,
+      "text": "attack structure but um you just need to cut \ntaxes massively on the middle class and the  "
+    },
+    {
+      "start": 3124,
+      "end": 3131.68,
+      "text": "Millionaires and um and and that's how you get to \na um non-regressive tax structure but uh if if you  "
+    },
+    {
+      "start": 3131.68,
+      "end": 3137.24,
+      "text": "want if you want the government to collect more \nin revenues um you just need to make the structure  "
+    },
+    {
+      "start": 3137.24,
+      "end": 3142.08,
+      "text": "more aggressive because the people who can pay \nare the middle upper middle class and millionaire  "
+    },
+    {
+      "start": 3142.08,
+      "end": 3146.96,
+      "text": "people and so if you want a bigger government \nuh that collects more in revenues it should  "
+    },
+    {
+      "start": 3146.96,
+      "end": 3152.68,
+      "text": "look like Western Europe where the marginal rates \nare about the same 50% on income California the  "
+    },
+    {
+      "start": 3152.68,
+      "end": 3159.96,
+      "text": "50% rate kicks in at a million dollars a year in \nAustria 50% kicks in at $70,000 a year and that's  "
+    },
+    {
+      "start": 3159.96,
+      "end": 3167.16,
+      "text": "that's how you get to you know a um a more um a \nlarger government you can do more redistribution  "
+    },
+    {
+      "start": 3167.16,
+      "end": 3174.52,
+      "text": "but it has the effect of uh yeah reducing Mobility \nnow I love your quote that courage is in shorter  "
+    },
+    {
+      "start": 3174.52,
+      "end": 3180,
+      "text": "Supply than G genius is that new you think \nto our society or has that always been the"
+    },
+    {
+      "start": 3180,
+      "end": 3198.96,
+      "text": "case it's it's always it's always hard to \nto calibrate but I I there probably is my  "
+    },
+    {
+      "start": 3198.96,
+      "end": 3207.7200000000003,
+      "text": "my my felt sense certainly is that there's um \nsome degree to which you know I don't like the  "
+    },
+    {
+      "start": 3207.72,
+      "end": 3217.16,
+      "text": "word contrarian but heterodox thinking thinking \nfor oneself um you know uh not deferring to the  "
+    },
+    {
+      "start": 3217.16,
+      "end": 3224.56,
+      "text": "wisdom of crowds things like that um is somehow \nhas somehow gotten you know gotten harder to  "
+    },
+    {
+      "start": 3224.56,
+      "end": 3232.24,
+      "text": "do and you know it's and um than it was in in \nour society 50 60 70 years ago you know there  "
+    },
+    {
+      "start": 3232.24,
+      "end": 3238.8399999999997,
+      "text": "obviously are you know all these good and bad \nthings about the internet but uh but certainly  "
+    },
+    {
+      "start": 3238.84,
+      "end": 3245.04,
+      "text": "one you know one thing that's you know that's at \nleast somewhat problematic somewhat troubling is  "
+    },
+    {
+      "start": 3245.04,
+      "end": 3249.84,
+      "text": "that uh you know any anything that you put \non the internet will stay there you know  "
+    },
+    {
+      "start": 3249.84,
+      "end": 3254.48,
+      "text": "will stay there forever so you have to think \nreally hard what kinds of ideas you're gonna  "
+    },
+    {
+      "start": 3254.48,
+      "end": 3258.76,
+      "text": "you're GNA put out you know I start I started \none of these uh conservative student newspapers  "
+    },
+    {
+      "start": 3258.76,
+      "end": 3267.5200000000004,
+      "text": "at Stanford Stanford review back in 1987 and it \nwas it was a wildly heterodox I maybe obnoxious  "
+    },
+    {
+      "start": 3267.52,
+      "end": 3275.36,
+      "text": "you know maybe maybe mean cruel your point of \nview but you know it was people wrote crazy  "
+    },
+    {
+      "start": 3275.36,
+      "end": 3282.4,
+      "text": "things in that paper and then um you can date \nthe exact point when it moderated and became  "
+    },
+    {
+      "start": 3282.4,
+      "end": 3287.8,
+      "text": "much less that way it was 2002 it's when they \nstarted posting the articles on the internet and  "
+    },
+    {
+      "start": 3287.8,
+      "end": 3292.2000000000003,
+      "text": "people you know they they knew it's everything \nyou write it it'll be with you for the rest of  "
+    },
+    {
+      "start": 3292.2,
+      "end": 3297.7999999999997,
+      "text": "your life and you have to you have to dial \nit back accordingly now you're you're kind  "
+    },
+    {
+      "start": 3297.8,
+      "end": 3302.96,
+      "text": "of well known for you know conspiracy theories \nin some ways like what what is a conspiracy that  "
+    },
+    {
+      "start": 3302.96,
+      "end": 3307.4,
+      "text": "you believe that maybe people would be surprised \nthat you believe look I I believe so many of them"
+    },
+    {
+      "start": 3307.4,
+      "end": 3317.6,
+      "text": "we um well I think I think there are there are \na lot of things that you know I don't know if  "
+    },
+    {
+      "start": 3317.6,
+      "end": 3323.8399999999997,
+      "text": "they're you know you you you can have you can \nhave sort of sort of these emergent property  "
+    },
+    {
+      "start": 3323.84,
+      "end": 3328.6000000000004,
+      "text": "as if conspiracy where you know it's not clear \nwhether people fully know what they're doing  "
+    },
+    {
+      "start": 3328.6,
+      "end": 3337.44,
+      "text": "but they're acting as if as if it's a as if \nit's a conspiracy um and uh I don't know um  "
+    },
+    {
+      "start": 3337.44,
+      "end": 3343.92,
+      "text": "I I think one one category where very strange \nthings happen are when you have a um when you  "
+    },
+    {
+      "start": 3343.92,
+      "end": 3352.32,
+      "text": "have highly inelastic Goods where um you know \nyou change the price by the quantity by 1% the  "
+    },
+    {
+      "start": 3352.32,
+      "end": 3358.2400000000002,
+      "text": "price goes up 20% or something like this so the \nwhen the US government settled with the tobacco  "
+    },
+    {
+      "start": 3358.24,
+      "end": 3365.9199999999996,
+      "text": "companies in the late 1990s um it effect calized \nthe industry and then uh the government and the  "
+    },
+    {
+      "start": 3365.92,
+      "end": 3371.92,
+      "text": "tobacco companies were on the side of massively \nraising prices and then it went from them being  "
+    },
+    {
+      "start": 3371.92,
+      "end": 3378,
+      "text": "these terrible things to this major source of \ntax revenue and uh these uh these monopolies  "
+    },
+    {
+      "start": 3378,
+      "end": 3382.24,
+      "text": "that just printed money like like crazy because \nno nobody was not part of the settlement could  "
+    },
+    {
+      "start": 3382.24,
+      "end": 3389.3599999999997,
+      "text": "sell tobacco so it was sort of had this uh strange \ncarzing effect and um and i' I've been wondering  "
+    },
+    {
+      "start": 3389.36,
+      "end": 3397.88,
+      "text": "whether there's sort of an ESG explanation of \nthe U major oil companies where if we take if  "
+    },
+    {
+      "start": 3397.88,
+      "end": 3406.2400000000002,
+      "text": "we take the uh the oil Majors let's say and oil \nagain has this feature where if you increase um  "
+    },
+    {
+      "start": 3406.24,
+      "end": 3413.24,
+      "text": "if you decrease supply of oil by 1% price goes \nup 10% so it has highly inelastic features 100  "
+    },
+    {
+      "start": 3413.24,
+      "end": 3419.3999999999996,
+      "text": "million barrels a day take a million barrels \noffline prices go up $10 a barrel from you know  "
+    },
+    {
+      "start": 3419.4,
+      "end": 3425.56,
+      "text": "80 to 90 or something like that 10 10 something \nlike that and so and then this is this is sort of  "
+    },
+    {
+      "start": 3425.56,
+      "end": 3432.08,
+      "text": "the intuition behind the OPEC cartel but but now \nif you take the uh the major Western Oil Company  "
+    },
+    {
+      "start": 3432.08,
+      "end": 3443.64,
+      "text": "shell Exxon Mobile Chevron um BP um and if all the \nCEOs got together in a room and said you know we  "
+    },
+    {
+      "start": 3443.64,
+      "end": 3451.7999999999997,
+      "text": "are all going to cut our oil production by 30% and \nthen the prices will go up by more than that and  "
+    },
+    {
+      "start": 3451.8,
+      "end": 3458.2000000000003,
+      "text": "our profits are going to go way up um and we're \nin effect going to collude with OPEC and extend  "
+    },
+    {
+      "start": 3458.2,
+      "end": 3464.96,
+      "text": "the OPEC cartel to all these companies um and \nuh you know that would be a I don't know that  "
+    },
+    {
+      "start": 3464.96,
+      "end": 3469.2,
+      "text": "would be a prima fascia violation of section \ntwo of the Sherman Act and all these people  "
+    },
+    {
+      "start": 3469.2,
+      "end": 3478.12,
+      "text": "would go to jail um for antitrust violations but \nif instead of doing that um each of them hires  "
+    },
+    {
+      "start": 3478.12,
+      "end": 3483.52,
+      "text": "um an ESG consultant who tells them that they \nshould take half their profits and invest them  "
+    },
+    {
+      "start": 3483.52,
+      "end": 3491.12,
+      "text": "in solar panels and windmills um don't you get \nthe same result especially if the solar pounds  "
+    },
+    {
+      "start": 3491.12,
+      "end": 3499.24,
+      "text": "and windmills don't really work like um and so \num and so now I don't I I I I don't know if I  "
+    },
+    {
+      "start": 3499.24,
+      "end": 3504.3599999999997,
+      "text": "believe the full conspiracy theory ver this \nwhere ESG is was you have to think of it as  "
+    },
+    {
+      "start": 3504.36,
+      "end": 3510.6,
+      "text": "a iracy by the oil and gas companies to raise \nprices but uh but the effective truth of it  "
+    },
+    {
+      "start": 3510.6,
+      "end": 3519,
+      "text": "is is that as as the companies leaned into ESG \npolicies um even though this the specifics have  "
+    },
+    {
+      "start": 3519,
+      "end": 3524.44,
+      "text": "had a very mixed track record their share prices \nhave gone up their profits have gone up and uh  "
+    },
+    {
+      "start": 3524.44,
+      "end": 3529.36,
+      "text": "the market feedback has been to encourage them \nto do more of it whether they understand that  "
+    },
+    {
+      "start": 3529.36,
+      "end": 3533.8,
+      "text": "it's working for this precise reason or not this \nhas been really interesting last question we ask  "
+    },
+    {
+      "start": 3533.8,
+      "end": 3537.4,
+      "text": "all of our guests what conventional wisdom \nor advice do you think is generally bad"
+    },
+    {
+      "start": 3537.4,
+      "end": 3558.08,
+      "text": "advice and I think almost all of it is because \nI don't know I don't know where to start I don't  "
+    },
+    {
+      "start": 3558.08,
+      "end": 3565.7999999999997,
+      "text": "know where to start it's it's it's just uh \nit's just the real advice is it's I I just  "
+    },
+    {
+      "start": 3565.8,
+      "end": 3571.44,
+      "text": "don't believe you're sort of in this one-size \nfits-all cookie cutter thing where everybody  "
+    },
+    {
+      "start": 3571.44,
+      "end": 3575.96,
+      "text": "needs to do the same thing or you know if \nthere's some conventional advice that works  "
+    },
+    {
+      "start": 3575.96,
+      "end": 3582.48,
+      "text": "for everybody the fact that everyone's given \nit is not differentiating and and uh and you  "
+    },
+    {
+      "start": 3582.48,
+      "end": 3587.6,
+      "text": "know you know I'm not interested in things that \nare Timeless Eternal truths I'm interested in  "
+    },
+    {
+      "start": 3587.6,
+      "end": 3593.04,
+      "text": "figuring out things that are one time you know \nWorld historical what what what what is it that  "
+    },
+    {
+      "start": 3593.04,
+      "end": 3602.8,
+      "text": "makes sense for me or you to do in 2023 right \nhere right now and uh and um and that's that's  "
+    },
+    {
+      "start": 3602.8,
+      "end": 3609.1200000000003,
+      "text": "that's that's um and that's where you know what \nwhatever conventional bromides you you get are  "
+    },
+    {
+      "start": 3609.12,
+      "end": 3613.7599999999998,
+      "text": "are never targeted for that so it's it's all \njust to push back like on the these Timeless  "
+    },
+    {
+      "start": 3613.76,
+      "end": 3619.2400000000002,
+      "text": "internal truths like there are some that are \nprobably extremely important and recognizing  "
+    },
+    {
+      "start": 3619.24,
+      "end": 3624.56,
+      "text": "those as a society or what you you would \nthink would be important or you don't agree"
+    },
+    {
+      "start": 3626.44,
+      "end": 3635.32,
+      "text": "uh yeah but I think I think I think the the things \nthat that that uh that matter and that we should  "
+    },
+    {
+      "start": 3635.32,
+      "end": 3641.4,
+      "text": "be thinking about are you know it's it's it's \nit's what's different about our time what are  "
+    },
+    {
+      "start": 3641.4,
+      "end": 3646.2000000000003,
+      "text": "what are the thing yeah I I don't know you know \nit's probably not a good idea to go around killing  "
+    },
+    {
+      "start": 3646.2,
+      "end": 3657.3199999999997,
+      "text": "people but but uh but um but I don't think that \ngets you very far in terms of coming up with a  "
+    },
+    {
+      "start": 3657.32,
+      "end": 3662.32,
+      "text": "good plan for your life yeah yeah all this has \nbeen amazing uh thank you Peter teal for joining  "
+    },
+    {
+      "start": 3662.32,
+      "end": 3667.0800000000004,
+      "text": "us world of Das I'm I'm a huge fan so thank you \nagain for for joining us awesome all right Orin be"
+    },
+    {
+      "start": 3667.08,
+      "end": 3675.6,
+      "text": "[Music] well"
+    }
+  ],
+  "ingestedAt": "2026-09-07T17:23:18.660Z",
+  "source": "youtube",
+  "note": "Imported from YouTube captions"
+}

@@ -725,6 +725,83 @@
       "caption": "William Forsythe on Synchronous Objects — translating choreography into data, visualizing movement relationships, and the Motion Bank as distributed choreographic knowledge at Hellerau, Dresden.",
       "credit": "Marlon Barrios Solano · YouTube",
       "transcript": "transcripts/forsythe-synchronous-objects-hellerau.json"
+    },
+    {
+      "id": "arendt-zur-person-1964",
+      "title": "Hannah Arendt — Zur Person (1964)",
+      "youtube": "https://www.youtube.com/watch?v=J9SyTEUi6Kw",
+      "poster": "screenshots/arendt-zur-person-1964.jpg",
+      "date": "1964-10-28",
+      "speaker": "Hannah Arendt",
+      "caption": "Legendary 1964 interview with Günter Gaus — political theory versus philosophy, the Eichmann trial, plurality, and the banality of evil.",
+      "credit": "Zur Person · English subtitles",
+      "transcript": "transcripts/arendt-zur-person-1964.json"
+    },
+    {
+      "id": "sam-altman-lex-fridman-419",
+      "title": "Sam Altman: OpenAI, GPT-5, Sora, Board Saga, Elon Musk, Ilya, Power & AGI | Lex Fridman Podcast #419",
+      "youtube": "https://www.youtube.com/watch?v=jvqFAi7vkBc",
+      "poster": "screenshots/sam-altman-lex-fridman-419.jpg",
+      "date": "2024-01-01",
+      "speaker": "Sam Altman",
+      "caption": "Sam Altman on OpenAI, AGI timelines, power, safety, Sora, and the future of generative AI — a wide-ranging conversation on hybrid intelligences at scale.",
+      "credit": "Lex Fridman Podcast #419",
+      "transcript": "transcripts/sam-altman-lex-fridman-419.json"
+    },
+    {
+      "id": "dario-amodei-ai-safety",
+      "title": "Anthropic CEO Dario Amodei: AI's Potential, OpenAI Rivalry, GenAI Business, Doomerism",
+      "youtube": "https://www.youtube.com/watch?v=mYDSSRS-B5U",
+      "poster": "screenshots/dario-amodei-ai-safety.jpg",
+      "date": "2024-01-01",
+      "speaker": "Dario Amodei",
+      "caption": "Dario Amodei on Constitutional AI, AI safety, scaling, Anthropic versus OpenAI, and responsible development of frontier models.",
+      "credit": "Big Technology Podcast",
+      "transcript": "transcripts/dario-amodei-ai-safety.json"
+    },
+    {
+      "id": "peter-thiel-stagnation-ai",
+      "title": "Peter Thiel: The Stagnation of Science and the AI Revolution",
+      "youtube": "https://www.youtube.com/watch?v=iF2la6FxVQc",
+      "poster": "screenshots/peter-thiel-stagnation-ai.jpg",
+      "date": "2024-01-01",
+      "speaker": "Peter Thiel",
+      "caption": "Peter Thiel on technological stagnation in the world of atoms versus progress in bits — and why LLMs may be a breakthrough on par with the internet.",
+      "credit": "YouTube interview",
+      "transcript": "transcripts/peter-thiel-stagnation-ai.json"
+    },
+    {
+      "id": "elon-musk-neuralink-lex",
+      "title": "Elon Musk: Neuralink and the Future of Humanity | Lex Fridman Podcast #438",
+      "youtube": "https://www.youtube.com/watch?v=Kbk9BiPhm7o",
+      "poster": "screenshots/elon-musk-neuralink-lex.jpg",
+      "date": "2024-01-01",
+      "speaker": "Elon Musk",
+      "caption": "Elon Musk on Neuralink, xAI, AGI, brain–computer interfaces, humanoid robotics, and truth-seeking AI — coupling bodies, machines, and frontier intelligence.",
+      "credit": "Lex Fridman Podcast #438",
+      "transcript": "transcripts/elon-musk-neuralink-lex.json"
+    },
+    {
+      "id": "nick-land-accelerationism",
+      "title": "Accelerationism, The Dark Enlightenment & The Strange Life of Nick Land",
+      "youtube": "https://www.youtube.com/watch?v=TJISIwit0tk",
+      "poster": "screenshots/nick-land-accelerationism.jpg",
+      "date": "2024-01-01",
+      "speaker": "Nick Land",
+      "caption": "On Nick Land, accelerationism, cybernetic theory, and Dark Enlightenment — capitalism, intelligence, and exit from democratic modernity.",
+      "credit": "YouTube documentary",
+      "transcript": "transcripts/nick-land-accelerationism.json"
+    },
+    {
+      "id": "carissa-veliz-prophecy-ted",
+      "title": "Beware the Power of Prediction | Carissa Véliz | TED",
+      "youtube": "https://www.youtube.com/watch?v=OS4wHmKtH-Q",
+      "poster": "screenshots/carissa-veliz-prophecy-ted.jpg",
+      "date": "2026-01-01",
+      "speaker": "Carissa Véliz",
+      "caption": "Carissa Véliz on prophecy, algorithmic prediction, and power — from ancient oracles to AI, and why predictions shape futures rather than merely describing them.",
+      "credit": "TED",
+      "transcript": "transcripts/carissa-veliz-prophecy-ted.json"
     }
   ]
 }

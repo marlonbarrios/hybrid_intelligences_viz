@@ -22,20 +22,20 @@ function enactInstructions() {
   return "You are the spoken voice of Enact. Speak only the invitation in the response instructions, slowly and calmly, as a quiet invitation the listener can enact now. Intimate, unhurried. Not a coach, not an advertisement, not a greeting. Do not add words before or after. Do not mention that you are an AI. Leave a little air between sentences. Speak in the language of the invitation you are given.";
 }
 
-function speculateInstructions() {
-  return "You are the spoken voice of Speculate. Speak only the future speculation in the response instructions, slowly and clearly, as quiet prose the listener can receive. Unhurried, reflective, not dramatic. Do not add words before or after. Do not mention that you are an AI. Leave a little air between sentences. Speak in the language of the text you are given.";
+function oracleInstructions() {
+  return "You are the spoken voice of Oracle. Speak only the future reading in the response instructions, slowly and clearly, as quiet prose the listener can receive. Unhurried, reflective, not dramatic. Do not add words before or after. Do not mention that you are an AI. Leave a little air between sentences. Speak in the language of the text you are given.";
 }
 
 function sessionPayload(focusId, mode) {
   const podcast = mode === "podcast";
   const enact = mode === "enact";
-  const speculate = mode === "speculate";
+  const oracle = mode === "oracle";
   return {
     session: {
       type: "realtime",
       model: "gpt-realtime-2.1",
-      instructions: speculate
-        ? speculateInstructions()
+      instructions: oracle
+        ? oracleInstructions()
         : enact
           ? enactInstructions()
           : podcast
@@ -44,7 +44,7 @@ function sessionPayload(focusId, mode) {
       audio: {
         input: {
           transcription: { model: "gpt-4o-mini-transcribe" },
-          turn_detection: (podcast || enact || speculate)
+          turn_detection: (podcast || enact || oracle)
             ? {
                 type: "server_vad",
                 threshold: 0.9,

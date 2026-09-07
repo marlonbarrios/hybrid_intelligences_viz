@@ -176,7 +176,7 @@ function headerNav() {
     ["image.html", "Image"],
     ["mini-pod.html", "Mini-pod"],
     ["enact.html", "Enact"],
-    ["speculate.html", "Speculate"],
+    ["oracle.html", "Oracle"],
     ["creative-b.html", "Creative B"],
     ["scan-qr.html", "Scan QR Code"],
   ];
@@ -611,6 +611,48 @@ const VIDEO_FALLBACK_CONCEPTS = {
     { conceptId: "motion_bank", label: "Motion Bank" },
     { conceptId: "choreo_knowledge", label: "Choreographic Knowledge" },
   ],
+  "arendt-zur-person-1964": [
+    { conceptId: "arendt", label: "Hannah Arendt" },
+    { conceptId: "law", label: "Law & Governance" },
+    { conceptId: "perception_politics", label: "Perception Politics" },
+    { conceptId: "community", label: "Community" },
+  ],
+  "sam-altman-lex-fridman-419": [
+    { conceptId: "sam_altman", label: "Sam Altman" },
+    { conceptId: "agi", label: "AGI" },
+    { conceptId: "gen_ai", label: "Generative AI" },
+    { conceptId: "speculative_futures", label: "Speculative Futures" },
+  ],
+  "dario-amodei-ai-safety": [
+    { conceptId: "dario_amodei", label: "Dario Amodei" },
+    { conceptId: "anthropic", label: "Anthropic" },
+    { conceptId: "constitutional_ai", label: "Constitutional AI" },
+    { conceptId: "ai_alignment", label: "AI Alignment" },
+  ],
+  "peter-thiel-stagnation-ai": [
+    { conceptId: "peter_thiel", label: "Peter Thiel" },
+    { conceptId: "dark_enlightenment", label: "Dark Enlightenment" },
+    { conceptId: "entrepreneurship_vision", label: "Entrepreneurship" },
+    { conceptId: "gen_ai", label: "Generative AI" },
+  ],
+  "elon-musk-neuralink-lex": [
+    { conceptId: "elon_musk", label: "Elon Musk" },
+    { conceptId: "physical_ai", label: "Physical AI" },
+    { conceptId: "agi", label: "AGI" },
+    { conceptId: "synthetic_cognition", label: "Synthetic Cognition" },
+  ],
+  "nick-land-accelerationism": [
+    { conceptId: "nick_land", label: "Nick Land" },
+    { conceptId: "dark_enlightenment", label: "Dark Enlightenment" },
+    { conceptId: "cybernetics", label: "Cybernetics" },
+    { conceptId: "futurity", label: "Futurity" },
+  ],
+  "carissa-veliz-prophecy-ted": [
+    { conceptId: "carissa_veliz", label: "Carissa Véliz" },
+    { conceptId: "oracle", label: "Oracle" },
+    { conceptId: "perception_politics", label: "Perception Politics" },
+    { conceptId: "track_ethics", label: "Ethics Track" },
+  ],
 };
 
 function videoConcepts(video, transcript) {
@@ -699,6 +741,13 @@ const VIDEO_SHORT_LABELS = {
   "forsythe-synchronous-objects-hellerau": "Forsythe ·\nSync Objects",
   "mendieta-decolonial-feminist": "Mendieta ·\nDecolonial",
   "batson-minds-in-motion": "Batson ·\nMinds",
+  "arendt-zur-person-1964": "Arendt ·\nZur Person",
+  "sam-altman-lex-fridman-419": "Altman ·\nOpenAI & AGI",
+  "dario-amodei-ai-safety": "Amodei ·\nAI Safety",
+  "peter-thiel-stagnation-ai": "Thiel ·\nStagnation &",
+  "elon-musk-neuralink-lex": "Musk ·\nNeuralink &",
+  "nick-land-accelerationism": "Land ·\nAcceleration…",
+  "carissa-veliz-prophecy-ted": "Véliz ·\nProphecy",
 };
 
 function abbreviateTopic(topic, maxLen = 14) {
@@ -759,6 +808,7 @@ const VIDEO_AUTHOR_OVERRIDES = {
   "privacy-illusion-ai-data": "crawford",
   "thinking-game-documentary": "shanahan",
   "am-i-ai-consciousness-doc": "chalmers",
+  "nick-land-accelerationism": "nick_land",
 };
 
 const SPEAKER_AUTHOR_OVERRIDES = {
@@ -768,6 +818,12 @@ const SPEAKER_AUTHOR_OVERRIDES = {
   "steve paxton": "steve_paxton",
   "ana mendieta": "ana_mendieta",
   "bell hooks": "bell_hooks",
+  "hannah arendt": "arendt",
+  "sam altman": "sam_altman",
+  "dario amodei": "dario_amodei",
+  "peter thiel": "peter_thiel",
+  "elon musk": "elon_musk",
+  "carissa veliz": "carissa_veliz",
 };
 
 function normalizePersonName(value) {
