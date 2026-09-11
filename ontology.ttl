@@ -11,10 +11,10 @@
   rdfs:label "Hybrid Intelligences Ontology" ;
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   owl:versionInfo "1.0.0" ;
-  dc:date "2026-09-07"^^xsd:date ;
-  dc:modified "2026-09-07T17:30:29.667Z"^^xsd:dateTime ;
-  hi:nodeCount "330"^^xsd:integer ;
-  hi:edgeCount "3021"^^xsd:integer .
+  dc:date "2026-09-11"^^xsd:date ;
+  dc:modified "2026-09-11T18:03:05.623Z"^^xsd:dateTime ;
+  hi:nodeCount "336"^^xsd:integer ;
+  hi:edgeCount "3080"^^xsd:integer .
 
 hi:scheme a skos:ConceptScheme ;
   skos:prefLabel "Hybrid Intelligences Concept Scheme" ;
@@ -126,6 +126,7 @@ hi:category/author a skos:Concept, hi:Category ;
 
 hi:category/video a skos:Concept, hi:Category ;
   skos:prefLabel "Videos" ;
+  skos:definition "Talks and performances ingested against the ontology—matched concepts become edges on the Videos ring." ;
   skos:inScheme hi:scheme ;
   skos:topConceptOf hi:scheme ;
   hi:ringFraction "0.98"^^xsd:decimal ;
@@ -656,7 +657,7 @@ hi:constitutional_ai a skos:Concept, hi:NetworkNode ;
 
 hi:ai_interpretability a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "AI Interpretability" ;
-  skos:definition "Methods for explaining how AI systems represent, classify, and decide—making model behavior legible through features, attention, embeddings, and outputs; central to accountability, trust, epistemology, and the politics of what can be known about machine reasoning." ;
+  skos:definition "Methods for explaining how AI systems represent, classify, and decide—making model behavior legible through features, attention, embeddings, and outputs; central to accountability, trust, epistemology, and the politics of what can be known about machine reasoning. Gašper Beguš treats interpretability as a scientific instrument: causal probes of neurons can discover patterns in speech, including analogues of vowels in sperm-whale communication." ;
   skos:broader hi:category/framework ;
   skos:inScheme hi:scheme ;
   hi:category "framework" ;
@@ -664,6 +665,29 @@ hi:ai_interpretability a skos:Concept, hi:NetworkNode ;
  ;
   schema:url <https://en.wikipedia.org/wiki/Explainable_artificial_intelligence> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Explainable_artificial_intelligence>
+ .
+
+hi:informative_imitation a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Informative Imitation" ;
+  skos:definition "Gašper Beguš’s model of language as informative imitation: learning from raw unsupervised audio, with communicative intent and embodied articulatory representations (ciwaGAN). Contrasts with large language models trained on text; a more realistic account of how speech and meaning can emerge in infants, animals, and machines." ;
+  skos:broader hi:category/framework ;
+  skos:inScheme hi:scheme ;
+  hi:category "framework" ;
+  hi:weight "1.45"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Language_acquisition>
+ .
+
+hi:cross_species_language a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Cross-species Language" ;
+  skos:definition "A comparative science of communication across humans, animals, and machines—asking which properties of language (vowels, consonants, recursion, communicative intent) are species-specific and which can be shared or modeled. Project CETI and interpretable AI make nonhuman signaling newly inspectable as knowledge rather than as noise." ;
+  skos:broader hi:category/framework ;
+  skos:inScheme hi:scheme ;
+  hi:category "framework" ;
+  hi:weight "1.45"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Animal_communication> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Animal_communication>
  .
 
 hi:model_introspection a skos:Concept, hi:NetworkNode ;
@@ -1463,6 +1487,17 @@ hi:elon_musk a skos:Concept, hi:NetworkNode ;
   schema:sameAs <https://en.wikipedia.org/wiki/Elon_Musk>
  .
 
+hi:begus a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Gašper Beguš" ;
+  skos:definition "Associate Professor of Linguistics at UC Berkeley; Linguistics Lead of Project CETI. Interpretable AI, an “artificial baby” that learns speech from raw audio, and the discovery of vowel-like patterns in sperm-whale communication. Treats language as a microscope into human, animal, and machine intelligence." ;
+  skos:broader hi:category/author ;
+  skos:inScheme hi:scheme ;
+  hi:category "author" ;
+  hi:weight "1.25"^^xsd:decimal
+ ;
+  schema:url <https://www.gasperbegus.com/>
+ .
+
 hi:aguilera_arcas a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Blaise Agüera y Arcas" ;
   skos:definition "AI researcher and author of What Is Intelligence?—work on neural computing, active inference, federated learning, artificial life, and symbiotic models of mind linking evolution, sociality, and machine intelligence." ;
@@ -1760,6 +1795,17 @@ hi:social_change a skos:Concept, hi:NetworkNode ;
   schema:sameAs <https://en.wikipedia.org/wiki/Social_change>
  .
 
+hi:whale_vowels a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Whale Vowels" ;
+  skos:definition "Spectral patterns in sperm-whale coda clicks analogous to human vowels—predicted and described through AI interpretability (Gašper Beguš / Project CETI). The coda vowels show behavioral parallels with human vowels, including coarticulation and prominence, opening a comparative linguistics of ocean minds." ;
+  skos:broader hi:category/phenomenon ;
+  skos:inScheme hi:scheme ;
+  hi:category "phenomenon" ;
+  hi:weight "1.4"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Sperm_whale>
+ .
+
 hi:theory_of_mind a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Theory of Mind" ;
   skos:definition "The capacity to attribute mental states—beliefs, intentions, desires—to oneself and others; a phenomenon at stake in human social cognition, developmental learning, and debates over machine understanding." ;
@@ -1847,6 +1893,18 @@ hi:intellectual_property a skos:Concept, hi:NetworkNode ;
  ;
   schema:url <https://en.wikipedia.org/wiki/Intellectual_property> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Intellectual_property>
+ .
+
+hi:linguistics a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Linguistics" ;
+  skos:definition "The study of language as structure, use, and learning—phonetics, phonology, meaning, and acquisition. In Hybrid Intelligences it is also a microscope into cognition: how speech is learned from sound, how models represent it, and how those methods travel to animal communication and machine intelligence." ;
+  skos:broader hi:category/domain ;
+  skos:inScheme hi:scheme ;
+  hi:category "domain" ;
+  hi:weight "1.3"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Linguistics> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Linguistics>
  .
 
 hi:philosophy a skos:Concept, hi:NetworkNode ;
@@ -3324,6 +3382,19 @@ hi:video_carissa_veliz_prophecy_ted a skos:Concept, hi:NetworkNode ;
   schema:url <video-carissa-veliz-prophecy-ted.html> ;
   schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/carissa-veliz-prophecy-ted.jpg> ;
   schema:sameAs <https://www.youtube.com/watch?v=OS4wHmKtH-Q>
+ .
+
+hi:video_begus_mystery_language a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Beguš · Language" ;
+  skos:definition "Gašper Beguš — The Mystery of Language in Humans, Animals & AI. Interpretable models of speech, informative imitation, and whale vowels as a comparative science of minds. Video on YouTube; ingest matches speech to ontology concepts." ;
+  skos:broader hi:category/video ;
+  skos:inScheme hi:scheme ;
+  hi:category "video" ;
+  hi:weight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-begus-mystery-language.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/begus-mystery-language.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=7zqMYwW0f6E>
  .
 
 hi:essay_1 a skos:Concept, hi:NetworkNode ;
@@ -19224,6 +19295,360 @@ hi:rel-video_carissa_veliz_prophecy_ted-arendt a hi:Relation ;
   hi:strength "0.75"^^xsd:decimal ;
   skos:relatedMatch hi:arendt .
 
+hi:rel-begus-ai_interpretability a hi:Relation ;
+  hi:source hi:begus ;
+  hi:target hi:ai_interpretability ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_interpretability .
+
+hi:rel-begus-informative_imitation a hi:Relation ;
+  hi:source hi:begus ;
+  hi:target hi:informative_imitation ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:informative_imitation .
+
+hi:rel-begus-cross_species_language a hi:Relation ;
+  hi:source hi:begus ;
+  hi:target hi:cross_species_language ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:cross_species_language .
+
+hi:rel-begus-whale_vowels a hi:Relation ;
+  hi:source hi:begus ;
+  hi:target hi:whale_vowels ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:whale_vowels .
+
+hi:rel-begus-linguistics a hi:Relation ;
+  hi:source hi:begus ;
+  hi:target hi:linguistics ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:linguistics .
+
+hi:rel-begus-possible_minds a hi:Relation ;
+  hi:source hi:begus ;
+  hi:target hi:possible_minds ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:possible_minds .
+
+hi:rel-begus-synthetic_cognition a hi:Relation ;
+  hi:source hi:begus ;
+  hi:target hi:synthetic_cognition ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:synthetic_cognition .
+
+hi:rel-begus-llm a hi:Relation ;
+  hi:source hi:begus ;
+  hi:target hi:llm ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:llm .
+
+hi:rel-begus-gen_ai a hi:Relation ;
+  hi:source hi:begus ;
+  hi:target hi:gen_ai ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:gen_ai .
+
+hi:rel-begus-ai a hi:Relation ;
+  hi:source hi:begus ;
+  hi:target hi:ai ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-begus-ai_ml a hi:Relation ;
+  hi:source hi:begus ;
+  hi:target hi:ai_ml ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_ml .
+
+hi:rel-begus-neural_networks a hi:Relation ;
+  hi:source hi:begus ;
+  hi:target hi:neural_networks ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:neural_networks .
+
+hi:rel-begus-convolutional_networks a hi:Relation ;
+  hi:source hi:begus ;
+  hi:target hi:convolutional_networks ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:convolutional_networks .
+
+hi:rel-begus-latent_space a hi:Relation ;
+  hi:source hi:begus ;
+  hi:target hi:latent_space ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:latent_space .
+
+hi:rel-begus-umwelt a hi:Relation ;
+  hi:source hi:begus ;
+  hi:target hi:umwelt ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:umwelt .
+
+hi:rel-begus-embodiment a hi:Relation ;
+  hi:source hi:begus ;
+  hi:target hi:embodiment ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:embodiment .
+
+hi:rel-begus-epistemology a hi:Relation ;
+  hi:source hi:begus ;
+  hi:target hi:epistemology ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:epistemology .
+
+hi:rel-begus-hayles a hi:Relation ;
+  hi:source hi:begus ;
+  hi:target hi:hayles ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:hayles .
+
+hi:rel-begus-aguilera_arcas a hi:Relation ;
+  hi:source hi:begus ;
+  hi:target hi:aguilera_arcas ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:aguilera_arcas .
+
+hi:rel-begus-shanahan a hi:Relation ;
+  hi:source hi:begus ;
+  hi:target hi:shanahan ;
+  hi:strength "0.72"^^xsd:decimal ;
+  skos:relatedMatch hi:shanahan .
+
+hi:rel-begus-hybrid a hi:Relation ;
+  hi:source hi:begus ;
+  hi:target hi:hybrid ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:hybrid .
+
+hi:rel-begus-ecology_d a hi:Relation ;
+  hi:source hi:begus ;
+  hi:target hi:ecology_d ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:ecology_d .
+
+hi:rel-begus-hi_videos a hi:Relation ;
+  hi:source hi:begus ;
+  hi:target hi:hi_videos ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:hi_videos .
+
+hi:rel-informative_imitation-ai_interpretability a hi:Relation ;
+  hi:source hi:informative_imitation ;
+  hi:target hi:ai_interpretability ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_interpretability .
+
+hi:rel-informative_imitation-cross_species_language a hi:Relation ;
+  hi:source hi:informative_imitation ;
+  hi:target hi:cross_species_language ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:cross_species_language .
+
+hi:rel-informative_imitation-linguistics a hi:Relation ;
+  hi:source hi:informative_imitation ;
+  hi:target hi:linguistics ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:linguistics .
+
+hi:rel-informative_imitation-embodiment a hi:Relation ;
+  hi:source hi:informative_imitation ;
+  hi:target hi:embodiment ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:embodiment .
+
+hi:rel-informative_imitation-llm a hi:Relation ;
+  hi:source hi:informative_imitation ;
+  hi:target hi:llm ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:llm .
+
+hi:rel-informative_imitation-gen_ai a hi:Relation ;
+  hi:source hi:informative_imitation ;
+  hi:target hi:gen_ai ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:gen_ai .
+
+hi:rel-informative_imitation-cognition a hi:Relation ;
+  hi:source hi:informative_imitation ;
+  hi:target hi:cognition ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:cognition .
+
+hi:rel-informative_imitation-possible_minds a hi:Relation ;
+  hi:source hi:informative_imitation ;
+  hi:target hi:possible_minds ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:possible_minds .
+
+hi:rel-cross_species_language-whale_vowels a hi:Relation ;
+  hi:source hi:cross_species_language ;
+  hi:target hi:whale_vowels ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:whale_vowels .
+
+hi:rel-cross_species_language-umwelt a hi:Relation ;
+  hi:source hi:cross_species_language ;
+  hi:target hi:umwelt ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:umwelt .
+
+hi:rel-cross_species_language-possible_minds a hi:Relation ;
+  hi:source hi:cross_species_language ;
+  hi:target hi:possible_minds ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:possible_minds .
+
+hi:rel-cross_species_language-linguistics a hi:Relation ;
+  hi:source hi:cross_species_language ;
+  hi:target hi:linguistics ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:linguistics .
+
+hi:rel-cross_species_language-ai_interpretability a hi:Relation ;
+  hi:source hi:cross_species_language ;
+  hi:target hi:ai_interpretability ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_interpretability .
+
+hi:rel-cross_species_language-symbiosis a hi:Relation ;
+  hi:source hi:cross_species_language ;
+  hi:target hi:symbiosis ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:symbiosis .
+
+hi:rel-cross_species_language-ecology a hi:Relation ;
+  hi:source hi:cross_species_language ;
+  hi:target hi:ecology ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:ecology .
+
+hi:rel-cross_species_language-hayles a hi:Relation ;
+  hi:source hi:cross_species_language ;
+  hi:target hi:hayles ;
+  hi:strength "0.78"^^xsd:decimal ;
+  skos:relatedMatch hi:hayles .
+
+hi:rel-whale_vowels-ai_interpretability a hi:Relation ;
+  hi:source hi:whale_vowels ;
+  hi:target hi:ai_interpretability ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_interpretability .
+
+hi:rel-whale_vowels-linguistics a hi:Relation ;
+  hi:source hi:whale_vowels ;
+  hi:target hi:linguistics ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:linguistics .
+
+hi:rel-whale_vowels-possible_minds a hi:Relation ;
+  hi:source hi:whale_vowels ;
+  hi:target hi:possible_minds ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:possible_minds .
+
+hi:rel-whale_vowels-umwelt a hi:Relation ;
+  hi:source hi:whale_vowels ;
+  hi:target hi:umwelt ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:umwelt .
+
+hi:rel-whale_vowels-ecology_d a hi:Relation ;
+  hi:source hi:whale_vowels ;
+  hi:target hi:ecology_d ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:ecology_d .
+
+hi:rel-linguistics-epistemology a hi:Relation ;
+  hi:source hi:linguistics ;
+  hi:target hi:epistemology ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:epistemology .
+
+hi:rel-linguistics-philosophy a hi:Relation ;
+  hi:source hi:linguistics ;
+  hi:target hi:philosophy ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:philosophy .
+
+hi:rel-linguistics-cs a hi:Relation ;
+  hi:source hi:linguistics ;
+  hi:target hi:cs ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:cs .
+
+hi:rel-linguistics-ai_ml a hi:Relation ;
+  hi:source hi:linguistics ;
+  hi:target hi:ai_ml ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_ml .
+
+hi:rel-linguistics-cuffari a hi:Relation ;
+  hi:source hi:linguistics ;
+  hi:target hi:cuffari ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:cuffari .
+
+hi:rel-linguistics-de_jaegher a hi:Relation ;
+  hi:source hi:linguistics ;
+  hi:target hi:de_jaegher ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:de_jaegher .
+
+hi:rel-video_begus_mystery_language-begus a hi:Relation ;
+  hi:source hi:video_begus_mystery_language ;
+  hi:target hi:begus ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:begus .
+
+hi:rel-video_begus_mystery_language-ai_interpretability a hi:Relation ;
+  hi:source hi:video_begus_mystery_language ;
+  hi:target hi:ai_interpretability ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_interpretability .
+
+hi:rel-video_begus_mystery_language-informative_imitation a hi:Relation ;
+  hi:source hi:video_begus_mystery_language ;
+  hi:target hi:informative_imitation ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:informative_imitation .
+
+hi:rel-video_begus_mystery_language-cross_species_language a hi:Relation ;
+  hi:source hi:video_begus_mystery_language ;
+  hi:target hi:cross_species_language ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:cross_species_language .
+
+hi:rel-video_begus_mystery_language-whale_vowels a hi:Relation ;
+  hi:source hi:video_begus_mystery_language ;
+  hi:target hi:whale_vowels ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:whale_vowels .
+
+hi:rel-video_begus_mystery_language-linguistics a hi:Relation ;
+  hi:source hi:video_begus_mystery_language ;
+  hi:target hi:linguistics ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:linguistics .
+
+hi:rel-video_begus_mystery_language-possible_minds a hi:Relation ;
+  hi:source hi:video_begus_mystery_language ;
+  hi:target hi:possible_minds ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:possible_minds .
+
+hi:rel-video_begus_mystery_language-llm a hi:Relation ;
+  hi:source hi:video_begus_mystery_language ;
+  hi:target hi:llm ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:llm .
+
+hi:rel-video_begus_mystery_language-hi_videos a hi:Relation ;
+  hi:source hi:video_begus_mystery_language ;
+  hi:target hi:hi_videos ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:hi_videos .
+
 hi:rel-arendt-video_arendt_zur_person_1964 a hi:Relation ;
   hi:source hi:arendt ;
   hi:target hi:video_arendt_zur_person_1964 ;
@@ -22999,6 +23424,46 @@ hi:rel-video_carissa_veliz_prophecy_ted-carissa_veliz-instantiates a hi:Relation
 hi:rel-video_carissa_veliz_prophecy_ted-oracle-develops a hi:Relation ;
   hi:source hi:video_carissa_veliz_prophecy_ted ;
   hi:target hi:oracle ;
+  hi:relationType hi:develops .
+
+hi:rel-begus-informative_imitation-proposes a hi:Relation ;
+  hi:source hi:begus ;
+  hi:target hi:informative_imitation ;
+  hi:relationType hi:proposes .
+
+hi:rel-begus-cross_species_language-proposes a hi:Relation ;
+  hi:source hi:begus ;
+  hi:target hi:cross_species_language ;
+  hi:relationType hi:proposes .
+
+hi:rel-begus-whale_vowels-proposes a hi:Relation ;
+  hi:source hi:begus ;
+  hi:target hi:whale_vowels ;
+  hi:relationType hi:proposes .
+
+hi:rel-begus-ai_interpretability-develops a hi:Relation ;
+  hi:source hi:begus ;
+  hi:target hi:ai_interpretability ;
+  hi:relationType hi:develops .
+
+hi:rel-whale_vowels-ai_interpretability-emergesFrom a hi:Relation ;
+  hi:source hi:whale_vowels ;
+  hi:target hi:ai_interpretability ;
+  hi:relationType hi:emergesFrom .
+
+hi:rel-informative_imitation-embodiment-couplesWith a hi:Relation ;
+  hi:source hi:informative_imitation ;
+  hi:target hi:embodiment ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-video_begus_mystery_language-begus-instantiates a hi:Relation ;
+  hi:source hi:video_begus_mystery_language ;
+  hi:target hi:begus ;
+  hi:relationType hi:instantiates .
+
+hi:rel-video_begus_mystery_language-cross_species_language-develops a hi:Relation ;
+  hi:source hi:video_begus_mystery_language ;
+  hi:target hi:cross_species_language ;
   hi:relationType hi:develops .
 
 hi:rel-berkana_institute-two_loops_model-develops a hi:Relation ;

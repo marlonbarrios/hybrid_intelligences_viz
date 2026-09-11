@@ -654,6 +654,12 @@ const VIDEO_FALLBACK_CONCEPTS = {
     { conceptId: "perception_politics", label: "Perception Politics" },
     { conceptId: "track_ethics", label: "Ethics Track" },
   ],
+  "begus-mystery-language": [
+    { conceptId: "begus", label: "Gašper Beguš" },
+    { conceptId: "cross_species_language", label: "Cross-species Language" },
+    { conceptId: "whale_vowels", label: "Whale Vowels" },
+    { conceptId: "ai_interpretability", label: "AI Interpretability" },
+  ],
 };
 
 function videoConcepts(video, transcript) {
@@ -749,6 +755,7 @@ const VIDEO_SHORT_LABELS = {
   "elon-musk-neuralink-lex": "Musk ·\nNeuralink &",
   "nick-land-accelerationism": "Land ·\nAcceleration…",
   "carissa-veliz-prophecy-ted": "Véliz ·\nProphecy",
+  "begus-mystery-language": "Beguš ·\nLanguage",
 };
 
 function abbreviateTopic(topic, maxLen = 14) {

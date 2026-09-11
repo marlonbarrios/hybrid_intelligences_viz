@@ -657,7 +657,7 @@
     const ONTOLOGY_URI = "ontology.jsonld";
     const RING_ORDER = [
       "program", "organization", "premise", "participant", "background", "facilitator",
-      "practice", "tension", "quality", "phenomenon", "domain", "framework", "author",
+      "practice", "tension", "quality", "phenomenon", "domain", "framework", "author", "video",
     ];
     const RING_COLORS = {
       program: "#ffb860",
@@ -673,6 +673,7 @@
       domain: "#e48294",
       framework: "#4ec4c4",
       author: "#baa880",
+      video: "#82c3ff",
     };
     const RELATION_TYPE_ORDER = [
       "couplesWith", "enables", "mediates", "cultivates", "constrains",
@@ -709,6 +710,7 @@
       domain:       { label: "Domains",        desc: "Fields of practice and inquiry—art, law, ecology, AI, choreography." },
       framework:    { label: "Conceptual Models", desc: "Extended conceptual models for cognition, AI, embodiment, and world-making." },
       author:       { label: "Authors/Artists", desc: "Thinkers, artists, and researchers linked to concepts in the network." },
+      video:        { label: "Videos", desc: "Talks and performances ingested against the ontology—matched concepts become edges on the Videos ring." },
     };
 
     let concepts = [];

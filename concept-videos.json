@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-07T17:23:33.002Z",
+  "generated": "2026-09-11T18:03:05.513Z",
   "byConcept": {
     "hayles": [
       {
@@ -776,6 +776,13 @@
       }
     ],
     "ai_interpretability": [
+      {
+        "id": "begus-mystery-language",
+        "title": "The Mystery of Language in Humans, Animals & AI | Gašper Beguš",
+        "speaker": "Gašper Beguš",
+        "url": "video-begus-mystery-language.html",
+        "poster": "screenshots/begus-mystery-language.jpg"
+      },
       {
         "id": "understanding-ai-inner-thoughts",
         "title": "Understanding the inner thoughts of AI",
@@ -2319,6 +2326,33 @@
         "speaker": "Carissa Véliz",
         "url": "video-carissa-veliz-prophecy-ted.html",
         "poster": "screenshots/carissa-veliz-prophecy-ted.jpg"
+      }
+    ],
+    "begus": [
+      {
+        "id": "begus-mystery-language",
+        "title": "The Mystery of Language in Humans, Animals & AI | Gašper Beguš",
+        "speaker": "Gašper Beguš",
+        "url": "video-begus-mystery-language.html",
+        "poster": "screenshots/begus-mystery-language.jpg"
+      }
+    ],
+    "cross_species_language": [
+      {
+        "id": "begus-mystery-language",
+        "title": "The Mystery of Language in Humans, Animals & AI | Gašper Beguš",
+        "speaker": "Gašper Beguš",
+        "url": "video-begus-mystery-language.html",
+        "poster": "screenshots/begus-mystery-language.jpg"
+      }
+    ],
+    "whale_vowels": [
+      {
+        "id": "begus-mystery-language",
+        "title": "The Mystery of Language in Humans, Animals & AI | Gašper Beguš",
+        "speaker": "Gašper Beguš",
+        "url": "video-begus-mystery-language.html",
+        "poster": "screenshots/begus-mystery-language.jpg"
       }
     ]
   }

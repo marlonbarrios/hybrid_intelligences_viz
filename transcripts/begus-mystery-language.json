@@ -1,0 +1,5024 @@
+{
+  "videoId": "begus-mystery-language",
+  "text": "why did you first get interested in studying animal language well I first got interested in studying language human language um and it's such a complex and interesting U phenomenon and in order to understand it I think you have to look not only into human language but outside of it right as well so actually um I started with a bit of an unusual path I started as a historical linguist or um sometimes also called comparative philologist which is you study a lot of old dead languages and try to reverse engineer how the the mother language of all our languages in IND European family speak so for example you have to learn Latin and hittite and Sanskrit and and so on so all these cool dead languages and that's what I was pretty much doing in my entire undergraduate and then half of the PHD as well um but then but then you know you you start realizing okay um so there are some really complex questions in language right how did it Evol it how did it evolve right we know that animals don't have the same language as we have and you know and in this shape and form only our human language is in humans um and and nowhere else in the Kingdom so how did it come into being in the first place right that's one question you have to ask yourself second question is like how much of language is influenced by our brain and the way our mind works and and how much is influenced by the fact that you know language is a living thing we all speak we all exchange um you know words and in that process a lot of pressures can work on shaping language right so what shapes language into into this current form and so so I I started doing you know with the with the Advent of AI I started doing a lot of AI modeling I can talk about you know the models modeling that we do in our lab which is we're trying to create an artificial baby uh with this fancy new AI methods and that can give you a bunch of um answers as well right because you can mimic human speech with these artificial neurons and then also compare them to real neurons so that's one kind of external way you can look into like on language and some of these more press and difficult questions and then the other of course is is other animals right so so if you if you're serious about like you know how did language evolve what language even is is what kind of you know differences do we see between our communication system and animal communication system of course the natural thing is to go outside humans and look at what other animals have right right so a general interest and understand understanding of what kind of thing language is where it all languages come from and it's kind of cool to highlight the kind of things so like you kind of think well AI is a pretty amazing tool then maybe to kind of get at these kinds of questions and and then you know pointing to as well how language is kind of one part of cognition right so as well how can we sort of understand maybe the full range of what what kind of things you know what what kind of thing makes our cognition possible and it's interesting as well cuz language seems to be an important part maybe maybe unique part of our cognition but then as you say animals as well though to what degree even can we say it's language right and and then if you kind of going to those more base levels that can kind of help us understand just a huge range of of cognition right MH yeah for sure and and you know some people think that language and thought are one of the same thing pretty much they're very intertwined some people think that there's a inner that our inner thoughts are actually you know separate from our language anguage um and so those are all the fascinating questions that one can ask if you're willing to study you know all sorts of intelligences and and in a sense you know what I what I usually say is that I study um language in in animals humans and machines or cognition in animals and humans and machines because right now it's exciting time to do that because you know for the first time we have ai that is so good that you know you have to take it seriously and you actually can be a tool of you a subject of study and you can use some of the same methods and approaches that we've been using studying language on these models and the other thing is I think there's like renewed excitement for studying animal communication um you know for the longest we thought that the animals are this inferior uh creatures that you know and their that their communication systems are rather simple or you know um not as interesting but I think there's like a renewed interest in really carefully seriously study animals and their communication systems or you know uh language trained animals not that that field has not been you know ongoing for for several decades it just I think there's a really good excitement behind this efforts now it's interesting so language in animals humans machines especially because I mean so especially LMS I mean they're literally called language models I mean they and then their language capacities is pretty good I mean the way they write it's kind of better than me and I know they I do more than just writing uh but still that so so it's how well you know if given the AI and the fact that they're probably less simp more simple than us but they have language then what kind of thing is language I remember U the physicist computer scientist Steven Wolfram saying it's kind of a very interesting question that arises when a I uses language you know what doesn't mean that language isn't as complex as we thought it was you know like what kind of thing does it say it is when we see AI creating language right so and and that really you know speaks to the question of evolution of language right so we don't know we don't there's a lot we don't know about how language evolved right and there are two kind of scenarios it's possible that you know we you just increase intelligence you know you keep Evolution going and from you know bonobas and chimpanzees who don't have the same language um with increase of computational power of our brain or increase of gray matter whatever we want you know somewhere on the way there language emerges and and our our communication system emerges there's another you know possible scenario which is something catastrophic happens right something uniquely human happens right and then from animals we are completely different um all of the sudden right so so you can think of it as as this kind of continuation ation of increased intelligence that gives rise to language and then another scenario is something uniquely specifically human happens and we maybe have adaptation in our brain that allows language and the second scenario was popular for for a long time and and and uh you know a lot of linguists would would uh subscribe to it but but these llms are really shaking up the ground are really you know causing us to rethink because um you know with increase of of power in their power uh language like property started emerge now you know it's it's difficult to say that they have language or not I think this kind of a is is more of a mute point because it depends on how you define Language and what you make of it but I think the fact is that these AI models can help us test these hypothesis right because if you know you have a small model that doesn't do language really well and is bad at it uh but then increase the power its power and you know what language emerges and there really impressive thing emerg then you can say well it's not necessarily the case that humans underwent the same Evolution but the fact is that this mathematical approxim in in mathematical approximations of our brain language can emerge right and so but but there was a cat right so we all talk about llms and gp4 and whatnot um those models have several biologically implausible aspects right no human baby learns from text right so no human baby is born and starts reading massive amounts of Wikipedia and Reddit um and so this is you know this is rest realistic to how it's not a really realistic model uh also humans learn by speaking and listening right and GP GPT or and llama and all these models used to just see words um you know text characters in in a in a computer program so that's not also not how humans learn um so we learn by imitation the human baby you know is born into this word and start babbling and starts producing sounds and hears back what the what the caregivers are saying and so it's kind of really by directional communication and there's a lot of you know a lot of interaction that happens between caregivers and and human babies so what what I what we've been doing in our lab is in a sense you know acknowledge that llms can really help us understand lots of these big picture questions but also there's a need to create a more realistic version of llms right so more realistic Alternatives so what we've been developing is using the same set of techniques to mathematically approximate human language or human brain to build a basically artificial language learner okay so to build this in in a sense artificial baby that only gets raw audio so only hears words and needs to move articulators and needs to exchange information internally and externally in a similar way as human babies are interacting with the world and with that then you can really test not only you know what is possible in in these artificial neural networks what is what can AI do but also you can test it how does it do it right and parallel that to humans does it does it do something similarly than we do or are there any important differences and of course those important differences is what's going to tell you what can be uniquely human about language right so I think there a there's a really valid valid question which is what is human about our language and it's it's a question so in a sense we need to get as many evidence as possible so borrowing from machine learning borrowing from animal studies is really helpful in in this type of questions it's interesting you know you say that obviously the way humans learn you know play and just taking objects looking at them in loads of different ways and just you know it's not just reading text on bit and that's a good thing um but but we have language from that um and and and yet it's interesting though when you say have an llm and you only train it on text then it can also eventually get to to writing and it's interesting you mentioned as well I mean at first I guess we just didn't even know it's necessarily possible right it's complete kind of it's just they weren't very good at first but like we have them and that it's super competent and then it'll be interesting that you say well like what is the minimum requirements to get kind of language and I know we can def get into what kind of do we meet like do they understand the language they have but it seems that there is like this legible text right so could you get that from audio I mean um especially because with llms you train them on text and then it's quite easy to train them to to on images to then them create images so it's like what did they learn from the the text uh and then so then equally like maybe we have language from our complex experience but could it be the case that you can get language from something yet minimum like a fewer requirements right and and then what does that look like when that entity has language and then that can sort of help us understand language in a way and I think the key what you is what you mentioned is what do they learn right and how do they learn internally okay and and an interesting thing is again llms are really powerful and and one of the studies that we have is we we were able to show that these really large good models for the first time in history basically uh we have a case where a model can analyze language itself right not only it can produce language not only can say valid sentences in English but if you ask it use linguistic tools very explicitly use linguistic tools use the tools that that you know we scientists have been using for for centuries to describe language analyze the sentence and it'll do it right so this is really this kind of higher level right a kid can know how to speak years before they can know what a what a noun and a verb is and how you know how those those dependencies work and that's you know there's there's a science of linguistics behind that that that has been dealing that for centuries um and you know for the first time an llm can can do that and but but the crucial thing is we need to understand internally how these mods are learning and and that is so important um for all sorts of reasons you know there's a lot of talk about AI safety there's a lot of talk about regul ation and just in general um so these large llms are in a sense so big that it's in difficult to understand them and it's difficult to look inside them right so we have this sort of um approaches like the one I just mentioned we use for example Linguistics to try to get as a an you know get get a window into its its internal representations um on the other hand if you build more realistic model they're going to be small smaller right they're going to be more brain likee they're more um more inspired by our brain and so you can understand them much better and look inside them much better okay so not only you can you know look inside you know not only you can train a model develop a model that has several realistic um properties train it on human speech see whether it you know behaves like uh human babies when they acquire language and and we've shown several times that that they do but also you can look inside them right look inside these artificial mathematical approximations of our brain and see this is how it learn so this is how it you know this neuron this artificial neuron represents something that I know is is important in language and then what what you can do in addition to that is you know you take human brain of course and there are several ways to to scan human brain right so uh one is with you know you place electrodes tiny electrodes on people's brain the other is MRI where you put people into a giant magnetic field uh a third is when you know during surgery sometimes patients need to be awake and you can record the brain at the brain activity there so you can use those really interesting brain Imaging techniques to parallel Behavior not only Behavior not only how you know the way these mods are behaving like humans or unlike humans but also internally in the at the brain level at the neuron level are we similar and different or different and so I I you know I think there's a that's really crucial for all sorts of um purposes and finally this ability to look inside the network is really powerful why because these networks are really good right at producing sentences at answering questions and all sorts of tasks and so if if you're able to look inside them how they learn then you're able to get insights that as a human you might not have right so that's the crucial thing that's kind of AI interpretability as a as a source of new discovery and so if I understand that so if you were to create a model at smaller and say what what would it mean to make uh you know small AI instead of making it enormous but you don't really understand it what would it mean to have elements that are brain like and you could then map out and better understand it how how does how would that look like well well you know we're trying to do that we've been showing that um our brain signal our you know the signal in our brain when we listen to speech is very very similar to uh the signal in these artificial neuron networks and and and you know in in in in pure raw form so you can make all sorts of comparisons you can make you know you can build simulations stuff that is impossible in humans for ethical reasons so you can you know take you can develop this artificial Network and you know artificially take some weights out or you know artificially black out parts of it to see what kind of mistakes it'll make one of my students were just uh presenting this yesterday in our lab meeting so he he was blacking out parts of the artificial brain to see what kind of words it will produce and you know you obviously can't do that in human brain so you can use this as a kind of simulation um to better understand the brain and our processing um you know we we're we're we're showing that um so when you listen to me right now your ear drum is vibrating and that gets translated into electric activity and that travels through your brain stem first and then onto the outer part of your brain okay and so you can catch that signal you can catch words as they're traveling through the brain and also you can catch words as they're um you know traveling through artificial neuron networks and we've been showing that uh you know earlier stages in this process are similar between artificial and and brain artificial neuron networks and brain later stages is also similar so there's like this similar process and so you can use all sorts of um simulations to basically ask ask questions or answer questions that you wouldn't be able to answer of course this is all modeling right so it's not exactly the same our brain operate in several ways differently but we're getting closer and closer and I think this is the closest we can currently get given our um methodology so with a simple simpler model but you can then see the analogies between uh that that that the the yeah how that is processing information and then our brains um that can tell us about you know what one of the elements the important elements to to to understand how hearing sort of works and and so so it what kinds of things I mean have we learned and do you think we can learn from this kind of method like what does the future look like I mean I mean guess that's probably yeah gone well so I I mentioned right it's understanding these models is super crucial because humans are very biased we don't like to think of ourselves as biased but very biased right we you know there's like several layers of bites we don't even hear things that are not within certain frequency range right we don't hear rats um and and you know high frequencies for example above 20,000 Hertz um we see a certain spectrum of light and so on but we are also biases biased in other ways because we're biological creatures and as scientists we are still biological creatures right we're not this you know this independent um um you know creatures and when we turn our scientist hat on um so you're you're we are able to observe C certain patterns um and not others okay so now if we build these artificial neuron networks and if we understand them it means that we can build an intelligence that is able to see way more than we are or maybe not more but different things okay it can observe different patterns it can hear different things it can you know it doesn't have the same set of biological predispositions and you know you know for example to to me as a human I really like faces right we our brain really like faces and you know we can train a model that doesn't necessarily have preference toward faces can find other things um for example on a picture now if you also understand if you're able to see how then this model has learned this this less biased model has learned you can get insights into new you know new insights that you wouldn't have got if you haven't if if you didn't have that tool so this is kind of a AI as a tool AI interpretability as a tool for new discovery and this is really interesting because for example when when we were looking at at at other other so we we have our artificial baby okay it learned language in a way that we think is good right it it discovered on its own what is important in language it discovered words it discovered sound on a you know completely on its own and so if you're a if you're faced with something that you don't understand for example animal communication you can train such a model not on human speech but an animal speech or animal communication and then look inside it and see okay what about animals did you learn and so that that is a nice approach basically where you can um kind of you can you can find new patterns with AI interpretability and if we are able to pair this understanding of the models with their amazing performance I think you know there's going to be a ton of um new discoveries in science which is really exciting and you know it's not just me other scientists are are excited about um the potential to use this technology as a tool for new discovery right now I was going to turn that back onto animal language because developing kind of AI tools that can see kinds of things that we're not predisposed to or literally can't see like a spectrum of light that we cannot see um you know and so you know I mean if animals have language or like the intricacies of intricacies of their communication I mean we as humans are not have not been evolved or created to understand animal language so even if even if it's there how are we going to see it right but if you can you know create an AI and it's like that's its job it's specialized it's been learning to to understand animal language so that's I mean but yeah more broadly it's so interesting to kind of turn these tools back around on science itself to kind of give you new lenses and sort of ways of seeing the world right for sure yeah no it's it's um I think there's you know and not only in animal communication ation research so this approach of of of building AI getting out outside of our human with you know with the help of which we'll get outside of our human biases is is huge and it can tell us um you know it it has like really deep philosophical implications right so what does it mean to be human right and and what does it mean to be intelligent uh that those are really difficult questions and what does it mean to be um you know sentient and conscious stu stuff like that so there's going to be a lot but I think we're we're going to have to really we really need to study all these intelligences together right animals humans and machines um in order to mutually you know benefit from the study of of of of these intelligence for intelligences for example like you know we are we can learn about how language evolved by learning how by running this simulation of artificial babies we can learn Lear how um how these machines learn by using the same techniques that linguists have been using for centuries of trying to you know understand symbol our symbolic language and our the way we communicate and we can learn about animals by you know training these models um on things that we you know and and and helping us um helping the help them helping us see patterns that we wouldn't have otherwise so I think it's really exciting to kind of use all these three universes if you want to to to get new insights what have we learned about animal communication then using these kinds of techniques well I think it's really at the beginning so I have a bunch of research um it's available on my website on on you know what kind of models we can use what the the techniques are so we have developed several techniques that help us look inside the models um I think animal communication is a really complex nut to crack um you know with with some exceptions there's a lot of systems that we really don't know yet um and and not not only because um you know we don't have good AI systems or because we are you know we're not good at getting out outside of our um Humanity it is also because we don't have a of data right animals in captivity have been studied but animals in the wild have not been studied as much you know it's not easy to study Elephants or bonobas or chimpanzees and or whales um in the wild and so it takes a lot of effort it takes a lot of time right so for example I'm I'm part of project City and um you know we've been we've been following sperm whales and it's a such a big undertaking right you these animals live in the wild they live on deep you know deep sea they they dive up to a kilometer deep so they need the Open Sea and Open Sea research is tough so we don't have a ton of data elephants likewise right or bonobas and chimp are endangered so you know following them in the wild takes a lot of effort and a lot of time and not you know not always is is the scientific Community interested enough and I think now there's like really a a new renewed excitement about this kind of research but it's not just because we don't have fancy models it's also because we haven't been you know attentive enough we haven't been listening to these animals enough we we just didn't put enough effort into trying to understand right it's like if we had the kind of data on whales that we have on our language we me probably crack it have cracked it right but where are the data sets can where can you find the data sets on like sperm whale noises yeah and not only that like not only that right we share with elephants and chimpanzees at least we share habitat right we I can I can think of my 3D World right there are trees and elephants have trees as well and there's like floor and you know there's gravity and there's air right with whales it's like almost everything is upside down you know they their gravity Works different I mean gravity works the same but like they're you know they're just they just flows most of the time they sleep vertically for example which is really cool um it's mostly dark below 700 meters in the ocean and it's just like you know it's difficult to conceptualize their world even right um how do they present how do they imagine the world right you get into this really deep philosophical questions um and and they really make you rethink a lot of assumptions that you have as a as a terrestrial animal but yeah so it's really difficult to represent their world on the other hand on some levels they're so similar to us right as well right they you know their females form societies U mineal societies um uh and they you know babysit each other's calves and you know they they they form families and Clans and they use communication system to mark their identity and so on some levels they're very similar kids are with the the female families for for a long time they are acquiring their communication system so on many levels very similar but and think of like how their world is so different and that's really this excitement behind the study of of them I think is because of these similarities and differences it's I mean I don't know if you're familiar with Michael Le work on kind of um for example the intelligence of single cell organisms or organs in our body uh in general like like what kind of intelligences are out there but we apply our humanistic sort of reasoning we think you know it doesn't look intelligent to me it looks kind of dumb well are you sure if you do you know the kind of intelligence that it has you know and it's because and you say with the whales right I mean they're navigating a situation that might be complete darkness you know what do that we're so used to trying to use our eyes um as a means for intelligence and so it's like yeah different kinds of intelligence that we kind of then not spot as intelligence right and you know they dive as they dive they echolocate right so they emit these clicks and based on what comes back they kind of probably form this representations of of the real world beh below them and you know they also hunt they locate squid which is their main um their main food but but yeah no I mean I think there's going to be a lot of um a lot of attention moved now onto a study of intelligences and and different flavors and different sorts and and and just trying to understand what intelligence is and how you know how we can use different different um subtypes of intelligences together to kind of move forward and and make progress what do you think AI will look like in the in the future especially because you know you talked about LMS they're kind of intelligence but like they they don't they don't really seem to have that many analogies to our kinds of intelligence they're just really humongous linear kind of feed forward models um but then they're also AI being created well with a bit more focus on the principles of human cognition and yeah I'm wondering I mean the multiple routes I mean what what I mean also there's so many questions here I mean it's a really interesting and deep deep problem and there's camps right as always there's camps some people think that you know AI is great it's great as a tool it never it'll never surpass human it will never have that capacity um and and the other Camp is of course a little bit more cautious and uh recently Jeffrey Hinton got a Nobel Prize and and he's uh he's very cautious and I I would probably fall more into this second Camp if if you want to place me um so I don't want to be a Doomer or anything but the fact is that artificial intelligence has some pretty big advantages over human intelligence uh because it's non-biological okay so if you think of a human right I'm I'm born and I need to learn everything from scratch and then you know as humans we we pass away um and my brain cannot be taken out of my currently cannot be taken out and implemented into another brain right whereas with AI models basically you can copy weights copy these artificial brain and continuously train them and you know you can make intelligences that collaborate right so so far we've been focusing on single llm right gp4 but like imagine a future where there's like where these models start collaborating with with with within each other right and we know that one human is is so you know can be so intelligent but like 10 humans is 10 humans are are much more intelligent than than in a single one and you know it's often times not it's often times even more than the sum of the parts right because this kind of collective intelligence emerges so um I think we need to be very careful uh I think you know it's it's something that needs attention and I'm not saying that they're going to take over and there's not some sort of sci-fi uh scenarios but that there are some advantages that we need to be quite careful about um and and you know um nobody really knows what will happen nobody knows if there's a limit but the question that we are asking the question that you just ask you know what will AI look like is incredibly incredibly connected to the question of how animals work and how human language emerged right so the question is is there the question that I started this podcast with podcast with was you know what is uniquely human did something really uniquely human happen in our in evolution that allows us to be so intelligent that allows us to have language or you know was just increase in computational power now the exact you ask me the exact same question here you know slightly differently packaged but if I'm continuously growing these Networks are we going to see you know just continuous Improvement until like they're better than us at one point or is there something uniquely human and unique architecture that is required for the models to be as successful as we are so that's why it's so important to also you know look at animals and look at humans to answer this question nobody really knows but there's less and less evidence that there is something uniquely human and if you think of you know the the brain of a fly was just recently sequenced um the brain of a fly uh of a of a fruit fly um all 140 all 140,000 neurons were recently uh you know flashed out and analyzed in a nature paper their ve their brain is very different than ours but it works according to the same principles right and so if you imagine the fruit flies brain and just you know stretch it to our neurons which is like 80 80 80 billion and several trillions of uh you know hundreds of trillions of of synapses then you know you have a in a sense a comparison somewhere along those lines human humanness arose right somewhere along those lines animal uh language emerged our intelligence emerged so if you think of you know if you put a parallel to the AI if we're going to keep increasing and under the assumption that performance will increase then at some point we're going to have a really capable entity and the only thing that humans have not deal with dealt with in the past has been something that is more intelligent than us we basically dealt with you know we dealt with uh uh Atomic crisis we dealt with wors we dealt with horrible things more or less successfully but we never had anything that was more intelligent than intelligent than us so it's basically a complete Uncharted Territory and so that that for all these reasons I would say caution is in place and not the kind of caution that where you know you freak out that in 10 years we're going to be wiped out by the these models but you know we have to rethink our future in a sense which we didn't have to rethink 10 years ago when these models were not as successful yet and it makes me think I mean you can't really separate the AI from us in our intelligence so I mean people themselves equipping themselves technologically with the power of all these L AI LMS and as you say multiple of them in combination or you know companies you know these other distributed entities right like even if it's yeah like we I guess what I'm saying is we will be part of the both the benefits but also the problems right it's it'll be kind of to a degree us wielding it or us facilitating them and so yeah and and it's interesting yeah to tie that into intelligence yeah it's like the different kinds to it it's hard to spot sometimes right and so it's like you know what kinds of new kinds of even intelligence could and it's almost saying you're going to make an llm with a new kind of intelligence you know it's but but but then again the the combination of different kinds of AI right and as we learn more about them right yeah it's it's interesting and you know these models can start communicate in ways that we don't understand and that's probably likely going to happen actually uh so you know we have our own language which is rather slow um you and I talk with about 39 bits per second um exch information exchange rate and imagine those days of when internet was 39 bits per second those are those are you know long past and imagine if you know if if our internet connections were so slow these days and so that's you know whenever I as a human I raise as I get I get you know I I get born I need to learn everything with this slow rate that that's something that Jeffrey Hinton is is also saying about um and and these models have you know have way bigger channels um so so in a sense we are you know we're slow and and they're going to they're going to be able to maybe you know these models can start communicating with each other in ways we don't understand so I think that's it's super important to continue the research into interpretability into understanding these models and trying to see what can happen so that you know in the best case scenario we get um you know we get a tool that is super helpful and that I'm sure will happen um you know in the next couple of decades there's a big potential for all sorts of Discovery for in medicine in in all sorts of fields because of all these things we talked about um that the question is like how and when you know it can get to a point where it where these models are are performing too well and we don't understand them and we cannot control them right and that is that is something that I think you know there's a lot of in a sense political debates behind this but I don't think it should be right I mean you can disagree if whether that's a valid reason or not but I think it there's nothing wrong to think about these potential future scenarios that can be you know really bad for the humanity um just because there are so many advantages that these models have right and and and if you think of it um we're going to you know we're going to we humans are very creative and very curious and very great at at dealing with problems and and and and so it's going to be a big challenge if we're able to control these models or or create them in a way that um that you know we can still understand them that is the crucial part so that's what I'm investing so much of my effort into interpretability because if you don't understand what the model starts saying right if at some point you don't understand what it's performing because it's in a sense more intelligent than than you um then you have a problem and you know recently it happened that one of the greatest mathematicians teren sty said that the latest model is is at the level of a not fully incompetent graduate student in mathematics right and that is to me a pretty pretty high estimation um so so the models have have started you know to working on proofs and and they're not perfect yet but they're increasingly you know getting better and better better so I think one has to be really really careful and attentive to these things and and and I think it shouldn't be the case that this kind of um calls for caution and calls for understanding should be met with this sort of skepticism and and and and this kind of you know attitude oh this is just dorismar propriate and that concludes this podcast if you liked it then maybe check out one of these videos here and consider subscribing for more like this in the future I'm Jack and thank you for watching",
+  "segments": [
+    {
+      "start": 0.28,
+      "end": 5.16,
+      "text": "why did you first get interested in"
+    },
+    {
+      "start": 2.24,
+      "end": 7.799,
+      "text": "studying animal language well I first"
+    },
+    {
+      "start": 5.16,
+      "end": 10.559000000000001,
+      "text": "got interested in studying language"
+    },
+    {
+      "start": 7.799,
+      "end": 14.2,
+      "text": "human language um and it's such a"
+    },
+    {
+      "start": 10.559,
+      "end": 16,
+      "text": "complex and interesting U phenomenon and"
+    },
+    {
+      "start": 14.2,
+      "end": 17.8,
+      "text": "in order to understand it I think you"
+    },
+    {
+      "start": 16,
+      "end": 20.439,
+      "text": "have to look not only into human"
+    },
+    {
+      "start": 17.8,
+      "end": 23.439,
+      "text": "language but outside of it right as well"
+    },
+    {
+      "start": 20.439,
+      "end": 25.88,
+      "text": "so actually um I started with a bit of"
+    },
+    {
+      "start": 23.439,
+      "end": 29.08,
+      "text": "an unusual path I started as a"
+    },
+    {
+      "start": 25.88,
+      "end": 31.84,
+      "text": "historical linguist or um sometimes also"
+    },
+    {
+      "start": 29.08,
+      "end": 35.559,
+      "text": "called comparative philologist which is"
+    },
+    {
+      "start": 31.84,
+      "end": 38.92,
+      "text": "you study a lot of old dead languages"
+    },
+    {
+      "start": 35.559,
+      "end": 41.239,
+      "text": "and try to reverse engineer how the the"
+    },
+    {
+      "start": 38.92,
+      "end": 44.2,
+      "text": "mother language of all our languages in"
+    },
+    {
+      "start": 41.239,
+      "end": 46.8,
+      "text": "IND European family speak so for example"
+    },
+    {
+      "start": 44.2,
+      "end": 49.719,
+      "text": "you have to learn Latin and hittite and"
+    },
+    {
+      "start": 46.8,
+      "end": 51.36,
+      "text": "Sanskrit and and so on so all these cool"
+    },
+    {
+      "start": 49.719,
+      "end": 52.64,
+      "text": "dead languages and that's what I was"
+    },
+    {
+      "start": 51.36,
+      "end": 54.839999999999996,
+      "text": "pretty much doing in my entire"
+    },
+    {
+      "start": 52.64,
+      "end": 58.199,
+      "text": "undergraduate and then half of the PHD"
+    },
+    {
+      "start": 54.84,
+      "end": 62.120000000000005,
+      "text": "as well um but then but then you know"
+    },
+    {
+      "start": 58.199,
+      "end": 64.6,
+      "text": "you you start realizing okay um so there"
+    },
+    {
+      "start": 62.12,
+      "end": 67.2,
+      "text": "are some really complex questions in"
+    },
+    {
+      "start": 64.6,
+      "end": 70.479,
+      "text": "language right how did it Evol it how"
+    },
+    {
+      "start": 67.2,
+      "end": 74.08,
+      "text": "did it evolve right we know that animals"
+    },
+    {
+      "start": 70.479,
+      "end": 77.28,
+      "text": "don't have the same language as we have"
+    },
+    {
+      "start": 74.08,
+      "end": 80.84,
+      "text": "and you know and in this shape and form"
+    },
+    {
+      "start": 77.28,
+      "end": 82.72,
+      "text": "only our human language is in humans um"
+    },
+    {
+      "start": 80.84,
+      "end": 84.84,
+      "text": "and and nowhere else in the Kingdom so"
+    },
+    {
+      "start": 82.72,
+      "end": 86.24,
+      "text": "how did it come into being in the first"
+    },
+    {
+      "start": 84.84,
+      "end": 88.759,
+      "text": "place right that's one question you have"
+    },
+    {
+      "start": 86.24,
+      "end": 91.36,
+      "text": "to ask yourself second question is like"
+    },
+    {
+      "start": 88.759,
+      "end": 94.52,
+      "text": "how much of language is influenced by"
+    },
+    {
+      "start": 91.36,
+      "end": 97.119,
+      "text": "our brain and the way our mind works and"
+    },
+    {
+      "start": 94.52,
+      "end": 99.79899999999999,
+      "text": "and how much is influenced by the fact"
+    },
+    {
+      "start": 97.119,
+      "end": 103.159,
+      "text": "that you know language is a living thing"
+    },
+    {
+      "start": 99.799,
+      "end": 106.119,
+      "text": "we all speak we all exchange um you know"
+    },
+    {
+      "start": 103.159,
+      "end": 108.36,
+      "text": "words and in that process a lot of"
+    },
+    {
+      "start": 106.119,
+      "end": 111.439,
+      "text": "pressures can work on shaping language"
+    },
+    {
+      "start": 108.36,
+      "end": 114.6,
+      "text": "right so what shapes language into into"
+    },
+    {
+      "start": 111.439,
+      "end": 116.439,
+      "text": "this current form and so so I I started"
+    },
+    {
+      "start": 114.6,
+      "end": 119.19999999999999,
+      "text": "doing you know with the with the Advent"
+    },
+    {
+      "start": 116.439,
+      "end": 121,
+      "text": "of AI I started doing a lot of AI"
+    },
+    {
+      "start": 119.2,
+      "end": 122.96000000000001,
+      "text": "modeling I can talk about you know the"
+    },
+    {
+      "start": 121,
+      "end": 124.52,
+      "text": "models modeling that we do in our lab"
+    },
+    {
+      "start": 122.96,
+      "end": 128.119,
+      "text": "which is we're trying to create an"
+    },
+    {
+      "start": 124.52,
+      "end": 131,
+      "text": "artificial baby uh with this fancy new"
+    },
+    {
+      "start": 128.119,
+      "end": 133.72,
+      "text": "AI methods and that can give you a bunch"
+    },
+    {
+      "start": 131,
+      "end": 138.28,
+      "text": "of um answers as well right because you"
+    },
+    {
+      "start": 133.72,
+      "end": 141.28,
+      "text": "can mimic human speech with these"
+    },
+    {
+      "start": 138.28,
+      "end": 143.92,
+      "text": "artificial neurons and then also compare"
+    },
+    {
+      "start": 141.28,
+      "end": 147.239,
+      "text": "them to real neurons so that's one kind"
+    },
+    {
+      "start": 143.92,
+      "end": 150.07999999999998,
+      "text": "of external way you can look into like"
+    },
+    {
+      "start": 147.239,
+      "end": 152.28,
+      "text": "on language and some of these more press"
+    },
+    {
+      "start": 150.08,
+      "end": 154.16000000000003,
+      "text": "and difficult questions and then the"
+    },
+    {
+      "start": 152.28,
+      "end": 156.319,
+      "text": "other of course is is other animals"
+    },
+    {
+      "start": 154.16,
+      "end": 157.92,
+      "text": "right so so if you if you're serious"
+    },
+    {
+      "start": 156.319,
+      "end": 161.23899999999998,
+      "text": "about like you know how did language"
+    },
+    {
+      "start": 157.92,
+      "end": 163.319,
+      "text": "evolve what language even is is what"
+    },
+    {
+      "start": 161.239,
+      "end": 165.08,
+      "text": "kind of you know differences do we see"
+    },
+    {
+      "start": 163.319,
+      "end": 166.83999999999997,
+      "text": "between our communication system and"
+    },
+    {
+      "start": 165.08,
+      "end": 169.59900000000002,
+      "text": "animal communication system of course"
+    },
+    {
+      "start": 166.84,
+      "end": 172.04,
+      "text": "the natural thing is to go outside"
+    },
+    {
+      "start": 169.599,
+      "end": 175.64,
+      "text": "humans and look at what other animals"
+    },
+    {
+      "start": 172.04,
+      "end": 177.76,
+      "text": "have right right so a general interest"
+    },
+    {
+      "start": 175.64,
+      "end": 179.83999999999997,
+      "text": "and understand understanding of what"
+    },
+    {
+      "start": 177.76,
+      "end": 182,
+      "text": "kind of thing language is where it all"
+    },
+    {
+      "start": 179.84,
+      "end": 184.31900000000002,
+      "text": "languages come from and it's kind of"
+    },
+    {
+      "start": 182,
+      "end": 186.04,
+      "text": "cool to highlight the kind of things so"
+    },
+    {
+      "start": 184.319,
+      "end": 188.51899999999998,
+      "text": "like you kind of think well AI is a"
+    },
+    {
+      "start": 186.04,
+      "end": 190.28,
+      "text": "pretty amazing tool then maybe to kind"
+    },
+    {
+      "start": 188.519,
+      "end": 193.20000000000002,
+      "text": "of get at these kinds of questions and"
+    },
+    {
+      "start": 190.28,
+      "end": 195.799,
+      "text": "and then you know pointing to as well"
+    },
+    {
+      "start": 193.2,
+      "end": 197.72,
+      "text": "how language is kind of one part of"
+    },
+    {
+      "start": 195.799,
+      "end": 200.48000000000002,
+      "text": "cognition right so as well how can we"
+    },
+    {
+      "start": 197.72,
+      "end": 202.44,
+      "text": "sort of understand maybe the full range"
+    },
+    {
+      "start": 200.48,
+      "end": 203.959,
+      "text": "of what what kind of things you know"
+    },
+    {
+      "start": 202.44,
+      "end": 205.959,
+      "text": "what what kind of thing makes our"
+    },
+    {
+      "start": 203.959,
+      "end": 208,
+      "text": "cognition possible and it's interesting"
+    },
+    {
+      "start": 205.959,
+      "end": 210.599,
+      "text": "as well cuz language seems to be an"
+    },
+    {
+      "start": 208,
+      "end": 212.72,
+      "text": "important part maybe maybe unique part"
+    },
+    {
+      "start": 210.599,
+      "end": 214.64,
+      "text": "of our cognition but then as you say"
+    },
+    {
+      "start": 212.72,
+      "end": 217.08,
+      "text": "animals as well though to what degree"
+    },
+    {
+      "start": 214.64,
+      "end": 219.04,
+      "text": "even can we say it's language right and"
+    },
+    {
+      "start": 217.08,
+      "end": 220.519,
+      "text": "and then if you kind of going to those"
+    },
+    {
+      "start": 219.04,
+      "end": 222.76,
+      "text": "more base levels that can kind of help"
+    },
+    {
+      "start": 220.519,
+      "end": 226.48000000000002,
+      "text": "us understand just a huge range of of"
+    },
+    {
+      "start": 222.76,
+      "end": 228.67999999999998,
+      "text": "cognition right MH yeah for sure and and"
+    },
+    {
+      "start": 226.48,
+      "end": 231.04,
+      "text": "you know some people think that language"
+    },
+    {
+      "start": 228.68,
+      "end": 233.12,
+      "text": "and thought are one of the same thing"
+    },
+    {
+      "start": 231.04,
+      "end": 235.12,
+      "text": "pretty much they're very intertwined"
+    },
+    {
+      "start": 233.12,
+      "end": 238.12,
+      "text": "some people think that there's a inner"
+    },
+    {
+      "start": 235.12,
+      "end": 240.76,
+      "text": "that our inner thoughts are actually you"
+    },
+    {
+      "start": 238.12,
+      "end": 243,
+      "text": "know separate from our language anguage"
+    },
+    {
+      "start": 240.76,
+      "end": 244.76,
+      "text": "um and so those are all the fascinating"
+    },
+    {
+      "start": 243,
+      "end": 246.92,
+      "text": "questions that one can ask if you're"
+    },
+    {
+      "start": 244.76,
+      "end": 249,
+      "text": "willing to study you know all sorts of"
+    },
+    {
+      "start": 246.92,
+      "end": 250.879,
+      "text": "intelligences and and in a sense you"
+    },
+    {
+      "start": 249,
+      "end": 254.28,
+      "text": "know what I what I usually say is that I"
+    },
+    {
+      "start": 250.879,
+      "end": 256.88,
+      "text": "study um language in in animals humans"
+    },
+    {
+      "start": 254.28,
+      "end": 259.04,
+      "text": "and machines or cognition in animals and"
+    },
+    {
+      "start": 256.88,
+      "end": 261.239,
+      "text": "humans and machines because right now"
+    },
+    {
+      "start": 259.04,
+      "end": 263.759,
+      "text": "it's exciting time to do that because"
+    },
+    {
+      "start": 261.239,
+      "end": 266.56,
+      "text": "you know for the first time we have ai"
+    },
+    {
+      "start": 263.759,
+      "end": 268.32,
+      "text": "that is so good that you know you have"
+    },
+    {
+      "start": 266.56,
+      "end": 271.56,
+      "text": "to take it seriously and you actually"
+    },
+    {
+      "start": 268.32,
+      "end": 273.52,
+      "text": "can be a tool of you a subject of study"
+    },
+    {
+      "start": 271.56,
+      "end": 275.52,
+      "text": "and you can use some of the same methods"
+    },
+    {
+      "start": 273.52,
+      "end": 278.15999999999997,
+      "text": "and approaches that we've been using"
+    },
+    {
+      "start": 275.52,
+      "end": 280.24,
+      "text": "studying language on these models and"
+    },
+    {
+      "start": 278.16,
+      "end": 283.16,
+      "text": "the other thing is I think there's like"
+    },
+    {
+      "start": 280.24,
+      "end": 285.52,
+      "text": "renewed excitement for studying animal"
+    },
+    {
+      "start": 283.16,
+      "end": 287.56,
+      "text": "communication um you know for the"
+    },
+    {
+      "start": 285.52,
+      "end": 290.52,
+      "text": "longest we thought that the animals are"
+    },
+    {
+      "start": 287.56,
+      "end": 292.36,
+      "text": "this inferior uh creatures that you know"
+    },
+    {
+      "start": 290.52,
+      "end": 295.96,
+      "text": "and their that their communication"
+    },
+    {
+      "start": 292.36,
+      "end": 297.68,
+      "text": "systems are rather simple or you know um"
+    },
+    {
+      "start": 295.96,
+      "end": 300.44,
+      "text": "not as interesting but I think there's"
+    },
+    {
+      "start": 297.68,
+      "end": 304,
+      "text": "like a renewed interest in really"
+    },
+    {
+      "start": 300.44,
+      "end": 306.36,
+      "text": "carefully seriously study animals and"
+    },
+    {
+      "start": 304,
+      "end": 307.84,
+      "text": "their communication systems or you know"
+    },
+    {
+      "start": 306.36,
+      "end": 310.52000000000004,
+      "text": "uh language trained animals not that"
+    },
+    {
+      "start": 307.84,
+      "end": 313.32,
+      "text": "that field has not been you know ongoing"
+    },
+    {
+      "start": 310.52,
+      "end": 315.84,
+      "text": "for for several decades it just I think"
+    },
+    {
+      "start": 313.32,
+      "end": 319.759,
+      "text": "there's a really good excitement behind"
+    },
+    {
+      "start": 315.84,
+      "end": 322.919,
+      "text": "this efforts now it's interesting so"
+    },
+    {
+      "start": 319.759,
+      "end": 324.47900000000004,
+      "text": "language in animals humans machines"
+    },
+    {
+      "start": 322.919,
+      "end": 326.15999999999997,
+      "text": "especially because I mean so especially"
+    },
+    {
+      "start": 324.479,
+      "end": 328,
+      "text": "LMS I mean they're literally called"
+    },
+    {
+      "start": 326.16,
+      "end": 329.36,
+      "text": "language models I mean they and then"
+    },
+    {
+      "start": 328,
+      "end": 330.72,
+      "text": "their language capacities is pretty good"
+    },
+    {
+      "start": 329.36,
+      "end": 332.88,
+      "text": "I mean the way they write it's kind of"
+    },
+    {
+      "start": 330.72,
+      "end": 335.84000000000003,
+      "text": "better than me and I know they I do more"
+    },
+    {
+      "start": 332.88,
+      "end": 339.199,
+      "text": "than just writing uh but still that so"
+    },
+    {
+      "start": 335.84,
+      "end": 340.67999999999995,
+      "text": "so it's how well you know if given the"
+    },
+    {
+      "start": 339.199,
+      "end": 342.91900000000004,
+      "text": "AI and the fact that they're probably"
+    },
+    {
+      "start": 340.68,
+      "end": 344.479,
+      "text": "less simp more simple than us but they"
+    },
+    {
+      "start": 342.919,
+      "end": 347,
+      "text": "have language then what kind of thing is"
+    },
+    {
+      "start": 344.479,
+      "end": 349.31899999999996,
+      "text": "language I remember U the physicist"
+    },
+    {
+      "start": 347,
+      "end": 352,
+      "text": "computer scientist Steven Wolfram saying"
+    },
+    {
+      "start": 349.319,
+      "end": 355.28000000000003,
+      "text": "it's kind of a very interesting question"
+    },
+    {
+      "start": 352,
+      "end": 357.56,
+      "text": "that arises when a I uses language you"
+    },
+    {
+      "start": 355.28,
+      "end": 359.15999999999997,
+      "text": "know what doesn't mean that language"
+    },
+    {
+      "start": 357.56,
+      "end": 361.24,
+      "text": "isn't as complex as we thought it was"
+    },
+    {
+      "start": 359.16,
+      "end": 363.44,
+      "text": "you know like what kind of thing does it"
+    },
+    {
+      "start": 361.24,
+      "end": 366.319,
+      "text": "say it is when we see AI creating"
+    },
+    {
+      "start": 363.44,
+      "end": 368.28,
+      "text": "language right so and and that really"
+    },
+    {
+      "start": 366.319,
+      "end": 370.96000000000004,
+      "text": "you know speaks to the question of"
+    },
+    {
+      "start": 368.28,
+      "end": 373.35999999999996,
+      "text": "evolution of language right so we don't"
+    },
+    {
+      "start": 370.96,
+      "end": 375.599,
+      "text": "know we don't there's a lot we don't"
+    },
+    {
+      "start": 373.36,
+      "end": 377.47900000000004,
+      "text": "know about how language evolved right"
+    },
+    {
+      "start": 375.599,
+      "end": 380.08,
+      "text": "and there are two kind of scenarios it's"
+    },
+    {
+      "start": 377.479,
+      "end": 382.639,
+      "text": "possible that you know we you just"
+    },
+    {
+      "start": 380.08,
+      "end": 384.71999999999997,
+      "text": "increase intelligence you know you keep"
+    },
+    {
+      "start": 382.639,
+      "end": 386.72,
+      "text": "Evolution going and from you know"
+    },
+    {
+      "start": 384.72,
+      "end": 389.639,
+      "text": "bonobas and chimpanzees who don't have"
+    },
+    {
+      "start": 386.72,
+      "end": 392.759,
+      "text": "the same language um with increase of"
+    },
+    {
+      "start": 389.639,
+      "end": 395.24,
+      "text": "computational power of our brain or"
+    },
+    {
+      "start": 392.759,
+      "end": 398.52000000000004,
+      "text": "increase of gray matter whatever we want"
+    },
+    {
+      "start": 395.24,
+      "end": 401.8,
+      "text": "you know somewhere on the way there"
+    },
+    {
+      "start": 398.52,
+      "end": 404.4,
+      "text": "language emerges and and our our"
+    },
+    {
+      "start": 401.8,
+      "end": 406.68,
+      "text": "communication system emerges there's"
+    },
+    {
+      "start": 404.4,
+      "end": 409.15999999999997,
+      "text": "another you know possible scenario which"
+    },
+    {
+      "start": 406.68,
+      "end": 411.96,
+      "text": "is something catastrophic happens right"
+    },
+    {
+      "start": 409.16,
+      "end": 413.91900000000004,
+      "text": "something uniquely human happens right"
+    },
+    {
+      "start": 411.96,
+      "end": 416.87899999999996,
+      "text": "and then from animals we are completely"
+    },
+    {
+      "start": 413.919,
+      "end": 418.75899999999996,
+      "text": "different um all of the sudden right so"
+    },
+    {
+      "start": 416.879,
+      "end": 421.24,
+      "text": "so you can think of it as as this kind"
+    },
+    {
+      "start": 418.759,
+      "end": 424.039,
+      "text": "of continuation ation of increased"
+    },
+    {
+      "start": 421.24,
+      "end": 426.919,
+      "text": "intelligence that gives rise to language"
+    },
+    {
+      "start": 424.039,
+      "end": 430.31899999999996,
+      "text": "and then another scenario is something"
+    },
+    {
+      "start": 426.919,
+      "end": 433.479,
+      "text": "uniquely specifically human happens and"
+    },
+    {
+      "start": 430.319,
+      "end": 435.759,
+      "text": "we maybe have adaptation in our brain"
+    },
+    {
+      "start": 433.479,
+      "end": 439.28,
+      "text": "that allows language and the second"
+    },
+    {
+      "start": 435.759,
+      "end": 440.879,
+      "text": "scenario was popular for for a long time"
+    },
+    {
+      "start": 439.28,
+      "end": 444.44,
+      "text": "and and and uh you know a lot of"
+    },
+    {
+      "start": 440.879,
+      "end": 447.52000000000004,
+      "text": "linguists would would uh subscribe to it"
+    },
+    {
+      "start": 444.44,
+      "end": 451.24,
+      "text": "but but these llms are really shaking up"
+    },
+    {
+      "start": 447.52,
+      "end": 454.84,
+      "text": "the ground are really you know causing"
+    },
+    {
+      "start": 451.24,
+      "end": 458.52,
+      "text": "us to rethink because um you know with"
+    },
+    {
+      "start": 454.84,
+      "end": 461.52,
+      "text": "increase of of power in their power uh"
+    },
+    {
+      "start": 458.52,
+      "end": 463.96,
+      "text": "language like property started emerge"
+    },
+    {
+      "start": 461.52,
+      "end": 465.96,
+      "text": "now you know it's it's difficult to say"
+    },
+    {
+      "start": 463.96,
+      "end": 468.599,
+      "text": "that they have language or not I think"
+    },
+    {
+      "start": 465.96,
+      "end": 470.44,
+      "text": "this kind of a is is more of a mute"
+    },
+    {
+      "start": 468.599,
+      "end": 472.919,
+      "text": "point because it depends on how you"
+    },
+    {
+      "start": 470.44,
+      "end": 475.56,
+      "text": "define Language and what you make of it"
+    },
+    {
+      "start": 472.919,
+      "end": 478.919,
+      "text": "but I think the fact is that these AI"
+    },
+    {
+      "start": 475.56,
+      "end": 480.8,
+      "text": "models can help us test these hypothesis"
+    },
+    {
+      "start": 478.919,
+      "end": 482.479,
+      "text": "right because if you know you have a"
+    },
+    {
+      "start": 480.8,
+      "end": 485.199,
+      "text": "small model that doesn't do language"
+    },
+    {
+      "start": 482.479,
+      "end": 487.75899999999996,
+      "text": "really well and is bad at it uh but then"
+    },
+    {
+      "start": 485.199,
+      "end": 490.36,
+      "text": "increase the power its power and you"
+    },
+    {
+      "start": 487.759,
+      "end": 492.599,
+      "text": "know what language emerges and there"
+    },
+    {
+      "start": 490.36,
+      "end": 494.68,
+      "text": "really impressive thing emerg then you"
+    },
+    {
+      "start": 492.599,
+      "end": 497.599,
+      "text": "can say well it's not necessarily the"
+    },
+    {
+      "start": 494.68,
+      "end": 500.36,
+      "text": "case that humans underwent the same"
+    },
+    {
+      "start": 497.599,
+      "end": 503.199,
+      "text": "Evolution but the fact is that this"
+    },
+    {
+      "start": 500.36,
+      "end": 505.08000000000004,
+      "text": "mathematical approxim in in mathematical"
+    },
+    {
+      "start": 503.199,
+      "end": 509.759,
+      "text": "approximations of our"
+    },
+    {
+      "start": 505.08,
+      "end": 511.8,
+      "text": "brain language can emerge right and so"
+    },
+    {
+      "start": 509.759,
+      "end": 515.919,
+      "text": "but but there was a cat right so we all"
+    },
+    {
+      "start": 511.8,
+      "end": 520.36,
+      "text": "talk about llms and gp4 and whatnot um"
+    },
+    {
+      "start": 515.919,
+      "end": 523.039,
+      "text": "those models have several biologically"
+    },
+    {
+      "start": 520.36,
+      "end": 526.32,
+      "text": "implausible aspects right no human baby"
+    },
+    {
+      "start": 523.039,
+      "end": 528.12,
+      "text": "learns from text right so no human baby"
+    },
+    {
+      "start": 526.32,
+      "end": 531.7600000000001,
+      "text": "is born and starts reading massive"
+    },
+    {
+      "start": 528.12,
+      "end": 533.5600000000001,
+      "text": "amounts of Wikipedia and Reddit um and"
+    },
+    {
+      "start": 531.76,
+      "end": 535.64,
+      "text": "so this is you know this is rest"
+    },
+    {
+      "start": 533.56,
+      "end": 538.68,
+      "text": "realistic to how it's not a really"
+    },
+    {
+      "start": 535.64,
+      "end": 541.76,
+      "text": "realistic model uh also humans learn by"
+    },
+    {
+      "start": 538.68,
+      "end": 544,
+      "text": "speaking and listening right and GP GPT"
+    },
+    {
+      "start": 541.76,
+      "end": 547.079,
+      "text": "or and llama and all these models used"
+    },
+    {
+      "start": 544,
+      "end": 550.32,
+      "text": "to just see words um you know text"
+    },
+    {
+      "start": 547.079,
+      "end": 553.04,
+      "text": "characters in in a in a computer program"
+    },
+    {
+      "start": 550.32,
+      "end": 555.8000000000001,
+      "text": "so that's not also not how humans learn"
+    },
+    {
+      "start": 553.04,
+      "end": 557.76,
+      "text": "um so we learn by imitation the human"
+    },
+    {
+      "start": 555.8,
+      "end": 559.5999999999999,
+      "text": "baby you know is born into this word and"
+    },
+    {
+      "start": 557.76,
+      "end": 562.16,
+      "text": "start babbling and starts producing"
+    },
+    {
+      "start": 559.6,
+      "end": 564.32,
+      "text": "sounds and hears back what the what the"
+    },
+    {
+      "start": 562.16,
+      "end": 567.16,
+      "text": "caregivers are saying and so it's kind"
+    },
+    {
+      "start": 564.32,
+      "end": 570.0790000000001,
+      "text": "of really by directional communication"
+    },
+    {
+      "start": 567.16,
+      "end": 571.6,
+      "text": "and there's a lot of you know a lot of"
+    },
+    {
+      "start": 570.079,
+      "end": 574.68,
+      "text": "interaction that happens between"
+    },
+    {
+      "start": 571.6,
+      "end": 576.5600000000001,
+      "text": "caregivers and and human babies so what"
+    },
+    {
+      "start": 574.68,
+      "end": 579.04,
+      "text": "what I what we've been doing in our lab"
+    },
+    {
+      "start": 576.56,
+      "end": 581.8,
+      "text": "is in a sense you know acknowledge that"
+    },
+    {
+      "start": 579.04,
+      "end": 584.519,
+      "text": "llms can really help us understand lots"
+    },
+    {
+      "start": 581.8,
+      "end": 587.399,
+      "text": "of these big picture questions but also"
+    },
+    {
+      "start": 584.519,
+      "end": 590.48,
+      "text": "there's a need to create a more"
+    },
+    {
+      "start": 587.399,
+      "end": 592.48,
+      "text": "realistic version of llms right so more"
+    },
+    {
+      "start": 590.48,
+      "end": 595.32,
+      "text": "realistic Alternatives so what we've"
+    },
+    {
+      "start": 592.48,
+      "end": 598.32,
+      "text": "been developing is using the same set of"
+    },
+    {
+      "start": 595.32,
+      "end": 602.72,
+      "text": "techniques to mathematically approximate"
+    },
+    {
+      "start": 598.32,
+      "end": 604.9590000000001,
+      "text": "human language or human brain to build a"
+    },
+    {
+      "start": 602.72,
+      "end": 607.36,
+      "text": "basically artificial language learner"
+    },
+    {
+      "start": 604.959,
+      "end": 610.8389999999999,
+      "text": "okay so to build this in in a sense"
+    },
+    {
+      "start": 607.36,
+      "end": 613.6800000000001,
+      "text": "artificial baby that only gets raw audio"
+    },
+    {
+      "start": 610.839,
+      "end": 615.9590000000001,
+      "text": "so only hears words and needs to move"
+    },
+    {
+      "start": 613.68,
+      "end": 618.8389999999999,
+      "text": "articulators and needs to exchange"
+    },
+    {
+      "start": 615.959,
+      "end": 621.04,
+      "text": "information internally and externally in"
+    },
+    {
+      "start": 618.839,
+      "end": 624,
+      "text": "a similar way as human babies are"
+    },
+    {
+      "start": 621.04,
+      "end": 626.8,
+      "text": "interacting with the world and with that"
+    },
+    {
+      "start": 624,
+      "end": 629.8,
+      "text": "then you can really test not only you"
+    },
+    {
+      "start": 626.8,
+      "end": 632.3199999999999,
+      "text": "know what is possible in in these"
+    },
+    {
+      "start": 629.8,
+      "end": 636.279,
+      "text": "artificial neural networks what is what"
+    },
+    {
+      "start": 632.32,
+      "end": 638.6,
+      "text": "can AI do but also you can test it how"
+    },
+    {
+      "start": 636.279,
+      "end": 640.88,
+      "text": "does it do it right and parallel that to"
+    },
+    {
+      "start": 638.6,
+      "end": 643.32,
+      "text": "humans does it does it do something"
+    },
+    {
+      "start": 640.88,
+      "end": 644.72,
+      "text": "similarly than we do or are there any"
+    },
+    {
+      "start": 643.32,
+      "end": 646.72,
+      "text": "important differences and of course"
+    },
+    {
+      "start": 644.72,
+      "end": 649.0400000000001,
+      "text": "those important differences is what's"
+    },
+    {
+      "start": 646.72,
+      "end": 651.44,
+      "text": "going to tell you what can be uniquely"
+    },
+    {
+      "start": 649.04,
+      "end": 654.48,
+      "text": "human about language right so I think"
+    },
+    {
+      "start": 651.44,
+      "end": 657.1600000000001,
+      "text": "there a there's a really valid valid"
+    },
+    {
+      "start": 654.48,
+      "end": 660.519,
+      "text": "question which is what is human about"
+    },
+    {
+      "start": 657.16,
+      "end": 663.3199999999999,
+      "text": "our language and it's it's a question so"
+    },
+    {
+      "start": 660.519,
+      "end": 666.279,
+      "text": "in a sense we need to get as many"
+    },
+    {
+      "start": 663.32,
+      "end": 668.0790000000001,
+      "text": "evidence as possible so borrowing from"
+    },
+    {
+      "start": 666.279,
+      "end": 670.6,
+      "text": "machine learning borrowing from animal"
+    },
+    {
+      "start": 668.079,
+      "end": 671.5999999999999,
+      "text": "studies is really helpful in in this"
+    },
+    {
+      "start": 670.6,
+      "end": 674.48,
+      "text": "type of"
+    },
+    {
+      "start": 671.6,
+      "end": 678.12,
+      "text": "questions it's interesting you know you"
+    },
+    {
+      "start": 674.48,
+      "end": 679.9200000000001,
+      "text": "say that obviously the way humans learn"
+    },
+    {
+      "start": 678.12,
+      "end": 681.079,
+      "text": "you know play and just taking objects"
+    },
+    {
+      "start": 679.92,
+      "end": 682.7199999999999,
+      "text": "looking at them in loads of different"
+    },
+    {
+      "start": 681.079,
+      "end": 684.68,
+      "text": "ways and just you know it's not just"
+    },
+    {
+      "start": 682.72,
+      "end": 687.6800000000001,
+      "text": "reading text on bit and that's a good"
+    },
+    {
+      "start": 684.68,
+      "end": 690.88,
+      "text": "thing um but but we have language from"
+    },
+    {
+      "start": 687.68,
+      "end": 692.7199999999999,
+      "text": "that um and and and yet it's interesting"
+    },
+    {
+      "start": 690.88,
+      "end": 694.519,
+      "text": "though when you say have an llm and you"
+    },
+    {
+      "start": 692.72,
+      "end": 696.639,
+      "text": "only train it on text then it can also"
+    },
+    {
+      "start": 694.519,
+      "end": 697.8,
+      "text": "eventually get to to writing and it's"
+    },
+    {
+      "start": 696.639,
+      "end": 699.5600000000001,
+      "text": "interesting you mentioned as well I mean"
+    },
+    {
+      "start": 697.8,
+      "end": 700.92,
+      "text": "at first I guess we just didn't even"
+    },
+    {
+      "start": 699.56,
+      "end": 702.8,
+      "text": "know it's necessarily possible right"
+    },
+    {
+      "start": 700.92,
+      "end": 704.56,
+      "text": "it's complete kind of it's just they"
+    },
+    {
+      "start": 702.8,
+      "end": 706.56,
+      "text": "weren't very good at first but like we"
+    },
+    {
+      "start": 704.56,
+      "end": 708.76,
+      "text": "have them and that it's super competent"
+    },
+    {
+      "start": 706.56,
+      "end": 710.3199999999999,
+      "text": "and then it'll be interesting that you"
+    },
+    {
+      "start": 708.76,
+      "end": 713,
+      "text": "say well like what is the minimum"
+    },
+    {
+      "start": 710.32,
+      "end": 716,
+      "text": "requirements to get kind of language and"
+    },
+    {
+      "start": 713,
+      "end": 718.639,
+      "text": "I know we can def get into what kind of"
+    },
+    {
+      "start": 716,
+      "end": 720.24,
+      "text": "do we meet like do they understand the"
+    },
+    {
+      "start": 718.639,
+      "end": 722.5600000000001,
+      "text": "language they have but it seems that"
+    },
+    {
+      "start": 720.24,
+      "end": 725.2,
+      "text": "there is like this legible text right so"
+    },
+    {
+      "start": 722.56,
+      "end": 726.279,
+      "text": "could you get that from audio I mean um"
+    },
+    {
+      "start": 725.2,
+      "end": 729.2,
+      "text": "especially"
+    },
+    {
+      "start": 726.279,
+      "end": 730.8,
+      "text": "because with llms you train them on text"
+    },
+    {
+      "start": 729.2,
+      "end": 733.6,
+      "text": "and then it's quite easy to train them"
+    },
+    {
+      "start": 730.8,
+      "end": 736.399,
+      "text": "to to on images to then them create"
+    },
+    {
+      "start": 733.6,
+      "end": 739.0400000000001,
+      "text": "images so it's like what did they learn"
+    },
+    {
+      "start": 736.399,
+      "end": 741.44,
+      "text": "from the the text uh and then so then"
+    },
+    {
+      "start": 739.04,
+      "end": 743.88,
+      "text": "equally like maybe we have language from"
+    },
+    {
+      "start": 741.44,
+      "end": 745.7600000000001,
+      "text": "our complex experience but could it be"
+    },
+    {
+      "start": 743.88,
+      "end": 748.4399999999999,
+      "text": "the case that you can get language from"
+    },
+    {
+      "start": 745.76,
+      "end": 749.959,
+      "text": "something yet minimum like a fewer"
+    },
+    {
+      "start": 748.44,
+      "end": 751.8000000000001,
+      "text": "requirements right and and then what"
+    },
+    {
+      "start": 749.959,
+      "end": 753.3199999999999,
+      "text": "does that look like when that entity has"
+    },
+    {
+      "start": 751.8,
+      "end": 756.12,
+      "text": "language and then that can sort of help"
+    },
+    {
+      "start": 753.32,
+      "end": 757.72,
+      "text": "us understand language in a way and I"
+    },
+    {
+      "start": 756.12,
+      "end": 759.76,
+      "text": "think the key what you is what you"
+    },
+    {
+      "start": 757.72,
+      "end": 762.12,
+      "text": "mentioned is what do they learn right"
+    },
+    {
+      "start": 759.76,
+      "end": 763.639,
+      "text": "and how do they learn internally okay"
+    },
+    {
+      "start": 762.12,
+      "end": 765.9590000000001,
+      "text": "and and an interesting thing is again"
+    },
+    {
+      "start": 763.639,
+      "end": 768.8,
+      "text": "llms are really powerful and and one of"
+    },
+    {
+      "start": 765.959,
+      "end": 771.3199999999999,
+      "text": "the studies that we have is we we were"
+    },
+    {
+      "start": 768.8,
+      "end": 774.24,
+      "text": "able to show that these really large"
+    },
+    {
+      "start": 771.32,
+      "end": 777.44,
+      "text": "good models for the first time in"
+    },
+    {
+      "start": 774.24,
+      "end": 779.6,
+      "text": "history basically uh we have a case"
+    },
+    {
+      "start": 777.44,
+      "end": 782,
+      "text": "where a model can analyze language"
+    },
+    {
+      "start": 779.6,
+      "end": 784.639,
+      "text": "itself right not only it can produce"
+    },
+    {
+      "start": 782,
+      "end": 787.72,
+      "text": "language not only can say valid"
+    },
+    {
+      "start": 784.639,
+      "end": 790.6,
+      "text": "sentences in English but if you ask it"
+    },
+    {
+      "start": 787.72,
+      "end": 793.24,
+      "text": "use linguistic tools very explicitly use"
+    },
+    {
+      "start": 790.6,
+      "end": 795.639,
+      "text": "linguistic tools use the tools that that"
+    },
+    {
+      "start": 793.24,
+      "end": 798,
+      "text": "you know we scientists have been using"
+    },
+    {
+      "start": 795.639,
+      "end": 800.76,
+      "text": "for for centuries to describe language"
+    },
+    {
+      "start": 798,
+      "end": 802.72,
+      "text": "analyze the sentence and it'll do it"
+    },
+    {
+      "start": 800.76,
+      "end": 806,
+      "text": "right so this is really this kind of"
+    },
+    {
+      "start": 802.72,
+      "end": 808.72,
+      "text": "higher level right a kid can know how to"
+    },
+    {
+      "start": 806,
+      "end": 811.6,
+      "text": "speak years before they can know what a"
+    },
+    {
+      "start": 808.72,
+      "end": 814.48,
+      "text": "what a noun and a verb is and how you"
+    },
+    {
+      "start": 811.6,
+      "end": 816.12,
+      "text": "know how those those dependencies work"
+    },
+    {
+      "start": 814.48,
+      "end": 818.24,
+      "text": "and that's you know there's there's a"
+    },
+    {
+      "start": 816.12,
+      "end": 820.48,
+      "text": "science of linguistics behind that that"
+    },
+    {
+      "start": 818.24,
+      "end": 822.72,
+      "text": "that has been dealing that for centuries"
+    },
+    {
+      "start": 820.48,
+      "end": 825.9590000000001,
+      "text": "um and you know for the first time an"
+    },
+    {
+      "start": 822.72,
+      "end": 828.639,
+      "text": "llm can can do that and but but the"
+    },
+    {
+      "start": 825.959,
+      "end": 831.1199999999999,
+      "text": "crucial thing is we need to understand"
+    },
+    {
+      "start": 828.639,
+      "end": 834.16,
+      "text": "internally how these mods are learning"
+    },
+    {
+      "start": 831.12,
+      "end": 835.72,
+      "text": "and and that is so important um for all"
+    },
+    {
+      "start": 834.16,
+      "end": 838.36,
+      "text": "sorts of reasons you know there's a lot"
+    },
+    {
+      "start": 835.72,
+      "end": 841.0400000000001,
+      "text": "of talk about AI safety there's a lot of"
+    },
+    {
+      "start": 838.36,
+      "end": 846.639,
+      "text": "talk about regul ation and just in"
+    },
+    {
+      "start": 841.04,
+      "end": 849.4399999999999,
+      "text": "general um so these large llms are in a"
+    },
+    {
+      "start": 846.639,
+      "end": 851.32,
+      "text": "sense so big that it's in difficult to"
+    },
+    {
+      "start": 849.44,
+      "end": 853.6,
+      "text": "understand them and it's difficult to"
+    },
+    {
+      "start": 851.32,
+      "end": 856.0400000000001,
+      "text": "look inside them right so we have this"
+    },
+    {
+      "start": 853.6,
+      "end": 857.759,
+      "text": "sort of um approaches like the one I"
+    },
+    {
+      "start": 856.04,
+      "end": 860.639,
+      "text": "just mentioned we use for example"
+    },
+    {
+      "start": 857.759,
+      "end": 863,
+      "text": "Linguistics to try to get as a an you"
+    },
+    {
+      "start": 860.639,
+      "end": 864.48,
+      "text": "know get get a window into its its"
+    },
+    {
+      "start": 863,
+      "end": 866.839,
+      "text": "internal"
+    },
+    {
+      "start": 864.48,
+      "end": 868.48,
+      "text": "representations um on the other hand if"
+    },
+    {
+      "start": 866.839,
+      "end": 869.9590000000001,
+      "text": "you build more realistic model they're"
+    },
+    {
+      "start": 868.48,
+      "end": 872.32,
+      "text": "going to be small smaller right they're"
+    },
+    {
+      "start": 869.959,
+      "end": 876.6389999999999,
+      "text": "going to be more brain likee they're"
+    },
+    {
+      "start": 872.32,
+      "end": 878.48,
+      "text": "more um more inspired by our brain and"
+    },
+    {
+      "start": 876.639,
+      "end": 881,
+      "text": "so you can understand them much better"
+    },
+    {
+      "start": 878.48,
+      "end": 883.279,
+      "text": "and look inside them much better okay so"
+    },
+    {
+      "start": 881,
+      "end": 885.72,
+      "text": "not only you can you know look inside"
+    },
+    {
+      "start": 883.279,
+      "end": 888.16,
+      "text": "you know not only you can train a model"
+    },
+    {
+      "start": 885.72,
+      "end": 891.1600000000001,
+      "text": "develop a model that has several"
+    },
+    {
+      "start": 888.16,
+      "end": 894.04,
+      "text": "realistic um properties train it on"
+    },
+    {
+      "start": 891.16,
+      "end": 896.6,
+      "text": "human speech see whether it you know"
+    },
+    {
+      "start": 894.04,
+      "end": 898.3199999999999,
+      "text": "behaves like uh human babies when they"
+    },
+    {
+      "start": 896.6,
+      "end": 900.6800000000001,
+      "text": "acquire language and and we've shown"
+    },
+    {
+      "start": 898.32,
+      "end": 902.9200000000001,
+      "text": "several times that that they do but also"
+    },
+    {
+      "start": 900.68,
+      "end": 906.279,
+      "text": "you can look inside them right look"
+    },
+    {
+      "start": 902.92,
+      "end": 908.7199999999999,
+      "text": "inside these artificial mathematical"
+    },
+    {
+      "start": 906.279,
+      "end": 910.88,
+      "text": "approximations of our brain and see this"
+    },
+    {
+      "start": 908.72,
+      "end": 913.519,
+      "text": "is how it learn so this is how it you"
+    },
+    {
+      "start": 910.88,
+      "end": 916.12,
+      "text": "know this neuron this artificial neuron"
+    },
+    {
+      "start": 913.519,
+      "end": 918.839,
+      "text": "represents something that I know is is"
+    },
+    {
+      "start": 916.12,
+      "end": 922,
+      "text": "important in language and then what what"
+    },
+    {
+      "start": 918.839,
+      "end": 924.519,
+      "text": "you can do in addition to that is you"
+    },
+    {
+      "start": 922,
+      "end": 926.68,
+      "text": "know you take human brain of course and"
+    },
+    {
+      "start": 924.519,
+      "end": 929.92,
+      "text": "there are several ways to to scan human"
+    },
+    {
+      "start": 926.68,
+      "end": 932.56,
+      "text": "brain right so uh one is with you know"
+    },
+    {
+      "start": 929.92,
+      "end": 934.88,
+      "text": "you place electrodes tiny electrodes on"
+    },
+    {
+      "start": 932.56,
+      "end": 937.199,
+      "text": "people's brain the other is MRI where"
+    },
+    {
+      "start": 934.88,
+      "end": 939.72,
+      "text": "you put people into a giant magnetic"
+    },
+    {
+      "start": 937.199,
+      "end": 942.04,
+      "text": "field uh a third is when you know during"
+    },
+    {
+      "start": 939.72,
+      "end": 944.839,
+      "text": "surgery sometimes patients need to be"
+    },
+    {
+      "start": 942.04,
+      "end": 947.16,
+      "text": "awake and you can record the brain at"
+    },
+    {
+      "start": 944.839,
+      "end": 951,
+      "text": "the brain activity there so you can use"
+    },
+    {
+      "start": 947.16,
+      "end": 952.88,
+      "text": "those really interesting brain Imaging"
+    },
+    {
+      "start": 951,
+      "end": 956.12,
+      "text": "techniques to"
+    },
+    {
+      "start": 952.88,
+      "end": 957.8389999999999,
+      "text": "parallel Behavior not only Behavior not"
+    },
+    {
+      "start": 956.12,
+      "end": 961.199,
+      "text": "only how you know the way these mods are"
+    },
+    {
+      "start": 957.839,
+      "end": 963.9590000000001,
+      "text": "behaving like humans or unlike humans"
+    },
+    {
+      "start": 961.199,
+      "end": 966.319,
+      "text": "but also internally in the at the brain"
+    },
+    {
+      "start": 963.959,
+      "end": 969.1199999999999,
+      "text": "level at the neuron level are we similar"
+    },
+    {
+      "start": 966.319,
+      "end": 971.959,
+      "text": "and different or different and so I I"
+    },
+    {
+      "start": 969.12,
+      "end": 975.44,
+      "text": "you know I think there's a that's really"
+    },
+    {
+      "start": 971.959,
+      "end": 978.16,
+      "text": "crucial for all sorts of um purposes and"
+    },
+    {
+      "start": 975.44,
+      "end": 981.5600000000001,
+      "text": "finally this ability to look inside the"
+    },
+    {
+      "start": 978.16,
+      "end": 983.8,
+      "text": "network is really powerful why because"
+    },
+    {
+      "start": 981.56,
+      "end": 985.8,
+      "text": "these networks are really good right at"
+    },
+    {
+      "start": 983.8,
+      "end": 988.68,
+      "text": "producing sentences at answering"
+    },
+    {
+      "start": 985.8,
+      "end": 990.92,
+      "text": "questions and all sorts of tasks and so"
+    },
+    {
+      "start": 988.68,
+      "end": 994.319,
+      "text": "if if you're able to look inside them"
+    },
+    {
+      "start": 990.92,
+      "end": 996.88,
+      "text": "how they learn then you're able to get"
+    },
+    {
+      "start": 994.319,
+      "end": 999.639,
+      "text": "insights that as a human you might not"
+    },
+    {
+      "start": 996.88,
+      "end": 1002.8,
+      "text": "have right so that's the crucial thing"
+    },
+    {
+      "start": 999.639,
+      "end": 1004.839,
+      "text": "that's kind of AI interpretability as a"
+    },
+    {
+      "start": 1002.8,
+      "end": 1009.24,
+      "text": "as a source of new"
+    },
+    {
+      "start": 1004.839,
+      "end": 1010.759,
+      "text": "discovery and so if I understand that so"
+    },
+    {
+      "start": 1009.24,
+      "end": 1013.24,
+      "text": "if you were to create a model at smaller"
+    },
+    {
+      "start": 1010.759,
+      "end": 1014.9590000000001,
+      "text": "and say what what would it mean to make"
+    },
+    {
+      "start": 1013.24,
+      "end": 1016.44,
+      "text": "uh you know small AI instead of making"
+    },
+    {
+      "start": 1014.959,
+      "end": 1017.5999999999999,
+      "text": "it enormous but you don't really"
+    },
+    {
+      "start": 1016.44,
+      "end": 1019.759,
+      "text": "understand it what would it mean to have"
+    },
+    {
+      "start": 1017.6,
+      "end": 1022.44,
+      "text": "elements that are brain like and you"
+    },
+    {
+      "start": 1019.759,
+      "end": 1024.839,
+      "text": "could then map out and better understand"
+    },
+    {
+      "start": 1022.44,
+      "end": 1026.3600000000001,
+      "text": "it how how does how would that look like"
+    },
+    {
+      "start": 1024.839,
+      "end": 1028.8799999999999,
+      "text": "well well you know we're trying to do"
+    },
+    {
+      "start": 1026.36,
+      "end": 1031.1989999999998,
+      "text": "that we've been showing that um our"
+    },
+    {
+      "start": 1028.88,
+      "end": 1033.24,
+      "text": "brain signal our you know the signal in"
+    },
+    {
+      "start": 1031.199,
+      "end": 1036.199,
+      "text": "our brain when we listen to speech is"
+    },
+    {
+      "start": 1033.24,
+      "end": 1038.4,
+      "text": "very very similar to uh the signal in"
+    },
+    {
+      "start": 1036.199,
+      "end": 1041.28,
+      "text": "these artificial neuron networks and and"
+    },
+    {
+      "start": 1038.4,
+      "end": 1043.799,
+      "text": "and you know in in in in pure raw form"
+    },
+    {
+      "start": 1041.28,
+      "end": 1045.6,
+      "text": "so you can make all sorts of comparisons"
+    },
+    {
+      "start": 1043.799,
+      "end": 1047.8799999999999,
+      "text": "you can make you know you can build"
+    },
+    {
+      "start": 1045.6,
+      "end": 1050.6,
+      "text": "simulations stuff that is impossible in"
+    },
+    {
+      "start": 1047.88,
+      "end": 1052.24,
+      "text": "humans for ethical reasons so you can"
+    },
+    {
+      "start": 1050.6,
+      "end": 1056.1599999999999,
+      "text": "you know take you"
+    },
+    {
+      "start": 1052.24,
+      "end": 1059.32,
+      "text": "can develop this artificial Network and"
+    },
+    {
+      "start": 1056.16,
+      "end": 1062.0800000000002,
+      "text": "you know artificially take some weights"
+    },
+    {
+      "start": 1059.32,
+      "end": 1064.12,
+      "text": "out or you know artificially black out"
+    },
+    {
+      "start": 1062.08,
+      "end": 1067.12,
+      "text": "parts of it to see what kind of mistakes"
+    },
+    {
+      "start": 1064.12,
+      "end": 1069.28,
+      "text": "it'll make one of my students were just"
+    },
+    {
+      "start": 1067.12,
+      "end": 1071.6399999999999,
+      "text": "uh presenting this yesterday in our lab"
+    },
+    {
+      "start": 1069.28,
+      "end": 1074.6789999999999,
+      "text": "meeting so he he was blacking out parts"
+    },
+    {
+      "start": 1071.64,
+      "end": 1077.3600000000001,
+      "text": "of the artificial brain to see what kind"
+    },
+    {
+      "start": 1074.679,
+      "end": 1079.44,
+      "text": "of words it will produce and you know"
+    },
+    {
+      "start": 1077.36,
+      "end": 1082.08,
+      "text": "you obviously can't do that in human"
+    },
+    {
+      "start": 1079.44,
+      "end": 1084.2,
+      "text": "brain so you can use this as a kind of"
+    },
+    {
+      "start": 1082.08,
+      "end": 1087.039,
+      "text": "simulation um to better understand the"
+    },
+    {
+      "start": 1084.2,
+      "end": 1090.3600000000001,
+      "text": "brain and our processing um you know we"
+    },
+    {
+      "start": 1087.039,
+      "end": 1093.64,
+      "text": "we're we're we're showing that um so"
+    },
+    {
+      "start": 1090.36,
+      "end": 1095.559,
+      "text": "when you listen to me right now your ear"
+    },
+    {
+      "start": 1093.64,
+      "end": 1098.159,
+      "text": "drum is vibrating and that gets"
+    },
+    {
+      "start": 1095.559,
+      "end": 1099.8799999999999,
+      "text": "translated into electric activity and"
+    },
+    {
+      "start": 1098.159,
+      "end": 1102.2,
+      "text": "that travels through your brain stem"
+    },
+    {
+      "start": 1099.88,
+      "end": 1105.159,
+      "text": "first and then onto the outer part of"
+    },
+    {
+      "start": 1102.2,
+      "end": 1108.32,
+      "text": "your brain okay and so you can catch"
+    },
+    {
+      "start": 1105.159,
+      "end": 1110.7600000000002,
+      "text": "that signal you can catch words as"
+    },
+    {
+      "start": 1108.32,
+      "end": 1114.1589999999999,
+      "text": "they're traveling through the brain and"
+    },
+    {
+      "start": 1110.76,
+      "end": 1116.32,
+      "text": "also you can catch words as they're um"
+    },
+    {
+      "start": 1114.159,
+      "end": 1118.159,
+      "text": "you know traveling through artificial"
+    },
+    {
+      "start": 1116.32,
+      "end": 1120.36,
+      "text": "neuron networks and we've been showing"
+    },
+    {
+      "start": 1118.159,
+      "end": 1124,
+      "text": "that uh you know"
+    },
+    {
+      "start": 1120.36,
+      "end": 1126.9189999999999,
+      "text": "earlier stages in this process are"
+    },
+    {
+      "start": 1124,
+      "end": 1128.4,
+      "text": "similar between artificial and and brain"
+    },
+    {
+      "start": 1126.919,
+      "end": 1131.6000000000001,
+      "text": "artificial neuron networks and brain"
+    },
+    {
+      "start": 1128.4,
+      "end": 1134.039,
+      "text": "later stages is also similar so there's"
+    },
+    {
+      "start": 1131.6,
+      "end": 1137.8799999999999,
+      "text": "like this similar process and so you can"
+    },
+    {
+      "start": 1134.039,
+      "end": 1140.36,
+      "text": "use all sorts of um simulations to"
+    },
+    {
+      "start": 1137.88,
+      "end": 1141.8400000000001,
+      "text": "basically ask ask questions or answer"
+    },
+    {
+      "start": 1140.36,
+      "end": 1144,
+      "text": "questions that you wouldn't be able to"
+    },
+    {
+      "start": 1141.84,
+      "end": 1145.9599999999998,
+      "text": "answer of course this is all modeling"
+    },
+    {
+      "start": 1144,
+      "end": 1148.2,
+      "text": "right so it's not exactly the same our"
+    },
+    {
+      "start": 1145.96,
+      "end": 1149.919,
+      "text": "brain operate in several ways"
+    },
+    {
+      "start": 1148.2,
+      "end": 1152.28,
+      "text": "differently but we're getting closer and"
+    },
+    {
+      "start": 1149.919,
+      "end": 1155.5200000000002,
+      "text": "closer and I think this is the closest"
+    },
+    {
+      "start": 1152.28,
+      "end": 1157.72,
+      "text": "we can currently get given our um"
+    },
+    {
+      "start": 1155.52,
+      "end": 1159.84,
+      "text": "methodology so with a simple simpler"
+    },
+    {
+      "start": 1157.72,
+      "end": 1162.96,
+      "text": "model but you can then see the analogies"
+    },
+    {
+      "start": 1159.84,
+      "end": 1164.6789999999999,
+      "text": "between uh that that that the the yeah"
+    },
+    {
+      "start": 1162.96,
+      "end": 1167.32,
+      "text": "how that is processing information and"
+    },
+    {
+      "start": 1164.679,
+      "end": 1168.88,
+      "text": "then our brains um that can tell us"
+    },
+    {
+      "start": 1167.32,
+      "end": 1171.48,
+      "text": "about you know what one of the elements"
+    },
+    {
+      "start": 1168.88,
+      "end": 1174.919,
+      "text": "the important elements to to to"
+    },
+    {
+      "start": 1171.48,
+      "end": 1178.3600000000001,
+      "text": "understand how hearing sort of works and"
+    },
+    {
+      "start": 1174.919,
+      "end": 1180.3200000000002,
+      "text": "and so so it what kinds of things I mean"
+    },
+    {
+      "start": 1178.36,
+      "end": 1182.1589999999999,
+      "text": "have we learned and do you think we can"
+    },
+    {
+      "start": 1180.32,
+      "end": 1184.2,
+      "text": "learn from this kind of method like what"
+    },
+    {
+      "start": 1182.159,
+      "end": 1186.7990000000002,
+      "text": "does the future look like I mean I mean"
+    },
+    {
+      "start": 1184.2,
+      "end": 1189.3600000000001,
+      "text": "guess that's probably yeah gone well so"
+    },
+    {
+      "start": 1186.799,
+      "end": 1192.72,
+      "text": "I I mentioned right it's understanding"
+    },
+    {
+      "start": 1189.36,
+      "end": 1195.1999999999998,
+      "text": "these models is super crucial because"
+    },
+    {
+      "start": 1192.72,
+      "end": 1196.96,
+      "text": "humans are very biased we don't like to"
+    },
+    {
+      "start": 1195.2,
+      "end": 1198.72,
+      "text": "think of ourselves as biased but very"
+    },
+    {
+      "start": 1196.96,
+      "end": 1200.44,
+      "text": "biased right we you know there's like"
+    },
+    {
+      "start": 1198.72,
+      "end": 1203.159,
+      "text": "several layers of bites we don't even"
+    },
+    {
+      "start": 1200.44,
+      "end": 1206.559,
+      "text": "hear things that are not within certain"
+    },
+    {
+      "start": 1203.159,
+      "end": 1209.0800000000002,
+      "text": "frequency range right we don't hear rats"
+    },
+    {
+      "start": 1206.559,
+      "end": 1213.1589999999999,
+      "text": "um and and you know high frequencies for"
+    },
+    {
+      "start": 1209.08,
+      "end": 1216.48,
+      "text": "example above 20,000 Hertz um we see a"
+    },
+    {
+      "start": 1213.159,
+      "end": 1218.72,
+      "text": "certain spectrum of light and so on but"
+    },
+    {
+      "start": 1216.48,
+      "end": 1220.64,
+      "text": "we are also biases biased in other ways"
+    },
+    {
+      "start": 1218.72,
+      "end": 1222.679,
+      "text": "because we're biological creatures and"
+    },
+    {
+      "start": 1220.64,
+      "end": 1225,
+      "text": "as scientists we are still biological"
+    },
+    {
+      "start": 1222.679,
+      "end": 1227.799,
+      "text": "creatures right we're not this you know"
+    },
+    {
+      "start": 1225,
+      "end": 1230.64,
+      "text": "this independent um um you know"
+    },
+    {
+      "start": 1227.799,
+      "end": 1234.1589999999999,
+      "text": "creatures and when we turn our scientist"
+    },
+    {
+      "start": 1230.64,
+      "end": 1238.159,
+      "text": "hat on um so you're you're we are able"
+    },
+    {
+      "start": 1234.159,
+      "end": 1241.3600000000001,
+      "text": "to observe C certain patterns um and not"
+    },
+    {
+      "start": 1238.159,
+      "end": 1244.919,
+      "text": "others okay so now if we build these"
+    },
+    {
+      "start": 1241.36,
+      "end": 1247.08,
+      "text": "artificial neuron networks and if we"
+    },
+    {
+      "start": 1244.919,
+      "end": 1249.0800000000002,
+      "text": "understand them it means that we can"
+    },
+    {
+      "start": 1247.08,
+      "end": 1251.4399999999998,
+      "text": "build an"
+    },
+    {
+      "start": 1249.08,
+      "end": 1254.76,
+      "text": "intelligence that is able to see way"
+    },
+    {
+      "start": 1251.44,
+      "end": 1257.3200000000002,
+      "text": "more than we are or maybe not more but"
+    },
+    {
+      "start": 1254.76,
+      "end": 1259.8799999999999,
+      "text": "different things okay it can observe"
+    },
+    {
+      "start": 1257.32,
+      "end": 1262.039,
+      "text": "different patterns it can hear different"
+    },
+    {
+      "start": 1259.88,
+      "end": 1263.7990000000002,
+      "text": "things it can you know it doesn't have"
+    },
+    {
+      "start": 1262.039,
+      "end": 1267.52,
+      "text": "the same set of biological"
+    },
+    {
+      "start": 1263.799,
+      "end": 1270.8799999999999,
+      "text": "predispositions and you know you know"
+    },
+    {
+      "start": 1267.52,
+      "end": 1272.96,
+      "text": "for example to to me as a human I really"
+    },
+    {
+      "start": 1270.88,
+      "end": 1275.64,
+      "text": "like faces right we our brain really"
+    },
+    {
+      "start": 1272.96,
+      "end": 1277.88,
+      "text": "like faces and you know we can train a"
+    },
+    {
+      "start": 1275.64,
+      "end": 1280,
+      "text": "model that doesn't necessarily have"
+    },
+    {
+      "start": 1277.88,
+      "end": 1283.3600000000001,
+      "text": "preference toward faces can find other"
+    },
+    {
+      "start": 1280,
+      "end": 1285.559,
+      "text": "things um for example on a picture now"
+    },
+    {
+      "start": 1283.36,
+      "end": 1289.24,
+      "text": "if you also understand if you're able to"
+    },
+    {
+      "start": 1285.559,
+      "end": 1292.279,
+      "text": "see how then this model has learned this"
+    },
+    {
+      "start": 1289.24,
+      "end": 1293.4,
+      "text": "this less biased model has learned you"
+    },
+    {
+      "start": 1292.279,
+      "end": 1297.4,
+      "text": "can get"
+    },
+    {
+      "start": 1293.4,
+      "end": 1301,
+      "text": "insights into new you know new insights"
+    },
+    {
+      "start": 1297.4,
+      "end": 1303.8400000000001,
+      "text": "that you wouldn't have got if you"
+    },
+    {
+      "start": 1301,
+      "end": 1307,
+      "text": "haven't if if you didn't have that tool"
+    },
+    {
+      "start": 1303.84,
+      "end": 1309,
+      "text": "so this is kind of a AI as a tool AI"
+    },
+    {
+      "start": 1307,
+      "end": 1310.88,
+      "text": "interpretability as a tool for new"
+    },
+    {
+      "start": 1309,
+      "end": 1312.64,
+      "text": "discovery and this is really interesting"
+    },
+    {
+      "start": 1310.88,
+      "end": 1316.3200000000002,
+      "text": "because for example when when we were"
+    },
+    {
+      "start": 1312.64,
+      "end": 1319.24,
+      "text": "looking at at at other other so we we"
+    },
+    {
+      "start": 1316.32,
+      "end": 1322.3999999999999,
+      "text": "have our artificial baby okay it learned"
+    },
+    {
+      "start": 1319.24,
+      "end": 1325.559,
+      "text": "language in a way that we think is good"
+    },
+    {
+      "start": 1322.4,
+      "end": 1328.159,
+      "text": "right it it discovered on its own what"
+    },
+    {
+      "start": 1325.559,
+      "end": 1330.559,
+      "text": "is important in language it discovered"
+    },
+    {
+      "start": 1328.159,
+      "end": 1334,
+      "text": "words it discovered sound on a you know"
+    },
+    {
+      "start": 1330.559,
+      "end": 1336.799,
+      "text": "completely on its own and so if you're a"
+    },
+    {
+      "start": 1334,
+      "end": 1338.919,
+      "text": "if you're faced with something that you"
+    },
+    {
+      "start": 1336.799,
+      "end": 1341.4,
+      "text": "don't understand for example animal"
+    },
+    {
+      "start": 1338.919,
+      "end": 1343.5590000000002,
+      "text": "communication you can train such a model"
+    },
+    {
+      "start": 1341.4,
+      "end": 1347.2,
+      "text": "not on human speech but an"
+    },
+    {
+      "start": 1343.559,
+      "end": 1349.32,
+      "text": "animal speech or animal communication"
+    },
+    {
+      "start": 1347.2,
+      "end": 1352.159,
+      "text": "and then look inside it and see okay"
+    },
+    {
+      "start": 1349.32,
+      "end": 1355.32,
+      "text": "what about animals did you learn and so"
+    },
+    {
+      "start": 1352.159,
+      "end": 1360.6000000000001,
+      "text": "that that is a nice approach basically"
+    },
+    {
+      "start": 1355.32,
+      "end": 1362.36,
+      "text": "where you can um kind of you can you can"
+    },
+    {
+      "start": 1360.6,
+      "end": 1364.6,
+      "text": "find new patterns with AI"
+    },
+    {
+      "start": 1362.36,
+      "end": 1366.76,
+      "text": "interpretability and if we are able to"
+    },
+    {
+      "start": 1364.6,
+      "end": 1369.559,
+      "text": "pair this understanding of the models"
+    },
+    {
+      "start": 1366.76,
+      "end": 1371.919,
+      "text": "with their amazing performance I think"
+    },
+    {
+      "start": 1369.559,
+      "end": 1373.72,
+      "text": "you know there's going to be a ton of um"
+    },
+    {
+      "start": 1371.919,
+      "end": 1375.64,
+      "text": "new discoveries in science which is"
+    },
+    {
+      "start": 1373.72,
+      "end": 1378.84,
+      "text": "really exciting and you know it's not"
+    },
+    {
+      "start": 1375.64,
+      "end": 1382.88,
+      "text": "just me other scientists are are excited"
+    },
+    {
+      "start": 1378.84,
+      "end": 1386.1589999999999,
+      "text": "about um the potential to use this"
+    },
+    {
+      "start": 1382.88,
+      "end": 1388,
+      "text": "technology as a tool for new discovery"
+    },
+    {
+      "start": 1386.159,
+      "end": 1390.8400000000001,
+      "text": "right now I was going to turn that back"
+    },
+    {
+      "start": 1388,
+      "end": 1394.36,
+      "text": "onto animal language because developing"
+    },
+    {
+      "start": 1390.84,
+      "end": 1396.52,
+      "text": "kind of AI tools that can see kinds of"
+    },
+    {
+      "start": 1394.36,
+      "end": 1398.6,
+      "text": "things that we're not predisposed to or"
+    },
+    {
+      "start": 1396.52,
+      "end": 1400.6399999999999,
+      "text": "literally can't see like a spectrum of"
+    },
+    {
+      "start": 1398.6,
+      "end": 1403.7199999999998,
+      "text": "light that we cannot see um you know and"
+    },
+    {
+      "start": 1400.64,
+      "end": 1405.24,
+      "text": "so you know I mean if animals have"
+    },
+    {
+      "start": 1403.72,
+      "end": 1406.799,
+      "text": "language or like the intricacies of"
+    },
+    {
+      "start": 1405.24,
+      "end": 1409.919,
+      "text": "intricacies of their communication I"
+    },
+    {
+      "start": 1406.799,
+      "end": 1412.36,
+      "text": "mean we as humans are not have not been"
+    },
+    {
+      "start": 1409.919,
+      "end": 1413.7990000000002,
+      "text": "evolved or created to understand animal"
+    },
+    {
+      "start": 1412.36,
+      "end": 1415.3999999999999,
+      "text": "language so even if even if it's there"
+    },
+    {
+      "start": 1413.799,
+      "end": 1417.24,
+      "text": "how are we going to see it right but if"
+    },
+    {
+      "start": 1415.4,
+      "end": 1418.72,
+      "text": "you can you know create an AI and it's"
+    },
+    {
+      "start": 1417.24,
+      "end": 1421,
+      "text": "like that's its job it's specialized"
+    },
+    {
+      "start": 1418.72,
+      "end": 1422.64,
+      "text": "it's been learning to to understand"
+    },
+    {
+      "start": 1421,
+      "end": 1424.919,
+      "text": "animal language so that's I mean but"
+    },
+    {
+      "start": 1422.64,
+      "end": 1426.679,
+      "text": "yeah more broadly it's so interesting to"
+    },
+    {
+      "start": 1424.919,
+      "end": 1429.3200000000002,
+      "text": "kind of turn these tools back around on"
+    },
+    {
+      "start": 1426.679,
+      "end": 1432.24,
+      "text": "science itself to kind of give you new"
+    },
+    {
+      "start": 1429.32,
+      "end": 1435.3999999999999,
+      "text": "lenses and sort of ways of seeing the"
+    },
+    {
+      "start": 1432.24,
+      "end": 1437.6,
+      "text": "world right for sure yeah no it's it's"
+    },
+    {
+      "start": 1435.4,
+      "end": 1439.3200000000002,
+      "text": "um I think there's you know and not only"
+    },
+    {
+      "start": 1437.6,
+      "end": 1443.559,
+      "text": "in animal communication ation research"
+    },
+    {
+      "start": 1439.32,
+      "end": 1445.72,
+      "text": "so this approach of of of building AI"
+    },
+    {
+      "start": 1443.559,
+      "end": 1447.039,
+      "text": "getting out outside of our human with"
+    },
+    {
+      "start": 1445.72,
+      "end": 1449.32,
+      "text": "you know with the help of which we'll"
+    },
+    {
+      "start": 1447.039,
+      "end": 1452.2,
+      "text": "get outside of our human biases is is"
+    },
+    {
+      "start": 1449.32,
+      "end": 1454.6,
+      "text": "huge and it can tell us um you know it"
+    },
+    {
+      "start": 1452.2,
+      "end": 1456.88,
+      "text": "it has like really deep philosophical"
+    },
+    {
+      "start": 1454.6,
+      "end": 1458.799,
+      "text": "implications right so what does it mean"
+    },
+    {
+      "start": 1456.88,
+      "end": 1461.5590000000002,
+      "text": "to be human right and and what does it"
+    },
+    {
+      "start": 1458.799,
+      "end": 1463.9189999999999,
+      "text": "mean to be intelligent uh that those are"
+    },
+    {
+      "start": 1461.559,
+      "end": 1467.799,
+      "text": "really difficult questions and what does"
+    },
+    {
+      "start": 1463.919,
+      "end": 1470.24,
+      "text": "it mean to be um you know sentient and"
+    },
+    {
+      "start": 1467.799,
+      "end": 1471.8799999999999,
+      "text": "conscious stu stuff like that so there's"
+    },
+    {
+      "start": 1470.24,
+      "end": 1473.96,
+      "text": "going to be a lot but I think we're"
+    },
+    {
+      "start": 1471.88,
+      "end": 1476.279,
+      "text": "we're going to have to really we really"
+    },
+    {
+      "start": 1473.96,
+      "end": 1478.6000000000001,
+      "text": "need to study all these intelligences"
+    },
+    {
+      "start": 1476.279,
+      "end": 1481.48,
+      "text": "together right animals humans and"
+    },
+    {
+      "start": 1478.6,
+      "end": 1484.559,
+      "text": "machines um in order to mutually you"
+    },
+    {
+      "start": 1481.48,
+      "end": 1486.6,
+      "text": "know benefit from the study of of of of"
+    },
+    {
+      "start": 1484.559,
+      "end": 1488.8799999999999,
+      "text": "these intelligence for intelligences for"
+    },
+    {
+      "start": 1486.6,
+      "end": 1491.9189999999999,
+      "text": "example like you know we are we can"
+    },
+    {
+      "start": 1488.88,
+      "end": 1495.2,
+      "text": "learn about how language evolved by"
+    },
+    {
+      "start": 1491.919,
+      "end": 1498.72,
+      "text": "learning how by running this simulation"
+    },
+    {
+      "start": 1495.2,
+      "end": 1503.3990000000001,
+      "text": "of artificial babies we can learn Lear"
+    },
+    {
+      "start": 1498.72,
+      "end": 1505.08,
+      "text": "how um how these machines learn by using"
+    },
+    {
+      "start": 1503.399,
+      "end": 1507.6789999999999,
+      "text": "the same techniques that linguists have"
+    },
+    {
+      "start": 1505.08,
+      "end": 1510.1999999999998,
+      "text": "been using for centuries of trying to"
+    },
+    {
+      "start": 1507.679,
+      "end": 1513.159,
+      "text": "you know understand symbol our symbolic"
+    },
+    {
+      "start": 1510.2,
+      "end": 1515.3600000000001,
+      "text": "language and our the way we communicate"
+    },
+    {
+      "start": 1513.159,
+      "end": 1519.0390000000002,
+      "text": "and we can learn about animals by you"
+    },
+    {
+      "start": 1515.36,
+      "end": 1522.4799999999998,
+      "text": "know training these models um on things"
+    },
+    {
+      "start": 1519.039,
+      "end": 1526.08,
+      "text": "that we you know and and and helping us"
+    },
+    {
+      "start": 1522.48,
+      "end": 1528.32,
+      "text": "um helping the help them helping us see"
+    },
+    {
+      "start": 1526.08,
+      "end": 1530.08,
+      "text": "patterns that we wouldn't have otherwise"
+    },
+    {
+      "start": 1528.32,
+      "end": 1532,
+      "text": "so I think it's really exciting to kind"
+    },
+    {
+      "start": 1530.08,
+      "end": 1536,
+      "text": "of use all these"
+    },
+    {
+      "start": 1532,
+      "end": 1537.52,
+      "text": "three universes if you want to to to get"
+    },
+    {
+      "start": 1536,
+      "end": 1540.039,
+      "text": "new"
+    },
+    {
+      "start": 1537.52,
+      "end": 1542.24,
+      "text": "insights what have we learned about"
+    },
+    {
+      "start": 1540.039,
+      "end": 1544.799,
+      "text": "animal communication then using these"
+    },
+    {
+      "start": 1542.24,
+      "end": 1546.36,
+      "text": "kinds of techniques well I think it's"
+    },
+    {
+      "start": 1544.799,
+      "end": 1549.36,
+      "text": "really at the beginning so I have a"
+    },
+    {
+      "start": 1546.36,
+      "end": 1552.559,
+      "text": "bunch of research um it's available on"
+    },
+    {
+      "start": 1549.36,
+      "end": 1554.08,
+      "text": "my website on on you know what kind of"
+    },
+    {
+      "start": 1552.559,
+      "end": 1556.24,
+      "text": "models we can use what the the"
+    },
+    {
+      "start": 1554.08,
+      "end": 1558.399,
+      "text": "techniques are so we have developed"
+    },
+    {
+      "start": 1556.24,
+      "end": 1561.159,
+      "text": "several techniques that help us look"
+    },
+    {
+      "start": 1558.399,
+      "end": 1564.7199999999998,
+      "text": "inside the models um I think animal"
+    },
+    {
+      "start": 1561.159,
+      "end": 1567.7600000000002,
+      "text": "communication is a really complex nut to"
+    },
+    {
+      "start": 1564.72,
+      "end": 1569.88,
+      "text": "crack um you know with with some"
+    },
+    {
+      "start": 1567.76,
+      "end": 1573.72,
+      "text": "exceptions there's a lot of systems that"
+    },
+    {
+      "start": 1569.88,
+      "end": 1575,
+      "text": "we really don't know yet um and and not"
+    },
+    {
+      "start": 1573.72,
+      "end": 1577.72,
+      "text": "not only"
+    },
+    {
+      "start": 1575,
+      "end": 1581,
+      "text": "because um you know we don't have good"
+    },
+    {
+      "start": 1577.72,
+      "end": 1583.44,
+      "text": "AI systems or because we are you know"
+    },
+    {
+      "start": 1581,
+      "end": 1587.76,
+      "text": "we're not good at getting out outside of"
+    },
+    {
+      "start": 1583.44,
+      "end": 1590.279,
+      "text": "our um Humanity it is also because we"
+    },
+    {
+      "start": 1587.76,
+      "end": 1593,
+      "text": "don't have a of data right animals in"
+    },
+    {
+      "start": 1590.279,
+      "end": 1594.88,
+      "text": "captivity have been studied but animals"
+    },
+    {
+      "start": 1593,
+      "end": 1597.6,
+      "text": "in the wild have not been studied as"
+    },
+    {
+      "start": 1594.88,
+      "end": 1600.7990000000002,
+      "text": "much you know it's not easy to study"
+    },
+    {
+      "start": 1597.6,
+      "end": 1604.6399999999999,
+      "text": "Elephants or bonobas or chimpanzees and"
+    },
+    {
+      "start": 1600.799,
+      "end": 1608.559,
+      "text": "or whales um in the wild and so it takes"
+    },
+    {
+      "start": 1604.64,
+      "end": 1610.5200000000002,
+      "text": "a lot of effort it takes a lot of time"
+    },
+    {
+      "start": 1608.559,
+      "end": 1613.76,
+      "text": "right so for example I'm I'm part of"
+    },
+    {
+      "start": 1610.52,
+      "end": 1615.44,
+      "text": "project City and um you know we've been"
+    },
+    {
+      "start": 1613.76,
+      "end": 1618.6,
+      "text": "we've been following sperm whales and"
+    },
+    {
+      "start": 1615.44,
+      "end": 1621.1200000000001,
+      "text": "it's a such a big undertaking right you"
+    },
+    {
+      "start": 1618.6,
+      "end": 1623.399,
+      "text": "these animals live in the wild they live"
+    },
+    {
+      "start": 1621.12,
+      "end": 1626.039,
+      "text": "on deep you know deep sea they they dive"
+    },
+    {
+      "start": 1623.399,
+      "end": 1628.36,
+      "text": "up to a kilometer deep so they need the"
+    },
+    {
+      "start": 1626.039,
+      "end": 1630.8799999999999,
+      "text": "Open Sea and Open Sea research is tough"
+    },
+    {
+      "start": 1628.36,
+      "end": 1633.799,
+      "text": "so we don't have a ton of data elephants"
+    },
+    {
+      "start": 1630.88,
+      "end": 1636.679,
+      "text": "likewise right or bonobas and chimp are"
+    },
+    {
+      "start": 1633.799,
+      "end": 1638.72,
+      "text": "endangered so you know following them in"
+    },
+    {
+      "start": 1636.679,
+      "end": 1642.2,
+      "text": "the wild takes a lot of effort and a lot"
+    },
+    {
+      "start": 1638.72,
+      "end": 1644.3600000000001,
+      "text": "of time and not you know not always is"
+    },
+    {
+      "start": 1642.2,
+      "end": 1646.559,
+      "text": "is the scientific Community interested"
+    },
+    {
+      "start": 1644.36,
+      "end": 1649.7199999999998,
+      "text": "enough and I think now there's like"
+    },
+    {
+      "start": 1646.559,
+      "end": 1652.32,
+      "text": "really a a new renewed excitement about"
+    },
+    {
+      "start": 1649.72,
+      "end": 1655.039,
+      "text": "this kind of research but it's not just"
+    },
+    {
+      "start": 1652.32,
+      "end": 1657.399,
+      "text": "because we don't have fancy models it's"
+    },
+    {
+      "start": 1655.039,
+      "end": 1658.8799999999999,
+      "text": "also because we haven't been you know"
+    },
+    {
+      "start": 1657.399,
+      "end": 1660.9189999999999,
+      "text": "attentive enough we haven't been"
+    },
+    {
+      "start": 1658.88,
+      "end": 1663.2,
+      "text": "listening to these animals enough we we"
+    },
+    {
+      "start": 1660.919,
+      "end": 1665.919,
+      "text": "just didn't put enough effort into"
+    },
+    {
+      "start": 1663.2,
+      "end": 1668.519,
+      "text": "trying to understand right it's like if"
+    },
+    {
+      "start": 1665.919,
+      "end": 1670.679,
+      "text": "we had the kind of data on whales that"
+    },
+    {
+      "start": 1668.519,
+      "end": 1673.32,
+      "text": "we have on our language we me probably"
+    },
+    {
+      "start": 1670.679,
+      "end": 1674.799,
+      "text": "crack it have cracked it right but where"
+    },
+    {
+      "start": 1673.32,
+      "end": 1679,
+      "text": "are the data sets can where can you find"
+    },
+    {
+      "start": 1674.799,
+      "end": 1682,
+      "text": "the data sets on like sperm whale noises"
+    },
+    {
+      "start": 1679,
+      "end": 1684.12,
+      "text": "yeah and not only that like not only"
+    },
+    {
+      "start": 1682,
+      "end": 1686.64,
+      "text": "that right we share with elephants and"
+    },
+    {
+      "start": 1684.12,
+      "end": 1689.84,
+      "text": "chimpanzees at least we share habitat"
+    },
+    {
+      "start": 1686.64,
+      "end": 1691.24,
+      "text": "right we I can I can think of my 3D"
+    },
+    {
+      "start": 1689.84,
+      "end": 1692.9599999999998,
+      "text": "World right there are trees and"
+    },
+    {
+      "start": 1691.24,
+      "end": 1695.64,
+      "text": "elephants have trees as well and there's"
+    },
+    {
+      "start": 1692.96,
+      "end": 1698.48,
+      "text": "like floor and you know there's gravity"
+    },
+    {
+      "start": 1695.64,
+      "end": 1701.0800000000002,
+      "text": "and there's air right with whales it's"
+    },
+    {
+      "start": 1698.48,
+      "end": 1702.799,
+      "text": "like almost everything is upside down"
+    },
+    {
+      "start": 1701.08,
+      "end": 1704.6789999999999,
+      "text": "you know they their gravity Works"
+    },
+    {
+      "start": 1702.799,
+      "end": 1707.279,
+      "text": "different I mean gravity works the same"
+    },
+    {
+      "start": 1704.679,
+      "end": 1709.24,
+      "text": "but like they're you know they're just"
+    },
+    {
+      "start": 1707.279,
+      "end": 1711.559,
+      "text": "they just flows"
+    },
+    {
+      "start": 1709.24,
+      "end": 1715.039,
+      "text": "most of the time they sleep vertically"
+    },
+    {
+      "start": 1711.559,
+      "end": 1718.08,
+      "text": "for example which is really cool um it's"
+    },
+    {
+      "start": 1715.039,
+      "end": 1720.84,
+      "text": "mostly dark below 700 meters in the"
+    },
+    {
+      "start": 1718.08,
+      "end": 1723.6789999999999,
+      "text": "ocean and it's just like you know it's"
+    },
+    {
+      "start": 1720.84,
+      "end": 1726.279,
+      "text": "difficult to conceptualize their world"
+    },
+    {
+      "start": 1723.679,
+      "end": 1728.6000000000001,
+      "text": "even right um how do they present how do"
+    },
+    {
+      "start": 1726.279,
+      "end": 1731.84,
+      "text": "they imagine the world right you get"
+    },
+    {
+      "start": 1728.6,
+      "end": 1734.76,
+      "text": "into this really deep philosophical"
+    },
+    {
+      "start": 1731.84,
+      "end": 1736.6399999999999,
+      "text": "questions um and and they really make"
+    },
+    {
+      "start": 1734.76,
+      "end": 1738.6,
+      "text": "you rethink a lot of assumptions that"
+    },
+    {
+      "start": 1736.64,
+      "end": 1741.0800000000002,
+      "text": "you have as a as a"
+    },
+    {
+      "start": 1738.6,
+      "end": 1743.48,
+      "text": "terrestrial animal but yeah so it's"
+    },
+    {
+      "start": 1741.08,
+      "end": 1747.279,
+      "text": "really difficult to represent their"
+    },
+    {
+      "start": 1743.48,
+      "end": 1749.88,
+      "text": "world on the other hand on some levels"
+    },
+    {
+      "start": 1747.279,
+      "end": 1752.84,
+      "text": "they're so similar to us right as well"
+    },
+    {
+      "start": 1749.88,
+      "end": 1758,
+      "text": "right they you know their females form"
+    },
+    {
+      "start": 1752.84,
+      "end": 1759.6,
+      "text": "societies U mineal societies um uh and"
+    },
+    {
+      "start": 1758,
+      "end": 1763.399,
+      "text": "they you know babysit each other's"
+    },
+    {
+      "start": 1759.6,
+      "end": 1765.8799999999999,
+      "text": "calves and you know they they they form"
+    },
+    {
+      "start": 1763.399,
+      "end": 1768.4799999999998,
+      "text": "families and Clans and they use"
+    },
+    {
+      "start": 1765.88,
+      "end": 1771.3200000000002,
+      "text": "communication system to mark their"
+    },
+    {
+      "start": 1768.48,
+      "end": 1774.039,
+      "text": "identity and so on some levels they're"
+    },
+    {
+      "start": 1771.32,
+      "end": 1777.24,
+      "text": "very similar kids are with the the"
+    },
+    {
+      "start": 1774.039,
+      "end": 1780.1589999999999,
+      "text": "female families for for a long time they"
+    },
+    {
+      "start": 1777.24,
+      "end": 1783.2,
+      "text": "are acquiring their communication system"
+    },
+    {
+      "start": 1780.159,
+      "end": 1785.8400000000001,
+      "text": "so on many levels very similar but and"
+    },
+    {
+      "start": 1783.2,
+      "end": 1787.799,
+      "text": "think of like how their world is so"
+    },
+    {
+      "start": 1785.84,
+      "end": 1790.12,
+      "text": "different and that's really this"
+    },
+    {
+      "start": 1787.799,
+      "end": 1793,
+      "text": "excitement behind the study of of them I"
+    },
+    {
+      "start": 1790.12,
+      "end": 1794.08,
+      "text": "think is because of these similarities"
+    },
+    {
+      "start": 1793,
+      "end": 1796.279,
+      "text": "and"
+    },
+    {
+      "start": 1794.08,
+      "end": 1800.039,
+      "text": "differences it's I mean I don't know if"
+    },
+    {
+      "start": 1796.279,
+      "end": 1801.919,
+      "text": "you're familiar with Michael Le work on"
+    },
+    {
+      "start": 1800.039,
+      "end": 1804.44,
+      "text": "kind of um for example the intelligence"
+    },
+    {
+      "start": 1801.919,
+      "end": 1806.64,
+      "text": "of single cell organisms or organs in"
+    },
+    {
+      "start": 1804.44,
+      "end": 1808.76,
+      "text": "our body uh in general like like what"
+    },
+    {
+      "start": 1806.64,
+      "end": 1811.1200000000001,
+      "text": "kind of intelligences are out there but"
+    },
+    {
+      "start": 1808.76,
+      "end": 1812.519,
+      "text": "we apply our humanistic sort of"
+    },
+    {
+      "start": 1811.12,
+      "end": 1813.7199999999998,
+      "text": "reasoning we think you know it doesn't"
+    },
+    {
+      "start": 1812.519,
+      "end": 1815.84,
+      "text": "look intelligent to me it looks kind of"
+    },
+    {
+      "start": 1813.72,
+      "end": 1817.3990000000001,
+      "text": "dumb well are you sure if you do you"
+    },
+    {
+      "start": 1815.84,
+      "end": 1819.24,
+      "text": "know the kind of intelligence that it"
+    },
+    {
+      "start": 1817.399,
+      "end": 1820.399,
+      "text": "has you know and it's because and you"
+    },
+    {
+      "start": 1819.24,
+      "end": 1822.76,
+      "text": "say with the whales right I mean they're"
+    },
+    {
+      "start": 1820.399,
+      "end": 1824.7199999999998,
+      "text": "navigating a situation that might be"
+    },
+    {
+      "start": 1822.76,
+      "end": 1827.279,
+      "text": "complete darkness you know what do that"
+    },
+    {
+      "start": 1824.72,
+      "end": 1828.799,
+      "text": "we're so used to trying to use our eyes"
+    },
+    {
+      "start": 1827.279,
+      "end": 1831.72,
+      "text": "um as a means for intelligence and so"
+    },
+    {
+      "start": 1828.799,
+      "end": 1832.96,
+      "text": "it's like yeah different kinds of"
+    },
+    {
+      "start": 1831.72,
+      "end": 1835.88,
+      "text": "intelligence that we kind of then not"
+    },
+    {
+      "start": 1832.96,
+      "end": 1838,
+      "text": "spot as intelligence right and you know"
+    },
+    {
+      "start": 1835.88,
+      "end": 1840.3200000000002,
+      "text": "they dive as they dive they echolocate"
+    },
+    {
+      "start": 1838,
+      "end": 1842.6,
+      "text": "right so they emit these clicks and"
+    },
+    {
+      "start": 1840.32,
+      "end": 1845.36,
+      "text": "based on what comes back they kind of"
+    },
+    {
+      "start": 1842.6,
+      "end": 1848.32,
+      "text": "probably form this representations of of"
+    },
+    {
+      "start": 1845.36,
+      "end": 1850.9189999999999,
+      "text": "the real world beh below them and you"
+    },
+    {
+      "start": 1848.32,
+      "end": 1853.96,
+      "text": "know they also hunt they locate squid"
+    },
+    {
+      "start": 1850.919,
+      "end": 1856.24,
+      "text": "which is their main um their main food"
+    },
+    {
+      "start": 1853.96,
+      "end": 1858.519,
+      "text": "but but yeah no I mean I think there's"
+    },
+    {
+      "start": 1856.24,
+      "end": 1861.84,
+      "text": "going to be a lot of um"
+    },
+    {
+      "start": 1858.519,
+      "end": 1864.159,
+      "text": "a lot of attention moved now onto a"
+    },
+    {
+      "start": 1861.84,
+      "end": 1866.799,
+      "text": "study of intelligences and and different"
+    },
+    {
+      "start": 1864.159,
+      "end": 1868.159,
+      "text": "flavors and different sorts and and and"
+    },
+    {
+      "start": 1866.799,
+      "end": 1870.559,
+      "text": "just trying to understand what"
+    },
+    {
+      "start": 1868.159,
+      "end": 1875.3600000000001,
+      "text": "intelligence is and how you know how we"
+    },
+    {
+      "start": 1870.559,
+      "end": 1877.8799999999999,
+      "text": "can use different different um subtypes"
+    },
+    {
+      "start": 1875.36,
+      "end": 1881.399,
+      "text": "of intelligences together to kind of"
+    },
+    {
+      "start": 1877.88,
+      "end": 1885.48,
+      "text": "move forward and and make"
+    },
+    {
+      "start": 1881.399,
+      "end": 1888.1589999999999,
+      "text": "progress what do you think AI will look"
+    },
+    {
+      "start": 1885.48,
+      "end": 1890.08,
+      "text": "like in the in the future especially"
+    },
+    {
+      "start": 1888.159,
+      "end": 1892.3600000000001,
+      "text": "because you know you talked about LMS"
+    },
+    {
+      "start": 1890.08,
+      "end": 1893.84,
+      "text": "they're kind of intelligence but like"
+    },
+    {
+      "start": 1892.36,
+      "end": 1896.519,
+      "text": "they they don't they don't really seem"
+    },
+    {
+      "start": 1893.84,
+      "end": 1897.6789999999999,
+      "text": "to have that many analogies to our kinds"
+    },
+    {
+      "start": 1896.519,
+      "end": 1900.919,
+      "text": "of intelligence they're just really"
+    },
+    {
+      "start": 1897.679,
+      "end": 1903.279,
+      "text": "humongous linear kind of feed forward"
+    },
+    {
+      "start": 1900.919,
+      "end": 1905.519,
+      "text": "models um but then they're also AI being"
+    },
+    {
+      "start": 1903.279,
+      "end": 1907.919,
+      "text": "created well with a bit more focus on"
+    },
+    {
+      "start": 1905.519,
+      "end": 1909.72,
+      "text": "the principles of human cognition and"
+    },
+    {
+      "start": 1907.919,
+      "end": 1912.24,
+      "text": "yeah I'm wondering I mean the multiple"
+    },
+    {
+      "start": 1909.72,
+      "end": 1913.559,
+      "text": "routes I mean what what I mean also"
+    },
+    {
+      "start": 1912.24,
+      "end": 1916.1200000000001,
+      "text": "there's so many questions"
+    },
+    {
+      "start": 1913.559,
+      "end": 1919.6,
+      "text": "here I mean it's a really interesting"
+    },
+    {
+      "start": 1916.12,
+      "end": 1921.559,
+      "text": "and deep deep problem and there's camps"
+    },
+    {
+      "start": 1919.6,
+      "end": 1923.76,
+      "text": "right as always there's camps some"
+    },
+    {
+      "start": 1921.559,
+      "end": 1925.519,
+      "text": "people think that you know AI is great"
+    },
+    {
+      "start": 1923.76,
+      "end": 1928.6,
+      "text": "it's great as a tool it never it'll"
+    },
+    {
+      "start": 1925.519,
+      "end": 1931.96,
+      "text": "never surpass human it will never have"
+    },
+    {
+      "start": 1928.6,
+      "end": 1934.1589999999999,
+      "text": "that capacity um and and the other Camp"
+    },
+    {
+      "start": 1931.96,
+      "end": 1937.519,
+      "text": "is of course a little bit more cautious"
+    },
+    {
+      "start": 1934.159,
+      "end": 1939.96,
+      "text": "and uh recently Jeffrey Hinton got a"
+    },
+    {
+      "start": 1937.519,
+      "end": 1942.6,
+      "text": "Nobel Prize and and he's uh he's very"
+    },
+    {
+      "start": 1939.96,
+      "end": 1944.88,
+      "text": "cautious and I I would probably fall"
+    },
+    {
+      "start": 1942.6,
+      "end": 1948.399,
+      "text": "more into this second Camp if if you"
+    },
+    {
+      "start": 1944.88,
+      "end": 1950.88,
+      "text": "want to place me um so I don't want to"
+    },
+    {
+      "start": 1948.399,
+      "end": 1953.559,
+      "text": "be a Doomer or anything but the fact is"
+    },
+    {
+      "start": 1950.88,
+      "end": 1956.6390000000001,
+      "text": "that artificial intelligence has some"
+    },
+    {
+      "start": 1953.559,
+      "end": 1958.76,
+      "text": "pretty big advantages over human"
+    },
+    {
+      "start": 1956.639,
+      "end": 1961.399,
+      "text": "intelligence uh because it's"
+    },
+    {
+      "start": 1958.76,
+      "end": 1964.399,
+      "text": "non-biological okay so if you think of a"
+    },
+    {
+      "start": 1961.399,
+      "end": 1967.039,
+      "text": "human right I'm I'm born and I need to"
+    },
+    {
+      "start": 1964.399,
+      "end": 1971.36,
+      "text": "learn everything from scratch and then"
+    },
+    {
+      "start": 1967.039,
+      "end": 1975.2,
+      "text": "you know as humans we we pass away um"
+    },
+    {
+      "start": 1971.36,
+      "end": 1977.32,
+      "text": "and my brain cannot be taken out of my"
+    },
+    {
+      "start": 1975.2,
+      "end": 1979.6000000000001,
+      "text": "currently cannot be taken out and"
+    },
+    {
+      "start": 1977.32,
+      "end": 1982.6,
+      "text": "implemented into another brain right"
+    },
+    {
+      "start": 1979.6,
+      "end": 1987.12,
+      "text": "whereas with AI models basically you can"
+    },
+    {
+      "start": 1982.6,
+      "end": 1990.279,
+      "text": "copy weights copy these artificial brain"
+    },
+    {
+      "start": 1987.12,
+      "end": 1992.6789999999999,
+      "text": "and continuously train them and you know"
+    },
+    {
+      "start": 1990.279,
+      "end": 1995.519,
+      "text": "you can make intelligences that"
+    },
+    {
+      "start": 1992.679,
+      "end": 1998.5590000000002,
+      "text": "collaborate right so so far we've been"
+    },
+    {
+      "start": 1995.519,
+      "end": 2001.36,
+      "text": "focusing on single llm right gp4 but"
+    },
+    {
+      "start": 1998.559,
+      "end": 2003.399,
+      "text": "like imagine a future where there's like"
+    },
+    {
+      "start": 2001.36,
+      "end": 2005.4399999999998,
+      "text": "where these models start collaborating"
+    },
+    {
+      "start": 2003.399,
+      "end": 2008.639,
+      "text": "with with with within each other right"
+    },
+    {
+      "start": 2005.44,
+      "end": 2011.3600000000001,
+      "text": "and we know that one human is is so you"
+    },
+    {
+      "start": 2008.639,
+      "end": 2013.9599999999998,
+      "text": "know can be so intelligent but like 10"
+    },
+    {
+      "start": 2011.36,
+      "end": 2016.08,
+      "text": "humans is 10 humans are are much more"
+    },
+    {
+      "start": 2013.96,
+      "end": 2018.48,
+      "text": "intelligent than than in a single one"
+    },
+    {
+      "start": 2016.08,
+      "end": 2020,
+      "text": "and you know it's often times not it's"
+    },
+    {
+      "start": 2018.48,
+      "end": 2021.88,
+      "text": "often times even more than the sum of"
+    },
+    {
+      "start": 2020,
+      "end": 2025.76,
+      "text": "the parts right because this kind of"
+    },
+    {
+      "start": 2021.88,
+      "end": 2028.2,
+      "text": "collective intelligence emerges so um I"
+    },
+    {
+      "start": 2025.76,
+      "end": 2031.2,
+      "text": "think we need to be very careful uh I"
+    },
+    {
+      "start": 2028.2,
+      "end": 2033.24,
+      "text": "think you know it's it's something that"
+    },
+    {
+      "start": 2031.2,
+      "end": 2034.679,
+      "text": "needs attention and I'm not saying that"
+    },
+    {
+      "start": 2033.24,
+      "end": 2038.039,
+      "text": "they're going to take over and there's"
+    },
+    {
+      "start": 2034.679,
+      "end": 2039.96,
+      "text": "not some sort of sci-fi uh scenarios but"
+    },
+    {
+      "start": 2038.039,
+      "end": 2043.2,
+      "text": "that there are some advantages that we"
+    },
+    {
+      "start": 2039.96,
+      "end": 2046.679,
+      "text": "need to be quite careful about um and"
+    },
+    {
+      "start": 2043.2,
+      "end": 2048.599,
+      "text": "and you know um nobody really knows what"
+    },
+    {
+      "start": 2046.679,
+      "end": 2052,
+      "text": "will happen nobody knows if there's a"
+    },
+    {
+      "start": 2048.599,
+      "end": 2054.3590000000004,
+      "text": "limit but the question that we are"
+    },
+    {
+      "start": 2052,
+      "end": 2057.52,
+      "text": "asking the question that you just ask"
+    },
+    {
+      "start": 2054.359,
+      "end": 2061.0789999999997,
+      "text": "you know what will AI look like is"
+    },
+    {
+      "start": 2057.52,
+      "end": 2064.96,
+      "text": "incredibly incredibly connected to the"
+    },
+    {
+      "start": 2061.079,
+      "end": 2067.3990000000003,
+      "text": "question of how animals work and how"
+    },
+    {
+      "start": 2064.96,
+      "end": 2069.56,
+      "text": "human language emerged right so the"
+    },
+    {
+      "start": 2067.399,
+      "end": 2072.1189999999997,
+      "text": "question is is there the question that I"
+    },
+    {
+      "start": 2069.56,
+      "end": 2075.2,
+      "text": "started this podcast with podcast with"
+    },
+    {
+      "start": 2072.119,
+      "end": 2078.04,
+      "text": "was you know what is uniquely human did"
+    },
+    {
+      "start": 2075.2,
+      "end": 2082,
+      "text": "something really uniquely human happen"
+    },
+    {
+      "start": 2078.04,
+      "end": 2084.04,
+      "text": "in our in evolution that allows us to be"
+    },
+    {
+      "start": 2082,
+      "end": 2086.639,
+      "text": "so intelligent that allows us to have"
+    },
+    {
+      "start": 2084.04,
+      "end": 2089.24,
+      "text": "language or you know was just increase"
+    },
+    {
+      "start": 2086.639,
+      "end": 2091.96,
+      "text": "in computational power now the exact you"
+    },
+    {
+      "start": 2089.24,
+      "end": 2094.359,
+      "text": "ask me the exact same question here you"
+    },
+    {
+      "start": 2091.96,
+      "end": 2096.599,
+      "text": "know slightly differently packaged but"
+    },
+    {
+      "start": 2094.359,
+      "end": 2098.64,
+      "text": "if I'm continuously growing these"
+    },
+    {
+      "start": 2096.599,
+      "end": 2100.92,
+      "text": "Networks"
+    },
+    {
+      "start": 2098.64,
+      "end": 2103.5989999999997,
+      "text": "are we going to see you know just"
+    },
+    {
+      "start": 2100.92,
+      "end": 2107.16,
+      "text": "continuous Improvement until like"
+    },
+    {
+      "start": 2103.599,
+      "end": 2109.92,
+      "text": "they're better than us at one point or"
+    },
+    {
+      "start": 2107.16,
+      "end": 2113.52,
+      "text": "is there something uniquely human and"
+    },
+    {
+      "start": 2109.92,
+      "end": 2116.16,
+      "text": "unique architecture that is required for"
+    },
+    {
+      "start": 2113.52,
+      "end": 2118.079,
+      "text": "the models to be as successful as we are"
+    },
+    {
+      "start": 2116.16,
+      "end": 2119.64,
+      "text": "so that's why it's so important to also"
+    },
+    {
+      "start": 2118.079,
+      "end": 2122.2400000000002,
+      "text": "you know look at animals and look at"
+    },
+    {
+      "start": 2119.64,
+      "end": 2125.48,
+      "text": "humans to answer this question nobody"
+    },
+    {
+      "start": 2122.24,
+      "end": 2127.16,
+      "text": "really knows but there's less and less"
+    },
+    {
+      "start": 2125.48,
+      "end": 2129.48,
+      "text": "evidence that there is something"
+    },
+    {
+      "start": 2127.16,
+      "end": 2132.52,
+      "text": "uniquely human and if you think of you"
+    },
+    {
+      "start": 2129.48,
+      "end": 2136.2,
+      "text": "know the the brain of a fly was just"
+    },
+    {
+      "start": 2132.52,
+      "end": 2141.2,
+      "text": "recently sequenced um the brain of a"
+    },
+    {
+      "start": 2136.2,
+      "end": 2145.8799999999997,
+      "text": "fly uh of a of a fruit fly um all"
+    },
+    {
+      "start": 2141.2,
+      "end": 2148.0789999999997,
+      "text": "140 all 140,000 neurons were recently uh"
+    },
+    {
+      "start": 2145.88,
+      "end": 2151.04,
+      "text": "you know flashed out and analyzed in a"
+    },
+    {
+      "start": 2148.079,
+      "end": 2154.7200000000003,
+      "text": "nature paper their ve their brain is"
+    },
+    {
+      "start": 2151.04,
+      "end": 2157.96,
+      "text": "very different than ours but it works"
+    },
+    {
+      "start": 2154.72,
+      "end": 2161.1189999999997,
+      "text": "according to the same principles right"
+    },
+    {
+      "start": 2157.96,
+      "end": 2164.2400000000002,
+      "text": "and so if you imagine the fruit flies"
+    },
+    {
+      "start": 2161.119,
+      "end": 2167.7200000000003,
+      "text": "brain and just you know stretch it to"
+    },
+    {
+      "start": 2164.24,
+      "end": 2170.9199999999996,
+      "text": "our neurons which is like 80 80 80"
+    },
+    {
+      "start": 2167.72,
+      "end": 2173.9199999999996,
+      "text": "billion and several trillions of uh you"
+    },
+    {
+      "start": 2170.92,
+      "end": 2175.8,
+      "text": "know hundreds of trillions of of"
+    },
+    {
+      "start": 2173.92,
+      "end": 2180.599,
+      "text": "synapses"
+    },
+    {
+      "start": 2175.8,
+      "end": 2183.92,
+      "text": "then you know you have a in a sense a"
+    },
+    {
+      "start": 2180.599,
+      "end": 2187.76,
+      "text": "comparison somewhere along those lines"
+    },
+    {
+      "start": 2183.92,
+      "end": 2190.6800000000003,
+      "text": "human humanness arose right somewhere"
+    },
+    {
+      "start": 2187.76,
+      "end": 2193.48,
+      "text": "along those lines animal uh language"
+    },
+    {
+      "start": 2190.68,
+      "end": 2195.24,
+      "text": "emerged our intelligence emerged so if"
+    },
+    {
+      "start": 2193.48,
+      "end": 2198.04,
+      "text": "you think of you know if you put a"
+    },
+    {
+      "start": 2195.24,
+      "end": 2200.359,
+      "text": "parallel to the AI if we're going to"
+    },
+    {
+      "start": 2198.04,
+      "end": 2202.8,
+      "text": "keep increasing and under the assumption"
+    },
+    {
+      "start": 2200.359,
+      "end": 2205.119,
+      "text": "that performance will increase then at"
+    },
+    {
+      "start": 2202.8,
+      "end": 2209.8,
+      "text": "some point we're going to have a really"
+    },
+    {
+      "start": 2205.119,
+      "end": 2212.92,
+      "text": "capable entity and the only thing that"
+    },
+    {
+      "start": 2209.8,
+      "end": 2216.319,
+      "text": "humans have not deal with dealt with in"
+    },
+    {
+      "start": 2212.92,
+      "end": 2218.64,
+      "text": "the past has been something that is more"
+    },
+    {
+      "start": 2216.319,
+      "end": 2223.56,
+      "text": "intelligent than us we basically dealt"
+    },
+    {
+      "start": 2218.64,
+      "end": 2225.7999999999997,
+      "text": "with you know we dealt with uh uh Atomic"
+    },
+    {
+      "start": 2223.56,
+      "end": 2227.7599999999998,
+      "text": "crisis we dealt with wors we dealt with"
+    },
+    {
+      "start": 2225.8,
+      "end": 2230.2000000000003,
+      "text": "horrible things more or less"
+    },
+    {
+      "start": 2227.76,
+      "end": 2232.0400000000004,
+      "text": "successfully but we never had anything"
+    },
+    {
+      "start": 2230.2,
+      "end": 2234.64,
+      "text": "that was more intelligent than"
+    },
+    {
+      "start": 2232.04,
+      "end": 2237.56,
+      "text": "intelligent than us so it's basically a"
+    },
+    {
+      "start": 2234.64,
+      "end": 2240.2,
+      "text": "complete Uncharted Territory and so that"
+    },
+    {
+      "start": 2237.56,
+      "end": 2242.7599999999998,
+      "text": "that for all these reasons I would say"
+    },
+    {
+      "start": 2240.2,
+      "end": 2244.2,
+      "text": "caution is in place and not the kind of"
+    },
+    {
+      "start": 2242.76,
+      "end": 2246.2000000000003,
+      "text": "caution that where you know you freak"
+    },
+    {
+      "start": 2244.2,
+      "end": 2248.48,
+      "text": "out that in 10 years we're going to be"
+    },
+    {
+      "start": 2246.2,
+      "end": 2250.319,
+      "text": "wiped out by the these models but you"
+    },
+    {
+      "start": 2248.48,
+      "end": 2253.44,
+      "text": "know we have to"
+    },
+    {
+      "start": 2250.319,
+      "end": 2255.24,
+      "text": "rethink our future in a sense which we"
+    },
+    {
+      "start": 2253.44,
+      "end": 2258.04,
+      "text": "didn't have to rethink 10 years ago when"
+    },
+    {
+      "start": 2255.24,
+      "end": 2260.5989999999997,
+      "text": "these models were not as successful yet"
+    },
+    {
+      "start": 2258.04,
+      "end": 2262.44,
+      "text": "and it makes me think I mean you can't"
+    },
+    {
+      "start": 2260.599,
+      "end": 2265.6400000000003,
+      "text": "really separate the AI from us in our"
+    },
+    {
+      "start": 2262.44,
+      "end": 2267.2400000000002,
+      "text": "intelligence so I mean people themselves"
+    },
+    {
+      "start": 2265.64,
+      "end": 2270.68,
+      "text": "equipping themselves technologically"
+    },
+    {
+      "start": 2267.24,
+      "end": 2272.16,
+      "text": "with the power of all these L AI LMS and"
+    },
+    {
+      "start": 2270.68,
+      "end": 2273.7999999999997,
+      "text": "as you say multiple of them in"
+    },
+    {
+      "start": 2272.16,
+      "end": 2275.56,
+      "text": "combination or you know companies you"
+    },
+    {
+      "start": 2273.8,
+      "end": 2279.3590000000004,
+      "text": "know these other distributed entities"
+    },
+    {
+      "start": 2275.56,
+      "end": 2281.0789999999997,
+      "text": "right like even if it's yeah like we I"
+    },
+    {
+      "start": 2279.359,
+      "end": 2283.44,
+      "text": "guess what I'm saying is we will be part"
+    },
+    {
+      "start": 2281.079,
+      "end": 2285.92,
+      "text": "of the both the benefits but also the"
+    },
+    {
+      "start": 2283.44,
+      "end": 2288.16,
+      "text": "problems right it's it'll be kind of to"
+    },
+    {
+      "start": 2285.92,
+      "end": 2291,
+      "text": "a degree us wielding it or us"
+    },
+    {
+      "start": 2288.16,
+      "end": 2293.0789999999997,
+      "text": "facilitating them and so yeah and and"
+    },
+    {
+      "start": 2291,
+      "end": 2296.44,
+      "text": "it's interesting yeah to tie that"
+    },
+    {
+      "start": 2293.079,
+      "end": 2298.5600000000004,
+      "text": "into intelligence yeah it's like the"
+    },
+    {
+      "start": 2296.44,
+      "end": 2300.16,
+      "text": "different kinds to it it's hard to spot"
+    },
+    {
+      "start": 2298.56,
+      "end": 2301.72,
+      "text": "sometimes right and so it's like you"
+    },
+    {
+      "start": 2300.16,
+      "end": 2303.24,
+      "text": "know what kinds of new kinds of even"
+    },
+    {
+      "start": 2301.72,
+      "end": 2304.48,
+      "text": "intelligence could and it's almost"
+    },
+    {
+      "start": 2303.24,
+      "end": 2306.2799999999997,
+      "text": "saying you're going to make an llm with"
+    },
+    {
+      "start": 2304.48,
+      "end": 2307.64,
+      "text": "a new kind of intelligence you know it's"
+    },
+    {
+      "start": 2306.28,
+      "end": 2309.28,
+      "text": "but but but then again the the"
+    },
+    {
+      "start": 2307.64,
+      "end": 2311,
+      "text": "combination of different kinds of AI"
+    },
+    {
+      "start": 2309.28,
+      "end": 2313.2000000000003,
+      "text": "right and as we learn more about them"
+    },
+    {
+      "start": 2311,
+      "end": 2315.04,
+      "text": "right yeah it's it's interesting and you"
+    },
+    {
+      "start": 2313.2,
+      "end": 2317.24,
+      "text": "know these models can start communicate"
+    },
+    {
+      "start": 2315.04,
+      "end": 2319.24,
+      "text": "in ways that we don't"
+    },
+    {
+      "start": 2317.24,
+      "end": 2321.7999999999997,
+      "text": "understand and that's probably likely"
+    },
+    {
+      "start": 2319.24,
+      "end": 2325.04,
+      "text": "going to happen actually uh so you know"
+    },
+    {
+      "start": 2321.8,
+      "end": 2329.079,
+      "text": "we have our own language which is rather"
+    },
+    {
+      "start": 2325.04,
+      "end": 2332.52,
+      "text": "slow um you and I talk with about 39"
+    },
+    {
+      "start": 2329.079,
+      "end": 2335.6400000000003,
+      "text": "bits per second um exch information"
+    },
+    {
+      "start": 2332.52,
+      "end": 2338.4,
+      "text": "exchange rate and imagine those days of"
+    },
+    {
+      "start": 2335.64,
+      "end": 2341.24,
+      "text": "when internet was 39 bits per second"
+    },
+    {
+      "start": 2338.4,
+      "end": 2343.56,
+      "text": "those are those are you know long past"
+    },
+    {
+      "start": 2341.24,
+      "end": 2345.24,
+      "text": "and imagine if you know if if our"
+    },
+    {
+      "start": 2343.56,
+      "end": 2347.72,
+      "text": "internet connections were so slow these"
+    },
+    {
+      "start": 2345.24,
+      "end": 2350.4799999999996,
+      "text": "days and so that's you know whenever I"
+    },
+    {
+      "start": 2347.72,
+      "end": 2352.9599999999996,
+      "text": "as a human I raise as I get I get you"
+    },
+    {
+      "start": 2350.48,
+      "end": 2354.72,
+      "text": "know I I get born I need to learn"
+    },
+    {
+      "start": 2352.96,
+      "end": 2356.68,
+      "text": "everything with this slow rate that"
+    },
+    {
+      "start": 2354.72,
+      "end": 2360.2799999999997,
+      "text": "that's something that Jeffrey Hinton is"
+    },
+    {
+      "start": 2356.68,
+      "end": 2362.68,
+      "text": "is also saying about um and and these"
+    },
+    {
+      "start": 2360.28,
+      "end": 2365.96,
+      "text": "models have you know have way bigger"
+    },
+    {
+      "start": 2362.68,
+      "end": 2367.48,
+      "text": "channels um so so in a sense we are you"
+    },
+    {
+      "start": 2365.96,
+      "end": 2368.8,
+      "text": "know we're slow and and they're going to"
+    },
+    {
+      "start": 2367.48,
+      "end": 2370.52,
+      "text": "they're going to be able to maybe you"
+    },
+    {
+      "start": 2368.8,
+      "end": 2372.96,
+      "text": "know these models can start"
+    },
+    {
+      "start": 2370.52,
+      "end": 2375.119,
+      "text": "communicating with each other in ways we"
+    },
+    {
+      "start": 2372.96,
+      "end": 2378,
+      "text": "don't understand so I think that's it's"
+    },
+    {
+      "start": 2375.119,
+      "end": 2380.119,
+      "text": "super important to continue the research"
+    },
+    {
+      "start": 2378,
+      "end": 2382.48,
+      "text": "into interpretability into understanding"
+    },
+    {
+      "start": 2380.119,
+      "end": 2385.44,
+      "text": "these models and trying to see what can"
+    },
+    {
+      "start": 2382.48,
+      "end": 2390.28,
+      "text": "happen so that you know in the best case"
+    },
+    {
+      "start": 2385.44,
+      "end": 2393.28,
+      "text": "scenario we get um you know we get a"
+    },
+    {
+      "start": 2390.28,
+      "end": 2396.5600000000004,
+      "text": "tool that is super helpful and that I'm"
+    },
+    {
+      "start": 2393.28,
+      "end": 2397.92,
+      "text": "sure will happen um you know in the next"
+    },
+    {
+      "start": 2396.56,
+      "end": 2400.96,
+      "text": "couple of decades"
+    },
+    {
+      "start": 2397.92,
+      "end": 2403.079,
+      "text": "there's a big potential for all sorts of"
+    },
+    {
+      "start": 2400.96,
+      "end": 2404.88,
+      "text": "Discovery for in medicine in in all"
+    },
+    {
+      "start": 2403.079,
+      "end": 2406.1600000000003,
+      "text": "sorts of fields because of all these"
+    },
+    {
+      "start": 2404.88,
+      "end": 2410.04,
+      "text": "things we talked"
+    },
+    {
+      "start": 2406.16,
+      "end": 2412.0789999999997,
+      "text": "about um that the question is like how"
+    },
+    {
+      "start": 2410.04,
+      "end": 2415.44,
+      "text": "and when you"
+    },
+    {
+      "start": 2412.079,
+      "end": 2417.079,
+      "text": "know it can get to a point where it"
+    },
+    {
+      "start": 2415.44,
+      "end": 2419.2000000000003,
+      "text": "where these models are are performing"
+    },
+    {
+      "start": 2417.079,
+      "end": 2421.88,
+      "text": "too well and we don't understand them"
+    },
+    {
+      "start": 2419.2,
+      "end": 2424.5989999999997,
+      "text": "and we cannot control them right and"
+    },
+    {
+      "start": 2421.88,
+      "end": 2427.6800000000003,
+      "text": "that is that is something that I think"
+    },
+    {
+      "start": 2424.599,
+      "end": 2430.1600000000003,
+      "text": "you know there's a lot of in a sense"
+    },
+    {
+      "start": 2427.68,
+      "end": 2432.64,
+      "text": "political debates behind this but I"
+    },
+    {
+      "start": 2430.16,
+      "end": 2435,
+      "text": "don't think it should be right I mean"
+    },
+    {
+      "start": 2432.64,
+      "end": 2437.7999999999997,
+      "text": "you can disagree if whether that's a"
+    },
+    {
+      "start": 2435,
+      "end": 2440,
+      "text": "valid reason or not but I think it"
+    },
+    {
+      "start": 2437.8,
+      "end": 2442.48,
+      "text": "there's nothing wrong to think about"
+    },
+    {
+      "start": 2440,
+      "end": 2444.119,
+      "text": "these potential future scenarios that"
+    },
+    {
+      "start": 2442.48,
+      "end": 2446.76,
+      "text": "can be you know really bad for the"
+    },
+    {
+      "start": 2444.119,
+      "end": 2449.28,
+      "text": "humanity um just because there are so"
+    },
+    {
+      "start": 2446.76,
+      "end": 2451.76,
+      "text": "many advantages that these models have"
+    },
+    {
+      "start": 2449.28,
+      "end": 2454.2000000000003,
+      "text": "right and and and if you think of it um"
+    },
+    {
+      "start": 2451.76,
+      "end": 2456.92,
+      "text": "we're going to you know we're going to"
+    },
+    {
+      "start": 2454.2,
+      "end": 2459.4399999999996,
+      "text": "we humans are very creative and very"
+    },
+    {
+      "start": 2456.92,
+      "end": 2462.359,
+      "text": "curious and very great at at dealing"
+    },
+    {
+      "start": 2459.44,
+      "end": 2464.8,
+      "text": "with problems and and and and so it's"
+    },
+    {
+      "start": 2462.359,
+      "end": 2468.359,
+      "text": "going to be a big challenge if we're"
+    },
+    {
+      "start": 2464.8,
+      "end": 2472.1600000000003,
+      "text": "able to control these models or or"
+    },
+    {
+      "start": 2468.359,
+      "end": 2474.88,
+      "text": "create them in a way that um that you"
+    },
+    {
+      "start": 2472.16,
+      "end": 2477,
+      "text": "know we can still understand them that"
+    },
+    {
+      "start": 2474.88,
+      "end": 2478.76,
+      "text": "is the crucial part so that's what I'm"
+    },
+    {
+      "start": 2477,
+      "end": 2480.839,
+      "text": "investing so much of my effort into"
+    },
+    {
+      "start": 2478.76,
+      "end": 2482.6800000000003,
+      "text": "interpretability because if you don't"
+    },
+    {
+      "start": 2480.839,
+      "end": 2484.48,
+      "text": "understand what the model starts saying"
+    },
+    {
+      "start": 2482.68,
+      "end": 2486.319,
+      "text": "right if at some point you don't"
+    },
+    {
+      "start": 2484.48,
+      "end": 2488.16,
+      "text": "understand what it's performing because"
+    },
+    {
+      "start": 2486.319,
+      "end": 2490.8,
+      "text": "it's in a sense more intelligent than"
+    },
+    {
+      "start": 2488.16,
+      "end": 2492.8799999999997,
+      "text": "than you um then you have a problem and"
+    },
+    {
+      "start": 2490.8,
+      "end": 2495.28,
+      "text": "you know recently it happened that one"
+    },
+    {
+      "start": 2492.88,
+      "end": 2498.52,
+      "text": "of the greatest mathematicians teren sty"
+    },
+    {
+      "start": 2495.28,
+      "end": 2501.28,
+      "text": "said that the latest model is is at the"
+    },
+    {
+      "start": 2498.52,
+      "end": 2504.28,
+      "text": "level of a not fully incompetent"
+    },
+    {
+      "start": 2501.28,
+      "end": 2507.8,
+      "text": "graduate student in mathematics right"
+    },
+    {
+      "start": 2504.28,
+      "end": 2511.0400000000004,
+      "text": "and that is to me a pretty pretty high"
+    },
+    {
+      "start": 2507.8,
+      "end": 2512.92,
+      "text": "estimation um so so the models have have"
+    },
+    {
+      "start": 2511.04,
+      "end": 2514.56,
+      "text": "started you know to working on proofs"
+    },
+    {
+      "start": 2512.92,
+      "end": 2516.76,
+      "text": "and and they're not perfect yet but"
+    },
+    {
+      "start": 2514.56,
+      "end": 2518.7999999999997,
+      "text": "they're increasingly you know getting"
+    },
+    {
+      "start": 2516.76,
+      "end": 2521.3190000000004,
+      "text": "better and better better so I think one"
+    },
+    {
+      "start": 2518.8,
+      "end": 2523.6400000000003,
+      "text": "has to be really really careful and"
+    },
+    {
+      "start": 2521.319,
+      "end": 2525.48,
+      "text": "attentive to these things and and and I"
+    },
+    {
+      "start": 2523.64,
+      "end": 2528.839,
+      "text": "think it shouldn't be the case that this"
+    },
+    {
+      "start": 2525.48,
+      "end": 2530.8,
+      "text": "kind of um calls for caution and calls"
+    },
+    {
+      "start": 2528.839,
+      "end": 2533.4,
+      "text": "for understanding should be met with"
+    },
+    {
+      "start": 2530.8,
+      "end": 2535.96,
+      "text": "this sort of skepticism and and and and"
+    },
+    {
+      "start": 2533.4,
+      "end": 2538.44,
+      "text": "this kind of you know attitude oh this"
+    },
+    {
+      "start": 2535.96,
+      "end": 2538.44,
+      "text": "is just"
+    },
+    {
+      "start": 2540.04,
+      "end": 2544.4,
+      "text": "dorismar"
+    },
+    {
+      "start": 2541.76,
+      "end": 2546.7200000000003,
+      "text": "propriate and that concludes this"
+    },
+    {
+      "start": 2544.4,
+      "end": 2550.2000000000003,
+      "text": "podcast if you liked it then maybe check"
+    },
+    {
+      "start": 2546.72,
+      "end": 2552.72,
+      "text": "out one of these videos here and"
+    },
+    {
+      "start": 2550.2,
+      "end": 2555.4399999999996,
+      "text": "consider subscribing for more like this"
+    },
+    {
+      "start": 2552.72,
+      "end": 2558.4399999999996,
+      "text": "in the future I'm Jack and thank you for"
+    },
+    {
+      "start": 2555.44,
+      "end": 2558.44,
+      "text": "watching"
+    }
+  ],
+  "ingestedAt": "2026-09-11T17:50:34.172Z",
+  "source": "youtube",
+  "note": "Imported from YouTube captions"
+}

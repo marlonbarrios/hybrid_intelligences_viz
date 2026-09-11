@@ -802,6 +802,17 @@
       "caption": "Carissa Véliz on prophecy, algorithmic prediction, and power — from ancient oracles to AI, and why predictions shape futures rather than merely describing them.",
       "credit": "TED",
       "transcript": "transcripts/carissa-veliz-prophecy-ted.json"
+    },
+    {
+      "id": "begus-mystery-language",
+      "title": "The Mystery of Language in Humans, Animals & AI | Gašper Beguš",
+      "youtube": "https://www.youtube.com/watch?v=7zqMYwW0f6E",
+      "poster": "screenshots/begus-mystery-language.jpg",
+      "date": "2024-01-01",
+      "speaker": "Gašper Beguš",
+      "caption": "Interpretable AI, language as informative imitation, and whale vowels — a comparative science of communication across humans, animals, and machines.",
+      "credit": "YouTube lecture",
+      "transcript": "transcripts/begus-mystery-language.json"
     }
   ]
 }

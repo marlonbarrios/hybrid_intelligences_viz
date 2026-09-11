@@ -12,12 +12,12 @@
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   dc:description "OWL 2 ontology of concepts, categories, and weighted relations from the Hybrid Intelligences program." ;
   owl:versionInfo "1.0.0" ;
-  dc:date "2026-09-07"^^xsd:date ;
-  dc:modified "2026-09-07T17:30:29.671Z"^^xsd:dateTime ;
+  dc:date "2026-09-11"^^xsd:date ;
+  dc:modified "2026-09-11T18:03:05.626Z"^^xsd:dateTime ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  hi:nodeCount "330"^^xsd:integer ;
-  hi:edgeCount "3021"^^xsd:integer ;
-  hi:typedEdgeCount "220"^^xsd:integer .
+  hi:nodeCount "336"^^xsd:integer ;
+  hi:edgeCount "3080"^^xsd:integer ;
+  hi:typedEdgeCount "228"^^xsd:integer .
 
 hi:Concept a owl:Class ;
   rdfs:label "Concept"@en ;
@@ -93,8 +93,9 @@ hi:AuthorConcept a owl:Class ;
   rdfs:comment "Thinkers, artists, and researchers linked to concepts in the network."@en ;
   rdfs:subClassOf hi:Concept .
 
-hi:undefined a owl:Class ;
+hi:VideoConcept a owl:Class ;
   rdfs:label "Videos"@en ;
+  rdfs:comment "Talks and performances ingested against the ontology—matched concepts become edges on the Videos ring."@en ;
   rdfs:subClassOf hi:Concept .
 
 hi:ProgramConcept owl:disjointWith hi:OrganizationConcept .
@@ -109,7 +110,7 @@ hi:ProgramConcept owl:disjointWith hi:PhenomenonConcept .
 hi:ProgramConcept owl:disjointWith hi:DomainConcept .
 hi:ProgramConcept owl:disjointWith hi:FrameworkConcept .
 hi:ProgramConcept owl:disjointWith hi:AuthorConcept .
-hi:ProgramConcept owl:disjointWith hi:undefined .
+hi:ProgramConcept owl:disjointWith hi:VideoConcept .
 hi:OrganizationConcept owl:disjointWith hi:PremiseConcept .
 hi:OrganizationConcept owl:disjointWith hi:ParticipantConcept .
 hi:OrganizationConcept owl:disjointWith hi:BackgroundConcept .
@@ -121,7 +122,7 @@ hi:OrganizationConcept owl:disjointWith hi:PhenomenonConcept .
 hi:OrganizationConcept owl:disjointWith hi:DomainConcept .
 hi:OrganizationConcept owl:disjointWith hi:FrameworkConcept .
 hi:OrganizationConcept owl:disjointWith hi:AuthorConcept .
-hi:OrganizationConcept owl:disjointWith hi:undefined .
+hi:OrganizationConcept owl:disjointWith hi:VideoConcept .
 hi:PremiseConcept owl:disjointWith hi:ParticipantConcept .
 hi:PremiseConcept owl:disjointWith hi:BackgroundConcept .
 hi:PremiseConcept owl:disjointWith hi:FacilitatorConcept .
@@ -132,7 +133,7 @@ hi:PremiseConcept owl:disjointWith hi:PhenomenonConcept .
 hi:PremiseConcept owl:disjointWith hi:DomainConcept .
 hi:PremiseConcept owl:disjointWith hi:FrameworkConcept .
 hi:PremiseConcept owl:disjointWith hi:AuthorConcept .
-hi:PremiseConcept owl:disjointWith hi:undefined .
+hi:PremiseConcept owl:disjointWith hi:VideoConcept .
 hi:ParticipantConcept owl:disjointWith hi:BackgroundConcept .
 hi:ParticipantConcept owl:disjointWith hi:FacilitatorConcept .
 hi:ParticipantConcept owl:disjointWith hi:PracticeConcept .
@@ -142,7 +143,7 @@ hi:ParticipantConcept owl:disjointWith hi:PhenomenonConcept .
 hi:ParticipantConcept owl:disjointWith hi:DomainConcept .
 hi:ParticipantConcept owl:disjointWith hi:FrameworkConcept .
 hi:ParticipantConcept owl:disjointWith hi:AuthorConcept .
-hi:ParticipantConcept owl:disjointWith hi:undefined .
+hi:ParticipantConcept owl:disjointWith hi:VideoConcept .
 hi:BackgroundConcept owl:disjointWith hi:FacilitatorConcept .
 hi:BackgroundConcept owl:disjointWith hi:PracticeConcept .
 hi:BackgroundConcept owl:disjointWith hi:TensionConcept .
@@ -151,7 +152,7 @@ hi:BackgroundConcept owl:disjointWith hi:PhenomenonConcept .
 hi:BackgroundConcept owl:disjointWith hi:DomainConcept .
 hi:BackgroundConcept owl:disjointWith hi:FrameworkConcept .
 hi:BackgroundConcept owl:disjointWith hi:AuthorConcept .
-hi:BackgroundConcept owl:disjointWith hi:undefined .
+hi:BackgroundConcept owl:disjointWith hi:VideoConcept .
 hi:FacilitatorConcept owl:disjointWith hi:PracticeConcept .
 hi:FacilitatorConcept owl:disjointWith hi:TensionConcept .
 hi:FacilitatorConcept owl:disjointWith hi:QualityConcept .
@@ -159,35 +160,35 @@ hi:FacilitatorConcept owl:disjointWith hi:PhenomenonConcept .
 hi:FacilitatorConcept owl:disjointWith hi:DomainConcept .
 hi:FacilitatorConcept owl:disjointWith hi:FrameworkConcept .
 hi:FacilitatorConcept owl:disjointWith hi:AuthorConcept .
-hi:FacilitatorConcept owl:disjointWith hi:undefined .
+hi:FacilitatorConcept owl:disjointWith hi:VideoConcept .
 hi:PracticeConcept owl:disjointWith hi:TensionConcept .
 hi:PracticeConcept owl:disjointWith hi:QualityConcept .
 hi:PracticeConcept owl:disjointWith hi:PhenomenonConcept .
 hi:PracticeConcept owl:disjointWith hi:DomainConcept .
 hi:PracticeConcept owl:disjointWith hi:FrameworkConcept .
 hi:PracticeConcept owl:disjointWith hi:AuthorConcept .
-hi:PracticeConcept owl:disjointWith hi:undefined .
+hi:PracticeConcept owl:disjointWith hi:VideoConcept .
 hi:TensionConcept owl:disjointWith hi:QualityConcept .
 hi:TensionConcept owl:disjointWith hi:PhenomenonConcept .
 hi:TensionConcept owl:disjointWith hi:DomainConcept .
 hi:TensionConcept owl:disjointWith hi:FrameworkConcept .
 hi:TensionConcept owl:disjointWith hi:AuthorConcept .
-hi:TensionConcept owl:disjointWith hi:undefined .
+hi:TensionConcept owl:disjointWith hi:VideoConcept .
 hi:QualityConcept owl:disjointWith hi:PhenomenonConcept .
 hi:QualityConcept owl:disjointWith hi:DomainConcept .
 hi:QualityConcept owl:disjointWith hi:FrameworkConcept .
 hi:QualityConcept owl:disjointWith hi:AuthorConcept .
-hi:QualityConcept owl:disjointWith hi:undefined .
+hi:QualityConcept owl:disjointWith hi:VideoConcept .
 hi:PhenomenonConcept owl:disjointWith hi:DomainConcept .
 hi:PhenomenonConcept owl:disjointWith hi:FrameworkConcept .
 hi:PhenomenonConcept owl:disjointWith hi:AuthorConcept .
-hi:PhenomenonConcept owl:disjointWith hi:undefined .
+hi:PhenomenonConcept owl:disjointWith hi:VideoConcept .
 hi:DomainConcept owl:disjointWith hi:FrameworkConcept .
 hi:DomainConcept owl:disjointWith hi:AuthorConcept .
-hi:DomainConcept owl:disjointWith hi:undefined .
+hi:DomainConcept owl:disjointWith hi:VideoConcept .
 hi:FrameworkConcept owl:disjointWith hi:AuthorConcept .
-hi:FrameworkConcept owl:disjointWith hi:undefined .
-hi:AuthorConcept owl:disjointWith hi:undefined .
+hi:FrameworkConcept owl:disjointWith hi:VideoConcept .
+hi:AuthorConcept owl:disjointWith hi:VideoConcept .
 
 hi:NetworkRelation a owl:Class ;
   rdfs:label "Network relation"@en ;
@@ -451,9 +452,10 @@ hi:category/author a owl:NamedIndividual, hi:CategoryConcept, hi:AuthorConcept ;
   hi:ringFraction "0.95"^^xsd:decimal ;
   hi:ringOrder "12"^^xsd:integer .
 
-hi:category/video a owl:NamedIndividual, hi:CategoryConcept, hi:undefined ;
+hi:category/video a owl:NamedIndividual, hi:CategoryConcept, hi:VideoConcept ;
   rdfs:label "Videos"@en ;
   skos:prefLabel "Videos"@en ;
+  skos:definition "Talks and performances ingested against the ontology—matched concepts become edges on the Videos ring."@en ;
   skos:inScheme hi:scheme ;
   skos:topConceptOf hi:scheme ;
   hi:ringFraction "0.98"^^xsd:decimal ;
@@ -1073,7 +1075,7 @@ hi:constitutional_ai a owl:NamedIndividual, hi:FrameworkConcept ;
 hi:ai_interpretability a owl:NamedIndividual, hi:FrameworkConcept ;
   rdfs:label "AI Interpretability"@en ;
   skos:prefLabel "AI Interpretability"@en ;
-  skos:definition "Methods for explaining how AI systems represent, classify, and decide—making model behavior legible through features, attention, embeddings, and outputs; central to accountability, trust, epistemology, and the politics of what can be known about machine reasoning."@en ;
+  skos:definition "Methods for explaining how AI systems represent, classify, and decide—making model behavior legible through features, attention, embeddings, and outputs; central to accountability, trust, epistemology, and the politics of what can be known about machine reasoning. Gašper Beguš treats interpretability as a scientific instrument: causal probes of neurons can discover patterns in speech, including analogues of vowels in sperm-whale communication."@en ;
   skos:broader hi:category/framework ;
   hi:inCategory hi:category/framework ;
   hi:schemeMember hi:scheme ;
@@ -1082,6 +1084,33 @@ hi:ai_interpretability a owl:NamedIndividual, hi:FrameworkConcept ;
  ;
   schema:url <https://en.wikipedia.org/wiki/Explainable_artificial_intelligence> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Explainable_artificial_intelligence>
+ .
+
+hi:informative_imitation a owl:NamedIndividual, hi:FrameworkConcept ;
+  rdfs:label "Informative Imitation"@en ;
+  skos:prefLabel "Informative Imitation"@en ;
+  skos:definition "Gašper Beguš’s model of language as informative imitation: learning from raw unsupervised audio, with communicative intent and embodied articulatory representations (ciwaGAN). Contrasts with large language models trained on text; a more realistic account of how speech and meaning can emerge in infants, animals, and machines."@en ;
+  skos:broader hi:category/framework ;
+  hi:inCategory hi:category/framework ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.45"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Language_acquisition>
+ .
+
+hi:cross_species_language a owl:NamedIndividual, hi:FrameworkConcept ;
+  rdfs:label "Cross-species Language"@en ;
+  skos:prefLabel "Cross-species Language"@en ;
+  skos:definition "A comparative science of communication across humans, animals, and machines—asking which properties of language (vowels, consonants, recursion, communicative intent) are species-specific and which can be shared or modeled. Project CETI and interpretable AI make nonhuman signaling newly inspectable as knowledge rather than as noise."@en ;
+  skos:broader hi:category/framework ;
+  hi:inCategory hi:category/framework ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.45"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Animal_communication> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Animal_communication>
  .
 
 hi:model_introspection a owl:NamedIndividual, hi:FrameworkConcept ;
@@ -2015,6 +2044,19 @@ hi:elon_musk a owl:NamedIndividual, hi:AuthorConcept ;
   schema:sameAs <https://en.wikipedia.org/wiki/Elon_Musk>
  .
 
+hi:begus a owl:NamedIndividual, hi:AuthorConcept ;
+  rdfs:label "Gašper Beguš"@en ;
+  skos:prefLabel "Gašper Beguš"@en ;
+  skos:definition "Associate Professor of Linguistics at UC Berkeley; Linguistics Lead of Project CETI. Interpretable AI, an “artificial baby” that learns speech from raw audio, and the discovery of vowel-like patterns in sperm-whale communication. Treats language as a microscope into human, animal, and machine intelligence."@en ;
+  skos:broader hi:category/author ;
+  hi:inCategory hi:category/author ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.25"^^xsd:decimal
+ ;
+  schema:url <https://www.gasperbegus.com/>
+ .
+
 hi:aguilera_arcas a owl:NamedIndividual, hi:AuthorConcept ;
   rdfs:label "Blaise Agüera y Arcas"@en ;
   skos:prefLabel "Blaise Agüera y Arcas"@en ;
@@ -2364,6 +2406,19 @@ hi:social_change a owl:NamedIndividual, hi:PhenomenonConcept ;
   schema:sameAs <https://en.wikipedia.org/wiki/Social_change>
  .
 
+hi:whale_vowels a owl:NamedIndividual, hi:PhenomenonConcept ;
+  rdfs:label "Whale Vowels"@en ;
+  skos:prefLabel "Whale Vowels"@en ;
+  skos:definition "Spectral patterns in sperm-whale coda clicks analogous to human vowels—predicted and described through AI interpretability (Gašper Beguš / Project CETI). The coda vowels show behavioral parallels with human vowels, including coarticulation and prominence, opening a comparative linguistics of ocean minds."@en ;
+  skos:broader hi:category/phenomenon ;
+  hi:inCategory hi:category/phenomenon ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Sperm_whale>
+ .
+
 hi:theory_of_mind a owl:NamedIndividual, hi:PhenomenonConcept ;
   rdfs:label "Theory of Mind"@en ;
   skos:prefLabel "Theory of Mind"@en ;
@@ -2467,6 +2522,20 @@ hi:intellectual_property a owl:NamedIndividual, hi:DomainConcept ;
  ;
   schema:url <https://en.wikipedia.org/wiki/Intellectual_property> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Intellectual_property>
+ .
+
+hi:linguistics a owl:NamedIndividual, hi:DomainConcept ;
+  rdfs:label "Linguistics"@en ;
+  skos:prefLabel "Linguistics"@en ;
+  skos:definition "The study of language as structure, use, and learning—phonetics, phonology, meaning, and acquisition. In Hybrid Intelligences it is also a microscope into cognition: how speech is learned from sound, how models represent it, and how those methods travel to animal communication and machine intelligence."@en ;
+  skos:broader hi:category/domain ;
+  hi:inCategory hi:category/domain ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.3"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Linguistics> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Linguistics>
  .
 
 hi:philosophy a owl:NamedIndividual, hi:DomainConcept ;
@@ -3091,7 +3160,7 @@ hi:hi_videos a owl:NamedIndividual, hi:PracticeConcept ;
   schema:url <videos.html>
  .
 
-hi:video_hayles_integrated_cognition a owl:NamedIndividual, hi:undefined ;
+hi:video_hayles_integrated_cognition a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Hayles · ICF"@en ;
   skos:prefLabel "Hayles · ICF"@en ;
   skos:definition "Katherine Hayles — Consciousness Is Not Necessary for Cognition. Podcast interview on the integrated cognitive framework, How We Became Posthuman, widening the circle of care, nonconscious cognition, holobionts, and human–AI relationality. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3106,7 +3175,7 @@ hi:video_hayles_integrated_cognition a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=W_W-yKNB6IU>
  .
 
-hi:video_hayles_bacteria_ai a owl:NamedIndividual, hi:undefined ;
+hi:video_hayles_bacteria_ai a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Hayles · Bacteria"@en ;
   skos:prefLabel "Hayles · Bacteria"@en ;
   skos:definition "Katherine Hayles on Urgent Futures with Jesse Damiani (March 2025) — on Bacteria to AI: integrated cognitive framework (ICF), nonconscious cognition, distributed agency in cognitive assemblages, LLM Umwelten, sympoiesis, reversible internalities, and posthuman relationality. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3121,7 +3190,7 @@ hi:video_hayles_bacteria_ai a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=PGFNREZTXQQ>
  .
 
-hi:video_clark_experience_machine a owl:NamedIndividual, hi:undefined ;
+hi:video_clark_experience_machine a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Clark · Experience"@en ;
   skos:prefLabel "Clark · Experience"@en ;
   skos:definition "Andy Clark — The Experience Machine (Royal Institution). Lecture on predictive processing: brains as prediction machines, controlled hallucination, precision weighting, Karl Friston and active inference, computational psychiatry, chronic pain, placebo, and nudging the predictive brain. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3136,7 +3205,7 @@ hi:video_clark_experience_machine a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=A1Ghrd7NBtk>
  .
 
-hi:video_ai_fluency_generative_ai a owl:NamedIndividual, hi:undefined ;
+hi:video_ai_fluency_generative_ai a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Gen AI · Fluency"@en ;
   skos:prefLabel "Gen AI · Fluency"@en ;
   skos:definition "What is generative AI? (Deep Dive) — AI Fluency — AI Fluency Course. Lesson 3A from AI Fluency: Framework & Foundations — a deep dive on what generative AI is and how it works. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3151,7 +3220,7 @@ hi:video_ai_fluency_generative_ai a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=RyvXxApfHkk>
  .
 
-hi:video_karla_expanding_possibilities a owl:NamedIndividual, hi:undefined ;
+hi:video_karla_expanding_possibilities a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Karla · Space"@en ;
   skos:prefLabel "Karla · Space"@en ;
   skos:definition "Expanding the Space of Possibilities — Karla Saldaña Ochoa. Karla Saldaña Ochoa on architecture, AI, space, memory, and embodiment — expanding what hybrid creative practice can become. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3166,7 +3235,7 @@ hi:video_karla_expanding_possibilities a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=GDoYdJTCAKs>
  .
 
-hi:video_gallagher_4e_cognition a owl:NamedIndividual, hi:undefined ;
+hi:video_gallagher_4e_cognition a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Gallagher · 4E"@en ;
   skos:prefLabel "Gallagher · 4E"@en ;
   skos:definition "Prof. Shaun Gallagher on 4E Cognition — Shaun Gallagher. Shaun Gallagher on embodied, embedded, enactive, and extended cognition — 4E as a framework for mind, action, and the social world. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3181,7 +3250,7 @@ hi:video_gallagher_4e_cognition a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=IT0HDtARXto>
  .
 
-hi:video_privacy_illusion_ai_data a owl:NamedIndividual, hi:undefined ;
+hi:video_privacy_illusion_ai_data a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Privacy · Illusion"@en ;
   skos:prefLabel "Privacy · Illusion"@en ;
   skos:definition "The Privacy Illusion: AI, Data & Who Really Controls Your Information. On AI, data extraction, surveillance, and who actually controls personal information in the age of large-scale machine learning. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3196,7 +3265,7 @@ hi:video_privacy_illusion_ai_data a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=8UpCJrThLwo>
  .
 
-hi:video_friston_brain_constructs_reality a owl:NamedIndividual, hi:undefined ;
+hi:video_friston_brain_constructs_reality a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Friston · Reality"@en ;
   skos:prefLabel "Friston · Reality"@en ;
   skos:definition "How the brain constructs reality — Karl Friston on consciousness and neuroscience — Karl Friston. Karl Friston on predictive brains, the free energy principle, active inference, and how neural inference shapes conscious experience. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3211,7 +3280,7 @@ hi:video_friston_brain_constructs_reality a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=82T2Pmen3zU>
  .
 
-hi:video_levin_diverse_intelligences a owl:NamedIndividual, hi:undefined ;
+hi:video_levin_diverse_intelligences a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Levin · Diverse"@en ;
   skos:prefLabel "Levin · Diverse"@en ;
   skos:definition "Diverse Intelligences: Origins, Possibilities, and Diseases of Minds — Michael Levin. Michael Levin on diverse intelligences beyond brains — morphogenesis, basal cognition, and new frontiers for minds biological and synthetic. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3226,7 +3295,7 @@ hi:video_levin_diverse_intelligences a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=-elegwQQOww>
  .
 
-hi:video_levin_intelligence_without_brains a owl:NamedIndividual, hi:undefined ;
+hi:video_levin_intelligence_without_brains a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Levin · No Brain"@en ;
   skos:prefLabel "Levin · No Brain"@en ;
   skos:definition "Intelligence Without Brains: A Radical New Idea — Michael Levin. Michael Levin on intelligence distributed beyond nervous systems — collective behavior, regeneration, and cognition in living systems. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3241,7 +3310,7 @@ hi:video_levin_intelligence_without_brains a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=J-HDHwEJ2z8>
  .
 
-hi:video_thompson_embodied_cognition a owl:NamedIndividual, hi:undefined ;
+hi:video_thompson_embodied_cognition a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Thompson · Embodied"@en ;
   skos:prefLabel "Thompson · Embodied"@en ;
   skos:definition "BS 198 Embodied Cognition with Evan Thompson — Evan Thompson. Brain Science podcast — Evan Thompson on enactivism, lived experience, mindfulness, and embodied approaches to mind and life. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3256,7 +3325,7 @@ hi:video_thompson_embodied_cognition a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=wguCdqXCGpg>
  .
 
-hi:video_varela_god_computers a owl:NamedIndividual, hi:undefined ;
+hi:video_varela_god_computers a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Varela · Computers"@en ;
   skos:prefLabel "Varela · Computers"@en ;
   skos:definition "Francisco Varela — God & Computers: Minds, Machines, and Metaphysics — Francisco Varela. A.I. Lab 1997 lecture series — Varela on enactivism, autopoiesis, cognition, and the metaphysics of minds and machines. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3271,7 +3340,7 @@ hi:video_varela_god_computers a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=xhS9ffDcLOk>
  .
 
-hi:video_mini_brains_150k a owl:NamedIndividual, hi:undefined ;
+hi:video_mini_brains_150k a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "150k · Mini-Brains"@en ;
   skos:prefLabel "150k · Mini-Brains"@en ;
   skos:definition "Your Brain Is 150,000 Mini-Brains. On cortical columns, distributed neural computation, and how the brain organizes intelligence from many local processing units. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3286,7 +3355,7 @@ hi:video_mini_brains_150k a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=Dykkubb-Qus>
  .
 
-hi:video_understanding_ai_inner_thoughts a owl:NamedIndividual, hi:undefined ;
+hi:video_understanding_ai_inner_thoughts a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "AI Inner Thoughts"@en ;
   skos:prefLabel "AI Inner Thoughts"@en ;
   skos:definition "Understanding the inner thoughts of AI. On interpretability, model internals, and what we can know about how large AI systems represent and process information. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3301,7 +3370,7 @@ hi:video_understanding_ai_inner_thoughts a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=1DtMiRKg-cs>
  .
 
-hi:video_visualizing_transformers_attention a owl:NamedIndividual, hi:undefined ;
+hi:video_visualizing_transformers_attention a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Transformers & Attention"@en ;
   skos:prefLabel "Transformers & Attention"@en ;
   skos:definition "Visualizing transformers and attention. Talk for TNG Big Tech Day '24 — making transformer architectures and attention mechanisms visible and intuitive. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3316,7 +3385,7 @@ hi:video_visualizing_transformers_attention a owl:NamedIndividual, hi:undefined 
   schema:sameAs <https://www.youtube.com/watch?v=KJtZARuO3JY>
  .
 
-hi:video_am_i_ai_consciousness_doc a owl:NamedIndividual, hi:undefined ;
+hi:video_am_i_ai_consciousness_doc a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "AM I? Documentary"@en ;
   skos:prefLabel "AM I? Documentary"@en ;
   skos:definition "AM I? — A Documentary About AI Consciousness. Documentary exploring whether AI systems can be conscious — philosophy, neuroscience, and the politics of machine minds. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3331,7 +3400,7 @@ hi:video_am_i_ai_consciousness_doc a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=KbTvUOx2A6c>
  .
 
-hi:video_creative_workers_ai_impact a owl:NamedIndividual, hi:undefined ;
+hi:video_creative_workers_ai_impact a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Creative Workers"@en ;
   skos:prefLabel "Creative Workers"@en ;
   skos:definition "How Creative Workers are Impacted by AI. On generative AI and creative labor — how artists, designers, and cultural workers navigate coupling with new tools. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3346,7 +3415,7 @@ hi:video_creative_workers_ai_impact a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=kj1SpD-YldQ>
  .
 
-hi:video_thinking_game_documentary a owl:NamedIndividual, hi:undefined ;
+hi:video_thinking_game_documentary a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Thinking Game"@en ;
   skos:prefLabel "Thinking Game"@en ;
   skos:definition "The Thinking Game — Full Documentary. Tribeca Film Festival official selection — documentary on AI research, ambition, and the humans building systems that think. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3361,7 +3430,7 @@ hi:video_thinking_game_documentary a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=d95J8yzvjbQ>
  .
 
-hi:video_noe_out_of_our_heads a owl:NamedIndividual, hi:undefined ;
+hi:video_noe_out_of_our_heads a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Noë · Out of"@en ;
   skos:prefLabel "Noë · Out of"@en ;
   skos:definition "Out of Our Heads — Alva Noë — Alva Noë. Alva Noë on embodied cognition and consciousness — why mind is not confined to the brain, drawing on Out of Our Heads and enactive approaches to perception and action. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3376,7 +3445,7 @@ hi:video_noe_out_of_our_heads a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=af3Vq-C1ck8>
  .
 
-hi:video_aguilera_what_is_intelligence a owl:NamedIndividual, hi:undefined ;
+hi:video_aguilera_what_is_intelligence a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Arcas · What is"@en ;
   skos:prefLabel "Arcas · What is"@en ;
   skos:definition "What is Intelligence? — Blaise Agüera y Arcas — Blaise Agüera y Arcas. Blaise Agüera y Arcas on intelligence, evolution, symbiosis, and AI — Long Now Talk on possible minds and what counts as cognition in biological and synthetic systems. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3391,7 +3460,7 @@ hi:video_aguilera_what_is_intelligence a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=KhSJuqDUJME>
  .
 
-hi:video_mendieta_decolonial_feminist a owl:NamedIndividual, hi:undefined ;
+hi:video_mendieta_decolonial_feminist a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Mendieta · Decolonial"@en ;
   skos:prefLabel "Mendieta · Decolonial"@en ;
   skos:definition "Ana Mendieta: Decolonialized Feminist and Artist — ana_mendieta. On Mendieta's body-earth works, feminist practice, and decolonial art. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3406,7 +3475,7 @@ hi:video_mendieta_decolonial_feminist a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=nVk4UBA6HGQ>
  .
 
-hi:video_escobar_pluriverse a owl:NamedIndividual, hi:undefined ;
+hi:video_escobar_pluriverse a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Escobar · Designs for"@en ;
   skos:prefLabel "Escobar · Designs for"@en ;
   skos:definition "Arturo Escobar — Designs for the Pluriverse — escobar. Clark University Atwood Lecture on pluriversal design and alternatives to one-world modernity. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3421,7 +3490,7 @@ hi:video_escobar_pluriverse a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=8Ouy7aN6XPs>
  .
 
-hi:video_akomolafe_animism a owl:NamedIndividual, hi:undefined ;
+hi:video_akomolafe_animism a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Akomolafe · Animism —"@en ;
   skos:prefLabel "Akomolafe · Animism —"@en ;
   skos:definition "Animism — Bayo Akomolafe and Daniel Foor — akomolafe. Conversation on animism, ecology, and worlds beyond extractive modernity. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3436,7 +3505,7 @@ hi:video_akomolafe_animism a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=5cuJnFZo_oA>
  .
 
-hi:video_bell_hooks_speaking_freely a owl:NamedIndividual, hi:undefined ;
+hi:video_bell_hooks_speaking_freely a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "hooks · Speaking Free…"@en ;
   skos:prefLabel "hooks · Speaking Free…"@en ;
   skos:definition "Speaking Freely — bell hooks — bell_hooks. bell hooks on love, freedom, pedagogy, and cultural critique. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3451,7 +3520,7 @@ hi:video_bell_hooks_speaking_freely a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=g2bmnwehlpA>
  .
 
-hi:video_sousa_santos_decolonising a owl:NamedIndividual, hi:undefined ;
+hi:video_sousa_santos_decolonising a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Santos · Decolonising …"@en ;
   skos:prefLabel "Santos · Decolonising …"@en ;
   skos:definition "Boaventura de Sousa Santos — Decolonising the Curriculum — sousa_santos. Epistemologies of the South and decolonial approaches to knowledge and university practice. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3466,7 +3535,7 @@ hi:video_sousa_santos_decolonising a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=HIjbgX7lY4M>
  .
 
-hi:video_latour_once_out_of_nature a owl:NamedIndividual, hi:undefined ;
+hi:video_latour_once_out_of_nature a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Latour · Once Out"@en ;
   skos:prefLabel "Latour · Once Out"@en ;
   skos:definition "Bruno Latour — Once Out of Nature — latour. Natural religion, ecology of practices, and rethinking nature in the Anthropocene. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3481,7 +3550,7 @@ hi:video_latour_once_out_of_nature a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=MC3E6vdQEzk>
  .
 
-hi:video_chalmers_talking_to_ai a owl:NamedIndividual, hi:undefined ;
+hi:video_chalmers_talking_to_ai a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Chalmers · When We"@en ;
   skos:prefLabel "Chalmers · When We"@en ;
   skos:definition "David Chalmers — When We Talk to AI, What Are We Talking To? — chalmers. UC Berkeley — consciousness, philosophy of mind, and large language models. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3496,7 +3565,7 @@ hi:video_chalmers_talking_to_ai a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=uUjJOMcNU9w>
  .
 
-hi:video_kirsh_thinking_with_body a owl:NamedIndividual, hi:undefined ;
+hi:video_kirsh_thinking_with_body a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Kirsh · Thinking and"@en ;
   skos:prefLabel "Kirsh · Thinking and"@en ;
   skos:definition "David Kirsh — Thinking and Creating with the Body — kirsh. Extended and embodied cognition — how bodies think, arrange, and create in the world. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3511,7 +3580,7 @@ hi:video_kirsh_thinking_with_body a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=NOrkD7koecg>
  .
 
-hi:video_haraway_chthulucene a owl:NamedIndividual, hi:undefined ;
+hi:video_haraway_chthulucene a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Haraway · Staying with"@en ;
   skos:prefLabel "Haraway · Staying with"@en ;
   skos:definition "Donna Haraway — Staying with the Trouble — haraway. Making kin in the Chthulucene — multispecies response-ability and posthuman futures. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3526,7 +3595,7 @@ hi:video_haraway_chthulucene a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=GrYA7sMQaBQ>
  .
 
-hi:video_rosch_prototype_cognition a owl:NamedIndividual, hi:undefined ;
+hi:video_rosch_prototype_cognition a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Rosch · Prototype Cog…"@en ;
   skos:prefLabel "Rosch · Prototype Cog…"@en ;
   skos:definition "Eleanor Rosch — Prototype Cognition — rosch. Why a robin is more of a bird than a penguin — prototypes, categories, and embodied mind. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3541,7 +3610,7 @@ hi:video_rosch_prototype_cognition a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=cL2Z2cJlcJ0>
  .
 
-hi:video_cuffari_linguistic_bodies a owl:NamedIndividual, hi:undefined ;
+hi:video_cuffari_linguistic_bodies a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Cuffari · Linguistic Bo…"@en ;
   skos:prefLabel "Cuffari · Linguistic Bo…"@en ;
   skos:definition "Elena Clare Cuffari — Linguistic Bodies — cuffari. Enactivist linguistics — language as participatory sense-making between bodies. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3556,7 +3625,7 @@ hi:video_cuffari_linguistic_bodies a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=mJxtO6am5ZI>
  .
 
-hi:video_di_paolo_enactivism a owl:NamedIndividual, hi:undefined ;
+hi:video_di_paolo_enactivism a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Paolo · Ontologizing …"@en ;
   skos:prefLabel "Paolo · Ontologizing …"@en ;
   skos:definition "Ezequiel Di Paolo — Ontologizing Enactivism — di_paolo. Dialogue on enactivism, worldmaking, and the ontology of living cognition. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3571,7 +3640,7 @@ hi:video_di_paolo_enactivism a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=c1_0RnN_1xM>
  .
 
-hi:video_fanon_colonization_mind a owl:NamedIndividual, hi:undefined ;
+hi:video_fanon_colonization_mind a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Fanon · Colonization …"@en ;
   skos:prefLabel "Fanon · Colonization …"@en ;
   skos:definition "Frantz Fanon — Colonization and the Mind — fanon. On Fanon's analysis of colonial violence, psychiatry, and liberation. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3586,7 +3655,7 @@ hi:video_fanon_colonization_mind a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=M0_AUXD-1bc>
  .
 
-hi:video_bateson_ecology_of_mind a owl:NamedIndividual, hi:undefined ;
+hi:video_bateson_ecology_of_mind a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Bateson · Ecology of"@en ;
   skos:prefLabel "Bateson · Ecology of"@en ;
   skos:definition "Gregory Bateson — Ecology of Mind — bateson. Introduction to Bateson's ecology of mind — systems, learning, and relational cognition. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3601,7 +3670,7 @@ hi:video_bateson_ecology_of_mind a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=KePJVhhOELA>
  .
 
-hi:video_de_jaegher_participatory_sense a owl:NamedIndividual, hi:undefined ;
+hi:video_de_jaegher_participatory_sense a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Jaegher · Participatory…"@en ;
   skos:prefLabel "Jaegher · Participatory…"@en ;
   skos:definition "Hanne De Jaegher — Participatory Sense-Making — de_jaegher. Introduction to participatory sense-making and social enaction. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3616,7 +3685,7 @@ hi:video_de_jaegher_participatory_sense a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=AiFuQD-ZWy4>
  .
 
-hi:video_maturana_interview a owl:NamedIndividual, hi:undefined ;
+hi:video_maturana_interview a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Maturana · Interview"@en ;
   skos:prefLabel "Maturana · Interview"@en ;
   skos:definition "Humberto Maturana — Interview — maturana. Autopoiesis, cognition, and the biology of knowing. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3631,7 +3700,7 @@ hi:video_maturana_interview a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=fQFlceVouPA>
  .
 
-hi:video_uexkuell_umwelt a owl:NamedIndividual, hi:undefined ;
+hi:video_uexkuell_umwelt a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Uexküll · Umwelt and"@en ;
   skos:prefLabel "Uexküll · Umwelt and"@en ;
   skos:definition "Jakob von Uexküll — Umwelt and Biosemiotics — uexkuell. Introduction to Umwelt theory and the organism's meaningful world. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3646,7 +3715,7 @@ hi:video_uexkuell_umwelt a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=G_0jJfliUvQ>
  .
 
-hi:video_gibson_ecological_psychology a owl:NamedIndividual, hi:undefined ;
+hi:video_gibson_ecological_psychology a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Gibson · Ecological Ps…"@en ;
   skos:prefLabel "Gibson · Ecological Ps…"@en ;
   skos:definition "James J. Gibson — Ecological Psychology — gibson. Affordances, direct perception, and the ecological approach to psychology. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3661,7 +3730,7 @@ hi:video_gibson_ecological_psychology a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=fmPD0xF766k>
  .
 
-hi:video_cage_433_lifetime a owl:NamedIndividual, hi:undefined ;
+hi:video_cage_433_lifetime a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Cage · 4'33\" and"@en ;
   skos:prefLabel "Cage · 4'33\" and"@en ;
   skos:definition "John Cage — 4'33\" and a Lifetime of Music — cage. Chance operations, silence, and indeterminacy as perceptual and compositional method. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3676,7 +3745,7 @@ hi:video_cage_433_lifetime a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=Y7q8iQPxLBY>
  .
 
-hi:video_munoz_queer_utopianism a owl:NamedIndividual, hi:undefined ;
+hi:video_munoz_queer_utopianism a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Muñoz · Queer Utopian…"@en ;
   skos:prefLabel "Muñoz · Queer Utopian…"@en ;
   skos:definition "José Esteban Muñoz — Queer Utopianism — munoz. Cruising utopia, performance, and queer futurity against the tyranny of the present. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3691,7 +3760,7 @@ hi:video_munoz_queer_utopianism a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=DHLxmCe4GpI>
  .
 
-hi:video_barad_meeting_universe a owl:NamedIndividual, hi:undefined ;
+hi:video_barad_meeting_universe a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Barad · Meeting the"@en ;
   skos:prefLabel "Barad · Meeting the"@en ;
   skos:definition "Karen Barad — Meeting the Universe Halfway — barad. Agential realism, intra-action, and quantum physics as philosophy of matter. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3706,7 +3775,7 @@ hi:video_barad_meeting_universe a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=JQlZAyAjcZQ>
  .
 
-hi:video_crawford_ai_planet a owl:NamedIndividual, hi:undefined ;
+hi:video_crawford_ai_planet a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Crawford · AI and"@en ;
   skos:prefLabel "Crawford · AI and"@en ;
   skos:definition "Kate Crawford — AI and the Planet — crawford. Atlas of AI — extraction, energy, labor, and the material politics of machine learning. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3721,7 +3790,7 @@ hi:video_crawford_ai_planet a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=tuqEro3NPaI>
  .
 
-hi:video_malafouris_embodied_patterns a owl:NamedIndividual, hi:undefined ;
+hi:video_malafouris_embodied_patterns a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Malafouris · Embodied Patt…"@en ;
   skos:prefLabel "Malafouris · Embodied Patt…"@en ;
   skos:definition "Lambros Malafouris — Embodied Patterns — malafouris. Material engagement — how things shape minds and cognitive archaeology of making. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3736,7 +3805,7 @@ hi:video_malafouris_embodied_patterns a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=n1BH4tdSvds>
  .
 
-hi:video_shapiro_embodied_cognition a owl:NamedIndividual, hi:undefined ;
+hi:video_shapiro_embodied_cognition a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Shapiro · Embodied Cogn…"@en ;
   skos:prefLabel "Shapiro · Embodied Cogn…"@en ;
   skos:definition "Lawrence Shapiro — Embodied Cognition — shapiro. Full interview on embodied cognition and the body as constraint and resource for mind. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3751,7 +3820,7 @@ hi:video_shapiro_embodied_cognition a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=aJ6FY8oOwJE>
  .
 
-hi:video_leigh_bowery_tate a owl:NamedIndividual, hi:undefined ;
+hi:video_leigh_bowery_tate a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Bowery · Tate Highligh…"@en ;
   skos:prefLabel "Bowery · Tate Highligh…"@en ;
   skos:definition "Leigh Bowery — Tate Highlights — leigh_bowery. Performance, fashion, and club culture as radical embodiment and social sculpture. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3766,7 +3835,7 @@ hi:video_leigh_bowery_tate a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=8r4GwWAQN8s>
  .
 
-hi:video_margulis_symbiotic_earth a owl:NamedIndividual, hi:undefined ;
+hi:video_margulis_symbiotic_earth a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Margulis · Symbiotic Ear…"@en ;
   skos:prefLabel "Margulis · Symbiotic Ear…"@en ;
   skos:definition "Lynn Margulis — Symbiotic Earth — margulis. Graduate seminar footage — symbiosis, holobionts, and evolution as cooperative process. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3781,7 +3850,7 @@ hi:video_margulis_symbiotic_earth a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=AJSENoONB10>
  .
 
-hi:video_duchamp_art_dada a owl:NamedIndividual, hi:undefined ;
+hi:video_duchamp_art_dada a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Duchamp · Art and"@en ;
   skos:prefLabel "Duchamp · Art and"@en ;
   skos:definition "Marcel Duchamp — Art and Dada (1956) — duchamp. Archive interview on readymades, choice, and conceptual art. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3796,7 +3865,7 @@ hi:video_duchamp_art_dada a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=Wuf_GHmjxLM>
  .
 
-hi:video_boden_creativity_ai a owl:NamedIndividual, hi:undefined ;
+hi:video_boden_creativity_ai a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Boden · Creativity &"@en ;
   skos:prefLabel "Boden · Creativity &"@en ;
   skos:definition "Margaret Boden — Creativity & AI — boden. Creativity as novelty plus value — combinational, exploratory, and transformational forms in AI and art. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3811,7 +3880,7 @@ hi:video_boden_creativity_ai a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=5dEXIOiAsaw>
  .
 
-hi:video_bostrom_superintelligence_google a owl:NamedIndividual, hi:undefined ;
+hi:video_bostrom_superintelligence_google a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Bostrom · Superintellig…"@en ;
   skos:prefLabel "Bostrom · Superintellig…"@en ;
   skos:definition "Nick Bostrom — Superintelligence (Talks at Google) — bostrom. Paths, dangers, and strategies for machine superintelligence — alignment, control, and existential risk. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3826,7 +3895,7 @@ hi:video_bostrom_superintelligence_google a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=pywF6ZzsghI>
  .
 
-hi:video_merleau_ponty_phenomenology a owl:NamedIndividual, hi:undefined ;
+hi:video_merleau_ponty_phenomenology a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "MerleauPonty · Merleau-Ponty…"@en ;
   skos:prefLabel "MerleauPonty · Merleau-Ponty…"@en ;
   skos:definition "Merleau-Ponty — Phenomenology of Perception — merleau_ponty. Lived body, perception, and phenomenological approaches to embodied experience. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3841,7 +3910,7 @@ hi:video_merleau_ponty_phenomenology a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=JFj8kWm_N-Y>
  .
 
-hi:video_foucault_prison_1975 a owl:NamedIndividual, hi:undefined ;
+hi:video_foucault_prison_1975 a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Foucault · We Live"@en ;
   skos:prefLabel "Foucault · We Live"@en ;
   skos:definition "Michel Foucault — We Live in a Prison (1975) — foucault. Archive footage on power, discipline, and institutions that shape what can be known and done. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3856,7 +3925,7 @@ hi:video_foucault_prison_1975 a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=kQsoX_Yv0hE>
  .
 
-hi:video_shanahan_consciousness_ai a owl:NamedIndividual, hi:undefined ;
+hi:video_shanahan_consciousness_ai a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Shanahan · Consciousness…"@en ;
   skos:prefLabel "Shanahan · Consciousness…"@en ;
   skos:definition "Murray Shanahan — Consciousness and AI — shanahan. Philosophy of AI, consciousness, and reasoning in artificial systems. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3871,7 +3940,7 @@ hi:video_shanahan_consciousness_ai a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=v1Py_hWcmkU>
  .
 
-hi:video_nagarjuna_emptiness a owl:NamedIndividual, hi:undefined ;
+hi:video_nagarjuna_emptiness a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Ngrjuna · Philosophy of"@en ;
   skos:prefLabel "Ngrjuna · Philosophy of"@en ;
   skos:definition "Nāgārjuna — Philosophy of Emptiness — nagarjuna. Thupten Jinpa on Madhyamaka emptiness and why it matters for cognition and reality. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3886,7 +3955,7 @@ hi:video_nagarjuna_emptiness a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=awzUd3wzTCM>
  .
 
-hi:video_butler_parable_climate a owl:NamedIndividual, hi:undefined ;
+hi:video_butler_parable_climate a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Butler · Parable and"@en ;
   skos:prefLabel "Butler · Parable and"@en ;
   skos:definition "Octavia Butler — Parable and Climate Chaos — butler. Butler on Parable books, Afrofuturism, and imagining futures under ecological collapse. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3901,7 +3970,7 @@ hi:video_butler_parable_climate a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=sv5m3tnT9wk>
  .
 
-hi:video_freire_incredible_conversation a owl:NamedIndividual, hi:undefined ;
+hi:video_freire_incredible_conversation a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Freire · An Incredible"@en ;
   skos:prefLabel "Freire · An Incredible"@en ;
   skos:definition "Paulo Freire — An Incredible Conversation — freire. Archive conversation on pedagogy of the oppressed, literacy, and freedom as practice. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3916,7 +3985,7 @@ hi:video_freire_incredible_conversation a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=aFWjnkFypFA>
  .
 
-hi:video_wilson_state_space a owl:NamedIndividual, hi:undefined ;
+hi:video_wilson_state_space a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Wilson · State Space"@en ;
   skos:prefLabel "Wilson · State Space"@en ;
   skos:definition "Robert A. Wilson — State Space Theory — wilson. MIND 2019 — extended mind, boundaries of cognition, and philosophical psychology. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3931,7 +4000,7 @@ hi:video_wilson_state_space a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=u1qWPYQHsvo>
  .
 
-hi:video_brooks_humanoid_robots a owl:NamedIndividual, hi:undefined ;
+hi:video_brooks_humanoid_robots a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Brooks · Humanoid Robo…"@en ;
   skos:prefLabel "Brooks · Humanoid Robo…"@en ;
   skos:definition "Rodney Brooks — Humanoid Robots and AI Hype — brooks. Subsumption architecture, embodied robotics, and intelligence without representation. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3946,7 +4015,7 @@ hi:video_brooks_humanoid_robots a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=6qxO13-3-Gk>
  .
 
-hi:video_braidotti_posthuman_knowledge a owl:NamedIndividual, hi:undefined ;
+hi:video_braidotti_posthuman_knowledge a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Braidotti · Posthuman Kno…"@en ;
   skos:prefLabel "Braidotti · Posthuman Kno…"@en ;
   skos:definition "Rosi Braidotti — Posthuman Knowledge — braidotti. Posthuman subjectivity, nomadic theory, and knowledge after the human. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3961,7 +4030,7 @@ hi:video_braidotti_posthuman_knowledge a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=0CewnVzOg5w>
  .
 
-hi:video_saul_leiter_color a owl:NamedIndividual, hi:undefined ;
+hi:video_saul_leiter_color a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Leiter · Life and Work"@en ;
   skos:prefLabel "Leiter · Life and Work"@en ;
   skos:definition "Saul Leiter — Life and Work — saul_leiter. Color street photography, painterly vision, and everyday urban perception. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3976,7 +4045,7 @@ hi:video_saul_leiter_color a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=RbtnUY7j__A>
  .
 
-hi:video_paxton_contact_improv a owl:NamedIndividual, hi:undefined ;
+hi:video_paxton_contact_improv a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Paxton · Contact Impro…"@en ;
   skos:prefLabel "Paxton · Contact Impro…"@en ;
   skos:definition "Steve Paxton — Contact Improvisation — steve_paxton. Contact improvisation, weight-sharing, and democratic intelligence of bodies in motion. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -3991,7 +4060,7 @@ hi:video_paxton_contact_improv a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=O3wgG1qPRTY>
  .
 
-hi:video_trisha_brown_intensive a owl:NamedIndividual, hi:undefined ;
+hi:video_trisha_brown_intensive a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Brown · Trisha Brown"@en ;
   skos:prefLabel "Brown · Trisha Brown"@en ;
   skos:definition "Trisha Brown Dance Company — Summer Intensive — trisha_brown. Postmodern dance, ordinary movement, and somatic intelligence in choreography. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -4006,7 +4075,7 @@ hi:video_trisha_brown_intensive a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=zPOMha3cIzo>
  .
 
-hi:video_vera_molnar_generative a owl:NamedIndividual, hi:undefined ;
+hi:video_vera_molnar_generative a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Molnár · Life and Work"@en ;
   skos:prefLabel "Molnár · Life and Work"@en ;
   skos:definition "Vera Molnár — Life and Work — vera_molnar. Pioneer of computer and generative art — algorithms, chance, and systematic creativity. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -4021,7 +4090,7 @@ hi:video_vera_molnar_generative a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=8tNESHtfkr0>
  .
 
-hi:video_forsythe_imagining_lines a owl:NamedIndividual, hi:undefined ;
+hi:video_forsythe_imagining_lines a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Forsythe · Imagining Lin…"@en ;
   skos:prefLabel "Forsythe · Imagining Lin…"@en ;
   skos:definition "William Forsythe — Imagining Lines — forsythe. Choreographic objects, lines, and movement as distributed cognition. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -4036,7 +4105,7 @@ hi:video_forsythe_imagining_lines a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=6X29OjcBHG8>
  .
 
-hi:video_yoko_ono_interview a owl:NamedIndividual, hi:undefined ;
+hi:video_yoko_ono_interview a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Ono · Interview"@en ;
   skos:prefLabel "Ono · Interview"@en ;
   skos:definition "Yoko Ono — Interview — yoko_ono. Fluxus, instruction pieces, and art as participatory worldmaking. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -4051,7 +4120,7 @@ hi:video_yoko_ono_interview a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=o2cA9kGjoHc>
  .
 
-hi:video_batson_minds_in_motion a owl:NamedIndividual, hi:undefined ;
+hi:video_batson_minds_in_motion a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Batson · Minds"@en ;
   skos:prefLabel "Batson · Minds"@en ;
   skos:definition "Minds in Motion — Glenna Batson — Glenna Batson. Conversation on somatic awareness, movement science, and minds in motion — dance, embodiment, and the intelligence of the moving body. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -4066,7 +4135,7 @@ hi:video_batson_minds_in_motion a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=gQxpRLup3w4>
  .
 
-hi:video_forsythe_synchronous_objects_hellerau a owl:NamedIndividual, hi:undefined ;
+hi:video_forsythe_synchronous_objects_hellerau a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Forsythe · Sync Objects"@en ;
   skos:prefLabel "Forsythe · Sync Objects"@en ;
   skos:definition "William Forsythe on Synchronous Objects at The Hellerau in Dresden, Germany — choreographic objects, data visualization, and the Motion Bank as distributed movement knowledge. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -4081,7 +4150,7 @@ hi:video_forsythe_synchronous_objects_hellerau a owl:NamedIndividual, hi:undefin
   schema:sameAs <https://www.youtube.com/watch?v=xqlq3q5RMrc>
  .
 
-hi:video_arendt_zur_person_1964 a owl:NamedIndividual, hi:undefined ;
+hi:video_arendt_zur_person_1964 a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Arendt · Zur Person"@en ;
   skos:prefLabel "Arendt · Zur Person"@en ;
   skos:definition "Hannah Arendt — Zur Person (1964) — arendt. Legendary interview with Günter Gaus on political theory, the Eichmann trial, plurality, and the banality of evil. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -4096,7 +4165,7 @@ hi:video_arendt_zur_person_1964 a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=J9SyTEUi6Kw>
  .
 
-hi:video_sam_altman_lex_fridman_419 a owl:NamedIndividual, hi:undefined ;
+hi:video_sam_altman_lex_fridman_419 a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Altman · OpenAI & AGI"@en ;
   skos:prefLabel "Altman · OpenAI & AGI"@en ;
   skos:definition "Sam Altman — Lex Fridman #419 — sam_altman. OpenAI, AGI, power, safety, and the future of generative AI. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -4111,7 +4180,7 @@ hi:video_sam_altman_lex_fridman_419 a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=jvqFAi7vkBc>
  .
 
-hi:video_dario_amodei_ai_safety a owl:NamedIndividual, hi:undefined ;
+hi:video_dario_amodei_ai_safety a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Amodei · AI Safety"@en ;
   skos:prefLabel "Amodei · AI Safety"@en ;
   skos:definition "Dario Amodei — AI safety — dario_amodei. Constitutional AI, scaling, and responsible frontier models at Anthropic. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -4126,7 +4195,7 @@ hi:video_dario_amodei_ai_safety a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=mYDSSRS-B5U>
  .
 
-hi:video_peter_thiel_stagnation_ai a owl:NamedIndividual, hi:undefined ;
+hi:video_peter_thiel_stagnation_ai a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Thiel · Stagnation &"@en ;
   skos:prefLabel "Thiel · Stagnation &"@en ;
   skos:definition "Peter Thiel — Stagnation and AI — peter_thiel. Atoms versus bits, techno-stagnation, and the LLM breakthrough. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -4141,7 +4210,7 @@ hi:video_peter_thiel_stagnation_ai a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=iF2la6FxVQc>
  .
 
-hi:video_elon_musk_neuralink_lex a owl:NamedIndividual, hi:undefined ;
+hi:video_elon_musk_neuralink_lex a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Musk · Neuralink &"@en ;
   skos:prefLabel "Musk · Neuralink &"@en ;
   skos:definition "Elon Musk — Neuralink and the Future of Humanity — elon_musk. xAI, AGI, brain–computer interfaces, and hybrid bodies. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -4156,7 +4225,7 @@ hi:video_elon_musk_neuralink_lex a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=Kbk9BiPhm7o>
  .
 
-hi:video_nick_land_accelerationism a owl:NamedIndividual, hi:undefined ;
+hi:video_nick_land_accelerationism a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Land · Acceleration…"@en ;
   skos:prefLabel "Land · Acceleration…"@en ;
   skos:definition "Nick Land — Accelerationism and Dark Enlightenment — nick_land. Cybernetics, exit, and neoreactionary futures. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -4171,7 +4240,7 @@ hi:video_nick_land_accelerationism a owl:NamedIndividual, hi:undefined ;
   schema:sameAs <https://www.youtube.com/watch?v=TJISIwit0tk>
  .
 
-hi:video_carissa_veliz_prophecy_ted a owl:NamedIndividual, hi:undefined ;
+hi:video_carissa_veliz_prophecy_ted a owl:NamedIndividual, hi:VideoConcept ;
   rdfs:label "Véliz · Prophecy"@en ;
   skos:prefLabel "Véliz · Prophecy"@en ;
   skos:definition "Carissa Véliz — Beware the Power of Prediction — carissa_veliz. Prophecy, algorithmic forecasting, and power from oracles to AI. Video on YouTube; ingest matches speech to ontology concepts."@en ;
@@ -4184,6 +4253,21 @@ hi:video_carissa_veliz_prophecy_ted a owl:NamedIndividual, hi:undefined ;
   schema:url <video-carissa-veliz-prophecy-ted.html> ;
   schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/carissa-veliz-prophecy-ted.jpg> ;
   schema:sameAs <https://www.youtube.com/watch?v=OS4wHmKtH-Q>
+ .
+
+hi:video_begus_mystery_language a owl:NamedIndividual, hi:VideoConcept ;
+  rdfs:label "Beguš · Language"@en ;
+  skos:prefLabel "Beguš · Language"@en ;
+  skos:definition "Gašper Beguš — The Mystery of Language in Humans, Animals & AI. Interpretable models of speech, informative imitation, and whale vowels as a comparative science of minds. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-begus-mystery-language.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/begus-mystery-language.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=7zqMYwW0f6E>
  .
 
 hi:essay_1 a owl:NamedIndividual, hi:PracticeConcept ;
@@ -7567,6 +7651,65 @@ hi:video_carissa_veliz_prophecy_ted hi:relatedTo hi:track_ethics .
 hi:video_carissa_veliz_prophecy_ted hi:relatedTo hi:ai .
 hi:video_carissa_veliz_prophecy_ted hi:relatedTo hi:law .
 hi:video_carissa_veliz_prophecy_ted hi:relatedTo hi:arendt .
+hi:begus hi:relatedTo hi:ai_interpretability .
+hi:begus hi:relatedTo hi:informative_imitation .
+hi:begus hi:relatedTo hi:cross_species_language .
+hi:begus hi:relatedTo hi:whale_vowels .
+hi:begus hi:relatedTo hi:linguistics .
+hi:begus hi:relatedTo hi:possible_minds .
+hi:begus hi:relatedTo hi:synthetic_cognition .
+hi:begus hi:relatedTo hi:llm .
+hi:begus hi:relatedTo hi:gen_ai .
+hi:begus hi:relatedTo hi:ai .
+hi:begus hi:relatedTo hi:ai_ml .
+hi:begus hi:relatedTo hi:neural_networks .
+hi:begus hi:relatedTo hi:convolutional_networks .
+hi:begus hi:relatedTo hi:latent_space .
+hi:begus hi:relatedTo hi:umwelt .
+hi:begus hi:relatedTo hi:embodiment .
+hi:begus hi:relatedTo hi:epistemology .
+hi:begus hi:relatedTo hi:hayles .
+hi:begus hi:relatedTo hi:aguilera_arcas .
+hi:begus hi:relatedTo hi:shanahan .
+hi:begus hi:relatedTo hi:hybrid .
+hi:begus hi:relatedTo hi:ecology_d .
+hi:begus hi:relatedTo hi:hi_videos .
+hi:informative_imitation hi:relatedTo hi:ai_interpretability .
+hi:informative_imitation hi:relatedTo hi:cross_species_language .
+hi:informative_imitation hi:relatedTo hi:linguistics .
+hi:informative_imitation hi:relatedTo hi:embodiment .
+hi:informative_imitation hi:relatedTo hi:llm .
+hi:informative_imitation hi:relatedTo hi:gen_ai .
+hi:informative_imitation hi:relatedTo hi:cognition .
+hi:informative_imitation hi:relatedTo hi:possible_minds .
+hi:cross_species_language hi:relatedTo hi:whale_vowels .
+hi:cross_species_language hi:relatedTo hi:umwelt .
+hi:cross_species_language hi:relatedTo hi:possible_minds .
+hi:cross_species_language hi:relatedTo hi:linguistics .
+hi:cross_species_language hi:relatedTo hi:ai_interpretability .
+hi:cross_species_language hi:relatedTo hi:symbiosis .
+hi:cross_species_language hi:relatedTo hi:ecology .
+hi:cross_species_language hi:relatedTo hi:hayles .
+hi:whale_vowels hi:relatedTo hi:ai_interpretability .
+hi:whale_vowels hi:relatedTo hi:linguistics .
+hi:whale_vowels hi:relatedTo hi:possible_minds .
+hi:whale_vowels hi:relatedTo hi:umwelt .
+hi:whale_vowels hi:relatedTo hi:ecology_d .
+hi:linguistics hi:relatedTo hi:epistemology .
+hi:linguistics hi:relatedTo hi:philosophy .
+hi:linguistics hi:relatedTo hi:cs .
+hi:linguistics hi:relatedTo hi:ai_ml .
+hi:linguistics hi:relatedTo hi:cuffari .
+hi:linguistics hi:relatedTo hi:de_jaegher .
+hi:video_begus_mystery_language hi:relatedTo hi:begus .
+hi:video_begus_mystery_language hi:relatedTo hi:ai_interpretability .
+hi:video_begus_mystery_language hi:relatedTo hi:informative_imitation .
+hi:video_begus_mystery_language hi:relatedTo hi:cross_species_language .
+hi:video_begus_mystery_language hi:relatedTo hi:whale_vowels .
+hi:video_begus_mystery_language hi:relatedTo hi:linguistics .
+hi:video_begus_mystery_language hi:relatedTo hi:possible_minds .
+hi:video_begus_mystery_language hi:relatedTo hi:llm .
+hi:video_begus_mystery_language hi:relatedTo hi:hi_videos .
 hi:arendt hi:relatedTo hi:video_arendt_zur_person_1964 .
 hi:sam_altman hi:relatedTo hi:video_sam_altman_lex_fridman_419 .
 hi:dario_amodei hi:relatedTo hi:video_dario_amodei_ai_safety .
@@ -8225,6 +8368,14 @@ hi:video_nick_land_accelerationism hi:instantiates hi:nick_land .
 hi:video_nick_land_accelerationism hi:develops hi:dark_enlightenment .
 hi:video_carissa_veliz_prophecy_ted hi:instantiates hi:carissa_veliz .
 hi:video_carissa_veliz_prophecy_ted hi:develops hi:oracle .
+hi:begus hi:proposes hi:informative_imitation .
+hi:begus hi:proposes hi:cross_species_language .
+hi:begus hi:proposes hi:whale_vowels .
+hi:begus hi:develops hi:ai_interpretability .
+hi:whale_vowels hi:emergesFrom hi:ai_interpretability .
+hi:informative_imitation hi:couplesWith hi:embodiment .
+hi:video_begus_mystery_language hi:instantiates hi:begus .
+hi:video_begus_mystery_language hi:develops hi:cross_species_language .
 hi:berkana_institute hi:develops hi:two_loops_model .
 hi:what_if hi:instantiates hi:two_loops_model .
 hi:what_if hi:participatesIn hi:hi_hub .
@@ -20926,6 +21077,301 @@ hi:rel-video_carissa_veliz_prophecy_ted-arendt a owl:NamedIndividual, hi:Network
   hi:relationTarget hi:arendt ;
   hi:relationStrength "0.75"^^xsd:decimal .
 
+hi:rel-begus-ai_interpretability a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:begus ;
+  hi:relationTarget hi:ai_interpretability ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-begus-informative_imitation a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:begus ;
+  hi:relationTarget hi:informative_imitation ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-begus-cross_species_language a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:begus ;
+  hi:relationTarget hi:cross_species_language ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-begus-whale_vowels a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:begus ;
+  hi:relationTarget hi:whale_vowels ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-begus-linguistics a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:begus ;
+  hi:relationTarget hi:linguistics ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-begus-possible_minds a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:begus ;
+  hi:relationTarget hi:possible_minds ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-begus-synthetic_cognition a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:begus ;
+  hi:relationTarget hi:synthetic_cognition ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-begus-llm a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:begus ;
+  hi:relationTarget hi:llm ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-begus-gen_ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:begus ;
+  hi:relationTarget hi:gen_ai ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-begus-ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:begus ;
+  hi:relationTarget hi:ai ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-begus-ai_ml a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:begus ;
+  hi:relationTarget hi:ai_ml ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-begus-neural_networks a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:begus ;
+  hi:relationTarget hi:neural_networks ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-begus-convolutional_networks a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:begus ;
+  hi:relationTarget hi:convolutional_networks ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-begus-latent_space a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:begus ;
+  hi:relationTarget hi:latent_space ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-begus-umwelt a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:begus ;
+  hi:relationTarget hi:umwelt ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-begus-embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:begus ;
+  hi:relationTarget hi:embodiment ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-begus-epistemology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:begus ;
+  hi:relationTarget hi:epistemology ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-begus-hayles a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:begus ;
+  hi:relationTarget hi:hayles ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-begus-aguilera_arcas a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:begus ;
+  hi:relationTarget hi:aguilera_arcas ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-begus-shanahan a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:begus ;
+  hi:relationTarget hi:shanahan ;
+  hi:relationStrength "0.72"^^xsd:decimal .
+
+hi:rel-begus-hybrid a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:begus ;
+  hi:relationTarget hi:hybrid ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-begus-ecology_d a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:begus ;
+  hi:relationTarget hi:ecology_d ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-begus-hi_videos a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:begus ;
+  hi:relationTarget hi:hi_videos ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-informative_imitation-ai_interpretability a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:informative_imitation ;
+  hi:relationTarget hi:ai_interpretability ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-informative_imitation-cross_species_language a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:informative_imitation ;
+  hi:relationTarget hi:cross_species_language ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-informative_imitation-linguistics a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:informative_imitation ;
+  hi:relationTarget hi:linguistics ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-informative_imitation-embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:informative_imitation ;
+  hi:relationTarget hi:embodiment ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-informative_imitation-llm a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:informative_imitation ;
+  hi:relationTarget hi:llm ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-informative_imitation-gen_ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:informative_imitation ;
+  hi:relationTarget hi:gen_ai ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-informative_imitation-cognition a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:informative_imitation ;
+  hi:relationTarget hi:cognition ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-informative_imitation-possible_minds a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:informative_imitation ;
+  hi:relationTarget hi:possible_minds ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-cross_species_language-whale_vowels a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cross_species_language ;
+  hi:relationTarget hi:whale_vowels ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-cross_species_language-umwelt a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cross_species_language ;
+  hi:relationTarget hi:umwelt ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-cross_species_language-possible_minds a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cross_species_language ;
+  hi:relationTarget hi:possible_minds ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-cross_species_language-linguistics a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cross_species_language ;
+  hi:relationTarget hi:linguistics ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-cross_species_language-ai_interpretability a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cross_species_language ;
+  hi:relationTarget hi:ai_interpretability ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-cross_species_language-symbiosis a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cross_species_language ;
+  hi:relationTarget hi:symbiosis ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-cross_species_language-ecology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cross_species_language ;
+  hi:relationTarget hi:ecology ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-cross_species_language-hayles a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cross_species_language ;
+  hi:relationTarget hi:hayles ;
+  hi:relationStrength "0.78"^^xsd:decimal .
+
+hi:rel-whale_vowels-ai_interpretability a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:whale_vowels ;
+  hi:relationTarget hi:ai_interpretability ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-whale_vowels-linguistics a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:whale_vowels ;
+  hi:relationTarget hi:linguistics ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-whale_vowels-possible_minds a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:whale_vowels ;
+  hi:relationTarget hi:possible_minds ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-whale_vowels-umwelt a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:whale_vowels ;
+  hi:relationTarget hi:umwelt ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-whale_vowels-ecology_d a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:whale_vowels ;
+  hi:relationTarget hi:ecology_d ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-linguistics-epistemology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:linguistics ;
+  hi:relationTarget hi:epistemology ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-linguistics-philosophy a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:linguistics ;
+  hi:relationTarget hi:philosophy ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-linguistics-cs a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:linguistics ;
+  hi:relationTarget hi:cs ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-linguistics-ai_ml a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:linguistics ;
+  hi:relationTarget hi:ai_ml ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-linguistics-cuffari a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:linguistics ;
+  hi:relationTarget hi:cuffari ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-linguistics-de_jaegher a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:linguistics ;
+  hi:relationTarget hi:de_jaegher ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-video_begus_mystery_language-begus a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_begus_mystery_language ;
+  hi:relationTarget hi:begus ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_begus_mystery_language-ai_interpretability a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_begus_mystery_language ;
+  hi:relationTarget hi:ai_interpretability ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-video_begus_mystery_language-informative_imitation a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_begus_mystery_language ;
+  hi:relationTarget hi:informative_imitation ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-video_begus_mystery_language-cross_species_language a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_begus_mystery_language ;
+  hi:relationTarget hi:cross_species_language ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-video_begus_mystery_language-whale_vowels a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_begus_mystery_language ;
+  hi:relationTarget hi:whale_vowels ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-video_begus_mystery_language-linguistics a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_begus_mystery_language ;
+  hi:relationTarget hi:linguistics ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_begus_mystery_language-possible_minds a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_begus_mystery_language ;
+  hi:relationTarget hi:possible_minds ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_begus_mystery_language-llm a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_begus_mystery_language ;
+  hi:relationTarget hi:llm ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-video_begus_mystery_language-hi_videos a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_begus_mystery_language ;
+  hi:relationTarget hi:hi_videos ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
 hi:rel-arendt-video_arendt_zur_person_1964 a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:arendt ;
   hi:relationTarget hi:video_arendt_zur_person_1964 ;
@@ -24373,6 +24819,54 @@ hi:rel-video_carissa_veliz_prophecy_ted-carissa_veliz-instantiates a owl:NamedIn
 hi:rel-video_carissa_veliz_prophecy_ted-oracle-develops a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:video_carissa_veliz_prophecy_ted ;
   hi:relationTarget hi:oracle ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-begus-informative_imitation-proposes a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:begus ;
+  hi:relationTarget hi:informative_imitation ;
+  hi:relationType hi:proposes ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-begus-cross_species_language-proposes a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:begus ;
+  hi:relationTarget hi:cross_species_language ;
+  hi:relationType hi:proposes ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-begus-whale_vowels-proposes a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:begus ;
+  hi:relationTarget hi:whale_vowels ;
+  hi:relationType hi:proposes ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-begus-ai_interpretability-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:begus ;
+  hi:relationTarget hi:ai_interpretability ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-whale_vowels-ai_interpretability-emergesFrom a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:whale_vowels ;
+  hi:relationTarget hi:ai_interpretability ;
+  hi:relationType hi:emergesFrom ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-informative_imitation-embodiment-couplesWith a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:informative_imitation ;
+  hi:relationTarget hi:embodiment ;
+  hi:relationType hi:couplesWith ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_begus_mystery_language-begus-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_begus_mystery_language ;
+  hi:relationTarget hi:begus ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_begus_mystery_language-cross_species_language-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_begus_mystery_language ;
+  hi:relationTarget hi:cross_species_language ;
   hi:relationType hi:develops ;
   hi:relationStrength "0.9"^^xsd:decimal .
 

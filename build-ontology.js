@@ -33,6 +33,7 @@ const CATEGORY_DESCS = {
   domain: "Fields of practice and inquiry—art, law, ecology, AI, choreography.",
   practice: "Methods and habits—rehearsal, somatics, pedagogy, cultural critique, conversational AI, Mini-pod, concept image, essays, videos, and the ontology as a knowledge base for the Hub.",
   author: "Thinkers, artists, and researchers linked to concepts in the network.",
+  video: "Talks and performances ingested against the ontology—matched concepts become edges on the Videos ring.",
   facilitator: "Hybrid Intelligences session leaders and guest facilitators.",
 };
 
@@ -50,6 +51,7 @@ const CAT_CLASS = {
   domain: "DomainConcept",
   framework: "FrameworkConcept",
   author: "AuthorConcept",
+  video: "VideoConcept",
 };
 
 function loadNetwork() {

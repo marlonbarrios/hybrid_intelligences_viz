@@ -62,12 +62,12 @@
         "foaf:name": "Marlon Barrios Solano",
         "foaf:homepage": "https://marlonbarrios.github.io/"
       },
-      "dc:date": "2026-09-07",
-      "dc:modified": "2026-09-07T17:30:29.666Z",
+      "dc:date": "2026-09-11",
+      "dc:modified": "2026-09-11T18:03:05.622Z",
       "owl:versionInfo": "1.0.0",
-      "hi:nodeCount": 330,
-      "hi:edgeCount": 3021,
-      "hi:typedEdgeCount": 220
+      "hi:nodeCount": 336,
+      "hi:edgeCount": 3080,
+      "hi:typedEdgeCount": 228
     },
     {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme",
@@ -346,7 +346,7 @@
         "hi:Category"
       ],
       "skos:prefLabel": "Videos",
-      "skos:definition": "",
+      "skos:definition": "Talks and performances ingested against the ontology—matched concepts become edges on the Videos ring.",
       "skos:inScheme": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
       },
@@ -3465,7 +3465,7 @@
         "hi:NetworkNode"
       ],
       "skos:prefLabel": "AI Interpretability",
-      "skos:definition": "Methods for explaining how AI systems represent, classify, and decide—making model behavior legible through features, attention, embeddings, and outputs; central to accountability, trust, epistemology, and the politics of what can be known about machine reasoning.",
+      "skos:definition": "Methods for explaining how AI systems represent, classify, and decide—making model behavior legible through features, attention, embeddings, and outputs; central to accountability, trust, epistemology, and the politics of what can be known about machine reasoning. Gašper Beguš treats interpretability as a scientific instrument: causal probes of neurons can discover patterns in speech, including analogues of vowels in sperm-whale communication.",
       "skos:broader": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/framework"
       },
@@ -3584,6 +3584,116 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#anthropic",
           "hi:strength": 0.9
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#informative_imitation",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Informative Imitation",
+      "skos:definition": "Gašper Beguš’s model of language as informative imitation: learning from raw unsupervised audio, with communicative intent and embodied articulatory representations (ciwaGAN). Contrasts with large language models trained on text; a more realistic account of how speech and meaning can emerge in infants, animals, and machines.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/framework"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "framework",
+      "hi:weight": 1.45,
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Language_acquisition",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_interpretability",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cross_species_language",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#linguistics",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embodiment",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#llm",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#gen_ai",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cognition",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#possible_minds",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embodiment",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cross_species_language",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Cross-species Language",
+      "skos:definition": "A comparative science of communication across humans, animals, and machines—asking which properties of language (vowels, consonants, recursion, communicative intent) are species-specific and which can be shared or modeled. Project CETI and interpretable AI make nonhuman signaling newly inspectable as knowledge rather than as noise.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/framework"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "framework",
+      "hi:weight": 1.45,
+      "schema:url": "https://en.wikipedia.org/wiki/Animal_communication",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Animal_communication",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#whale_vowels",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#umwelt",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#possible_minds",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#linguistics",
+          "hi:strength": 0.92
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_interpretability",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#symbiosis",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ecology",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hayles",
+          "hi:strength": 0.78
         }
       ]
     },
@@ -8531,6 +8641,138 @@
       ]
     },
     {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#begus",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Gašper Beguš",
+      "skos:definition": "Associate Professor of Linguistics at UC Berkeley; Linguistics Lead of Project CETI. Interpretable AI, an “artificial baby” that learns speech from raw audio, and the discovery of vowel-like patterns in sperm-whale communication. Treats language as a microscope into human, animal, and machine intelligence.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/author"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "author",
+      "hi:weight": 1.25,
+      "schema:url": "https://www.gasperbegus.com/",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_interpretability",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#informative_imitation",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cross_species_language",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#whale_vowels",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#linguistics",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#possible_minds",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#synthetic_cognition",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#llm",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#gen_ai",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_ml",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#neural_networks",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#convolutional_networks",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#latent_space",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#umwelt",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embodiment",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#epistemology",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hayles",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#aguilera_arcas",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#shanahan",
+          "hi:strength": 0.72
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hybrid",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ecology_d",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_videos",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#informative_imitation",
+          "hi:strength": 0.9,
+          "hi:relationType": "proposes"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cross_species_language",
+          "hi:strength": 0.9,
+          "hi:relationType": "proposes"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#whale_vowels",
+          "hi:strength": 0.9,
+          "hi:relationType": "proposes"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_interpretability",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        }
+      ]
+    },
+    {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#aguilera_arcas",
       "@type": [
         "skos:Concept",
@@ -9936,6 +10178,51 @@
       ]
     },
     {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#whale_vowels",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Whale Vowels",
+      "skos:definition": "Spectral patterns in sperm-whale coda clicks analogous to human vowels—predicted and described through AI interpretability (Gašper Beguš / Project CETI). The coda vowels show behavioral parallels with human vowels, including coarticulation and prominence, opening a comparative linguistics of ocean minds.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/phenomenon"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "phenomenon",
+      "hi:weight": 1.4,
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Sperm_whale",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_interpretability",
+          "hi:strength": 0.92
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#linguistics",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#possible_minds",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#umwelt",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ecology_d",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_interpretability",
+          "hi:strength": 0.9,
+          "hi:relationType": "emergesFrom"
+        }
+      ]
+    },
+    {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#theory_of_mind",
       "@type": [
         "skos:Concept",
@@ -10461,6 +10748,51 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#perception_politics",
           "hi:strength": 0.75
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#linguistics",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Linguistics",
+      "skos:definition": "The study of language as structure, use, and learning—phonetics, phonology, meaning, and acquisition. In Hybrid Intelligences it is also a microscope into cognition: how speech is learned from sound, how models represent it, and how those methods travel to animal communication and machine intelligence.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/domain"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "domain",
+      "hi:weight": 1.3,
+      "schema:url": "https://en.wikipedia.org/wiki/Linguistics",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Linguistics",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#epistemology",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#philosophy",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cs",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_ml",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cuffari",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#de_jaegher",
+          "hi:strength": 0.8
         }
       ]
     },
@@ -17073,6 +17405,74 @@
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#oracle",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_begus_mystery_language",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Beguš · Language",
+      "skos:definition": "Gašper Beguš — The Mystery of Language in Humans, Animals & AI. Interpretable models of speech, informative imitation, and whale vowels as a comparative science of minds. Video on YouTube; ingest matches speech to ontology concepts.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/video"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "video",
+      "hi:weight": 1.4,
+      "schema:url": "video-begus-mystery-language.html",
+      "schema:image": "https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/begus-mystery-language.jpg",
+      "schema:sameAs": "https://www.youtube.com/watch?v=7zqMYwW0f6E",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#begus",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_interpretability",
+          "hi:strength": 0.92
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#informative_imitation",
+          "hi:strength": 0.92
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cross_species_language",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#whale_vowels",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#linguistics",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#possible_minds",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#llm",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_videos",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#begus",
+          "hi:strength": 0.9,
+          "hi:relationType": "instantiates"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cross_species_language",
           "hi:strength": 0.9,
           "hi:relationType": "develops"
         }
