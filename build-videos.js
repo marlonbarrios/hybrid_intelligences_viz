@@ -660,6 +660,12 @@ const VIDEO_FALLBACK_CONCEPTS = {
     { conceptId: "whale_vowels", label: "Whale Vowels" },
     { conceptId: "ai_interpretability", label: "AI Interpretability" },
   ],
+  "godfrey-smith-other-minds": [
+    { conceptId: "godfrey_smith", label: "Peter Godfrey-Smith" },
+    { conceptId: "other_minds", label: "Other Minds" },
+    { conceptId: "cephalopod_cognition", label: "Cephalopod Cognition" },
+    { conceptId: "consciousness", label: "Consciousness" },
+  ],
 };
 
 function videoConcepts(video, transcript) {
@@ -756,6 +762,7 @@ const VIDEO_SHORT_LABELS = {
   "nick-land-accelerationism": "Land ·\nAcceleration…",
   "carissa-veliz-prophecy-ted": "Véliz ·\nProphecy",
   "begus-mystery-language": "Beguš ·\nLanguage",
+  "godfrey-smith-other-minds": "Godfrey-Smith ·\nOther Minds",
 };
 
 function abbreviateTopic(topic, maxLen = 14) {

@@ -12,9 +12,9 @@
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   owl:versionInfo "1.0.0" ;
   dc:date "2026-09-11"^^xsd:date ;
-  dc:modified "2026-09-11T18:03:05.623Z"^^xsd:dateTime ;
-  hi:nodeCount "336"^^xsd:integer ;
-  hi:edgeCount "3080"^^xsd:integer .
+  dc:modified "2026-09-11T21:16:45.565Z"^^xsd:dateTime ;
+  hi:nodeCount "340"^^xsd:integer ;
+  hi:edgeCount "3136"^^xsd:integer .
 
 hi:scheme a skos:ConceptScheme ;
   skos:prefLabel "Hybrid Intelligences Concept Scheme" ;
@@ -452,6 +452,18 @@ hi:umwelt a skos:Concept, hi:NetworkNode ;
  ;
   schema:url <essay-2.html> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Umwelt>
+ .
+
+hi:other_minds a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Other Minds" ;
+  skos:definition "Peter Godfrey-Smith’s argument that consciousness evolved more than once: cephalopods (octopus, cuttlefish, squid) are a second origin of complex awareness, distant from vertebrates yet capable of encounter. Other Minds and Metazoa treat subjective experience as gradual, embodied, and ecological—not a human monopoly or a sudden leap." ;
+  skos:broader hi:category/framework ;
+  skos:inScheme hi:scheme ;
+  hi:category "framework" ;
+  hi:weight "1.45"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Other_Minds:_The_Octopus,_the_Sea,_and_the_Deep_Origins_of_Consciousness> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Other_Minds:_The_Octopus,_the_Sea,_and_the_Deep_Origins_of_Consciousness>
  .
 
 hi:ai a skos:Concept, hi:NetworkNode ;
@@ -1498,6 +1510,18 @@ hi:begus a skos:Concept, hi:NetworkNode ;
   schema:url <https://www.gasperbegus.com/>
  .
 
+hi:godfrey_smith a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Peter Godfrey-Smith" ;
+  skos:definition "Philosopher of biology and mind—University of Sydney; formerly Harvard and CUNY. Other Minds, Metazoa, and Living on Earth: cephalopod intelligence as a second evolutionary origin of consciousness; gradualism about subjective experience; Darwinian populations. Scuba fieldwork with octopuses and cuttlefish as philosophy done in the water." ;
+  skos:broader hi:category/author ;
+  skos:inScheme hi:scheme ;
+  hi:category "author" ;
+  hi:weight "1.3"^^xsd:decimal
+ ;
+  schema:url <https://petergodfreysmith.com/> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Peter_Godfrey-Smith>
+ .
+
 hi:aguilera_arcas a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Blaise Agüera y Arcas" ;
   skos:definition "AI researcher and author of What Is Intelligence?—work on neural computing, active inference, federated learning, artificial life, and symbiotic models of mind linking evolution, sociality, and machine intelligence." ;
@@ -1804,6 +1828,18 @@ hi:whale_vowels a skos:Concept, hi:NetworkNode ;
   hi:weight "1.4"^^xsd:decimal
  ;
   schema:sameAs <https://en.wikipedia.org/wiki/Sperm_whale>
+ .
+
+hi:cephalopod_cognition a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Cephalopod Cognition" ;
+  skos:definition "Octopus, cuttlefish, and squid intelligence—large distributed nervous systems, camouflage as action, tool use, and play—evolved independently of vertebrates. Godfrey-Smith’s fieldwork treats these animals as evidence that complex minds can take radically different bodily forms." ;
+  skos:broader hi:category/phenomenon ;
+  skos:inScheme hi:scheme ;
+  hi:category "phenomenon" ;
+  hi:weight "1.4"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Cephalopod_intelligence> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Cephalopod_intelligence>
  .
 
 hi:theory_of_mind a skos:Concept, hi:NetworkNode ;
@@ -3395,6 +3431,19 @@ hi:video_begus_mystery_language a skos:Concept, hi:NetworkNode ;
   schema:url <video-begus-mystery-language.html> ;
   schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/begus-mystery-language.jpg> ;
   schema:sameAs <https://www.youtube.com/watch?v=7zqMYwW0f6E>
+ .
+
+hi:video_godfrey_smith_other_minds a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Godfrey-Smith · Other Minds" ;
+  skos:definition "Peter Godfrey-Smith — The Octopus, the Sea, and the Deep Origins of Consciousness. Other minds, cephalopod cognition, and consciousness evolved twice. Video on YouTube; ingest matches speech to ontology concepts." ;
+  skos:broader hi:category/video ;
+  skos:inScheme hi:scheme ;
+  hi:category "video" ;
+  hi:weight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-godfrey-smith-other-minds.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/godfrey-smith-other-minds.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=iENXfnOobzw>
  .
 
 hi:essay_1 a skos:Concept, hi:NetworkNode ;
@@ -19649,6 +19698,342 @@ hi:rel-video_begus_mystery_language-hi_videos a hi:Relation ;
   hi:strength "0.9"^^xsd:decimal ;
   skos:relatedMatch hi:hi_videos .
 
+hi:rel-godfrey_smith-other_minds a hi:Relation ;
+  hi:source hi:godfrey_smith ;
+  hi:target hi:other_minds ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:other_minds .
+
+hi:rel-godfrey_smith-cephalopod_cognition a hi:Relation ;
+  hi:source hi:godfrey_smith ;
+  hi:target hi:cephalopod_cognition ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:cephalopod_cognition .
+
+hi:rel-godfrey_smith-consciousness a hi:Relation ;
+  hi:source hi:godfrey_smith ;
+  hi:target hi:consciousness ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:consciousness .
+
+hi:rel-godfrey_smith-possible_minds a hi:Relation ;
+  hi:source hi:godfrey_smith ;
+  hi:target hi:possible_minds ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:possible_minds .
+
+hi:rel-godfrey_smith-umwelt a hi:Relation ;
+  hi:source hi:godfrey_smith ;
+  hi:target hi:umwelt ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:umwelt .
+
+hi:rel-godfrey_smith-embodiment a hi:Relation ;
+  hi:source hi:godfrey_smith ;
+  hi:target hi:embodiment ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:embodiment .
+
+hi:rel-godfrey_smith-enactivism a hi:Relation ;
+  hi:source hi:godfrey_smith ;
+  hi:target hi:enactivism ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:enactivism .
+
+hi:rel-godfrey_smith-4e a hi:Relation ;
+  hi:source hi:godfrey_smith ;
+  hi:target hi:4e ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:4e .
+
+hi:rel-godfrey_smith-theory_of_mind a hi:Relation ;
+  hi:source hi:godfrey_smith ;
+  hi:target hi:theory_of_mind ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:theory_of_mind .
+
+hi:rel-godfrey_smith-philosophy a hi:Relation ;
+  hi:source hi:godfrey_smith ;
+  hi:target hi:philosophy ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:philosophy .
+
+hi:rel-godfrey_smith-epistemology a hi:Relation ;
+  hi:source hi:godfrey_smith ;
+  hi:target hi:epistemology ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:epistemology .
+
+hi:rel-godfrey_smith-ecology_d a hi:Relation ;
+  hi:source hi:godfrey_smith ;
+  hi:target hi:ecology_d ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:ecology_d .
+
+hi:rel-godfrey_smith-ecology a hi:Relation ;
+  hi:source hi:godfrey_smith ;
+  hi:target hi:ecology ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:ecology .
+
+hi:rel-godfrey_smith-ethical_imagination a hi:Relation ;
+  hi:source hi:godfrey_smith ;
+  hi:target hi:ethical_imagination ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:ethical_imagination .
+
+hi:rel-godfrey_smith-hayles a hi:Relation ;
+  hi:source hi:godfrey_smith ;
+  hi:target hi:hayles ;
+  hi:strength "0.78"^^xsd:decimal ;
+  skos:relatedMatch hi:hayles .
+
+hi:rel-godfrey_smith-uexkuell a hi:Relation ;
+  hi:source hi:godfrey_smith ;
+  hi:target hi:uexkuell ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:uexkuell .
+
+hi:rel-godfrey_smith-varela a hi:Relation ;
+  hi:source hi:godfrey_smith ;
+  hi:target hi:varela ;
+  hi:strength "0.78"^^xsd:decimal ;
+  skos:relatedMatch hi:varela .
+
+hi:rel-godfrey_smith-chalmers a hi:Relation ;
+  hi:source hi:godfrey_smith ;
+  hi:target hi:chalmers ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:chalmers .
+
+hi:rel-godfrey_smith-shanahan a hi:Relation ;
+  hi:source hi:godfrey_smith ;
+  hi:target hi:shanahan ;
+  hi:strength "0.78"^^xsd:decimal ;
+  skos:relatedMatch hi:shanahan .
+
+hi:rel-godfrey_smith-levin a hi:Relation ;
+  hi:source hi:godfrey_smith ;
+  hi:target hi:levin ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:levin .
+
+hi:rel-godfrey_smith-begus a hi:Relation ;
+  hi:source hi:godfrey_smith ;
+  hi:target hi:begus ;
+  hi:strength "0.72"^^xsd:decimal ;
+  skos:relatedMatch hi:begus .
+
+hi:rel-godfrey_smith-cross_species_language a hi:Relation ;
+  hi:source hi:godfrey_smith ;
+  hi:target hi:cross_species_language ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:cross_species_language .
+
+hi:rel-godfrey_smith-hybrid a hi:Relation ;
+  hi:source hi:godfrey_smith ;
+  hi:target hi:hybrid ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:hybrid .
+
+hi:rel-godfrey_smith-hi_videos a hi:Relation ;
+  hi:source hi:godfrey_smith ;
+  hi:target hi:hi_videos ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:hi_videos .
+
+hi:rel-other_minds-cephalopod_cognition a hi:Relation ;
+  hi:source hi:other_minds ;
+  hi:target hi:cephalopod_cognition ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:cephalopod_cognition .
+
+hi:rel-other_minds-consciousness a hi:Relation ;
+  hi:source hi:other_minds ;
+  hi:target hi:consciousness ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:consciousness .
+
+hi:rel-other_minds-possible_minds a hi:Relation ;
+  hi:source hi:other_minds ;
+  hi:target hi:possible_minds ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:possible_minds .
+
+hi:rel-other_minds-umwelt a hi:Relation ;
+  hi:source hi:other_minds ;
+  hi:target hi:umwelt ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:umwelt .
+
+hi:rel-other_minds-embodiment a hi:Relation ;
+  hi:source hi:other_minds ;
+  hi:target hi:embodiment ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:embodiment .
+
+hi:rel-other_minds-enactivism a hi:Relation ;
+  hi:source hi:other_minds ;
+  hi:target hi:enactivism ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:enactivism .
+
+hi:rel-other_minds-theory_of_mind a hi:Relation ;
+  hi:source hi:other_minds ;
+  hi:target hi:theory_of_mind ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:theory_of_mind .
+
+hi:rel-other_minds-ethical_imagination a hi:Relation ;
+  hi:source hi:other_minds ;
+  hi:target hi:ethical_imagination ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:ethical_imagination .
+
+hi:rel-other_minds-philosophy a hi:Relation ;
+  hi:source hi:other_minds ;
+  hi:target hi:philosophy ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:philosophy .
+
+hi:rel-other_minds-ecology_d a hi:Relation ;
+  hi:source hi:other_minds ;
+  hi:target hi:ecology_d ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:ecology_d .
+
+hi:rel-other_minds-hayles a hi:Relation ;
+  hi:source hi:other_minds ;
+  hi:target hi:hayles ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:hayles .
+
+hi:rel-other_minds-uexkuell a hi:Relation ;
+  hi:source hi:other_minds ;
+  hi:target hi:uexkuell ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:uexkuell .
+
+hi:rel-other_minds-chalmers a hi:Relation ;
+  hi:source hi:other_minds ;
+  hi:target hi:chalmers ;
+  hi:strength "0.78"^^xsd:decimal ;
+  skos:relatedMatch hi:chalmers .
+
+hi:rel-cephalopod_cognition-consciousness a hi:Relation ;
+  hi:source hi:cephalopod_cognition ;
+  hi:target hi:consciousness ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:consciousness .
+
+hi:rel-cephalopod_cognition-possible_minds a hi:Relation ;
+  hi:source hi:cephalopod_cognition ;
+  hi:target hi:possible_minds ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:possible_minds .
+
+hi:rel-cephalopod_cognition-umwelt a hi:Relation ;
+  hi:source hi:cephalopod_cognition ;
+  hi:target hi:umwelt ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:umwelt .
+
+hi:rel-cephalopod_cognition-embodiment a hi:Relation ;
+  hi:source hi:cephalopod_cognition ;
+  hi:target hi:embodiment ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:embodiment .
+
+hi:rel-cephalopod_cognition-body a hi:Relation ;
+  hi:source hi:cephalopod_cognition ;
+  hi:target hi:body ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:body .
+
+hi:rel-cephalopod_cognition-ecology_d a hi:Relation ;
+  hi:source hi:cephalopod_cognition ;
+  hi:target hi:ecology_d ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:ecology_d .
+
+hi:rel-cephalopod_cognition-ecology a hi:Relation ;
+  hi:source hi:cephalopod_cognition ;
+  hi:target hi:ecology ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:ecology .
+
+hi:rel-cephalopod_cognition-cross_species_language a hi:Relation ;
+  hi:source hi:cephalopod_cognition ;
+  hi:target hi:cross_species_language ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:cross_species_language .
+
+hi:rel-cephalopod_cognition-whale_vowels a hi:Relation ;
+  hi:source hi:cephalopod_cognition ;
+  hi:target hi:whale_vowels ;
+  hi:strength "0.72"^^xsd:decimal ;
+  skos:relatedMatch hi:whale_vowels .
+
+hi:rel-cephalopod_cognition-theory_of_mind a hi:Relation ;
+  hi:source hi:cephalopod_cognition ;
+  hi:target hi:theory_of_mind ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:theory_of_mind .
+
+hi:rel-cephalopod_cognition-intelligence a hi:Relation ;
+  hi:source hi:cephalopod_cognition ;
+  hi:target hi:intelligence ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:intelligence .
+
+hi:rel-video_godfrey_smith_other_minds-godfrey_smith a hi:Relation ;
+  hi:source hi:video_godfrey_smith_other_minds ;
+  hi:target hi:godfrey_smith ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:godfrey_smith .
+
+hi:rel-video_godfrey_smith_other_minds-other_minds a hi:Relation ;
+  hi:source hi:video_godfrey_smith_other_minds ;
+  hi:target hi:other_minds ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:other_minds .
+
+hi:rel-video_godfrey_smith_other_minds-cephalopod_cognition a hi:Relation ;
+  hi:source hi:video_godfrey_smith_other_minds ;
+  hi:target hi:cephalopod_cognition ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:cephalopod_cognition .
+
+hi:rel-video_godfrey_smith_other_minds-consciousness a hi:Relation ;
+  hi:source hi:video_godfrey_smith_other_minds ;
+  hi:target hi:consciousness ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:consciousness .
+
+hi:rel-video_godfrey_smith_other_minds-possible_minds a hi:Relation ;
+  hi:source hi:video_godfrey_smith_other_minds ;
+  hi:target hi:possible_minds ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:possible_minds .
+
+hi:rel-video_godfrey_smith_other_minds-umwelt a hi:Relation ;
+  hi:source hi:video_godfrey_smith_other_minds ;
+  hi:target hi:umwelt ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:umwelt .
+
+hi:rel-video_godfrey_smith_other_minds-embodiment a hi:Relation ;
+  hi:source hi:video_godfrey_smith_other_minds ;
+  hi:target hi:embodiment ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:embodiment .
+
+hi:rel-video_godfrey_smith_other_minds-hi_videos a hi:Relation ;
+  hi:source hi:video_godfrey_smith_other_minds ;
+  hi:target hi:hi_videos ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:hi_videos .
+
 hi:rel-arendt-video_arendt_zur_person_1964 a hi:Relation ;
   hi:source hi:arendt ;
   hi:target hi:video_arendt_zur_person_1964 ;
@@ -23464,6 +23849,36 @@ hi:rel-video_begus_mystery_language-begus-instantiates a hi:Relation ;
 hi:rel-video_begus_mystery_language-cross_species_language-develops a hi:Relation ;
   hi:source hi:video_begus_mystery_language ;
   hi:target hi:cross_species_language ;
+  hi:relationType hi:develops .
+
+hi:rel-godfrey_smith-other_minds-proposes a hi:Relation ;
+  hi:source hi:godfrey_smith ;
+  hi:target hi:other_minds ;
+  hi:relationType hi:proposes .
+
+hi:rel-godfrey_smith-cephalopod_cognition-proposes a hi:Relation ;
+  hi:source hi:godfrey_smith ;
+  hi:target hi:cephalopod_cognition ;
+  hi:relationType hi:proposes .
+
+hi:rel-other_minds-umwelt-couplesWith a hi:Relation ;
+  hi:source hi:other_minds ;
+  hi:target hi:umwelt ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-cephalopod_cognition-embodiment-emergesFrom a hi:Relation ;
+  hi:source hi:cephalopod_cognition ;
+  hi:target hi:embodiment ;
+  hi:relationType hi:emergesFrom .
+
+hi:rel-video_godfrey_smith_other_minds-godfrey_smith-instantiates a hi:Relation ;
+  hi:source hi:video_godfrey_smith_other_minds ;
+  hi:target hi:godfrey_smith ;
+  hi:relationType hi:instantiates .
+
+hi:rel-video_godfrey_smith_other_minds-other_minds-develops a hi:Relation ;
+  hi:source hi:video_godfrey_smith_other_minds ;
+  hi:target hi:other_minds ;
   hi:relationType hi:develops .
 
 hi:rel-berkana_institute-two_loops_model-develops a hi:Relation ;

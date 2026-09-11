@@ -813,6 +813,17 @@
       "caption": "Interpretable AI, language as informative imitation, and whale vowels — a comparative science of communication across humans, animals, and machines.",
       "credit": "YouTube lecture",
       "transcript": "transcripts/begus-mystery-language.json"
+    },
+    {
+      "id": "godfrey-smith-other-minds",
+      "title": "The Octopus, the Sea, and the Deep Origins of Consciousness | Peter Godfrey-Smith | Talks at Google",
+      "youtube": "https://www.youtube.com/watch?v=iENXfnOobzw",
+      "poster": "screenshots/godfrey-smith-other-minds.jpg",
+      "date": "2017-05-11",
+      "speaker": "Peter Godfrey-Smith",
+      "caption": "Other Minds at Talks at Google: cephalopod intelligence as a second evolutionary origin of consciousness, and what octopus encounter does to the philosophy of mind.",
+      "credit": "Talks at Google",
+      "transcript": "transcripts/godfrey-smith-other-minds.json"
     }
   ]
 }

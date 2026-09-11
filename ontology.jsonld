@@ -63,11 +63,11 @@
         "foaf:homepage": "https://marlonbarrios.github.io/"
       },
       "dc:date": "2026-09-11",
-      "dc:modified": "2026-09-11T18:03:05.622Z",
+      "dc:modified": "2026-09-11T21:16:45.564Z",
       "owl:versionInfo": "1.0.0",
-      "hi:nodeCount": 336,
-      "hi:edgeCount": 3080,
-      "hi:typedEdgeCount": 228
+      "hi:nodeCount": 340,
+      "hi:edgeCount": 3136,
+      "hi:typedEdgeCount": 234
     },
     {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme",
@@ -2249,6 +2249,84 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#coupling",
           "hi:strength": 0.75
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#other_minds",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Other Minds",
+      "skos:definition": "Peter Godfrey-Smith’s argument that consciousness evolved more than once: cephalopods (octopus, cuttlefish, squid) are a second origin of complex awareness, distant from vertebrates yet capable of encounter. Other Minds and Metazoa treat subjective experience as gradual, embodied, and ecological—not a human monopoly or a sudden leap.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/framework"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "framework",
+      "hi:weight": 1.45,
+      "schema:url": "https://en.wikipedia.org/wiki/Other_Minds:_The_Octopus,_the_Sea,_and_the_Deep_Origins_of_Consciousness",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Other_Minds:_The_Octopus,_the_Sea,_and_the_Deep_Origins_of_Consciousness",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cephalopod_cognition",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#consciousness",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#possible_minds",
+          "hi:strength": 0.92
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#umwelt",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embodiment",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#enactivism",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#theory_of_mind",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ethical_imagination",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#philosophy",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ecology_d",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hayles",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#uexkuell",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#chalmers",
+          "hi:strength": 0.78
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#umwelt",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
         }
       ]
     },
@@ -8773,6 +8851,133 @@
       ]
     },
     {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#godfrey_smith",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Peter Godfrey-Smith",
+      "skos:definition": "Philosopher of biology and mind—University of Sydney; formerly Harvard and CUNY. Other Minds, Metazoa, and Living on Earth: cephalopod intelligence as a second evolutionary origin of consciousness; gradualism about subjective experience; Darwinian populations. Scuba fieldwork with octopuses and cuttlefish as philosophy done in the water.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/author"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "author",
+      "hi:weight": 1.3,
+      "schema:url": "https://petergodfreysmith.com/",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Peter_Godfrey-Smith",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#other_minds",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cephalopod_cognition",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#consciousness",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#possible_minds",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#umwelt",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embodiment",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#enactivism",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#4e",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#theory_of_mind",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#philosophy",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#epistemology",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ecology_d",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ecology",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ethical_imagination",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hayles",
+          "hi:strength": 0.78
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#uexkuell",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#varela",
+          "hi:strength": 0.78
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#chalmers",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#shanahan",
+          "hi:strength": 0.78
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#levin",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#begus",
+          "hi:strength": 0.72
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cross_species_language",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hybrid",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_videos",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#other_minds",
+          "hi:strength": 0.9,
+          "hi:relationType": "proposes"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cephalopod_cognition",
+          "hi:strength": 0.9,
+          "hi:relationType": "proposes"
+        }
+      ]
+    },
+    {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#aguilera_arcas",
       "@type": [
         "skos:Concept",
@@ -10217,6 +10422,76 @@
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_interpretability",
+          "hi:strength": 0.9,
+          "hi:relationType": "emergesFrom"
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cephalopod_cognition",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Cephalopod Cognition",
+      "skos:definition": "Octopus, cuttlefish, and squid intelligence—large distributed nervous systems, camouflage as action, tool use, and play—evolved independently of vertebrates. Godfrey-Smith’s fieldwork treats these animals as evidence that complex minds can take radically different bodily forms.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/phenomenon"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "phenomenon",
+      "hi:weight": 1.4,
+      "schema:url": "https://en.wikipedia.org/wiki/Cephalopod_intelligence",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Cephalopod_intelligence",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#consciousness",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#possible_minds",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#umwelt",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embodiment",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#body",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ecology_d",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ecology",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cross_species_language",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#whale_vowels",
+          "hi:strength": 0.72
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#theory_of_mind",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#intelligence",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embodiment",
           "hi:strength": 0.9,
           "hi:relationType": "emergesFrom"
         }
@@ -17473,6 +17748,70 @@
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cross_species_language",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_godfrey_smith_other_minds",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Godfrey-Smith · Other Minds",
+      "skos:definition": "Peter Godfrey-Smith — The Octopus, the Sea, and the Deep Origins of Consciousness. Other minds, cephalopod cognition, and consciousness evolved twice. Video on YouTube; ingest matches speech to ontology concepts.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/video"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "video",
+      "hi:weight": 1.4,
+      "schema:url": "video-godfrey-smith-other-minds.html",
+      "schema:image": "https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/godfrey-smith-other-minds.jpg",
+      "schema:sameAs": "https://www.youtube.com/watch?v=iENXfnOobzw",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#godfrey_smith",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#other_minds",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cephalopod_cognition",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#consciousness",
+          "hi:strength": 0.92
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#possible_minds",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#umwelt",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embodiment",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_videos",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#godfrey_smith",
+          "hi:strength": 0.9,
+          "hi:relationType": "instantiates"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#other_minds",
           "hi:strength": 0.9,
           "hi:relationType": "develops"
         }

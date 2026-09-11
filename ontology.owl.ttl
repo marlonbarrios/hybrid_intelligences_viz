@@ -13,11 +13,11 @@
   dc:description "OWL 2 ontology of concepts, categories, and weighted relations from the Hybrid Intelligences program." ;
   owl:versionInfo "1.0.0" ;
   dc:date "2026-09-11"^^xsd:date ;
-  dc:modified "2026-09-11T18:03:05.626Z"^^xsd:dateTime ;
+  dc:modified "2026-09-11T21:16:45.569Z"^^xsd:dateTime ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  hi:nodeCount "336"^^xsd:integer ;
-  hi:edgeCount "3080"^^xsd:integer ;
-  hi:typedEdgeCount "228"^^xsd:integer .
+  hi:nodeCount "340"^^xsd:integer ;
+  hi:edgeCount "3136"^^xsd:integer ;
+  hi:typedEdgeCount "234"^^xsd:integer .
 
 hi:Concept a owl:Class ;
   rdfs:label "Concept"@en ;
@@ -835,6 +835,20 @@ hi:umwelt a owl:NamedIndividual, hi:FrameworkConcept ;
  ;
   schema:url <essay-2.html> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Umwelt>
+ .
+
+hi:other_minds a owl:NamedIndividual, hi:FrameworkConcept ;
+  rdfs:label "Other Minds"@en ;
+  skos:prefLabel "Other Minds"@en ;
+  skos:definition "Peter Godfrey-Smith’s argument that consciousness evolved more than once: cephalopods (octopus, cuttlefish, squid) are a second origin of complex awareness, distant from vertebrates yet capable of encounter. Other Minds and Metazoa treat subjective experience as gradual, embodied, and ecological—not a human monopoly or a sudden leap."@en ;
+  skos:broader hi:category/framework ;
+  hi:inCategory hi:category/framework ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.45"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Other_Minds:_The_Octopus,_the_Sea,_and_the_Deep_Origins_of_Consciousness> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Other_Minds:_The_Octopus,_the_Sea,_and_the_Deep_Origins_of_Consciousness>
  .
 
 hi:ai a owl:NamedIndividual, hi:FrameworkConcept ;
@@ -2057,6 +2071,20 @@ hi:begus a owl:NamedIndividual, hi:AuthorConcept ;
   schema:url <https://www.gasperbegus.com/>
  .
 
+hi:godfrey_smith a owl:NamedIndividual, hi:AuthorConcept ;
+  rdfs:label "Peter Godfrey-Smith"@en ;
+  skos:prefLabel "Peter Godfrey-Smith"@en ;
+  skos:definition "Philosopher of biology and mind—University of Sydney; formerly Harvard and CUNY. Other Minds, Metazoa, and Living on Earth: cephalopod intelligence as a second evolutionary origin of consciousness; gradualism about subjective experience; Darwinian populations. Scuba fieldwork with octopuses and cuttlefish as philosophy done in the water."@en ;
+  skos:broader hi:category/author ;
+  hi:inCategory hi:category/author ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.3"^^xsd:decimal
+ ;
+  schema:url <https://petergodfreysmith.com/> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Peter_Godfrey-Smith>
+ .
+
 hi:aguilera_arcas a owl:NamedIndividual, hi:AuthorConcept ;
   rdfs:label "Blaise Agüera y Arcas"@en ;
   skos:prefLabel "Blaise Agüera y Arcas"@en ;
@@ -2417,6 +2445,20 @@ hi:whale_vowels a owl:NamedIndividual, hi:PhenomenonConcept ;
   hi:networkWeight "1.4"^^xsd:decimal
  ;
   schema:sameAs <https://en.wikipedia.org/wiki/Sperm_whale>
+ .
+
+hi:cephalopod_cognition a owl:NamedIndividual, hi:PhenomenonConcept ;
+  rdfs:label "Cephalopod Cognition"@en ;
+  skos:prefLabel "Cephalopod Cognition"@en ;
+  skos:definition "Octopus, cuttlefish, and squid intelligence—large distributed nervous systems, camouflage as action, tool use, and play—evolved independently of vertebrates. Godfrey-Smith’s fieldwork treats these animals as evidence that complex minds can take radically different bodily forms."@en ;
+  skos:broader hi:category/phenomenon ;
+  hi:inCategory hi:category/phenomenon ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Cephalopod_intelligence> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Cephalopod_intelligence>
  .
 
 hi:theory_of_mind a owl:NamedIndividual, hi:PhenomenonConcept ;
@@ -4268,6 +4310,21 @@ hi:video_begus_mystery_language a owl:NamedIndividual, hi:VideoConcept ;
   schema:url <video-begus-mystery-language.html> ;
   schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/begus-mystery-language.jpg> ;
   schema:sameAs <https://www.youtube.com/watch?v=7zqMYwW0f6E>
+ .
+
+hi:video_godfrey_smith_other_minds a owl:NamedIndividual, hi:VideoConcept ;
+  rdfs:label "Godfrey-Smith · Other Minds"@en ;
+  skos:prefLabel "Godfrey-Smith · Other Minds"@en ;
+  skos:definition "Peter Godfrey-Smith — The Octopus, the Sea, and the Deep Origins of Consciousness. Other minds, cephalopod cognition, and consciousness evolved twice. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-godfrey-smith-other-minds.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/godfrey-smith-other-minds.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=iENXfnOobzw>
  .
 
 hi:essay_1 a owl:NamedIndividual, hi:PracticeConcept ;
@@ -7710,6 +7767,62 @@ hi:video_begus_mystery_language hi:relatedTo hi:linguistics .
 hi:video_begus_mystery_language hi:relatedTo hi:possible_minds .
 hi:video_begus_mystery_language hi:relatedTo hi:llm .
 hi:video_begus_mystery_language hi:relatedTo hi:hi_videos .
+hi:godfrey_smith hi:relatedTo hi:other_minds .
+hi:godfrey_smith hi:relatedTo hi:cephalopod_cognition .
+hi:godfrey_smith hi:relatedTo hi:consciousness .
+hi:godfrey_smith hi:relatedTo hi:possible_minds .
+hi:godfrey_smith hi:relatedTo hi:umwelt .
+hi:godfrey_smith hi:relatedTo hi:embodiment .
+hi:godfrey_smith hi:relatedTo hi:enactivism .
+hi:godfrey_smith hi:relatedTo hi:4e .
+hi:godfrey_smith hi:relatedTo hi:theory_of_mind .
+hi:godfrey_smith hi:relatedTo hi:philosophy .
+hi:godfrey_smith hi:relatedTo hi:epistemology .
+hi:godfrey_smith hi:relatedTo hi:ecology_d .
+hi:godfrey_smith hi:relatedTo hi:ecology .
+hi:godfrey_smith hi:relatedTo hi:ethical_imagination .
+hi:godfrey_smith hi:relatedTo hi:hayles .
+hi:godfrey_smith hi:relatedTo hi:uexkuell .
+hi:godfrey_smith hi:relatedTo hi:varela .
+hi:godfrey_smith hi:relatedTo hi:chalmers .
+hi:godfrey_smith hi:relatedTo hi:shanahan .
+hi:godfrey_smith hi:relatedTo hi:levin .
+hi:godfrey_smith hi:relatedTo hi:begus .
+hi:godfrey_smith hi:relatedTo hi:cross_species_language .
+hi:godfrey_smith hi:relatedTo hi:hybrid .
+hi:godfrey_smith hi:relatedTo hi:hi_videos .
+hi:other_minds hi:relatedTo hi:cephalopod_cognition .
+hi:other_minds hi:relatedTo hi:consciousness .
+hi:other_minds hi:relatedTo hi:possible_minds .
+hi:other_minds hi:relatedTo hi:umwelt .
+hi:other_minds hi:relatedTo hi:embodiment .
+hi:other_minds hi:relatedTo hi:enactivism .
+hi:other_minds hi:relatedTo hi:theory_of_mind .
+hi:other_minds hi:relatedTo hi:ethical_imagination .
+hi:other_minds hi:relatedTo hi:philosophy .
+hi:other_minds hi:relatedTo hi:ecology_d .
+hi:other_minds hi:relatedTo hi:hayles .
+hi:other_minds hi:relatedTo hi:uexkuell .
+hi:other_minds hi:relatedTo hi:chalmers .
+hi:cephalopod_cognition hi:relatedTo hi:consciousness .
+hi:cephalopod_cognition hi:relatedTo hi:possible_minds .
+hi:cephalopod_cognition hi:relatedTo hi:umwelt .
+hi:cephalopod_cognition hi:relatedTo hi:embodiment .
+hi:cephalopod_cognition hi:relatedTo hi:body .
+hi:cephalopod_cognition hi:relatedTo hi:ecology_d .
+hi:cephalopod_cognition hi:relatedTo hi:ecology .
+hi:cephalopod_cognition hi:relatedTo hi:cross_species_language .
+hi:cephalopod_cognition hi:relatedTo hi:whale_vowels .
+hi:cephalopod_cognition hi:relatedTo hi:theory_of_mind .
+hi:cephalopod_cognition hi:relatedTo hi:intelligence .
+hi:video_godfrey_smith_other_minds hi:relatedTo hi:godfrey_smith .
+hi:video_godfrey_smith_other_minds hi:relatedTo hi:other_minds .
+hi:video_godfrey_smith_other_minds hi:relatedTo hi:cephalopod_cognition .
+hi:video_godfrey_smith_other_minds hi:relatedTo hi:consciousness .
+hi:video_godfrey_smith_other_minds hi:relatedTo hi:possible_minds .
+hi:video_godfrey_smith_other_minds hi:relatedTo hi:umwelt .
+hi:video_godfrey_smith_other_minds hi:relatedTo hi:embodiment .
+hi:video_godfrey_smith_other_minds hi:relatedTo hi:hi_videos .
 hi:arendt hi:relatedTo hi:video_arendt_zur_person_1964 .
 hi:sam_altman hi:relatedTo hi:video_sam_altman_lex_fridman_419 .
 hi:dario_amodei hi:relatedTo hi:video_dario_amodei_ai_safety .
@@ -8376,6 +8489,12 @@ hi:whale_vowels hi:emergesFrom hi:ai_interpretability .
 hi:informative_imitation hi:couplesWith hi:embodiment .
 hi:video_begus_mystery_language hi:instantiates hi:begus .
 hi:video_begus_mystery_language hi:develops hi:cross_species_language .
+hi:godfrey_smith hi:proposes hi:other_minds .
+hi:godfrey_smith hi:proposes hi:cephalopod_cognition .
+hi:other_minds hi:couplesWith hi:umwelt .
+hi:cephalopod_cognition hi:emergesFrom hi:embodiment .
+hi:video_godfrey_smith_other_minds hi:instantiates hi:godfrey_smith .
+hi:video_godfrey_smith_other_minds hi:develops hi:other_minds .
 hi:berkana_institute hi:develops hi:two_loops_model .
 hi:what_if hi:instantiates hi:two_loops_model .
 hi:what_if hi:participatesIn hi:hi_hub .
@@ -21372,6 +21491,286 @@ hi:rel-video_begus_mystery_language-hi_videos a owl:NamedIndividual, hi:NetworkR
   hi:relationTarget hi:hi_videos ;
   hi:relationStrength "0.9"^^xsd:decimal .
 
+hi:rel-godfrey_smith-other_minds a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:godfrey_smith ;
+  hi:relationTarget hi:other_minds ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-godfrey_smith-cephalopod_cognition a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:godfrey_smith ;
+  hi:relationTarget hi:cephalopod_cognition ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-godfrey_smith-consciousness a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:godfrey_smith ;
+  hi:relationTarget hi:consciousness ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-godfrey_smith-possible_minds a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:godfrey_smith ;
+  hi:relationTarget hi:possible_minds ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-godfrey_smith-umwelt a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:godfrey_smith ;
+  hi:relationTarget hi:umwelt ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-godfrey_smith-embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:godfrey_smith ;
+  hi:relationTarget hi:embodiment ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-godfrey_smith-enactivism a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:godfrey_smith ;
+  hi:relationTarget hi:enactivism ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-godfrey_smith-4e a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:godfrey_smith ;
+  hi:relationTarget hi:4e ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-godfrey_smith-theory_of_mind a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:godfrey_smith ;
+  hi:relationTarget hi:theory_of_mind ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-godfrey_smith-philosophy a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:godfrey_smith ;
+  hi:relationTarget hi:philosophy ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-godfrey_smith-epistemology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:godfrey_smith ;
+  hi:relationTarget hi:epistemology ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-godfrey_smith-ecology_d a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:godfrey_smith ;
+  hi:relationTarget hi:ecology_d ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-godfrey_smith-ecology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:godfrey_smith ;
+  hi:relationTarget hi:ecology ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-godfrey_smith-ethical_imagination a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:godfrey_smith ;
+  hi:relationTarget hi:ethical_imagination ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-godfrey_smith-hayles a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:godfrey_smith ;
+  hi:relationTarget hi:hayles ;
+  hi:relationStrength "0.78"^^xsd:decimal .
+
+hi:rel-godfrey_smith-uexkuell a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:godfrey_smith ;
+  hi:relationTarget hi:uexkuell ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-godfrey_smith-varela a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:godfrey_smith ;
+  hi:relationTarget hi:varela ;
+  hi:relationStrength "0.78"^^xsd:decimal .
+
+hi:rel-godfrey_smith-chalmers a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:godfrey_smith ;
+  hi:relationTarget hi:chalmers ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-godfrey_smith-shanahan a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:godfrey_smith ;
+  hi:relationTarget hi:shanahan ;
+  hi:relationStrength "0.78"^^xsd:decimal .
+
+hi:rel-godfrey_smith-levin a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:godfrey_smith ;
+  hi:relationTarget hi:levin ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-godfrey_smith-begus a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:godfrey_smith ;
+  hi:relationTarget hi:begus ;
+  hi:relationStrength "0.72"^^xsd:decimal .
+
+hi:rel-godfrey_smith-cross_species_language a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:godfrey_smith ;
+  hi:relationTarget hi:cross_species_language ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-godfrey_smith-hybrid a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:godfrey_smith ;
+  hi:relationTarget hi:hybrid ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-godfrey_smith-hi_videos a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:godfrey_smith ;
+  hi:relationTarget hi:hi_videos ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-other_minds-cephalopod_cognition a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:other_minds ;
+  hi:relationTarget hi:cephalopod_cognition ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-other_minds-consciousness a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:other_minds ;
+  hi:relationTarget hi:consciousness ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-other_minds-possible_minds a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:other_minds ;
+  hi:relationTarget hi:possible_minds ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-other_minds-umwelt a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:other_minds ;
+  hi:relationTarget hi:umwelt ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-other_minds-embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:other_minds ;
+  hi:relationTarget hi:embodiment ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-other_minds-enactivism a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:other_minds ;
+  hi:relationTarget hi:enactivism ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-other_minds-theory_of_mind a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:other_minds ;
+  hi:relationTarget hi:theory_of_mind ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-other_minds-ethical_imagination a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:other_minds ;
+  hi:relationTarget hi:ethical_imagination ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-other_minds-philosophy a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:other_minds ;
+  hi:relationTarget hi:philosophy ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-other_minds-ecology_d a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:other_minds ;
+  hi:relationTarget hi:ecology_d ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-other_minds-hayles a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:other_minds ;
+  hi:relationTarget hi:hayles ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-other_minds-uexkuell a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:other_minds ;
+  hi:relationTarget hi:uexkuell ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-other_minds-chalmers a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:other_minds ;
+  hi:relationTarget hi:chalmers ;
+  hi:relationStrength "0.78"^^xsd:decimal .
+
+hi:rel-cephalopod_cognition-consciousness a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cephalopod_cognition ;
+  hi:relationTarget hi:consciousness ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-cephalopod_cognition-possible_minds a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cephalopod_cognition ;
+  hi:relationTarget hi:possible_minds ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-cephalopod_cognition-umwelt a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cephalopod_cognition ;
+  hi:relationTarget hi:umwelt ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-cephalopod_cognition-embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cephalopod_cognition ;
+  hi:relationTarget hi:embodiment ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-cephalopod_cognition-body a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cephalopod_cognition ;
+  hi:relationTarget hi:body ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-cephalopod_cognition-ecology_d a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cephalopod_cognition ;
+  hi:relationTarget hi:ecology_d ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-cephalopod_cognition-ecology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cephalopod_cognition ;
+  hi:relationTarget hi:ecology ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-cephalopod_cognition-cross_species_language a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cephalopod_cognition ;
+  hi:relationTarget hi:cross_species_language ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-cephalopod_cognition-whale_vowels a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cephalopod_cognition ;
+  hi:relationTarget hi:whale_vowels ;
+  hi:relationStrength "0.72"^^xsd:decimal .
+
+hi:rel-cephalopod_cognition-theory_of_mind a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cephalopod_cognition ;
+  hi:relationTarget hi:theory_of_mind ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-cephalopod_cognition-intelligence a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cephalopod_cognition ;
+  hi:relationTarget hi:intelligence ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-video_godfrey_smith_other_minds-godfrey_smith a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_godfrey_smith_other_minds ;
+  hi:relationTarget hi:godfrey_smith ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_godfrey_smith_other_minds-other_minds a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_godfrey_smith_other_minds ;
+  hi:relationTarget hi:other_minds ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-video_godfrey_smith_other_minds-cephalopod_cognition a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_godfrey_smith_other_minds ;
+  hi:relationTarget hi:cephalopod_cognition ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-video_godfrey_smith_other_minds-consciousness a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_godfrey_smith_other_minds ;
+  hi:relationTarget hi:consciousness ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-video_godfrey_smith_other_minds-possible_minds a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_godfrey_smith_other_minds ;
+  hi:relationTarget hi:possible_minds ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_godfrey_smith_other_minds-umwelt a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_godfrey_smith_other_minds ;
+  hi:relationTarget hi:umwelt ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_godfrey_smith_other_minds-embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_godfrey_smith_other_minds ;
+  hi:relationTarget hi:embodiment ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-video_godfrey_smith_other_minds-hi_videos a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_godfrey_smith_other_minds ;
+  hi:relationTarget hi:hi_videos ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
 hi:rel-arendt-video_arendt_zur_person_1964 a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:arendt ;
   hi:relationTarget hi:video_arendt_zur_person_1964 ;
@@ -24867,6 +25266,42 @@ hi:rel-video_begus_mystery_language-begus-instantiates a owl:NamedIndividual, hi
 hi:rel-video_begus_mystery_language-cross_species_language-develops a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:video_begus_mystery_language ;
   hi:relationTarget hi:cross_species_language ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-godfrey_smith-other_minds-proposes a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:godfrey_smith ;
+  hi:relationTarget hi:other_minds ;
+  hi:relationType hi:proposes ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-godfrey_smith-cephalopod_cognition-proposes a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:godfrey_smith ;
+  hi:relationTarget hi:cephalopod_cognition ;
+  hi:relationType hi:proposes ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-other_minds-umwelt-couplesWith a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:other_minds ;
+  hi:relationTarget hi:umwelt ;
+  hi:relationType hi:couplesWith ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-cephalopod_cognition-embodiment-emergesFrom a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:cephalopod_cognition ;
+  hi:relationTarget hi:embodiment ;
+  hi:relationType hi:emergesFrom ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_godfrey_smith_other_minds-godfrey_smith-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_godfrey_smith_other_minds ;
+  hi:relationTarget hi:godfrey_smith ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_godfrey_smith_other_minds-other_minds-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_godfrey_smith_other_minds ;
+  hi:relationTarget hi:other_minds ;
   hi:relationType hi:develops ;
   hi:relationStrength "0.9"^^xsd:decimal .
 

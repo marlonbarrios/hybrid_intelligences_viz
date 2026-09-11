@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-11T18:03:05.513Z",
+  "generated": "2026-09-11T21:16:45.437Z",
   "byConcept": {
     "hayles": [
       {
@@ -559,6 +559,13 @@
         "speaker": "Karl Friston",
         "url": "video-friston-brain-constructs-reality.html",
         "poster": "screenshots/friston-brain-constructs-reality.jpg"
+      },
+      {
+        "id": "godfrey-smith-other-minds",
+        "title": "The Octopus, the Sea, and the Deep Origins of Consciousness | Peter Godfrey-Smith | Talks at Google",
+        "speaker": "Peter Godfrey-Smith",
+        "url": "video-godfrey-smith-other-minds.html",
+        "poster": "screenshots/godfrey-smith-other-minds.jpg"
       },
       {
         "id": "mini-brains-150k",
@@ -2353,6 +2360,33 @@
         "speaker": "Gašper Beguš",
         "url": "video-begus-mystery-language.html",
         "poster": "screenshots/begus-mystery-language.jpg"
+      }
+    ],
+    "godfrey_smith": [
+      {
+        "id": "godfrey-smith-other-minds",
+        "title": "The Octopus, the Sea, and the Deep Origins of Consciousness | Peter Godfrey-Smith | Talks at Google",
+        "speaker": "Peter Godfrey-Smith",
+        "url": "video-godfrey-smith-other-minds.html",
+        "poster": "screenshots/godfrey-smith-other-minds.jpg"
+      }
+    ],
+    "other_minds": [
+      {
+        "id": "godfrey-smith-other-minds",
+        "title": "The Octopus, the Sea, and the Deep Origins of Consciousness | Peter Godfrey-Smith | Talks at Google",
+        "speaker": "Peter Godfrey-Smith",
+        "url": "video-godfrey-smith-other-minds.html",
+        "poster": "screenshots/godfrey-smith-other-minds.jpg"
+      }
+    ],
+    "cephalopod_cognition": [
+      {
+        "id": "godfrey-smith-other-minds",
+        "title": "The Octopus, the Sea, and the Deep Origins of Consciousness | Peter Godfrey-Smith | Talks at Google",
+        "speaker": "Peter Godfrey-Smith",
+        "url": "video-godfrey-smith-other-minds.html",
+        "poster": "screenshots/godfrey-smith-other-minds.jpg"
       }
     ]
   }
