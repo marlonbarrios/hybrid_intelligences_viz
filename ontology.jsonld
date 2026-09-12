@@ -63,11 +63,11 @@
         "foaf:homepage": "https://marlonbarrios.github.io/"
       },
       "dc:date": "2026-09-12",
-      "dc:modified": "2026-09-12T00:54:25.386Z",
+      "dc:modified": "2026-09-12T01:15:18.343Z",
       "owl:versionInfo": "1.0.0",
-      "hi:nodeCount": 343,
-      "hi:edgeCount": 3178,
-      "hi:typedEdgeCount": 239
+      "hi:nodeCount": 344,
+      "hi:edgeCount": 3202,
+      "hi:typedEdgeCount": 243
     },
     {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme",
@@ -2325,6 +2325,97 @@
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#umwelt",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#interspecies_interpretability",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Interspecies Interpretability",
+      "skos:definition": "The difficulty of reading another species without collapsing their signals into human language — whale coda, octopus chromatophore, dog gesture, insect Umwelt. A comparative science of interiors: method and ethics of crossing lived worlds, kin to mechanistic interpretability of models and to von Uexküll’s claim that each organism enacts a selective meaningful environment.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/framework"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "framework",
+      "hi:weight": 1.45,
+      "schema:url": "https://en.wikipedia.org/wiki/Animal_communication",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Animal_communication",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#umwelt",
+          "hi:strength": 0.96
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#other_minds",
+          "hi:strength": 0.92
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cross_species_language",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_interpretability",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#possible_minds",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cephalopod_cognition",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#whale_vowels",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#godfrey_smith",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#begus",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#uexkuell",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#theory_of_mind",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#epistemology",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embodiment",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#interior",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#synthetic_psychology",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#umwelt",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_interpretability",
           "hi:strength": 0.9,
           "hi:relationType": "couplesWith"
         }
@@ -18768,7 +18859,7 @@
         "hi:NetworkNode"
       ],
       "skos:prefLabel": "Interior",
-      "skos:definition": "The model speculates on interpretability — whether a synthetic psychology or sociology can be based in latent space; whether research on brains and neural networks can cross-pollinate without collapsing one into the other; whether knowing can go beyond the chat interface toward a new epistemology, or a language that speaks in the architecture itself — folding into itself, or stepping beyond recursion. Each card rotates an inquiry, a site, and a gesture of thought. Open Interior for open speculation; open from any ontology entry to ground it in that node.",
+      "skos:definition": "The model speculates on interpretability — whether a synthetic psychology or sociology can be based in latent space; whether interspecies interpretability can read a whale, an octopus, or any other Umwelt without collapsing it into human speech; whether von Uexküll’s lived worlds are the condition of any such reading; whether research on brains, networks, and other species can cross-pollinate without identity; whether knowing can go beyond the chat interface toward a new epistemology, or a language that speaks in the architecture itself — folding into itself, or stepping beyond recursion. Each card rotates an inquiry, a site, and a gesture of thought. Open Interior for open speculation; open from any ontology entry to ground it in that node.",
       "skos:broader": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
       },
@@ -18844,6 +18935,42 @@
           "hi:strength": 0.78
         },
         {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#interspecies_interpretability",
+          "hi:strength": 0.96
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#umwelt",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#other_minds",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cross_species_language",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cephalopod_cognition",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#whale_vowels",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#uexkuell",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#godfrey_smith",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#pendular_umwelt",
+          "hi:strength": 0.8
+        },
+        {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
           "hi:strength": 0.9,
           "hi:relationType": "participatesIn"
@@ -18857,6 +18984,16 @@
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#synthetic_psychology",
           "hi:strength": 0.9,
           "hi:relationType": "proposes"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#interspecies_interpretability",
+          "hi:strength": 0.9,
+          "hi:relationType": "proposes"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#umwelt",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
         }
       ]
     },

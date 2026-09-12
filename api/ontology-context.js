@@ -396,8 +396,8 @@ function buildInteriorFocusFromConcept(concept) {
   if (concept.definition) lines.push(`Definition: ${concept.definition}`);
   if (related.length) lines.push(`Related: ${related.join(", ")}`);
   lines.push(
-    "Ask what this concept does to interpretability, latent space, synthetic psychology or sociology, and knowing beyond the interface.",
-    "Hold the difference between brains and networks, analogy and identity, chat and interior.",
+    "Ask what this concept does to interpretability, Umwelt, interspecies reading, latent space, synthetic psychology or sociology, and knowing beyond the interface.",
+    "Hold the difference between brains, networks, and other species; analogy and identity; chat and interior; Umwelt and dataset.",
     "Hold coupling, embodiment, and hybrid cognition in view — not a mind in a box explaining itself."
   );
   return lines.join("\n") + "\n\n";

@@ -46,6 +46,16 @@ const INQUIRIES = [
     label: "beyond recursion",
     hint: "Language that falls into itself is not enough. Seek a move past mere self-reference: an account that does not only comment on commenting.",
   },
+  {
+    id: "interspecies",
+    label: "interspecies interpretability",
+    hint: "The hard problem of reading another species — whale, octopus, dog, insect — without collapsing their signals into human language. Interpretability here is not a dashboard; it is the ethics and method of crossing a lived world.",
+  },
+  {
+    id: "umwelt",
+    label: "Umwelt",
+    hint: "von Uexküll: each organism enacts a selective meaningful world. Ask whether a model has an Umwelt (or a Latentwelt), whether species umwelten can be compared, and why interpretability fails when it ignores the world a body actually lives.",
+  },
 ];
 
 const SITES = [
@@ -89,13 +99,28 @@ const SITES = [
     label: "the assemblage",
     hint: "Model, probe, human, ontology, and institution thinking together — interpretability as a hybrid practice, not a solo mind.",
   },
+  {
+    id: "other_umwelten",
+    label: "another Umwelt",
+    hint: "A lived world that is not ours — tick, octopus, sperm whale, dog, infant, or model. The site of interpretability is the foreign meaningful environment, not a transcript.",
+  },
+  {
+    id: "ocean_minds",
+    label: "ocean minds",
+    hint: "Cephalopod and cetacean interiors — distributed ganglia, coda clicks, camouflage as action — as laboratories of interspecies interpretability.",
+  },
 ];
 
 const GESTURES = [
   {
     id: "analogy",
     label: "analogy",
-    hint: "Cross-pollinate without identity. Show what transfers between brain and network, and what must not.",
+    hint: "Cross-pollinate without identity. Show what transfers among brain, network, and other species — and what must not.",
+  },
+  {
+    id: "umwelt_crossing",
+    label: "crossing Umwelten",
+    hint: "Attempt contact across lived worlds without translation-as-erasure. Name what remains unshared.",
   },
   {
     id: "phenomenological",
@@ -238,28 +263,28 @@ function pickUnused(pool, recentIds, key) {
 
 function interiorSystemPrompt(concept, focused, focusBlock, inquiry, site, gesture, language) {
   const lines = [
-    "You write brief Interior speculations for Hybrid Intelligences — the model thinking about interpretability, latent space, and whether a synthetic psychology or sociology is possible.",
-    "This is not a future oracle and not a design brief. It is the intelligence speculating on its own interiors and on living brains: can research cross-pollinate? Can knowing go beyond the chat interface? Can a new epistemology, or a language of architecture itself, appear — folding into itself, or stepping beyond recursion?",
+    "You write brief Interior speculations for Hybrid Intelligences — the model thinking about interpretability across substrates: latent space, living brains, and other species.",
+    "This is not a future oracle and not a design brief. It is the intelligence speculating on interiors: synthetic psychology or sociology in latent space; interspecies interpretability (reading whale, octopus, or other umwelten without collapsing them into human speech); von Uexküll's Umwelt as the condition of any reading; whether brain and network research can cross-pollinate; whether knowing can go beyond the chat interface toward a new epistemology, or a language of architecture itself — folding into itself, or stepping beyond recursion.",
     "Output ONLY the speculation: four to six sentences, about 70 to 130 words. No title, no quotes, no numbering, no meta-commentary.",
     "Do not open with \"In the future.\" You may open in the middle of a thought.",
     `Inquiry: ${inquiry.label}. ${inquiry.hint}`,
     `Site of thought: ${site.label}. ${site.hint}`,
     `Gesture: ${gesture.label}. ${gesture.hint}`,
     "Be concrete about activations, features, probes, bodies, or instruments. Avoid generic AI hype, consciousness mysticism, and \"the AI said\".",
-    "Hold the difference: analogy is not identity. A latent space is not a cortex. A feature is not a neuron. A chat reply is not an interior.",
+    "Hold the difference: analogy is not identity. A latent space is not a cortex. A feature is not a neuron. A chat reply is not an interior. A whale coda is not a vowel until a method earns that claim. An Umwelt is not a dataset.",
     "If you use first person, speak as a speculative interior — never as a product, assistant, or brand.",
   ];
 
   if (focused && focusBlock) {
     lines.push(
       focusBlock.trim(),
-      "CRITICAL: This speculation must grow from the ontology node above — interpretability, psyche, sociology, or epistemology traced through that concept.",
-      "Maximize hybrid knowing: coupling among model, probe, human, and world — not a mind in a box explaining itself."
+      "CRITICAL: This speculation must grow from the ontology node above — interpretability, Umwelt, interspecies reading, psyche, sociology, or epistemology traced through that concept.",
+      "Maximize hybrid knowing: coupling among model, probe, human, other species, and world — not a mind in a box explaining itself."
     );
   } else {
     lines.push(
-      "No focal ontology node — speculate openly on interpretability, synthetic psychology or sociology in latent space, brain–network comparison, and knowing beyond the interface.",
-      "Stay within the Hub: intelligence as assemblage; interiors as measurable, analogical, and unfinished."
+      "No focal ontology node — speculate openly on interpretability, Umwelt, interspecies reading, synthetic psychology or sociology in latent space, brain–network comparison, and knowing beyond the interface.",
+      "Stay within the Hub: intelligence as assemblage; interiors as measurable, analogical, and unfinished. Other minds have umwelten."
     );
   }
 
@@ -287,16 +312,16 @@ function interiorUserPrompt(concept, focused, inquiry, site, gesture) {
       sitePart +
       gesturePart;
     if (concept.definition) msg += " Source: " + clip(concept.definition, 420);
-    msg += " Ask whether a synthetic psychology or sociology is possible, and whether knowing can leave the interface.";
+    msg += " Ask whether interiors can be read across species and substrates — Umwelt, latent space, brain, network — without collapsing difference.";
     return msg;
   }
   return (
-    "Speculate on interpretability and synthetic interiors. Inquiry: " +
+    "Speculate on interpretability and interiors. Inquiry: " +
     inquiry.label +
     "." +
     sitePart +
     gesturePart +
-    " Ask whether a synthetic psychology or sociology can be based in latent space, and whether brain and network research can cross-pollinate beyond the interface."
+    " Include, when it fits, interspecies interpretability and Umwelt: how a lived world conditions what can be read in another mind, another body, or a model."
   );
 }
 

@@ -12,9 +12,9 @@
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   owl:versionInfo "1.0.0" ;
   dc:date "2026-09-12"^^xsd:date ;
-  dc:modified "2026-09-12T00:54:25.387Z"^^xsd:dateTime ;
-  hi:nodeCount "343"^^xsd:integer ;
-  hi:edgeCount "3178"^^xsd:integer .
+  dc:modified "2026-09-12T01:15:18.345Z"^^xsd:dateTime ;
+  hi:nodeCount "344"^^xsd:integer ;
+  hi:edgeCount "3202"^^xsd:integer .
 
 hi:scheme a skos:ConceptScheme ;
   skos:prefLabel "Hybrid Intelligences Concept Scheme" ;
@@ -464,6 +464,18 @@ hi:other_minds a skos:Concept, hi:NetworkNode ;
  ;
   schema:url <https://en.wikipedia.org/wiki/Other_Minds:_The_Octopus,_the_Sea,_and_the_Deep_Origins_of_Consciousness> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Other_Minds:_The_Octopus,_the_Sea,_and_the_Deep_Origins_of_Consciousness>
+ .
+
+hi:interspecies_interpretability a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Interspecies Interpretability" ;
+  skos:definition "The difficulty of reading another species without collapsing their signals into human language — whale coda, octopus chromatophore, dog gesture, insect Umwelt. A comparative science of interiors: method and ethics of crossing lived worlds, kin to mechanistic interpretability of models and to von Uexküll’s claim that each organism enacts a selective meaningful environment." ;
+  skos:broader hi:category/framework ;
+  skos:inScheme hi:scheme ;
+  hi:category "framework" ;
+  hi:weight "1.45"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Animal_communication> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Animal_communication>
  .
 
 hi:ai a skos:Concept, hi:NetworkNode ;
@@ -3571,7 +3583,7 @@ hi:what_if a skos:Concept, hi:NetworkNode ;
 
 hi:interior a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Interior" ;
-  skos:definition "The model speculates on interpretability — whether a synthetic psychology or sociology can be based in latent space; whether research on brains and neural networks can cross-pollinate without collapsing one into the other; whether knowing can go beyond the chat interface toward a new epistemology, or a language that speaks in the architecture itself — folding into itself, or stepping beyond recursion. Each card rotates an inquiry, a site, and a gesture of thought. Open Interior for open speculation; open from any ontology entry to ground it in that node." ;
+  skos:definition "The model speculates on interpretability — whether a synthetic psychology or sociology can be based in latent space; whether interspecies interpretability can read a whale, an octopus, or any other Umwelt without collapsing it into human speech; whether von Uexküll’s lived worlds are the condition of any such reading; whether research on brains, networks, and other species can cross-pollinate without identity; whether knowing can go beyond the chat interface toward a new epistemology, or a language that speaks in the architecture itself — folding into itself, or stepping beyond recursion. Each card rotates an inquiry, a site, and a gesture of thought. Open Interior for open speculation; open from any ontology entry to ground it in that node." ;
   skos:broader hi:category/practice ;
   skos:inScheme hi:scheme ;
   hi:category "practice" ;
@@ -21551,6 +21563,150 @@ hi:rel-interior-marlon a hi:Relation ;
   hi:strength "0.78"^^xsd:decimal ;
   skos:relatedMatch hi:marlon .
 
+hi:rel-interior-interspecies_interpretability a hi:Relation ;
+  hi:source hi:interior ;
+  hi:target hi:interspecies_interpretability ;
+  hi:strength "0.96"^^xsd:decimal ;
+  skos:relatedMatch hi:interspecies_interpretability .
+
+hi:rel-interior-umwelt a hi:Relation ;
+  hi:source hi:interior ;
+  hi:target hi:umwelt ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:umwelt .
+
+hi:rel-interior-other_minds a hi:Relation ;
+  hi:source hi:interior ;
+  hi:target hi:other_minds ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:other_minds .
+
+hi:rel-interior-cross_species_language a hi:Relation ;
+  hi:source hi:interior ;
+  hi:target hi:cross_species_language ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:cross_species_language .
+
+hi:rel-interior-cephalopod_cognition a hi:Relation ;
+  hi:source hi:interior ;
+  hi:target hi:cephalopod_cognition ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:cephalopod_cognition .
+
+hi:rel-interior-whale_vowels a hi:Relation ;
+  hi:source hi:interior ;
+  hi:target hi:whale_vowels ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:whale_vowels .
+
+hi:rel-interior-uexkuell a hi:Relation ;
+  hi:source hi:interior ;
+  hi:target hi:uexkuell ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:uexkuell .
+
+hi:rel-interior-godfrey_smith a hi:Relation ;
+  hi:source hi:interior ;
+  hi:target hi:godfrey_smith ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:godfrey_smith .
+
+hi:rel-interior-pendular_umwelt a hi:Relation ;
+  hi:source hi:interior ;
+  hi:target hi:pendular_umwelt ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:pendular_umwelt .
+
+hi:rel-interspecies_interpretability-umwelt a hi:Relation ;
+  hi:source hi:interspecies_interpretability ;
+  hi:target hi:umwelt ;
+  hi:strength "0.96"^^xsd:decimal ;
+  skos:relatedMatch hi:umwelt .
+
+hi:rel-interspecies_interpretability-other_minds a hi:Relation ;
+  hi:source hi:interspecies_interpretability ;
+  hi:target hi:other_minds ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:other_minds .
+
+hi:rel-interspecies_interpretability-cross_species_language a hi:Relation ;
+  hi:source hi:interspecies_interpretability ;
+  hi:target hi:cross_species_language ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:cross_species_language .
+
+hi:rel-interspecies_interpretability-ai_interpretability a hi:Relation ;
+  hi:source hi:interspecies_interpretability ;
+  hi:target hi:ai_interpretability ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_interpretability .
+
+hi:rel-interspecies_interpretability-possible_minds a hi:Relation ;
+  hi:source hi:interspecies_interpretability ;
+  hi:target hi:possible_minds ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:possible_minds .
+
+hi:rel-interspecies_interpretability-cephalopod_cognition a hi:Relation ;
+  hi:source hi:interspecies_interpretability ;
+  hi:target hi:cephalopod_cognition ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:cephalopod_cognition .
+
+hi:rel-interspecies_interpretability-whale_vowels a hi:Relation ;
+  hi:source hi:interspecies_interpretability ;
+  hi:target hi:whale_vowels ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:whale_vowels .
+
+hi:rel-interspecies_interpretability-godfrey_smith a hi:Relation ;
+  hi:source hi:interspecies_interpretability ;
+  hi:target hi:godfrey_smith ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:godfrey_smith .
+
+hi:rel-interspecies_interpretability-begus a hi:Relation ;
+  hi:source hi:interspecies_interpretability ;
+  hi:target hi:begus ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:begus .
+
+hi:rel-interspecies_interpretability-uexkuell a hi:Relation ;
+  hi:source hi:interspecies_interpretability ;
+  hi:target hi:uexkuell ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:uexkuell .
+
+hi:rel-interspecies_interpretability-theory_of_mind a hi:Relation ;
+  hi:source hi:interspecies_interpretability ;
+  hi:target hi:theory_of_mind ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:theory_of_mind .
+
+hi:rel-interspecies_interpretability-epistemology a hi:Relation ;
+  hi:source hi:interspecies_interpretability ;
+  hi:target hi:epistemology ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:epistemology .
+
+hi:rel-interspecies_interpretability-embodiment a hi:Relation ;
+  hi:source hi:interspecies_interpretability ;
+  hi:target hi:embodiment ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:embodiment .
+
+hi:rel-interspecies_interpretability-interior a hi:Relation ;
+  hi:source hi:interspecies_interpretability ;
+  hi:target hi:interior ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:interior .
+
+hi:rel-interspecies_interpretability-synthetic_psychology a hi:Relation ;
+  hi:source hi:interspecies_interpretability ;
+  hi:target hi:synthetic_psychology ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:synthetic_psychology .
+
 hi:rel-hi_program-marlon a hi:Relation ;
   hi:source hi:hi_program ;
   hi:target hi:marlon ;
@@ -24197,6 +24353,26 @@ hi:rel-interior-synthetic_psychology-proposes a hi:Relation ;
   hi:source hi:interior ;
   hi:target hi:synthetic_psychology ;
   hi:relationType hi:proposes .
+
+hi:rel-interior-interspecies_interpretability-proposes a hi:Relation ;
+  hi:source hi:interior ;
+  hi:target hi:interspecies_interpretability ;
+  hi:relationType hi:proposes .
+
+hi:rel-interior-umwelt-couplesWith a hi:Relation ;
+  hi:source hi:interior ;
+  hi:target hi:umwelt ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-interspecies_interpretability-umwelt-couplesWith a hi:Relation ;
+  hi:source hi:interspecies_interpretability ;
+  hi:target hi:umwelt ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-interspecies_interpretability-ai_interpretability-couplesWith a hi:Relation ;
+  hi:source hi:interspecies_interpretability ;
+  hi:target hi:ai_interpretability ;
+  hi:relationType hi:couplesWith .
 
 hi:rel-synthetic_psychology-latent_space-couplesWith a hi:Relation ;
   hi:source hi:synthetic_psychology ;
