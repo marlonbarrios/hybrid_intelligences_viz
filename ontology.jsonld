@@ -62,12 +62,12 @@
         "foaf:name": "Marlon Barrios Solano",
         "foaf:homepage": "https://marlonbarrios.github.io/"
       },
-      "dc:date": "2026-09-11",
-      "dc:modified": "2026-09-11T21:16:45.564Z",
+      "dc:date": "2026-09-12",
+      "dc:modified": "2026-09-12T00:54:25.386Z",
       "owl:versionInfo": "1.0.0",
-      "hi:nodeCount": 340,
-      "hi:edgeCount": 3136,
-      "hi:typedEdgeCount": 234
+      "hi:nodeCount": 343,
+      "hi:edgeCount": 3178,
+      "hi:typedEdgeCount": 239
     },
     {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme",
@@ -3916,6 +3916,162 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#chalmers",
           "hi:strength": 0.7
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#synthetic_psychology",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Synthetic Psychology",
+      "skos:definition": "A speculative science of interiors: reading moods, motives, habits, and trajectories in latent activations, features, and circuits — without claiming a human mind copied into silicon. Interpretability as psychology of a different substrate.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/framework"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "framework",
+      "hi:weight": 1.45,
+      "schema:url": "https://en.wikipedia.org/wiki/Computational_psychology",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Computational_psychology",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#latent_space",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_interpretability",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#model_introspection",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#synthetic_sociology",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#possible_minds",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#consciousness",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#theory_of_mind",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#epistemology",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#philosophy",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#llm",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#neural_networks",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#transformers",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embodiment",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#shanahan",
+          "hi:strength": 0.78
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#chalmers",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#begus",
+          "hi:strength": 0.72
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#interior",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#latent_space",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#synthetic_sociology",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Synthetic Sociology",
+      "skos:definition": "Treating circuits, features, and residual streams as a social field — coalitions, conflicts, roles, and publics inside a model — so interpretability is not only a psychology of isolated units but a sociology of activations.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/framework"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "framework",
+      "hi:weight": 1.4,
+      "schema:url": "https://en.wikipedia.org/wiki/Computational_sociology",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Computational_sociology",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#latent_space",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_interpretability",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#synthetic_psychology",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#community",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#distributed",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#epistemology",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#llm",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#interior",
+          "hi:strength": 0.92
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#latent_space",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
         }
       ]
     },
@@ -18606,6 +18762,105 @@
       ]
     },
     {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#interior",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Interior",
+      "skos:definition": "The model speculates on interpretability — whether a synthetic psychology or sociology can be based in latent space; whether research on brains and neural networks can cross-pollinate without collapsing one into the other; whether knowing can go beyond the chat interface toward a new epistemology, or a language that speaks in the architecture itself — folding into itself, or stepping beyond recursion. Each card rotates an inquiry, a site, and a gesture of thought. Open Interior for open speculation; open from any ontology entry to ground it in that node.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "practice",
+      "hi:weight": 1.5,
+      "schema:url": "interior.html",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
+          "hi:strength": 0.94
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_interpretability",
+          "hi:strength": 0.96
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#synthetic_psychology",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#synthetic_sociology",
+          "hi:strength": 0.92
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#latent_space",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#model_introspection",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#possible_minds",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#epistemology",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#oracle",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#what_if",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#enact",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology_kb",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#conversational_ai",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#begus",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#shanahan",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#marlon",
+          "hi:strength": 0.78
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
+          "hi:strength": 0.9,
+          "hi:relationType": "participatesIn"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_interpretability",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#synthetic_psychology",
+          "hi:strength": 0.9,
+          "hi:relationType": "proposes"
+        }
+      ]
+    },
+    {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#pendular_umwelt",
       "@type": [
         "skos:Concept",
@@ -18739,7 +18994,7 @@
         "hi:NetworkNode"
       ],
       "skos:prefLabel": "Hybrid Intelligences Hub",
-      "skos:definition": "The public Hybrid Intelligences tool: a dynamic cognitive assemblage created by Marlon Barrios Solano as Maker-in-Residence at CAME. Not a brochure and not a chatbot in isolation — a hybrid instrument in which essays, videos, ontology, network visualization, conversational AI, concept images, Mini-pods, and Enact couple. The ontology is the knowledge base that grounds Voice; from any concept one can talk, generate an image, or create a short spoken episode. Enact offers cognitive prompts for a choreography of awareness. Also called this site, this platform, or this knowledge architecture. When asked what the Hub or this tool is, describe it as that assemblage and refer to its layers by name.",
+      "skos:definition": "The public Hybrid Intelligences tool: a dynamic cognitive assemblage created by Marlon Barrios Solano as Maker-in-Residence at CAME. Not a brochure and not a chatbot in isolation — a hybrid instrument in which essays, videos, ontology, network visualization, conversational AI, concept images, Mini-pods, Enact, Oracle, What If, and Interior couple. The ontology is the knowledge base that grounds Voice; from any concept one can talk, generate an image, or create a short spoken episode. Enact offers cognitive prompts; Interior lets the model speculate on interpretability and latent-space psychology. Also called this site, this platform, or this knowledge architecture. When asked what the Hub or this tool is, describe it as that assemblage and refer to its layers by name.",
       "skos:broader": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/program"
       },

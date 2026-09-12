@@ -178,6 +178,7 @@ function headerNav() {
     ["enact.html", "Enact"],
     ["oracle.html", "Oracle"],
     ["what-if.html", "What If"],
+    ["interior.html", "Interior"],
     ["creative-b.html", "Creative B"],
     ["scan-qr.html", "Scan QR Code"],
   ];

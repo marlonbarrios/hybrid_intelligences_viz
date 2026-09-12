@@ -15,6 +15,10 @@
       "includeFiles": "ontology.jsonld",
       "maxDuration": 25
     },
+    "api/interior.js": {
+      "includeFiles": "ontology.jsonld",
+      "maxDuration": 25
+    },
     "api/speech.js": {
       "maxDuration": 20
     }

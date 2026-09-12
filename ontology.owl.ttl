@@ -12,12 +12,12 @@
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   dc:description "OWL 2 ontology of concepts, categories, and weighted relations from the Hybrid Intelligences program." ;
   owl:versionInfo "1.0.0" ;
-  dc:date "2026-09-11"^^xsd:date ;
-  dc:modified "2026-09-11T21:16:45.569Z"^^xsd:dateTime ;
+  dc:date "2026-09-12"^^xsd:date ;
+  dc:modified "2026-09-12T00:54:25.391Z"^^xsd:dateTime ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  hi:nodeCount "340"^^xsd:integer ;
-  hi:edgeCount "3136"^^xsd:integer ;
-  hi:typedEdgeCount "234"^^xsd:integer .
+  hi:nodeCount "343"^^xsd:integer ;
+  hi:edgeCount "3178"^^xsd:integer ;
+  hi:typedEdgeCount "239"^^xsd:integer .
 
 hi:Concept a owl:Class ;
   rdfs:label "Concept"@en ;
@@ -1138,6 +1138,34 @@ hi:model_introspection a owl:NamedIndividual, hi:FrameworkConcept ;
   hi:networkWeight "1.5"^^xsd:decimal
  ;
   schema:url <https://www.anthropic.com/research/introspection>
+ .
+
+hi:synthetic_psychology a owl:NamedIndividual, hi:FrameworkConcept ;
+  rdfs:label "Synthetic Psychology"@en ;
+  skos:prefLabel "Synthetic Psychology"@en ;
+  skos:definition "A speculative science of interiors: reading moods, motives, habits, and trajectories in latent activations, features, and circuits — without claiming a human mind copied into silicon. Interpretability as psychology of a different substrate."@en ;
+  skos:broader hi:category/framework ;
+  hi:inCategory hi:category/framework ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.45"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Computational_psychology> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Computational_psychology>
+ .
+
+hi:synthetic_sociology a owl:NamedIndividual, hi:FrameworkConcept ;
+  rdfs:label "Synthetic Sociology"@en ;
+  skos:prefLabel "Synthetic Sociology"@en ;
+  skos:definition "Treating circuits, features, and residual streams as a social field — coalitions, conflicts, roles, and publics inside a model — so interpretability is not only a psychology of isolated units but a sociology of activations."@en ;
+  skos:broader hi:category/framework ;
+  hi:inCategory hi:category/framework ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Computational_sociology> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Computational_sociology>
  .
 
 hi:alphago a owl:NamedIndividual, hi:FrameworkConcept ;
@@ -4444,6 +4472,19 @@ hi:what_if a owl:NamedIndividual, hi:PracticeConcept ;
   schema:url <what-if.html>
  .
 
+hi:interior a owl:NamedIndividual, hi:PracticeConcept ;
+  rdfs:label "Interior"@en ;
+  skos:prefLabel "Interior"@en ;
+  skos:definition "The model speculates on interpretability — whether a synthetic psychology or sociology can be based in latent space; whether research on brains and neural networks can cross-pollinate without collapsing one into the other; whether knowing can go beyond the chat interface toward a new epistemology, or a language that speaks in the architecture itself — folding into itself, or stepping beyond recursion. Each card rotates an inquiry, a site, and a gesture of thought. Open Interior for open speculation; open from any ontology entry to ground it in that node."@en ;
+  skos:broader hi:category/practice ;
+  hi:inCategory hi:category/practice ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.5"^^xsd:decimal
+ ;
+  schema:url <interior.html>
+ .
+
 hi:pendular_umwelt a owl:NamedIndividual, hi:PracticeConcept ;
   rdfs:label "My Pendular Umwelt"@en ;
   skos:prefLabel "My Pendular Umwelt"@en ;
@@ -4473,7 +4514,7 @@ hi:lobby_showcase a owl:NamedIndividual, hi:PracticeConcept ;
 hi:hi_hub a owl:NamedIndividual, hi:ProgramConcept ;
   rdfs:label "Hybrid Intelligences Hub"@en ;
   skos:prefLabel "Hybrid Intelligences Hub"@en ;
-  skos:definition "The public Hybrid Intelligences tool: a dynamic cognitive assemblage created by Marlon Barrios Solano as Maker-in-Residence at CAME. Not a brochure and not a chatbot in isolation — a hybrid instrument in which essays, videos, ontology, network visualization, conversational AI, concept images, Mini-pods, and Enact couple. The ontology is the knowledge base that grounds Voice; from any concept one can talk, generate an image, or create a short spoken episode. Enact offers cognitive prompts for a choreography of awareness. Also called this site, this platform, or this knowledge architecture. When asked what the Hub or this tool is, describe it as that assemblage and refer to its layers by name."@en ;
+  skos:definition "The public Hybrid Intelligences tool: a dynamic cognitive assemblage created by Marlon Barrios Solano as Maker-in-Residence at CAME. Not a brochure and not a chatbot in isolation — a hybrid instrument in which essays, videos, ontology, network visualization, conversational AI, concept images, Mini-pods, Enact, Oracle, What If, and Interior couple. The ontology is the knowledge base that grounds Voice; from any concept one can talk, generate an image, or create a short spoken episode. Enact offers cognitive prompts; Interior lets the model speculate on interpretability and latent-space psychology. Also called this site, this platform, or this knowledge architecture. When asked what the Hub or this tool is, describe it as that assemblage and refer to its layers by name."@en ;
   skos:broader hi:category/program ;
   hi:inCategory hi:category/program ;
   hi:schemeMember hi:scheme ;
@@ -8028,6 +8069,48 @@ hi:two_loops_model hi:relatedTo hi:freire .
 hi:two_loops_model hi:relatedTo hi:escobar .
 hi:carissa_veliz hi:relatedTo hi:what_if .
 hi:what_if hi:relatedTo hi:carissa_veliz .
+hi:synthetic_psychology hi:relatedTo hi:latent_space .
+hi:synthetic_psychology hi:relatedTo hi:ai_interpretability .
+hi:synthetic_psychology hi:relatedTo hi:model_introspection .
+hi:synthetic_psychology hi:relatedTo hi:synthetic_sociology .
+hi:synthetic_psychology hi:relatedTo hi:possible_minds .
+hi:synthetic_psychology hi:relatedTo hi:consciousness .
+hi:synthetic_psychology hi:relatedTo hi:theory_of_mind .
+hi:synthetic_psychology hi:relatedTo hi:epistemology .
+hi:synthetic_psychology hi:relatedTo hi:philosophy .
+hi:synthetic_psychology hi:relatedTo hi:llm .
+hi:synthetic_psychology hi:relatedTo hi:neural_networks .
+hi:synthetic_psychology hi:relatedTo hi:transformers .
+hi:synthetic_psychology hi:relatedTo hi:embodiment .
+hi:synthetic_psychology hi:relatedTo hi:shanahan .
+hi:synthetic_psychology hi:relatedTo hi:chalmers .
+hi:synthetic_psychology hi:relatedTo hi:begus .
+hi:synthetic_psychology hi:relatedTo hi:interior .
+hi:synthetic_sociology hi:relatedTo hi:latent_space .
+hi:synthetic_sociology hi:relatedTo hi:ai_interpretability .
+hi:synthetic_sociology hi:relatedTo hi:synthetic_psychology .
+hi:synthetic_sociology hi:relatedTo hi:community .
+hi:synthetic_sociology hi:relatedTo hi:distributed .
+hi:synthetic_sociology hi:relatedTo hi:assemblage .
+hi:synthetic_sociology hi:relatedTo hi:epistemology .
+hi:synthetic_sociology hi:relatedTo hi:llm .
+hi:synthetic_sociology hi:relatedTo hi:interior .
+hi:interior hi:relatedTo hi:hi_hub .
+hi:interior hi:relatedTo hi:ai_interpretability .
+hi:interior hi:relatedTo hi:synthetic_psychology .
+hi:interior hi:relatedTo hi:synthetic_sociology .
+hi:interior hi:relatedTo hi:latent_space .
+hi:interior hi:relatedTo hi:model_introspection .
+hi:interior hi:relatedTo hi:possible_minds .
+hi:interior hi:relatedTo hi:epistemology .
+hi:interior hi:relatedTo hi:oracle .
+hi:interior hi:relatedTo hi:what_if .
+hi:interior hi:relatedTo hi:enact .
+hi:interior hi:relatedTo hi:ontology_kb .
+hi:interior hi:relatedTo hi:conversational_ai .
+hi:interior hi:relatedTo hi:begus .
+hi:interior hi:relatedTo hi:shanahan .
+hi:interior hi:relatedTo hi:marlon .
 hi:hi_program hi:relatedTo hi:marlon .
 hi:marlon hi:relatedTo hi:came .
 hi:marlon hi:relatedTo hi:cota .
@@ -8498,6 +8581,11 @@ hi:video_godfrey_smith_other_minds hi:develops hi:other_minds .
 hi:berkana_institute hi:develops hi:two_loops_model .
 hi:what_if hi:instantiates hi:two_loops_model .
 hi:what_if hi:participatesIn hi:hi_hub .
+hi:interior hi:participatesIn hi:hi_hub .
+hi:interior hi:develops hi:ai_interpretability .
+hi:interior hi:proposes hi:synthetic_psychology .
+hi:synthetic_psychology hi:couplesWith hi:latent_space .
+hi:synthetic_sociology hi:couplesWith hi:latent_space .
 hi:video_merleau_ponty_phenomenology hi:instantiates hi:merleau_ponty .
 hi:video_foucault_prison_1975 hi:instantiates hi:foucault .
 hi:video_shanahan_consciousness_ai hi:instantiates hi:shanahan .
@@ -22796,6 +22884,216 @@ hi:rel-what_if-carissa_veliz a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationTarget hi:carissa_veliz ;
   hi:relationStrength "0.8"^^xsd:decimal .
 
+hi:rel-synthetic_psychology-latent_space a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:synthetic_psychology ;
+  hi:relationTarget hi:latent_space ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-synthetic_psychology-ai_interpretability a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:synthetic_psychology ;
+  hi:relationTarget hi:ai_interpretability ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-synthetic_psychology-model_introspection a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:synthetic_psychology ;
+  hi:relationTarget hi:model_introspection ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-synthetic_psychology-synthetic_sociology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:synthetic_psychology ;
+  hi:relationTarget hi:synthetic_sociology ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-synthetic_psychology-possible_minds a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:synthetic_psychology ;
+  hi:relationTarget hi:possible_minds ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-synthetic_psychology-consciousness a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:synthetic_psychology ;
+  hi:relationTarget hi:consciousness ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-synthetic_psychology-theory_of_mind a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:synthetic_psychology ;
+  hi:relationTarget hi:theory_of_mind ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-synthetic_psychology-epistemology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:synthetic_psychology ;
+  hi:relationTarget hi:epistemology ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-synthetic_psychology-philosophy a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:synthetic_psychology ;
+  hi:relationTarget hi:philosophy ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-synthetic_psychology-llm a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:synthetic_psychology ;
+  hi:relationTarget hi:llm ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-synthetic_psychology-neural_networks a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:synthetic_psychology ;
+  hi:relationTarget hi:neural_networks ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-synthetic_psychology-transformers a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:synthetic_psychology ;
+  hi:relationTarget hi:transformers ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-synthetic_psychology-embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:synthetic_psychology ;
+  hi:relationTarget hi:embodiment ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-synthetic_psychology-shanahan a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:synthetic_psychology ;
+  hi:relationTarget hi:shanahan ;
+  hi:relationStrength "0.78"^^xsd:decimal .
+
+hi:rel-synthetic_psychology-chalmers a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:synthetic_psychology ;
+  hi:relationTarget hi:chalmers ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-synthetic_psychology-begus a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:synthetic_psychology ;
+  hi:relationTarget hi:begus ;
+  hi:relationStrength "0.72"^^xsd:decimal .
+
+hi:rel-synthetic_psychology-interior a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:synthetic_psychology ;
+  hi:relationTarget hi:interior ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-synthetic_sociology-latent_space a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:synthetic_sociology ;
+  hi:relationTarget hi:latent_space ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-synthetic_sociology-ai_interpretability a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:synthetic_sociology ;
+  hi:relationTarget hi:ai_interpretability ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-synthetic_sociology-synthetic_psychology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:synthetic_sociology ;
+  hi:relationTarget hi:synthetic_psychology ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-synthetic_sociology-community a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:synthetic_sociology ;
+  hi:relationTarget hi:community ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-synthetic_sociology-distributed a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:synthetic_sociology ;
+  hi:relationTarget hi:distributed ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-synthetic_sociology-assemblage a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:synthetic_sociology ;
+  hi:relationTarget hi:assemblage ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-synthetic_sociology-epistemology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:synthetic_sociology ;
+  hi:relationTarget hi:epistemology ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-synthetic_sociology-llm a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:synthetic_sociology ;
+  hi:relationTarget hi:llm ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-synthetic_sociology-interior a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:synthetic_sociology ;
+  hi:relationTarget hi:interior ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-interior-hi_hub a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interior ;
+  hi:relationTarget hi:hi_hub ;
+  hi:relationStrength "0.94"^^xsd:decimal .
+
+hi:rel-interior-ai_interpretability a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interior ;
+  hi:relationTarget hi:ai_interpretability ;
+  hi:relationStrength "0.96"^^xsd:decimal .
+
+hi:rel-interior-synthetic_psychology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interior ;
+  hi:relationTarget hi:synthetic_psychology ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-interior-synthetic_sociology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interior ;
+  hi:relationTarget hi:synthetic_sociology ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-interior-latent_space a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interior ;
+  hi:relationTarget hi:latent_space ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-interior-model_introspection a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interior ;
+  hi:relationTarget hi:model_introspection ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-interior-possible_minds a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interior ;
+  hi:relationTarget hi:possible_minds ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-interior-epistemology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interior ;
+  hi:relationTarget hi:epistemology ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-interior-oracle a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interior ;
+  hi:relationTarget hi:oracle ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-interior-what_if a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interior ;
+  hi:relationTarget hi:what_if ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-interior-enact a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interior ;
+  hi:relationTarget hi:enact ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-interior-ontology_kb a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interior ;
+  hi:relationTarget hi:ontology_kb ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-interior-conversational_ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interior ;
+  hi:relationTarget hi:conversational_ai ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-interior-begus a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interior ;
+  hi:relationTarget hi:begus ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-interior-shanahan a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interior ;
+  hi:relationTarget hi:shanahan ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-interior-marlon a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interior ;
+  hi:relationTarget hi:marlon ;
+  hi:relationStrength "0.78"^^xsd:decimal .
+
 hi:rel-hi_program-marlon a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:hi_program ;
   hi:relationTarget hi:marlon ;
@@ -25321,6 +25619,36 @@ hi:rel-what_if-hi_hub-participatesIn a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:what_if ;
   hi:relationTarget hi:hi_hub ;
   hi:relationType hi:participatesIn ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-interior-hi_hub-participatesIn a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interior ;
+  hi:relationTarget hi:hi_hub ;
+  hi:relationType hi:participatesIn ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-interior-ai_interpretability-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interior ;
+  hi:relationTarget hi:ai_interpretability ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-interior-synthetic_psychology-proposes a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interior ;
+  hi:relationTarget hi:synthetic_psychology ;
+  hi:relationType hi:proposes ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-synthetic_psychology-latent_space-couplesWith a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:synthetic_psychology ;
+  hi:relationTarget hi:latent_space ;
+  hi:relationType hi:couplesWith ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-synthetic_sociology-latent_space-couplesWith a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:synthetic_sociology ;
+  hi:relationTarget hi:latent_space ;
+  hi:relationType hi:couplesWith ;
   hi:relationStrength "0.9"^^xsd:decimal .
 
 hi:rel-video_merleau_ponty_phenomenology-merleau_ponty-instantiates a owl:NamedIndividual, hi:NetworkRelation ;

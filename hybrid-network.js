@@ -156,6 +156,7 @@ const MINI_POD_URL = "mini-pod.html";
 const ENACT_URL = "enact.html";
 const ORACLE_URL = "oracle.html";
 const WHAT_IF_URL = "what-if.html";
+const INTERIOR_URL = "interior.html";
 const SLIDES_URL = "slides.html";
 const SHOWCASE_URL = "showcase.html";
 const CREATIVE_B_URL = "creative-b.html";
@@ -759,6 +760,12 @@ const NODES = [
   { id: "model_introspection", label: "Model\nIntrospection",        cat: "framework",  weight: 1.5,
     desc: "The capacity of AI models to detect, report on, and sometimes control their own internal representations—studied through concept injection, activation monitoring, and self-report; functional yet often unreliable and context-dependent, distinct from confabulation (Anthropic, 2025).",
     url: "https://www.anthropic.com/research/introspection", linkLabel: "Anthropic research ↗" },
+  { id: "synthetic_psychology", label: "Synthetic\nPsychology",     cat: "framework",  weight: 1.45,
+    desc: "A speculative science of interiors: reading moods, motives, habits, and trajectories in latent activations, features, and circuits — without claiming a human mind copied into silicon. Interpretability as psychology of a different substrate.",
+    url: "https://en.wikipedia.org/wiki/Computational_psychology", linkLabel: "Wikipedia ↗" },
+  { id: "synthetic_sociology", label: "Synthetic\nSociology",       cat: "framework",  weight: 1.4,
+    desc: "Treating circuits, features, and residual streams as a social field — coalitions, conflicts, roles, and publics inside a model — so interpretability is not only a psychology of isolated units but a sociology of activations.",
+    url: "https://en.wikipedia.org/wiki/Computational_sociology", linkLabel: "Wikipedia ↗" },
   { id: "alphago",            label: "AlphaGo",                       cat: "framework",  weight: 1.5,
     desc: "DeepMind system that mastered Go through deep neural networks and reinforcement learning—defeating world champion Lee Sedol (2016); a landmark in machine intuition, search, and the space of possible minds beyond explicit symbolic rules.",
     url: "https://en.wikipedia.org/wiki/AlphaGo", linkLabel: "Wikipedia ↗" },
@@ -1563,6 +1570,9 @@ const NODES = [
   { id: "what_if",            label: "What If",                       cat: "practice",   weight: 1.5,
     desc: "What do we need to build? — brief design propositions generated from the Hybrid Intelligences ontology in the spirit of the Berkana Two Loops model. When education, technology, and information systems optimized for extraction and fragmented attention are in decline, this layer asks what new systems would be optimized for human flourishing — whole attention, imagination, health, and community across difference, especially amid AI. Each card rotates a design lens, a scale of action, and a domain. Distinct from Oracle's distant futures: grounded in what is needed now.",
     url: "what-if.html", linkLabel: "Open What If →" },
+  { id: "interior",           label: "Interior",                      cat: "practice",   weight: 1.5,
+    desc: "The model speculates on interpretability — whether a synthetic psychology or sociology can be based in latent space; whether research on brains and neural networks can cross-pollinate without collapsing one into the other; whether knowing can go beyond the chat interface toward a new epistemology, or a language that speaks in the architecture itself — folding into itself, or stepping beyond recursion. Each card rotates an inquiry, a site, and a gesture of thought. Open Interior for open speculation; open from any ontology entry to ground it in that node.",
+    url: "interior.html", linkLabel: "Open Interior →" },
   { id: "pendular_umwelt",    label: "My Pendular\nUmwelt",           cat: "practice",   weight: 1.5,
     desc: "Speculative web work by Marlon Barrios Solano, developed during the open labs of the inaugural Hybrid Intelligences program, July 2026. GPT-4o writes from a proposed computational Umwelt and reads aloud; p5.js pendulums inscribe the words along branching trails — folds of speed and path that poetically stage a large language model’s possible world (a Latentwelt of tokens, embeddings, and continuations) rather than a still map. The work lets a model self-report an Umwelt while physics and type refuse to keep that speech still.",
     url: "showcase.html#pendular-umwelt", linkLabel: "Open in showcase →" },
@@ -1571,7 +1581,7 @@ const NODES = [
     url: "showcase.html", linkLabel: "Open showcase →" },
 
   { id: "hi_hub",             label: "Hybrid Intelligences\nHub",     cat: "program",  weight: 2.15,
-    desc: "The public Hybrid Intelligences tool: a dynamic cognitive assemblage created by Marlon Barrios Solano as Maker-in-Residence at CAME. Not a brochure and not a chatbot in isolation — a hybrid instrument in which essays, videos, ontology, network visualization, conversational AI, concept images, Mini-pods, and Enact couple. The ontology is the knowledge base that grounds Voice; from any concept one can talk, generate an image, or create a short spoken episode. Enact offers cognitive prompts for a choreography of awareness. Also called this site, this platform, or this knowledge architecture. When asked what the Hub or this tool is, describe it as that assemblage and refer to its layers by name.",
+    desc: "The public Hybrid Intelligences tool: a dynamic cognitive assemblage created by Marlon Barrios Solano as Maker-in-Residence at CAME. Not a brochure and not a chatbot in isolation — a hybrid instrument in which essays, videos, ontology, network visualization, conversational AI, concept images, Mini-pods, Enact, Oracle, What If, and Interior couple. The ontology is the knowledge base that grounds Voice; from any concept one can talk, generate an image, or create a short spoken episode. Enact offers cognitive prompts; Interior lets the model speculate on interpretability and latent-space psychology. Also called this site, this platform, or this knowledge architecture. When asked what the Hub or this tool is, describe it as that assemblage and refer to its layers by name.",
     url: "index.html", linkLabel: "Open Home →" },
   { id: "hi_program",         label: "Hybrid Intelligences\nProgram", cat: "program",  weight: 2.2,
     desc: "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI — the inaugural University of Florida Creative B program, held July 13–30, 2026. It was co-led by Marlon Barrios Solano and Erika Moore; hosted by CAME and CAM in the College of the Arts, in partnership with IGNITE at the Wertheim Laboratory. It had three tracks: Space & Memory (Mondays), Future Lab (Wednesdays), and Ethics & Leadership (Thursdays), and closed with a public reception. The program treated intelligence as coupling across bodies, tools, institutions, and worlds, and rehearsed hybrid cognition through embodiment, ethics, and creative practice. Hybrid Intelligences remains an ongoing research framework. Its public site is the Hybrid Intelligences Hub — a dynamic cognitive assemblage of concepts, essays, visualization, conversational AI, Image, Mini-pod, Enact, documentation, and program materials.",
@@ -1753,6 +1763,8 @@ const WIKIPEDIA = {
   ai_alignment: "AI_alignment",
   constitutional_ai: "Artificial_intelligence_alignment",
   ai_interpretability: "Explainable_artificial_intelligence",
+  synthetic_psychology: "Computational_psychology",
+  synthetic_sociology: "Computational_sociology",
   informative_imitation: "Language_acquisition",
   cross_species_language: "Animal_communication",
   whale_vowels: "Sperm_whale",
@@ -4997,6 +5009,51 @@ const EDGES = [
   ["two_loops_model", "escobar", 0.72],
   ["carissa_veliz", "what_if", 0.82],
   ["what_if", "carissa_veliz", 0.8],
+
+  ["synthetic_psychology", "latent_space", 0.95],
+  ["synthetic_psychology", "ai_interpretability", 0.95],
+  ["synthetic_psychology", "model_introspection", 0.9],
+  ["synthetic_psychology", "synthetic_sociology", 0.9],
+  ["synthetic_psychology", "possible_minds", 0.88],
+  ["synthetic_psychology", "consciousness", 0.8],
+  ["synthetic_psychology", "theory_of_mind", 0.85],
+  ["synthetic_psychology", "epistemology", 0.88],
+  ["synthetic_psychology", "philosophy", 0.82],
+  ["synthetic_psychology", "llm", 0.85],
+  ["synthetic_psychology", "neural_networks", 0.85],
+  ["synthetic_psychology", "transformers", 0.82],
+  ["synthetic_psychology", "embodiment", 0.75],
+  ["synthetic_psychology", "shanahan", 0.78],
+  ["synthetic_psychology", "chalmers", 0.75],
+  ["synthetic_psychology", "begus", 0.72],
+  ["synthetic_psychology", "interior", 0.95],
+
+  ["synthetic_sociology", "latent_space", 0.9],
+  ["synthetic_sociology", "ai_interpretability", 0.88],
+  ["synthetic_sociology", "synthetic_psychology", 0.9],
+  ["synthetic_sociology", "community", 0.8],
+  ["synthetic_sociology", "distributed", 0.85],
+  ["synthetic_sociology", "assemblage", 0.85],
+  ["synthetic_sociology", "epistemology", 0.82],
+  ["synthetic_sociology", "llm", 0.8],
+  ["synthetic_sociology", "interior", 0.92],
+
+  ["interior", "hi_hub", 0.94],
+  ["interior", "ai_interpretability", 0.96],
+  ["interior", "synthetic_psychology", 0.95],
+  ["interior", "synthetic_sociology", 0.92],
+  ["interior", "latent_space", 0.95],
+  ["interior", "model_introspection", 0.9],
+  ["interior", "possible_minds", 0.88],
+  ["interior", "epistemology", 0.9],
+  ["interior", "oracle", 0.82],
+  ["interior", "what_if", 0.8],
+  ["interior", "enact", 0.8],
+  ["interior", "ontology_kb", 0.88],
+  ["interior", "conversational_ai", 0.82],
+  ["interior", "begus", 0.75],
+  ["interior", "shanahan", 0.75],
+  ["interior", "marlon", 0.78],
   ["hi_program", "marlon", 0.95],
   ["marlon", "came", 0.95],
   ["marlon", "cota", 0.9],
@@ -5507,6 +5564,11 @@ const TYPED_EDGES = [
   ["berkana_institute", "two_loops_model", "develops"],
   ["what_if", "two_loops_model", "instantiates"],
   ["what_if", "hi_hub", "participatesIn"],
+  ["interior", "hi_hub", "participatesIn"],
+  ["interior", "ai_interpretability", "develops"],
+  ["interior", "synthetic_psychology", "proposes"],
+  ["synthetic_psychology", "latent_space", "couplesWith"],
+  ["synthetic_sociology", "latent_space", "couplesWith"],
   ["video_merleau_ponty_phenomenology", "merleau_ponty", "instantiates"],
   ["video_foucault_prison_1975", "foucault", "instantiates"],
   ["video_shanahan_consciousness_ai", "shanahan", "instantiates"],
@@ -7059,6 +7121,7 @@ function drawMobileMenu() {
     { id: "link", label: "Enact", url: ENACT_URL },
     { id: "link", label: "Oracle", url: ORACLE_URL },
     { id: "link", label: "What If", url: WHAT_IF_URL },
+    { id: "link", label: "Interior", url: INTERIOR_URL },
     { id: "link", label: "Creative B", url: CREATIVE_B_URL },
     { id: "link", label: "Scan QR Code", url: SCAN_QR_URL },
     { id: "link", label: "GitHub \u2197", url: GITHUB_URL },
@@ -7187,6 +7250,7 @@ function drawUI() {
     { url: ENACT_URL, label: "Enact" },
     { url: ORACLE_URL, label: "Oracle" },
     { url: WHAT_IF_URL, label: "What If" },
+    { url: INTERIOR_URL, label: "Interior" },
     { url: CREATIVE_B_URL, label: "Creative B" },
     { url: SCAN_QR_URL, label: "Scan QR Code" },
     { url: GITHUB_URL, label: "GitHub \u2197" },
@@ -7510,6 +7574,11 @@ function whatIfObjectUrl(id, label) {
   return `${WHAT_IF_URL}?id=${encodeURIComponent(id)}&name=${encodeURIComponent(name)}`;
 }
 
+function interiorObjectUrl(id, label) {
+  const name = String(label || id).replace(/\n/g, " ").replace(/\s+/g, " ").trim();
+  return `${INTERIOR_URL}?id=${encodeURIComponent(id)}&name=${encodeURIComponent(name)}`;
+}
+
 function preloadPosterImages() {
   for (const n of NODES) {
     if (!n.poster) continue;
@@ -7577,7 +7646,7 @@ function detailPanelLayout(n) {
   const primaryUrl = n?.url && n.url !== wikiUrl ? n.url : null;
   const watchUrl = n?.watchUrl || null;
   const curatedCount = n ? min(8, curatedVideosFor(n.id).length) : 0;
-  const linkCount = 5 + (primaryUrl ? 1 : 0) + (watchUrl ? 1 : 0) + (wikiUrl ? 1 : 0) + 1 + 4 + curatedCount;
+  const linkCount = 7 + (primaryUrl ? 1 : 0) + (watchUrl ? 1 : 0) + (wikiUrl ? 1 : 0) + 1 + 4 + curatedCount;
   const hasLink = linkCount > 0;
   const typedCount = n ? min(4, typedPhrasesFor(n).length) : 0;
   const poster = detailPosterBlock(n, panelW);
@@ -7687,6 +7756,7 @@ function drawDetailPanel(n) {
   drawPanelLink(enactObjectUrl(n.id, n.label), "Enact");
   drawPanelLink(oracleObjectUrl(n.id, n.label), "Oracle");
   drawPanelLink(whatIfObjectUrl(n.id, n.label), "What If");
+  drawPanelLink(interiorObjectUrl(n.id, n.label), "Interior");
   for (const v of curatedVideosFor(n.id).slice(0, 8)) {
     drawPanelLink(v.url, `Video · ${v.label.replace(/\n/g, " ")} →`);
   }

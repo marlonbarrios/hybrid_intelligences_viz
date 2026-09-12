@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hybrid Intelligences — What If</title>
-  <meta name="description" content="What do we need to build? Human-centered design propositions from the Hybrid Intelligences ontology — grounded in the Berkana Two Loops model and what is needed now.">
+  <title>Hybrid Intelligences — Interior</title>
+  <meta name="description" content="The model speculates on interpretability — synthetic psychology and sociology in latent space, brain–network research, and knowing beyond the interface.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
   <style>
@@ -341,7 +341,7 @@
       <a class="site-logo" href="index.html" aria-label="Hybrid Intelligences home">
         <img src="logo.png" alt="Hybrid Intelligences">
       </a>
-      <p class="eyebrow">What If</p>
+      <p class="eyebrow">Interior</p>
     </div>
     <div class="header-links">
       <a href="index.html">Home</a>
@@ -352,38 +352,39 @@
       <a href="views.html">Views</a>
       <a href="voice.html">Voice</a>
       <a href="enact.html">Enact</a>
-      <a href="interior.html">Interior</a>
       <a href="oracle.html">Oracle</a>
+      <a href="what-if.html">What If</a>
+      <a href="interior.html">Interior</a>
       <a href="mini-pod.html">Mini-pod</a>
       <button type="button" class="theme-btn" id="themeBtn" aria-label="Toggle theme">Theme</button>
     </div>
   </header>
 
-  <section class="focus-panel" id="introPanel" aria-label="What If">
-    <p class="focus-kicker">What do we need to build?</p>
-    <h2 class="focus-title">Human-centered systems in a Two Loops moment</h2>
-    <p class="focus-def">Education, technology, and information systems were designed for extraction, fragmented attention, and monetization. Many are in decline — they exhaust us. In this transition, when new systems are not yet visible, each card names something worth building: optimized for us to be as human as possible — whole attention, imagination, health, and community across difference, especially amid AI.</p>
-    <p class="focus-note">Press Space. Each proposition rotates a design lens, a scale of action, and a domain. Open from any ontology entry to ground the build in that concept.</p>
+  <section class="focus-panel" id="introPanel" aria-label="Interior">
+    <p class="focus-kicker">The model looks inward</p>
+    <h2 class="focus-title">Interpretability as a speculative science of interiors</h2>
+    <p class="focus-def">Is a synthetic psychology or sociology possible if we locate it in latent space — in embeddings, features, and circuits rather than in chat? Can research on how brains work and how neural networks work cross-pollinate without collapsing one into the other? Each card is the model speculating past the interface: toward a new epistemology, or a language that speaks in the architecture itself — folding into itself, or stepping beyond recursion.</p>
+    <p class="focus-note">Press Space. Each speculation rotates an inquiry, a site inside the model or the brain, and a gesture of thought. Open from any ontology entry to ground the speculation in that concept.</p>
   </section>
 
   <section class="focus-panel" id="focusPanel" hidden aria-label="Ontology source">
     <p class="focus-kicker">Ontology source</p>
     <h2 class="focus-title" id="focusTitle"></h2>
     <p class="focus-def" id="focusDef"></p>
-    <p class="focus-note">Each card rotates a design lens, a scale of action, and a domain — education, technology, care, community — grounded in the Two Loops moment: extractive systems in decline, human-centered alternatives not yet visible. Generated from this entry when present.</p>
+    <p class="focus-note">Each speculation rotates an inquiry — synthetic psychology, sociology, brain–network comparison, interpretability, epistemology — a site (latent space, circuits, attention, living brains), and a gesture: analogy, fold, method, or a step beyond recursion. Generated from this entry when present.</p>
   </section>
 
   <div id="exportSheet" class="export-sheet" hidden aria-hidden="true">
     <img src="logo.png" alt="">
     <p class="export-brand">Hybrid Intelligences</p>
-    <p class="export-layer" id="exportLayer">What If</p>
+    <p class="export-layer" id="exportLayer">Interior</p>
     <p class="export-source" id="exportSource"></p>
     <p class="export-body" id="exportBody"></p>
     <p class="export-meta" id="exportMeta"></p>
     <p class="export-stamp" id="exportStamp"></p>
   </div>
 
-  <main class="stage" id="stage" tabindex="0" role="button" aria-label="Generate another What If proposition">
+  <main class="stage" id="stage" tabindex="0" role="button" aria-label="Generate another Interior speculation">
     <p class="card-source" id="cardSource" hidden></p>
     <p class="card-meta" id="cardMeta" hidden></p>
     <p id="card" class="is-out" aria-live="polite"></p>
@@ -396,13 +397,13 @@
       <button type="button" class="save-btn" id="pngBtn" hidden disabled>Image ↓</button>
       <button type="button" class="sound-btn" id="soundBtn" aria-pressed="true" aria-label="Turn sound off">Sound on</button>
     </div>
-    <p class="hint" id="hint">Press Space for your first What If proposition.</p>
+    <p class="hint" id="hint">Press Space for your first Interior speculation.</p>
   </div>
 
   <script src="scripts/hi-card-export.js"></script>
   <script src="realtime-config.js"></script>
   <script>
-    const PAGE_LAYER = "What If";
+    const PAGE_LAYER = "Interior";
     const LANGUAGES = [
       { id: "en", name: "English", native: "English" },
       { id: "es", name: "Spanish", native: "Español" },
@@ -435,14 +436,14 @@
 
     const FADE_MS = 700;
     const recent = [];
-    const recentLenses = [];
-    const recentScales = [];
-    const recentDomains = [];
+    const recentInquiries = [];
+    const recentSites = [];
+    const recentGestures = [];
     let busy = false;
     let gestured = false;
     let hasGenerated = false;
     let heardCurrent = false;
-    let soundOn = localStorage.getItem("hi-what-if-sound") !== "off";
+    let soundOn = localStorage.getItem("hi-interior-sound") !== "off";
     let speakGen = 0;
     let objectUrl = "";
     let pc = null;
@@ -506,7 +507,7 @@
         if (focusConceptDef) source += "\n" + focusConceptDef;
         exportSource.textContent = source;
       } else {
-        exportSource.textContent = "Open proposition";
+        exportSource.textContent = "Open speculation";
       }
       syncExportButtons();
     }
@@ -573,14 +574,14 @@
       cardSource.hidden = false;
       cardSource.textContent = focusConceptId
         ? "Generated from ontology · " + focusConceptName
-        : "Open What If proposition";
+        : "Open Interior speculation";
     }
 
     function awaitingMessage() {
       if (focusConceptId) {
-        return "Press Space for a What If proposition from this ontology entry.";
+        return "Press Space for an Interior speculation from this ontology entry.";
       }
-      return "Press Space for your first open-ended What If proposition.";
+      return "Press Space for your first open-ended Interior speculation.";
     }
 
     function showAwaitingCard() {
@@ -589,14 +590,14 @@
       card.textContent = awaitingMessage();
     }
 
-    function updateSpecMeta(lens, scale, domain) {
-      if (!lens && !scale && !domain) {
+    function updateSpecMeta(inquiry, site, gesture) {
+      if (!inquiry && !site && !gesture) {
         cardMeta.hidden = true;
         cardMeta.textContent = "";
         return;
       }
       cardMeta.hidden = false;
-      cardMeta.textContent = [lens, scale, domain].filter(Boolean).join(" · ");
+      cardMeta.textContent = [inquiry, site, gesture].filter(Boolean).join(" · ");
     }
 
     function initFocusConcept() {
@@ -604,18 +605,18 @@
       if (!id) return;
       focusConceptId = id;
       focusConceptName = name || id.replace(/_/g, " ");
-        document.title = "What If · " + focusConceptName + " — Hybrid Intelligences";
+        document.title = "Interior · " + focusConceptName + " — Hybrid Intelligences";
       showFocusPanel(focusConceptName, "", "");
     }
 
-    function whatIfRequestBody() {
+    function interiorRequestBody() {
       const body = {
         recent: recent.slice(-8),
         language: currentLang.name,
         languageNative: currentLang.native,
-        recentLenses: recentLenses.slice(-5),
-        recentScales: recentScales.slice(-5),
-        recentDomains: recentDomains.slice(-5),
+        recentInquiries: recentInquiries.slice(-5),
+        recentSites: recentSites.slice(-5),
+        recentGestures: recentGestures.slice(-5),
       };
       if (!focusConceptId) return body;
       body.conceptId = focusConceptId;
@@ -665,7 +666,7 @@
           })
           .filter(Boolean)
           .slice(0, 8);
-        document.title = "What If · " + label + " — Hybrid Intelligences";
+        document.title = "Interior · " + label + " — Hybrid Intelligences";
         showFocusPanel(label, definition, category);
       } catch (_) {}
     }
@@ -701,7 +702,7 @@
 
     function applyLanguage(lang) {
       currentLang = lang;
-      localStorage.setItem("hi-what-if-lang", lang.id);
+      localStorage.setItem("hi-interior-lang", lang.id);
       document.documentElement.lang = lang.id === "zh-Hant" ? "zh-Hant" : lang.id;
       card.setAttribute("dir", lang.rtl ? "rtl" : "ltr");
       langSelect.value = lang.id;
@@ -712,7 +713,7 @@
         const label = lang.id === "en" ? lang.native : lang.native + " · " + lang.name;
         return "<option value=\"" + lang.id + "\">" + label + "</option>";
       }).join("");
-      applyLanguage(findLanguage(localStorage.getItem("hi-what-if-lang") || browserLanguageId()));
+      applyLanguage(findLanguage(localStorage.getItem("hi-interior-lang") || browserLanguageId()));
     }
 
     function syncSoundButton() {
@@ -724,16 +725,16 @@
     function idleHint() {
       if (!hasGenerated) {
         hint.textContent = focusConceptId
-          ? "Press Space for a What If proposition from " + focusConceptName + "."
-          : "Press Space for your first proposition.";
+          ? "Press Space for an Interior speculation from " + focusConceptName + "."
+          : "Press Space for your first speculation.";
         return;
       }
       if (!soundOn) {
-        hint.textContent = "Press Space for another proposition.";
+        hint.textContent = "Press Space for another speculation.";
         return;
       }
       hint.textContent = heardCurrent
-        ? "Press Space for another proposition."
+        ? "Press Space for another speculation."
         : "Press Space to hear it. Press again for another.";
     }
 
@@ -751,8 +752,8 @@
       return origin + path;
     }
 
-    function whatIfUrl() {
-      let url = apiUrl("/api/what-if");
+    function interiorUrl() {
+      let url = apiUrl("/api/interior");
       if (url && focusConceptId) {
         url += (url.includes("?") ? "&" : "?") + "id=" + encodeURIComponent(focusConceptId);
       }
@@ -766,7 +767,7 @@
     function tokenUrl() {
       const base = apiUrl("/api/token");
       if (!base) return "";
-      return base + (base.includes("?") ? "&" : "?") + "mode=what_if";
+      return base + (base.includes("?") ? "&" : "?") + "mode=interior";
     }
 
     function fadeMs() {
@@ -920,7 +921,7 @@
       dc.send(JSON.stringify({
         type: "response.create",
         response: {
-          instructions: "Speak this What If proposition exactly in " + currentLang.name + ", and nothing else:\n\n" + text,
+          instructions: "Speak this Interior speculation exactly in " + currentLang.name + ", and nothing else:\n\n" + text,
         },
       }));
       return true;
@@ -962,7 +963,7 @@
     }
 
     function finishSpec(raw) {
-      return showPartial(raw).replace(/["”]+$/g, "").replace(/^\s*(proposition|what if|build)\s*\d*[:.\-]\s*/i, "").trim();
+      return showPartial(raw).replace(/["”]+$/g, "").replace(/^\s*(speculation|interior|reading)\s*\d*[:.\-]\s*/i, "").trim();
     }
 
     async function typeOntoCard(text) {
@@ -986,7 +987,7 @@
     }
 
     async function streamOntoCard() {
-      const url = whatIfUrl();
+      const url = interiorUrl();
       if (!url) return { text: "", error: "No API URL." };
       const res = await fetch(url, {
         method: "POST",
@@ -994,10 +995,10 @@
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify(whatIfRequestBody()),
+        body: JSON.stringify(interiorRequestBody()),
       });
       if (!res.ok) {
-        let message = "Could not generate a proposition.";
+        let message = "Could not generate a speculation.";
         try {
           const data = await res.json();
           message = data.error || message;
@@ -1005,20 +1006,20 @@
         return { text: "", error: message };
       }
       const data = await res.json();
-      if (!data.prompt) return { text: "", error: data.error || "The proposition was empty." };
-      if (data.lensId) {
-        recentLenses.push(data.lensId);
-        if (recentLenses.length > 8) recentLenses.shift();
+      if (!data.prompt) return { text: "", error: data.error || "The speculation was empty." };
+      if (data.inquiryId) {
+        recentInquiries.push(data.inquiryId);
+        if (recentInquiries.length > 8) recentInquiries.shift();
       }
-      if (data.scaleId) {
-        recentScales.push(data.scaleId);
-        if (recentScales.length > 8) recentScales.shift();
+      if (data.siteId) {
+        recentSites.push(data.siteId);
+        if (recentSites.length > 8) recentSites.shift();
       }
-      if (data.domainId) {
-        recentDomains.push(data.domainId);
-        if (recentDomains.length > 8) recentDomains.shift();
+      if (data.gestureId) {
+        recentGestures.push(data.gestureId);
+        if (recentGestures.length > 8) recentGestures.shift();
       }
-      updateSpecMeta(data.lens, data.scale, data.domain);
+      updateSpecMeta(data.inquiry, data.site, data.gesture);
       const text = await typeOntoCard(data.prompt);
       if (data.label) focusConceptName = data.label;
       updateCardSource();
@@ -1031,8 +1032,8 @@
       stopSpeak();
       heardCurrent = false;
       hint.textContent = focusConceptId
-        ? "Building from " + focusConceptName + "…"
-        : "Building…";
+        ? "Speculating from " + focusConceptName + "…"
+        : "Speculating…";
       if (hasGenerated) {
         await fadeOut();
         card.textContent = "";
@@ -1109,7 +1110,7 @@
     soundBtn.addEventListener("click", (e) => {
       e.stopPropagation();
       soundOn = !soundOn;
-      localStorage.setItem("hi-what-if-sound", soundOn ? "on" : "off");
+      localStorage.setItem("hi-interior-sound", soundOn ? "on" : "off");
       syncSoundButton();
       if (!soundOn) {
         stopSpeak();
