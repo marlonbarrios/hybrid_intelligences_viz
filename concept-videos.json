@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-12T00:54:25.482Z",
+  "generated": "2026-09-14T18:19:15.478Z",
   "byConcept": {
     "hayles": [
       {
@@ -1912,6 +1912,13 @@
     ],
     "butler": [
       {
+        "id": "adrienne-maree-brown-emergent-strategy",
+        "title": "Emergent Strategies for Environmental Justice | adrienne maree brown",
+        "speaker": "adrienne maree brown",
+        "url": "video-adrienne-maree-brown-emergent-strategy.html",
+        "poster": "screenshots/adrienne-maree-brown-emergent-strategy.jpg"
+      },
+      {
         "id": "butler-parable-climate",
         "title": "Octavia Butler — Parable and Climate Chaos",
         "speaker": "Octavia Butler",
@@ -2387,6 +2394,69 @@
         "speaker": "Peter Godfrey-Smith",
         "url": "video-godfrey-smith-other-minds.html",
         "poster": "screenshots/godfrey-smith-other-minds.jpg"
+      }
+    ],
+    "ruha_benjamin": [
+      {
+        "id": "ruha-benjamin-new-jim-code",
+        "title": "Policing Without the Police: Race, Technology and the New Jim Code | Ruha Benjamin",
+        "speaker": "Ruha Benjamin",
+        "url": "video-ruha-benjamin-new-jim-code.html",
+        "poster": "screenshots/ruha-benjamin-new-jim-code.jpg"
+      }
+    ],
+    "new_jim_code": [
+      {
+        "id": "ruha-benjamin-new-jim-code",
+        "title": "Policing Without the Police: Race, Technology and the New Jim Code | Ruha Benjamin",
+        "speaker": "Ruha Benjamin",
+        "url": "video-ruha-benjamin-new-jim-code.html",
+        "poster": "screenshots/ruha-benjamin-new-jim-code.jpg"
+      }
+    ],
+    "ai_impact_ethics": [
+      {
+        "id": "ruha-benjamin-new-jim-code",
+        "title": "Policing Without the Police: Race, Technology and the New Jim Code | Ruha Benjamin",
+        "speaker": "Ruha Benjamin",
+        "url": "video-ruha-benjamin-new-jim-code.html",
+        "poster": "screenshots/ruha-benjamin-new-jim-code.jpg"
+      }
+    ],
+    "ethical_imagination": [
+      {
+        "id": "ruha-benjamin-new-jim-code",
+        "title": "Policing Without the Police: Race, Technology and the New Jim Code | Ruha Benjamin",
+        "speaker": "Ruha Benjamin",
+        "url": "video-ruha-benjamin-new-jim-code.html",
+        "poster": "screenshots/ruha-benjamin-new-jim-code.jpg"
+      }
+    ],
+    "adrienne_maree_brown": [
+      {
+        "id": "adrienne-maree-brown-emergent-strategy",
+        "title": "Emergent Strategies for Environmental Justice | adrienne maree brown",
+        "speaker": "adrienne maree brown",
+        "url": "video-adrienne-maree-brown-emergent-strategy.html",
+        "poster": "screenshots/adrienne-maree-brown-emergent-strategy.jpg"
+      }
+    ],
+    "emergent_strategy": [
+      {
+        "id": "adrienne-maree-brown-emergent-strategy",
+        "title": "Emergent Strategies for Environmental Justice | adrienne maree brown",
+        "speaker": "adrienne maree brown",
+        "url": "video-adrienne-maree-brown-emergent-strategy.html",
+        "poster": "screenshots/adrienne-maree-brown-emergent-strategy.jpg"
+      }
+    ],
+    "social_change": [
+      {
+        "id": "adrienne-maree-brown-emergent-strategy",
+        "title": "Emergent Strategies for Environmental Justice | adrienne maree brown",
+        "speaker": "adrienne maree brown",
+        "url": "video-adrienne-maree-brown-emergent-strategy.html",
+        "poster": "screenshots/adrienne-maree-brown-emergent-strategy.jpg"
       }
     ]
   }

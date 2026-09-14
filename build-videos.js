@@ -667,6 +667,18 @@ const VIDEO_FALLBACK_CONCEPTS = {
     { conceptId: "cephalopod_cognition", label: "Cephalopod Cognition" },
     { conceptId: "consciousness", label: "Consciousness" },
   ],
+  "ruha-benjamin-new-jim-code": [
+    { conceptId: "ruha_benjamin", label: "Ruha Benjamin" },
+    { conceptId: "new_jim_code", label: "New Jim Code" },
+    { conceptId: "ai_impact_ethics", label: "Ethics (AI Impact)" },
+    { conceptId: "ethical_imagination", label: "Ethical Imagination" },
+  ],
+  "adrienne-maree-brown-emergent-strategy": [
+    { conceptId: "adrienne_maree_brown", label: "adrienne maree brown" },
+    { conceptId: "emergent_strategy", label: "Emergent Strategy" },
+    { conceptId: "butler", label: "Octavia Butler" },
+    { conceptId: "social_change", label: "Social Change" },
+  ],
 };
 
 function videoConcepts(video, transcript) {
@@ -764,6 +776,8 @@ const VIDEO_SHORT_LABELS = {
   "carissa-veliz-prophecy-ted": "Véliz ·\nProphecy",
   "begus-mystery-language": "Beguš ·\nLanguage",
   "godfrey-smith-other-minds": "Godfrey-Smith ·\nOther Minds",
+  "ruha-benjamin-new-jim-code": "Benjamin ·\nNew Jim Code",
+  "adrienne-maree-brown-emergent-strategy": "amb ·\nEmergent Strategy",
 };
 
 function abbreviateTopic(topic, maxLen = 14) {

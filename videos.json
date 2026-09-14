@@ -824,6 +824,28 @@
       "caption": "Other Minds at Talks at Google: cephalopod intelligence as a second evolutionary origin of consciousness, and what octopus encounter does to the philosophy of mind.",
       "credit": "Talks at Google",
       "transcript": "transcripts/godfrey-smith-other-minds.json"
+    },
+    {
+      "id": "ruha-benjamin-new-jim-code",
+      "title": "Policing Without the Police: Race, Technology and the New Jim Code | Ruha Benjamin",
+      "youtube": "https://www.youtube.com/watch?v=tf0nEQTLw04",
+      "poster": "screenshots/ruha-benjamin-new-jim-code.jpg",
+      "date": "2020-07-08",
+      "speaker": "Ruha Benjamin",
+      "caption": "The New Jim Code: how apps and algorithms can hide, speed, and deepen racial hierarchy — and what abolitionist tools for technology would require.",
+      "credit": "Haymarket Books",
+      "transcript": "transcripts/ruha-benjamin-new-jim-code.json"
+    },
+    {
+      "id": "adrienne-maree-brown-emergent-strategy",
+      "title": "Emergent Strategies for Environmental Justice | adrienne maree brown",
+      "youtube": "https://www.youtube.com/watch?v=PUQWo33geYk",
+      "poster": "screenshots/adrienne-maree-brown-emergent-strategy.jpg",
+      "date": "2019-06-10",
+      "speaker": "adrienne maree brown",
+      "caption": "Emergent strategy as a life-code for justice work: fractals, adaptation, interdependence, and learning from the living world.",
+      "credit": "United Church of Christ · Creation Justice",
+      "transcript": "transcripts/adrienne-maree-brown-emergent-strategy.json"
     }
   ]
 }

@@ -11,10 +11,10 @@
   rdfs:label "Hybrid Intelligences Ontology" ;
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   owl:versionInfo "1.0.0" ;
-  dc:date "2026-09-12"^^xsd:date ;
-  dc:modified "2026-09-12T01:15:18.345Z"^^xsd:dateTime ;
-  hi:nodeCount "344"^^xsd:integer ;
-  hi:edgeCount "3202"^^xsd:integer .
+  dc:date "2026-09-14"^^xsd:date ;
+  dc:modified "2026-09-14T18:19:15.594Z"^^xsd:dateTime ;
+  hi:nodeCount "351"^^xsd:integer ;
+  hi:edgeCount "3281"^^xsd:integer .
 
 hi:scheme a skos:ConceptScheme ;
   skos:prefLabel "Hybrid Intelligences Concept Scheme" ;
@@ -406,6 +406,30 @@ hi:two_loops_model a skos:Concept, hi:NetworkNode ;
   schema:url <https://www.berkana.org/articles/two-loops/>
  .
 
+hi:emergent_strategy a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Emergent Strategy" ;
+  skos:definition "adrienne maree brown: get in right relationship with change. Fractals, adaptation, interdependence, and biomimicry as a life-code for organizing and living—how complex patterns arise from relatively simple interactions. Taught by Octavia Butler, fungi, dandelions, and movements; kin to Two Loops hospice-and-emergence work." ;
+  skos:broader hi:category/framework ;
+  skos:inScheme hi:scheme ;
+  hi:category "framework" ;
+  hi:weight "1.45"^^xsd:decimal
+ ;
+  schema:url <https://adriennemareebrown.net/book/emergent-strategy/> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Emergence>
+ .
+
+hi:pleasure_activism a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Pleasure Activism" ;
+  skos:definition "adrienne maree brown: the politics of feeling good as a justice practice—pleasure, somatics, and desire as sites of liberation rather than as luxury after the work is done. Healing and aliveness as method, not reward." ;
+  skos:broader hi:category/framework ;
+  skos:inScheme hi:scheme ;
+  hi:category "framework" ;
+  hi:weight "1.4"^^xsd:decimal
+ ;
+  schema:url <https://adriennemareebrown.net/> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Adrienne_Maree_Brown>
+ .
+
 hi:possible_minds a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Space of Possible Minds" ;
   skos:definition "Intelligence as a vast landscape of cognitive organizations—not a ladder with humans at the top." ;
@@ -783,6 +807,18 @@ hi:three_es_ai a skos:Concept, hi:NetworkNode ;
  ;
   schema:url <essay.html> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Kate_Crawford>
+ .
+
+hi:new_jim_code a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "New Jim Code" ;
+  skos:definition "Ruha Benjamin: how seemingly neutral algorithms, apps, and infrastructures encode, deepen, and hide racial hierarchy—the New Jim Crow in a technological key. Race After Technology argues for abolitionist tools: not only critique of biased systems but imagination of just alternatives." ;
+  skos:broader hi:category/framework ;
+  skos:inScheme hi:scheme ;
+  hi:category "framework" ;
+  hi:weight "1.45"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Ruha_Benjamin> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Algorithmic_bias>
  .
 
 hi:ai_impact_environment a skos:Concept, hi:NetworkNode ;
@@ -1580,6 +1616,30 @@ hi:butler a skos:Concept, hi:NetworkNode ;
  ;
   schema:url <https://en.wikipedia.org/wiki/Octavia_E._Butler> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Octavia_E._Butler>
+ .
+
+hi:ruha_benjamin a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Ruha Benjamin" ;
+  skos:definition "Sociologist and professor of African American Studies at Princeton; founding director of the Ida B. Wells JUST Data Lab. Race After Technology, Viral Justice, Imagination: A Manifesto. Innovation and inequity, race and technology, the New Jim Code, and imagination as a practice of justice rather than a luxury." ;
+  skos:broader hi:category/author ;
+  skos:inScheme hi:scheme ;
+  hi:category "author" ;
+  hi:weight "1.3"^^xsd:decimal
+ ;
+  schema:url <https://www.ruhabenjamin.com/> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Ruha_Benjamin>
+ .
+
+hi:adrienne_maree_brown a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "adrienne maree brown" ;
+  skos:definition "Writer, facilitator, and somatics practitioner—Emergent Strategy, Pleasure Activism, Octavia’s Brood, Loving Corrections. Change as fractal, adaptive, and interdependent; pleasure as a justice practice; Octavia Butler as teacher. Movement work that treats organizing as ecology." ;
+  skos:broader hi:category/author ;
+  skos:inScheme hi:scheme ;
+  hi:category "author" ;
+  hi:weight "1.3"^^xsd:decimal
+ ;
+  schema:url <https://adriennemareebrown.net/> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Adrienne_Maree_Brown>
  .
 
 hi:sousa_santos a skos:Concept, hi:NetworkNode ;
@@ -3482,6 +3542,32 @@ hi:video_godfrey_smith_other_minds a skos:Concept, hi:NetworkNode ;
   schema:sameAs <https://www.youtube.com/watch?v=iENXfnOobzw>
  .
 
+hi:video_ruha_benjamin_new_jim_code a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Benjamin · New Jim Code" ;
+  skos:definition "Ruha Benjamin — Policing Without the Police: Race, Technology and the New Jim Code. Discriminatory design, abolitionist tools, and why seemingly neutral tech can hide, speed, and deepen racial hierarchy. Video on YouTube; ingest matches speech to ontology concepts." ;
+  skos:broader hi:category/video ;
+  skos:inScheme hi:scheme ;
+  hi:category "video" ;
+  hi:weight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-ruha-benjamin-new-jim-code.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/ruha-benjamin-new-jim-code.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=tf0nEQTLw04>
+ .
+
+hi:video_adrienne_maree_brown_emergent_strategy a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "amb · Emergent Strategy" ;
+  skos:definition "adrienne maree brown — Emergent Strategies for Environmental Justice. Fractals, adaptation, interdependence, and getting in right relationship with change. Video on YouTube; ingest matches speech to ontology concepts." ;
+  skos:broader hi:category/video ;
+  skos:inScheme hi:scheme ;
+  hi:category "video" ;
+  hi:weight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-adrienne-maree-brown-emergent-strategy.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/adrienne-maree-brown-emergent-strategy.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=PUQWo33geYk>
+ .
+
 hi:essay_1 a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Essay 1" ;
   skos:definition "Hybrid Intelligences, Cognitive Assemblages, and Complex Embodiment in the Era of AI — Essay 1 by Marlon Barrios Solano (July 10, 2026). Traces a lineage from Unstablelandscape (early 2000s real-time dance–technology) through Essay 4 (2005) to generative AI. Develops intelligence as coupling, embodiment as nested ecology, and cognition as distributed across assemblages. Performative architecture and affordances; Brooks's embodied robotics and Hayles's cognitive nonconscious; Paxton, Forsythe's choreographic object, and Synchronous Objects; juggling as reflex training. First-person argument that hybrid intelligence extends designed cognitive systems into language models and cognitive architectures." ;
@@ -3616,7 +3702,7 @@ hi:lobby_showcase a skos:Concept, hi:NetworkNode ;
 
 hi:hi_hub a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Hybrid Intelligences Hub" ;
-  skos:definition "The public Hybrid Intelligences tool: a dynamic cognitive assemblage created by Marlon Barrios Solano as Maker-in-Residence at CAME. Not a brochure and not a chatbot in isolation — a hybrid instrument in which essays, videos, ontology, network visualization, conversational AI, concept images, Mini-pods, Enact, Oracle, What If, and Interior couple. The ontology is the knowledge base that grounds Voice; from any concept one can talk, generate an image, or create a short spoken episode. Enact offers cognitive prompts; Interior lets the model speculate on interpretability and latent-space psychology. Also called this site, this platform, or this knowledge architecture. When asked what the Hub or this tool is, describe it as that assemblage and refer to its layers by name." ;
+  skos:definition "The public Hybrid Intelligences tool: a dynamic cognitive assemblage created by Marlon Barrios Solano as Maker-in-Residence at CAME. Not a brochure and not a chatbot in isolation — a hybrid instrument in which essays, videos, ontology, network visualization, conversational AI, concept images, Mini-pods, Enact, Oracle, What If, and Interior couple. The ontology is the knowledge base that grounds Voice; from any concept one can talk, generate an image, or create a short spoken episode. Enact offers cognitive prompts; Interior lets the model speculate on interpretability, Umwelt, and interspecies reading. Also called this site, this platform, or this knowledge architecture. When asked what the Hub or this tool is, describe it as that assemblage and refer to its layers by name." ;
   skos:broader hi:category/program ;
   skos:inScheme hi:scheme ;
   hi:category "program" ;
@@ -20081,6 +20167,114 @@ hi:rel-video_godfrey_smith_other_minds-hi_videos a hi:Relation ;
   hi:strength "0.9"^^xsd:decimal ;
   skos:relatedMatch hi:hi_videos .
 
+hi:rel-video_ruha_benjamin_new_jim_code-ruha_benjamin a hi:Relation ;
+  hi:source hi:video_ruha_benjamin_new_jim_code ;
+  hi:target hi:ruha_benjamin ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:ruha_benjamin .
+
+hi:rel-video_ruha_benjamin_new_jim_code-new_jim_code a hi:Relation ;
+  hi:source hi:video_ruha_benjamin_new_jim_code ;
+  hi:target hi:new_jim_code ;
+  hi:strength "0.96"^^xsd:decimal ;
+  skos:relatedMatch hi:new_jim_code .
+
+hi:rel-video_ruha_benjamin_new_jim_code-ethical_imagination a hi:Relation ;
+  hi:source hi:video_ruha_benjamin_new_jim_code ;
+  hi:target hi:ethical_imagination ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:ethical_imagination .
+
+hi:rel-video_ruha_benjamin_new_jim_code-ai_impact_ethics a hi:Relation ;
+  hi:source hi:video_ruha_benjamin_new_jim_code ;
+  hi:target hi:ai_impact_ethics ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_impact_ethics .
+
+hi:rel-video_ruha_benjamin_new_jim_code-perception_politics a hi:Relation ;
+  hi:source hi:video_ruha_benjamin_new_jim_code ;
+  hi:target hi:perception_politics ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:perception_politics .
+
+hi:rel-video_ruha_benjamin_new_jim_code-track_ethics a hi:Relation ;
+  hi:source hi:video_ruha_benjamin_new_jim_code ;
+  hi:target hi:track_ethics ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:track_ethics .
+
+hi:rel-video_ruha_benjamin_new_jim_code-ai a hi:Relation ;
+  hi:source hi:video_ruha_benjamin_new_jim_code ;
+  hi:target hi:ai ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-video_ruha_benjamin_new_jim_code-hi_videos a hi:Relation ;
+  hi:source hi:video_ruha_benjamin_new_jim_code ;
+  hi:target hi:hi_videos ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:hi_videos .
+
+hi:rel-ruha_benjamin-video_ruha_benjamin_new_jim_code a hi:Relation ;
+  hi:source hi:ruha_benjamin ;
+  hi:target hi:video_ruha_benjamin_new_jim_code ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:video_ruha_benjamin_new_jim_code .
+
+hi:rel-video_adrienne_maree_brown_emergent_strategy-adrienne_maree_brown a hi:Relation ;
+  hi:source hi:video_adrienne_maree_brown_emergent_strategy ;
+  hi:target hi:adrienne_maree_brown ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:adrienne_maree_brown .
+
+hi:rel-video_adrienne_maree_brown_emergent_strategy-emergent_strategy a hi:Relation ;
+  hi:source hi:video_adrienne_maree_brown_emergent_strategy ;
+  hi:target hi:emergent_strategy ;
+  hi:strength "0.96"^^xsd:decimal ;
+  skos:relatedMatch hi:emergent_strategy .
+
+hi:rel-video_adrienne_maree_brown_emergent_strategy-butler a hi:Relation ;
+  hi:source hi:video_adrienne_maree_brown_emergent_strategy ;
+  hi:target hi:butler ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:butler .
+
+hi:rel-video_adrienne_maree_brown_emergent_strategy-social_change a hi:Relation ;
+  hi:source hi:video_adrienne_maree_brown_emergent_strategy ;
+  hi:target hi:social_change ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:social_change .
+
+hi:rel-video_adrienne_maree_brown_emergent_strategy-community a hi:Relation ;
+  hi:source hi:video_adrienne_maree_brown_emergent_strategy ;
+  hi:target hi:community ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:community .
+
+hi:rel-video_adrienne_maree_brown_emergent_strategy-two_loops_model a hi:Relation ;
+  hi:source hi:video_adrienne_maree_brown_emergent_strategy ;
+  hi:target hi:two_loops_model ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:two_loops_model .
+
+hi:rel-video_adrienne_maree_brown_emergent_strategy-pleasure_activism a hi:Relation ;
+  hi:source hi:video_adrienne_maree_brown_emergent_strategy ;
+  hi:target hi:pleasure_activism ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:pleasure_activism .
+
+hi:rel-video_adrienne_maree_brown_emergent_strategy-hi_videos a hi:Relation ;
+  hi:source hi:video_adrienne_maree_brown_emergent_strategy ;
+  hi:target hi:hi_videos ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:hi_videos .
+
+hi:rel-adrienne_maree_brown-video_adrienne_maree_brown_emergent_strategy a hi:Relation ;
+  hi:source hi:adrienne_maree_brown ;
+  hi:target hi:video_adrienne_maree_brown_emergent_strategy ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:video_adrienne_maree_brown_emergent_strategy .
+
 hi:rel-arendt-video_arendt_zur_person_1964 a hi:Relation ;
   hi:source hi:arendt ;
   hi:target hi:video_arendt_zur_person_1964 ;
@@ -23261,6 +23455,372 @@ hi:rel-butler-ethical_imagination a hi:Relation ;
   hi:strength "0.8"^^xsd:decimal ;
   skos:relatedMatch hi:ethical_imagination .
 
+hi:rel-ruha_benjamin-new_jim_code a hi:Relation ;
+  hi:source hi:ruha_benjamin ;
+  hi:target hi:new_jim_code ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:new_jim_code .
+
+hi:rel-ruha_benjamin-ethical_imagination a hi:Relation ;
+  hi:source hi:ruha_benjamin ;
+  hi:target hi:ethical_imagination ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:ethical_imagination .
+
+hi:rel-ruha_benjamin-cultural_imagination a hi:Relation ;
+  hi:source hi:ruha_benjamin ;
+  hi:target hi:cultural_imagination ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:cultural_imagination .
+
+hi:rel-ruha_benjamin-three_es_ai a hi:Relation ;
+  hi:source hi:ruha_benjamin ;
+  hi:target hi:three_es_ai ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:three_es_ai .
+
+hi:rel-ruha_benjamin-crawford a hi:Relation ;
+  hi:source hi:ruha_benjamin ;
+  hi:target hi:crawford ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:crawford .
+
+hi:rel-ruha_benjamin-ai a hi:Relation ;
+  hi:source hi:ruha_benjamin ;
+  hi:target hi:ai ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-ruha_benjamin-track_ethics a hi:Relation ;
+  hi:source hi:ruha_benjamin ;
+  hi:target hi:track_ethics ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:track_ethics .
+
+hi:rel-ruha_benjamin-perception_politics a hi:Relation ;
+  hi:source hi:ruha_benjamin ;
+  hi:target hi:perception_politics ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:perception_politics .
+
+hi:rel-ruha_benjamin-law a hi:Relation ;
+  hi:source hi:ruha_benjamin ;
+  hi:target hi:law ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:law .
+
+hi:rel-ruha_benjamin-social_change a hi:Relation ;
+  hi:source hi:ruha_benjamin ;
+  hi:target hi:social_change ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:social_change .
+
+hi:rel-ruha_benjamin-fanon a hi:Relation ;
+  hi:source hi:ruha_benjamin ;
+  hi:target hi:fanon ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:fanon .
+
+hi:rel-ruha_benjamin-bell_hooks a hi:Relation ;
+  hi:source hi:ruha_benjamin ;
+  hi:target hi:bell_hooks ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:bell_hooks .
+
+hi:rel-ruha_benjamin-butler a hi:Relation ;
+  hi:source hi:ruha_benjamin ;
+  hi:target hi:butler ;
+  hi:strength "0.78"^^xsd:decimal ;
+  skos:relatedMatch hi:butler .
+
+hi:rel-ruha_benjamin-adrienne_maree_brown a hi:Relation ;
+  hi:source hi:ruha_benjamin ;
+  hi:target hi:adrienne_maree_brown ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:adrienne_maree_brown .
+
+hi:rel-ruha_benjamin-what_if a hi:Relation ;
+  hi:source hi:ruha_benjamin ;
+  hi:target hi:what_if ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:what_if .
+
+hi:rel-ruha_benjamin-epistemology a hi:Relation ;
+  hi:source hi:ruha_benjamin ;
+  hi:target hi:epistemology ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:epistemology .
+
+hi:rel-ruha_benjamin-ai_impact_ethics a hi:Relation ;
+  hi:source hi:ruha_benjamin ;
+  hi:target hi:ai_impact_ethics ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_impact_ethics .
+
+hi:rel-ruha_benjamin-hybrid a hi:Relation ;
+  hi:source hi:ruha_benjamin ;
+  hi:target hi:hybrid ;
+  hi:strength "0.78"^^xsd:decimal ;
+  skos:relatedMatch hi:hybrid .
+
+hi:rel-ruha_benjamin-hi_videos a hi:Relation ;
+  hi:source hi:ruha_benjamin ;
+  hi:target hi:hi_videos ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:hi_videos .
+
+hi:rel-new_jim_code-three_es_ai a hi:Relation ;
+  hi:source hi:new_jim_code ;
+  hi:target hi:three_es_ai ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:three_es_ai .
+
+hi:rel-new_jim_code-crawford a hi:Relation ;
+  hi:source hi:new_jim_code ;
+  hi:target hi:crawford ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:crawford .
+
+hi:rel-new_jim_code-ai a hi:Relation ;
+  hi:source hi:new_jim_code ;
+  hi:target hi:ai ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-new_jim_code-perception_politics a hi:Relation ;
+  hi:source hi:new_jim_code ;
+  hi:target hi:perception_politics ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:perception_politics .
+
+hi:rel-new_jim_code-law a hi:Relation ;
+  hi:source hi:new_jim_code ;
+  hi:target hi:law ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:law .
+
+hi:rel-new_jim_code-track_ethics a hi:Relation ;
+  hi:source hi:new_jim_code ;
+  hi:target hi:track_ethics ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:track_ethics .
+
+hi:rel-new_jim_code-ethical_imagination a hi:Relation ;
+  hi:source hi:new_jim_code ;
+  hi:target hi:ethical_imagination ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:ethical_imagination .
+
+hi:rel-new_jim_code-cultural_imagination a hi:Relation ;
+  hi:source hi:new_jim_code ;
+  hi:target hi:cultural_imagination ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:cultural_imagination .
+
+hi:rel-new_jim_code-ai_impact_ethics a hi:Relation ;
+  hi:source hi:new_jim_code ;
+  hi:target hi:ai_impact_ethics ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_impact_ethics .
+
+hi:rel-adrienne_maree_brown-emergent_strategy a hi:Relation ;
+  hi:source hi:adrienne_maree_brown ;
+  hi:target hi:emergent_strategy ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:emergent_strategy .
+
+hi:rel-adrienne_maree_brown-pleasure_activism a hi:Relation ;
+  hi:source hi:adrienne_maree_brown ;
+  hi:target hi:pleasure_activism ;
+  hi:strength "0.96"^^xsd:decimal ;
+  skos:relatedMatch hi:pleasure_activism .
+
+hi:rel-adrienne_maree_brown-butler a hi:Relation ;
+  hi:source hi:adrienne_maree_brown ;
+  hi:target hi:butler ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:butler .
+
+hi:rel-adrienne_maree_brown-two_loops_model a hi:Relation ;
+  hi:source hi:adrienne_maree_brown ;
+  hi:target hi:two_loops_model ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:two_loops_model .
+
+hi:rel-adrienne_maree_brown-somatics a hi:Relation ;
+  hi:source hi:adrienne_maree_brown ;
+  hi:target hi:somatics ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:somatics .
+
+hi:rel-adrienne_maree_brown-social_change a hi:Relation ;
+  hi:source hi:adrienne_maree_brown ;
+  hi:target hi:social_change ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:social_change .
+
+hi:rel-adrienne_maree_brown-community a hi:Relation ;
+  hi:source hi:adrienne_maree_brown ;
+  hi:target hi:community ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:community .
+
+hi:rel-adrienne_maree_brown-afrofuturism a hi:Relation ;
+  hi:source hi:adrienne_maree_brown ;
+  hi:target hi:afrofuturism ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:afrofuturism .
+
+hi:rel-adrienne_maree_brown-ethical_imagination a hi:Relation ;
+  hi:source hi:adrienne_maree_brown ;
+  hi:target hi:ethical_imagination ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:ethical_imagination .
+
+hi:rel-adrienne_maree_brown-cultural_imagination a hi:Relation ;
+  hi:source hi:adrienne_maree_brown ;
+  hi:target hi:cultural_imagination ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:cultural_imagination .
+
+hi:rel-adrienne_maree_brown-complexity_theory a hi:Relation ;
+  hi:source hi:adrienne_maree_brown ;
+  hi:target hi:complexity_theory ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:complexity_theory .
+
+hi:rel-adrienne_maree_brown-ecology_d a hi:Relation ;
+  hi:source hi:adrienne_maree_brown ;
+  hi:target hi:ecology_d ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:ecology_d .
+
+hi:rel-adrienne_maree_brown-what_if a hi:Relation ;
+  hi:source hi:adrienne_maree_brown ;
+  hi:target hi:what_if ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:what_if .
+
+hi:rel-adrienne_maree_brown-ruha_benjamin a hi:Relation ;
+  hi:source hi:adrienne_maree_brown ;
+  hi:target hi:ruha_benjamin ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:ruha_benjamin .
+
+hi:rel-adrienne_maree_brown-haraway a hi:Relation ;
+  hi:source hi:adrienne_maree_brown ;
+  hi:target hi:haraway ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:haraway .
+
+hi:rel-adrienne_maree_brown-akomolafe a hi:Relation ;
+  hi:source hi:adrienne_maree_brown ;
+  hi:target hi:akomolafe ;
+  hi:strength "0.78"^^xsd:decimal ;
+  skos:relatedMatch hi:akomolafe .
+
+hi:rel-adrienne_maree_brown-embodiment a hi:Relation ;
+  hi:source hi:adrienne_maree_brown ;
+  hi:target hi:embodiment ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:embodiment .
+
+hi:rel-adrienne_maree_brown-hybrid a hi:Relation ;
+  hi:source hi:adrienne_maree_brown ;
+  hi:target hi:hybrid ;
+  hi:strength "0.78"^^xsd:decimal ;
+  skos:relatedMatch hi:hybrid .
+
+hi:rel-adrienne_maree_brown-hi_videos a hi:Relation ;
+  hi:source hi:adrienne_maree_brown ;
+  hi:target hi:hi_videos ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:hi_videos .
+
+hi:rel-emergent_strategy-two_loops_model a hi:Relation ;
+  hi:source hi:emergent_strategy ;
+  hi:target hi:two_loops_model ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:two_loops_model .
+
+hi:rel-emergent_strategy-butler a hi:Relation ;
+  hi:source hi:emergent_strategy ;
+  hi:target hi:butler ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:butler .
+
+hi:rel-emergent_strategy-complexity_theory a hi:Relation ;
+  hi:source hi:emergent_strategy ;
+  hi:target hi:complexity_theory ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:complexity_theory .
+
+hi:rel-emergent_strategy-social_change a hi:Relation ;
+  hi:source hi:emergent_strategy ;
+  hi:target hi:social_change ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:social_change .
+
+hi:rel-emergent_strategy-community a hi:Relation ;
+  hi:source hi:emergent_strategy ;
+  hi:target hi:community ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:community .
+
+hi:rel-emergent_strategy-what_if a hi:Relation ;
+  hi:source hi:emergent_strategy ;
+  hi:target hi:what_if ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:what_if .
+
+hi:rel-emergent_strategy-ecology_d a hi:Relation ;
+  hi:source hi:emergent_strategy ;
+  hi:target hi:ecology_d ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:ecology_d .
+
+hi:rel-emergent_strategy-pleasure_activism a hi:Relation ;
+  hi:source hi:emergent_strategy ;
+  hi:target hi:pleasure_activism ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:pleasure_activism .
+
+hi:rel-pleasure_activism-somatics a hi:Relation ;
+  hi:source hi:pleasure_activism ;
+  hi:target hi:somatics ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:somatics .
+
+hi:rel-pleasure_activism-ethical_imagination a hi:Relation ;
+  hi:source hi:pleasure_activism ;
+  hi:target hi:ethical_imagination ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:ethical_imagination .
+
+hi:rel-pleasure_activism-embodiment a hi:Relation ;
+  hi:source hi:pleasure_activism ;
+  hi:target hi:embodiment ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:embodiment .
+
+hi:rel-pleasure_activism-body a hi:Relation ;
+  hi:source hi:pleasure_activism ;
+  hi:target hi:body ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:body .
+
+hi:rel-pleasure_activism-community a hi:Relation ;
+  hi:source hi:pleasure_activism ;
+  hi:target hi:community ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:community .
+
+hi:rel-pleasure_activism-social_change a hi:Relation ;
+  hi:source hi:pleasure_activism ;
+  hi:target hi:social_change ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:social_change .
+
 hi:rel-entrepreneurship_vision-afrofuturism a hi:Relation ;
   hi:source hi:entrepreneurship_vision ;
   hi:target hi:afrofuturism ;
@@ -24258,6 +24818,61 @@ hi:rel-begus-informative_imitation-proposes a hi:Relation ;
   hi:source hi:begus ;
   hi:target hi:informative_imitation ;
   hi:relationType hi:proposes .
+
+hi:rel-ruha_benjamin-new_jim_code-proposes a hi:Relation ;
+  hi:source hi:ruha_benjamin ;
+  hi:target hi:new_jim_code ;
+  hi:relationType hi:proposes .
+
+hi:rel-adrienne_maree_brown-emergent_strategy-proposes a hi:Relation ;
+  hi:source hi:adrienne_maree_brown ;
+  hi:target hi:emergent_strategy ;
+  hi:relationType hi:proposes .
+
+hi:rel-adrienne_maree_brown-pleasure_activism-proposes a hi:Relation ;
+  hi:source hi:adrienne_maree_brown ;
+  hi:target hi:pleasure_activism ;
+  hi:relationType hi:proposes .
+
+hi:rel-emergent_strategy-two_loops_model-couplesWith a hi:Relation ;
+  hi:source hi:emergent_strategy ;
+  hi:target hi:two_loops_model ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-emergent_strategy-butler-couplesWith a hi:Relation ;
+  hi:source hi:emergent_strategy ;
+  hi:target hi:butler ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-new_jim_code-three_es_ai-couplesWith a hi:Relation ;
+  hi:source hi:new_jim_code ;
+  hi:target hi:three_es_ai ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-pleasure_activism-somatics-couplesWith a hi:Relation ;
+  hi:source hi:pleasure_activism ;
+  hi:target hi:somatics ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-video_ruha_benjamin_new_jim_code-ruha_benjamin-instantiates a hi:Relation ;
+  hi:source hi:video_ruha_benjamin_new_jim_code ;
+  hi:target hi:ruha_benjamin ;
+  hi:relationType hi:instantiates .
+
+hi:rel-video_ruha_benjamin_new_jim_code-new_jim_code-develops a hi:Relation ;
+  hi:source hi:video_ruha_benjamin_new_jim_code ;
+  hi:target hi:new_jim_code ;
+  hi:relationType hi:develops .
+
+hi:rel-video_adrienne_maree_brown_emergent_strategy-adrienne_maree_brown-instantiates a hi:Relation ;
+  hi:source hi:video_adrienne_maree_brown_emergent_strategy ;
+  hi:target hi:adrienne_maree_brown ;
+  hi:relationType hi:instantiates .
+
+hi:rel-video_adrienne_maree_brown_emergent_strategy-emergent_strategy-develops a hi:Relation ;
+  hi:source hi:video_adrienne_maree_brown_emergent_strategy ;
+  hi:target hi:emergent_strategy ;
+  hi:relationType hi:develops .
 
 hi:rel-begus-cross_species_language-proposes a hi:Relation ;
   hi:source hi:begus ;
