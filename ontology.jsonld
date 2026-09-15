@@ -62,12 +62,12 @@
         "foaf:name": "Marlon Barrios Solano",
         "foaf:homepage": "https://marlonbarrios.github.io/"
       },
-      "dc:date": "2026-09-14",
-      "dc:modified": "2026-09-14T18:19:15.592Z",
+      "dc:date": "2026-09-15",
+      "dc:modified": "2026-09-15T15:22:40.929Z",
       "owl:versionInfo": "1.0.0",
-      "hi:nodeCount": 351,
-      "hi:edgeCount": 3281,
-      "hi:typedEdgeCount": 254
+      "hi:nodeCount": 355,
+      "hi:edgeCount": 3330,
+      "hi:typedEdgeCount": 260
     },
     {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme",
@@ -4559,6 +4559,64 @@
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#three_es_ai",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#phantasmal_media",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Phantasmal Media",
+      "skos:definition": "D. Fox Harrell: computational media gain expressive power by constructing phantasms—blends of cultural worldviews and sensory imagination. Sense of self, metaphor, social category, and narrative hide inside data structures and algorithms; phantasmal media can expose oppressive phantasms and build empowering ones.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/framework"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "framework",
+      "hi:weight": 1.45,
+      "schema:url": "https://mitpress.mit.edu/9780262019330/phantasmal-media/",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Computational_creativity",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#computational_identity",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cultural_imagination",
+          "hi:strength": 0.92
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ethical_imagination",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative_ai",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#storytelling",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_impact_epistemic",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hayles",
+          "hi:strength": 0.78
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#butler",
+          "hi:strength": 0.78
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cultural_imagination",
           "hi:strength": 0.9,
           "hi:relationType": "couplesWith"
         }
@@ -9693,6 +9751,10 @@
           "hi:strength": 0.82
         },
         {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#fox_harrell",
+          "hi:strength": 0.88
+        },
+        {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#what_if",
           "hi:strength": 0.8
         },
@@ -9825,6 +9887,132 @@
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#pleasure_activism",
+          "hi:strength": 0.9,
+          "hi:relationType": "proposes"
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#fox_harrell",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "D. Fox Harrell",
+      "skos:definition": "Professor of Digital Media & Artificial Intelligence at MIT (Comparative Media Studies/Writing and CSAIL); founding director of the Imagination, Computation, and Expression Laboratory and the MIT Center for Advanced Virtuality. Phantasmal Media: An Approach to Imagination, Computation, and Expression (MIT Press, 2013). Computational identity, cultural phantasms, and how data structures and algorithms encode race, gender, and social category in games, social media, and virtual worlds.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/author"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "author",
+      "hi:weight": 1.3,
+      "schema:url": "https://www.foxharrell.com/",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_fox_harrell_digital_selves",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#phantasmal_media",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#computational_identity",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cultural_imagination",
+          "hi:strength": 0.92
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ethical_imagination",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative_ai",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#storytelling",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cs",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#gen_ai",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_impact_epistemic",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_impact_ethics",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#perception_politics",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ruha_benjamin",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#new_jim_code",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#crawford",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hayles",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#butler",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#boden",
+          "hi:strength": 0.78
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#epistemology",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#what_if",
+          "hi:strength": 0.78
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hybrid",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_videos",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#phantasmal_media",
+          "hi:strength": 0.9,
+          "hi:relationType": "proposes"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#computational_identity",
           "hi:strength": 0.9,
           "hi:relationType": "proposes"
         }
@@ -11133,6 +11321,64 @@
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embodiment",
           "hi:strength": 0.9,
           "hi:relationType": "emergesFrom"
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#computational_identity",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Computational Identity",
+      "skos:definition": "How games, social networks, and virtual worlds implement identity in code: race, gender, class, and group membership as data structures, stats, and default avatars rather than as lived, gradient, and intersectional experience. Harrell’s Advanced Identity Representation and Chimeria work model stigma, marginalization, and passing—and ask what more expressive computational selves would require.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/phenomenon"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "phenomenon",
+      "hi:weight": 1.4,
+      "schema:url": "https://en.wikipedia.org/wiki/Digital_identity",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Digital_identity",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#new_jim_code",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ruha_benjamin",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#perception_politics",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_impact_ethics",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_impact_epistemic",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cs",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative_ai",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ethical_imagination",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#new_jim_code",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
         }
       ]
     },
@@ -18579,6 +18825,70 @@
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#emergent_strategy",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_fox_harrell_digital_selves",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Harrell · Digital Selves",
+      "skos:definition": "D. Fox Harrell — Digital Selves in Phantasmal Media. Sociocultural phantasms, computational identity, and how data structures encode race, gender, and social category. Video on YouTube; ingest matches speech to ontology concepts.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/video"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "video",
+      "hi:weight": 1.4,
+      "schema:url": "video-fox-harrell-digital-selves.html",
+      "schema:image": "https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/fox-harrell-digital-selves.jpg",
+      "schema:sameAs": "https://www.youtube.com/watch?v=c6BZ6f_dWog",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#fox_harrell",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#phantasmal_media",
+          "hi:strength": 0.96
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#computational_identity",
+          "hi:strength": 0.96
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cultural_imagination",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ethical_imagination",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#butler",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_videos",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#fox_harrell",
+          "hi:strength": 0.9,
+          "hi:relationType": "instantiates"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#phantasmal_media",
           "hi:strength": 0.9,
           "hi:relationType": "develops"
         }

@@ -11,10 +11,10 @@
   rdfs:label "Hybrid Intelligences Ontology" ;
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   owl:versionInfo "1.0.0" ;
-  dc:date "2026-09-14"^^xsd:date ;
-  dc:modified "2026-09-14T18:19:15.594Z"^^xsd:dateTime ;
-  hi:nodeCount "351"^^xsd:integer ;
-  hi:edgeCount "3281"^^xsd:integer .
+  dc:date "2026-09-15"^^xsd:date ;
+  dc:modified "2026-09-15T15:22:40.930Z"^^xsd:dateTime ;
+  hi:nodeCount "355"^^xsd:integer ;
+  hi:edgeCount "3330"^^xsd:integer .
 
 hi:scheme a skos:ConceptScheme ;
   skos:prefLabel "Hybrid Intelligences Concept Scheme" ;
@@ -819,6 +819,18 @@ hi:new_jim_code a skos:Concept, hi:NetworkNode ;
  ;
   schema:url <https://en.wikipedia.org/wiki/Ruha_Benjamin> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Algorithmic_bias>
+ .
+
+hi:phantasmal_media a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Phantasmal Media" ;
+  skos:definition "D. Fox Harrell: computational media gain expressive power by constructing phantasms—blends of cultural worldviews and sensory imagination. Sense of self, metaphor, social category, and narrative hide inside data structures and algorithms; phantasmal media can expose oppressive phantasms and build empowering ones." ;
+  skos:broader hi:category/framework ;
+  skos:inScheme hi:scheme ;
+  hi:category "framework" ;
+  hi:weight "1.45"^^xsd:decimal
+ ;
+  schema:url <https://mitpress.mit.edu/9780262019330/phantasmal-media/> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Computational_creativity>
  .
 
 hi:ai_impact_environment a skos:Concept, hi:NetworkNode ;
@@ -1642,6 +1654,17 @@ hi:adrienne_maree_brown a skos:Concept, hi:NetworkNode ;
   schema:sameAs <https://en.wikipedia.org/wiki/Adrienne_Maree_Brown>
  .
 
+hi:fox_harrell a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "D. Fox Harrell" ;
+  skos:definition "Professor of Digital Media & Artificial Intelligence at MIT (Comparative Media Studies/Writing and CSAIL); founding director of the Imagination, Computation, and Expression Laboratory and the MIT Center for Advanced Virtuality. Phantasmal Media: An Approach to Imagination, Computation, and Expression (MIT Press, 2013). Computational identity, cultural phantasms, and how data structures and algorithms encode race, gender, and social category in games, social media, and virtual worlds." ;
+  skos:broader hi:category/author ;
+  skos:inScheme hi:scheme ;
+  hi:category "author" ;
+  hi:weight "1.3"^^xsd:decimal
+ ;
+  schema:url <https://www.foxharrell.com/>
+ .
+
 hi:sousa_santos a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Boaventura de Sousa Santos" ;
   skos:definition "Sociologist and legal scholar—architect of Epistemologies of the South; argues that global social justice requires cognitive justice and the recovery of knowledges marginalized by colonialism and Eurocentrism." ;
@@ -1936,6 +1959,18 @@ hi:cephalopod_cognition a skos:Concept, hi:NetworkNode ;
  ;
   schema:url <https://en.wikipedia.org/wiki/Cephalopod_intelligence> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Cephalopod_intelligence>
+ .
+
+hi:computational_identity a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Computational Identity" ;
+  skos:definition "How games, social networks, and virtual worlds implement identity in code: race, gender, class, and group membership as data structures, stats, and default avatars rather than as lived, gradient, and intersectional experience. Harrell’s Advanced Identity Representation and Chimeria work model stigma, marginalization, and passing—and ask what more expressive computational selves would require." ;
+  skos:broader hi:category/phenomenon ;
+  skos:inScheme hi:scheme ;
+  hi:category "phenomenon" ;
+  hi:weight "1.4"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Digital_identity> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Digital_identity>
  .
 
 hi:theory_of_mind a skos:Concept, hi:NetworkNode ;
@@ -3566,6 +3601,19 @@ hi:video_adrienne_maree_brown_emergent_strategy a skos:Concept, hi:NetworkNode ;
   schema:url <video-adrienne-maree-brown-emergent-strategy.html> ;
   schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/adrienne-maree-brown-emergent-strategy.jpg> ;
   schema:sameAs <https://www.youtube.com/watch?v=PUQWo33geYk>
+ .
+
+hi:video_fox_harrell_digital_selves a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Harrell · Digital Selves" ;
+  skos:definition "D. Fox Harrell — Digital Selves in Phantasmal Media. Sociocultural phantasms, computational identity, and how data structures encode race, gender, and social category. Video on YouTube; ingest matches speech to ontology concepts." ;
+  skos:broader hi:category/video ;
+  skos:inScheme hi:scheme ;
+  hi:category "video" ;
+  hi:weight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-fox-harrell-digital-selves.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/fox-harrell-digital-selves.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=c6BZ6f_dWog>
  .
 
 hi:essay_1 a skos:Concept, hi:NetworkNode ;
@@ -20275,6 +20323,60 @@ hi:rel-adrienne_maree_brown-video_adrienne_maree_brown_emergent_strategy a hi:Re
   hi:strength "0.98"^^xsd:decimal ;
   skos:relatedMatch hi:video_adrienne_maree_brown_emergent_strategy .
 
+hi:rel-video_fox_harrell_digital_selves-fox_harrell a hi:Relation ;
+  hi:source hi:video_fox_harrell_digital_selves ;
+  hi:target hi:fox_harrell ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:fox_harrell .
+
+hi:rel-video_fox_harrell_digital_selves-phantasmal_media a hi:Relation ;
+  hi:source hi:video_fox_harrell_digital_selves ;
+  hi:target hi:phantasmal_media ;
+  hi:strength "0.96"^^xsd:decimal ;
+  skos:relatedMatch hi:phantasmal_media .
+
+hi:rel-video_fox_harrell_digital_selves-computational_identity a hi:Relation ;
+  hi:source hi:video_fox_harrell_digital_selves ;
+  hi:target hi:computational_identity ;
+  hi:strength "0.96"^^xsd:decimal ;
+  skos:relatedMatch hi:computational_identity .
+
+hi:rel-video_fox_harrell_digital_selves-cultural_imagination a hi:Relation ;
+  hi:source hi:video_fox_harrell_digital_selves ;
+  hi:target hi:cultural_imagination ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:cultural_imagination .
+
+hi:rel-video_fox_harrell_digital_selves-ethical_imagination a hi:Relation ;
+  hi:source hi:video_fox_harrell_digital_selves ;
+  hi:target hi:ethical_imagination ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:ethical_imagination .
+
+hi:rel-video_fox_harrell_digital_selves-butler a hi:Relation ;
+  hi:source hi:video_fox_harrell_digital_selves ;
+  hi:target hi:butler ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:butler .
+
+hi:rel-video_fox_harrell_digital_selves-ai a hi:Relation ;
+  hi:source hi:video_fox_harrell_digital_selves ;
+  hi:target hi:ai ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-video_fox_harrell_digital_selves-hi_videos a hi:Relation ;
+  hi:source hi:video_fox_harrell_digital_selves ;
+  hi:target hi:hi_videos ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:hi_videos .
+
+hi:rel-fox_harrell-video_fox_harrell_digital_selves a hi:Relation ;
+  hi:source hi:fox_harrell ;
+  hi:target hi:video_fox_harrell_digital_selves ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:video_fox_harrell_digital_selves .
+
 hi:rel-arendt-video_arendt_zur_person_1964 a hi:Relation ;
   hi:source hi:arendt ;
   hi:target hi:video_arendt_zur_person_1964 ;
@@ -23539,6 +23641,12 @@ hi:rel-ruha_benjamin-adrienne_maree_brown a hi:Relation ;
   hi:strength "0.82"^^xsd:decimal ;
   skos:relatedMatch hi:adrienne_maree_brown .
 
+hi:rel-ruha_benjamin-fox_harrell a hi:Relation ;
+  hi:source hi:ruha_benjamin ;
+  hi:target hi:fox_harrell ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:fox_harrell .
+
 hi:rel-ruha_benjamin-what_if a hi:Relation ;
   hi:source hi:ruha_benjamin ;
   hi:target hi:what_if ;
@@ -23820,6 +23928,240 @@ hi:rel-pleasure_activism-social_change a hi:Relation ;
   hi:target hi:social_change ;
   hi:strength "0.8"^^xsd:decimal ;
   skos:relatedMatch hi:social_change .
+
+hi:rel-fox_harrell-phantasmal_media a hi:Relation ;
+  hi:source hi:fox_harrell ;
+  hi:target hi:phantasmal_media ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:phantasmal_media .
+
+hi:rel-fox_harrell-computational_identity a hi:Relation ;
+  hi:source hi:fox_harrell ;
+  hi:target hi:computational_identity ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:computational_identity .
+
+hi:rel-fox_harrell-cultural_imagination a hi:Relation ;
+  hi:source hi:fox_harrell ;
+  hi:target hi:cultural_imagination ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:cultural_imagination .
+
+hi:rel-fox_harrell-ethical_imagination a hi:Relation ;
+  hi:source hi:fox_harrell ;
+  hi:target hi:ethical_imagination ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:ethical_imagination .
+
+hi:rel-fox_harrell-creative_ai a hi:Relation ;
+  hi:source hi:fox_harrell ;
+  hi:target hi:creative_ai ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:creative_ai .
+
+hi:rel-fox_harrell-storytelling a hi:Relation ;
+  hi:source hi:fox_harrell ;
+  hi:target hi:storytelling ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:storytelling .
+
+hi:rel-fox_harrell-cs a hi:Relation ;
+  hi:source hi:fox_harrell ;
+  hi:target hi:cs ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:cs .
+
+hi:rel-fox_harrell-ai a hi:Relation ;
+  hi:source hi:fox_harrell ;
+  hi:target hi:ai ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-fox_harrell-gen_ai a hi:Relation ;
+  hi:source hi:fox_harrell ;
+  hi:target hi:gen_ai ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:gen_ai .
+
+hi:rel-fox_harrell-ai_impact_epistemic a hi:Relation ;
+  hi:source hi:fox_harrell ;
+  hi:target hi:ai_impact_epistemic ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_impact_epistemic .
+
+hi:rel-fox_harrell-ai_impact_ethics a hi:Relation ;
+  hi:source hi:fox_harrell ;
+  hi:target hi:ai_impact_ethics ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_impact_ethics .
+
+hi:rel-fox_harrell-perception_politics a hi:Relation ;
+  hi:source hi:fox_harrell ;
+  hi:target hi:perception_politics ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:perception_politics .
+
+hi:rel-fox_harrell-ruha_benjamin a hi:Relation ;
+  hi:source hi:fox_harrell ;
+  hi:target hi:ruha_benjamin ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:ruha_benjamin .
+
+hi:rel-fox_harrell-new_jim_code a hi:Relation ;
+  hi:source hi:fox_harrell ;
+  hi:target hi:new_jim_code ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:new_jim_code .
+
+hi:rel-fox_harrell-crawford a hi:Relation ;
+  hi:source hi:fox_harrell ;
+  hi:target hi:crawford ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:crawford .
+
+hi:rel-fox_harrell-hayles a hi:Relation ;
+  hi:source hi:fox_harrell ;
+  hi:target hi:hayles ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:hayles .
+
+hi:rel-fox_harrell-butler a hi:Relation ;
+  hi:source hi:fox_harrell ;
+  hi:target hi:butler ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:butler .
+
+hi:rel-fox_harrell-boden a hi:Relation ;
+  hi:source hi:fox_harrell ;
+  hi:target hi:boden ;
+  hi:strength "0.78"^^xsd:decimal ;
+  skos:relatedMatch hi:boden .
+
+hi:rel-fox_harrell-assemblage a hi:Relation ;
+  hi:source hi:fox_harrell ;
+  hi:target hi:assemblage ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:assemblage .
+
+hi:rel-fox_harrell-epistemology a hi:Relation ;
+  hi:source hi:fox_harrell ;
+  hi:target hi:epistemology ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:epistemology .
+
+hi:rel-fox_harrell-what_if a hi:Relation ;
+  hi:source hi:fox_harrell ;
+  hi:target hi:what_if ;
+  hi:strength "0.78"^^xsd:decimal ;
+  skos:relatedMatch hi:what_if .
+
+hi:rel-fox_harrell-hybrid a hi:Relation ;
+  hi:source hi:fox_harrell ;
+  hi:target hi:hybrid ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:hybrid .
+
+hi:rel-fox_harrell-hi_videos a hi:Relation ;
+  hi:source hi:fox_harrell ;
+  hi:target hi:hi_videos ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:hi_videos .
+
+hi:rel-phantasmal_media-computational_identity a hi:Relation ;
+  hi:source hi:phantasmal_media ;
+  hi:target hi:computational_identity ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:computational_identity .
+
+hi:rel-phantasmal_media-cultural_imagination a hi:Relation ;
+  hi:source hi:phantasmal_media ;
+  hi:target hi:cultural_imagination ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:cultural_imagination .
+
+hi:rel-phantasmal_media-ethical_imagination a hi:Relation ;
+  hi:source hi:phantasmal_media ;
+  hi:target hi:ethical_imagination ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:ethical_imagination .
+
+hi:rel-phantasmal_media-creative_ai a hi:Relation ;
+  hi:source hi:phantasmal_media ;
+  hi:target hi:creative_ai ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:creative_ai .
+
+hi:rel-phantasmal_media-storytelling a hi:Relation ;
+  hi:source hi:phantasmal_media ;
+  hi:target hi:storytelling ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:storytelling .
+
+hi:rel-phantasmal_media-ai_impact_epistemic a hi:Relation ;
+  hi:source hi:phantasmal_media ;
+  hi:target hi:ai_impact_epistemic ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_impact_epistemic .
+
+hi:rel-phantasmal_media-hayles a hi:Relation ;
+  hi:source hi:phantasmal_media ;
+  hi:target hi:hayles ;
+  hi:strength "0.78"^^xsd:decimal ;
+  skos:relatedMatch hi:hayles .
+
+hi:rel-phantasmal_media-butler a hi:Relation ;
+  hi:source hi:phantasmal_media ;
+  hi:target hi:butler ;
+  hi:strength "0.78"^^xsd:decimal ;
+  skos:relatedMatch hi:butler .
+
+hi:rel-computational_identity-new_jim_code a hi:Relation ;
+  hi:source hi:computational_identity ;
+  hi:target hi:new_jim_code ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:new_jim_code .
+
+hi:rel-computational_identity-ruha_benjamin a hi:Relation ;
+  hi:source hi:computational_identity ;
+  hi:target hi:ruha_benjamin ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:ruha_benjamin .
+
+hi:rel-computational_identity-perception_politics a hi:Relation ;
+  hi:source hi:computational_identity ;
+  hi:target hi:perception_politics ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:perception_politics .
+
+hi:rel-computational_identity-ai_impact_ethics a hi:Relation ;
+  hi:source hi:computational_identity ;
+  hi:target hi:ai_impact_ethics ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_impact_ethics .
+
+hi:rel-computational_identity-ai_impact_epistemic a hi:Relation ;
+  hi:source hi:computational_identity ;
+  hi:target hi:ai_impact_epistemic ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_impact_epistemic .
+
+hi:rel-computational_identity-cs a hi:Relation ;
+  hi:source hi:computational_identity ;
+  hi:target hi:cs ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:cs .
+
+hi:rel-computational_identity-creative_ai a hi:Relation ;
+  hi:source hi:computational_identity ;
+  hi:target hi:creative_ai ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:creative_ai .
+
+hi:rel-computational_identity-ethical_imagination a hi:Relation ;
+  hi:source hi:computational_identity ;
+  hi:target hi:ethical_imagination ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:ethical_imagination .
 
 hi:rel-entrepreneurship_vision-afrofuturism a hi:Relation ;
   hi:source hi:entrepreneurship_vision ;
@@ -24872,6 +25214,36 @@ hi:rel-video_adrienne_maree_brown_emergent_strategy-adrienne_maree_brown-instant
 hi:rel-video_adrienne_maree_brown_emergent_strategy-emergent_strategy-develops a hi:Relation ;
   hi:source hi:video_adrienne_maree_brown_emergent_strategy ;
   hi:target hi:emergent_strategy ;
+  hi:relationType hi:develops .
+
+hi:rel-fox_harrell-phantasmal_media-proposes a hi:Relation ;
+  hi:source hi:fox_harrell ;
+  hi:target hi:phantasmal_media ;
+  hi:relationType hi:proposes .
+
+hi:rel-fox_harrell-computational_identity-proposes a hi:Relation ;
+  hi:source hi:fox_harrell ;
+  hi:target hi:computational_identity ;
+  hi:relationType hi:proposes .
+
+hi:rel-phantasmal_media-cultural_imagination-couplesWith a hi:Relation ;
+  hi:source hi:phantasmal_media ;
+  hi:target hi:cultural_imagination ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-computational_identity-new_jim_code-couplesWith a hi:Relation ;
+  hi:source hi:computational_identity ;
+  hi:target hi:new_jim_code ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-video_fox_harrell_digital_selves-fox_harrell-instantiates a hi:Relation ;
+  hi:source hi:video_fox_harrell_digital_selves ;
+  hi:target hi:fox_harrell ;
+  hi:relationType hi:instantiates .
+
+hi:rel-video_fox_harrell_digital_selves-phantasmal_media-develops a hi:Relation ;
+  hi:source hi:video_fox_harrell_digital_selves ;
+  hi:target hi:phantasmal_media ;
   hi:relationType hi:develops .
 
 hi:rel-begus-cross_species_language-proposes a hi:Relation ;

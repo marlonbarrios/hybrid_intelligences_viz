@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-14T18:19:15.478Z",
+  "generated": "2026-09-15T15:22:40.807Z",
   "byConcept": {
     "hayles": [
       {
@@ -1754,6 +1754,13 @@
     ],
     "cultural_imagination": [
       {
+        "id": "fox-harrell-digital-selves",
+        "title": "Digital Selves in Phantasmal Media | D. Fox Harrell",
+        "speaker": "D. Fox Harrell",
+        "url": "video-fox-harrell-digital-selves.html",
+        "poster": "screenshots/fox-harrell-digital-selves.jpg"
+      },
+      {
         "id": "munoz-queer-utopianism",
         "title": "José Esteban Muñoz — Queer Utopianism",
         "speaker": "José Esteban Muñoz",
@@ -2457,6 +2464,33 @@
         "speaker": "adrienne maree brown",
         "url": "video-adrienne-maree-brown-emergent-strategy.html",
         "poster": "screenshots/adrienne-maree-brown-emergent-strategy.jpg"
+      }
+    ],
+    "fox_harrell": [
+      {
+        "id": "fox-harrell-digital-selves",
+        "title": "Digital Selves in Phantasmal Media | D. Fox Harrell",
+        "speaker": "D. Fox Harrell",
+        "url": "video-fox-harrell-digital-selves.html",
+        "poster": "screenshots/fox-harrell-digital-selves.jpg"
+      }
+    ],
+    "phantasmal_media": [
+      {
+        "id": "fox-harrell-digital-selves",
+        "title": "Digital Selves in Phantasmal Media | D. Fox Harrell",
+        "speaker": "D. Fox Harrell",
+        "url": "video-fox-harrell-digital-selves.html",
+        "poster": "screenshots/fox-harrell-digital-selves.jpg"
+      }
+    ],
+    "computational_identity": [
+      {
+        "id": "fox-harrell-digital-selves",
+        "title": "Digital Selves in Phantasmal Media | D. Fox Harrell",
+        "speaker": "D. Fox Harrell",
+        "url": "video-fox-harrell-digital-selves.html",
+        "poster": "screenshots/fox-harrell-digital-selves.jpg"
       }
     ]
   }

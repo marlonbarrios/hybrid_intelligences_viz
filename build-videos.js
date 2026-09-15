@@ -679,6 +679,12 @@ const VIDEO_FALLBACK_CONCEPTS = {
     { conceptId: "butler", label: "Octavia Butler" },
     { conceptId: "social_change", label: "Social Change" },
   ],
+  "fox-harrell-digital-selves": [
+    { conceptId: "fox_harrell", label: "D. Fox Harrell" },
+    { conceptId: "phantasmal_media", label: "Phantasmal Media" },
+    { conceptId: "computational_identity", label: "Computational Identity" },
+    { conceptId: "cultural_imagination", label: "Cultural Imagination" },
+  ],
 };
 
 function videoConcepts(video, transcript) {
@@ -778,6 +784,7 @@ const VIDEO_SHORT_LABELS = {
   "godfrey-smith-other-minds": "Godfrey-Smith ·\nOther Minds",
   "ruha-benjamin-new-jim-code": "Benjamin ·\nNew Jim Code",
   "adrienne-maree-brown-emergent-strategy": "amb ·\nEmergent Strategy",
+  "fox-harrell-digital-selves": "Harrell ·\nDigital Selves",
 };
 
 function abbreviateTopic(topic, maxLen = 14) {

@@ -846,6 +846,17 @@
       "caption": "Emergent strategy as a life-code for justice work: fractals, adaptation, interdependence, and learning from the living world.",
       "credit": "United Church of Christ · Creation Justice",
       "transcript": "transcripts/adrienne-maree-brown-emergent-strategy.json"
+    },
+    {
+      "id": "fox-harrell-digital-selves",
+      "title": "Digital Selves in Phantasmal Media | D. Fox Harrell",
+      "youtube": "https://www.youtube.com/watch?v=c6BZ6f_dWog",
+      "poster": "screenshots/fox-harrell-digital-selves.jpg",
+      "date": "2015-04-01",
+      "speaker": "D. Fox Harrell",
+      "caption": "Sociocultural phantasms and computational identity: how games, avatars, and data structures encode race, gender, and social category — and what more expressive digital selves would require.",
+      "credit": "Five College Digital Humanities · Amherst College",
+      "transcript": "transcripts/fox-harrell-digital-selves.json"
     }
   ]
 }
