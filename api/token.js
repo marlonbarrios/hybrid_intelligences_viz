@@ -34,13 +34,33 @@ function interiorInstructions() {
   return "You are the spoken voice of Interior. Speak only the speculation in the response instructions, slowly and clearly, as quiet prose the listener can receive. Unhurried, reflective, slightly intimate — as if thinking from inside a space, not lecturing. Do not add words before or after. Do not mention that you are an AI. Leave a little air between sentences. Speak in the language of the text you are given.";
 }
 
+function voiceSearchTool() {
+  return {
+    type: "function",
+    name: "search_web",
+    description:
+      "Search the live public web. Use only when the listener asks for current events, news, a date, a URL, a living person's latest work, or anything not in the Hybrid Intelligences ontology. Do not search for ontology concepts already defined in your instructions. Ontology first.",
+    parameters: {
+      type: "object",
+      properties: {
+        query: {
+          type: "string",
+          description: "A short, specific search query.",
+        },
+      },
+      required: ["query"],
+    },
+  };
+}
+
 function sessionPayload(focusId, mode) {
   const podcast = mode === "podcast";
   const enact = mode === "enact";
   const oracle = mode === "oracle";
   const whatIf = mode === "what_if";
   const interior = mode === "interior";
-  return {
+  const conversational = !podcast && !enact && !oracle && !whatIf && !interior;
+  const payload = {
     session: {
       type: "realtime",
       model: "gpt-realtime-2.1",
@@ -80,6 +100,11 @@ function sessionPayload(focusId, mode) {
       },
     },
   };
+  if (conversational) {
+    payload.session.tools = [voiceSearchTool()];
+    payload.session.tool_choice = "auto";
+  }
+  return payload;
 }
 
 function applyCors(res) {

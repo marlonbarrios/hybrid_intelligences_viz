@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Local static server plus /api/token, /api/image, /api/enact, /api/oracle, /api/what-if, /api/interior, and /api/speech.
+ * Local static server plus /api/token, /api/image, /api/enact, /api/oracle, /api/what-if, /api/interior, /api/speech, and /api/search.
  *
  *   OPENAI_API_KEY=sk-... node local-server.js
  *   # or put OPENAI_API_KEY in a gitignored .env file
@@ -18,6 +18,7 @@ const oracleHandler = require("./api/oracle");
 const whatIfHandler = require("./api/what-if");
 const interiorHandler = require("./api/interior");
 const speechHandler = require("./api/speech");
+const searchHandler = require("./api/search");
 
 const ROOT = __dirname;
 const PORT = Number(process.env.PORT) || 8000;
@@ -168,6 +169,7 @@ const server = http.createServer((req, res) => {
     : urlPath === "/api/what-if" ? whatIfHandler
     : urlPath === "/api/interior" ? interiorHandler
     : urlPath === "/api/speech" ? speechHandler
+    : urlPath === "/api/search" ? searchHandler
     : null;
   if (handler) {
     Promise.resolve(vercelReq(req))

@@ -398,7 +398,7 @@
     <p class="caption">
       The microphone can only hear you while you are holding. On a keyboard that is <strong>Space</strong>; on a phone that is <strong>Hold to speak</strong>. Release to send.
       This conversational AI is one layer of the Hybrid Intelligences Hub — a dynamic cognitive assemblage
-      created by Marlon Barrios Solano — grounded in the ontology as its knowledge base. From any concept
+      created by Marlon Barrios Solano — grounded in the ontology as its knowledge base. If you ask for something that is not in the Hub — news, a date, a living person's latest work — Voice can look up the live web and will say so. From any concept
       you can also Make an image or create a Mini-pod.
       Your API key stays on the server; this page only receives a short-lived token.
       Use <strong>PDF ↓</strong> to save the transcript.
@@ -445,6 +445,7 @@
     let ontologyEntry = null;
     let micLive = false;
     let sessionLive = false;
+    const pendingSearches = new Set();
 
     const CATEGORY_LABEL = {
       program: "Program",
@@ -644,6 +645,13 @@
       return url;
     }
 
+    function searchUrl() {
+      if (window.location.protocol === "file:") return "";
+      if (isLocalHost() || window.location.hostname.endsWith("vercel.app")) return "/api/search";
+      const origin = normalizeOrigin(window.HI_REALTIME_ORIGIN || "https://project-s4uzk.vercel.app");
+      return origin + "/api/search";
+    }
+
     function clearLogPlaceholder() {
       const empty = logEl.querySelector(".empty");
       if (empty) empty.remove();
@@ -691,10 +699,69 @@
         appendAssistant(event.delta);
       } else if (event.type === "response.output_audio_transcript.done" && event.transcript && !assistantTurn) {
         addTurn("Hybrid Intelligences", event.transcript);
+      } else if (event.type === "response.function_call_arguments.done") {
+        if (!event.name || event.name === "search_web") {
+          fulfillWebSearch(event.call_id, event.arguments);
+        }
+      } else if (event.type === "response.output_item.done" && event.item && event.item.type === "function_call") {
+        if (!event.item.name || event.item.name === "search_web") {
+          fulfillWebSearch(event.item.call_id, event.item.arguments);
+        }
       } else if (event.type === "error") {
         const msg = (event.error && event.error.message) || "Realtime session error.";
         setStatus(msg, true);
       }
+    }
+
+    async function fulfillWebSearch(callId, rawArgs) {
+      if (!callId || pendingSearches.has(callId)) return;
+      pendingSearches.add(callId);
+      let query = "";
+      try {
+        const parsed = typeof rawArgs === "string" ? JSON.parse(rawArgs || "{}") : (rawArgs || {});
+        query = String(parsed.query || parsed.q || "").trim();
+      } catch (_) {}
+      setStatus("Looking up the live web…");
+      let output = "No live web results. Say you could not look it up, then answer only from the ontology if you can. Do not invent.";
+      const endpoint = searchUrl();
+      if (!endpoint || !query) {
+        output = !endpoint
+          ? "Web search is not available from a local file. Say you could not look it up. Do not invent."
+          : "The search query was empty. Ask a clarifying question instead of inventing.";
+      } else try {
+        const res = await fetch(endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ query }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (res.ok && data.briefing) {
+          const cites = (data.citations || [])
+            .map((c) => ((c.title ? c.title + " — " : "") + (c.url || "")).trim())
+            .filter(Boolean)
+            .slice(0, 5);
+          output = "Live web briefing:\n" + data.briefing;
+          if (cites.length) output += "\nSources:\n" + cites.join("\n");
+          output += "\nSpeak from this briefing. Say you looked it up and name a source. Do not invent further sources.";
+        } else {
+          output = "Web search failed: " + (data.error || "unknown error") + ". Say you could not look it up. Do not invent.";
+        }
+      } catch (_) {
+        output = "Web search failed. Say you could not look it up. Do not invent.";
+      }
+      if (!dc || dc.readyState !== "open") return;
+      try {
+        dc.send(JSON.stringify({
+          type: "conversation.item.create",
+          item: {
+            type: "function_call_output",
+            call_id: callId,
+            output,
+          },
+        }));
+        dc.send(JSON.stringify({ type: "response.create" }));
+      } catch (_) {}
+      if (sessionLive) setStatus(holdHintStatus());
     }
 
     function waitForDataChannel() {

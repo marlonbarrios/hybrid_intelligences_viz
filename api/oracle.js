@@ -4,6 +4,7 @@ const {
   buildOracleFocusBlock,
   buildOracleFocusFromConcept,
 } = require("./ontology-context");
+const { completeWithWebSearch } = require("./openai-web");
 
 const FRAMEWORKS = [
   { id: "dialectic", label: "dialectic", hint: "Hold tension between opposing forces; let thesis and antithesis produce an unforeseen synthesis." },
@@ -182,6 +183,7 @@ function oracleSystemPrompt(concept, focused, focusBlock, framework, horizon, ax
     `Speculative axis for this piece: ${axis.label}. ${axis.hint}`,
     "Weave the axis into the ontology or open theme — show how people live, not an abstract essay. Utopian and dystopian pressures may both appear within the chosen framework.",
     "You may imply new technologies, epistemic regimes, space travel, or technogovernance only if they serve the axis and the focal concept — never as a generic laundry list.",
+    "The ontology is the source of truth for Hybrid Intelligences concepts. You may use web search only for a current fact, paper, date, or news item the reading truly needs. Do not search for every card. If you use the web, fold one grounded detail into the prose — no URLs, no 'according to a search'.",
   ];
 
   if (focused && focusBlock) {
@@ -265,40 +267,13 @@ module.exports = async function handler(req, res) {
   const axis = pickUnused(AXES, body.recentAxes, "id");
 
   try {
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        Authorization: "Bearer " + apiKey,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        model: "gpt-4o-mini",
-        temperature: focused ? 0.92 : 1.0,
-        max_tokens: 220,
-        messages: [
-          {
-            role: "system",
-            content: oracleSystemPrompt(concept, focused, focusBlock, framework, horizon, axis, language),
-          },
-          { role: "user", content: oracleUserPrompt(concept, focused, framework, horizon, axis) },
-        ],
-      }),
+    const generated = await completeWithWebSearch(apiKey, {
+      temperature: focused ? 0.92 : 1.0,
+      maxOutputTokens: 280,
+      instructions: oracleSystemPrompt(concept, focused, focusBlock, framework, horizon, axis, language),
+      input: oracleUserPrompt(concept, focused, framework, horizon, axis),
     });
-
-    if (!response.ok) {
-      let message = "OpenAI did not return a speculation.";
-      try {
-        const data = await response.json();
-        message = (data && data.error && (data.error.message || data.error)) || message;
-      } catch (_) {}
-      res.status(response.status).json({ error: message });
-      return;
-    }
-
-    const data = await response.json();
-    const text = cleanSpeculation(
-      data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content
-    );
+    const text = cleanSpeculation(generated.text);
     if (!text) {
       res.status(502).json({ error: "The speculation was empty." });
       return;
@@ -317,8 +292,8 @@ module.exports = async function handler(req, res) {
       focused: !!focused,
     });
   } catch (err) {
-    res.status(500).json({ error: err.message || "Failed to generate a speculation." });
+    res.status(err.status || 500).json({ error: err.message || "Failed to generate a speculation." });
   }
 };
 
-module.exports.config = { maxDuration: 25 };
+module.exports.config = { maxDuration: 40 };

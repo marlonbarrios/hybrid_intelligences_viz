@@ -4,6 +4,7 @@ const {
   buildWhatIfFocusBlock,
   buildWhatIfFocusFromConcept,
 } = require("./ontology-context");
+const { completeWithWebSearch } = require("./openai-web");
 
 const LENSES = [
   {
@@ -215,6 +216,7 @@ function whatIfSystemPrompt(concept, focused, focusBlock, lens, scale, domain, l
     "Name what to build, who it serves, and what it optimizes for — human attention, imagination, care, or community — not growth-at-all-costs.",
     "You may mention AI or hybrid intelligence only if they serve human flourishing and discernment — never as generic tech hype.",
     "Tone: hopeful but sober; neither naive utopia nor despair. This is design principle as invitation.",
+    "The ontology is the source of truth for Hybrid Intelligences concepts. You may use web search only for a current fact, project, or news item the proposition truly needs. Do not search for every card. If you use the web, fold one grounded detail into the prose — no URLs, no 'according to a search'.",
   ];
 
   if (focused && focusBlock) {
@@ -298,40 +300,13 @@ module.exports = async function handler(req, res) {
   const domain = pickUnused(DOMAINS, body.recentDomains, "id");
 
   try {
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        Authorization: "Bearer " + apiKey,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        model: "gpt-4o-mini",
-        temperature: focused ? 0.88 : 0.95,
-        max_tokens: 220,
-        messages: [
-          {
-            role: "system",
-            content: whatIfSystemPrompt(concept, focused, focusBlock, lens, scale, domain, language),
-          },
-          { role: "user", content: whatIfUserPrompt(concept, focused, lens, scale, domain) },
-        ],
-      }),
+    const generated = await completeWithWebSearch(apiKey, {
+      temperature: focused ? 0.88 : 0.95,
+      maxOutputTokens: 280,
+      instructions: whatIfSystemPrompt(concept, focused, focusBlock, lens, scale, domain, language),
+      input: whatIfUserPrompt(concept, focused, lens, scale, domain),
     });
-
-    if (!response.ok) {
-      let message = "OpenAI did not return a proposition.";
-      try {
-        const data = await response.json();
-        message = (data && data.error && (data.error.message || data.error)) || message;
-      } catch (_) {}
-      res.status(502).json({ error: message });
-      return;
-    }
-
-    const data = await response.json();
-    const text = cleanCard(
-      data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content
-    );
+    const text = cleanCard(generated.text);
     if (!text) {
       res.status(502).json({ error: "The proposition was empty." });
       return;
@@ -350,8 +325,8 @@ module.exports = async function handler(req, res) {
       focused: !!focused,
     });
   } catch (err) {
-    res.status(500).json({ error: err.message || "Failed to generate a proposition." });
+    res.status(err.status || 500).json({ error: err.message || "Failed to generate a proposition." });
   }
 };
 
-module.exports.config = { maxDuration: 25 };
+module.exports.config = { maxDuration: 40 };

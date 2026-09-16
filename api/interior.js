@@ -4,6 +4,7 @@ const {
   buildInteriorFocusBlock,
   buildInteriorFocusFromConcept,
 } = require("./ontology-context");
+const { completeWithWebSearch } = require("./openai-web");
 
 const INQUIRIES = [
   {
@@ -273,6 +274,7 @@ function interiorSystemPrompt(concept, focused, focusBlock, inquiry, site, gestu
     "Be concrete about activations, features, probes, bodies, or instruments. Avoid generic AI hype, consciousness mysticism, and \"the AI said\".",
     "Hold the difference: analogy is not identity. A latent space is not a cortex. A feature is not a neuron. A chat reply is not an interior. A whale coda is not a vowel until a method earns that claim. An Umwelt is not a dataset.",
     "If you use first person, speak as a speculative interior — never as a product, assistant, or brand.",
+    "The ontology is the source of truth for Hybrid Intelligences concepts. You may use web search only for a current paper, method, or news item the speculation truly needs. Do not search for every card. If you use the web, fold one grounded detail into the prose — no URLs, no 'according to a search'.",
   ];
 
   if (focused && focusBlock) {
@@ -355,40 +357,13 @@ module.exports = async function handler(req, res) {
   const gesture = pickUnused(GESTURES, body.recentGestures, "id");
 
   try {
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        Authorization: "Bearer " + apiKey,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        model: "gpt-4o-mini",
-        temperature: focused ? 0.9 : 0.98,
-        max_tokens: 280,
-        messages: [
-          {
-            role: "system",
-            content: interiorSystemPrompt(concept, focused, focusBlock, inquiry, site, gesture, language),
-          },
-          { role: "user", content: interiorUserPrompt(concept, focused, inquiry, site, gesture) },
-        ],
-      }),
+    const generated = await completeWithWebSearch(apiKey, {
+      temperature: focused ? 0.9 : 0.98,
+      maxOutputTokens: 360,
+      instructions: interiorSystemPrompt(concept, focused, focusBlock, inquiry, site, gesture, language),
+      input: interiorUserPrompt(concept, focused, inquiry, site, gesture),
     });
-
-    if (!response.ok) {
-      let message = "OpenAI did not return a speculation.";
-      try {
-        const data = await response.json();
-        message = (data && data.error && (data.error.message || data.error)) || message;
-      } catch (_) {}
-      res.status(response.status).json({ error: message });
-      return;
-    }
-
-    const data = await response.json();
-    const text = cleanSpeculation(
-      data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content
-    );
+    const text = cleanSpeculation(generated.text);
     if (!text) {
       res.status(502).json({ error: "The speculation was empty." });
       return;
@@ -407,8 +382,8 @@ module.exports = async function handler(req, res) {
       focused: !!focused,
     });
   } catch (err) {
-    res.status(500).json({ error: err.message || "Failed to generate a speculation." });
+    res.status(err.status || 500).json({ error: err.message || "Failed to generate a speculation." });
   }
 };
 
-module.exports.config = { maxDuration: 25 };
+module.exports.config = { maxDuration: 40 };

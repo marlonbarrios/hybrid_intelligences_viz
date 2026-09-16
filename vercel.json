@@ -9,15 +9,18 @@
     },
     "api/oracle.js": {
       "includeFiles": "ontology.jsonld",
-      "maxDuration": 25
+      "maxDuration": 40
     },
     "api/what-if.js": {
       "includeFiles": "ontology.jsonld",
-      "maxDuration": 25
+      "maxDuration": 40
     },
     "api/interior.js": {
       "includeFiles": "ontology.jsonld",
-      "maxDuration": 25
+      "maxDuration": 40
+    },
+    "api/search.js": {
+      "maxDuration": 30
     },
     "api/speech.js": {
       "maxDuration": 20
