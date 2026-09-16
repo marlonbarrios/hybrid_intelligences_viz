@@ -150,7 +150,132 @@ function parseRelated(raw, ids) {
   return { related: [...new Set(related)].slice(0, 8), missing };
 }
 
-function addConcept(job) {
+const WIKI_UA = "HybridIntelligencesStudio/1.0 (https://github.com/marlonbarrios/hybrid_intelligences_viz)";
+
+function normalizeName(text) {
+  return String(text || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/\p{M}/gu, "")
+    .replace(/[^a-z0-9]+/g, "");
+}
+
+async function lookupWikipedia(label) {
+  const q = clip(label, 80);
+  if (!q) return "";
+  const searchUrl = "https://en.wikipedia.org/w/api.php?" + new URLSearchParams({
+    action: "query",
+    list: "search",
+    srsearch: q,
+    srlimit: "5",
+    srnamespace: "0",
+    format: "json",
+  });
+  const res = await fetch(searchUrl, { headers: { "User-Agent": WIKI_UA } });
+  if (!res.ok) return "";
+  const data = await res.json();
+  const hits = (data.query && data.query.search) || [];
+  const nq = normalizeName(q);
+  let title = "";
+  for (const hit of hits) {
+    const candidate = String(hit.title || "");
+    if (/disambiguation/i.test(candidate)) continue;
+    const nt = normalizeName(candidate);
+    if (nt === nq || nt.startsWith(nq) || nq.startsWith(nt) || (nq.length >= 5 && nt.includes(nq))) {
+      title = candidate;
+      break;
+    }
+  }
+  if (!title) return "";
+
+  const resolveUrl = "https://en.wikipedia.org/w/api.php?" + new URLSearchParams({
+    action: "query",
+    titles: title,
+    redirects: "1",
+    format: "json",
+  });
+  const resolved = await fetch(resolveUrl, { headers: { "User-Agent": WIKI_UA } });
+  if (!resolved.ok) return title.replace(/ /g, "_");
+  const pageData = await resolved.json();
+  const pages = Object.values((pageData.query && pageData.query.pages) || {});
+  const page = pages[0];
+  if (!page || page.missing !== undefined) return "";
+  return String(page.title || title).replace(/ /g, "_");
+}
+
+function parseIsoDuration(iso) {
+  const match = String(iso || "").match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
+  if (!match) return 0;
+  return Number(match[1] || 0) * 3600 + Number(match[2] || 0) * 60 + Number(match[3] || 0);
+}
+
+async function lookupYoutubeTalk(label, apiKey) {
+  const q = `"${label}" (talk OR lecture OR interview OR keynote)`;
+  const searchUrl = "https://www.googleapis.com/youtube/v3/search?" + new URLSearchParams({
+    part: "snippet",
+    type: "video",
+    maxResults: "8",
+    q,
+    videoEmbeddable: "true",
+    relevanceLanguage: "en",
+    key: apiKey,
+  });
+  const searchRes = await fetch(searchUrl);
+  const search = await searchRes.json();
+  if (!searchRes.ok) {
+    throw new Error((search.error && search.error.message) || "YouTube search failed.");
+  }
+  const ids = (search.items || []).map((item) => item.id && item.id.videoId).filter(Boolean);
+  if (!ids.length) return null;
+
+  const detailsUrl = "https://www.googleapis.com/youtube/v3/videos?" + new URLSearchParams({
+    part: "snippet,contentDetails,statistics",
+    id: ids.join(","),
+    key: apiKey,
+  });
+  const detailsRes = await fetch(detailsUrl);
+  const details = await detailsRes.json();
+  if (!detailsRes.ok) {
+    throw new Error((details.error && details.error.message) || "YouTube video lookup failed.");
+  }
+
+  const nq = label.toLowerCase();
+  const scored = [];
+  for (const video of details.items || []) {
+    const duration = parseIsoDuration(video.contentDetails && video.contentDetails.duration);
+    if (duration < 180 || duration > 4 * 3600) continue;
+    const title = (video.snippet && video.snippet.title) || "";
+    const description = (video.snippet && video.snippet.description) || "";
+    if (/#shorts|youtube shorts/i.test(title)) continue;
+    const titleHit = title.toLowerCase().includes(nq);
+    const descHit = description.toLowerCase().includes(nq);
+    if (!titleHit && !descHit) continue;
+    const views = Number(video.statistics && video.statistics.viewCount) || 0;
+    scored.push({
+      id: video.id,
+      title,
+      channel: (video.snippet && video.snippet.channelTitle) || "",
+      publishedAt: String((video.snippet && video.snippet.publishedAt) || "").slice(0, 10),
+      description,
+      score: (titleHit ? 3 : 0) + Math.log10(views + 1) + Math.min(duration, 3600) / 1800,
+    });
+  }
+  scored.sort((a, b) => b.score - a.score);
+  return scored[0] || null;
+}
+
+function forceVideoConceptEdge(videoId, conceptId) {
+  if (!videoId || !conceptId) return;
+  const videoNodeId = `video_${String(videoId).replace(/-/g, "_")}`;
+  let src = fs.readFileSync(NETWORK, "utf8");
+  const marker = `["${videoNodeId}", "${conceptId}"`;
+  if (src.includes(marker) || src.includes(`["${conceptId}", "${videoNodeId}"`)) return;
+  src = insertBefore(src, "\n];\n\nconst RELATION_TYPE_ORDER", `\n  ["${videoNodeId}", "${conceptId}", 0.95],`);
+  fs.writeFileSync(NETWORK, src);
+  run("node", ["build-ontology.js"], { label: "build-ontology.js" });
+}
+
+async function addConcept(job) {
   const label = clip(job.label || job.name, 80);
   if (!label) throw new Error("A concept name is required.");
   const category = String(job.category || job.cat || "framework").trim().toLowerCase();
@@ -167,7 +292,12 @@ function addConcept(job) {
   if (ids.has(id)) throw new Error("That concept id already exists: " + id);
 
   const { related, missing } = parseRelated(job.related, ids);
-  const wiki = clip(job.wikipedia || job.wiki, 120).replace(/^https?:\/\/en\.wikipedia\.org\/wiki\//, "");
+  let wiki = clip(job.wikipedia || job.wiki, 120).replace(/^https?:\/\/en\.wikipedia\.org\/wiki\//, "");
+  let wikiSource = wiki ? "form" : "";
+  if (!wiki) {
+    wiki = await lookupWikipedia(label);
+    if (wiki) wikiSource = "wikipedia";
+  }
   const urlLine = wiki
     ? `\n    url: "https://en.wikipedia.org/wiki/${jsString(wiki)}", linkLabel: "Wikipedia ↗" },`
     : " },";
@@ -188,15 +318,63 @@ function addConcept(job) {
   }
   fs.writeFileSync(NETWORK, src);
   run("node", ["build-ontology.js"], { label: "build-ontology.js" });
-  return {
+
+  const result = {
     id,
     label,
     category,
     related,
     missing,
+    wikipedia: wiki || undefined,
+    wikipediaSource: wikiSource || "none",
     url: `ontology.html#${id}`,
     network: `network.html#${id}`,
   };
+
+  const wantVideo = job.addVideo === true || String(job.addVideo || "").toLowerCase() === "on";
+  if (!wantVideo) return result;
+
+  const youtubeKey = process.env.YOUTUBE_API_KEY || "";
+  if (!youtubeKey) {
+    result.videoNote = "YouTube search skipped: YOUTUBE_API_KEY is not set.";
+    console.log(result.videoNote);
+    return result;
+  }
+
+  let talk = null;
+  try {
+    talk = await lookupYoutubeTalk(label, youtubeKey);
+  } catch (err) {
+    result.videoNote = "YouTube search failed: " + (err.message || err);
+    console.log(result.videoNote);
+    return result;
+  }
+  if (!talk) {
+    result.videoNote = "No clear YouTube talk matched “" + label + "”. Concept published without a video.";
+    console.log(result.videoNote);
+    return result;
+  }
+
+  console.log("YouTube talk chosen: https://www.youtube.com/watch?v=" + talk.id + " — " + talk.title);
+  const speaker = (category === "author" || category === "facilitator" || category === "participant")
+    ? label
+    : (talk.channel || label);
+  try {
+    result.video = await addVideo({
+      url: "https://www.youtube.com/watch?v=" + talk.id,
+      title: talk.title,
+      speaker,
+      date: talk.publishedAt,
+      caption: clip(talk.description, 400),
+      credit: talk.channel,
+    });
+    forceVideoConceptEdge(result.video && result.video.id, id);
+    result.videoNote = "Ingested " + talk.title + " (" + talk.id + ").";
+  } catch (err) {
+    result.videoNote = "YouTube talk found but ingest failed: " + (err.message || err);
+    console.log(result.videoNote);
+  }
+  return result;
 }
 
 function nextEssayNumber() {
@@ -209,7 +387,71 @@ function nextEssayNumber() {
   return Math.max(4, ...nums) + 1;
 }
 
-function addEssay(job) {
+function essayConceptIds(markdown) {
+  const ids = [];
+  const re = /\(concept:([a-z0-9_]+)\)/gi;
+  let match;
+  while ((match = re.exec(markdown))) {
+    if (!ids.includes(match[1])) ids.push(match[1]);
+  }
+  return ids.slice(0, 6);
+}
+
+function essayImagePrompt(title, author, markdown) {
+  const related = essayConceptIds(markdown).join(", ");
+  const excerpt = clip(markdown.replace(/[#>*`\[\]():]/g, " "), 420);
+  return [
+    "Abstract information visualization of one Hybrid Intelligences essay.",
+    "Knowledge map: nodes, thin edges, clusters, small labels. Black, white, grey, optional gold accent.",
+    "Not a poster, photograph, classroom, portrait, or UI screenshot.",
+    "Focal labeled node: " + title,
+    author ? "Author: " + author : "",
+    excerpt ? "Meaning: " + excerpt : "",
+    related ? "Neighbor nodes: " + related : "",
+  ].filter(Boolean).join("\n");
+}
+
+async function generateEssayThumbnail(title, author, markdown, outPath) {
+  const apiKey = process.env.OPENAI_API_KEY;
+  if (!apiKey) throw new Error("OPENAI_API_KEY is not set.");
+  const response = await fetch("https://api.openai.com/v1/images/generations", {
+    method: "POST",
+    headers: {
+      Authorization: "Bearer " + apiKey,
+      "Content-Type": "application/json",
+      "OpenAI-Safety-Identifier": "hybrid-intelligences-viz",
+    },
+    body: JSON.stringify({
+      model: "gpt-image-2",
+      prompt: essayImagePrompt(title, author, markdown),
+      size: "1024x1024",
+      quality: "low",
+      output_format: "jpeg",
+      output_compression: 80,
+    }),
+  });
+  const data = await response.json();
+  if (!response.ok) {
+    throw new Error((data && data.error && (data.error.message || data.error)) || "OpenAI did not return an image.");
+  }
+  const item = data.data && data.data[0];
+  const b64 = item && item.b64_json;
+  if (b64) {
+    fs.mkdirSync(path.dirname(outPath), { recursive: true });
+    fs.writeFileSync(outPath, Buffer.from(b64, "base64"));
+    return;
+  }
+  if (item && item.url) {
+    const img = await fetch(item.url);
+    if (!img.ok) throw new Error("Image download failed.");
+    fs.mkdirSync(path.dirname(outPath), { recursive: true });
+    fs.writeFileSync(outPath, Buffer.from(await img.arrayBuffer()));
+    return;
+  }
+  throw new Error("Image response was empty.");
+}
+
+async function addEssay(job) {
   const title = clip(job.title, 160);
   const markdown = String(job.markdown || job.body || "").trim();
   if (!title) throw new Error("An essay title is required.");
@@ -220,6 +462,29 @@ function addEssay(job) {
   const mdFile = `essay-${n}.md`;
   const htmlFile = `essay-${n}.html`;
   const nodeId = `essay_${n}`;
+  const posterRel = `screenshots/essay-${n}.jpg`;
+  const posterAbs = path.join(ROOT, posterRel);
+  const body = markdown.replace(/\r\n/g, "\n").trim();
+  let imageNote = "";
+  try {
+    console.log("Generating essay thumbnail with gpt-image-2…");
+    await generateEssayThumbnail(title, author, body, posterAbs);
+    console.log("Wrote " + posterRel);
+  } catch (err) {
+    imageNote = "Thumbnail skipped: " + (err.message || err);
+    console.log(imageNote);
+  }
+  const hasThumb = fs.existsSync(posterAbs) && fs.statSync(posterAbs).size > 2000;
+  const figure = hasThumb
+    ? [
+        "::: figure",
+        `![Essay ${n}: ${title}](${posterRel})`,
+        "",
+        `Essay ${n} as practice · generated still from the Hybrid Intelligences image maker`,
+        ":::",
+        "",
+      ].join("\n")
+    : "";
 
   const front = [
     "---",
@@ -235,7 +500,7 @@ function addEssay(job) {
     "otherEssayLabel: All essays",
     "---",
     "",
-    markdown.replace(/\r\n/g, "\n").trim(),
+    figure + body,
     "",
   ].join("\n");
   fs.writeFileSync(path.join(ROOT, mdFile), front);
@@ -259,12 +524,15 @@ function addEssay(job) {
     fs.writeFileSync(NETWORK, src);
   }
 
+  const shot = hasThumb
+    ? `<img src="${posterRel}" width="1024" height="1024" alt="${title.replace(/"/g, "&quot;")}">`
+    : `<span class="placeholder">Essay ${n}</span>`;
   const hub = fs.readFileSync(path.join(ROOT, "essays.html"), "utf8");
   if (!hub.includes(`href="${htmlFile}"`)) {
     const card = `
       <a class="card" href="${htmlFile}">
         <span class="shot">
-          <span class="placeholder">Essay ${n}</span>
+          ${shot}
         </span>
         <span class="copy">
           <span class="kicker">Essay ${n}</span>
@@ -281,7 +549,14 @@ function addEssay(job) {
 
   run("node", ["build-essays.js"], { label: "build-essays.js" });
   run("node", ["build-ontology.js"], { label: "build-ontology.js" });
-  return { number: n, title, html: htmlFile, id: nodeId };
+  return {
+    number: n,
+    title,
+    html: htmlFile,
+    id: nodeId,
+    thumbnail: hasThumb ? posterRel : undefined,
+    imageNote: imageNote || undefined,
+  };
 }
 
 function applyProposal(videoId, videoNodeId) {
@@ -424,9 +699,9 @@ async function addVideo(job) {
 
 async function publish(job) {
   const action = String(job.action || "").trim().toLowerCase();
-  if (action === "concept") return { action, result: addConcept(job.concept || job) };
+  if (action === "concept") return { action, result: await addConcept(job.concept || job) };
   if (action === "video") return { action, result: await addVideo(job.video || job) };
-  if (action === "essay") return { action, result: addEssay(job.essay || job) };
+  if (action === "essay") return { action, result: await addEssay(job.essay || job) };
   throw new Error("Unknown action. Use concept, video, or essay.");
 }
 
@@ -445,7 +720,9 @@ async function main() {
   } catch (_) {}
   const message =
     summary.action === "concept"
-      ? `Add ${summary.result.label} to the ontology from Studio.`
+      ? (summary.result.video
+        ? `Add ${summary.result.label} and a YouTube talk from Studio.`
+        : `Add ${summary.result.label} to the ontology from Studio.`)
       : summary.action === "video"
         ? `Ingest ${summary.result.title} from Studio.`
         : `Add ${summary.result.title} from Studio.`;
