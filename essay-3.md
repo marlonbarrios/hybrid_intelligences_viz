@@ -20,7 +20,7 @@ otherEssayLabel: Essay 1
 Essay 3 as practice · four clusters and a vocabulary of relations
 :::
 
-In [Hybrid Intelligences](concept:hybrid), I am developing an evolving knowledge architecture that combines a computational [ontology](concept:ontology_kb), a knowledge graph, artistic research, [network visualization](concept:network_viz), and [generative AI](concept:gen_ai) interfaces. Together, these components form an experimental [cognitive assemblage](concept:assemblage) through which I investigate intelligence as [coupling](concept:coupling) across bodies, technologies, institutions, environments, and worlds.
+In [Hybrid Intelligences](concept:hybrid), I am developing an evolving knowledge architecture that combines a computational [ontology](concept:ontology), a knowledge graph, artistic research, [network visualization](concept:network_viz), and [generative AI](concept:gen_ai) interfaces. Together, these components form an experimental [cognitive assemblage](concept:assemblage) through which I investigate intelligence as [coupling](concept:coupling) across bodies, technologies, institutions, environments, and worlds.
 
 I use the term ontology deliberately. In knowledge representation and artificial intelligence, an ontology is not simply a collection of keywords, concepts, or visualizations. It provides a formal and machine-readable way of specifying entities and concepts within a domain, their categories, properties, and relationships.
 
@@ -211,7 +211,7 @@ This is the central proposition I am testing through Hybrid Intelligences.
 
 I therefore describe Hybrid Intelligences as an evolving knowledge architecture combining a computational ontology, knowledge graph, artistic research, visualization, and generative AI interfaces. Together, these components form an experimental cognitive assemblage for investigating intelligence as coupling across bodies, tools, technologies, institutions, environments, and worlds.
 
-The different components of the Hub—[Ontology](concept:ontology_kb), Views (radial [network](concept:network_viz), ring chord, hive, layered DAG, path walker), [Voice](concept:conversational_ai), [Image](concept:concept_image), [Mini-pod](concept:mini_pod), [Enact](concept:enact), [essays](concept:hi_essays), and artistic works—are not separate tools. They are different modes for entering and activating the same evolving knowledge ecology.
+The different components of the Hub—[Ontology](concept:ontology), Views (radial [network](concept:network_viz), ring chord, hive, layered DAG, path walker), [Voice](concept:conversational_ai), [Image](concept:concept_image), [Mini-pod](concept:mini_pod), [Enact](concept:enact), [essays](concept:hi_essays), and artistic works—are not separate tools. They are different modes for entering and activating the same evolving knowledge ecology.
 
 Writing feeds the ontology.
 

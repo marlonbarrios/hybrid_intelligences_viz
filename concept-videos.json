@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-16T17:45:07.190Z",
+  "generated": "2026-09-16T18:09:05.186Z",
   "byConcept": {
     "hayles": [
       {
@@ -2502,6 +2502,15 @@
         "poster": "screenshots/frank-coyle-agentic-ontologies.jpg"
       }
     ],
+    "ontology": [
+      {
+        "id": "frank-coyle-agentic-ontologies",
+        "title": "Why Agentic Systems Need Ontologies | Frank Coyle, UC Berkeley",
+        "speaker": "Frank Coyle",
+        "url": "video-frank-coyle-agentic-ontologies.html",
+        "poster": "screenshots/frank-coyle-agentic-ontologies.jpg"
+      }
+    ],
     "owl": [
       {
         "id": "frank-coyle-agentic-ontologies",
@@ -2512,15 +2521,6 @@
       }
     ],
     "agentic_systems": [
-      {
-        "id": "frank-coyle-agentic-ontologies",
-        "title": "Why Agentic Systems Need Ontologies | Frank Coyle, UC Berkeley",
-        "speaker": "Frank Coyle",
-        "url": "video-frank-coyle-agentic-ontologies.html",
-        "poster": "screenshots/frank-coyle-agentic-ontologies.jpg"
-      }
-    ],
-    "knowledge_graph": [
       {
         "id": "frank-coyle-agentic-ontologies",
         "title": "Why Agentic Systems Need Ontologies | Frank Coyle, UC Berkeley",

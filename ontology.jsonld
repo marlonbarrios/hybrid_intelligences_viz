@@ -63,11 +63,11 @@
         "foaf:homepage": "https://marlonbarrios.github.io/"
       },
       "dc:date": "2026-09-16",
-      "dc:modified": "2026-09-16T17:45:20.755Z",
+      "dc:modified": "2026-09-16T18:09:05.327Z",
       "owl:versionInfo": "1.0.0",
-      "hi:nodeCount": 361,
-      "hi:edgeCount": 3380,
-      "hi:typedEdgeCount": 271
+      "hi:nodeCount": 362,
+      "hi:edgeCount": 3396,
+      "hi:typedEdgeCount": 278
     },
     {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme",
@@ -4623,6 +4623,83 @@
       ]
     },
     {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Ontology",
+      "skos:definition": "A shared specification of what exists in a domain — entities, relations, and the constraints that make a world legible to humans and machines. Gruber: a formal spec of a shared conceptualization. Aristotle’s categories of being; Coyle’s missing layer outside the model; Essay 3’s three layers (SKOS, knowledge graph, OWL) as one architecture, not a picture of the network.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/framework"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "framework",
+      "hi:weight": 1.65,
+      "schema:url": "ontology.html",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Ontology_(information_science)",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#owl",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#skos",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#knowledge_graph",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology_kb",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#agentic_systems",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_3",
+          "hi:strength": 0.92
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#epistemology",
+          "hi:strength": 0.92
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#philosophy",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cs",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hybrid",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#network_viz",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#llm",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_videos",
+          "hi:strength": 0.8
+        }
+      ]
+    },
+    {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#owl",
       "@type": [
         "skos:Concept",
@@ -4683,6 +4760,11 @@
           "hi:relationType": "constrains"
         },
         {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology",
+          "hi:strength": 0.9,
+          "hi:relationType": "emergesFrom"
+        },
+        {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology_kb",
           "hi:strength": 0.9,
           "hi:relationType": "couplesWith"
@@ -4727,6 +4809,11 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cs",
           "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology",
+          "hi:strength": 0.9,
+          "hi:relationType": "emergesFrom"
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology_kb",
@@ -4781,6 +4868,11 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
           "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology",
+          "hi:strength": 0.9,
+          "hi:relationType": "emergesFrom"
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology_kb",
@@ -10257,6 +10349,10 @@
           "hi:strength": 0.98
         },
         {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology",
+          "hi:strength": 0.96
+        },
+        {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#agentic_systems",
           "hi:strength": 0.98
         },
@@ -10310,6 +10406,11 @@
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#owl",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology",
           "hi:strength": 0.9,
           "hi:relationType": "develops"
         },
@@ -15239,6 +15340,11 @@
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
           "hi:strength": 0.9,
           "hi:relationType": "participatesIn"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology",
+          "hi:strength": 0.9,
+          "hi:relationType": "instantiates"
         }
       ]
     },
@@ -19221,6 +19327,10 @@
           "hi:strength": 0.98
         },
         {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology",
+          "hi:strength": 0.96
+        },
+        {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#owl",
           "hi:strength": 0.96
         },
@@ -19252,6 +19362,11 @@
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#frank_coyle",
           "hi:strength": 0.9,
           "hi:relationType": "instantiates"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#owl",
@@ -19579,6 +19694,11 @@
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hybrid",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology",
           "hi:strength": 0.9,
           "hi:relationType": "develops"
         },

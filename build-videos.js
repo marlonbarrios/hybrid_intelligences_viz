@@ -687,9 +687,9 @@ const VIDEO_FALLBACK_CONCEPTS = {
   ],
   "frank-coyle-agentic-ontologies": [
     { conceptId: "frank_coyle", label: "Frank Coyle" },
+    { conceptId: "ontology", label: "Ontology" },
     { conceptId: "owl", label: "OWL" },
     { conceptId: "agentic_systems", label: "Agentic Systems" },
-    { conceptId: "knowledge_graph", label: "Knowledge Graph" },
   ],
 };
 
