@@ -1,0 +1,11 @@
+{
+  "action": "concept",
+  "concept": {
+    "id": "",
+    "label": "Alex Karp",
+    "category": "author",
+    "definition": "Alexander Caedmon Karp (born October 2, 1967) is an American billionaire businessman and entrepreneur. He is the co-founder and CEO of the software firm Palantir Technologies. Karp earned his J.D. degree from Stanford Law School and a doctorate in social theory from Goethe University Frankfurt. He subsequently worked in finance, founding the investment firm Caedmon Group, where he managed money for clients including wealthy European investors and invested in start-up companies and stocks. At Stanford, he met Peter Thiel and in 2003, they alongside three others co-founded Palantir. In 2025, his net worth exceeded $18 billion, making him among the wealthiest 200 people in the world as reported by Forbes and the Bloomberg Billionaires Index, and Time magazine named him on the Time 100 list of the world's most influential people of that year.",
+    "related": "Peter Thiel, Ontology, Palantir, Elon Musk",
+    "wikipedia": "https://en.wikipedia.org/wiki/Alex_Karp"
+  }
+}
