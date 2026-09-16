@@ -1840,6 +1840,9 @@ const NODES = [
   { id: "essay_5", label: "Essay 5", cat: "practice", weight: 1.5,
     desc: "Contemporary Art Making as an Epistemic Practice — Essay 5 by Marlon Barrios Solano (February 4th 2026). Added through Studio.",
     url: "essay-5.html", linkLabel: "Read Essay 5 →" },
+  { id: "alex_karp", label: "Alex Karp", cat: "author", weight: 1.4,
+    desc: "Alexander Caedmon Karp (born October 2, 1967) is an American billionaire businessman and entrepreneur. He is the co-founder and CEO of the software firm Palantir Technologies. Karp earned his J.D. degree from Stanford Law School and a doctorate in social theory from Goethe University Frankfurt. He subsequently worked in finance, founding the investment firm Caedmon Group, where he managed money for clients including wealthy European investors and invested in start-up companies and stocks. At Stanford, he met Peter Thiel and in 2003, they alongside three others co-founded Palantir. In 2025, his net worth exceeded $18 billion, making him among the wealthiest 200 people in the world as reported by Forbes and the Bloomberg Billionaires Index, and Time magazine named him on the Time 100 list of the world's most influential people of that year.",
+    url: "https://en.wikipedia.org/wiki/Alex_Karp", linkLabel: "Wikipedia ↗" },
 ];
 
 const WIKIPEDIA = {
@@ -2119,6 +2122,7 @@ const WIKIPEDIA = {
   universalism: "Universalism",
   posthumanism: "Posthumanism",
   "palantir": "Palantir",
+  "alex_karp": "Alex_Karp",
 };
 
 function attachWikipediaLinks() {
@@ -5961,6 +5965,10 @@ const EDGES = [
   ["essay_5", "hi_essays", 0.95],
   ["essay_5", "marlon", 0.9],
   ["essay_5", "hi_hub", 0.85],
+  ["alex_karp", "peter_thiel", 0.88],
+  ["alex_karp", "ontology", 0.88],
+  ["alex_karp", "palantir", 0.88],
+  ["alex_karp", "elon_musk", 0.88],
 ];
 
 const RELATION_TYPE_ORDER = [

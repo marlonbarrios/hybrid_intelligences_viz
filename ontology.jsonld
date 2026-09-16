@@ -63,10 +63,10 @@
         "foaf:homepage": "https://marlonbarrios.github.io/"
       },
       "dc:date": "2026-09-16",
-      "dc:modified": "2026-09-16T20:27:04.676Z",
+      "dc:modified": "2026-09-16T20:32:32.734Z",
       "owl:versionInfo": "1.0.0",
-      "hi:nodeCount": 382,
-      "hi:edgeCount": 3605,
+      "hi:nodeCount": 383,
+      "hi:edgeCount": 3609,
       "hi:typedEdgeCount": 323
     },
     {
@@ -24365,6 +24365,43 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
           "hi:strength": 0.85
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#alex_karp",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Alex Karp",
+      "skos:definition": "Alexander Caedmon Karp (born October 2, 1967) is an American billionaire businessman and entrepreneur. He is the co-founder and CEO of the software firm Palantir Technologies. Karp earned his J.D. degree from Stanford Law School and a doctorate in social theory from Goethe University Frankfurt. He subsequently worked in finance, founding the investment firm Caedmon Group, where he managed money for clients including wealthy European investors and invested in start-up companies and stocks. At Stanford, he met Peter Thiel and in 2003, they alongside three others co-founded Palantir. In 2025, his net worth exceeded $18 billion, making him among the wealthiest 200 people in the world as reported by Forbes and the Bloomberg Billionaires Index, and Time magazine named him on the Time 100 list of the world's most influential people of that year.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/author"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "author",
+      "hi:weight": 1.4,
+      "schema:url": "https://en.wikipedia.org/wiki/Alex_Karp",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Alex_Karp",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#peter_thiel",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#palantir",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#elon_musk",
+          "hi:strength": 0.88
         }
       ]
     }

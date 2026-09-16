@@ -12,9 +12,9 @@
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   owl:versionInfo "1.0.0" ;
   dc:date "2026-09-16"^^xsd:date ;
-  dc:modified "2026-09-16T20:27:04.677Z"^^xsd:dateTime ;
-  hi:nodeCount "382"^^xsd:integer ;
-  hi:edgeCount "3605"^^xsd:integer .
+  dc:modified "2026-09-16T20:32:32.735Z"^^xsd:dateTime ;
+  hi:nodeCount "383"^^xsd:integer ;
+  hi:edgeCount "3609"^^xsd:integer .
 
 hi:scheme a skos:ConceptScheme ;
   skos:prefLabel "Hybrid Intelligences Concept Scheme" ;
@@ -4673,6 +4673,18 @@ hi:essay_5 a skos:Concept, hi:NetworkNode ;
   hi:weight "1.5"^^xsd:decimal
  ;
   schema:url <essay-5.html>
+ .
+
+hi:alex_karp a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Alex Karp" ;
+  skos:definition "Alexander Caedmon Karp (born October 2, 1967) is an American billionaire businessman and entrepreneur. He is the co-founder and CEO of the software firm Palantir Technologies. Karp earned his J.D. degree from Stanford Law School and a doctorate in social theory from Goethe University Frankfurt. He subsequently worked in finance, founding the investment firm Caedmon Group, where he managed money for clients including wealthy European investors and invested in start-up companies and stocks. At Stanford, he met Peter Thiel and in 2003, they alongside three others co-founded Palantir. In 2025, his net worth exceeded $18 billion, making him among the wealthiest 200 people in the world as reported by Forbes and the Bloomberg Billionaires Index, and Time magazine named him on the Time 100 list of the world's most influential people of that year." ;
+  skos:broader hi:category/author ;
+  skos:inScheme hi:scheme ;
+  hi:category "author" ;
+  hi:weight "1.4"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Alex_Karp> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Alex_Karp>
  .
 
 hi:rel-coupling-hybrid a hi:Relation ;
@@ -26304,6 +26316,30 @@ hi:rel-essay_5-hi_hub a hi:Relation ;
   hi:target hi:hi_hub ;
   hi:strength "0.85"^^xsd:decimal ;
   skos:relatedMatch hi:hi_hub .
+
+hi:rel-alex_karp-peter_thiel a hi:Relation ;
+  hi:source hi:alex_karp ;
+  hi:target hi:peter_thiel ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:peter_thiel .
+
+hi:rel-alex_karp-ontology a hi:Relation ;
+  hi:source hi:alex_karp ;
+  hi:target hi:ontology ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:ontology .
+
+hi:rel-alex_karp-palantir a hi:Relation ;
+  hi:source hi:alex_karp ;
+  hi:target hi:palantir ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:palantir .
+
+hi:rel-alex_karp-elon_musk a hi:Relation ;
+  hi:source hi:alex_karp ;
+  hi:target hi:elon_musk ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:elon_musk .
 
 hi:rel-autopoiesis-coupling-couplesWith a hi:Relation ;
   hi:source hi:autopoiesis ;
