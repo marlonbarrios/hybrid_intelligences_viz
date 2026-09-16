@@ -1837,6 +1837,9 @@ const NODES = [
   { id: "palantir", label: "Palantir", cat: "organization", weight: 1.4,
     desc: "A useful way to understand ⁠Palantir Technologies is that it builds software for turning enormous amounts of disconnected data into a model of the real world that organizations can use to make and execute decisions. For example, imagine a government has information scattered across intelligence reports, satellite imagery, databases, logistics systems, maps, and sensors. Palantir can connect those sources, establish relationships among them, control who can access what, and give analysts and operational teams tools to reason over the resulting system. The company began in 2003 working with the U.S. intelligence community on counterterrorism-related problems and later expanded heavily into commercial industries. Its major technologies are Gotham, oriented heavily toward defense, intelligence, and government operations; Foundry, which integrates organizational data and turns it into an operational model; Apollo, which manages deployment and operation of software across different computing environments; and AIP (Artificial Intelligence Platform), which connects LLMs and other AI models to organizational data and operational workflows. The concept that makes Palantir particularly…",
     url: "https://en.wikipedia.org/wiki/Palantir", linkLabel: "Wikipedia ↗" },
+  { id: "essay_5", label: "Essay 5", cat: "practice", weight: 1.5,
+    desc: "Contemporary Art Making as an Epistemic Practice — Essay 5 by Marlon Barrios Solano (February 4th 2026). Added through Studio.",
+    url: "essay-5.html", linkLabel: "Read Essay 5 →" },
 ];
 
 const WIKIPEDIA = {
@@ -5955,6 +5958,9 @@ const EDGES = [
   ["karla", "physical_ai", 0.7],
   ["palantir", "peter_thiel", 0.88],
   ["palantir", "ontology", 0.88],
+  ["essay_5", "hi_essays", 0.95],
+  ["essay_5", "marlon", 0.9],
+  ["essay_5", "hi_hub", 0.85],
 ];
 
 const RELATION_TYPE_ORDER = [

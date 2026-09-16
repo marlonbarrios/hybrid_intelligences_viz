@@ -63,10 +63,10 @@
         "foaf:homepage": "https://marlonbarrios.github.io/"
       },
       "dc:date": "2026-09-16",
-      "dc:modified": "2026-09-16T20:20:15.112Z",
+      "dc:modified": "2026-09-16T20:27:04.676Z",
       "owl:versionInfo": "1.0.0",
-      "hi:nodeCount": 381,
-      "hi:edgeCount": 3602,
+      "hi:nodeCount": 382,
+      "hi:edgeCount": 3605,
       "hi:typedEdgeCount": 323
     },
     {
@@ -24333,6 +24333,38 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ontology",
           "hi:strength": 0.88
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#essay_5",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Essay 5",
+      "skos:definition": "Contemporary Art Making as an Epistemic Practice — Essay 5 by Marlon Barrios Solano (February 4th 2026). Added through Studio.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/practice"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "practice",
+      "hi:weight": 1.5,
+      "schema:url": "essay-5.html",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_essays",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#marlon",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
+          "hi:strength": 0.85
         }
       ]
     }

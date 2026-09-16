@@ -12,9 +12,9 @@
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   owl:versionInfo "1.0.0" ;
   dc:date "2026-09-16"^^xsd:date ;
-  dc:modified "2026-09-16T20:20:15.113Z"^^xsd:dateTime ;
-  hi:nodeCount "381"^^xsd:integer ;
-  hi:edgeCount "3602"^^xsd:integer .
+  dc:modified "2026-09-16T20:27:04.677Z"^^xsd:dateTime ;
+  hi:nodeCount "382"^^xsd:integer ;
+  hi:edgeCount "3605"^^xsd:integer .
 
 hi:scheme a skos:ConceptScheme ;
   skos:prefLabel "Hybrid Intelligences Concept Scheme" ;
@@ -4662,6 +4662,17 @@ hi:palantir a skos:Concept, hi:NetworkNode ;
  ;
   schema:url <https://en.wikipedia.org/wiki/Palantir> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Palantir>
+ .
+
+hi:essay_5 a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Essay 5" ;
+  skos:definition "Contemporary Art Making as an Epistemic Practice — Essay 5 by Marlon Barrios Solano (February 4th 2026). Added through Studio." ;
+  skos:broader hi:category/practice ;
+  skos:inScheme hi:scheme ;
+  hi:category "practice" ;
+  hi:weight "1.5"^^xsd:decimal
+ ;
+  schema:url <essay-5.html>
  .
 
 hi:rel-coupling-hybrid a hi:Relation ;
@@ -26275,6 +26286,24 @@ hi:rel-palantir-ontology a hi:Relation ;
   hi:target hi:ontology ;
   hi:strength "0.88"^^xsd:decimal ;
   skos:relatedMatch hi:ontology .
+
+hi:rel-essay_5-hi_essays a hi:Relation ;
+  hi:source hi:essay_5 ;
+  hi:target hi:hi_essays ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:hi_essays .
+
+hi:rel-essay_5-marlon a hi:Relation ;
+  hi:source hi:essay_5 ;
+  hi:target hi:marlon ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:marlon .
+
+hi:rel-essay_5-hi_hub a hi:Relation ;
+  hi:source hi:essay_5 ;
+  hi:target hi:hi_hub ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:hi_hub .
 
 hi:rel-autopoiesis-coupling-couplesWith a hi:Relation ;
   hi:source hi:autopoiesis ;
