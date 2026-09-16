@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Hybrid Intelligences — Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e1018;
+      --panel: #12141e;
+      --border: #323848;
+      --title: #f4c430;
+      --text: #e8eaef;
+      --muted: #969eb0;
+      --link: #82c3ff;
+      --hover: #1a1e2a;
+      --cta-fg: #0e1018;
+    }
+    body.light-mode {
+      --bg: #fffdf8;
+      --panel: #ffffff;
+      --border: #d2d6e0;
+      --title: #a8760c;
+      --text: #202430;
+      --muted: #5a6070;
+      --link: #125599;
+      --hover: #f5f3ee;
+      --cta-fg: #fffdf8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse 90% 55% at 12% -10%, rgba(244, 196, 48, 0.07), transparent 55%),
+        radial-gradient(ellipse 70% 45% at 100% 0%, rgba(78, 196, 196, 0.05), transparent 50%),
+        var(--bg);
+      color: var(--text);
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      line-height: 1.5;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      padding: 1.25rem 1.5rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    header .eyebrow {
+      margin: 0 0 0.4rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    header h1 {
+      margin: 0 0 0.45rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 300;
+      font-size: clamp(0.95rem, 2.4vw, 1.15rem);
+      color: var(--title);
+    }
+    header .meta {
+      margin: 0;
+      max-width: 40rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .site-logo img { height: 52px; width: auto; display: block; }
+    main { padding: 1.5rem; max-width: 44rem; }
+    .gate, .desk {
+      padding: 1.15rem 1.25rem 1.3rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--panel);
+    }
+    .tabs {
+      display: flex;
+      gap: 0.4rem;
+      margin: 0 0 1rem;
+      flex-wrap: wrap;
+    }
+    .tabs button, .theme-btn, button[type="submit"] {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text);
+      padding: 0.45rem 0.75rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .tabs button.active, button[type="submit"] {
+      background: var(--title);
+      color: var(--cta-fg);
+      border-color: var(--title);
+    }
+    label {
+      display: block;
+      margin: 0.85rem 0 0.3rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 0.55rem 0.65rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--bg);
+      color: var(--text);
+      font: inherit;
+    }
+    textarea { min-height: 8rem; resize: vertical; }
+    textarea.body { min-height: 16rem; font-family: "IBM Plex Mono", monospace; font-size: 0.85rem; }
+    .hint { margin: 0.35rem 0 0; font-size: 0.82rem; color: var(--muted); }
+    .status {
+      margin: 1rem 0 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .status.error { color: #e07070; }
+    .status.ok { color: var(--title); }
+    form { margin: 0; }
+    .row-actions { margin-top: 1rem; }
+    .hidden { display: none; }
+    footer {
+      padding: 1rem 1.5rem 2rem;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="site-logo" href="index.html" aria-label="Hybrid Intelligences home">
+      <img src="logo.png" alt="Hybrid Intelligences">
+    </a>
+    <p class="eyebrow">Studio · not in the public menu</p>
+    <h1>Add to the Hub</h1>
+    <p class="meta">A concept, a YouTube talk, or an essay. Ontology first: videos are matched to concepts already in the graph. The live site updates after GitHub Actions commits to main.</p>
+  </header>
+  <main>
+    <section class="gate" id="gate">
+      <form id="authForm">
+        <label for="secret">Passphrase</label>
+        <input id="secret" name="secret" type="password" autocomplete="current-password" required>
+        <p class="hint">Same value as <code>HI_STUDIO_SECRET</code> on Vercel.</p>
+        <div class="row-actions">
+          <button type="submit">Open Studio</button>
+        </div>
+        <p class="status" id="authStatus"></p>
+      </form>
+    </section>
+
+    <section class="desk hidden" id="desk">
+      <div class="tabs" role="tablist">
+        <button type="button" class="active" data-tab="concept">Concept</button>
+        <button type="button" data-tab="video">Video</button>
+        <button type="button" data-tab="essay">Essay</button>
+      </div>
+
+      <form id="conceptForm">
+        <label for="conceptLabel">Name</label>
+        <input id="conceptLabel" name="label" required placeholder="Hyperstition">
+        <label for="conceptId">Id (optional)</label>
+        <input id="conceptId" name="id" placeholder="hyperstition">
+        <label for="conceptCat">Category</label>
+        <select id="conceptCat" name="category">
+          <option value="framework">Conceptual Models</option>
+          <option value="premise">Framework</option>
+          <option value="author">Authors/Artists</option>
+          <option value="practice">Practices</option>
+          <option value="quality">Qualities</option>
+          <option value="phenomenon">Phenomena</option>
+          <option value="domain">Domains</option>
+          <option value="tension">Tensions</option>
+          <option value="program">Program</option>
+          <option value="organization">Organizations</option>
+          <option value="participant">Participants</option>
+          <option value="background">Backgrounds</option>
+          <option value="facilitator">Facilitators</option>
+        </select>
+        <label for="conceptDef">Definition</label>
+        <textarea id="conceptDef" name="definition" required></textarea>
+        <label for="conceptRelated">Related concept ids</label>
+        <input id="conceptRelated" name="related" placeholder="coupling, hayles, assemblage">
+        <p class="hint">Comma-separated ids from the ontology. Unknown ids are skipped.</p>
+        <label for="conceptWiki">Wikipedia article (optional)</label>
+        <input id="conceptWiki" name="wikipedia" placeholder="Hyperstition">
+        <div class="row-actions">
+          <button type="submit">Add concept and rebuild ontology</button>
+        </div>
+      </form>
+
+      <form id="videoForm" class="hidden">
+        <label for="videoUrl">YouTube URL</label>
+        <input id="videoUrl" name="url" required placeholder="https://www.youtube.com/watch?v=">
+        <label for="videoTitle">Title</label>
+        <input id="videoTitle" name="title" required>
+        <label for="videoSpeaker">Speaker (as they appear on camera)</label>
+        <input id="videoSpeaker" name="speaker" required>
+        <label for="videoDate">Date</label>
+        <input id="videoDate" name="date" placeholder="2026-03-20">
+        <label for="videoCaption">Caption</label>
+        <textarea id="videoCaption" name="caption"></textarea>
+        <label for="videoCredit">Credit</label>
+        <input id="videoCredit" name="credit" placeholder="Lecture series · venue">
+        <p class="hint">Captions are fetched, matched to existing ontology concepts, and edges are added. New names in the talk are not auto-created as nodes.</p>
+        <div class="row-actions">
+          <button type="submit">Ingest talk and rebuild</button>
+        </div>
+      </form>
+
+      <form id="essayForm" class="hidden">
+        <label for="essayTitle">Title</label>
+        <input id="essayTitle" name="title" required>
+        <label for="essayAuthor">Author</label>
+        <input id="essayAuthor" name="author" value="Marlon Barrios Solano">
+        <label for="essayDate">Date</label>
+        <input id="essayDate" name="date">
+        <label for="essayBody">Markdown</label>
+        <textarea id="essayBody" name="markdown" class="body" required placeholder="Paste the essay. Concept links: [coupling](concept:coupling)"></textarea>
+        <div class="row-actions">
+          <button type="submit">Add essay and rebuild</button>
+        </div>
+      </form>
+
+      <p class="status" id="workStatus"></p>
+    </section>
+  </main>
+  <footer>Hybrid Intelligences · Studio</footer>
+  <script src="realtime-config.js"></script>
+  <script>
+    function applyTheme(mode) {
+      document.body.classList.toggle("light-mode", mode === "light");
+      localStorage.setItem("hi-theme", mode);
+    }
+    (function initTheme() {
+      const saved = localStorage.getItem("hi-theme");
+      const mode = saved || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      applyTheme(mode);
+    })();
+
+    function normalizeOrigin(raw) {
+      return (raw || "").trim().replace(/\/+$/, "");
+    }
+    function isLocalHost() {
+      const host = window.location.hostname;
+      return host === "localhost" || host === "127.0.0.1" || host === "[::1]";
+    }
+    function studioUrl() {
+      if (window.location.protocol === "file:") return "";
+      if (isLocalHost() || window.location.hostname.endsWith("vercel.app")) return "/api/studio";
+      const origin = normalizeOrigin(window.HI_REALTIME_ORIGIN || "https://project-s4uzk.vercel.app");
+      return origin + "/api/studio";
+    }
+
+    const gate = document.getElementById("gate");
+    const desk = document.getElementById("desk");
+    const authStatus = document.getElementById("authStatus");
+    const workStatus = document.getElementById("workStatus");
+    const SECRET_KEY = "hi-studio-secret";
+
+    function setWork(text, kind) {
+      workStatus.textContent = text;
+      workStatus.className = "status" + (kind ? " " + kind : "");
+    }
+
+    async function postStudio(payload) {
+      const endpoint = studioUrl();
+      if (!endpoint) throw new Error("Open this page on localhost or the live Hub, not as a file.");
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || "Studio request failed.");
+      return data;
+    }
+
+    document.getElementById("authForm").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      authStatus.textContent = "Checking…";
+      authStatus.className = "status";
+      const secret = document.getElementById("secret").value;
+      try {
+        await postStudio({ action: "auth", secret });
+        sessionStorage.setItem(SECRET_KEY, secret);
+        gate.classList.add("hidden");
+        desk.classList.remove("hidden");
+      } catch (err) {
+        authStatus.textContent = err.message;
+        authStatus.className = "status error";
+      }
+    });
+
+    document.querySelectorAll(".tabs button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".tabs button").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        const tab = btn.getAttribute("data-tab");
+        document.getElementById("conceptForm").classList.toggle("hidden", tab !== "concept");
+        document.getElementById("videoForm").classList.toggle("hidden", tab !== "video");
+        document.getElementById("essayForm").classList.toggle("hidden", tab !== "essay");
+      });
+    });
+
+    function secret() {
+      return sessionStorage.getItem(SECRET_KEY) || "";
+    }
+
+    async function submitAction(action, form) {
+      setWork("Working… this can take a few minutes for a video.", "");
+      const data = Object.fromEntries(new FormData(form).entries());
+      try {
+        const result = await postStudio({ action, secret: secret(), ...data });
+        if (result.runUrl) {
+          setWork((result.message || "Queued.") + " Follow the run: " + result.runUrl, "ok");
+        } else {
+          setWork(result.message || "Done.", "ok");
+        }
+        form.reset();
+      } catch (err) {
+        setWork(err.message, "error");
+      }
+    }
+
+    document.getElementById("conceptForm").addEventListener("submit", (event) => {
+      event.preventDefault();
+      submitAction("concept", event.currentTarget);
+    });
+    document.getElementById("videoForm").addEventListener("submit", (event) => {
+      event.preventDefault();
+      submitAction("video", event.currentTarget);
+    });
+    document.getElementById("essayForm").addEventListener("submit", (event) => {
+      event.preventDefault();
+      submitAction("essay", event.currentTarget);
+    });
+
+    if (sessionStorage.getItem(SECRET_KEY)) {
+      gate.classList.add("hidden");
+      desk.classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>

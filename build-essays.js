@@ -657,12 +657,36 @@ function extractAll() {
   });
 }
 
+function allEssayConfigs() {
+  const extra = [];
+  const known = new Set(ESSAYS.map((e) => e.md));
+  const files = fs.readdirSync(ROOT).filter((f) => /^essay-\d+\.md$/.test(f) && !known.has(f));
+  files.sort((a, b) => Number(a.match(/\d+/)[0]) - Number(b.match(/\d+/)[0]));
+  for (const md of files) {
+    const { meta } = parseFrontmatter(fs.readFileSync(path.join(ROOT, md), "utf8"));
+    const n = md.match(/\d+/)[0];
+    extra.push({
+      md,
+      html: meta.output || `essay-${n}.html`,
+      pdf: meta.pdf || `essay-${n}.pdf`,
+      printHtml: `_print-essay-${n}.html`,
+      cover: {
+        essayLabel: meta.eyebrow || `Essay ${n}`,
+        title: meta.title || `Essay ${n}`,
+        byline: [meta.author, meta.date].filter(Boolean).join(" · "),
+      },
+    });
+  }
+  return ESSAYS.concat(extra);
+}
+
 function buildAll(withPdf) {
-  for (const cfg of ESSAYS) {
+  const configs = allEssayConfigs();
+  for (const cfg of configs) {
     buildEssay(cfg);
   }
   if (withPdf) {
-    for (const cfg of ESSAYS) {
+    for (const cfg of configs) {
       buildPdf(cfg);
     }
   }

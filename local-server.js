@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Local static server plus /api/token, /api/image, /api/enact, /api/oracle, /api/what-if, /api/interior, /api/speech, and /api/search.
+ * Local static server plus /api/token, /api/image, /api/enact, /api/oracle, /api/what-if, /api/interior, /api/speech, /api/search, and /api/studio.
  *
  *   OPENAI_API_KEY=sk-... node local-server.js
  *   # or put OPENAI_API_KEY in a gitignored .env file
@@ -19,6 +19,7 @@ const whatIfHandler = require("./api/what-if");
 const interiorHandler = require("./api/interior");
 const speechHandler = require("./api/speech");
 const searchHandler = require("./api/search");
+const studioHandler = require("./api/studio");
 
 const ROOT = __dirname;
 const PORT = Number(process.env.PORT) || 8000;
@@ -170,6 +171,7 @@ const server = http.createServer((req, res) => {
     : urlPath === "/api/interior" ? interiorHandler
     : urlPath === "/api/speech" ? speechHandler
     : urlPath === "/api/search" ? searchHandler
+    : urlPath === "/api/studio" ? studioHandler
     : null;
   if (handler) {
     Promise.resolve(vercelReq(req))
@@ -192,6 +194,7 @@ server.listen(PORT, "127.0.0.1", () => {
   console.log(`Oracle: http://localhost:${PORT}/oracle.html`);
   console.log(`What If: http://localhost:${PORT}/what-if.html`);
   console.log(`Interior: http://localhost:${PORT}/interior.html`);
+  console.log(`Studio: http://localhost:${PORT}/studio.html`);
   if (!process.env.OPENAI_API_KEY) {
     console.warn("OPENAI_API_KEY is not set. Copy .env.example to .env, or Talk / Make an image / Mini-pod / Enact will fail until you paste a deployed Vercel URL.");
   }
