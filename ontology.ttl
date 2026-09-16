@@ -12,9 +12,9 @@
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   owl:versionInfo "1.0.0" ;
   dc:date "2026-09-16"^^xsd:date ;
-  dc:modified "2026-09-16T18:41:55.915Z"^^xsd:dateTime ;
-  hi:nodeCount "380"^^xsd:integer ;
-  hi:edgeCount "3600"^^xsd:integer .
+  dc:modified "2026-09-16T20:20:15.113Z"^^xsd:dateTime ;
+  hi:nodeCount "381"^^xsd:integer ;
+  hi:edgeCount "3602"^^xsd:integer .
 
 hi:scheme a skos:ConceptScheme ;
   skos:prefLabel "Hybrid Intelligences Concept Scheme" ;
@@ -4650,6 +4650,18 @@ hi:posthumanism a skos:Concept, hi:NetworkNode ;
   hi:weight "0.9"^^xsd:decimal
  ;
   schema:sameAs <https://en.wikipedia.org/wiki/Posthumanism>
+ .
+
+hi:palantir a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Palantir" ;
+  skos:definition "A useful way to understand ⁠Palantir Technologies is that it builds software for turning enormous amounts of disconnected data into a model of the real world that organizations can use to make and execute decisions. For example, imagine a government has information scattered across intelligence reports, satellite imagery, databases, logistics systems, maps, and sensors. Palantir can connect those sources, establish relationships among them, control who can access what, and give analysts and operational teams tools to reason over the resulting system. The company began in 2003 working with the U.S. intelligence community on counterterrorism-related problems and later expanded heavily into commercial industries. Its major technologies are Gotham, oriented heavily toward defense, intelligence, and government operations; Foundry, which integrates organizational data and turns it into an operational model; Apollo, which manages deployment and operation of software across different computing environments; and AIP (Artificial Intelligence Platform), which connects LLMs and other AI models to organizational data and operational workflows. The concept that makes Palantir particularly…" ;
+  skos:broader hi:category/organization ;
+  skos:inScheme hi:scheme ;
+  hi:category "organization" ;
+  hi:weight "1.4"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Palantir> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Palantir>
  .
 
 hi:rel-coupling-hybrid a hi:Relation ;
@@ -26251,6 +26263,18 @@ hi:rel-karla-physical_ai a hi:Relation ;
   hi:target hi:physical_ai ;
   hi:strength "0.7"^^xsd:decimal ;
   skos:relatedMatch hi:physical_ai .
+
+hi:rel-palantir-peter_thiel a hi:Relation ;
+  hi:source hi:palantir ;
+  hi:target hi:peter_thiel ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:peter_thiel .
+
+hi:rel-palantir-ontology a hi:Relation ;
+  hi:source hi:palantir ;
+  hi:target hi:ontology ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:ontology .
 
 hi:rel-autopoiesis-coupling-couplesWith a hi:Relation ;
   hi:source hi:autopoiesis ;

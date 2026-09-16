@@ -1834,6 +1834,9 @@ const NODES = [
     desc: "Inadequate position: one universal framework imposed as the measure of truth, value, and progress—erasing situated knowledges and other worlds." },
   { id: "posthumanism",       label: "Post-\nhumanism",               cat: "tension",    weight: 0.9,
     desc: "Contested horizon: rethinking the human beyond liberal humanist frames—neither anti-human nor simply transhuman, but open to distributed agency and more-than-human couplings." },
+  { id: "palantir", label: "Palantir", cat: "organization", weight: 1.4,
+    desc: "A useful way to understand ⁠Palantir Technologies is that it builds software for turning enormous amounts of disconnected data into a model of the real world that organizations can use to make and execute decisions. For example, imagine a government has information scattered across intelligence reports, satellite imagery, databases, logistics systems, maps, and sensors. Palantir can connect those sources, establish relationships among them, control who can access what, and give analysts and operational teams tools to reason over the resulting system. The company began in 2003 working with the U.S. intelligence community on counterterrorism-related problems and later expanded heavily into commercial industries. Its major technologies are Gotham, oriented heavily toward defense, intelligence, and government operations; Foundry, which integrates organizational data and turns it into an operational model; Apollo, which manages deployment and operation of software across different computing environments; and AIP (Artificial Intelligence Platform), which connects LLMs and other AI models to organizational data and operational workflows. The concept that makes Palantir particularly…",
+    url: "https://en.wikipedia.org/wiki/Palantir", linkLabel: "Wikipedia ↗" },
 ];
 
 const WIKIPEDIA = {
@@ -2112,6 +2115,7 @@ const WIKIPEDIA = {
   essentialism: "Essentialism",
   universalism: "Universalism",
   posthumanism: "Posthumanism",
+  "palantir": "Palantir",
 };
 
 function attachWikipediaLinks() {
@@ -5949,6 +5953,8 @@ const EDGES = [
   ["wertheim", "ignite", 0.7],
   ["karla", "ai", 0.75],
   ["karla", "physical_ai", 0.7],
+  ["palantir", "peter_thiel", 0.88],
+  ["palantir", "ontology", 0.88],
 ];
 
 const RELATION_TYPE_ORDER = [
