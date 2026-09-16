@@ -685,6 +685,12 @@ const VIDEO_FALLBACK_CONCEPTS = {
     { conceptId: "computational_identity", label: "Computational Identity" },
     { conceptId: "cultural_imagination", label: "Cultural Imagination" },
   ],
+  "frank-coyle-agentic-ontologies": [
+    { conceptId: "frank_coyle", label: "Frank Coyle" },
+    { conceptId: "owl", label: "OWL" },
+    { conceptId: "agentic_systems", label: "Agentic Systems" },
+    { conceptId: "knowledge_graph", label: "Knowledge Graph" },
+  ],
 };
 
 function videoConcepts(video, transcript) {
@@ -785,6 +791,7 @@ const VIDEO_SHORT_LABELS = {
   "ruha-benjamin-new-jim-code": "Benjamin ·\nNew Jim Code",
   "adrienne-maree-brown-emergent-strategy": "amb ·\nEmergent Strategy",
   "fox-harrell-digital-selves": "Harrell ·\nDigital Selves",
+  "frank-coyle-agentic-ontologies": "Coyle ·\nOntologies",
 };
 
 function abbreviateTopic(topic, maxLen = 14) {

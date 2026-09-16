@@ -857,6 +857,17 @@
       "caption": "Sociocultural phantasms and computational identity: how games, avatars, and data structures encode race, gender, and social category — and what more expressive digital selves would require.",
       "credit": "Five College Digital Humanities · Amherst College",
       "transcript": "transcripts/fox-harrell-digital-selves.json"
+    },
+    {
+      "id": "frank-coyle-agentic-ontologies",
+      "title": "Why Agentic Systems Need Ontologies | Frank Coyle, UC Berkeley",
+      "youtube": "https://www.youtube.com/watch?v=Sir59K8ZDPU",
+      "poster": "screenshots/frank-coyle-agentic-ontologies.jpg",
+      "date": "2026-07-22",
+      "speaker": "Frank Coyle",
+      "caption": "Most agent failures are a missing layer: a formal ontology outside the model. OWL, knowledge graphs, and constraints a probabilistic agent cannot sample away.",
+      "credit": "AI Engineer World’s Fair",
+      "transcript": "transcripts/frank-coyle-agentic-ontologies.json"
     }
   ]
 }

@@ -1,0 +1,2609 @@
+{
+  "videoId": "frank-coyle-agentic-ontologies",
+  "text": "[music] >> Um, okay, we're going to launch here. So, my name is Frank Coyle. Um, I'm I'm an educator and teaching at Berkeley now. I've been doing this computer science stuff for oh, 30, 35 years. And um >> [snorts] >> I'm intro and right now it's kind of a critical time for uh poor computer science students. Used to be the used to be the only game in town. Degree was a guaranteed job, and now thanks to AI, it's not. But then again, 5,000 people are here. So, AI and and agents are um seem to be the way to go. So, the question is how do we leverage this new universe that we are moving quickly into. And so, I want to talk about how agents and ontologies will big word fit together. But before you do before I do that, I wanted to um wanted to give you my uh my educational philosophy. And this comes [clears throat] from uh someone called Sister Corita Kent. And it was made popular by John Cage, who is a uh an avant-garde musician. And you got to think about this little bit. Nothing is a mistake. There is no win. There's no fail. There's only make. And more and more today, that's what's important. Get down and make stuff, and that's how you're going to learn, not by necessarily reading. I'm also a big fan of writing. My early career was in neuroscience. I'm kind of coming back into it now that Agent AI is bringing uh kind of cognitive science back. But engage your senses. Get a notebook. Get a pen, a pencil. Draw pictures, write stuff down. Just don't type because when you type you when you're typing your brain is thinking about the letters on the keyboard. When you're writing in a book, your whole brain, your your whole all your all your sensory systems are engaged and you're going to learn faster that way. Okay. On to our talk. Agents and ontology. So, there are two lineages here and I want to talk about both, give you a little philosophical background. Um agents, when did we start talking about agents? Well, goes goes back to the early initial days of AI. People like John McCarthy, uh uh uh uh uh Selfridge, Marvin Minsky, Society of Mind. People started thinking about the fact that this new computing technology was going to lead us into some kind of artificial intelligence, which is a term that came in 1956 when all these characters got together and tried to figure out where the future was going. Okay? And the concept of an agent finally evolved, things that perceive and decide and then act and that's what we're seeing now. Now, what about ontologies? Well, it turns out ontologies are not that new. Okay? It was actually Aristotle who first came up with the concept of we need a philosophy of of being. Like, whoa, kind of heavy. Um but came up with categories of being and this kind of relates to what people are doing now with graph databases and knowledge representation. And there are a couple of other people who kind of formalized it. Uh Von Quine was a philosopher and then this guy Gruber, 1993. And I think this captures what knowledge and uh graph technology really represents. It is a a formal specification of a shared conceptualization. And that's what we want to give to our agents. We want to give them our concept our conceptualization of the universe, our universe, our domains. Okay? And now, what's happening is you're getting the convergence of something that is probabilistic, the agents, the LLMs, with the the more formal representations that you have with ontologies. And so, this term is now being used you hearing this a lot, neuro-symbolic AI. Sounds pretty fancy, but it's really neural networks tied into symbolic AI, which rule-based systems come under that category, um as do the knowledge graphs that we're that we're assembling. And so, what I'd like to argue is that neuro-symbolic AI sort of represents a way to keep the LLM on its guardrails, because LLMs are by nature probabilistic. People worry about hallucinations, but that's the feature. That's actually a feature of large language models. It's who we are. We hallucinate in a way. We imagine things that may not exist, and then we turn them into reality. And that's what large language models do in in a way. Okay? So, let's just quickly overview what ontologies are. It's not They're not complicated. They're basically a representation of entities and their relationships to other entities. And these entities have properties. And this whole concept of graph databases arose when people began to realize that relational databases sticking data into tables was too restrictive. You wanted to add something new to a relational database, so you have to add a new column. Man, I had then then you have to redo the whole structure. With a with a graph database, you can just attach another item. You can just attach a property. You can attach a relationship. Okay? So, the question often arises, okay, I I get it. I need to have an ontology to represent in a formal way what my organization is doing. How do I do it? Okay? There are a couple of ways you can approach it. You can have a top-down approach or a bottom-up approach. Top-down approach is you get the experts together and they sit down and analyze the domain, come up with the entities. What do we have? We have purchase orders, we have customers, we have customer representatives, and we're going to structure them. They have properties. These are the relationships. Okay, that's one way. And this models what we were doing back in the '80s when I was involved in expert systems. Everybody thought expert systems was the way to do AI. Symbolic AI was the way to go. Companies rose, millions of dollars were spent. Uh the the Japanese created this uh future world project in the late '80s. People in America were my my son was taking Japanese in school because of these expert systems. And but they couldn't scale. They couldn't scale, and then we went into a kind of AI winter. Where did neural networks came come from? Neural networks were put out there in the '60s, but they couldn't scale because we didn't happen to have Nvidia who was off making GPUs to make make reality of the of the video games fantastic, and then someone said, let's turn these things over to the neural networks, and of course, that's kind of why we're here now. So, the other way you can that that people are adding to or creating ontologies is is from the bottom up. For example, customer reactions. What are the things the customers are involved in? Wait. Do you these entities, these relationships, let's add this to our ontology. Let's Let's add this information to the graph. Now, as as a help, it's helpful to be aware that there are existing taxonomies that people have been working on for the last 15 to 20 years. Things like schema.org, which has a whole set of terms and relationships, so you don't have to reinvent the wheel. In fact, you it's to your advantage to use some of these ontologies. FOAF, Friend of a Friend, for modeling social networks. The Dublin Core, which was an early an early attempt to come up with terms for describing uh research papers and books and so forth. So, there's a whole series of things. In fact, Wikipedia is based on an ontology called DBpedia. So, when you do a search on Wikipedia, it's looking things up in its giant graph database. So, this stuff has been out there underlying a lot of what we already do. So, take advantage of these things that already exist. Okay. Now, what do you do when you build your ontology? Okay, so what? I know what these entities are, I know what their relationships are, they have properties. How can I do anything with them? Well, there are other augmenting technologies, auxiliary technologies. Things that we call the things like RDFS, which is a technology, and OWL, which I'll talk more about. So, these have these kind of sit over to the side of your graph. So, I'm not going to talk about on I mean ontology is a big word and it's often confusing and used in many ways, but think of it as a graph data structure. Okay? And you have the entities and relationships, but you want to apply some control over them. Or you want to be able to make inference over them. So, for example, there is uh some terms in this technology called RDFS. Domain and range. So, if I say teaches has a domain of teacher. That means if I say Bob teaches Scooter in my text, I can infer that Bob is a teacher. And if I say all teachers are persons, then this statement lets me know if I say Bob teaches Scooter, now I know Bob is a person, Bob is a teacher. What about Scooter? If I say teaches has a range of student, that means the the right side of the verb, then Scooter is a student. And now I have this extra information into my system. OWL also has a series of of of properties that allow you to make some inferences. So, a transitive property transitive property says, if Sue is an ancestor like ancestor is a transitive property. If Sue is an ancestor of Mary and Mary is an ancestor of Ann, then Sue is an ancestor of Ann. Okay? This was not initially into my graph system, but with applying these functional properties, I can then add and augment the system with this extra data. So, that's very useful. Then there's some properties called functional properties, which means only one. So, has father is a functional property. You can only have one father. You can only have one mother. That is a functional property. Okay? So, that's that can serve as a constraint. So, when if you say Bob is my Bob is Jim's father, BB is Jim's father, well, the inference here is that Bob and BB are two ways of representing the same individual because that is a functional property. Can only have one. So, these derivations and constraints that don't sit in the graph, they sit sort of on the side and they can help as we're going to see, I'm going to propose, when we deal with agents, how they can they can help us out. So, what about agents? Everybody's talking about agents now and everybody's talking about loops. Loops, loops, loops everywhere. Loops have been around for a long time. Back in the '60s, people were debating who has the best programming language? Fortran or COBOL? No, mine is better. No, mine is better. Oh, you don't know anything. You don't know what you're talking about. Bohm and Jacopini in 1966 came out and said, \"Okay, there is no real difference in programming languages if they have three aspects. Sequence. I can put statement A, statement B, statement C. Fine. I have conditionals. I can have if then. And the last piece, I have a loop. If I have a loop, if I have iteration, if I take these three things, the the language is what's called Turing complete. Can do any can compute anything that a can be computed by computational devices from the work of Alan Turing. Okay? And now we're seeing this in agentic AI. Agents are now have loops. Loops give us the last piece in the equation of giving us a technology that is capable of doing anything that computational devices can do. The danger though of loops is that they can break. If you're If you're a programmer, you know, you've all go into infinite loop. Not good. Loops can drift as agents start talking to each other, things get all go off off the rails. And loops can cost you money. Token counts crank up as the loops continue. So, you don't you need to be careful, okay? But in a way we are revisiting some of the early stuff with symbolic AI. I would argue we're going back to the world of expert systems. Which is the symbolic part of the whole thing. So, I want to show you a little example using Claude agent. So, little code here. Don't get scared, but I know nobody does Python anymore, but you got to look at what the agent's giving you and you got to you got to move in and and manipulate it. So, here's a here's a loop while true, classic Python loop. Okay? And so, we have a client. So, we're actually So, the first little chunk here that you see, r e s p, the response, this is just some code where we have a model and we have uh we have a prompt, that's part of part of the messages, and we have a tool, and we're we're asking the LLM to solve this problem using a tool. Now, here's the here's the catch. LLMs can't do anything. All they can do is give us the next word with a high probability. Amazingly, we can now have these conversations it, but they can't do anything. But, we can give it a tool, and we can give it what we want, and say, \"How do you think this tool can help us get what we want?\" And then the LLM will set up the parameters, and come back to us, and say, \"Okay, here's my response. I can't execute this tool, but I know what the input parameters are. I know what your context is. I know what your prompt is. So, here is the call that you need to make of the tool, because I can't do it. I'm the LLM. I'm just locked in this box. Okay? So, the second box the second chunk is stop reason. So, stop reason means the LLM has stopped for some reason. The The reason here is that it can't do anything, and if the reason is tool use, ah, now it's time. Let's go execute that tool. So, that second line, get tool. It takes the response, which is formulating the the parameters, and triggering the action. Okay. Now, I have this stuff in red here. This is where I think the LLMs and other uh I'm sorry, not LLMs. The ontologies and stuff can come in. So, if you look down there, after the the tool is called, it said tool runs. This is where ontologies could come in. The tool's going to give us information. We put the information in a form that our our our our validator can use, and think about the validator as operating with this these ontologies about our domain, then we can make some sense of whether the response of the LLM is reasonable. So, this is the loop. Call a tool, check the stop reason. If it's a reasonable result, then let's go with it. If it's not reasonable, go back to the LLM. Say, \"Oh, this is this is not working.\" Or get a human in the loop. But the idea is to surround the input with checks. Now, I've got this something that you that you should be at least taking a look at if you're doing some of this coding is something called Pydantic. Pydantic is a way to specify the types of what you want the types of the parameters to be. Those of you who who do know Python, know Python is a unstructured type language. So, you can have a variable x = 20, x = hello, no problem. There's no typing. Pydantic adds typing to that. So, you want to check your types with Pydantic and then check your results with the ontology. So, Pydantic at the door, ontology at the ledger, and pure agents and by the way, your agents should try to have no side effects. That helps the whole logic. Meaning, they're not running off doing something that they're they're changing they're changing things in the database not yet. You want to run them through the ontology first and make sure that works. Okay. I only got an I've got I've got another I've just a short time. I'm going to try to show you some of the things that um that you can some logical constructs from from something called OWL, the uh the web object language for for objects. So, you have these functional properties, disjoint properties. I'll just put these you can look at the slides, but essentially the errors it can catch. Look over in the the right-hand column. A second refund on the same order is a is is a problem. But ontologies could catch it, whereas it's it's very tricky to do that in in English. A payout sent to the support desk instead of the buyer. Okay? You can catch that with an owl disjoint property where customer and support rep are two separate entities. Okay? Uh one of may a made-up value like probably shipped. You can specify you must have certain kinds of value. So, uh the status paid, shipped, or refunded, nothing else. And when you're in the pure text world, this can get this can get funky because the the LLMs are again probabilistic and um return some crazy stuff. Okay. Uh so, really what the point I want to make here is use these re- you can have a reasoner built on ontology to check keep the LLM on track, have guardrails to keep it honest. Okay? And for the guardrails, I'm referring to these concepts re- these support technologies with RDFS and owl. And my my bottom line is and nothing is a mistake, there's no win, no fail, only a make. Okay. Feel free to reach out to me coil@burkly. I've got a I've got a I've got a little website codesupreme.ai. I'm a big fan of if you're John Coltrane has a has a some jazz called uh called Love Supreme. So, I've named my site Code Supreme. And if you go there, I've got some music and it's all good. Okay. Thanks very much. 20 minutes. >> [applause] [music] >> Woo!",
+  "segments": [
+    {
+      "start": 1.309,
+      "end": 3.3289999999999997,
+      "text": "[music]"
+    },
+    {
+      "start": 12.88,
+      "end": 17.52,
+      "text": ">> Um, okay, we're going to launch here."
+    },
+    {
+      "start": 15.24,
+      "end": 20.560000000000002,
+      "text": "So, my name is Frank Coyle."
+    },
+    {
+      "start": 17.52,
+      "end": 22.64,
+      "text": "Um, I'm I'm an educator and teaching at"
+    },
+    {
+      "start": 20.56,
+      "end": 24.72,
+      "text": "Berkeley now. I've been doing this"
+    },
+    {
+      "start": 22.64,
+      "end": 26.8,
+      "text": "computer science stuff for"
+    },
+    {
+      "start": 24.72,
+      "end": 28.165,
+      "text": "oh, 30, 35 years."
+    },
+    {
+      "start": 26.8,
+      "end": 28.36,
+      "text": "And um"
+    },
+    {
+      "start": 28.165,
+      "end": 30.64,
+      "text": ">> [snorts]"
+    },
+    {
+      "start": 28.36,
+      "end": 32.879999999999995,
+      "text": ">> I'm intro and right now it's kind of a"
+    },
+    {
+      "start": 30.64,
+      "end": 34.36,
+      "text": "critical time for uh"
+    },
+    {
+      "start": 32.88,
+      "end": 36.72,
+      "text": "poor computer science students. Used to"
+    },
+    {
+      "start": 34.36,
+      "end": 39.4,
+      "text": "be the used to be the only game in town."
+    },
+    {
+      "start": 36.72,
+      "end": 41.879999999999995,
+      "text": "Degree was a guaranteed job, and now"
+    },
+    {
+      "start": 39.4,
+      "end": 45.239999999999995,
+      "text": "thanks to AI, it's not. But then again,"
+    },
+    {
+      "start": 41.88,
+      "end": 48,
+      "text": "5,000 people are here. So, AI and and"
+    },
+    {
+      "start": 45.24,
+      "end": 50.480000000000004,
+      "text": "agents are um seem to be the way to go."
+    },
+    {
+      "start": 48,
+      "end": 53.92,
+      "text": "So, the question is how do we leverage"
+    },
+    {
+      "start": 50.48,
+      "end": 55.4,
+      "text": "this new universe that we are moving"
+    },
+    {
+      "start": 53.92,
+      "end": 58.64,
+      "text": "quickly into. And so, I want to talk"
+    },
+    {
+      "start": 55.4,
+      "end": 61.32,
+      "text": "about how agents and ontologies will big"
+    },
+    {
+      "start": 58.64,
+      "end": 65.4,
+      "text": "word fit together. But before you do"
+    },
+    {
+      "start": 61.32,
+      "end": 67.92,
+      "text": "before I do that, I wanted to um"
+    },
+    {
+      "start": 65.4,
+      "end": 69.68,
+      "text": "wanted to give you my uh my educational"
+    },
+    {
+      "start": 67.92,
+      "end": 70.84,
+      "text": "philosophy."
+    },
+    {
+      "start": 69.68,
+      "end": 73.32000000000001,
+      "text": "And this comes [clears throat] from uh"
+    },
+    {
+      "start": 70.84,
+      "end": 76.04,
+      "text": "someone called Sister Corita Kent."
+    },
+    {
+      "start": 73.32,
+      "end": 79.83999999999999,
+      "text": "And it was made popular by John Cage,"
+    },
+    {
+      "start": 76.04,
+      "end": 81.64,
+      "text": "who is a uh an avant-garde musician."
+    },
+    {
+      "start": 79.84,
+      "end": 83.36,
+      "text": "And"
+    },
+    {
+      "start": 81.64,
+      "end": 85.48,
+      "text": "you got to think about this little bit."
+    },
+    {
+      "start": 83.36,
+      "end": 86.96,
+      "text": "Nothing is a mistake."
+    },
+    {
+      "start": 85.48,
+      "end": 90.28,
+      "text": "There is no win."
+    },
+    {
+      "start": 86.96,
+      "end": 92.19999999999999,
+      "text": "There's no fail. There's only make."
+    },
+    {
+      "start": 90.28,
+      "end": 95.6,
+      "text": "And more and more today, that's what's"
+    },
+    {
+      "start": 92.2,
+      "end": 96.96000000000001,
+      "text": "important. Get down and make stuff, and"
+    },
+    {
+      "start": 95.6,
+      "end": 98.64,
+      "text": "that's how you're going to learn, not by"
+    },
+    {
+      "start": 96.96,
+      "end": 101.44,
+      "text": "necessarily reading."
+    },
+    {
+      "start": 98.64,
+      "end": 103.52,
+      "text": "I'm also a big fan of writing."
+    },
+    {
+      "start": 101.44,
+      "end": 105.44,
+      "text": "My early career was in neuroscience. I'm"
+    },
+    {
+      "start": 103.52,
+      "end": 108.36,
+      "text": "kind of coming back into it now that"
+    },
+    {
+      "start": 105.44,
+      "end": 111.6,
+      "text": "Agent AI is bringing uh"
+    },
+    {
+      "start": 108.36,
+      "end": 114.48,
+      "text": "kind of cognitive science back. But"
+    },
+    {
+      "start": 111.6,
+      "end": 115.47999999999999,
+      "text": "engage your senses. Get a notebook. Get"
+    },
+    {
+      "start": 114.48,
+      "end": 118.36,
+      "text": "a"
+    },
+    {
+      "start": 115.48,
+      "end": 120.04,
+      "text": "pen, a pencil. Draw pictures, write"
+    },
+    {
+      "start": 118.36,
+      "end": 122,
+      "text": "stuff down."
+    },
+    {
+      "start": 120.04,
+      "end": 124.32000000000001,
+      "text": "Just don't type because when you type"
+    },
+    {
+      "start": 122,
+      "end": 125.72,
+      "text": "you when you're typing your brain is"
+    },
+    {
+      "start": 124.32,
+      "end": 128.399,
+      "text": "thinking about the letters on the"
+    },
+    {
+      "start": 125.72,
+      "end": 130.6,
+      "text": "keyboard. When you're writing in a book,"
+    },
+    {
+      "start": 128.399,
+      "end": 132.6,
+      "text": "your whole brain, your your whole all"
+    },
+    {
+      "start": 130.6,
+      "end": 134.79999999999998,
+      "text": "your all your sensory systems are"
+    },
+    {
+      "start": 132.6,
+      "end": 136.84,
+      "text": "engaged and you're going to learn"
+    },
+    {
+      "start": 134.8,
+      "end": 138.36,
+      "text": "faster that way."
+    },
+    {
+      "start": 136.84,
+      "end": 141.32,
+      "text": "Okay."
+    },
+    {
+      "start": 138.36,
+      "end": 141.32000000000002,
+      "text": "On to our talk."
+    },
+    {
+      "start": 141.56,
+      "end": 145.48,
+      "text": "Agents and ontology. So, there are two"
+    },
+    {
+      "start": 143.36,
+      "end": 146.959,
+      "text": "lineages here and I want to talk about"
+    },
+    {
+      "start": 145.48,
+      "end": 149.35999999999999,
+      "text": "both, give you a little philosophical"
+    },
+    {
+      "start": 146.959,
+      "end": 151.36,
+      "text": "background. Um"
+    },
+    {
+      "start": 149.36,
+      "end": 153.48000000000002,
+      "text": "agents, when did we start talking about"
+    },
+    {
+      "start": 151.36,
+      "end": 156.56,
+      "text": "agents? Well, goes goes back to the"
+    },
+    {
+      "start": 153.48,
+      "end": 158.39999999999998,
+      "text": "early initial days of AI. People like"
+    },
+    {
+      "start": 156.56,
+      "end": 159.24,
+      "text": "John McCarthy,"
+    },
+    {
+      "start": 158.4,
+      "end": 160.44,
+      "text": "uh"
+    },
+    {
+      "start": 159.24,
+      "end": 163,
+      "text": "uh uh"
+    },
+    {
+      "start": 160.44,
+      "end": 165.68,
+      "text": "uh uh Selfridge, Marvin Minsky, Society"
+    },
+    {
+      "start": 163,
+      "end": 167.36,
+      "text": "of Mind. People started thinking about"
+    },
+    {
+      "start": 165.68,
+      "end": 170.04000000000002,
+      "text": "the fact that this new computing"
+    },
+    {
+      "start": 167.36,
+      "end": 172.12,
+      "text": "technology was going to lead us into"
+    },
+    {
+      "start": 170.04,
+      "end": 174.07999999999998,
+      "text": "some kind of artificial intelligence,"
+    },
+    {
+      "start": 172.12,
+      "end": 176.72,
+      "text": "which is a term that came"
+    },
+    {
+      "start": 174.08,
+      "end": 179.16000000000003,
+      "text": "in 1956 when all these characters got"
+    },
+    {
+      "start": 176.72,
+      "end": 181.68,
+      "text": "together and tried to figure out where"
+    },
+    {
+      "start": 179.16,
+      "end": 184,
+      "text": "the future was going. Okay? And the"
+    },
+    {
+      "start": 181.68,
+      "end": 185.16,
+      "text": "concept of an agent finally evolved,"
+    },
+    {
+      "start": 184,
+      "end": 187.72,
+      "text": "things that"
+    },
+    {
+      "start": 185.16,
+      "end": 189.4,
+      "text": "perceive and decide and then act and"
+    },
+    {
+      "start": 187.72,
+      "end": 190.88,
+      "text": "that's what we're seeing now."
+    },
+    {
+      "start": 189.4,
+      "end": 193.88,
+      "text": "Now, what about ontologies? Well, it"
+    },
+    {
+      "start": 190.88,
+      "end": 196.32,
+      "text": "turns out ontologies are not that new."
+    },
+    {
+      "start": 193.88,
+      "end": 198.84,
+      "text": "Okay? It was actually Aristotle who"
+    },
+    {
+      "start": 196.32,
+      "end": 202.35999999999999,
+      "text": "first came up with the concept of we"
+    },
+    {
+      "start": 198.84,
+      "end": 205.16,
+      "text": "need a philosophy of of being. Like,"
+    },
+    {
+      "start": 202.36,
+      "end": 207.28,
+      "text": "whoa, kind of heavy. Um but came up with"
+    },
+    {
+      "start": 205.16,
+      "end": 209.84,
+      "text": "categories of being and this kind of"
+    },
+    {
+      "start": 207.28,
+      "end": 212.28,
+      "text": "relates to what people are doing now"
+    },
+    {
+      "start": 209.84,
+      "end": 214.12,
+      "text": "with graph databases and knowledge"
+    },
+    {
+      "start": 212.28,
+      "end": 215.84,
+      "text": "representation. And there are a couple"
+    },
+    {
+      "start": 214.12,
+      "end": 216.72,
+      "text": "of other people who kind of formalized"
+    },
+    {
+      "start": 215.84,
+      "end": 217.72,
+      "text": "it."
+    },
+    {
+      "start": 216.72,
+      "end": 219.8,
+      "text": "Uh"
+    },
+    {
+      "start": 217.72,
+      "end": 222.959,
+      "text": "Von Quine was a philosopher and then"
+    },
+    {
+      "start": 219.8,
+      "end": 225.20000000000002,
+      "text": "this guy Gruber, 1993. And I think this"
+    },
+    {
+      "start": 222.959,
+      "end": 228.76,
+      "text": "captures what"
+    },
+    {
+      "start": 225.2,
+      "end": 231.28,
+      "text": "knowledge and uh"
+    },
+    {
+      "start": 228.76,
+      "end": 234.6,
+      "text": "graph technology really represents. It"
+    },
+    {
+      "start": 231.28,
+      "end": 237.12,
+      "text": "is a a formal specification"
+    },
+    {
+      "start": 234.6,
+      "end": 238.56,
+      "text": "of a shared conceptualization. And"
+    },
+    {
+      "start": 237.12,
+      "end": 241.6,
+      "text": "that's what we want to give to our"
+    },
+    {
+      "start": 238.56,
+      "end": 244.08,
+      "text": "agents. We want to give them our concept"
+    },
+    {
+      "start": 241.6,
+      "end": 246.72,
+      "text": "our conceptualization of the universe,"
+    },
+    {
+      "start": 244.08,
+      "end": 248.68,
+      "text": "our universe, our domains. Okay? And"
+    },
+    {
+      "start": 246.72,
+      "end": 251.44,
+      "text": "now, what's happening"
+    },
+    {
+      "start": 248.68,
+      "end": 254.08,
+      "text": "is you're getting the convergence of"
+    },
+    {
+      "start": 251.44,
+      "end": 258.239,
+      "text": "something that is probabilistic,"
+    },
+    {
+      "start": 254.08,
+      "end": 260.76,
+      "text": "the agents, the LLMs, with the"
+    },
+    {
+      "start": 258.239,
+      "end": 264.32,
+      "text": "the more formal representations that you"
+    },
+    {
+      "start": 260.76,
+      "end": 266.08,
+      "text": "have with ontologies. And so, this term"
+    },
+    {
+      "start": 264.32,
+      "end": 268.76,
+      "text": "is now being used you"
+    },
+    {
+      "start": 266.08,
+      "end": 271.44,
+      "text": "hearing this a lot, neuro-symbolic"
+    },
+    {
+      "start": 268.76,
+      "end": 275.2,
+      "text": "AI. Sounds pretty fancy, but it's really"
+    },
+    {
+      "start": 271.44,
+      "end": 279.36,
+      "text": "neural networks tied into"
+    },
+    {
+      "start": 275.2,
+      "end": 281.24,
+      "text": "symbolic AI, which rule-based systems"
+    },
+    {
+      "start": 279.36,
+      "end": 284.28000000000003,
+      "text": "come under that category,"
+    },
+    {
+      "start": 281.24,
+      "end": 285.48,
+      "text": "um as do the knowledge graphs that we're"
+    },
+    {
+      "start": 284.28,
+      "end": 288.59999999999997,
+      "text": "that we're"
+    },
+    {
+      "start": 285.48,
+      "end": 289.84000000000003,
+      "text": "assembling. And so,"
+    },
+    {
+      "start": 288.6,
+      "end": 292.44,
+      "text": "what I'd like to argue is that"
+    },
+    {
+      "start": 289.84,
+      "end": 296.4,
+      "text": "neuro-symbolic AI"
+    },
+    {
+      "start": 292.44,
+      "end": 300.32,
+      "text": "sort of represents a way to keep the LLM"
+    },
+    {
+      "start": 296.4,
+      "end": 302.76,
+      "text": "on its guardrails, because LLMs are by"
+    },
+    {
+      "start": 300.32,
+      "end": 305.12,
+      "text": "nature probabilistic."
+    },
+    {
+      "start": 302.76,
+      "end": 307.68,
+      "text": "People worry about hallucinations, but"
+    },
+    {
+      "start": 305.12,
+      "end": 309.72,
+      "text": "that's the feature. That's actually a"
+    },
+    {
+      "start": 307.68,
+      "end": 313.12,
+      "text": "feature of large language models. It's"
+    },
+    {
+      "start": 309.72,
+      "end": 315.16,
+      "text": "who we are. We hallucinate in a way. We"
+    },
+    {
+      "start": 313.12,
+      "end": 317.36,
+      "text": "imagine things that may not exist, and"
+    },
+    {
+      "start": 315.16,
+      "end": 319,
+      "text": "then we turn them into reality."
+    },
+    {
+      "start": 317.36,
+      "end": 319.72,
+      "text": "And that's what large language models do"
+    },
+    {
+      "start": 319,
+      "end": 320.96,
+      "text": "in"
+    },
+    {
+      "start": 319.72,
+      "end": 323.84000000000003,
+      "text": "in a way."
+    },
+    {
+      "start": 320.96,
+      "end": 326.4,
+      "text": "Okay? So,"
+    },
+    {
+      "start": 323.84,
+      "end": 328.15999999999997,
+      "text": "let's just quickly overview what"
+    },
+    {
+      "start": 326.4,
+      "end": 329.76,
+      "text": "ontologies are. It's not They're not"
+    },
+    {
+      "start": 328.16,
+      "end": 333.16,
+      "text": "complicated. They're basically a"
+    },
+    {
+      "start": 329.76,
+      "end": 335.8,
+      "text": "representation of entities and their"
+    },
+    {
+      "start": 333.16,
+      "end": 338.48,
+      "text": "relationships to other entities. And"
+    },
+    {
+      "start": 335.8,
+      "end": 342.48,
+      "text": "these entities have properties. And this"
+    },
+    {
+      "start": 338.48,
+      "end": 345.24,
+      "text": "whole concept of graph databases"
+    },
+    {
+      "start": 342.48,
+      "end": 348.08000000000004,
+      "text": "arose when"
+    },
+    {
+      "start": 345.24,
+      "end": 349.52,
+      "text": "people began to realize that relational"
+    },
+    {
+      "start": 348.08,
+      "end": 352.28,
+      "text": "databases"
+    },
+    {
+      "start": 349.52,
+      "end": 355,
+      "text": "sticking data into tables was too"
+    },
+    {
+      "start": 352.28,
+      "end": 356.59999999999997,
+      "text": "restrictive. You wanted to add something"
+    },
+    {
+      "start": 355,
+      "end": 358.32,
+      "text": "new to"
+    },
+    {
+      "start": 356.6,
+      "end": 360.36,
+      "text": "a relational database, so you have to"
+    },
+    {
+      "start": 358.32,
+      "end": 362.44,
+      "text": "add a new column. Man, I had then then"
+    },
+    {
+      "start": 360.36,
+      "end": 364.24,
+      "text": "you have to redo the whole structure."
+    },
+    {
+      "start": 362.44,
+      "end": 366.16,
+      "text": "With a with a graph database, you can"
+    },
+    {
+      "start": 364.24,
+      "end": 367.92,
+      "text": "just attach another item. You can just"
+    },
+    {
+      "start": 366.16,
+      "end": 370.52000000000004,
+      "text": "attach a property. You can attach a"
+    },
+    {
+      "start": 367.92,
+      "end": 373.28000000000003,
+      "text": "relationship. Okay? So, the question"
+    },
+    {
+      "start": 370.52,
+      "end": 375.56,
+      "text": "often arises, okay, I I get it. I need"
+    },
+    {
+      "start": 373.28,
+      "end": 378.52,
+      "text": "to have an ontology"
+    },
+    {
+      "start": 375.56,
+      "end": 381.12,
+      "text": "to represent in a formal way what my"
+    },
+    {
+      "start": 378.52,
+      "end": 382.919,
+      "text": "organization is doing. How do I do it?"
+    },
+    {
+      "start": 381.12,
+      "end": 384.84000000000003,
+      "text": "Okay? There are a couple of ways you can"
+    },
+    {
+      "start": 382.919,
+      "end": 386.84,
+      "text": "approach it. You can have a top-down"
+    },
+    {
+      "start": 384.84,
+      "end": 389,
+      "text": "approach or a bottom-up approach."
+    },
+    {
+      "start": 386.84,
+      "end": 391.11999999999995,
+      "text": "Top-down approach is"
+    },
+    {
+      "start": 389,
+      "end": 394.16,
+      "text": "you get the experts together and they"
+    },
+    {
+      "start": 391.12,
+      "end": 395.72,
+      "text": "sit down and analyze the domain, come up"
+    },
+    {
+      "start": 394.16,
+      "end": 398.32000000000005,
+      "text": "with the entities. What do we have? We"
+    },
+    {
+      "start": 395.72,
+      "end": 401.32000000000005,
+      "text": "have purchase orders, we have customers,"
+    },
+    {
+      "start": 398.32,
+      "end": 402.71999999999997,
+      "text": "we have customer representatives, and"
+    },
+    {
+      "start": 401.32,
+      "end": 404.919,
+      "text": "we're going to structure them. They have"
+    },
+    {
+      "start": 402.72,
+      "end": 407.40000000000003,
+      "text": "properties. These are the relationships."
+    },
+    {
+      "start": 404.919,
+      "end": 409.79999999999995,
+      "text": "Okay, that's one way. And this models"
+    },
+    {
+      "start": 407.4,
+      "end": 411.56,
+      "text": "what we were doing back in the '80s when"
+    },
+    {
+      "start": 409.8,
+      "end": 413.36,
+      "text": "I was involved in expert systems."
+    },
+    {
+      "start": 411.56,
+      "end": 416.919,
+      "text": "Everybody thought expert systems was the"
+    },
+    {
+      "start": 413.36,
+      "end": 420.08000000000004,
+      "text": "way to do AI. Symbolic AI was the way to"
+    },
+    {
+      "start": 416.919,
+      "end": 421.35999999999996,
+      "text": "go. Companies rose, millions of dollars"
+    },
+    {
+      "start": 420.08,
+      "end": 422.68,
+      "text": "were spent."
+    },
+    {
+      "start": 421.36,
+      "end": 426.2,
+      "text": "Uh the"
+    },
+    {
+      "start": 422.68,
+      "end": 429.08,
+      "text": "the Japanese created this uh"
+    },
+    {
+      "start": 426.2,
+      "end": 432.12,
+      "text": "future world project in the late '80s."
+    },
+    {
+      "start": 429.08,
+      "end": 434.68,
+      "text": "People in America were my my son was"
+    },
+    {
+      "start": 432.12,
+      "end": 437.4,
+      "text": "taking Japanese in school because of"
+    },
+    {
+      "start": 434.68,
+      "end": 439.56,
+      "text": "these expert systems. And"
+    },
+    {
+      "start": 437.4,
+      "end": 441.88,
+      "text": "but they couldn't scale. They couldn't"
+    },
+    {
+      "start": 439.56,
+      "end": 443.68,
+      "text": "scale, and then we went into a kind of"
+    },
+    {
+      "start": 441.88,
+      "end": 445.44,
+      "text": "AI winter."
+    },
+    {
+      "start": 443.68,
+      "end": 447.40000000000003,
+      "text": "Where did neural networks came come"
+    },
+    {
+      "start": 445.44,
+      "end": 450.76,
+      "text": "from? Neural networks were put out there"
+    },
+    {
+      "start": 447.4,
+      "end": 454,
+      "text": "in the '60s, but they couldn't scale"
+    },
+    {
+      "start": 450.76,
+      "end": 458.03999999999996,
+      "text": "because we didn't happen to have Nvidia"
+    },
+    {
+      "start": 454,
+      "end": 460.8,
+      "text": "who was off making GPUs to make make"
+    },
+    {
+      "start": 458.04,
+      "end": 463.40000000000003,
+      "text": "reality of the of the video games"
+    },
+    {
+      "start": 460.8,
+      "end": 464.96000000000004,
+      "text": "fantastic, and then someone said, let's"
+    },
+    {
+      "start": 463.4,
+      "end": 466.96,
+      "text": "turn these things over to the neural"
+    },
+    {
+      "start": 464.96,
+      "end": 469.68,
+      "text": "networks, and of course, that's kind of"
+    },
+    {
+      "start": 466.96,
+      "end": 472.12,
+      "text": "why we're here now. So,"
+    },
+    {
+      "start": 469.68,
+      "end": 473,
+      "text": "the other way you can that that people"
+    },
+    {
+      "start": 472.12,
+      "end": 475.76,
+      "text": "are"
+    },
+    {
+      "start": 473,
+      "end": 478.12,
+      "text": "adding to or creating ontologies is is"
+    },
+    {
+      "start": 475.76,
+      "end": 479.68,
+      "text": "from the bottom up. For example,"
+    },
+    {
+      "start": 478.12,
+      "end": 481.16,
+      "text": "customer"
+    },
+    {
+      "start": 479.68,
+      "end": 482.68,
+      "text": "reactions."
+    },
+    {
+      "start": 481.16,
+      "end": 484.40000000000003,
+      "text": "What are the things the customers are"
+    },
+    {
+      "start": 482.68,
+      "end": 485.8,
+      "text": "involved in? Wait."
+    },
+    {
+      "start": 484.4,
+      "end": 487.59999999999997,
+      "text": "Do you these entities, these"
+    },
+    {
+      "start": 485.8,
+      "end": 489.48,
+      "text": "relationships, let's add this to our"
+    },
+    {
+      "start": 487.6,
+      "end": 492.72,
+      "text": "ontology. Let's Let's add this"
+    },
+    {
+      "start": 489.48,
+      "end": 494.52000000000004,
+      "text": "information to the graph. Now, as as a"
+    },
+    {
+      "start": 492.72,
+      "end": 496.56,
+      "text": "help,"
+    },
+    {
+      "start": 494.52,
+      "end": 498.32,
+      "text": "it's helpful to be aware that there are"
+    },
+    {
+      "start": 496.56,
+      "end": 500.48,
+      "text": "existing"
+    },
+    {
+      "start": 498.32,
+      "end": 503,
+      "text": "taxonomies that people have been working"
+    },
+    {
+      "start": 500.48,
+      "end": 505.6,
+      "text": "on for the last 15 to 20 years. Things"
+    },
+    {
+      "start": 503,
+      "end": 507.96,
+      "text": "like schema.org, which has a whole set"
+    },
+    {
+      "start": 505.6,
+      "end": 510.44,
+      "text": "of terms and relationships, so you don't"
+    },
+    {
+      "start": 507.96,
+      "end": 513.24,
+      "text": "have to reinvent the wheel. In fact, you"
+    },
+    {
+      "start": 510.44,
+      "end": 516.36,
+      "text": "it's to your advantage to use some of"
+    },
+    {
+      "start": 513.24,
+      "end": 520.08,
+      "text": "these ontologies. FOAF, Friend of a"
+    },
+    {
+      "start": 516.36,
+      "end": 522.08,
+      "text": "Friend, for modeling social networks."
+    },
+    {
+      "start": 520.08,
+      "end": 525.08,
+      "text": "The Dublin Core, which was"
+    },
+    {
+      "start": 522.08,
+      "end": 527.2800000000001,
+      "text": "an early an early attempt to come up"
+    },
+    {
+      "start": 525.08,
+      "end": 529.76,
+      "text": "with terms for describing"
+    },
+    {
+      "start": 527.28,
+      "end": 532.16,
+      "text": "uh research papers and books and so"
+    },
+    {
+      "start": 529.76,
+      "end": 534.76,
+      "text": "forth. So, there's a whole series of"
+    },
+    {
+      "start": 532.16,
+      "end": 537.68,
+      "text": "things. In fact, Wikipedia is based on"
+    },
+    {
+      "start": 534.76,
+      "end": 539.88,
+      "text": "an ontology called DBpedia. So, when you"
+    },
+    {
+      "start": 537.68,
+      "end": 542.52,
+      "text": "do a search on Wikipedia, it's looking"
+    },
+    {
+      "start": 539.88,
+      "end": 544.8,
+      "text": "things up in its giant graph database."
+    },
+    {
+      "start": 542.52,
+      "end": 547.64,
+      "text": "So, this stuff has been out there"
+    },
+    {
+      "start": 544.8,
+      "end": 549.8,
+      "text": "underlying a lot of what we already do."
+    },
+    {
+      "start": 547.64,
+      "end": 552.8389999999999,
+      "text": "So, take advantage of these things that"
+    },
+    {
+      "start": 549.8,
+      "end": 555.28,
+      "text": "already exist."
+    },
+    {
+      "start": 552.839,
+      "end": 557.6400000000001,
+      "text": "Okay. Now, what do you do when you build"
+    },
+    {
+      "start": 555.28,
+      "end": 559.28,
+      "text": "your ontology? Okay, so what? I know"
+    },
+    {
+      "start": 557.64,
+      "end": 561.12,
+      "text": "what these entities are, I know what"
+    },
+    {
+      "start": 559.28,
+      "end": 564.28,
+      "text": "their relationships are, they have"
+    },
+    {
+      "start": 561.12,
+      "end": 566.92,
+      "text": "properties. How can I do anything with"
+    },
+    {
+      "start": 564.28,
+      "end": 569.8,
+      "text": "them? Well, there are other augmenting"
+    },
+    {
+      "start": 566.92,
+      "end": 571.28,
+      "text": "technologies, auxiliary technologies."
+    },
+    {
+      "start": 569.8,
+      "end": 573.64,
+      "text": "Things that we call the things like"
+    },
+    {
+      "start": 571.28,
+      "end": 575.56,
+      "text": "RDFS, which is a technology, and OWL,"
+    },
+    {
+      "start": 573.64,
+      "end": 576.76,
+      "text": "which I'll talk more about. So, these"
+    },
+    {
+      "start": 575.56,
+      "end": 579.16,
+      "text": "have"
+    },
+    {
+      "start": 576.76,
+      "end": 581.52,
+      "text": "these kind of sit over to the side of"
+    },
+    {
+      "start": 579.16,
+      "end": 584,
+      "text": "your graph. So, I'm not going to talk"
+    },
+    {
+      "start": 581.52,
+      "end": 585.76,
+      "text": "about on I mean ontology is a big word"
+    },
+    {
+      "start": 584,
+      "end": 587.48,
+      "text": "and it's often confusing and used in"
+    },
+    {
+      "start": 585.76,
+      "end": 590,
+      "text": "many ways, but think of it as a graph"
+    },
+    {
+      "start": 587.48,
+      "end": 591.28,
+      "text": "data structure. Okay?"
+    },
+    {
+      "start": 590,
+      "end": 593.52,
+      "text": "And you have the entities and"
+    },
+    {
+      "start": 591.28,
+      "end": 596.56,
+      "text": "relationships, but you want to apply"
+    },
+    {
+      "start": 593.52,
+      "end": 599.04,
+      "text": "some control over them. Or you want to"
+    },
+    {
+      "start": 596.56,
+      "end": 602.16,
+      "text": "be able to make inference over them. So,"
+    },
+    {
+      "start": 599.04,
+      "end": 604,
+      "text": "for example, there is uh"
+    },
+    {
+      "start": 602.16,
+      "end": 605.92,
+      "text": "some terms in this technology called"
+    },
+    {
+      "start": 604,
+      "end": 609.68,
+      "text": "RDFS."
+    },
+    {
+      "start": 605.92,
+      "end": 611.12,
+      "text": "Domain and range. So, if I say"
+    },
+    {
+      "start": 609.68,
+      "end": 614.3599999999999,
+      "text": "teaches"
+    },
+    {
+      "start": 611.12,
+      "end": 617.64,
+      "text": "has a domain of teacher. That means if I"
+    },
+    {
+      "start": 614.36,
+      "end": 621.52,
+      "text": "say Bob teaches Scooter in my text, I"
+    },
+    {
+      "start": 617.64,
+      "end": 623.88,
+      "text": "can infer that Bob is a teacher."
+    },
+    {
+      "start": 621.52,
+      "end": 626.0799999999999,
+      "text": "And if I say all teachers are persons,"
+    },
+    {
+      "start": 623.88,
+      "end": 628.12,
+      "text": "then this statement lets me know if I"
+    },
+    {
+      "start": 626.08,
+      "end": 629.96,
+      "text": "say Bob teaches Scooter, now I know Bob"
+    },
+    {
+      "start": 628.12,
+      "end": 632.5600000000001,
+      "text": "is a person, Bob is a teacher. What"
+    },
+    {
+      "start": 629.96,
+      "end": 635,
+      "text": "about Scooter? If I say teaches has a"
+    },
+    {
+      "start": 632.56,
+      "end": 637.56,
+      "text": "range of student, that means the the"
+    },
+    {
+      "start": 635,
+      "end": 639.88,
+      "text": "right side of the verb, then Scooter is"
+    },
+    {
+      "start": 637.56,
+      "end": 643.04,
+      "text": "a student. And now I have this extra"
+    },
+    {
+      "start": 639.88,
+      "end": 647.28,
+      "text": "information into my system."
+    },
+    {
+      "start": 643.04,
+      "end": 650.12,
+      "text": "OWL also has a series of"
+    },
+    {
+      "start": 647.28,
+      "end": 652.72,
+      "text": "of of properties that allow you to make"
+    },
+    {
+      "start": 650.12,
+      "end": 655.88,
+      "text": "some inferences. So, a transitive"
+    },
+    {
+      "start": 652.72,
+      "end": 658.72,
+      "text": "property transitive property says, if"
+    },
+    {
+      "start": 655.88,
+      "end": 660.4399999999999,
+      "text": "Sue is an ancestor like ancestor is a"
+    },
+    {
+      "start": 658.72,
+      "end": 662.6,
+      "text": "transitive property. If Sue is an"
+    },
+    {
+      "start": 660.44,
+      "end": 667.2,
+      "text": "ancestor of Mary and Mary is an ancestor"
+    },
+    {
+      "start": 662.6,
+      "end": 670.12,
+      "text": "of Ann, then Sue is an ancestor of Ann."
+    },
+    {
+      "start": 667.2,
+      "end": 673.5600000000001,
+      "text": "Okay? This was not initially into my"
+    },
+    {
+      "start": 670.12,
+      "end": 676.16,
+      "text": "graph system, but with applying these"
+    },
+    {
+      "start": 673.56,
+      "end": 678.5999999999999,
+      "text": "functional properties, I can then"
+    },
+    {
+      "start": 676.16,
+      "end": 681.4399999999999,
+      "text": "add and augment the system with this"
+    },
+    {
+      "start": 678.6,
+      "end": 683.24,
+      "text": "extra data. So, that's very useful."
+    },
+    {
+      "start": 681.44,
+      "end": 686,
+      "text": "Then there's some"
+    },
+    {
+      "start": 683.24,
+      "end": 688.76,
+      "text": "properties called functional properties,"
+    },
+    {
+      "start": 686,
+      "end": 691,
+      "text": "which means only one."
+    },
+    {
+      "start": 688.76,
+      "end": 693.4399999999999,
+      "text": "So, has father"
+    },
+    {
+      "start": 691,
+      "end": 695.88,
+      "text": "is a functional property. You can only"
+    },
+    {
+      "start": 693.44,
+      "end": 698.72,
+      "text": "have one father. You can only have one"
+    },
+    {
+      "start": 695.88,
+      "end": 701.32,
+      "text": "mother. That is a functional property."
+    },
+    {
+      "start": 698.72,
+      "end": 704.76,
+      "text": "Okay? So, that's that can serve as a"
+    },
+    {
+      "start": 701.32,
+      "end": 708,
+      "text": "constraint. So, when"
+    },
+    {
+      "start": 704.76,
+      "end": 711.16,
+      "text": "if you say Bob is my Bob is Jim's"
+    },
+    {
+      "start": 708,
+      "end": 713.52,
+      "text": "father, BB is Jim's father,"
+    },
+    {
+      "start": 711.16,
+      "end": 713.52,
+      "text": "well,"
+    },
+    {
+      "start": 713.64,
+      "end": 717.64,
+      "text": "the inference here is that Bob and BB"
+    },
+    {
+      "start": 715.84,
+      "end": 719.52,
+      "text": "are two ways of representing the same"
+    },
+    {
+      "start": 717.64,
+      "end": 721.48,
+      "text": "individual because"
+    },
+    {
+      "start": 719.52,
+      "end": 724.36,
+      "text": "that is a functional property. Can only"
+    },
+    {
+      "start": 721.48,
+      "end": 726.48,
+      "text": "have one. So, these derivations and"
+    },
+    {
+      "start": 724.36,
+      "end": 729.2,
+      "text": "constraints that don't sit in the graph,"
+    },
+    {
+      "start": 726.48,
+      "end": 731.76,
+      "text": "they sit sort of on the side"
+    },
+    {
+      "start": 729.2,
+      "end": 732.88,
+      "text": "and they can help"
+    },
+    {
+      "start": 731.76,
+      "end": 734,
+      "text": "as we're going to see, I'm going to"
+    },
+    {
+      "start": 732.88,
+      "end": 736.52,
+      "text": "propose,"
+    },
+    {
+      "start": 734,
+      "end": 738.8,
+      "text": "when we deal with agents, how they can"
+    },
+    {
+      "start": 736.52,
+      "end": 741.72,
+      "text": "they can help us out. So,"
+    },
+    {
+      "start": 738.8,
+      "end": 741.7199999999999,
+      "text": "what about agents?"
+    },
+    {
+      "start": 741.8,
+      "end": 746.4,
+      "text": "Everybody's talking about agents now and"
+    },
+    {
+      "start": 743.76,
+      "end": 748.84,
+      "text": "everybody's talking about loops. Loops,"
+    },
+    {
+      "start": 746.4,
+      "end": 751.04,
+      "text": "loops, loops everywhere."
+    },
+    {
+      "start": 748.84,
+      "end": 754.1600000000001,
+      "text": "Loops have been around for a long time."
+    },
+    {
+      "start": 751.04,
+      "end": 755.8,
+      "text": "Back in the '60s, people were debating"
+    },
+    {
+      "start": 754.16,
+      "end": 757.9599999999999,
+      "text": "who has the best programming language?"
+    },
+    {
+      "start": 755.8,
+      "end": 759.68,
+      "text": "Fortran or COBOL? No, mine is better."
+    },
+    {
+      "start": 757.96,
+      "end": 760.52,
+      "text": "No, mine is better. Oh, you don't know"
+    },
+    {
+      "start": 759.68,
+      "end": 762.5999999999999,
+      "text": "anything. You don't know what you're"
+    },
+    {
+      "start": 760.52,
+      "end": 765,
+      "text": "talking about."
+    },
+    {
+      "start": 762.6,
+      "end": 767.28,
+      "text": "Bohm and Jacopini in 1966 came out and"
+    },
+    {
+      "start": 765,
+      "end": 769.68,
+      "text": "said, \"Okay, there is no real difference"
+    },
+    {
+      "start": 767.28,
+      "end": 771.76,
+      "text": "in programming languages if they have"
+    },
+    {
+      "start": 769.68,
+      "end": 773.56,
+      "text": "three aspects."
+    },
+    {
+      "start": 771.76,
+      "end": 776.04,
+      "text": "Sequence. I can put statement A,"
+    },
+    {
+      "start": 773.56,
+      "end": 778.4799999999999,
+      "text": "statement B, statement C. Fine. I have"
+    },
+    {
+      "start": 776.04,
+      "end": 781.4399999999999,
+      "text": "conditionals. I can have if then."
+    },
+    {
+      "start": 778.48,
+      "end": 783.839,
+      "text": "And the last piece, I have a loop."
+    },
+    {
+      "start": 781.44,
+      "end": 785.839,
+      "text": "If I have a loop, if I have iteration,"
+    },
+    {
+      "start": 783.839,
+      "end": 788.1600000000001,
+      "text": "if I take these three things,"
+    },
+    {
+      "start": 785.839,
+      "end": 790.72,
+      "text": "the the language is what's called Turing"
+    },
+    {
+      "start": 788.16,
+      "end": 793.6,
+      "text": "complete. Can do any can compute"
+    },
+    {
+      "start": 790.72,
+      "end": 797.4,
+      "text": "anything that a"
+    },
+    {
+      "start": 793.6,
+      "end": 799.32,
+      "text": "can be computed by computational devices"
+    },
+    {
+      "start": 797.4,
+      "end": 800.28,
+      "text": "from the work of Alan Turing."
+    },
+    {
+      "start": 799.32,
+      "end": 804.12,
+      "text": "Okay?"
+    },
+    {
+      "start": 800.28,
+      "end": 806.92,
+      "text": "And now we're seeing this in agentic AI."
+    },
+    {
+      "start": 804.12,
+      "end": 809.92,
+      "text": "Agents are now have loops. Loops give us"
+    },
+    {
+      "start": 806.92,
+      "end": 811.0799999999999,
+      "text": "the last piece in the equation of giving"
+    },
+    {
+      "start": 809.92,
+      "end": 815.24,
+      "text": "us"
+    },
+    {
+      "start": 811.08,
+      "end": 817.72,
+      "text": "a technology that is capable of"
+    },
+    {
+      "start": 815.24,
+      "end": 820.24,
+      "text": "doing anything that computational"
+    },
+    {
+      "start": 817.72,
+      "end": 823,
+      "text": "devices can do."
+    },
+    {
+      "start": 820.24,
+      "end": 825.2,
+      "text": "The danger though of loops is that they"
+    },
+    {
+      "start": 823,
+      "end": 826.56,
+      "text": "can break."
+    },
+    {
+      "start": 825.2,
+      "end": 829.96,
+      "text": "If you're If you're a programmer, you"
+    },
+    {
+      "start": 826.56,
+      "end": 831.88,
+      "text": "know, you've all go into infinite loop."
+    },
+    {
+      "start": 829.96,
+      "end": 835.08,
+      "text": "Not good."
+    },
+    {
+      "start": 831.88,
+      "end": 838.32,
+      "text": "Loops can drift as agents start talking"
+    },
+    {
+      "start": 835.08,
+      "end": 840.44,
+      "text": "to each other, things get all go off off"
+    },
+    {
+      "start": 838.32,
+      "end": 842.9200000000001,
+      "text": "the rails. And"
+    },
+    {
+      "start": 840.44,
+      "end": 845.5200000000001,
+      "text": "loops can cost you money."
+    },
+    {
+      "start": 842.92,
+      "end": 848.28,
+      "text": "Token counts crank up as the loops"
+    },
+    {
+      "start": 845.52,
+      "end": 851.8,
+      "text": "continue. So, you don't you need to be"
+    },
+    {
+      "start": 848.28,
+      "end": 853.9599999999999,
+      "text": "careful, okay? But in a way we are"
+    },
+    {
+      "start": 851.8,
+      "end": 856.3599999999999,
+      "text": "revisiting some of the early stuff with"
+    },
+    {
+      "start": 853.96,
+      "end": 860.0400000000001,
+      "text": "symbolic AI. I would argue we're going"
+    },
+    {
+      "start": 856.36,
+      "end": 861.96,
+      "text": "back to the world of expert systems."
+    },
+    {
+      "start": 860.04,
+      "end": 863.52,
+      "text": "Which is the symbolic part of the whole"
+    },
+    {
+      "start": 861.96,
+      "end": 866.52,
+      "text": "thing. So, I want to show you a little"
+    },
+    {
+      "start": 863.52,
+      "end": 869.4,
+      "text": "example using Claude"
+    },
+    {
+      "start": 866.52,
+      "end": 871,
+      "text": "agent. So, little code here. Don't get"
+    },
+    {
+      "start": 869.4,
+      "end": 873.76,
+      "text": "scared, but"
+    },
+    {
+      "start": 871,
+      "end": 875.08,
+      "text": "I know nobody does Python anymore, but"
+    },
+    {
+      "start": 873.76,
+      "end": 877,
+      "text": "you got to look at what the agent's"
+    },
+    {
+      "start": 875.08,
+      "end": 879.64,
+      "text": "giving you and you got to you got to"
+    },
+    {
+      "start": 877,
+      "end": 881.839,
+      "text": "move in and and manipulate it. So,"
+    },
+    {
+      "start": 879.64,
+      "end": 884.92,
+      "text": "here's a here's a loop while true,"
+    },
+    {
+      "start": 881.839,
+      "end": 886.839,
+      "text": "classic Python loop. Okay? And so, we"
+    },
+    {
+      "start": 884.92,
+      "end": 888.7199999999999,
+      "text": "have a client. So, we're actually So,"
+    },
+    {
+      "start": 886.839,
+      "end": 891.44,
+      "text": "the first little chunk here that you"
+    },
+    {
+      "start": 888.72,
+      "end": 895.0400000000001,
+      "text": "see, r e s p, the response, this is just"
+    },
+    {
+      "start": 891.44,
+      "end": 897.24,
+      "text": "some code where we have a model and we"
+    },
+    {
+      "start": 895.04,
+      "end": 899.16,
+      "text": "have uh"
+    },
+    {
+      "start": 897.24,
+      "end": 900.64,
+      "text": "we have a prompt, that's part of part of"
+    },
+    {
+      "start": 899.16,
+      "end": 903.4,
+      "text": "the messages,"
+    },
+    {
+      "start": 900.64,
+      "end": 908,
+      "text": "and we have a tool,"
+    },
+    {
+      "start": 903.4,
+      "end": 911.6,
+      "text": "and we're we're asking the LLM to"
+    },
+    {
+      "start": 908,
+      "end": 914,
+      "text": "solve this problem using a tool. Now,"
+    },
+    {
+      "start": 911.6,
+      "end": 917.2,
+      "text": "here's the here's the catch."
+    },
+    {
+      "start": 914,
+      "end": 919.16,
+      "text": "LLMs can't do anything. All they can do"
+    },
+    {
+      "start": 917.2,
+      "end": 922.0400000000001,
+      "text": "is give us the next word with a high"
+    },
+    {
+      "start": 919.16,
+      "end": 923.8399999999999,
+      "text": "probability. Amazingly, we can now have"
+    },
+    {
+      "start": 922.04,
+      "end": 927.5999999999999,
+      "text": "these conversations it, but they can't"
+    },
+    {
+      "start": 923.84,
+      "end": 929.5600000000001,
+      "text": "do anything. But, we can give it a tool,"
+    },
+    {
+      "start": 927.6,
+      "end": 932.2,
+      "text": "and we can give it"
+    },
+    {
+      "start": 929.56,
+      "end": 934.68,
+      "text": "what we want, and say,"
+    },
+    {
+      "start": 932.2,
+      "end": 937.44,
+      "text": "\"How do you think this tool can help us"
+    },
+    {
+      "start": 934.68,
+      "end": 941.1999999999999,
+      "text": "get what we want?\" And then the LLM will"
+    },
+    {
+      "start": 937.44,
+      "end": 944.24,
+      "text": "set up the parameters,"
+    },
+    {
+      "start": 941.2,
+      "end": 946.1600000000001,
+      "text": "and come back to us, and say, \"Okay,"
+    },
+    {
+      "start": 944.24,
+      "end": 948.12,
+      "text": "here's my response."
+    },
+    {
+      "start": 946.16,
+      "end": 950.6,
+      "text": "I can't execute this tool, but I know"
+    },
+    {
+      "start": 948.12,
+      "end": 953.88,
+      "text": "what the input parameters are. I know"
+    },
+    {
+      "start": 950.6,
+      "end": 956.84,
+      "text": "what your context is. I know what your"
+    },
+    {
+      "start": 953.88,
+      "end": 958.8,
+      "text": "prompt is. So, here is the call that you"
+    },
+    {
+      "start": 956.84,
+      "end": 960.4,
+      "text": "need to make"
+    },
+    {
+      "start": 958.8,
+      "end": 963.3599999999999,
+      "text": "of the tool, because I can't do it. I'm"
+    },
+    {
+      "start": 960.4,
+      "end": 965.9599999999999,
+      "text": "the LLM. I'm just locked in this box."
+    },
+    {
+      "start": 963.36,
+      "end": 968.32,
+      "text": "Okay? So, the second box the second"
+    },
+    {
+      "start": 965.96,
+      "end": 972.2800000000001,
+      "text": "chunk is"
+    },
+    {
+      "start": 968.32,
+      "end": 975.2,
+      "text": "stop reason. So, stop reason means"
+    },
+    {
+      "start": 972.28,
+      "end": 977.12,
+      "text": "the LLM has stopped for some reason."
+    },
+    {
+      "start": 975.2,
+      "end": 980.2800000000001,
+      "text": "The The reason here is that it can't do"
+    },
+    {
+      "start": 977.12,
+      "end": 982.68,
+      "text": "anything, and if the reason is tool use,"
+    },
+    {
+      "start": 980.28,
+      "end": 985.68,
+      "text": "ah, now it's time. Let's go execute that"
+    },
+    {
+      "start": 982.68,
+      "end": 988.3199999999999,
+      "text": "tool. So, that second line, get tool. It"
+    },
+    {
+      "start": 985.68,
+      "end": 990.8389999999999,
+      "text": "takes the response, which is"
+    },
+    {
+      "start": 988.32,
+      "end": 992.5600000000001,
+      "text": "formulating the the parameters, and"
+    },
+    {
+      "start": 990.839,
+      "end": 994.32,
+      "text": "triggering the action."
+    },
+    {
+      "start": 992.56,
+      "end": 996.88,
+      "text": "Okay. Now, I have this stuff in red"
+    },
+    {
+      "start": 994.32,
+      "end": 1000.24,
+      "text": "here. This is where I think"
+    },
+    {
+      "start": 996.88,
+      "end": 1001.8389999999999,
+      "text": "the LLMs and other uh"
+    },
+    {
+      "start": 1000.24,
+      "end": 1003.839,
+      "text": "I'm sorry, not LLMs."
+    },
+    {
+      "start": 1001.839,
+      "end": 1005.6400000000001,
+      "text": "The ontologies and stuff can come in."
+    },
+    {
+      "start": 1003.839,
+      "end": 1008.36,
+      "text": "So,"
+    },
+    {
+      "start": 1005.64,
+      "end": 1010.8389999999999,
+      "text": "if you look down there,"
+    },
+    {
+      "start": 1008.36,
+      "end": 1014.16,
+      "text": "after the the tool is called, it said"
+    },
+    {
+      "start": 1010.839,
+      "end": 1016.5200000000001,
+      "text": "tool runs. This is where"
+    },
+    {
+      "start": 1014.16,
+      "end": 1019.6,
+      "text": "ontologies could come in."
+    },
+    {
+      "start": 1016.52,
+      "end": 1022.4,
+      "text": "The tool's going to give us information."
+    },
+    {
+      "start": 1019.6,
+      "end": 1024.199,
+      "text": "We put the information in a form"
+    },
+    {
+      "start": 1022.4,
+      "end": 1027.839,
+      "text": "that our"
+    },
+    {
+      "start": 1024.199,
+      "end": 1030.319,
+      "text": "our our our validator can use, and think"
+    },
+    {
+      "start": 1027.839,
+      "end": 1033.48,
+      "text": "about the validator as operating with"
+    },
+    {
+      "start": 1030.319,
+      "end": 1036.079,
+      "text": "this these ontologies about our domain,"
+    },
+    {
+      "start": 1033.48,
+      "end": 1037.959,
+      "text": "then we can"
+    },
+    {
+      "start": 1036.079,
+      "end": 1042.1989999999998,
+      "text": "make some sense"
+    },
+    {
+      "start": 1037.959,
+      "end": 1045.079,
+      "text": "of whether the response of the LLM is"
+    },
+    {
+      "start": 1042.199,
+      "end": 1048.3600000000001,
+      "text": "reasonable. So, this is the loop. Call a"
+    },
+    {
+      "start": 1045.079,
+      "end": 1051.56,
+      "text": "tool, check the stop reason."
+    },
+    {
+      "start": 1048.36,
+      "end": 1053.4399999999998,
+      "text": "If it's a reasonable result, then let's"
+    },
+    {
+      "start": 1051.56,
+      "end": 1055.84,
+      "text": "go with it. If it's not reasonable, go"
+    },
+    {
+      "start": 1053.44,
+      "end": 1058.8,
+      "text": "back to the LLM. Say, \"Oh, this is this"
+    },
+    {
+      "start": 1055.84,
+      "end": 1062.9599999999998,
+      "text": "is not working.\" Or get a human in the"
+    },
+    {
+      "start": 1058.8,
+      "end": 1064.84,
+      "text": "loop. But the idea is"
+    },
+    {
+      "start": 1062.96,
+      "end": 1065.96,
+      "text": "to surround the input with checks. Now,"
+    },
+    {
+      "start": 1064.84,
+      "end": 1068.08,
+      "text": "I've got this"
+    },
+    {
+      "start": 1065.96,
+      "end": 1069.64,
+      "text": "something that you that you should be at"
+    },
+    {
+      "start": 1068.08,
+      "end": 1071.4399999999998,
+      "text": "least taking a look at if you're doing"
+    },
+    {
+      "start": 1069.64,
+      "end": 1076.4,
+      "text": "some of this coding is something called"
+    },
+    {
+      "start": 1071.44,
+      "end": 1078.92,
+      "text": "Pydantic. Pydantic is a way to specify"
+    },
+    {
+      "start": 1076.4,
+      "end": 1081.16,
+      "text": "the types of what you want the types of"
+    },
+    {
+      "start": 1078.92,
+      "end": 1084,
+      "text": "the parameters to be. Those of you who"
+    },
+    {
+      "start": 1081.16,
+      "end": 1086.4,
+      "text": "who do know Python, know Python is a"
+    },
+    {
+      "start": 1084,
+      "end": 1090.16,
+      "text": "unstructured type language. So, you can"
+    },
+    {
+      "start": 1086.4,
+      "end": 1092.2800000000002,
+      "text": "have a variable x = 20, x = hello, no"
+    },
+    {
+      "start": 1090.16,
+      "end": 1094.4,
+      "text": "problem. There's no typing."
+    },
+    {
+      "start": 1092.28,
+      "end": 1095.44,
+      "text": "Pydantic adds typing to that. So, you"
+    },
+    {
+      "start": 1094.4,
+      "end": 1098.0800000000002,
+      "text": "want to"
+    },
+    {
+      "start": 1095.44,
+      "end": 1102.56,
+      "text": "check your types with Pydantic and then"
+    },
+    {
+      "start": 1098.08,
+      "end": 1102.56,
+      "text": "check your results with the ontology."
+    },
+    {
+      "start": 1103.72,
+      "end": 1108.4,
+      "text": "So, Pydantic at the door, ontology at"
+    },
+    {
+      "start": 1105.68,
+      "end": 1110.52,
+      "text": "the ledger, and pure agents and by the"
+    },
+    {
+      "start": 1108.4,
+      "end": 1112.68,
+      "text": "way, your agents should try to have no"
+    },
+    {
+      "start": 1110.52,
+      "end": 1114.44,
+      "text": "side effects."
+    },
+    {
+      "start": 1112.68,
+      "end": 1116.92,
+      "text": "That helps the whole logic. Meaning,"
+    },
+    {
+      "start": 1114.44,
+      "end": 1118.76,
+      "text": "they're not running off doing something"
+    },
+    {
+      "start": 1116.92,
+      "end": 1120.68,
+      "text": "that they're they're changing they're"
+    },
+    {
+      "start": 1118.76,
+      "end": 1121.76,
+      "text": "changing things in the database not yet."
+    },
+    {
+      "start": 1120.68,
+      "end": 1124.5600000000002,
+      "text": "You want to run them through the"
+    },
+    {
+      "start": 1121.76,
+      "end": 1125.52,
+      "text": "ontology first and make sure that works."
+    },
+    {
+      "start": 1124.56,
+      "end": 1126.96,
+      "text": "Okay."
+    },
+    {
+      "start": 1125.52,
+      "end": 1128.8,
+      "text": "I only got an I've got I've got another"
+    },
+    {
+      "start": 1126.96,
+      "end": 1131.72,
+      "text": "I've just a short time. I'm going to try"
+    },
+    {
+      "start": 1128.8,
+      "end": 1133.12,
+      "text": "to show you some of the things that um"
+    },
+    {
+      "start": 1131.72,
+      "end": 1135.28,
+      "text": "that you can"
+    },
+    {
+      "start": 1133.12,
+      "end": 1138.9599999999998,
+      "text": "some logical constructs from from"
+    },
+    {
+      "start": 1135.28,
+      "end": 1141.72,
+      "text": "something called OWL, the uh"
+    },
+    {
+      "start": 1138.96,
+      "end": 1143.44,
+      "text": "the web object language for for objects."
+    },
+    {
+      "start": 1141.72,
+      "end": 1145.52,
+      "text": "So, you have these functional"
+    },
+    {
+      "start": 1143.44,
+      "end": 1146.52,
+      "text": "properties, disjoint properties. I'll"
+    },
+    {
+      "start": 1145.52,
+      "end": 1149.28,
+      "text": "just put these you can look at the"
+    },
+    {
+      "start": 1146.52,
+      "end": 1151,
+      "text": "slides, but essentially the errors it"
+    },
+    {
+      "start": 1149.28,
+      "end": 1154.08,
+      "text": "can catch. Look over in the the"
+    },
+    {
+      "start": 1151,
+      "end": 1155.52,
+      "text": "right-hand column. A second refund on"
+    },
+    {
+      "start": 1154.08,
+      "end": 1157.32,
+      "text": "the same order"
+    },
+    {
+      "start": 1155.52,
+      "end": 1159.92,
+      "text": "is a is"
+    },
+    {
+      "start": 1157.32,
+      "end": 1161.72,
+      "text": "is a problem. But ontologies could catch"
+    },
+    {
+      "start": 1159.92,
+      "end": 1164.24,
+      "text": "it, whereas it's it's very tricky to do"
+    },
+    {
+      "start": 1161.72,
+      "end": 1167.24,
+      "text": "that in in English. A payout sent to the"
+    },
+    {
+      "start": 1164.24,
+      "end": 1169.44,
+      "text": "support desk instead of the buyer. Okay?"
+    },
+    {
+      "start": 1167.24,
+      "end": 1171.64,
+      "text": "You can catch that with an owl disjoint"
+    },
+    {
+      "start": 1169.44,
+      "end": 1174.96,
+      "text": "property where customer and support rep"
+    },
+    {
+      "start": 1171.64,
+      "end": 1178.4,
+      "text": "are two separate entities. Okay?"
+    },
+    {
+      "start": 1174.96,
+      "end": 1182.1200000000001,
+      "text": "Uh one of may a made-up value like"
+    },
+    {
+      "start": 1178.4,
+      "end": 1184.68,
+      "text": "probably shipped. You can specify"
+    },
+    {
+      "start": 1182.12,
+      "end": 1187.4399999999998,
+      "text": "you must have certain kinds of value."
+    },
+    {
+      "start": 1184.68,
+      "end": 1189.96,
+      "text": "So, uh the status"
+    },
+    {
+      "start": 1187.44,
+      "end": 1191.6000000000001,
+      "text": "paid, shipped, or refunded, nothing"
+    },
+    {
+      "start": 1189.96,
+      "end": 1194.44,
+      "text": "else. And when you're in the pure text"
+    },
+    {
+      "start": 1191.6,
+      "end": 1197.04,
+      "text": "world, this can get this can get funky"
+    },
+    {
+      "start": 1194.44,
+      "end": 1198.8,
+      "text": "because the the LLMs are again"
+    },
+    {
+      "start": 1197.04,
+      "end": 1200.44,
+      "text": "probabilistic and"
+    },
+    {
+      "start": 1198.8,
+      "end": 1203.76,
+      "text": "um"
+    },
+    {
+      "start": 1200.44,
+      "end": 1205.48,
+      "text": "return some crazy stuff. Okay. Uh so,"
+    },
+    {
+      "start": 1203.76,
+      "end": 1208.68,
+      "text": "really what the point I want to make"
+    },
+    {
+      "start": 1205.48,
+      "end": 1211.96,
+      "text": "here is use these re- you can have a"
+    },
+    {
+      "start": 1208.68,
+      "end": 1216.0800000000002,
+      "text": "reasoner built on ontology to check keep"
+    },
+    {
+      "start": 1211.96,
+      "end": 1218.64,
+      "text": "the LLM on track, have guardrails to"
+    },
+    {
+      "start": 1216.08,
+      "end": 1221.24,
+      "text": "keep it honest. Okay?"
+    },
+    {
+      "start": 1218.64,
+      "end": 1224.24,
+      "text": "And for the guardrails, I'm referring to"
+    },
+    {
+      "start": 1221.24,
+      "end": 1228.76,
+      "text": "these concepts re- these support"
+    },
+    {
+      "start": 1224.24,
+      "end": 1230.84,
+      "text": "technologies with RDFS and owl."
+    },
+    {
+      "start": 1228.76,
+      "end": 1232.96,
+      "text": "And"
+    },
+    {
+      "start": 1230.84,
+      "end": 1235.8799999999999,
+      "text": "my my bottom line is and nothing is a"
+    },
+    {
+      "start": 1232.96,
+      "end": 1237.08,
+      "text": "mistake, there's no win, no fail, only a"
+    },
+    {
+      "start": 1235.88,
+      "end": 1239.2,
+      "text": "make."
+    },
+    {
+      "start": 1237.08,
+      "end": 1240.56,
+      "text": "Okay. Feel free to reach out to me"
+    },
+    {
+      "start": 1239.2,
+      "end": 1241.96,
+      "text": "coil@burkly."
+    },
+    {
+      "start": 1240.56,
+      "end": 1242.9199999999998,
+      "text": "I've got a I've got a"
+    },
+    {
+      "start": 1241.96,
+      "end": 1245.3600000000001,
+      "text": "I've got a little website"
+    },
+    {
+      "start": 1242.92,
+      "end": 1248,
+      "text": "codesupreme.ai. I'm a big fan of if"
+    },
+    {
+      "start": 1245.36,
+      "end": 1249.9199999999998,
+      "text": "you're John Coltrane has a has a some"
+    },
+    {
+      "start": 1248,
+      "end": 1252.2,
+      "text": "jazz called uh"
+    },
+    {
+      "start": 1249.92,
+      "end": 1253.24,
+      "text": "called Love Supreme. So, I've named my"
+    },
+    {
+      "start": 1252.2,
+      "end": 1254.6000000000001,
+      "text": "site"
+    },
+    {
+      "start": 1253.24,
+      "end": 1257.6,
+      "text": "Code Supreme. And if you go there, I've"
+    },
+    {
+      "start": 1254.6,
+      "end": 1259.579,
+      "text": "got some music and it's all good. Okay."
+    },
+    {
+      "start": 1257.6,
+      "end": 1261.599,
+      "text": "Thanks very much. 20 minutes."
+    },
+    {
+      "start": 1259.579,
+      "end": 1261.599,
+      "text": ">> [applause]"
+    },
+    {
+      "start": 1275.299,
+      "end": 1277.319,
+      "text": "[music]"
+    },
+    {
+      "start": 1277.76,
+      "end": 1279.92,
+      "text": ">> Woo!"
+    }
+  ],
+  "ingestedAt": "2026-09-16T17:45:07.072Z",
+  "source": "youtube",
+  "note": "Imported from YouTube captions"
+}

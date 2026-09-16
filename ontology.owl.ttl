@@ -12,12 +12,12 @@
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   dc:description "OWL 2 ontology of concepts, categories, and weighted relations from the Hybrid Intelligences program." ;
   owl:versionInfo "1.0.0" ;
-  dc:date "2026-09-15"^^xsd:date ;
-  dc:modified "2026-09-15T15:22:40.935Z"^^xsd:dateTime ;
+  dc:date "2026-09-16"^^xsd:date ;
+  dc:modified "2026-09-16T17:45:20.760Z"^^xsd:dateTime ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  hi:nodeCount "355"^^xsd:integer ;
-  hi:edgeCount "3330"^^xsd:integer ;
-  hi:typedEdgeCount "260"^^xsd:integer .
+  hi:nodeCount "361"^^xsd:integer ;
+  hi:edgeCount "3380"^^xsd:integer ;
+  hi:typedEdgeCount "271"^^xsd:integer .
 
 hi:Concept a owl:Class ;
   rdfs:label "Concept"@en ;
@@ -1280,6 +1280,62 @@ hi:phantasmal_media a owl:NamedIndividual, hi:FrameworkConcept ;
   schema:sameAs <https://en.wikipedia.org/wiki/Computational_creativity>
  .
 
+hi:owl a owl:NamedIndividual, hi:FrameworkConcept ;
+  rdfs:label "OWL"@en ;
+  skos:prefLabel "OWL"@en ;
+  skos:definition "W3C Web Ontology Language — classes, properties, and axioms that a machine can check. Essay 3’s formal layer: description logic sitting outside a language model, so relations can be constrained, reasoned over, and shared rather than sampled. Coyle: the missing layer that keeps probabilistic agents honest."@en ;
+  skos:broader hi:category/framework ;
+  hi:inCategory hi:category/framework ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.5"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Web_Ontology_Language> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Web_Ontology_Language>
+ .
+
+hi:skos a owl:NamedIndividual, hi:FrameworkConcept ;
+  rdfs:label "SKOS"@en ;
+  skos:prefLabel "SKOS"@en ;
+  skos:definition "Simple Knowledge Organization System — W3C standard for concept schemes: preferred labels, broader/narrower, and mappings. Essay 3’s first layer: the Hybrid Intelligences vocabulary as a SKOS concept scheme before it is a graph or an OWL ontology."@en ;
+  skos:broader hi:category/framework ;
+  hi:inCategory hi:category/framework ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.45"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Simple_Knowledge_Organization_System> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Simple_Knowledge_Organization_System>
+ .
+
+hi:knowledge_graph a owl:NamedIndividual, hi:FrameworkConcept ;
+  rdfs:label "Knowledge Graph"@en ;
+  skos:prefLabel "Knowledge Graph"@en ;
+  skos:definition "A graph of entities and typed or weighted relations — Essay 3’s second layer. Nodes and edges make coupling seeable; traversal becomes a way of thinking with the Hub, distinct from both a thesaurus (SKOS) and a formal axiom set (OWL)."@en ;
+  skos:broader hi:category/framework ;
+  hi:inCategory hi:category/framework ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.5"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Knowledge_graph> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Knowledge_graph>
+ .
+
+hi:agentic_systems a owl:NamedIndividual, hi:FrameworkConcept ;
+  rdfs:label "Agentic Systems"@en ;
+  skos:prefLabel "Agentic Systems"@en ;
+  skos:definition "AI systems that act with tools, memory, and handoffs rather than only generating text. Frank Coyle: most agent failures — brittle tools, double refunds, an order status of “probably shipped” — are symptoms of a missing formal ontology outside the model. Probabilistic fluency is not a world model."@en ;
+  skos:broader hi:category/framework ;
+  hi:inCategory hi:category/framework ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.45"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Intelligent_agent> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Intelligent_agent>
+ .
+
 hi:ai_impact_environment a owl:NamedIndividual, hi:FrameworkConcept ;
   rdfs:label "Environmental (AI Impact)"@en ;
   skos:prefLabel "Environmental (AI Impact)"@en ;
@@ -2250,6 +2306,19 @@ hi:fox_harrell a owl:NamedIndividual, hi:AuthorConcept ;
   hi:networkWeight "1.3"^^xsd:decimal
  ;
   schema:url <https://www.foxharrell.com/>
+ .
+
+hi:frank_coyle a owl:NamedIndividual, hi:AuthorConcept ;
+  rdfs:label "Frank Coyle"@en ;
+  skos:prefLabel "Frank Coyle"@en ;
+  skos:definition "Computer scientist at UC Berkeley — semantic web, XML, and ontologies for software systems. Argues that agentic AI fails when it has only probabilistic instructions: a formal ontology outside the model is the layer that constrains tools, handoffs, and what an agent is allowed to assert."@en ;
+  skos:broader hi:category/author ;
+  hi:inCategory hi:category/author ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.25"^^xsd:decimal
+ ;
+  schema:url <https://codesupreme.ai/>
  .
 
 hi:sousa_santos a owl:NamedIndividual, hi:AuthorConcept ;
@@ -4523,6 +4592,21 @@ hi:video_fox_harrell_digital_selves a owl:NamedIndividual, hi:VideoConcept ;
   schema:url <video-fox-harrell-digital-selves.html> ;
   schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/fox-harrell-digital-selves.jpg> ;
   schema:sameAs <https://www.youtube.com/watch?v=c6BZ6f_dWog>
+ .
+
+hi:video_frank_coyle_agentic_ontologies a owl:NamedIndividual, hi:VideoConcept ;
+  rdfs:label "Coyle · Ontologies"@en ;
+  skos:prefLabel "Coyle · Ontologies"@en ;
+  skos:definition "Frank Coyle — Why Agentic Systems Need Ontologies (AI Engineer World’s Fair). A formal ontology sitting outside the model: OWL, knowledge graphs, and why probabilistic agents need constraints they cannot sample away. Video on YouTube; ingest matches speech to ontology concepts."@en ;
+  skos:broader hi:category/video ;
+  hi:inCategory hi:category/video ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-frank-coyle-agentic-ontologies.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/frank-coyle-agentic-ontologies.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=Sir59K8ZDPU>
  .
 
 hi:essay_1 a owl:NamedIndividual, hi:PracticeConcept ;
@@ -8061,6 +8145,15 @@ hi:video_fox_harrell_digital_selves hi:relatedTo hi:butler .
 hi:video_fox_harrell_digital_selves hi:relatedTo hi:ai .
 hi:video_fox_harrell_digital_selves hi:relatedTo hi:hi_videos .
 hi:fox_harrell hi:relatedTo hi:video_fox_harrell_digital_selves .
+hi:video_frank_coyle_agentic_ontologies hi:relatedTo hi:frank_coyle .
+hi:video_frank_coyle_agentic_ontologies hi:relatedTo hi:owl .
+hi:video_frank_coyle_agentic_ontologies hi:relatedTo hi:agentic_systems .
+hi:video_frank_coyle_agentic_ontologies hi:relatedTo hi:knowledge_graph .
+hi:video_frank_coyle_agentic_ontologies hi:relatedTo hi:skos .
+hi:video_frank_coyle_agentic_ontologies hi:relatedTo hi:ontology_kb .
+hi:video_frank_coyle_agentic_ontologies hi:relatedTo hi:llm .
+hi:video_frank_coyle_agentic_ontologies hi:relatedTo hi:hi_videos .
+hi:frank_coyle hi:relatedTo hi:video_frank_coyle_agentic_ontologies .
 hi:arendt hi:relatedTo hi:video_arendt_zur_person_1964 .
 hi:sam_altman hi:relatedTo hi:video_sam_altman_lex_fridman_419 .
 hi:dario_amodei hi:relatedTo hi:video_dario_amodei_ai_safety .
@@ -8692,6 +8785,47 @@ hi:computational_identity hi:relatedTo hi:ai_impact_epistemic .
 hi:computational_identity hi:relatedTo hi:cs .
 hi:computational_identity hi:relatedTo hi:creative_ai .
 hi:computational_identity hi:relatedTo hi:ethical_imagination .
+hi:frank_coyle hi:relatedTo hi:owl .
+hi:frank_coyle hi:relatedTo hi:agentic_systems .
+hi:frank_coyle hi:relatedTo hi:knowledge_graph .
+hi:frank_coyle hi:relatedTo hi:skos .
+hi:frank_coyle hi:relatedTo hi:ontology_kb .
+hi:frank_coyle hi:relatedTo hi:llm .
+hi:frank_coyle hi:relatedTo hi:gen_ai .
+hi:frank_coyle hi:relatedTo hi:ai .
+hi:frank_coyle hi:relatedTo hi:cs .
+hi:frank_coyle hi:relatedTo hi:epistemology .
+hi:frank_coyle hi:relatedTo hi:essay_3 .
+hi:frank_coyle hi:relatedTo hi:hi_hub .
+hi:frank_coyle hi:relatedTo hi:hybrid .
+hi:frank_coyle hi:relatedTo hi:hi_videos .
+hi:owl hi:relatedTo hi:skos .
+hi:owl hi:relatedTo hi:knowledge_graph .
+hi:owl hi:relatedTo hi:ontology_kb .
+hi:owl hi:relatedTo hi:agentic_systems .
+hi:owl hi:relatedTo hi:essay_3 .
+hi:owl hi:relatedTo hi:llm .
+hi:owl hi:relatedTo hi:epistemology .
+hi:owl hi:relatedTo hi:cs .
+hi:owl hi:relatedTo hi:ai .
+hi:skos hi:relatedTo hi:knowledge_graph .
+hi:skos hi:relatedTo hi:ontology_kb .
+hi:skos hi:relatedTo hi:essay_3 .
+hi:skos hi:relatedTo hi:epistemology .
+hi:skos hi:relatedTo hi:cs .
+hi:knowledge_graph hi:relatedTo hi:ontology_kb .
+hi:knowledge_graph hi:relatedTo hi:network_viz .
+hi:knowledge_graph hi:relatedTo hi:essay_3 .
+hi:knowledge_graph hi:relatedTo hi:agentic_systems .
+hi:knowledge_graph hi:relatedTo hi:llm .
+hi:knowledge_graph hi:relatedTo hi:cs .
+hi:knowledge_graph hi:relatedTo hi:assemblage .
+hi:agentic_systems hi:relatedTo hi:llm .
+hi:agentic_systems hi:relatedTo hi:gen_ai .
+hi:agentic_systems hi:relatedTo hi:ai .
+hi:agentic_systems hi:relatedTo hi:ontology_kb .
+hi:agentic_systems hi:relatedTo hi:technical_agency .
+hi:agentic_systems hi:relatedTo hi:synthetic_cognition .
 hi:entrepreneurship_vision hi:relatedTo hi:afrofuturism .
 hi:essentialism hi:relatedTo hi:epistemology .
 hi:essentialism hi:relatedTo hi:epistemologies_south .
@@ -8904,6 +9038,17 @@ hi:phantasmal_media hi:couplesWith hi:cultural_imagination .
 hi:computational_identity hi:couplesWith hi:new_jim_code .
 hi:video_fox_harrell_digital_selves hi:instantiates hi:fox_harrell .
 hi:video_fox_harrell_digital_selves hi:develops hi:phantasmal_media .
+hi:frank_coyle hi:develops hi:owl .
+hi:frank_coyle hi:develops hi:agentic_systems .
+hi:owl hi:constrains hi:agentic_systems .
+hi:owl hi:couplesWith hi:ontology_kb .
+hi:skos hi:couplesWith hi:ontology_kb .
+hi:knowledge_graph hi:couplesWith hi:ontology_kb .
+hi:essay_3 hi:develops hi:owl .
+hi:essay_3 hi:develops hi:skos .
+hi:essay_3 hi:develops hi:knowledge_graph .
+hi:video_frank_coyle_agentic_ontologies hi:instantiates hi:frank_coyle .
+hi:video_frank_coyle_agentic_ontologies hi:develops hi:owl .
 hi:begus hi:proposes hi:cross_species_language .
 hi:begus hi:proposes hi:whale_vowels .
 hi:begus hi:develops hi:ai_interpretability .
@@ -22337,6 +22482,51 @@ hi:rel-fox_harrell-video_fox_harrell_digital_selves a owl:NamedIndividual, hi:Ne
   hi:relationTarget hi:video_fox_harrell_digital_selves ;
   hi:relationStrength "0.98"^^xsd:decimal .
 
+hi:rel-video_frank_coyle_agentic_ontologies-frank_coyle a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_frank_coyle_agentic_ontologies ;
+  hi:relationTarget hi:frank_coyle ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_frank_coyle_agentic_ontologies-owl a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_frank_coyle_agentic_ontologies ;
+  hi:relationTarget hi:owl ;
+  hi:relationStrength "0.96"^^xsd:decimal .
+
+hi:rel-video_frank_coyle_agentic_ontologies-agentic_systems a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_frank_coyle_agentic_ontologies ;
+  hi:relationTarget hi:agentic_systems ;
+  hi:relationStrength "0.96"^^xsd:decimal .
+
+hi:rel-video_frank_coyle_agentic_ontologies-knowledge_graph a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_frank_coyle_agentic_ontologies ;
+  hi:relationTarget hi:knowledge_graph ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-video_frank_coyle_agentic_ontologies-skos a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_frank_coyle_agentic_ontologies ;
+  hi:relationTarget hi:skos ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-video_frank_coyle_agentic_ontologies-ontology_kb a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_frank_coyle_agentic_ontologies ;
+  hi:relationTarget hi:ontology_kb ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_frank_coyle_agentic_ontologies-llm a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_frank_coyle_agentic_ontologies ;
+  hi:relationTarget hi:llm ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-video_frank_coyle_agentic_ontologies-hi_videos a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_frank_coyle_agentic_ontologies ;
+  hi:relationTarget hi:hi_videos ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-frank_coyle-video_frank_coyle_agentic_ontologies a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:frank_coyle ;
+  hi:relationTarget hi:video_frank_coyle_agentic_ontologies ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
 hi:rel-arendt-video_arendt_zur_person_1964 a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:arendt ;
   hi:relationTarget hi:video_arendt_zur_person_1964 ;
@@ -25492,6 +25682,211 @@ hi:rel-computational_identity-ethical_imagination a owl:NamedIndividual, hi:Netw
   hi:relationTarget hi:ethical_imagination ;
   hi:relationStrength "0.85"^^xsd:decimal .
 
+hi:rel-frank_coyle-owl a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:frank_coyle ;
+  hi:relationTarget hi:owl ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-frank_coyle-agentic_systems a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:frank_coyle ;
+  hi:relationTarget hi:agentic_systems ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-frank_coyle-knowledge_graph a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:frank_coyle ;
+  hi:relationTarget hi:knowledge_graph ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-frank_coyle-skos a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:frank_coyle ;
+  hi:relationTarget hi:skos ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-frank_coyle-ontology_kb a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:frank_coyle ;
+  hi:relationTarget hi:ontology_kb ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-frank_coyle-llm a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:frank_coyle ;
+  hi:relationTarget hi:llm ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-frank_coyle-gen_ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:frank_coyle ;
+  hi:relationTarget hi:gen_ai ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-frank_coyle-ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:frank_coyle ;
+  hi:relationTarget hi:ai ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-frank_coyle-cs a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:frank_coyle ;
+  hi:relationTarget hi:cs ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-frank_coyle-epistemology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:frank_coyle ;
+  hi:relationTarget hi:epistemology ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-frank_coyle-essay_3 a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:frank_coyle ;
+  hi:relationTarget hi:essay_3 ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-frank_coyle-hi_hub a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:frank_coyle ;
+  hi:relationTarget hi:hi_hub ;
+  hi:relationStrength "0.78"^^xsd:decimal .
+
+hi:rel-frank_coyle-hybrid a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:frank_coyle ;
+  hi:relationTarget hi:hybrid ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-frank_coyle-hi_videos a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:frank_coyle ;
+  hi:relationTarget hi:hi_videos ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-owl-skos a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:owl ;
+  hi:relationTarget hi:skos ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-owl-knowledge_graph a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:owl ;
+  hi:relationTarget hi:knowledge_graph ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-owl-ontology_kb a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:owl ;
+  hi:relationTarget hi:ontology_kb ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-owl-agentic_systems a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:owl ;
+  hi:relationTarget hi:agentic_systems ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-owl-essay_3 a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:owl ;
+  hi:relationTarget hi:essay_3 ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-owl-llm a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:owl ;
+  hi:relationTarget hi:llm ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-owl-epistemology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:owl ;
+  hi:relationTarget hi:epistemology ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-owl-cs a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:owl ;
+  hi:relationTarget hi:cs ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-owl-ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:owl ;
+  hi:relationTarget hi:ai ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-skos-knowledge_graph a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:skos ;
+  hi:relationTarget hi:knowledge_graph ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-skos-ontology_kb a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:skos ;
+  hi:relationTarget hi:ontology_kb ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-skos-essay_3 a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:skos ;
+  hi:relationTarget hi:essay_3 ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-skos-epistemology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:skos ;
+  hi:relationTarget hi:epistemology ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-skos-cs a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:skos ;
+  hi:relationTarget hi:cs ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-knowledge_graph-ontology_kb a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:knowledge_graph ;
+  hi:relationTarget hi:ontology_kb ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-knowledge_graph-network_viz a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:knowledge_graph ;
+  hi:relationTarget hi:network_viz ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-knowledge_graph-essay_3 a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:knowledge_graph ;
+  hi:relationTarget hi:essay_3 ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-knowledge_graph-agentic_systems a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:knowledge_graph ;
+  hi:relationTarget hi:agentic_systems ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-knowledge_graph-llm a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:knowledge_graph ;
+  hi:relationTarget hi:llm ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-knowledge_graph-cs a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:knowledge_graph ;
+  hi:relationTarget hi:cs ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-knowledge_graph-assemblage a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:knowledge_graph ;
+  hi:relationTarget hi:assemblage ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
+hi:rel-agentic_systems-llm a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:agentic_systems ;
+  hi:relationTarget hi:llm ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-agentic_systems-gen_ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:agentic_systems ;
+  hi:relationTarget hi:gen_ai ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-agentic_systems-ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:agentic_systems ;
+  hi:relationTarget hi:ai ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-agentic_systems-ontology_kb a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:agentic_systems ;
+  hi:relationTarget hi:ontology_kb ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-agentic_systems-technical_agency a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:agentic_systems ;
+  hi:relationTarget hi:technical_agency ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-agentic_systems-synthetic_cognition a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:agentic_systems ;
+  hi:relationTarget hi:synthetic_cognition ;
+  hi:relationStrength "0.82"^^xsd:decimal .
+
 hi:rel-entrepreneurship_vision-afrofuturism a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:entrepreneurship_vision ;
   hi:relationTarget hi:afrofuturism ;
@@ -26727,6 +27122,72 @@ hi:rel-video_fox_harrell_digital_selves-fox_harrell-instantiates a owl:NamedIndi
 hi:rel-video_fox_harrell_digital_selves-phantasmal_media-develops a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:video_fox_harrell_digital_selves ;
   hi:relationTarget hi:phantasmal_media ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-frank_coyle-owl-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:frank_coyle ;
+  hi:relationTarget hi:owl ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-frank_coyle-agentic_systems-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:frank_coyle ;
+  hi:relationTarget hi:agentic_systems ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-owl-agentic_systems-constrains a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:owl ;
+  hi:relationTarget hi:agentic_systems ;
+  hi:relationType hi:constrains ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-owl-ontology_kb-couplesWith a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:owl ;
+  hi:relationTarget hi:ontology_kb ;
+  hi:relationType hi:couplesWith ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-skos-ontology_kb-couplesWith a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:skos ;
+  hi:relationTarget hi:ontology_kb ;
+  hi:relationType hi:couplesWith ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-knowledge_graph-ontology_kb-couplesWith a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:knowledge_graph ;
+  hi:relationTarget hi:ontology_kb ;
+  hi:relationType hi:couplesWith ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-essay_3-owl-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_3 ;
+  hi:relationTarget hi:owl ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-essay_3-skos-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_3 ;
+  hi:relationTarget hi:skos ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-essay_3-knowledge_graph-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_3 ;
+  hi:relationTarget hi:knowledge_graph ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_frank_coyle_agentic_ontologies-frank_coyle-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_frank_coyle_agentic_ontologies ;
+  hi:relationTarget hi:frank_coyle ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_frank_coyle_agentic_ontologies-owl-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_frank_coyle_agentic_ontologies ;
+  hi:relationTarget hi:owl ;
   hi:relationType hi:develops ;
   hi:relationStrength "0.9"^^xsd:decimal .
 
