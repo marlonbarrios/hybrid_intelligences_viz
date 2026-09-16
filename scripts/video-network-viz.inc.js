@@ -45,10 +45,26 @@
       }
 
       function focusedNode() {
-        return pinned || hovered;
+        const node = pinned || hovered;
+        if (node && !passesSearch(node)) return null;
+        return node;
+      }
+
+      function passesSearch(node) {
+        const ids = window.HI_VIDEO_MATCH_IDS;
+        if (!ids) return true;
+        if (node.type === "hub") return true;
+        if (node.type === "video") return ids.has(node.id);
+        const neighbors = adjacency.get(node.id);
+        if (!neighbors) return false;
+        for (const id of neighbors) {
+          if (ids.has(id)) return true;
+        }
+        return false;
       }
 
       function isNodeVisible(node) {
+        if (!passesSearch(node)) return false;
         const focus = focusedNode();
         if (!focus) return true;
         return focusNeighbors(focus).has(node.id);
@@ -630,6 +646,11 @@
           e.preventDefault();
         }
       }, { passive: false });
+
+      window.addEventListener("hi-video-search", () => {
+        if (pinned && !passesSearch(pinned)) pinned = null;
+        if (hovered && !passesSearch(hovered)) hovered = null;
+      });
 
       window.addEventListener("resize", () => {
         resize();

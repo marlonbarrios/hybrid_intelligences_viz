@@ -212,6 +212,28 @@ function networkNodeId(videoId) {
   return `video_${videoId.replace(/-/g, "_")}`;
 }
 
+function foldSearch(text) {
+  return String(text || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/\p{M}/gu, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function videoSearchHaystack(video, transcript) {
+  const concepts = videoConcepts(video, transcript);
+  return foldSearch([
+    video.id,
+    video.title,
+    video.speaker,
+    video.caption,
+    video.credit,
+    video.date,
+    ...concepts.map((c) => [c.label, c.conceptId].filter(Boolean).join(" ")),
+  ].filter(Boolean).join(" "));
+}
+
 /** Fallback ontology links when ingest has not matched concepts yet. */
 const VIDEO_FALLBACK_CONCEPTS = {
   "hayles-integrated-cognition": [
@@ -1160,6 +1182,63 @@ function buildConceptVideosIndex(videos) {
   return byConcept;
 }
 
+function hubSearchScript() {
+  return `  <script>
+    (function () {
+      const input = document.getElementById("videoSearch");
+      const status = document.getElementById("videoSearchStatus");
+      const empty = document.getElementById("reelsEmpty");
+      const cards = Array.from(document.querySelectorAll(".reels-grid .card"));
+      if (!input || !cards.length) return;
+
+      function fold(text) {
+        return String(text || "")
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/\\p{M}/gu, "")
+          .replace(/\\s+/g, " ")
+          .trim();
+      }
+
+      function apply() {
+        const tokens = fold(input.value).split(" ").filter(Boolean);
+        const ids = new Set();
+        let shown = 0;
+        cards.forEach((card) => {
+          const hay = fold(card.getAttribute("data-search") || card.textContent);
+          const ok = !tokens.length || tokens.every((token) => hay.includes(token));
+          card.hidden = !ok;
+          if (ok) {
+            shown += 1;
+            ids.add(card.getAttribute("data-node"));
+          }
+        });
+        window.HI_VIDEO_MATCH_IDS = tokens.length ? ids : null;
+        if (status) {
+          status.textContent = tokens.length ? shown + " of " + cards.length : "";
+        }
+        if (empty) empty.classList.toggle("is-visible", shown === 0);
+        const url = new URL(window.location.href);
+        if (tokens.length) url.searchParams.set("q", input.value.trim());
+        else url.searchParams.delete("q");
+        history.replaceState(null, "", url.pathname + url.search + url.hash);
+        window.dispatchEvent(new Event("hi-video-search"));
+      }
+
+      const params = new URLSearchParams(window.location.search);
+      const initial = params.get("q");
+      if (initial) input.value = initial;
+      input.addEventListener("input", apply);
+      input.addEventListener("search", apply);
+      input.form && input.form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        apply();
+      });
+      apply();
+    })();
+  </script>`;
+}
+
 function networkVizScript(graphJson) {
   const body = fs.readFileSync(path.join(ROOT, "scripts/video-network-viz.inc.js"), "utf8");
   return `  <script>
@@ -1366,7 +1445,7 @@ function buildHub(videos) {
       const caption = v.caption
         ? `<p class="card-caption">${escapeHtml(v.caption)}</p>`
         : "";
-      return `      <article class="card${featured}">
+      return `      <article class="card${featured}" data-node="${escapeHtml(networkNodeId(v.id))}" data-search="${escapeHtml(videoSearchHaystack(v, transcript))}">
         <a class="card-main" href="video-${escapeHtml(v.id)}.html">
           <span class="shot">
             ${poster}
@@ -1427,6 +1506,53 @@ ${sharedStyles()}
       color: var(--muted);
     }
     .lede p { margin: 0 0 0.5rem; }
+    .video-search {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.55rem 0.85rem;
+      margin-top: 0.85rem;
+    }
+    .video-search label {
+      margin: 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--title);
+    }
+    .video-search input[type="search"] {
+      flex: 1 1 16rem;
+      min-width: 12rem;
+      max-width: 32rem;
+      padding: 0.5rem 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--panel);
+      color: var(--text);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.82rem;
+    }
+    .video-search input[type="search"]:focus {
+      outline: 2px solid var(--title);
+      outline-offset: 1px;
+    }
+    .video-search .search-status {
+      margin: 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+    .reels-empty {
+      display: none;
+      margin: 1rem 0 0;
+      padding: 1rem 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    .reels-empty.is-visible { display: block; }
+    .card[hidden] { display: none !important; }
     .section-head { margin-bottom: 0.75rem; }
     .section-head h2 {
       margin: 0 0 0.2rem;
@@ -1710,6 +1836,11 @@ ${sharedStyles()}
         </div>
       </div>
     </div>
+    <form class="video-search" role="search" action="videos.html" method="get">
+      <label for="videoSearch">Search</label>
+      <input id="videoSearch" name="q" type="search" placeholder="Names, titles, topics…" autocomplete="off" spellcheck="false">
+      <p class="search-status" id="videoSearchStatus" aria-live="polite"></p>
+    </form>
     <div class="header-row">
 ${headerNav()}
     </div>
@@ -1735,10 +1866,12 @@ ${headerNav()}
       <div class="reels-grid">
 ${cards}
       </div>
+      <p class="reels-empty" id="reelsEmpty">No reels match that search.</p>
     </section>
   </main>
   <footer class="page-foot">Hybrid Intelligences · University of Florida · Videos</footer>
 ${themeScript()}
+${hubSearchScript()}
 ${networkVizScript(graphJson)}
 </body>
 </html>

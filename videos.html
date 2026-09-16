@@ -160,6 +160,53 @@
       color: var(--muted);
     }
     .lede p { margin: 0 0 0.5rem; }
+    .video-search {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.55rem 0.85rem;
+      margin-top: 0.85rem;
+    }
+    .video-search label {
+      margin: 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--title);
+    }
+    .video-search input[type="search"] {
+      flex: 1 1 16rem;
+      min-width: 12rem;
+      max-width: 32rem;
+      padding: 0.5rem 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--panel);
+      color: var(--text);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.82rem;
+    }
+    .video-search input[type="search"]:focus {
+      outline: 2px solid var(--title);
+      outline-offset: 1px;
+    }
+    .video-search .search-status {
+      margin: 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+    .reels-empty {
+      display: none;
+      margin: 1rem 0 0;
+      padding: 1rem 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    .reels-empty.is-visible { display: block; }
+    .card[hidden] { display: none !important; }
     .section-head { margin-bottom: 0.75rem; }
     .section-head h2 {
       margin: 0 0 0.2rem;
@@ -443,6 +490,11 @@
         </div>
       </div>
     </div>
+    <form class="video-search" role="search" action="videos.html" method="get">
+      <label for="videoSearch">Search</label>
+      <input id="videoSearch" name="q" type="search" placeholder="Names, titles, topics…" autocomplete="off" spellcheck="false">
+      <p class="search-status" id="videoSearchStatus" aria-live="polite"></p>
+    </form>
     <div class="header-row">
       <div class="header-links">
         <a href="index.html">← Home</a>
@@ -484,7 +536,7 @@
         <p>Watch, then use Voice to talk through what each reel contributes to the graph.</p>
       </div>
       <div class="reels-grid">
-      <article class="card">
+      <article class="card" data-node="video_landon_carter_deep_dive_advanced_ontology_devcon" data-search="landon-carter-deep-dive-advanced-ontology-devcon deep dive: advanced ontology | devcon 5 landon carter ontology design is a tradecraft, not simply a requirement. at devcon 5, palantir group lead landon carter takes a deep dive into the newest additions to the ontology language — derived properties, interfaces, and the expanded security primitives. learn the problems each element was designed to solve, examples of how they're used in production, and how to leverage them across your organization. youtube 2026-09-16">
         <a class="card-main" href="video-landon-carter-deep-dive-advanced-ontology-devcon.html">
           <span class="shot">
             <img src="screenshots/landon-carter-deep-dive-advanced-ontology-devcon.jpg" width="1280" height="720" alt="" loading="eager">
@@ -504,7 +556,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_hayles_integrated_cognition" data-search="hayles-integrated-cognition katherine hayles — consciousness is not necessary for cognition katherine hayles on the integrated cognitive framework, how we became posthuman, widening the circle of care, nonconscious cognition, and relationality with synthetic intelligence. podcast interview 2025-01-01 katherine hayles hayles cognitive assemblages assemblage post- humanism posthumanism large language models llm">
         <a class="card-main" href="video-hayles-integrated-cognition.html">
           <span class="shot">
             <img src="screenshots/hayles-integrated-cognition.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -524,7 +576,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_hayles_bacteria_ai" data-search="hayles-bacteria-ai katherine hayles — bacteria to ai (urgent futures) katherine hayles katherine hayles on urgent futures with jesse damiani — integrated cognitive framework, nonconscious cognition, llms, umwelt, sympoiesis, and posthuman futures in the era of ai. urgent futures · reality studies 2025-03-01 katherine hayles hayles cognitive assemblages assemblage umwelt umwelt large language models llm">
         <a class="card-main" href="video-hayles-bacteria-ai.html">
           <span class="shot">
             <img src="screenshots/hayles-bacteria-ai.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -544,7 +596,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_clark_experience_machine" data-search="clark-experience-machine andy clark — the experience machine (predictive brains) andy clark royal institution lecture on predictive processing — brains as prediction machines, controlled hallucination, precision weighting, karl friston and active inference, chronic pain, placebo, and hacking the predictive brain. royal institution · the experience machine 2024-01-01 andy clark clark active inference active_inference karl friston friston embodied embodied">
         <a class="card-main" href="video-clark-experience-machine.html">
           <span class="shot">
             <img src="screenshots/clark-experience-machine.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -564,7 +616,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_ai_fluency_generative_ai" data-search="ai-fluency-generative-ai what is generative ai? (deep dive) — ai fluency ai fluency course lesson 3a from ai fluency: framework &amp; foundations — a deep dive on what generative ai is and how it works. ai fluency · framework &amp; foundations course 2024-01-01 generative ai gen_ai large language models llm artificial intelligence ai machine learning machine_learning">
         <a class="card-main" href="video-ai-fluency-generative-ai.html">
           <span class="shot">
             <img src="screenshots/ai-fluency-generative-ai.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -584,7 +636,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_karla_expanding_possibilities" data-search="karla-expanding-possibilities expanding the space of possibilities karla saldana ochoa karla saldana ochoa on architecture, ai, space, memory, and embodiment — expanding what hybrid creative practice can become. hybrid intelligences · met mondays 2026-07-13 karla saldana ochoa karla architecture architecture creative embodiment creative_embodiment artificial intelligence ai">
         <a class="card-main" href="video-karla-expanding-possibilities.html">
           <span class="shot">
             <img src="screenshots/karla-expanding-possibilities.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -604,7 +656,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_gallagher_4e_cognition" data-search="gallagher-4e-cognition prof. shaun gallagher on 4e cognition shaun gallagher shaun gallagher on embodied, embedded, enactive, and extended cognition — 4e as a framework for mind, action, and the social world. youtube lecture 2020-01-01 shaun gallagher gallagher 4e cognition 4e embodied embodied enactivism enactivism">
         <a class="card-main" href="video-gallagher-4e-cognition.html">
           <span class="shot">
             <img src="screenshots/gallagher-4e-cognition.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -624,7 +676,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_privacy_illusion_ai_data" data-search="privacy-illusion-ai-data the privacy illusion: ai, data &amp; who really controls your information on ai, data extraction, surveillance, and who actually controls personal information in the age of large-scale machine learning. youtube talk 2024-01-01 kate crawford crawford track 3 ethics &amp; leadership track_ethics artificial intelligence ai large language models llm">
         <a class="card-main" href="video-privacy-illusion-ai-data.html">
           <span class="shot">
             <img src="screenshots/privacy-illusion-ai-data.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -644,7 +696,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_friston_brain_constructs_reality" data-search="friston-brain-constructs-reality how the brain constructs reality — karl friston on consciousness and neuroscience karl friston karl friston on predictive brains, the free energy principle, active inference, and how neural inference shapes conscious experience. youtube interview 2024-01-01 karl friston friston active inference active_inference consciousness consciousness andy clark clark">
         <a class="card-main" href="video-friston-brain-constructs-reality.html">
           <span class="shot">
             <img src="screenshots/friston-brain-constructs-reality.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -664,7 +716,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_levin_diverse_intelligences" data-search="levin-diverse-intelligences diverse intelligences: origins, possibilities, and diseases of minds michael levin michael levin on diverse intelligences beyond brains — morphogenesis, basal cognition, and new frontiers for minds biological and synthetic. youtube lecture 2024-01-01 synthetic cognition synthetic_cognition distributed agency distributed holobiont holobiont symbiosis symbiosis">
         <a class="card-main" href="video-levin-diverse-intelligences.html">
           <span class="shot">
             <img src="screenshots/levin-diverse-intelligences.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -684,7 +736,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_levin_intelligence_without_brains" data-search="levin-intelligence-without-brains intelligence without brains: a radical new idea michael levin michael levin on intelligence distributed beyond nervous systems — collective behavior, regeneration, and cognition in living systems. youtube talk 2024-01-01 synthetic cognition synthetic_cognition distributed agency distributed holobiont holobiont lynn margulis margulis">
         <a class="card-main" href="video-levin-intelligence-without-brains.html">
           <span class="shot">
             <img src="screenshots/levin-intelligence-without-brains.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -704,7 +756,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_thompson_embodied_cognition" data-search="thompson-embodied-cognition bs 198 embodied cognition with evan thompson evan thompson brain science podcast — evan thompson on enactivism, lived experience, mindfulness, and embodied approaches to mind and life. brain science · bs 198 2020-01-01 evan thompson thompson enactivism enactivism 4e cognition 4e embodied embodied">
         <a class="card-main" href="video-thompson-embodied-cognition.html">
           <span class="shot">
             <img src="screenshots/thompson-embodied-cognition.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -724,7 +776,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_varela_god_computers" data-search="varela-god-computers francisco varela — god &amp; computers: minds, machines, and metaphysics francisco varela a.i. lab 1997 lecture series — varela on enactivism, autopoiesis, cognition, and the metaphysics of minds and machines. mit a.i. lab · 1997 lecture series 1997-01-01 francisco varela varela enactivism enactivism autopoiesis autopoiesis 4e cognition 4e">
         <a class="card-main" href="video-varela-god-computers.html">
           <span class="shot">
             <img src="screenshots/varela-god-computers.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -744,7 +796,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_mini_brains_150k" data-search="mini-brains-150k your brain is 150,000 mini-brains on cortical columns, distributed neural computation, and how the brain organizes intelligence from many local processing units. youtube explainer 2024-01-01 neural networks neural_networks distributed agency distributed embodied embodied consciousness consciousness">
         <a class="card-main" href="video-mini-brains-150k.html">
           <span class="shot">
             <img src="screenshots/mini-brains-150k.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -764,7 +816,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_understanding_ai_inner_thoughts" data-search="understanding-ai-inner-thoughts understanding the inner thoughts of ai on interpretability, model internals, and what we can know about how large ai systems represent and process information. youtube talk 2024-01-01 interpretability interpretability neuralese neuralese chain of thought chain_of_thought large language models llm">
         <a class="card-main" href="video-understanding-ai-inner-thoughts.html">
           <span class="shot">
             <img src="screenshots/understanding-ai-inner-thoughts.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -784,7 +836,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_visualizing_transformers_attention" data-search="visualizing-transformers-attention visualizing transformers and attention talk for tng big tech day '24 — making transformer architectures and attention mechanisms visible and intuitive. tng big tech day '24 2024-01-01 attention is all you need attention_is_all_you_need transformers transformers large language models llm neural networks neural_networks">
         <a class="card-main" href="video-visualizing-transformers-attention.html">
           <span class="shot">
             <img src="screenshots/visualizing-transformers-attention.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -804,7 +856,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_am_i_ai_consciousness_doc" data-search="am-i-ai-consciousness-doc am i? — a documentary about ai consciousness documentary exploring whether ai systems can be conscious — philosophy, neuroscience, and the politics of machine minds. documentary 2024-01-01 consciousness consciousness david chalmers chalmers artificial intelligence ai synthetic cognition synthetic_cognition">
         <a class="card-main" href="video-am-i-ai-consciousness-doc.html">
           <span class="shot">
             <img src="screenshots/am-i-ai-consciousness-doc.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -824,7 +876,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_creative_workers_ai_impact" data-search="creative-workers-ai-impact how creative workers are impacted by ai on generative ai and creative labor — how artists, designers, and cultural workers navigate coupling with new tools. youtube talk 2024-01-01 creative ai creative_ai creative practice creative generative ai gen_ai creative embodiment creative_embodiment">
         <a class="card-main" href="video-creative-workers-ai-impact.html">
           <span class="shot">
             <img src="screenshots/creative-workers-ai-impact.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -844,7 +896,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_thinking_game_documentary" data-search="thinking-game-documentary the thinking game — full documentary tribeca film festival official selection — documentary on ai research, ambition, and the humans building systems that think. tribeca film festival · documentary 2024-01-01 artificial intelligence ai space of possible minds possible_minds murray shanahan shanahan agi agi">
         <a class="card-main" href="video-thinking-game-documentary.html">
           <span class="shot">
             <img src="screenshots/thinking-game-documentary.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -864,7 +916,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_noe_out_of_our_heads" data-search="noe-out-of-our-heads out of our heads — alva noe alva noe alva noe on embodied cognition and consciousness — why mind is not confined to the brain, drawing on out of our heads and enactive approaches to perception and action. talks at google 2014-01-01 alva noe noe embodied embodied enactivism enactivism 4e cognition 4e">
         <a class="card-main" href="video-noe-out-of-our-heads.html">
           <span class="shot">
             <img src="screenshots/noe-out-of-our-heads.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -884,7 +936,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_aguilera_what_is_intelligence" data-search="aguilera-what-is-intelligence what is intelligence? — blaise aguera y arcas blaise aguera y arcas blaise aguera y arcas on intelligence, evolution, symbiosis, and ai — long now talk on possible minds and what counts as cognition in biological and synthetic systems. the long now foundation · long now talks 2024-01-01 blaise aguera y arcas aguilera_arcas space of possible minds possible_minds artificial intelligence ai symbiosis symbiosis">
         <a class="card-main" href="video-aguilera-what-is-intelligence.html">
           <span class="shot">
             <img src="screenshots/aguilera-what-is-intelligence.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -904,7 +956,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_mendieta_decolonial_feminist" data-search="mendieta-decolonial-feminist ana mendieta: decolonialized feminist and artist ana mendieta on mendieta's body-earth works, feminist practice, and decolonial art. youtube documentary 2024-01-01 ana mendieta ana_mendieta art art creative embodiment creative_embodiment body body">
         <a class="card-main" href="video-mendieta-decolonial-feminist.html">
           <span class="shot">
             <img src="screenshots/mendieta-decolonial-feminist.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -924,7 +976,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_escobar_pluriverse" data-search="escobar-pluriverse arturo escobar — designs for the pluriverse arturo escobar clark university atwood lecture on pluriversal design and alternatives to one-world modernity. clark university · atwood lecture 2024-01-01 arturo escobar escobar pluriversal pluriversal design thinking design_thinking cultural critical perspective cultural_critical">
         <a class="card-main" href="video-escobar-pluriverse.html">
           <span class="shot">
             <img src="screenshots/escobar-pluriverse.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -944,7 +996,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_akomolafe_animism" data-search="akomolafe-animism bayo akomolafe — animism — bayo akomolafe and daniel foor bayo akomolafe conversation on animism, ecology, and worlds beyond extractive modernity. youtube conversation 2024-01-01 bayo akomolafe akomolafe cultural critical perspective cultural_critical hybrid intelligences hybrid philosophy philosophy">
         <a class="card-main" href="video-akomolafe-animism.html">
           <span class="shot">
             <img src="screenshots/akomolafe-animism.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -964,7 +1016,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_bell_hooks_speaking_freely" data-search="bell-hooks-speaking-freely bell hooks — speaking freely — bell hooks bell hooks bell hooks on love, freedom, pedagogy, and cultural critique. speaking freely 2024-01-01 bell hooks bell_hooks cultural critical perspective cultural_critical pedagogy pedagogy paulo freire freire">
         <a class="card-main" href="video-bell-hooks-speaking-freely.html">
           <span class="shot">
             <img src="screenshots/bell-hooks-speaking-freely.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -984,7 +1036,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_sousa_santos_decolonising" data-search="sousa-santos-decolonising boaventura de sousa santos — decolonising the curriculum boaventura de sousa santos epistemologies of the south and decolonial approaches to knowledge and university practice. university of bristol 2024-01-01 boaventura de sousa santos sousa_santos epistemologies of the south epistemologies_south epistemology epistemology paulo freire freire">
         <a class="card-main" href="video-sousa-santos-decolonising.html">
           <span class="shot">
             <img src="screenshots/sousa-santos-decolonising.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1004,7 +1056,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_latour_once_out_of_nature" data-search="latour-once-out-of-nature bruno latour — once out of nature bruno latour natural religion, ecology of practices, and rethinking nature in the anthropocene. youtube lecture 2024-01-01 bruno latour latour cognitive assemblages assemblage distributed agency distributed technical agency technical_agency">
         <a class="card-main" href="video-latour-once-out-of-nature.html">
           <span class="shot">
             <img src="screenshots/latour-once-out-of-nature.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1024,7 +1076,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_chalmers_talking_to_ai" data-search="chalmers-talking-to-ai david chalmers — when we talk to ai, what are we talking to? david chalmers uc berkeley — consciousness, philosophy of mind, and large language models. uc berkeley 2024-01-01 david chalmers chalmers extended mind extended andy clark clark agi agi">
         <a class="card-main" href="video-chalmers-talking-to-ai.html">
           <span class="shot">
             <img src="screenshots/chalmers-talking-to-ai.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1044,7 +1096,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_kirsh_thinking_with_body" data-search="kirsh-thinking-with-body david kirsh — thinking and creating with the body david kirsh extended and embodied cognition — how bodies think, arrange, and create in the world. uc san diego 2024-01-01 david kirsh kirsh choreographic knowledge choreo_knowledge extended mind extended distributed agency distributed">
         <a class="card-main" href="video-kirsh-thinking-with-body.html">
           <span class="shot">
             <img src="screenshots/kirsh-thinking-with-body.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1064,7 +1116,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_haraway_chthulucene" data-search="haraway-chthulucene donna haraway — staying with the trouble donna haraway making kin in the chthulucene — multispecies response-ability and posthuman futures. youtube lecture 2024-01-01 donna haraway haraway natural-born cyborg cyborg techno-symbiosis technosymbiosis hybrid intelligences hybrid">
         <a class="card-main" href="video-haraway-chthulucene.html">
           <span class="shot">
             <img src="screenshots/haraway-chthulucene.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1084,7 +1136,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_rosch_prototype_cognition" data-search="rosch-prototype-cognition eleanor rosch — prototype cognition eleanor rosch why a robin is more of a bird than a penguin — prototypes, categories, and embodied mind. youtube talk 2024-01-01 eleanor rosch rosch buddhism buddhism enacted enacted enactivism enactivism">
         <a class="card-main" href="video-rosch-prototype-cognition.html">
           <span class="shot">
             <img src="screenshots/rosch-prototype-cognition.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1104,7 +1156,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_cuffari_linguistic_bodies" data-search="cuffari-linguistic-bodies elena clare cuffari — linguistic bodies elena clare cuffari enactivist linguistics — language as participatory sense-making between bodies. youtube lecture 2024-01-01 elena clare cuffari cuffari enactivism enactivism ezequiel di paolo di_paolo hanne de jaegher de_jaegher">
         <a class="card-main" href="video-cuffari-linguistic-bodies.html">
           <span class="shot">
             <img src="screenshots/cuffari-linguistic-bodies.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1124,7 +1176,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_di_paolo_enactivism" data-search="di-paolo-enactivism ezequiel di paolo — ontologizing enactivism ezequiel di paolo dialogue on enactivism, worldmaking, and the ontology of living cognition. youtube dialogue 2024-01-01 ezequiel di paolo di_paolo enactivism enactivism elena clare cuffari cuffari autopoiesis autopoiesis">
         <a class="card-main" href="video-di-paolo-enactivism.html">
           <span class="shot">
             <img src="screenshots/di-paolo-enactivism.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1144,7 +1196,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_fanon_colonization_mind" data-search="fanon-colonization-mind frantz fanon — colonization and the mind frantz fanon on fanon's analysis of colonial violence, psychiatry, and liberation. youtube documentary 2024-01-01 frantz fanon fanon cultural critical perspective cultural_critical critical cognition critical politics of perception perception_politics">
         <a class="card-main" href="video-fanon-colonization-mind.html">
           <span class="shot">
             <img src="screenshots/fanon-colonization-mind.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1164,7 +1216,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_bateson_ecology_of_mind" data-search="bateson-ecology-of-mind gregory bateson — ecology of mind gregory bateson introduction to bateson's ecology of mind — systems, learning, and relational cognition. youtube lecture 2024-01-01 gregory bateson bateson cognitive ecology ecology cybernetics cybernetics ecology ecology_d">
         <a class="card-main" href="video-bateson-ecology-of-mind.html">
           <span class="shot">
             <img src="screenshots/bateson-ecology-of-mind.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1184,7 +1236,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_de_jaegher_participatory_sense" data-search="de-jaegher-participatory-sense hanne de jaegher — participatory sense-making hanne de jaegher introduction to participatory sense-making and social enaction. youtube lecture 2024-01-01 hanne de jaegher de_jaegher enactivism enactivism intelligence as coupling coupling ezequiel di paolo di_paolo">
         <a class="card-main" href="video-de-jaegher-participatory-sense.html">
           <span class="shot">
             <img src="screenshots/de-jaegher-participatory-sense.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1204,7 +1256,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_maturana_interview" data-search="maturana-interview humberto maturana — interview humberto maturana autopoiesis, cognition, and the biology of knowing. youtube interview 2024-01-01 humberto maturana maturana autopoiesis autopoiesis francisco varela varela intelligence as coupling coupling">
         <a class="card-main" href="video-maturana-interview.html">
           <span class="shot">
             <img src="screenshots/maturana-interview.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1224,7 +1276,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_uexkuell_umwelt" data-search="uexkuell-umwelt jakob von uexkull — umwelt and biosemiotics jakob von uexkull introduction to umwelt theory and the organism's meaningful world. youtube lecture 2024-01-01 jakob von uexkull uexkuell umwelt umwelt cognitive ecology ecology francisco varela varela">
         <a class="card-main" href="video-uexkuell-umwelt.html">
           <span class="shot">
             <img src="screenshots/uexkuell-umwelt.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1244,7 +1296,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_gibson_ecological_psychology" data-search="gibson-ecological-psychology james j. gibson — ecological psychology james j. gibson affordances, direct perception, and the ecological approach to psychology. youtube explainer 2024-01-01 james j. gibson gibson embedded embedded architecture architecture cognitive ecology ecology">
         <a class="card-main" href="video-gibson-ecological-psychology.html">
           <span class="shot">
             <img src="screenshots/gibson-ecological-psychology.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1264,7 +1316,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_cage_433_lifetime" data-search="cage-433-lifetime john cage — 4'33&quot; and a lifetime of music john cage chance operations, silence, and indeterminacy as perceptual and compositional method. youtube talk 2024-01-01 john cage cage music music fluxus fluxus creative practice creative">
         <a class="card-main" href="video-cage-433-lifetime.html">
           <span class="shot">
             <img src="screenshots/cage-433-lifetime.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1284,7 +1336,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_munoz_queer_utopianism" data-search="munoz-queer-utopianism jose esteban munoz — queer utopianism jose esteban munoz cruising utopia, performance, and queer futurity against the tyranny of the present. youtube lecture 2024-01-01 jose esteban munoz munoz futurity futurity speculative futures speculative_futures cultural imagination cultural_imagination">
         <a class="card-main" href="video-munoz-queer-utopianism.html">
           <span class="shot">
             <img src="screenshots/munoz-queer-utopianism.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1304,7 +1356,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_barad_meeting_universe" data-search="barad-meeting-universe karen barad — meeting the universe halfway karen barad agential realism, intra-action, and quantum physics as philosophy of matter. youtube lecture 2024-01-01 karen barad barad donna haraway haraway intelligence as coupling coupling cognitive assemblages assemblage">
         <a class="card-main" href="video-barad-meeting-universe.html">
           <span class="shot">
             <img src="screenshots/barad-meeting-universe.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1324,7 +1376,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_crawford_ai_planet" data-search="crawford-ai-planet kate crawford — ai and the planet kate crawford atlas of ai — extraction, energy, labor, and the material politics of machine learning. youtube interview 2024-01-01 kate crawford crawford artificial intelligence ai politics of perception perception_politics generative ai gen_ai">
         <a class="card-main" href="video-crawford-ai-planet.html">
           <span class="shot">
             <img src="screenshots/crawford-ai-planet.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1344,7 +1396,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_malafouris_embodied_patterns" data-search="malafouris-embodied-patterns lambros malafouris — embodied patterns lambros malafouris material engagement — how things shape minds and cognitive archaeology of making. youtube lecture 2024-01-01 lambros malafouris malafouris extended mind extended extended extended_q synthetic cognition synthetic_cognition">
         <a class="card-main" href="video-malafouris-embodied-patterns.html">
           <span class="shot">
             <img src="screenshots/malafouris-embodied-patterns.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1364,7 +1416,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_shapiro_embodied_cognition" data-search="shapiro-embodied-cognition lawrence shapiro — embodied cognition lawrence shapiro full interview on embodied cognition and the body as constraint and resource for mind. youtube interview 2024-01-01 lawrence shapiro shapiro enactivism enactivism embodied embodied embedded embedded">
         <a class="card-main" href="video-shapiro-embodied-cognition.html">
           <span class="shot">
             <img src="screenshots/shapiro-embodied-cognition.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1384,7 +1436,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_leigh_bowery_tate" data-search="leigh-bowery-tate leigh bowery — tate highlights leigh bowery performance, fashion, and club culture as radical embodiment and social sculpture. tate 2024-01-01 leigh bowery leigh_bowery art art queer theory queer_theory creative practice creative">
         <a class="card-main" href="video-leigh-bowery-tate.html">
           <span class="shot">
             <img src="screenshots/leigh-bowery-tate.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1404,7 +1456,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_margulis_symbiotic_earth" data-search="margulis-symbiotic-earth lynn margulis — symbiotic earth lynn margulis graduate seminar footage — symbiosis, holobionts, and evolution as cooperative process. symbiotic earth documentary 2024-01-01 lynn margulis margulis symbiosis symbiosis techno-symbiosis technosymbiosis ecology ecology_d">
         <a class="card-main" href="video-margulis-symbiotic-earth.html">
           <span class="shot">
             <img src="screenshots/margulis-symbiotic-earth.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1424,7 +1476,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_duchamp_art_dada" data-search="duchamp-art-dada marcel duchamp — art and dada (1956) marcel duchamp archive interview on readymades, choice, and conceptual art. 1956 interview 2024-01-01 marcel duchamp duchamp art art creative practice creative curation curation">
         <a class="card-main" href="video-duchamp-art-dada.html">
           <span class="shot">
             <img src="screenshots/duchamp-art-dada.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1444,7 +1496,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_boden_creativity_ai" data-search="boden-creativity-ai margaret boden — creativity &amp; ai margaret boden creativity as novelty plus value — combinational, exploratory, and transformational forms in ai and art. youtube lecture 2024-01-01 margaret boden boden artificial intelligence ai creative ai creative_ai creativity creativity">
         <a class="card-main" href="video-boden-creativity-ai.html">
           <span class="shot">
             <img src="screenshots/boden-creativity-ai.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1464,7 +1516,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_bostrom_superintelligence_google" data-search="bostrom-superintelligence-google nick bostrom — superintelligence (talks at google) nick bostrom paths, dangers, and strategies for machine superintelligence — alignment, control, and existential risk from the future of humanity institute. talks at google 2014-08-01 nick bostrom bostrom agi agi artificial intelligence ai space of possible minds possible_minds">
         <a class="card-main" href="video-bostrom-superintelligence-google.html">
           <span class="shot">
             <img src="screenshots/bostrom-superintelligence-google.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1484,7 +1536,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_merleau_ponty_phenomenology" data-search="merleau-ponty-phenomenology maurice merleau-ponty — merleau-ponty — phenomenology of perception maurice merleau-ponty lived body, perception, and phenomenological approaches to embodied experience. youtube lecture 2024-01-01 maurice merleau-ponty merleau_ponty enactivism enactivism embodiment embodiment embodied embodied">
         <a class="card-main" href="video-merleau-ponty-phenomenology.html">
           <span class="shot">
             <img src="screenshots/merleau-ponty-phenomenology.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1504,7 +1556,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_foucault_prison_1975" data-search="foucault-prison-1975 michel foucault — we live in a prison (1975) michel foucault archive footage on power, discipline, and institutions that shape what can be known and done. 1975 archive 2024-01-01 michel foucault foucault politics of perception perception_politics critical cognition critical philosophy philosophy">
         <a class="card-main" href="video-foucault-prison-1975.html">
           <span class="shot">
             <img src="screenshots/foucault-prison-1975.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1524,7 +1576,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_shanahan_consciousness_ai" data-search="shanahan-consciousness-ai murray shanahan — consciousness and ai murray shanahan philosophy of ai, consciousness, and reasoning in artificial systems. youtube talk 2024-01-01 murray shanahan shanahan space of possible minds possible_minds">
         <a class="card-main" href="video-shanahan-consciousness-ai.html">
           <span class="shot">
             <img src="screenshots/shanahan-consciousness-ai.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1544,7 +1596,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_nagarjuna_emptiness" data-search="nagarjuna-emptiness nagarjuna — philosophy of emptiness nagarjuna thupten jinpa on madhyamaka emptiness and why it matters for cognition and reality. youtube lecture 2024-01-01 nagarjuna nagarjuna buddhism buddhism philosophy philosophy epistemology epistemology">
         <a class="card-main" href="video-nagarjuna-emptiness.html">
           <span class="shot">
             <img src="screenshots/nagarjuna-emptiness.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1564,7 +1616,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_butler_parable_climate" data-search="butler-parable-climate octavia butler — parable and climate chaos octavia butler butler on parable books, afrofuturism, and imagining futures under ecological collapse. youtube interview 2024-01-01 octavia butler butler afrofuturism afrofuturism speculative futures speculative_futures futurity futurity">
         <a class="card-main" href="video-butler-parable-climate.html">
           <span class="shot">
             <img src="screenshots/butler-parable-climate.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1584,7 +1636,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_freire_incredible_conversation" data-search="freire-incredible-conversation paulo freire — an incredible conversation paulo freire archive conversation on pedagogy of the oppressed, literacy, and freedom as practice. archive interview 2024-01-01 paulo freire freire cultural critical perspective cultural_critical critical cognition critical literacies of coupling literacies">
         <a class="card-main" href="video-freire-incredible-conversation.html">
           <span class="shot">
             <img src="screenshots/freire-incredible-conversation.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1604,7 +1656,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_wilson_state_space" data-search="wilson-state-space robert a. wilson — state space theory robert a. wilson mind 2019 — extended mind, boundaries of cognition, and philosophical psychology. mind 2019 2024-01-01 robert a. wilson wilson situated situated extended mind extended embedded embedded">
         <a class="card-main" href="video-wilson-state-space.html">
           <span class="shot">
             <img src="screenshots/wilson-state-space.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1624,7 +1676,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_brooks_humanoid_robots" data-search="brooks-humanoid-robots rodney brooks — humanoid robots and ai hype rodney brooks subsumption architecture, embodied robotics, and intelligence without representation. youtube talk 2024-01-01 rodney brooks brooks 4e cognition 4e embodied embodied affordances affordances">
         <a class="card-main" href="video-brooks-humanoid-robots.html">
           <span class="shot">
             <img src="screenshots/brooks-humanoid-robots.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1644,7 +1696,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_braidotti_posthuman_knowledge" data-search="braidotti-posthuman-knowledge rosi braidotti — posthuman knowledge rosi braidotti posthuman subjectivity, nomadic theory, and knowledge after the human. youtube lecture 2024-01-01 rosi braidotti braidotti hybrid intelligences hybrid philosophy philosophy cultural critical perspective cultural_critical">
         <a class="card-main" href="video-braidotti-posthuman-knowledge.html">
           <span class="shot">
             <img src="screenshots/braidotti-posthuman-knowledge.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1664,7 +1716,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_saul_leiter_color" data-search="saul-leiter-color saul leiter — life and work saul leiter color street photography, painterly vision, and everyday urban perception. youtube documentary 2024-01-01 saul leiter saul_leiter art art abstraction abstraction creative practice creative">
         <a class="card-main" href="video-saul-leiter-color.html">
           <span class="shot">
             <img src="screenshots/saul-leiter-color.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1684,7 +1736,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_paxton_contact_improv" data-search="paxton-contact-improv steve paxton — contact improvisation steve paxton contact improvisation, weight-sharing, and democratic intelligence of bodies in motion. youtube talk 2024-01-01 steve paxton steve_paxton judson church judson_church trisha brown trisha_brown dance dance">
         <a class="card-main" href="video-paxton-contact-improv.html">
           <span class="shot">
             <img src="screenshots/paxton-contact-improv.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1704,7 +1756,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_trisha_brown_intensive" data-search="trisha-brown-intensive trisha brown dance company — summer intensive trisha brown postmodern dance, ordinary movement, and somatic intelligence in choreography. trisha brown dance company 2024-01-01 trisha brown trisha_brown dance dance choreography choreography_d choreography choreography">
         <a class="card-main" href="video-trisha-brown-intensive.html">
           <span class="shot">
             <img src="screenshots/trisha-brown-intensive.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1724,7 +1776,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_vera_molnar_generative" data-search="vera-molnar-generative vera molnar — life and work vera molnar pioneer of computer and generative art — algorithms, chance, and systematic creativity. youtube documentary 2024-01-01 vera molnar vera_molnar generative arts generative_arts abstraction abstraction creativity creativity">
         <a class="card-main" href="video-vera-molnar-generative.html">
           <span class="shot">
             <img src="screenshots/vera-molnar-generative.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1744,7 +1796,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_forsythe_imagining_lines" data-search="forsythe-imagining-lines william forsythe — imagining lines william forsythe choreographic objects, lines, and movement as distributed cognition. youtube lecture 2024-01-01 william forsythe forsythe choreographic knowledge choreo_knowledge choreographic object choreo_object motion bank motion_bank">
         <a class="card-main" href="video-forsythe-imagining-lines.html">
           <span class="shot">
             <img src="screenshots/forsythe-imagining-lines.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1764,7 +1816,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_yoko_ono_interview" data-search="yoko-ono-interview yoko ono — interview yoko ono fluxus, instruction pieces, and art as participatory worldmaking. youtube interview 2024-01-01 yoko ono yoko_ono fluxus fluxus art art interdisciplinary art interdisciplinary_art">
         <a class="card-main" href="video-yoko-ono-interview.html">
           <span class="shot">
             <img src="screenshots/yoko-ono-interview.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1784,7 +1836,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_batson_minds_in_motion" data-search="batson-minds-in-motion minds in motion — glenna batson glenna batson conversation on somatic awareness, movement science, and minds in motion — dance, embodiment, and the intelligence of the moving body. marlon barrios solano · youtube 2024-01-01 somatics somatics dance dance embodiment embodiment marlon barrios solano marlon">
         <a class="card-main" href="video-batson-minds-in-motion.html">
           <span class="shot">
             <img src="screenshots/batson-minds-in-motion.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1804,7 +1856,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_forsythe_synchronous_objects_hellerau" data-search="forsythe-synchronous-objects-hellerau william forsythe on synchronous objects, the hellerau in dresden, germany william forsythe william forsythe on synchronous objects — translating choreography into data, visualizing movement relationships, and the motion bank as distributed choreographic knowledge at hellerau, dresden. marlon barrios solano · youtube 2024-01-01 william forsythe forsythe choreographic object choreo_object motion bank motion_bank choreographic knowledge choreo_knowledge">
         <a class="card-main" href="video-forsythe-synchronous-objects-hellerau.html">
           <span class="shot">
             <img src="screenshots/forsythe-synchronous-objects-hellerau.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1824,7 +1876,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_arendt_zur_person_1964" data-search="arendt-zur-person-1964 hannah arendt — zur person (1964) hannah arendt legendary 1964 interview with gunter gaus — political theory versus philosophy, the eichmann trial, plurality, and the banality of evil. zur person · english subtitles 1964-10-28 hannah arendt arendt law &amp; governance law politics of perception perception_politics community community">
         <a class="card-main" href="video-arendt-zur-person-1964.html">
           <span class="shot">
             <img src="screenshots/arendt-zur-person-1964.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1844,7 +1896,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_sam_altman_lex_fridman_419" data-search="sam-altman-lex-fridman-419 sam altman: openai, gpt-5, sora, board saga, elon musk, ilya, power &amp; agi | lex fridman podcast #419 sam altman sam altman on openai, agi timelines, power, safety, sora, and the future of generative ai — a wide-ranging conversation on hybrid intelligences at scale. lex fridman podcast #419 2024-01-01 sam altman sam_altman agi agi generative ai gen_ai speculative futures speculative_futures">
         <a class="card-main" href="video-sam-altman-lex-fridman-419.html">
           <span class="shot">
             <img src="screenshots/sam-altman-lex-fridman-419.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1864,7 +1916,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_dario_amodei_ai_safety" data-search="dario-amodei-ai-safety anthropic ceo dario amodei: ai's potential, openai rivalry, genai business, doomerism dario amodei dario amodei on constitutional ai, ai safety, scaling, anthropic versus openai, and responsible development of frontier models. big technology podcast 2024-01-01 dario amodei dario_amodei anthropic anthropic constitutional ai constitutional_ai ai alignment ai_alignment">
         <a class="card-main" href="video-dario-amodei-ai-safety.html">
           <span class="shot">
             <img src="screenshots/dario-amodei-ai-safety.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1884,7 +1936,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_peter_thiel_stagnation_ai" data-search="peter-thiel-stagnation-ai peter thiel: the stagnation of science and the ai revolution peter thiel peter thiel on technological stagnation in the world of atoms versus progress in bits — and why llms may be a breakthrough on par with the internet. youtube interview 2024-01-01 peter thiel peter_thiel dark enlightenment dark_enlightenment entrepreneurship &amp; strategic vision entrepreneurship_vision generative ai gen_ai">
         <a class="card-main" href="video-peter-thiel-stagnation-ai.html">
           <span class="shot">
             <img src="screenshots/peter-thiel-stagnation-ai.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1904,7 +1956,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_elon_musk_neuralink_lex" data-search="elon-musk-neuralink-lex elon musk: neuralink and the future of humanity | lex fridman podcast #438 elon musk elon musk on neuralink, xai, agi, brain–computer interfaces, humanoid robotics, and truth-seeking ai — coupling bodies, machines, and frontier intelligence. lex fridman podcast #438 2024-01-01 elon musk elon_musk physical ai &amp; robotics physical_ai agi agi synthetic cognition synthetic_cognition">
         <a class="card-main" href="video-elon-musk-neuralink-lex.html">
           <span class="shot">
             <img src="screenshots/elon-musk-neuralink-lex.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1924,7 +1976,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_nick_land_accelerationism" data-search="nick-land-accelerationism accelerationism, the dark enlightenment &amp; the strange life of nick land nick land on nick land, accelerationism, cybernetic theory, and dark enlightenment — capitalism, intelligence, and exit from democratic modernity. youtube documentary 2024-01-01 nick land nick_land hyperstition hyperstition accelerationism accelerationism dark enlightenment dark_enlightenment">
         <a class="card-main" href="video-nick-land-accelerationism.html">
           <span class="shot">
             <img src="screenshots/nick-land-accelerationism.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1944,7 +1996,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_carissa_veliz_prophecy_ted" data-search="carissa-veliz-prophecy-ted beware the power of prediction | carissa veliz | ted carissa veliz carissa veliz on prophecy, algorithmic prediction, and power — from ancient oracles to ai, and why predictions shape futures rather than merely describing them. ted 2026-01-01 carissa veliz carissa_veliz oracle oracle politics of perception perception_politics track 3 ethics &amp; leadership track_ethics">
         <a class="card-main" href="video-carissa-veliz-prophecy-ted.html">
           <span class="shot">
             <img src="screenshots/carissa-veliz-prophecy-ted.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1964,7 +2016,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_begus_mystery_language" data-search="begus-mystery-language the mystery of language in humans, animals &amp; ai | gasper begus gasper begus interpretable ai, language as informative imitation, and whale vowels — a comparative science of communication across humans, animals, and machines. youtube lecture 2024-01-01 gasper begus begus cross-species language cross_species_language whale vowels whale_vowels ai interpretability ai_interpretability">
         <a class="card-main" href="video-begus-mystery-language.html">
           <span class="shot">
             <img src="screenshots/begus-mystery-language.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -1984,7 +2036,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_godfrey_smith_other_minds" data-search="godfrey-smith-other-minds the octopus, the sea, and the deep origins of consciousness | peter godfrey-smith | talks at google peter godfrey-smith other minds at talks at google: cephalopod intelligence as a second evolutionary origin of consciousness, and what octopus encounter does to the philosophy of mind. talks at google 2017-05-11 peter godfrey-smith godfrey_smith other minds other_minds cephalopod cognition cephalopod_cognition consciousness consciousness">
         <a class="card-main" href="video-godfrey-smith-other-minds.html">
           <span class="shot">
             <img src="screenshots/godfrey-smith-other-minds.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -2004,7 +2056,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_ruha_benjamin_new_jim_code" data-search="ruha-benjamin-new-jim-code policing without the police: race, technology and the new jim code | ruha benjamin ruha benjamin the new jim code: how apps and algorithms can hide, speed, and deepen racial hierarchy — and what abolitionist tools for technology would require. haymarket books 2020-07-08 ruha benjamin ruha_benjamin new jim code new_jim_code ethics (ai impact) ai_impact_ethics ethical imagination ethical_imagination">
         <a class="card-main" href="video-ruha-benjamin-new-jim-code.html">
           <span class="shot">
             <img src="screenshots/ruha-benjamin-new-jim-code.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -2024,7 +2076,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_adrienne_maree_brown_emergent_strategy" data-search="adrienne-maree-brown-emergent-strategy emergent strategies for environmental justice | adrienne maree brown adrienne maree brown emergent strategy as a life-code for justice work: fractals, adaptation, interdependence, and learning from the living world. united church of christ · creation justice 2019-06-10 adrienne maree brown adrienne_maree_brown emergent strategy emergent_strategy octavia butler butler social change social_change">
         <a class="card-main" href="video-adrienne-maree-brown-emergent-strategy.html">
           <span class="shot">
             <img src="screenshots/adrienne-maree-brown-emergent-strategy.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -2044,7 +2096,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_fox_harrell_digital_selves" data-search="fox-harrell-digital-selves digital selves in phantasmal media | d. fox harrell d. fox harrell sociocultural phantasms and computational identity: how games, avatars, and data structures encode race, gender, and social category — and what more expressive digital selves would require. five college digital humanities · amherst college 2015-04-01 d. fox harrell fox_harrell phantasmal media phantasmal_media computational identity computational_identity cultural imagination cultural_imagination">
         <a class="card-main" href="video-fox-harrell-digital-selves.html">
           <span class="shot">
             <img src="screenshots/fox-harrell-digital-selves.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -2064,7 +2116,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_frank_coyle_agentic_ontologies" data-search="frank-coyle-agentic-ontologies why agentic systems need ontologies | frank coyle, uc berkeley frank coyle most agent failures are a missing layer: a formal ontology outside the model. owl, knowledge graphs, and constraints a probabilistic agent cannot sample away. ai engineer world’s fair 2026-07-22 frank coyle frank_coyle ontology ontology owl owl agentic systems agentic_systems">
         <a class="card-main" href="video-frank-coyle-agentic-ontologies.html">
           <span class="shot">
             <img src="screenshots/frank-coyle-agentic-ontologies.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -2084,7 +2136,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-node="video_nick_land_erotic_ai" data-search="nick-land-erotic-ai nick land on gnostic calvinism &amp; erotic ai nick land nick land on gnostic calvinism and erotic ai — hyperstition, synthetic desire, and intelligence as a process that makes its own futures. the warrior philosopher 2026-03-20 nick land nick_land erotic ai erotic_ai hyperstition hyperstition generative ai gen_ai">
         <a class="card-main" href="video-nick-land-erotic-ai.html">
           <span class="shot">
             <img src="screenshots/nick-land-erotic-ai.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -2104,6 +2156,7 @@
         </div>
       </article>
       </div>
+      <p class="reels-empty" id="reelsEmpty">No reels match that search.</p>
     </section>
   </main>
   <footer class="page-foot">Hybrid Intelligences · University of Florida · Videos</footer>
@@ -2121,6 +2174,60 @@
       });
     }
     initTheme();
+  </script>
+  <script>
+    (function () {
+      const input = document.getElementById("videoSearch");
+      const status = document.getElementById("videoSearchStatus");
+      const empty = document.getElementById("reelsEmpty");
+      const cards = Array.from(document.querySelectorAll(".reels-grid .card"));
+      if (!input || !cards.length) return;
+
+      function fold(text) {
+        return String(text || "")
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/\p{M}/gu, "")
+          .replace(/\s+/g, " ")
+          .trim();
+      }
+
+      function apply() {
+        const tokens = fold(input.value).split(" ").filter(Boolean);
+        const ids = new Set();
+        let shown = 0;
+        cards.forEach((card) => {
+          const hay = fold(card.getAttribute("data-search") || card.textContent);
+          const ok = !tokens.length || tokens.every((token) => hay.includes(token));
+          card.hidden = !ok;
+          if (ok) {
+            shown += 1;
+            ids.add(card.getAttribute("data-node"));
+          }
+        });
+        window.HI_VIDEO_MATCH_IDS = tokens.length ? ids : null;
+        if (status) {
+          status.textContent = tokens.length ? shown + " of " + cards.length : "";
+        }
+        if (empty) empty.classList.toggle("is-visible", shown === 0);
+        const url = new URL(window.location.href);
+        if (tokens.length) url.searchParams.set("q", input.value.trim());
+        else url.searchParams.delete("q");
+        history.replaceState(null, "", url.pathname + url.search + url.hash);
+        window.dispatchEvent(new Event("hi-video-search"));
+      }
+
+      const params = new URLSearchParams(window.location.search);
+      const initial = params.get("q");
+      if (initial) input.value = initial;
+      input.addEventListener("input", apply);
+      input.addEventListener("search", apply);
+      input.form && input.form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        apply();
+      });
+      apply();
+    })();
   </script>
   <script>
     (function () {
@@ -2172,10 +2279,26 @@
       }
 
       function focusedNode() {
-        return pinned || hovered;
+        const node = pinned || hovered;
+        if (node && !passesSearch(node)) return null;
+        return node;
+      }
+
+      function passesSearch(node) {
+        const ids = window.HI_VIDEO_MATCH_IDS;
+        if (!ids) return true;
+        if (node.type === "hub") return true;
+        if (node.type === "video") return ids.has(node.id);
+        const neighbors = adjacency.get(node.id);
+        if (!neighbors) return false;
+        for (const id of neighbors) {
+          if (ids.has(id)) return true;
+        }
+        return false;
       }
 
       function isNodeVisible(node) {
+        if (!passesSearch(node)) return false;
         const focus = focusedNode();
         if (!focus) return true;
         return focusNeighbors(focus).has(node.id);
@@ -2757,6 +2880,11 @@
           e.preventDefault();
         }
       }, { passive: false });
+
+      window.addEventListener("hi-video-search", () => {
+        if (pinned && !passesSearch(pinned)) pinned = null;
+        if (hovered && !passesSearch(hovered)) hovered = null;
+      });
 
       window.addEventListener("resize", () => {
         resize();
