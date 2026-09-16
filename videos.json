@@ -868,6 +868,17 @@
       "caption": "Most agent failures are a missing layer: a formal ontology outside the model. OWL, knowledge graphs, and constraints a probabilistic agent cannot sample away.",
       "credit": "AI Engineer World’s Fair",
       "transcript": "transcripts/frank-coyle-agentic-ontologies.json"
+    },
+    {
+      "id": "nick-land-erotic-ai",
+      "title": "Nick Land on Gnostic Calvinism & Erotic AI",
+      "youtube": "https://www.youtube.com/watch?v=XAwVRZ6BMkU",
+      "poster": "screenshots/nick-land-erotic-ai.jpg",
+      "date": "2026-03-20",
+      "speaker": "Nick Land",
+      "caption": "Nick Land on Gnostic Calvinism and erotic AI — hyperstition, synthetic desire, and intelligence as a process that makes its own futures.",
+      "credit": "The Warrior Philosopher",
+      "transcript": "transcripts/nick-land-erotic-ai.json"
     }
   ]
 }

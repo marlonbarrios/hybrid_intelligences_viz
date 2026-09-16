@@ -645,9 +645,9 @@ const VIDEO_FALLBACK_CONCEPTS = {
   ],
   "nick-land-accelerationism": [
     { conceptId: "nick_land", label: "Nick Land" },
+    { conceptId: "hyperstition", label: "Hyperstition" },
+    { conceptId: "accelerationism", label: "Accelerationism" },
     { conceptId: "dark_enlightenment", label: "Dark Enlightenment" },
-    { conceptId: "cybernetics", label: "Cybernetics" },
-    { conceptId: "futurity", label: "Futurity" },
   ],
   "carissa-veliz-prophecy-ted": [
     { conceptId: "carissa_veliz", label: "Carissa Véliz" },
@@ -690,6 +690,12 @@ const VIDEO_FALLBACK_CONCEPTS = {
     { conceptId: "ontology", label: "Ontology" },
     { conceptId: "owl", label: "OWL" },
     { conceptId: "agentic_systems", label: "Agentic Systems" },
+  ],
+  "nick-land-erotic-ai": [
+    { conceptId: "nick_land", label: "Nick Land" },
+    { conceptId: "erotic_ai", label: "Erotic AI" },
+    { conceptId: "hyperstition", label: "Hyperstition" },
+    { conceptId: "gen_ai", label: "Generative AI" },
   ],
 };
 
@@ -792,6 +798,7 @@ const VIDEO_SHORT_LABELS = {
   "adrienne-maree-brown-emergent-strategy": "amb ·\nEmergent Strategy",
   "fox-harrell-digital-selves": "Harrell ·\nDigital Selves",
   "frank-coyle-agentic-ontologies": "Coyle ·\nOntologies",
+  "nick-land-erotic-ai": "Land ·\nErotic AI",
 };
 
 function abbreviateTopic(topic, maxLen = 14) {
@@ -853,6 +860,7 @@ const VIDEO_AUTHOR_OVERRIDES = {
   "thinking-game-documentary": "shanahan",
   "am-i-ai-consciousness-doc": "chalmers",
   "nick-land-accelerationism": "nick_land",
+  "nick-land-erotic-ai": "nick_land",
 };
 
 const SPEAKER_AUTHOR_OVERRIDES = {

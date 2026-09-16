@@ -63,11 +63,11 @@
         "foaf:homepage": "https://marlonbarrios.github.io/"
       },
       "dc:date": "2026-09-16",
-      "dc:modified": "2026-09-16T18:18:31.870Z",
+      "dc:modified": "2026-09-16T18:41:55.914Z",
       "owl:versionInfo": "1.0.0",
-      "hi:nodeCount": 376,
-      "hi:edgeCount": 3542,
-      "hi:typedEdgeCount": 307
+      "hi:nodeCount": 380,
+      "hi:edgeCount": 3600,
+      "hi:typedEdgeCount": 323
     },
     {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme",
@@ -1903,6 +1903,14 @@
           "hi:strength": 0.98
         },
         {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#accelerationism",
+          "hi:strength": 0.92
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hyperstition",
+          "hi:strength": 0.85
+        },
+        {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#peter_thiel",
           "hi:strength": 0.85
         },
@@ -1961,6 +1969,180 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_nick_land_accelerationism",
           "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#accelerationism",
+          "hi:strength": 0.9,
+          "hi:relationType": "emergesFrom"
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#accelerationism",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Accelerationism",
+      "skos:definition": "A family of theories that capitalism, technics, and intelligence should be sped rather than braked — Nick Land and the Warwick CCRU; later splits into left and right, exit and critique. Dark Enlightenment is one downstream. Hyperstition is among its methods: fictions that make themselves real by circulating.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/framework"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "framework",
+      "hi:weight": 1.4,
+      "schema:url": "https://en.wikipedia.org/wiki/Accelerationism",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Accelerationism",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#nick_land",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hyperstition",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#dark_enlightenment",
+          "hi:strength": 0.92
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cybernetics",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#agi",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#speculative_futures",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#futurity",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#posthumanism",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#peter_thiel",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#elon_musk",
+          "hi:strength": 0.7
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#bostrom",
+          "hi:strength": 0.7
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#track_future",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#philosophy",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hyperstition",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hyperstition",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Hyperstition",
+      "skos:definition": "A self-fulfilling idea that becomes real through its own existence. Nick Land, 1995, CCRU: a portmanteau of hyper- and superstition. Not a forecast that happens to come true, but a fiction, rumor, or model that engineers the future by being told. Bitcoin’s price, Roko’s basilisk, accelerationism, and QAnon have been named as hyperstitions; self-fulfilling prophecy is the older kin. In this Hub: how AGI talk, alignment discourse, and speculative futures already couple into worlds.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/framework"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "framework",
+      "hi:weight": 1.5,
+      "schema:url": "https://en.wikipedia.org/wiki/Hyperstition",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Hyperstition",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#nick_land",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#accelerationism",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#speculative_futures",
+          "hi:strength": 0.92
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#futurity",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#oracle",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#agi",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai_alignment",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cybernetics",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#dark_enlightenment",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#possible_minds",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#philosophy",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#epistemology",
+          "hi:strength": 0.82
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#mediation",
+          "hi:strength": 0.78
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#speculative_futures",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#futurity",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
         }
       ]
     },
@@ -4089,6 +4271,89 @@
       ]
     },
     {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#erotic_ai",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Erotic AI",
+      "skos:definition": "AI as partner, object, and engine of desire — synthetic intimacy, generated bodies, and the coupling of sexuality with models. Land: erotic AI as a live site of hyperstition, where imagined relations with machines start to organize real ones. Distinct from Creative AI as studio practice: here the question is libido, not production.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/framework"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "framework",
+      "hi:weight": 1.4,
+      "schema:url": "https://en.wikipedia.org/wiki/Virtual_sex",
+      "schema:sameAs": "https://en.wikipedia.org/wiki/Virtual_sex",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#nick_land",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hyperstition",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#gen_ai",
+          "hi:strength": 0.92
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#llm",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creative_ai",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cyborg",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#queer_theory",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#mediation",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
+          "hi:strength": 0.78
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#possible_minds",
+          "hi:strength": 0.75
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#speculative_futures",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#accelerationism",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hyperstition",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#gen_ai",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
+        }
+      ]
+    },
+    {
       "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#llm",
       "@type": [
         "skos:Concept",
@@ -4276,6 +4541,11 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#asi",
           "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hyperstition",
+          "hi:strength": 0.9,
+          "hi:relationType": "participatesIn"
         }
       ]
     },
@@ -9947,7 +10217,7 @@
         "hi:NetworkNode"
       ],
       "skos:prefLabel": "Nick Land",
-      "skos:definition": "British philosopher and writer—former Warwick CCRU figure; accelerationism, cybernetic theory, and influence on neoreaction and Dark Enlightenment discourse. Writes on capitalism, intelligence, exit, and the coupling of technics with inhuman futures.",
+      "skos:definition": "British philosopher and writer—former Warwick CCRU figure. Coined hyperstition (1995); accelerationism, cybernetic theory, and influence on neoreaction and Dark Enlightenment discourse. Writes on capitalism, intelligence, exit, and the coupling of technics with inhuman futures.",
       "skos:broader": {
         "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/author"
       },
@@ -9962,6 +10232,18 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#dark_enlightenment",
           "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hyperstition",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#accelerationism",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#erotic_ai",
+          "hi:strength": 0.92
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cybernetics",
@@ -9988,11 +10270,30 @@
           "hi:strength": 0.65
         },
         {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_nick_land_erotic_ai",
+          "hi:strength": 0.98
+        },
+        {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_nick_land_accelerationism",
           "hi:strength": 0.98
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#dark_enlightenment",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hyperstition",
+          "hi:strength": 0.9,
+          "hi:relationType": "proposes"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#accelerationism",
+          "hi:strength": 0.9,
+          "hi:relationType": "proposes"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#erotic_ai",
           "hi:strength": 0.9,
           "hi:relationType": "develops"
         }
@@ -19901,6 +20202,14 @@
           "hi:strength": 0.98
         },
         {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hyperstition",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#accelerationism",
+          "hi:strength": 0.96
+        },
+        {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#dark_enlightenment",
           "hi:strength": 0.95
         },
@@ -19923,6 +20232,16 @@
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#dark_enlightenment",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hyperstition",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#accelerationism",
           "hi:strength": 0.9,
           "hi:relationType": "develops"
         }
@@ -20380,6 +20699,79 @@
         },
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#owl",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        }
+      ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_nick_land_erotic_ai",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Land · Erotic AI",
+      "skos:definition": "Nick Land — Gnostic Calvinism and erotic AI (The Warrior Philosopher, 2026). Hyperstition, synthetic desire, and intelligence as a process that makes its own futures. Video on YouTube; ingest matches speech to ontology concepts.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/video"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "video",
+      "hi:weight": 1.4,
+      "schema:url": "video-nick-land-erotic-ai.html",
+      "schema:image": "https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/nick-land-erotic-ai.jpg",
+      "schema:sameAs": "https://www.youtube.com/watch?v=XAwVRZ6BMkU",
+      "skos:related": [
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#nick_land",
+          "hi:strength": 0.98
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#erotic_ai",
+          "hi:strength": 0.96
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hyperstition",
+          "hi:strength": 0.95
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#accelerationism",
+          "hi:strength": 0.88
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#gen_ai",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#speculative_futures",
+          "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#dark_enlightenment",
+          "hi:strength": 0.8
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_videos",
+          "hi:strength": 0.9
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#nick_land",
+          "hi:strength": 0.9,
+          "hi:relationType": "instantiates"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hyperstition",
+          "hi:strength": 0.9,
+          "hi:relationType": "develops"
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#erotic_ai",
           "hi:strength": 0.9,
           "hi:relationType": "develops"
         }
@@ -21116,6 +21508,11 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#marlon",
           "hi:strength": 0.78
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hyperstition",
+          "hi:strength": 0.9,
+          "hi:relationType": "couplesWith"
         }
       ]
     },

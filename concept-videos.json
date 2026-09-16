@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-16T18:18:31.968Z",
+  "generated": "2026-09-16T18:41:56.051Z",
   "byConcept": {
     "hayles": [
       {
@@ -243,6 +243,13 @@
         "speaker": "Kate Crawford",
         "url": "video-crawford-ai-planet.html",
         "poster": "screenshots/crawford-ai-planet.jpg"
+      },
+      {
+        "id": "nick-land-erotic-ai",
+        "title": "Nick Land on Gnostic Calvinism & Erotic AI",
+        "speaker": "Nick Land",
+        "url": "video-nick-land-erotic-ai.html",
+        "poster": "screenshots/nick-land-erotic-ai.jpg"
       },
       {
         "id": "peter-thiel-stagnation-ai",
@@ -1559,13 +1566,6 @@
     ],
     "cybernetics": [
       {
-        "id": "nick-land-accelerationism",
-        "title": "Accelerationism, The Dark Enlightenment & The Strange Life of Nick Land",
-        "speaker": "Nick Land",
-        "url": "video-nick-land-accelerationism.html",
-        "poster": "screenshots/nick-land-accelerationism.jpg"
-      },
-      {
         "id": "bateson-ecology-of-mind",
         "title": "Gregory Bateson — Ecology of Mind",
         "speaker": "Gregory Bateson",
@@ -1706,13 +1706,6 @@
       }
     ],
     "futurity": [
-      {
-        "id": "nick-land-accelerationism",
-        "title": "Accelerationism, The Dark Enlightenment & The Strange Life of Nick Land",
-        "speaker": "Nick Land",
-        "url": "video-nick-land-accelerationism.html",
-        "poster": "screenshots/nick-land-accelerationism.jpg"
-      },
       {
         "id": "munoz-queer-utopianism",
         "title": "José Esteban Muñoz — Queer Utopianism",
@@ -2328,6 +2321,38 @@
         "speaker": "Nick Land",
         "url": "video-nick-land-accelerationism.html",
         "poster": "screenshots/nick-land-accelerationism.jpg"
+      },
+      {
+        "id": "nick-land-erotic-ai",
+        "title": "Nick Land on Gnostic Calvinism & Erotic AI",
+        "speaker": "Nick Land",
+        "url": "video-nick-land-erotic-ai.html",
+        "poster": "screenshots/nick-land-erotic-ai.jpg"
+      }
+    ],
+    "hyperstition": [
+      {
+        "id": "nick-land-accelerationism",
+        "title": "Accelerationism, The Dark Enlightenment & The Strange Life of Nick Land",
+        "speaker": "Nick Land",
+        "url": "video-nick-land-accelerationism.html",
+        "poster": "screenshots/nick-land-accelerationism.jpg"
+      },
+      {
+        "id": "nick-land-erotic-ai",
+        "title": "Nick Land on Gnostic Calvinism & Erotic AI",
+        "speaker": "Nick Land",
+        "url": "video-nick-land-erotic-ai.html",
+        "poster": "screenshots/nick-land-erotic-ai.jpg"
+      }
+    ],
+    "accelerationism": [
+      {
+        "id": "nick-land-accelerationism",
+        "title": "Accelerationism, The Dark Enlightenment & The Strange Life of Nick Land",
+        "speaker": "Nick Land",
+        "url": "video-nick-land-accelerationism.html",
+        "poster": "screenshots/nick-land-accelerationism.jpg"
       }
     ],
     "carissa_veliz": [
@@ -2535,6 +2560,15 @@
         "speaker": "Frank Coyle",
         "url": "video-frank-coyle-agentic-ontologies.html",
         "poster": "screenshots/frank-coyle-agentic-ontologies.jpg"
+      }
+    ],
+    "erotic_ai": [
+      {
+        "id": "nick-land-erotic-ai",
+        "title": "Nick Land on Gnostic Calvinism & Erotic AI",
+        "speaker": "Nick Land",
+        "url": "video-nick-land-erotic-ai.html",
+        "poster": "screenshots/nick-land-erotic-ai.jpg"
       }
     ]
   }

@@ -12,9 +12,9 @@
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   owl:versionInfo "1.0.0" ;
   dc:date "2026-09-16"^^xsd:date ;
-  dc:modified "2026-09-16T18:18:31.871Z"^^xsd:dateTime ;
-  hi:nodeCount "376"^^xsd:integer ;
-  hi:edgeCount "3542"^^xsd:integer .
+  dc:modified "2026-09-16T18:41:55.915Z"^^xsd:dateTime ;
+  hi:nodeCount "380"^^xsd:integer ;
+  hi:edgeCount "3600"^^xsd:integer .
 
 hi:scheme a skos:ConceptScheme ;
   skos:prefLabel "Hybrid Intelligences Concept Scheme" ;
@@ -395,6 +395,30 @@ hi:dark_enlightenment a skos:Concept, hi:NetworkNode ;
   schema:sameAs <https://en.wikipedia.org/wiki/Dark_Enlightenment>
  .
 
+hi:accelerationism a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Accelerationism" ;
+  skos:definition "A family of theories that capitalism, technics, and intelligence should be sped rather than braked — Nick Land and the Warwick CCRU; later splits into left and right, exit and critique. Dark Enlightenment is one downstream. Hyperstition is among its methods: fictions that make themselves real by circulating." ;
+  skos:broader hi:category/framework ;
+  skos:inScheme hi:scheme ;
+  hi:category "framework" ;
+  hi:weight "1.4"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Accelerationism> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Accelerationism>
+ .
+
+hi:hyperstition a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Hyperstition" ;
+  skos:definition "A self-fulfilling idea that becomes real through its own existence. Nick Land, 1995, CCRU: a portmanteau of hyper- and superstition. Not a forecast that happens to come true, but a fiction, rumor, or model that engineers the future by being told. Bitcoin’s price, Roko’s basilisk, accelerationism, and QAnon have been named as hyperstitions; self-fulfilling prophecy is the older kin. In this Hub: how AGI talk, alignment discourse, and speculative futures already couple into worlds." ;
+  skos:broader hi:category/framework ;
+  skos:inScheme hi:scheme ;
+  hi:category "framework" ;
+  hi:weight "1.5"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Hyperstition> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Hyperstition>
+ .
+
 hi:two_loops_model a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Two Loops Model" ;
   skos:definition "Berkana Institute model of systemic change: dominant systems rise, mature, stabilize, and decline; in the transition, innovators nurture emergent alternatives while hospice workers help dying systems release. A map for moments when extractive institutions exhaust people yet new human-centered systems are not yet visible." ;
@@ -763,6 +787,18 @@ hi:creative_ai a skos:Concept, hi:NetworkNode ;
   hi:weight "1.6"^^xsd:decimal
  ;
   schema:sameAs <https://en.wikipedia.org/wiki/Artificial_intelligence_art>
+ .
+
+hi:erotic_ai a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Erotic AI" ;
+  skos:definition "AI as partner, object, and engine of desire — synthetic intimacy, generated bodies, and the coupling of sexuality with models. Land: erotic AI as a live site of hyperstition, where imagined relations with machines start to organize real ones. Distinct from Creative AI as studio practice: here the question is libido, not production." ;
+  skos:broader hi:category/framework ;
+  skos:inScheme hi:scheme ;
+  hi:category "framework" ;
+  hi:weight "1.4"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Virtual_sex> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Virtual_sex>
  .
 
 hi:llm a skos:Concept, hi:NetworkNode ;
@@ -1729,7 +1765,7 @@ hi:carissa_veliz a skos:Concept, hi:NetworkNode ;
 
 hi:nick_land a skos:Concept, hi:NetworkNode ;
   skos:prefLabel "Nick Land" ;
-  skos:definition "British philosopher and writer—former Warwick CCRU figure; accelerationism, cybernetic theory, and influence on neoreaction and Dark Enlightenment discourse. Writes on capitalism, intelligence, exit, and the coupling of technics with inhuman futures." ;
+  skos:definition "British philosopher and writer—former Warwick CCRU figure. Coined hyperstition (1995); accelerationism, cybernetic theory, and influence on neoreaction and Dark Enlightenment discourse. Writes on capitalism, intelligence, exit, and the coupling of technics with inhuman futures." ;
   skos:broader hi:category/author ;
   skos:inScheme hi:scheme ;
   hi:category "author" ;
@@ -3866,6 +3902,19 @@ hi:video_frank_coyle_agentic_ontologies a skos:Concept, hi:NetworkNode ;
   schema:url <video-frank-coyle-agentic-ontologies.html> ;
   schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/frank-coyle-agentic-ontologies.jpg> ;
   schema:sameAs <https://www.youtube.com/watch?v=Sir59K8ZDPU>
+ .
+
+hi:video_nick_land_erotic_ai a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Land · Erotic AI" ;
+  skos:definition "Nick Land — Gnostic Calvinism and erotic AI (The Warrior Philosopher, 2026). Hyperstition, synthetic desire, and intelligence as a process that makes its own futures. Video on YouTube; ingest matches speech to ontology concepts." ;
+  skos:broader hi:category/video ;
+  skos:inScheme hi:scheme ;
+  hi:category "video" ;
+  hi:weight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-nick-land-erotic-ai.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/nick-land-erotic-ai.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=XAwVRZ6BMkU>
  .
 
 hi:essay_1 a skos:Concept, hi:NetworkNode ;
@@ -17539,6 +17588,18 @@ hi:rel-dark_enlightenment-nick_land a hi:Relation ;
   hi:strength "0.98"^^xsd:decimal ;
   skos:relatedMatch hi:nick_land .
 
+hi:rel-dark_enlightenment-accelerationism a hi:Relation ;
+  hi:source hi:dark_enlightenment ;
+  hi:target hi:accelerationism ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:accelerationism .
+
+hi:rel-dark_enlightenment-hyperstition a hi:Relation ;
+  hi:source hi:dark_enlightenment ;
+  hi:target hi:hyperstition ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:hyperstition .
+
 hi:rel-dark_enlightenment-peter_thiel a hi:Relation ;
   hi:source hi:dark_enlightenment ;
   hi:target hi:peter_thiel ;
@@ -17629,6 +17690,24 @@ hi:rel-nick_land-dark_enlightenment a hi:Relation ;
   hi:strength "0.98"^^xsd:decimal ;
   skos:relatedMatch hi:dark_enlightenment .
 
+hi:rel-nick_land-hyperstition a hi:Relation ;
+  hi:source hi:nick_land ;
+  hi:target hi:hyperstition ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:hyperstition .
+
+hi:rel-nick_land-accelerationism a hi:Relation ;
+  hi:source hi:nick_land ;
+  hi:target hi:accelerationism ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:accelerationism .
+
+hi:rel-nick_land-erotic_ai a hi:Relation ;
+  hi:source hi:nick_land ;
+  hi:target hi:erotic_ai ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:erotic_ai .
+
 hi:rel-nick_land-cybernetics a hi:Relation ;
   hi:source hi:nick_land ;
   hi:target hi:cybernetics ;
@@ -17664,6 +17743,252 @@ hi:rel-nick_land-crawford a hi:Relation ;
   hi:target hi:crawford ;
   hi:strength "0.65"^^xsd:decimal ;
   skos:relatedMatch hi:crawford .
+
+hi:rel-hyperstition-nick_land a hi:Relation ;
+  hi:source hi:hyperstition ;
+  hi:target hi:nick_land ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:nick_land .
+
+hi:rel-hyperstition-accelerationism a hi:Relation ;
+  hi:source hi:hyperstition ;
+  hi:target hi:accelerationism ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:accelerationism .
+
+hi:rel-hyperstition-speculative_futures a hi:Relation ;
+  hi:source hi:hyperstition ;
+  hi:target hi:speculative_futures ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:speculative_futures .
+
+hi:rel-hyperstition-futurity a hi:Relation ;
+  hi:source hi:hyperstition ;
+  hi:target hi:futurity ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:futurity .
+
+hi:rel-hyperstition-oracle a hi:Relation ;
+  hi:source hi:hyperstition ;
+  hi:target hi:oracle ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:oracle .
+
+hi:rel-hyperstition-agi a hi:Relation ;
+  hi:source hi:hyperstition ;
+  hi:target hi:agi ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:agi .
+
+hi:rel-hyperstition-ai_alignment a hi:Relation ;
+  hi:source hi:hyperstition ;
+  hi:target hi:ai_alignment ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_alignment .
+
+hi:rel-hyperstition-cybernetics a hi:Relation ;
+  hi:source hi:hyperstition ;
+  hi:target hi:cybernetics ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:cybernetics .
+
+hi:rel-hyperstition-dark_enlightenment a hi:Relation ;
+  hi:source hi:hyperstition ;
+  hi:target hi:dark_enlightenment ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:dark_enlightenment .
+
+hi:rel-hyperstition-possible_minds a hi:Relation ;
+  hi:source hi:hyperstition ;
+  hi:target hi:possible_minds ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:possible_minds .
+
+hi:rel-hyperstition-philosophy a hi:Relation ;
+  hi:source hi:hyperstition ;
+  hi:target hi:philosophy ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:philosophy .
+
+hi:rel-hyperstition-epistemology a hi:Relation ;
+  hi:source hi:hyperstition ;
+  hi:target hi:epistemology ;
+  hi:strength "0.82"^^xsd:decimal ;
+  skos:relatedMatch hi:epistemology .
+
+hi:rel-hyperstition-ai a hi:Relation ;
+  hi:source hi:hyperstition ;
+  hi:target hi:ai ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-hyperstition-mediation a hi:Relation ;
+  hi:source hi:hyperstition ;
+  hi:target hi:mediation ;
+  hi:strength "0.78"^^xsd:decimal ;
+  skos:relatedMatch hi:mediation .
+
+hi:rel-accelerationism-nick_land a hi:Relation ;
+  hi:source hi:accelerationism ;
+  hi:target hi:nick_land ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:nick_land .
+
+hi:rel-accelerationism-hyperstition a hi:Relation ;
+  hi:source hi:accelerationism ;
+  hi:target hi:hyperstition ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:hyperstition .
+
+hi:rel-accelerationism-dark_enlightenment a hi:Relation ;
+  hi:source hi:accelerationism ;
+  hi:target hi:dark_enlightenment ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:dark_enlightenment .
+
+hi:rel-accelerationism-cybernetics a hi:Relation ;
+  hi:source hi:accelerationism ;
+  hi:target hi:cybernetics ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:cybernetics .
+
+hi:rel-accelerationism-ai a hi:Relation ;
+  hi:source hi:accelerationism ;
+  hi:target hi:ai ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-accelerationism-agi a hi:Relation ;
+  hi:source hi:accelerationism ;
+  hi:target hi:agi ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:agi .
+
+hi:rel-accelerationism-speculative_futures a hi:Relation ;
+  hi:source hi:accelerationism ;
+  hi:target hi:speculative_futures ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:speculative_futures .
+
+hi:rel-accelerationism-futurity a hi:Relation ;
+  hi:source hi:accelerationism ;
+  hi:target hi:futurity ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:futurity .
+
+hi:rel-accelerationism-posthumanism a hi:Relation ;
+  hi:source hi:accelerationism ;
+  hi:target hi:posthumanism ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:posthumanism .
+
+hi:rel-accelerationism-peter_thiel a hi:Relation ;
+  hi:source hi:accelerationism ;
+  hi:target hi:peter_thiel ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:peter_thiel .
+
+hi:rel-accelerationism-elon_musk a hi:Relation ;
+  hi:source hi:accelerationism ;
+  hi:target hi:elon_musk ;
+  hi:strength "0.7"^^xsd:decimal ;
+  skos:relatedMatch hi:elon_musk .
+
+hi:rel-accelerationism-bostrom a hi:Relation ;
+  hi:source hi:accelerationism ;
+  hi:target hi:bostrom ;
+  hi:strength "0.7"^^xsd:decimal ;
+  skos:relatedMatch hi:bostrom .
+
+hi:rel-accelerationism-track_future a hi:Relation ;
+  hi:source hi:accelerationism ;
+  hi:target hi:track_future ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:track_future .
+
+hi:rel-accelerationism-philosophy a hi:Relation ;
+  hi:source hi:accelerationism ;
+  hi:target hi:philosophy ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:philosophy .
+
+hi:rel-erotic_ai-nick_land a hi:Relation ;
+  hi:source hi:erotic_ai ;
+  hi:target hi:nick_land ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:nick_land .
+
+hi:rel-erotic_ai-hyperstition a hi:Relation ;
+  hi:source hi:erotic_ai ;
+  hi:target hi:hyperstition ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:hyperstition .
+
+hi:rel-erotic_ai-gen_ai a hi:Relation ;
+  hi:source hi:erotic_ai ;
+  hi:target hi:gen_ai ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:gen_ai .
+
+hi:rel-erotic_ai-llm a hi:Relation ;
+  hi:source hi:erotic_ai ;
+  hi:target hi:llm ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:llm .
+
+hi:rel-erotic_ai-creative_ai a hi:Relation ;
+  hi:source hi:erotic_ai ;
+  hi:target hi:creative_ai ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:creative_ai .
+
+hi:rel-erotic_ai-cyborg a hi:Relation ;
+  hi:source hi:erotic_ai ;
+  hi:target hi:cyborg ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:cyborg .
+
+hi:rel-erotic_ai-queer_theory a hi:Relation ;
+  hi:source hi:erotic_ai ;
+  hi:target hi:queer_theory ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:queer_theory .
+
+hi:rel-erotic_ai-ai a hi:Relation ;
+  hi:source hi:erotic_ai ;
+  hi:target hi:ai ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-erotic_ai-mediation a hi:Relation ;
+  hi:source hi:erotic_ai ;
+  hi:target hi:mediation ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:mediation .
+
+hi:rel-erotic_ai-assemblage a hi:Relation ;
+  hi:source hi:erotic_ai ;
+  hi:target hi:assemblage ;
+  hi:strength "0.78"^^xsd:decimal ;
+  skos:relatedMatch hi:assemblage .
+
+hi:rel-erotic_ai-possible_minds a hi:Relation ;
+  hi:source hi:erotic_ai ;
+  hi:target hi:possible_minds ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:possible_minds .
+
+hi:rel-erotic_ai-speculative_futures a hi:Relation ;
+  hi:source hi:erotic_ai ;
+  hi:target hi:speculative_futures ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:speculative_futures .
+
+hi:rel-erotic_ai-accelerationism a hi:Relation ;
+  hi:source hi:erotic_ai ;
+  hi:target hi:accelerationism ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:accelerationism .
 
 hi:rel-peter_thiel-dark_enlightenment a hi:Relation ;
   hi:source hi:peter_thiel ;
@@ -20461,6 +20786,18 @@ hi:rel-video_nick_land_accelerationism-nick_land a hi:Relation ;
   hi:strength "0.98"^^xsd:decimal ;
   skos:relatedMatch hi:nick_land .
 
+hi:rel-video_nick_land_accelerationism-hyperstition a hi:Relation ;
+  hi:source hi:video_nick_land_accelerationism ;
+  hi:target hi:hyperstition ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:hyperstition .
+
+hi:rel-video_nick_land_accelerationism-accelerationism a hi:Relation ;
+  hi:source hi:video_nick_land_accelerationism ;
+  hi:target hi:accelerationism ;
+  hi:strength "0.96"^^xsd:decimal ;
+  skos:relatedMatch hi:accelerationism .
+
 hi:rel-video_nick_land_accelerationism-dark_enlightenment a hi:Relation ;
   hi:source hi:video_nick_land_accelerationism ;
   hi:target hi:dark_enlightenment ;
@@ -21438,6 +21775,66 @@ hi:rel-frank_coyle-video_frank_coyle_agentic_ontologies a hi:Relation ;
   hi:target hi:video_frank_coyle_agentic_ontologies ;
   hi:strength "0.98"^^xsd:decimal ;
   skos:relatedMatch hi:video_frank_coyle_agentic_ontologies .
+
+hi:rel-video_nick_land_erotic_ai-nick_land a hi:Relation ;
+  hi:source hi:video_nick_land_erotic_ai ;
+  hi:target hi:nick_land ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:nick_land .
+
+hi:rel-video_nick_land_erotic_ai-erotic_ai a hi:Relation ;
+  hi:source hi:video_nick_land_erotic_ai ;
+  hi:target hi:erotic_ai ;
+  hi:strength "0.96"^^xsd:decimal ;
+  skos:relatedMatch hi:erotic_ai .
+
+hi:rel-video_nick_land_erotic_ai-hyperstition a hi:Relation ;
+  hi:source hi:video_nick_land_erotic_ai ;
+  hi:target hi:hyperstition ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:hyperstition .
+
+hi:rel-video_nick_land_erotic_ai-accelerationism a hi:Relation ;
+  hi:source hi:video_nick_land_erotic_ai ;
+  hi:target hi:accelerationism ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:accelerationism .
+
+hi:rel-video_nick_land_erotic_ai-gen_ai a hi:Relation ;
+  hi:source hi:video_nick_land_erotic_ai ;
+  hi:target hi:gen_ai ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:gen_ai .
+
+hi:rel-video_nick_land_erotic_ai-ai a hi:Relation ;
+  hi:source hi:video_nick_land_erotic_ai ;
+  hi:target hi:ai ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-video_nick_land_erotic_ai-speculative_futures a hi:Relation ;
+  hi:source hi:video_nick_land_erotic_ai ;
+  hi:target hi:speculative_futures ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:speculative_futures .
+
+hi:rel-video_nick_land_erotic_ai-dark_enlightenment a hi:Relation ;
+  hi:source hi:video_nick_land_erotic_ai ;
+  hi:target hi:dark_enlightenment ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:dark_enlightenment .
+
+hi:rel-video_nick_land_erotic_ai-hi_videos a hi:Relation ;
+  hi:source hi:video_nick_land_erotic_ai ;
+  hi:target hi:hi_videos ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:hi_videos .
+
+hi:rel-nick_land-video_nick_land_erotic_ai a hi:Relation ;
+  hi:source hi:nick_land ;
+  hi:target hi:video_nick_land_erotic_ai ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:video_nick_land_erotic_ai .
 
 hi:rel-arendt-video_arendt_zur_person_1964 a hi:Relation ;
   hi:source hi:arendt ;
@@ -27339,6 +27736,86 @@ hi:rel-nick_land-dark_enlightenment-develops a hi:Relation ;
   hi:source hi:nick_land ;
   hi:target hi:dark_enlightenment ;
   hi:relationType hi:develops .
+
+hi:rel-nick_land-hyperstition-proposes a hi:Relation ;
+  hi:source hi:nick_land ;
+  hi:target hi:hyperstition ;
+  hi:relationType hi:proposes .
+
+hi:rel-nick_land-accelerationism-proposes a hi:Relation ;
+  hi:source hi:nick_land ;
+  hi:target hi:accelerationism ;
+  hi:relationType hi:proposes .
+
+hi:rel-hyperstition-speculative_futures-couplesWith a hi:Relation ;
+  hi:source hi:hyperstition ;
+  hi:target hi:speculative_futures ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-hyperstition-futurity-couplesWith a hi:Relation ;
+  hi:source hi:hyperstition ;
+  hi:target hi:futurity ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-accelerationism-hyperstition-couplesWith a hi:Relation ;
+  hi:source hi:accelerationism ;
+  hi:target hi:hyperstition ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-dark_enlightenment-accelerationism-emergesFrom a hi:Relation ;
+  hi:source hi:dark_enlightenment ;
+  hi:target hi:accelerationism ;
+  hi:relationType hi:emergesFrom .
+
+hi:rel-agi-hyperstition-participatesIn a hi:Relation ;
+  hi:source hi:agi ;
+  hi:target hi:hyperstition ;
+  hi:relationType hi:participatesIn .
+
+hi:rel-oracle-hyperstition-couplesWith a hi:Relation ;
+  hi:source hi:oracle ;
+  hi:target hi:hyperstition ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-video_nick_land_accelerationism-hyperstition-develops a hi:Relation ;
+  hi:source hi:video_nick_land_accelerationism ;
+  hi:target hi:hyperstition ;
+  hi:relationType hi:develops .
+
+hi:rel-video_nick_land_accelerationism-accelerationism-develops a hi:Relation ;
+  hi:source hi:video_nick_land_accelerationism ;
+  hi:target hi:accelerationism ;
+  hi:relationType hi:develops .
+
+hi:rel-video_nick_land_erotic_ai-nick_land-instantiates a hi:Relation ;
+  hi:source hi:video_nick_land_erotic_ai ;
+  hi:target hi:nick_land ;
+  hi:relationType hi:instantiates .
+
+hi:rel-video_nick_land_erotic_ai-hyperstition-develops a hi:Relation ;
+  hi:source hi:video_nick_land_erotic_ai ;
+  hi:target hi:hyperstition ;
+  hi:relationType hi:develops .
+
+hi:rel-video_nick_land_erotic_ai-erotic_ai-develops a hi:Relation ;
+  hi:source hi:video_nick_land_erotic_ai ;
+  hi:target hi:erotic_ai ;
+  hi:relationType hi:develops .
+
+hi:rel-nick_land-erotic_ai-develops a hi:Relation ;
+  hi:source hi:nick_land ;
+  hi:target hi:erotic_ai ;
+  hi:relationType hi:develops .
+
+hi:rel-erotic_ai-hyperstition-couplesWith a hi:Relation ;
+  hi:source hi:erotic_ai ;
+  hi:target hi:hyperstition ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-erotic_ai-gen_ai-couplesWith a hi:Relation ;
+  hi:source hi:erotic_ai ;
+  hi:target hi:gen_ai ;
+  hi:relationType hi:couplesWith .
 
 hi:rel-dario_amodei-anthropic-develops a hi:Relation ;
   hi:source hi:dario_amodei ;
