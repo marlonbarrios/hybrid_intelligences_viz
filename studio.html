@@ -121,18 +121,6 @@
     }
     textarea { min-height: 8rem; resize: vertical; }
     textarea.body { min-height: 16rem; font-family: "IBM Plex Mono", monospace; font-size: 0.85rem; }
-    .check {
-      display: flex;
-      align-items: center;
-      gap: 0.55rem;
-      margin: 1rem 0 0.3rem;
-      font-family: "IBM Plex Sans", system-ui, sans-serif;
-      font-size: 0.92rem;
-      letter-spacing: 0;
-      text-transform: none;
-      color: var(--text);
-    }
-    .check input { width: auto; }
     .hint { margin: 0.35rem 0 0; font-size: 0.82rem; color: var(--muted); }
     .status {
       margin: 1rem 0 0;
@@ -158,7 +146,7 @@
     </a>
     <p class="eyebrow">Studio · not in the public menu</p>
     <h1>Add to the Hub</h1>
-    <p class="meta">A concept, a YouTube talk, or an essay. Leave Wikipedia blank to look it up. Check “Also ingest a YouTube talk” to search for a lecture or interview. The live site updates after GitHub Actions commits to main.</p>
+    <p class="meta">A concept, a YouTube URL, or an essay. Leave Wikipedia blank to look it up. Paste a talk URL on the Video tab. The live site updates after GitHub Actions commits to main.</p>
   </header>
   <main>
     <section class="gate" id="gate">
@@ -209,11 +197,6 @@
         <label for="conceptWiki">Wikipedia article (optional)</label>
         <input id="conceptWiki" name="wikipedia" placeholder="Hyperstition">
         <p class="hint">Leave blank to look up a clear English Wikipedia match. Ambiguous names stay without a link.</p>
-        <label class="check" for="conceptVideo">
-          <input id="conceptVideo" name="addVideo" type="checkbox">
-          Also ingest a YouTube talk
-        </label>
-        <p class="hint">Searches for a lecture, interview, or keynote whose title names this concept. Skips shorts and weak matches. Needs <code>YOUTUBE_API_KEY</code> in GitHub Actions.</p>
         <div class="row-actions">
           <button type="submit">Add concept and rebuild ontology</button>
         </div>

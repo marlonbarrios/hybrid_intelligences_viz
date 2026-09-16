@@ -203,78 +203,6 @@ async function lookupWikipedia(label) {
   return String(page.title || title).replace(/ /g, "_");
 }
 
-function parseIsoDuration(iso) {
-  const match = String(iso || "").match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
-  if (!match) return 0;
-  return Number(match[1] || 0) * 3600 + Number(match[2] || 0) * 60 + Number(match[3] || 0);
-}
-
-async function lookupYoutubeTalk(label, apiKey) {
-  const q = `"${label}" (talk OR lecture OR interview OR keynote)`;
-  const searchUrl = "https://www.googleapis.com/youtube/v3/search?" + new URLSearchParams({
-    part: "snippet",
-    type: "video",
-    maxResults: "8",
-    q,
-    videoEmbeddable: "true",
-    relevanceLanguage: "en",
-    key: apiKey,
-  });
-  const searchRes = await fetch(searchUrl);
-  const search = await searchRes.json();
-  if (!searchRes.ok) {
-    throw new Error((search.error && search.error.message) || "YouTube search failed.");
-  }
-  const ids = (search.items || []).map((item) => item.id && item.id.videoId).filter(Boolean);
-  if (!ids.length) return null;
-
-  const detailsUrl = "https://www.googleapis.com/youtube/v3/videos?" + new URLSearchParams({
-    part: "snippet,contentDetails,statistics",
-    id: ids.join(","),
-    key: apiKey,
-  });
-  const detailsRes = await fetch(detailsUrl);
-  const details = await detailsRes.json();
-  if (!detailsRes.ok) {
-    throw new Error((details.error && details.error.message) || "YouTube video lookup failed.");
-  }
-
-  const nq = label.toLowerCase();
-  const scored = [];
-  for (const video of details.items || []) {
-    const duration = parseIsoDuration(video.contentDetails && video.contentDetails.duration);
-    if (duration < 180 || duration > 4 * 3600) continue;
-    const title = (video.snippet && video.snippet.title) || "";
-    const description = (video.snippet && video.snippet.description) || "";
-    if (/#shorts|youtube shorts/i.test(title)) continue;
-    const titleHit = title.toLowerCase().includes(nq);
-    const descHit = description.toLowerCase().includes(nq);
-    if (!titleHit && !descHit) continue;
-    const views = Number(video.statistics && video.statistics.viewCount) || 0;
-    scored.push({
-      id: video.id,
-      title,
-      channel: (video.snippet && video.snippet.channelTitle) || "",
-      publishedAt: String((video.snippet && video.snippet.publishedAt) || "").slice(0, 10),
-      description,
-      score: (titleHit ? 3 : 0) + Math.log10(views + 1) + Math.min(duration, 3600) / 1800,
-    });
-  }
-  scored.sort((a, b) => b.score - a.score);
-  return scored[0] || null;
-}
-
-function forceVideoConceptEdge(videoId, conceptId) {
-  if (!videoId || !conceptId) return;
-  const videoNodeId = `video_${String(videoId).replace(/-/g, "_")}`;
-  let src = fs.readFileSync(NETWORK, "utf8");
-  const marker = `["${videoNodeId}", "${conceptId}"`;
-  if (src.includes(marker) || src.includes(`["${conceptId}", "${videoNodeId}"`)) return;
-  src = insertBefore(src, "\n];\n\nconst RELATION_TYPE_ORDER", `\n  ["${videoNodeId}", "${conceptId}", 0.95],`);
-  fs.writeFileSync(NETWORK, src);
-  run("node", ["build-ontology.js"], { label: "build-ontology.js" });
-}
-
 async function addConcept(job) {
   const label = clip(job.label || job.name, 80);
   if (!label) throw new Error("A concept name is required.");
@@ -330,50 +258,6 @@ async function addConcept(job) {
     url: `ontology.html#${id}`,
     network: `network.html#${id}`,
   };
-
-  const wantVideo = job.addVideo === true || String(job.addVideo || "").toLowerCase() === "on";
-  if (!wantVideo) return result;
-
-  const youtubeKey = process.env.YOUTUBE_API_KEY || "";
-  if (!youtubeKey) {
-    result.videoNote = "YouTube search skipped: YOUTUBE_API_KEY is not set.";
-    console.log(result.videoNote);
-    return result;
-  }
-
-  let talk = null;
-  try {
-    talk = await lookupYoutubeTalk(label, youtubeKey);
-  } catch (err) {
-    result.videoNote = "YouTube search failed: " + (err.message || err);
-    console.log(result.videoNote);
-    return result;
-  }
-  if (!talk) {
-    result.videoNote = "No clear YouTube talk matched “" + label + "”. Concept published without a video.";
-    console.log(result.videoNote);
-    return result;
-  }
-
-  console.log("YouTube talk chosen: https://www.youtube.com/watch?v=" + talk.id + " — " + talk.title);
-  const speaker = (category === "author" || category === "facilitator" || category === "participant")
-    ? label
-    : (talk.channel || label);
-  try {
-    result.video = await addVideo({
-      url: "https://www.youtube.com/watch?v=" + talk.id,
-      title: talk.title,
-      speaker,
-      date: talk.publishedAt,
-      caption: clip(talk.description, 400),
-      credit: talk.channel,
-    });
-    forceVideoConceptEdge(result.video && result.video.id, id);
-    result.videoNote = "Ingested " + talk.title + " (" + talk.id + ").";
-  } catch (err) {
-    result.videoNote = "YouTube talk found but ingest failed: " + (err.message || err);
-    console.log(result.videoNote);
-  }
   return result;
 }
 
@@ -720,9 +604,7 @@ async function main() {
   } catch (_) {}
   const message =
     summary.action === "concept"
-      ? (summary.result.video
-        ? `Add ${summary.result.label} and a YouTube talk from Studio.`
-        : `Add ${summary.result.label} to the ontology from Studio.`)
+      ? `Add ${summary.result.label} to the ontology from Studio.`
       : summary.action === "video"
         ? `Ingest ${summary.result.title} from Studio.`
         : `Add ${summary.result.title} from Studio.`;

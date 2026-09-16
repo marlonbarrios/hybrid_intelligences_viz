@@ -68,11 +68,6 @@ async function githubJson(token, url, init) {
   return data;
 }
 
-function truthy(value) {
-  const v = String(value || "").trim().toLowerCase();
-  return v === "1" || v === "true" || v === "on" || v === "yes";
-}
-
 function jobPayload(body) {
   const action = String(body.action || "").trim().toLowerCase();
   if (action === "auth") return { action: "auth" };
@@ -86,7 +81,6 @@ function jobPayload(body) {
         definition: clip(body.definition || body.desc, 1200),
         related: clip(body.related, 400),
         wikipedia: clip(body.wikipedia || body.wiki, 160),
-        addVideo: truthy(body.addVideo),
       },
     };
   }
