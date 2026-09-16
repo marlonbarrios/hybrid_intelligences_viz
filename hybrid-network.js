@@ -1843,6 +1843,11 @@ const NODES = [
   { id: "alex_karp", label: "Alex Karp", cat: "author", weight: 1.4,
     desc: "Alexander Caedmon Karp (born October 2, 1967) is an American billionaire businessman and entrepreneur. He is the co-founder and CEO of the software firm Palantir Technologies. Karp earned his J.D. degree from Stanford Law School and a doctorate in social theory from Goethe University Frankfurt. He subsequently worked in finance, founding the investment firm Caedmon Group, where he managed money for clients including wealthy European investors and invested in start-up companies and stocks. At Stanford, he met Peter Thiel and in 2003, they alongside three others co-founded Palantir. In 2025, his net worth exceeded $18 billion, making him among the wealthiest 200 people in the world as reported by Forbes and the Bloomberg Billionaires Index, and Time magazine named him on the Time 100 list of the world's most influential people of that year.",
     url: "https://en.wikipedia.org/wiki/Alex_Karp", linkLabel: "Wikipedia ↗" },
+  { id: "video_landon_carter_deep_dive_advanced_ontology_devcon", label: "Carter ·\nDeep Dive:", fullLabel: "Deep Dive: Advanced Ontology | DevCon 5", cat: "video",   weight: 1.4,
+    desc: "Deep Dive: Advanced Ontology | DevCon 5 — Landon Carter. Ontology design is a tradecraft, not simply a requirement. At DevCon 5, Palantir Group Lead Landon Carter takes a deep dive into the newest additions to the Ontology language — derived properties, interfaces, and the expanded security primitives. Learn the problems each element was designed to solve, examples of how they're used in production, and how to leverage them across your organization.",
+    url: "video-landon-carter-deep-dive-advanced-ontology-devcon.html", linkLabel: "Open video page →",
+    watchUrl: "https://www.youtube.com/watch?v=_b2qsKz_Ifk", watchLabel: "Watch on YouTube ↗",
+    poster: "screenshots/landon-carter-deep-dive-advanced-ontology-devcon.jpg" },
 ];
 
 const WIKIPEDIA = {
@@ -5985,6 +5990,7 @@ const EDGES = [
   ["essay_5", "gen_ai", 0.84],
   ["essay_5", "cybernetics", 0.84],
   ["essay_5", "enacted", 0.84],
+  ["hi_videos", "video_landon_carter_deep_dive_advanced_ontology_devcon", 0.96],
 ];
 
 const RELATION_TYPE_ORDER = [

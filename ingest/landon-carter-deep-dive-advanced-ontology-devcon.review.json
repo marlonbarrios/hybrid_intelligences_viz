@@ -1,0 +1,8 @@
+{
+  "videoId": "landon-carter-deep-dive-advanced-ontology-devcon",
+  "networkNodeId": "video_landon_carter_deep_dive_advanced_ontology_devcon",
+  "matched": [],
+  "ingestNote": "ingest-video.js failed. No captions found on YouTube for this video.",
+  "generatedAt": "2026-09-16T21:29:26.568Z",
+  "note": "Matched existing ontology concepts. New names from the talk are listed only if ingest proposed them; they are not auto-created."
+}

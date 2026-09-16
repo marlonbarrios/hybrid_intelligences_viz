@@ -1,6 +1,17 @@
 {
   "videos": [
     {
+      "id": "landon-carter-deep-dive-advanced-ontology-devcon",
+      "title": "Deep Dive: Advanced Ontology | DevCon 5",
+      "youtube": "https://www.youtube.com/watch?v=_b2qsKz_Ifk",
+      "poster": "screenshots/landon-carter-deep-dive-advanced-ontology-devcon.jpg",
+      "date": "2026-09-16",
+      "speaker": "Landon Carter",
+      "caption": "Ontology design is a tradecraft, not simply a requirement. At DevCon 5, Palantir Group Lead Landon Carter takes a deep dive into the newest additions to the Ontology language — derived properties, interfaces, and the expanded security primitives. Learn the problems each element was designed to solve, examples of how they're used in production, and how to leverage them across your organization.",
+      "credit": "YouTube",
+      "transcript": "transcripts/landon-carter-deep-dive-advanced-ontology-devcon.json"
+    },
+    {
       "id": "hayles-integrated-cognition",
       "title": "Katherine Hayles — Consciousness Is Not Necessary for Cognition",
       "youtube": "https://www.youtube.com/watch?v=W_W-yKNB6IU",

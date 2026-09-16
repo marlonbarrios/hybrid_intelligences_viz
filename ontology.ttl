@@ -12,9 +12,9 @@
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   owl:versionInfo "1.0.0" ;
   dc:date "2026-09-16"^^xsd:date ;
-  dc:modified "2026-09-16T21:13:14.676Z"^^xsd:dateTime ;
-  hi:nodeCount "383"^^xsd:integer ;
-  hi:edgeCount "3625"^^xsd:integer .
+  dc:modified "2026-09-16T21:29:26.777Z"^^xsd:dateTime ;
+  hi:nodeCount "384"^^xsd:integer ;
+  hi:edgeCount "3626"^^xsd:integer .
 
 hi:scheme a skos:ConceptScheme ;
   skos:prefLabel "Hybrid Intelligences Concept Scheme" ;
@@ -4685,6 +4685,19 @@ hi:alex_karp a skos:Concept, hi:NetworkNode ;
  ;
   schema:url <https://en.wikipedia.org/wiki/Alex_Karp> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Alex_Karp>
+ .
+
+hi:video_landon_carter_deep_dive_advanced_ontology_devcon a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Carter · Deep Dive:" ;
+  skos:definition "Deep Dive: Advanced Ontology | DevCon 5 — Landon Carter. Ontology design is a tradecraft, not simply a requirement. At DevCon 5, Palantir Group Lead Landon Carter takes a deep dive into the newest additions to the Ontology language — derived properties, interfaces, and the expanded security primitives. Learn the problems each element was designed to solve, examples of how they're used in production, and how to leverage them across your organization." ;
+  skos:broader hi:category/video ;
+  skos:inScheme hi:scheme ;
+  hi:category "video" ;
+  hi:weight "1.4"^^xsd:decimal
+ ;
+  schema:url <video-landon-carter-deep-dive-advanced-ontology-devcon.html> ;
+  schema:image <https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/landon-carter-deep-dive-advanced-ontology-devcon.jpg> ;
+  schema:sameAs <https://www.youtube.com/watch?v=_b2qsKz_Ifk>
  .
 
 hi:rel-coupling-hybrid a hi:Relation ;
@@ -26436,6 +26449,12 @@ hi:rel-essay_5-enacted a hi:Relation ;
   hi:target hi:enacted ;
   hi:strength "0.84"^^xsd:decimal ;
   skos:relatedMatch hi:enacted .
+
+hi:rel-hi_videos-video_landon_carter_deep_dive_advanced_ontology_devcon a hi:Relation ;
+  hi:source hi:hi_videos ;
+  hi:target hi:video_landon_carter_deep_dive_advanced_ontology_devcon ;
+  hi:strength "0.96"^^xsd:decimal ;
+  skos:relatedMatch hi:video_landon_carter_deep_dive_advanced_ontology_devcon .
 
 hi:rel-autopoiesis-coupling-couplesWith a hi:Relation ;
   hi:source hi:autopoiesis ;

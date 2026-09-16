@@ -63,10 +63,10 @@
         "foaf:homepage": "https://marlonbarrios.github.io/"
       },
       "dc:date": "2026-09-16",
-      "dc:modified": "2026-09-16T21:13:14.674Z",
+      "dc:modified": "2026-09-16T21:29:26.776Z",
       "owl:versionInfo": "1.0.0",
-      "hi:nodeCount": 383,
-      "hi:edgeCount": 3625,
+      "hi:nodeCount": 384,
+      "hi:edgeCount": 3626,
       "hi:typedEdgeCount": 323
     },
     {
@@ -16781,6 +16781,10 @@
           "hi:strength": 0.82
         },
         {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_landon_carter_deep_dive_advanced_ontology_devcon",
+          "hi:strength": 0.96
+        },
+        {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
           "hi:strength": 0.9,
           "hi:relationType": "participatesIn"
@@ -24468,6 +24472,26 @@
           "hi:strength": 0.88
         }
       ]
+    },
+    {
+      "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#video_landon_carter_deep_dive_advanced_ontology_devcon",
+      "@type": [
+        "skos:Concept",
+        "hi:NetworkNode"
+      ],
+      "skos:prefLabel": "Carter · Deep Dive:",
+      "skos:definition": "Deep Dive: Advanced Ontology | DevCon 5 — Landon Carter. Ontology design is a tradecraft, not simply a requirement. At DevCon 5, Palantir Group Lead Landon Carter takes a deep dive into the newest additions to the Ontology language — derived properties, interfaces, and the expanded security primitives. Learn the problems each element was designed to solve, examples of how they're used in production, and how to leverage them across your organization.",
+      "skos:broader": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#category/video"
+      },
+      "skos:inScheme": {
+        "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#scheme"
+      },
+      "hi:category": "video",
+      "hi:weight": 1.4,
+      "schema:url": "video-landon-carter-deep-dive-advanced-ontology-devcon.html",
+      "schema:image": "https://marlonbarrios.github.io/hybrid_intelligences_viz/screenshots/landon-carter-deep-dive-advanced-ontology-devcon.jpg",
+      "schema:sameAs": "https://www.youtube.com/watch?v=_b2qsKz_Ifk"
     }
   ]
 }
