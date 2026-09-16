@@ -146,26 +146,73 @@ function inlineMdToHtml(text) {
   return out;
 }
 
+function isHr(line) {
+  return /^(-{3,}|\*{3,}|_{3,})\s*$/.test(String(line || "").trim());
+}
+
+function stripEssayLeadIn(body) {
+  let text = String(body || "").replace(/\r\n/g, "\n").trim();
+  const drafts = text.split(/\n\/{6,}\s*\n/);
+  if (drafts.length > 1) {
+    const last = drafts[drafts.length - 1].trim();
+    if (last.length > 200) text = last;
+  }
+  const lines = text.split("\n");
+  let i = 0;
+  const skipBlank = () => {
+    while (i < lines.length && !lines[i].trim()) i++;
+  };
+  skipBlank();
+  if (lines[i] && /^#\s+/.test(lines[i])) i++;
+  skipBlank();
+  if (lines[i] && /^by\s+/i.test(lines[i].trim()) && lines[i].trim().length < 90) i++;
+  skipBlank();
+  if (lines[i] && /\b20\d{2}\b/.test(lines[i]) && lines[i].trim().length < 48) i++;
+  skipBlank();
+  return lines.slice(i).join("\n").trim();
+}
+
+function consumeOne(lines, i, opts) {
+  const line = lines[i];
+  if (line.trim().startsWith("<!--")) {
+    while (i < lines.length && !lines[i].includes("-->")) i++;
+    return { skip: true, i: i + 1 };
+  }
+  if (line.startsWith("::: ")) {
+    const blockType = line.slice(4).trim();
+    i++;
+    const blockLines = [];
+    while (i < lines.length && lines[i].trim() !== ":::") {
+      blockLines.push(lines[i]);
+      i++;
+    }
+    if (i < lines.length) i++;
+    return { html: renderBlock(blockType, blockLines, opts), i };
+  }
+  if (line.startsWith("# ") || isHr(line) || line.trim() === "") {
+    return { skip: true, i: i + 1 };
+  }
+  if (/^[-*] /.test(line.trim())) {
+    const items = [];
+    while (i < lines.length && /^[-*] /.test(lines[i].trim())) {
+      items.push(lines[i].trim().replace(/^[-*]\s+/, ""));
+      i++;
+    }
+    return {
+      html: `    <ul class="term-list">\n${items.map((it) => `      <li>${inlineMdToHtml(it)}</li>`).join("\n")}\n    </ul>`,
+      i,
+    };
+  }
+  return { html: `    <p>${inlineMdToHtml(line.trim())}</p>`, i: i + 1 };
+}
+
 function mdToHtml(body, opts = {}) {
-  const lines = body.split("\n");
+  const lines = stripEssayLeadIn(body).split("\n");
   const parts = [];
   let i = 0;
 
   while (i < lines.length) {
     const line = lines[i];
-
-    if (line.startsWith("::: ")) {
-      const blockType = line.slice(4).trim();
-      i++;
-      const blockLines = [];
-      while (i < lines.length && lines[i].trim() !== ":::") {
-        blockLines.push(lines[i]);
-        i++;
-      }
-      i++; // skip closing :::
-      parts.push(renderBlock(blockType, blockLines, opts));
-      continue;
-    }
 
     if (/^## (Bibliography|References)$/.test(line)) {
       const heading = line.slice(3).trim();
@@ -182,24 +229,21 @@ function mdToHtml(body, opts = {}) {
 
     if (line.startsWith("## ")) {
       const title = line.slice(3).trim();
-      parts.push(`<section class="topic">\n      <h2>${escapeHtml(title)}</h2>`);
       i++;
-      while (i < lines.length && lines[i].trim() !== "" && !lines[i].startsWith("## ") && !lines[i].startsWith(":::")) {
-        const inner = lines[i].trim();
-        if (inner) parts.push(`      <p>${inlineMdToHtml(inner)}</p>`);
-        i++;
+      const inner = [];
+      while (i < lines.length && !lines[i].startsWith("## ")) {
+        const next = consumeOne(lines, i, opts);
+        i = next.i;
+        if (!next.skip && next.html) inner.push(next.html);
       }
-      parts.push("    </section>");
+      const innerHtml = inner.length ? `\n\n${inner.join("\n\n")}\n` : "\n";
+      parts.push(`<section class="topic">\n      <h2>${escapeHtml(title)}</h2>${innerHtml}    </section>`);
       continue;
     }
 
-    if (line.trim() === "") {
-      i++;
-      continue;
-    }
-
-    parts.push(`    <p>${inlineMdToHtml(line.trim())}</p>`);
-    i++;
+    const next = consumeOne(lines, i, opts);
+    i = next.i;
+    if (!next.skip && next.html) parts.push(next.html);
   }
 
   return `\n\n${parts.join("\n\n")}\n\n  `;
@@ -397,6 +441,15 @@ function updateHeader(html, meta) {
     out = out.replace(
       /<footer class="page-foot">\s*[\s\S]*?\s*<\/footer>/,
       `<footer class="page-foot">\n    ${escapeHtml(meta.footer)}\n  </footer>`,
+    );
+  }
+  const descText = `${meta.eyebrow || "Essay"} by ${meta.author || "Marlon Barrios Solano"}: ${meta.title || ""}`
+    .replace(/\s+/g, " ")
+    .trim();
+  if (descText) {
+    out = out.replace(
+      /<meta name="description" content="[\s\S]*?">/,
+      `<meta name="description" content="${escapeHtml(descText)}">`,
     );
   }
   return out;

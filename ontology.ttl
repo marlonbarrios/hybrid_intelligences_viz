@@ -12,9 +12,9 @@
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   owl:versionInfo "1.0.0" ;
   dc:date "2026-09-16"^^xsd:date ;
-  dc:modified "2026-09-16T20:32:32.735Z"^^xsd:dateTime ;
+  dc:modified "2026-09-16T21:13:14.676Z"^^xsd:dateTime ;
   hi:nodeCount "383"^^xsd:integer ;
-  hi:edgeCount "3609"^^xsd:integer .
+  hi:edgeCount "3625"^^xsd:integer .
 
 hi:scheme a skos:ConceptScheme ;
   skos:prefLabel "Hybrid Intelligences Concept Scheme" ;
@@ -26340,6 +26340,102 @@ hi:rel-alex_karp-elon_musk a hi:Relation ;
   hi:target hi:elon_musk ;
   hi:strength "0.88"^^xsd:decimal ;
   skos:relatedMatch hi:elon_musk .
+
+hi:rel-essay_5-ai a hi:Relation ;
+  hi:source hi:essay_5 ;
+  hi:target hi:ai ;
+  hi:strength "0.84"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-essay_5-ecology a hi:Relation ;
+  hi:source hi:essay_5 ;
+  hi:target hi:ecology ;
+  hi:strength "0.84"^^xsd:decimal ;
+  skos:relatedMatch hi:ecology .
+
+hi:rel-essay_5-machine_learning a hi:Relation ;
+  hi:source hi:essay_5 ;
+  hi:target hi:machine_learning ;
+  hi:strength "0.84"^^xsd:decimal ;
+  skos:relatedMatch hi:machine_learning .
+
+hi:rel-essay_5-systems_thinking a hi:Relation ;
+  hi:source hi:essay_5 ;
+  hi:target hi:systems_thinking ;
+  hi:strength "0.84"^^xsd:decimal ;
+  skos:relatedMatch hi:systems_thinking .
+
+hi:rel-essay_5-neural_networks a hi:Relation ;
+  hi:source hi:essay_5 ;
+  hi:target hi:neural_networks ;
+  hi:strength "0.84"^^xsd:decimal ;
+  skos:relatedMatch hi:neural_networks .
+
+hi:rel-essay_5-epistemology a hi:Relation ;
+  hi:source hi:essay_5 ;
+  hi:target hi:epistemology ;
+  hi:strength "0.84"^^xsd:decimal ;
+  skos:relatedMatch hi:epistemology .
+
+hi:rel-essay_5-creativity a hi:Relation ;
+  hi:source hi:essay_5 ;
+  hi:target hi:creativity ;
+  hi:strength "0.84"^^xsd:decimal ;
+  skos:relatedMatch hi:creativity .
+
+hi:rel-essay_5-cognition a hi:Relation ;
+  hi:source hi:essay_5 ;
+  hi:target hi:cognition ;
+  hi:strength "0.84"^^xsd:decimal ;
+  skos:relatedMatch hi:cognition .
+
+hi:rel-essay_5-dance a hi:Relation ;
+  hi:source hi:essay_5 ;
+  hi:target hi:dance ;
+  hi:strength "0.84"^^xsd:decimal ;
+  skos:relatedMatch hi:dance .
+
+hi:rel-essay_5-choreography a hi:Relation ;
+  hi:source hi:essay_5 ;
+  hi:target hi:choreography ;
+  hi:strength "0.84"^^xsd:decimal ;
+  skos:relatedMatch hi:choreography .
+
+hi:rel-essay_5-embodiment a hi:Relation ;
+  hi:source hi:essay_5 ;
+  hi:target hi:embodiment ;
+  hi:strength "0.84"^^xsd:decimal ;
+  skos:relatedMatch hi:embodiment .
+
+hi:rel-essay_5-assemblage a hi:Relation ;
+  hi:source hi:essay_5 ;
+  hi:target hi:assemblage ;
+  hi:strength "0.84"^^xsd:decimal ;
+  skos:relatedMatch hi:assemblage .
+
+hi:rel-essay_5-posthumanism a hi:Relation ;
+  hi:source hi:essay_5 ;
+  hi:target hi:posthumanism ;
+  hi:strength "0.84"^^xsd:decimal ;
+  skos:relatedMatch hi:posthumanism .
+
+hi:rel-essay_5-gen_ai a hi:Relation ;
+  hi:source hi:essay_5 ;
+  hi:target hi:gen_ai ;
+  hi:strength "0.84"^^xsd:decimal ;
+  skos:relatedMatch hi:gen_ai .
+
+hi:rel-essay_5-cybernetics a hi:Relation ;
+  hi:source hi:essay_5 ;
+  hi:target hi:cybernetics ;
+  hi:strength "0.84"^^xsd:decimal ;
+  skos:relatedMatch hi:cybernetics .
+
+hi:rel-essay_5-enacted a hi:Relation ;
+  hi:source hi:essay_5 ;
+  hi:target hi:enacted ;
+  hi:strength "0.84"^^xsd:decimal ;
+  skos:relatedMatch hi:enacted .
 
 hi:rel-autopoiesis-coupling-couplesWith a hi:Relation ;
   hi:source hi:autopoiesis ;

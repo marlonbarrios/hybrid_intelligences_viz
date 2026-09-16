@@ -9,6 +9,7 @@
 const fs = require("fs");
 const path = require("path");
 const { spawnSync } = require("child_process");
+const { linkEssayMarkdown, attachEssayConceptEdges } = require("./link-essay-concepts");
 
 const ROOT = path.join(__dirname, "..");
 const NETWORK = path.join(ROOT, "hybrid-network.js");
@@ -281,6 +282,28 @@ function essayConceptIds(markdown) {
   return ids.slice(0, 6);
 }
 
+function stripEssayLeadIn(markdown) {
+  let body = String(markdown || "").replace(/\r\n/g, "\n").trim();
+  const drafts = body.split(/\n\/{6,}\s*\n/);
+  if (drafts.length > 1) {
+    const last = drafts[drafts.length - 1].trim();
+    if (last.length > 200) body = last;
+  }
+  const lines = body.split("\n");
+  let i = 0;
+  const skipBlank = () => {
+    while (i < lines.length && !lines[i].trim()) i++;
+  };
+  skipBlank();
+  if (lines[i] && /^#\s+/.test(lines[i])) i++;
+  skipBlank();
+  if (lines[i] && /^by\s+/i.test(lines[i].trim()) && lines[i].trim().length < 90) i++;
+  skipBlank();
+  if (lines[i] && /\b20\d{2}\b/.test(lines[i]) && lines[i].trim().length < 48) i++;
+  skipBlank();
+  return lines.slice(i).join("\n").trim();
+}
+
 function essayImagePrompt(title, author, markdown) {
   const related = essayConceptIds(markdown).join(", ");
   const excerpt = clip(markdown.replace(/[#>*`\[\]():]/g, " "), 420);
@@ -348,7 +371,18 @@ async function addEssay(job) {
   const nodeId = `essay_${n}`;
   const posterRel = `screenshots/essay-${n}.jpg`;
   const posterAbs = path.join(ROOT, posterRel);
-  const body = markdown.replace(/\r\n/g, "\n").trim();
+  let body = stripEssayLeadIn(markdown);
+  let linked = [];
+  let linkNote = "";
+  try {
+    const linkedResult = await linkEssayMarkdown(body);
+    body = linkedResult.markdown;
+    linked = linkedResult.linked || [];
+    console.log("Essay concept links (" + (linkedResult.method || "lexical") + "): " + (linked.map((row) => row.id).join(", ") || "none"));
+  } catch (err) {
+    linkNote = "Concept linking skipped: " + (err.message || err);
+    console.log(linkNote);
+  }
   let imageNote = "";
   try {
     console.log("Generating essay thumbnail with gpt-image-2…");
@@ -404,8 +438,13 @@ async function addEssay(job) {
     if (ids.has("hi_essays")) edges.push(`  ["${nodeId}", "hi_essays", 0.95],`);
     if (ids.has("marlon")) edges.push(`  ["${nodeId}", "marlon", 0.9],`);
     if (ids.has("hi_hub")) edges.push(`  ["${nodeId}", "hi_hub", 0.85],`);
+    for (const id of linked.slice(0, 12).map((row) => row.id)) {
+      if (ids.has(id) && id !== nodeId) edges.push(`  ["${nodeId}", "${id}", 0.84],`);
+    }
     if (edges.length) src = insertBefore(src, "\n];\n\nconst RELATION_TYPE_ORDER", "\n" + edges.join("\n"));
     fs.writeFileSync(NETWORK, src);
+  } else {
+    attachEssayConceptEdges(nodeId, linked.map((row) => row.id));
   }
 
   const shot = hasThumb
@@ -440,6 +479,8 @@ async function addEssay(job) {
     id: nodeId,
     thumbnail: hasThumb ? posterRel : undefined,
     imageNote: imageNote || undefined,
+    concepts: linked.map((row) => row.id),
+    linkNote: linkNote || undefined,
   };
 }
 

@@ -5969,6 +5969,22 @@ const EDGES = [
   ["alex_karp", "ontology", 0.88],
   ["alex_karp", "palantir", 0.88],
   ["alex_karp", "elon_musk", 0.88],
+  ["essay_5", "ai", 0.84],
+  ["essay_5", "ecology", 0.84],
+  ["essay_5", "machine_learning", 0.84],
+  ["essay_5", "systems_thinking", 0.84],
+  ["essay_5", "neural_networks", 0.84],
+  ["essay_5", "epistemology", 0.84],
+  ["essay_5", "creativity", 0.84],
+  ["essay_5", "cognition", 0.84],
+  ["essay_5", "dance", 0.84],
+  ["essay_5", "choreography", 0.84],
+  ["essay_5", "embodiment", 0.84],
+  ["essay_5", "assemblage", 0.84],
+  ["essay_5", "posthumanism", 0.84],
+  ["essay_5", "gen_ai", 0.84],
+  ["essay_5", "cybernetics", 0.84],
+  ["essay_5", "enacted", 0.84],
 ];
 
 const RELATION_TYPE_ORDER = [

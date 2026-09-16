@@ -63,10 +63,10 @@
         "foaf:homepage": "https://marlonbarrios.github.io/"
       },
       "dc:date": "2026-09-16",
-      "dc:modified": "2026-09-16T20:32:32.734Z",
+      "dc:modified": "2026-09-16T21:13:14.674Z",
       "owl:versionInfo": "1.0.0",
       "hi:nodeCount": 383,
-      "hi:edgeCount": 3609,
+      "hi:edgeCount": 3625,
       "hi:typedEdgeCount": 323
     },
     {
@@ -24365,6 +24365,70 @@
         {
           "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#hi_hub",
           "hi:strength": 0.85
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ai",
+          "hi:strength": 0.84
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#ecology",
+          "hi:strength": 0.84
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#machine_learning",
+          "hi:strength": 0.84
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#systems_thinking",
+          "hi:strength": 0.84
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#neural_networks",
+          "hi:strength": 0.84
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#epistemology",
+          "hi:strength": 0.84
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#creativity",
+          "hi:strength": 0.84
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cognition",
+          "hi:strength": 0.84
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#dance",
+          "hi:strength": 0.84
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#choreography",
+          "hi:strength": 0.84
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#embodiment",
+          "hi:strength": 0.84
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#assemblage",
+          "hi:strength": 0.84
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#posthumanism",
+          "hi:strength": 0.84
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#gen_ai",
+          "hi:strength": 0.84
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#cybernetics",
+          "hi:strength": 0.84
+        },
+        {
+          "@id": "https://marlonbarrios.github.io/hybrid-intelligences/ontology#enacted",
+          "hi:strength": 0.84
         }
       ]
     },

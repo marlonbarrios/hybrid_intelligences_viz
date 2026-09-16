@@ -13,10 +13,10 @@
   dc:description "OWL 2 ontology of concepts, categories, and weighted relations from the Hybrid Intelligences program." ;
   owl:versionInfo "1.0.0" ;
   dc:date "2026-09-16"^^xsd:date ;
-  dc:modified "2026-09-16T20:32:32.746Z"^^xsd:dateTime ;
+  dc:modified "2026-09-16T21:13:14.680Z"^^xsd:dateTime ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   hi:nodeCount "383"^^xsd:integer ;
-  hi:edgeCount "3609"^^xsd:integer ;
+  hi:edgeCount "3625"^^xsd:integer ;
   hi:typedEdgeCount "323"^^xsd:integer .
 
 hi:Concept a owl:Class ;
@@ -9391,6 +9391,22 @@ hi:alex_karp hi:relatedTo hi:peter_thiel .
 hi:alex_karp hi:relatedTo hi:ontology .
 hi:alex_karp hi:relatedTo hi:palantir .
 hi:alex_karp hi:relatedTo hi:elon_musk .
+hi:essay_5 hi:relatedTo hi:ai .
+hi:essay_5 hi:relatedTo hi:ecology .
+hi:essay_5 hi:relatedTo hi:machine_learning .
+hi:essay_5 hi:relatedTo hi:systems_thinking .
+hi:essay_5 hi:relatedTo hi:neural_networks .
+hi:essay_5 hi:relatedTo hi:epistemology .
+hi:essay_5 hi:relatedTo hi:creativity .
+hi:essay_5 hi:relatedTo hi:cognition .
+hi:essay_5 hi:relatedTo hi:dance .
+hi:essay_5 hi:relatedTo hi:choreography .
+hi:essay_5 hi:relatedTo hi:embodiment .
+hi:essay_5 hi:relatedTo hi:assemblage .
+hi:essay_5 hi:relatedTo hi:posthumanism .
+hi:essay_5 hi:relatedTo hi:gen_ai .
+hi:essay_5 hi:relatedTo hi:cybernetics .
+hi:essay_5 hi:relatedTo hi:enacted .
 
 hi:autopoiesis hi:couplesWith hi:coupling .
 hi:autopoiesis hi:couplesWith hi:ecology .
@@ -27760,6 +27776,86 @@ hi:rel-alex_karp-elon_musk a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:alex_karp ;
   hi:relationTarget hi:elon_musk ;
   hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-essay_5-ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_5 ;
+  hi:relationTarget hi:ai ;
+  hi:relationStrength "0.84"^^xsd:decimal .
+
+hi:rel-essay_5-ecology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_5 ;
+  hi:relationTarget hi:ecology ;
+  hi:relationStrength "0.84"^^xsd:decimal .
+
+hi:rel-essay_5-machine_learning a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_5 ;
+  hi:relationTarget hi:machine_learning ;
+  hi:relationStrength "0.84"^^xsd:decimal .
+
+hi:rel-essay_5-systems_thinking a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_5 ;
+  hi:relationTarget hi:systems_thinking ;
+  hi:relationStrength "0.84"^^xsd:decimal .
+
+hi:rel-essay_5-neural_networks a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_5 ;
+  hi:relationTarget hi:neural_networks ;
+  hi:relationStrength "0.84"^^xsd:decimal .
+
+hi:rel-essay_5-epistemology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_5 ;
+  hi:relationTarget hi:epistemology ;
+  hi:relationStrength "0.84"^^xsd:decimal .
+
+hi:rel-essay_5-creativity a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_5 ;
+  hi:relationTarget hi:creativity ;
+  hi:relationStrength "0.84"^^xsd:decimal .
+
+hi:rel-essay_5-cognition a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_5 ;
+  hi:relationTarget hi:cognition ;
+  hi:relationStrength "0.84"^^xsd:decimal .
+
+hi:rel-essay_5-dance a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_5 ;
+  hi:relationTarget hi:dance ;
+  hi:relationStrength "0.84"^^xsd:decimal .
+
+hi:rel-essay_5-choreography a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_5 ;
+  hi:relationTarget hi:choreography ;
+  hi:relationStrength "0.84"^^xsd:decimal .
+
+hi:rel-essay_5-embodiment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_5 ;
+  hi:relationTarget hi:embodiment ;
+  hi:relationStrength "0.84"^^xsd:decimal .
+
+hi:rel-essay_5-assemblage a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_5 ;
+  hi:relationTarget hi:assemblage ;
+  hi:relationStrength "0.84"^^xsd:decimal .
+
+hi:rel-essay_5-posthumanism a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_5 ;
+  hi:relationTarget hi:posthumanism ;
+  hi:relationStrength "0.84"^^xsd:decimal .
+
+hi:rel-essay_5-gen_ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_5 ;
+  hi:relationTarget hi:gen_ai ;
+  hi:relationStrength "0.84"^^xsd:decimal .
+
+hi:rel-essay_5-cybernetics a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_5 ;
+  hi:relationTarget hi:cybernetics ;
+  hi:relationStrength "0.84"^^xsd:decimal .
+
+hi:rel-essay_5-enacted a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:essay_5 ;
+  hi:relationTarget hi:enacted ;
+  hi:relationStrength "0.84"^^xsd:decimal .
 
 hi:rel-autopoiesis-coupling-couplesWith a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:autopoiesis ;
