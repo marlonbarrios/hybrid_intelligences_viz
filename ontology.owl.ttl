@@ -13,11 +13,11 @@
   dc:description "OWL 2 ontology of concepts, categories, and weighted relations from the Hybrid Intelligences program." ;
   owl:versionInfo "1.0.0" ;
   dc:date "2026-09-16"^^xsd:date ;
-  dc:modified "2026-09-16T18:09:05.334Z"^^xsd:dateTime ;
+  dc:modified "2026-09-16T18:18:31.875Z"^^xsd:dateTime ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  hi:nodeCount "362"^^xsd:integer ;
-  hi:edgeCount "3396"^^xsd:integer ;
-  hi:typedEdgeCount "278"^^xsd:integer .
+  hi:nodeCount "376"^^xsd:integer ;
+  hi:edgeCount "3542"^^xsd:integer ;
+  hi:typedEdgeCount "307"^^xsd:integer .
 
 hi:Concept a owl:Class ;
   rdfs:label "Concept"@en ;
@@ -991,10 +991,80 @@ hi:convolutional_networks a owl:NamedIndividual, hi:FrameworkConcept ;
   schema:sameAs <https://en.wikipedia.org/wiki/Convolutional_neural_network>
  .
 
+hi:symbolic_ai a owl:NamedIndividual, hi:FrameworkConcept ;
+  rdfs:label "Symbolic AI"@en ;
+  skos:prefLabel "Symbolic AI"@en ;
+  skos:definition "Good Old-Fashioned AI: intelligence as explicit symbols, rules, and logic rather than learned weights. ELIZA, expert systems, and knowledge representation sit in this lineage; neural networks are its long counterpart. Coyle’s ontology layer is a contemporary return of symbols outside the model."@en ;
+  skos:broader hi:category/framework ;
+  hi:inCategory hi:category/framework ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.45"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Symbolic_artificial_intelligence> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Symbolic_artificial_intelligence>
+ .
+
+hi:eliza a owl:NamedIndividual, hi:FrameworkConcept ;
+  rdfs:label "ELIZA"@en ;
+  skos:prefLabel "ELIZA"@en ;
+  skos:definition "Joseph Weizenbaum’s 1966 conversational program at MIT—pattern matching that reflected a user’s words back as a Rogerian therapist. The first widely felt chatbot: proof that fluent dialogue can be empty of understanding, and a standing warning that coupling with a machine is not the same as a mind inside it."@en ;
+  skos:broader hi:category/framework ;
+  hi:inCategory hi:category/framework ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.5"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/ELIZA> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/ELIZA>
+ .
+
+hi:turing_test a owl:NamedIndividual, hi:FrameworkConcept ;
+  rdfs:label "Turing Test"@en ;
+  skos:prefLabel "Turing Test"@en ;
+  skos:definition "Alan Turing’s imitation game (1950): if a machine’s textual replies cannot be distinguished from a human’s, call it intelligent. A test of performance in language, not of interior. ELIZA appeared to pass in casual encounter; Weizenbaum insisted the appearance was the point—and the danger."@en ;
+  skos:broader hi:category/framework ;
+  hi:inCategory hi:category/framework ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.45"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Turing_test> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Turing_test>
+ .
+
+hi:deep_learning a owl:NamedIndividual, hi:FrameworkConcept ;
+  rdfs:label "Deep Learning"@en ;
+  skos:prefLabel "Deep Learning"@en ;
+  skos:definition "Neural networks with many layers, trained end-to-end on large data so hierarchical features emerge rather than being hand-designed. The paradigm that turned perceptrons and backpropagation into contemporary vision, speech, and language systems."@en ;
+  skos:broader hi:category/framework ;
+  hi:inCategory hi:category/framework ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.6"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Deep_learning> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Deep_learning>
+ .
+
+hi:backpropagation a owl:NamedIndividual, hi:FrameworkConcept ;
+  rdfs:label "Back- propagation"@en ;
+  skos:prefLabel "Back- propagation"@en ;
+  skos:definition "The credit-assignment algorithm of deep nets: errors at the output are sent backward through the layers, adjusting weights by gradient descent. Rumelhart, Hinton, and Williams (1986) popularized it; it is how a network learns from examples rather than being programmed with rules."@en ;
+  skos:broader hi:category/framework ;
+  hi:inCategory hi:category/framework ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.45"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Backpropagation> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Backpropagation>
+ .
+
 hi:transformers a owl:NamedIndividual, hi:FrameworkConcept ;
-  rdfs:label "Transformers (Attention Is All You Need)"@en ;
-  skos:prefLabel "Transformers (Attention Is All You Need)"@en ;
-  skos:definition "Vaswani et al. (2017)—architecture built on self-attention rather than recurrence, enabling parallel training and long-range dependency modeling; the foundation of modern language models, GPTs, and multimodal generative systems."@en ;
+  rdfs:label "Transformers"@en ;
+  skos:prefLabel "Transformers"@en ;
+  skos:definition "Architecture built on self-attention rather than recurrence, enabling parallel training and long-range dependency modeling; the foundation of modern language models, GPTs, and multimodal generative systems. Introduced in Attention Is All You Need (Vaswani et al., 2017)."@en ;
   skos:broader hi:category/framework ;
   hi:inCategory hi:category/framework ;
   hi:schemeMember hi:scheme ;
@@ -1003,6 +1073,90 @@ hi:transformers a owl:NamedIndividual, hi:FrameworkConcept ;
  ;
   schema:url <https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)>
+ .
+
+hi:attention_is_all_you_need a owl:NamedIndividual, hi:FrameworkConcept ;
+  rdfs:label "Attention Is All You Need"@en ;
+  skos:prefLabel "Attention Is All You Need"@en ;
+  skos:definition "Vaswani et al. (2017)—the paper that proposed the Transformer: dispense with recurrence and convolution for sequence transduction; scaled dot-product self-attention is enough. The hinge from RNNs to GPTs, large language models, and the present generative stack."@en ;
+  skos:broader hi:category/framework ;
+  hi:inCategory hi:category/framework ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.55"^^xsd:decimal
+ ;
+  schema:url <https://arxiv.org/abs/1706.03762> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)>
+ .
+
+hi:autoregressive a owl:NamedIndividual, hi:FrameworkConcept ;
+  rdfs:label "Autoregressive"@en ;
+  skos:prefLabel "Autoregressive"@en ;
+  skos:definition "Generation as next-token prediction: each output is conditioned on what has already been produced. GPTs are autoregressive transformers—fluency as sequential betting on the continuation. Distinct from masked or diffusion generation; the engine of chain-of-thought as a written trace."@en ;
+  skos:broader hi:category/framework ;
+  hi:inCategory hi:category/framework ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.5"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Autoregressive_model> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Autoregressive_model>
+ .
+
+hi:embeddings a owl:NamedIndividual, hi:FrameworkConcept ;
+  rdfs:label "Embeddings"@en ;
+  skos:prefLabel "Embeddings"@en ;
+  skos:definition "Vectors that place tokens, images, or concepts in a continuous space so nearness is meaning. The coordinates of latent space; what attention mixes; what neuralese would speak in instead of words."@en ;
+  skos:broader hi:category/framework ;
+  hi:inCategory hi:category/framework ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.45"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Word_embedding> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Word_embedding>
+ .
+
+hi:in_context_learning a owl:NamedIndividual, hi:FrameworkConcept ;
+  rdfs:label "In-Context Learning"@en ;
+  skos:prefLabel "In-Context Learning"@en ;
+  skos:definition "A model’s ability to pick up a task from examples in the prompt, without updating weights. Brown et al. (GPT-3, 2020): few-shot demonstration as a new regime of coupling. Chain-of-thought is one of its styles."@en ;
+  skos:broader hi:category/framework ;
+  hi:inCategory hi:category/framework ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.45"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Prompt_engineering> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Prompt_engineering>
+ .
+
+hi:chain_of_thought a owl:NamedIndividual, hi:FrameworkConcept ;
+  rdfs:label "Chain of Thought"@en ;
+  skos:prefLabel "Chain of Thought"@en ;
+  skos:definition "Reasoning written as intermediate tokens—the model thinks out loud in language a human can read. Wei et al. (2022): prompting or training for step-by-step traces improves multi-step tasks. A method, and an interface for interpretability: the trace is a window, until the thinking moves off the page into neuralese."@en ;
+  skos:broader hi:category/framework ;
+  hi:inCategory hi:category/framework ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.5"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Prompt_engineering#Chain-of-thought> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Prompt_engineering>
+ .
+
+hi:neuralese a owl:NamedIndividual, hi:FrameworkConcept ;
+  rdfs:label "Neuralese"@en ;
+  skos:prefLabel "Neuralese"@en ;
+  skos:definition "A hypothesized internal language of neural networks—high-dimensional activations used for reasoning and coordination rather than tokens of human language. Contrast with chain-of-thought: CoT is thinking in words; neuralese is thinking in latent space. If models shift from English traces to compressed internal codes, interpretability becomes a reading problem across Umwelten."@en ;
+  skos:broader hi:category/framework ;
+  hi:inCategory hi:category/framework ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.5"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Latent_space> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Latent_space>
  .
 
 hi:gpt a owl:NamedIndividual, hi:FrameworkConcept ;
@@ -1126,6 +1280,20 @@ hi:constitutional_ai a owl:NamedIndividual, hi:FrameworkConcept ;
  ;
   schema:url <https://www.anthropic.com/research/constitutional-ai> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Artificial_intelligence_alignment>
+ .
+
+hi:interpretability a owl:NamedIndividual, hi:FrameworkConcept ;
+  rdfs:label "Interpretability"@en ;
+  skos:prefLabel "Interpretability"@en ;
+  skos:definition "The problem of making a system's inner workings legible — how representations, decisions, and couplings can be read without collapsing them into the observer's language. In this Hub: mechanistic interpretability of models, interspecies interpretability of other minds, and the ethics of crossing an Umwelt. Not a dashboard; a comparative science of interiors."@en ;
+  skos:broader hi:category/framework ;
+  hi:inCategory hi:category/framework ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.6"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Explainable_artificial_intelligence> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Explainable_artificial_intelligence>
  .
 
 hi:ai_interpretability a owl:NamedIndividual, hi:FrameworkConcept ;
@@ -2333,6 +2501,34 @@ hi:frank_coyle a owl:NamedIndividual, hi:AuthorConcept ;
   hi:networkWeight "1.25"^^xsd:decimal
  ;
   schema:url <https://codesupreme.ai/>
+ .
+
+hi:turing a owl:NamedIndividual, hi:AuthorConcept ;
+  rdfs:label "Alan Turing"@en ;
+  skos:prefLabel "Alan Turing"@en ;
+  skos:definition "Mathematician and founding figure of computer science and AI—On Computable Numbers, the Turing machine, and Computing Machinery and Intelligence (1950). The imitation game asks whether intelligence can be attributed from conversational performance; a hinge between symbolic procedure, machine, and mind."@en ;
+  skos:broader hi:category/author ;
+  hi:inCategory hi:category/author ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.3"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Alan_Turing> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Alan_Turing>
+ .
+
+hi:weizenbaum a owl:NamedIndividual, hi:AuthorConcept ;
+  rdfs:label "Joseph Weizenbaum"@en ;
+  skos:prefLabel "Joseph Weizenbaum"@en ;
+  skos:definition "Computer scientist at MIT—creator of ELIZA (1966). Computer Power and Human Reason argued against confusing linguistic performance with understanding, and against ceding moral judgment to machines. The first great critic from inside the lab."@en ;
+  skos:broader hi:category/author ;
+  hi:inCategory hi:category/author ;
+  hi:schemeMember hi:scheme ;
+  skos:inScheme hi:scheme ;
+  hi:networkWeight "1.25"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Joseph_Weizenbaum> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Joseph_Weizenbaum>
  .
 
 hi:sousa_santos a owl:NamedIndividual, hi:AuthorConcept ;
@@ -5760,6 +5956,15 @@ hi:ai hi:relatedTo hi:neural_networks .
 hi:ai hi:relatedTo hi:perceptron .
 hi:ai hi:relatedTo hi:convolutional_networks .
 hi:ai hi:relatedTo hi:transformers .
+hi:ai hi:relatedTo hi:attention_is_all_you_need .
+hi:ai hi:relatedTo hi:eliza .
+hi:ai hi:relatedTo hi:turing_test .
+hi:ai hi:relatedTo hi:symbolic_ai .
+hi:ai hi:relatedTo hi:deep_learning .
+hi:ai hi:relatedTo hi:autoregressive .
+hi:ai hi:relatedTo hi:chain_of_thought .
+hi:ai hi:relatedTo hi:neuralese .
+hi:ai hi:relatedTo hi:interpretability .
 hi:ai hi:relatedTo hi:gpt .
 hi:ai hi:relatedTo hi:agi .
 hi:machine_learning hi:relatedTo hi:neural_networks .
@@ -5862,6 +6067,118 @@ hi:transformers hi:relatedTo hi:ai .
 hi:transformers hi:relatedTo hi:cs .
 hi:transformers hi:relatedTo hi:aguilera_arcas .
 hi:transformers hi:relatedTo hi:cameron .
+hi:transformers hi:relatedTo hi:attention_is_all_you_need .
+hi:transformers hi:relatedTo hi:autoregressive .
+hi:transformers hi:relatedTo hi:deep_learning .
+hi:transformers hi:relatedTo hi:embeddings .
+hi:symbolic_ai hi:relatedTo hi:ai .
+hi:symbolic_ai hi:relatedTo hi:eliza .
+hi:symbolic_ai hi:relatedTo hi:turing .
+hi:symbolic_ai hi:relatedTo hi:ontology .
+hi:symbolic_ai hi:relatedTo hi:owl .
+hi:symbolic_ai hi:relatedTo hi:knowledge_graph .
+hi:symbolic_ai hi:relatedTo hi:cs .
+hi:symbolic_ai hi:relatedTo hi:philosophy .
+hi:symbolic_ai hi:relatedTo hi:neural_networks .
+hi:symbolic_ai hi:relatedTo hi:brooks .
+hi:eliza hi:relatedTo hi:weizenbaum .
+hi:eliza hi:relatedTo hi:turing_test .
+hi:eliza hi:relatedTo hi:conversational_ai .
+hi:eliza hi:relatedTo hi:symbolic_ai .
+hi:eliza hi:relatedTo hi:ai .
+hi:eliza hi:relatedTo hi:llm .
+hi:eliza hi:relatedTo hi:mediation .
+hi:eliza hi:relatedTo hi:turing .
+hi:eliza hi:relatedTo hi:cs .
+hi:eliza hi:relatedTo hi:possible_minds .
+hi:turing_test hi:relatedTo hi:turing .
+hi:turing_test hi:relatedTo hi:eliza .
+hi:turing_test hi:relatedTo hi:ai .
+hi:turing_test hi:relatedTo hi:llm .
+hi:turing_test hi:relatedTo hi:conversational_ai .
+hi:turing_test hi:relatedTo hi:consciousness .
+hi:turing_test hi:relatedTo hi:philosophy .
+hi:turing_test hi:relatedTo hi:possible_minds .
+hi:turing_test hi:relatedTo hi:cs .
+hi:deep_learning hi:relatedTo hi:neural_networks .
+hi:deep_learning hi:relatedTo hi:machine_learning .
+hi:deep_learning hi:relatedTo hi:backpropagation .
+hi:deep_learning hi:relatedTo hi:transformers .
+hi:deep_learning hi:relatedTo hi:convolutional_networks .
+hi:deep_learning hi:relatedTo hi:gen_ai .
+hi:deep_learning hi:relatedTo hi:llm .
+hi:deep_learning hi:relatedTo hi:ai .
+hi:deep_learning hi:relatedTo hi:cs .
+hi:deep_learning hi:relatedTo hi:ai_ml .
+hi:backpropagation hi:relatedTo hi:deep_learning .
+hi:backpropagation hi:relatedTo hi:neural_networks .
+hi:backpropagation hi:relatedTo hi:machine_learning .
+hi:backpropagation hi:relatedTo hi:perceptron .
+hi:backpropagation hi:relatedTo hi:linear_transform .
+hi:backpropagation hi:relatedTo hi:cs .
+hi:attention_is_all_you_need hi:relatedTo hi:transformers .
+hi:attention_is_all_you_need hi:relatedTo hi:neural_networks .
+hi:attention_is_all_you_need hi:relatedTo hi:deep_learning .
+hi:attention_is_all_you_need hi:relatedTo hi:llm .
+hi:attention_is_all_you_need hi:relatedTo hi:gpt .
+hi:attention_is_all_you_need hi:relatedTo hi:gen_ai .
+hi:attention_is_all_you_need hi:relatedTo hi:rnn_update .
+hi:attention_is_all_you_need hi:relatedTo hi:ai .
+hi:attention_is_all_you_need hi:relatedTo hi:cs .
+hi:autoregressive hi:relatedTo hi:gpt .
+hi:autoregressive hi:relatedTo hi:llm .
+hi:autoregressive hi:relatedTo hi:transformers .
+hi:autoregressive hi:relatedTo hi:gen_ai .
+hi:autoregressive hi:relatedTo hi:chain_of_thought .
+hi:autoregressive hi:relatedTo hi:neural_networks .
+hi:autoregressive hi:relatedTo hi:machine_learning .
+hi:autoregressive hi:relatedTo hi:ai .
+hi:embeddings hi:relatedTo hi:latent_space .
+hi:embeddings hi:relatedTo hi:neuralese .
+hi:embeddings hi:relatedTo hi:neural_networks .
+hi:embeddings hi:relatedTo hi:transformers .
+hi:embeddings hi:relatedTo hi:llm .
+hi:embeddings hi:relatedTo hi:machine_learning .
+hi:embeddings hi:relatedTo hi:ai_interpretability .
+hi:embeddings hi:relatedTo hi:interpretability .
+hi:in_context_learning hi:relatedTo hi:llm .
+hi:in_context_learning hi:relatedTo hi:gpt .
+hi:in_context_learning hi:relatedTo hi:chain_of_thought .
+hi:in_context_learning hi:relatedTo hi:gen_ai .
+hi:in_context_learning hi:relatedTo hi:literacies .
+hi:in_context_learning hi:relatedTo hi:mediation .
+hi:chain_of_thought hi:relatedTo hi:llm .
+hi:chain_of_thought hi:relatedTo hi:gpt .
+hi:chain_of_thought hi:relatedTo hi:in_context_learning .
+hi:chain_of_thought hi:relatedTo hi:autoregressive .
+hi:chain_of_thought hi:relatedTo hi:neuralese .
+hi:chain_of_thought hi:relatedTo hi:interpretability .
+hi:chain_of_thought hi:relatedTo hi:ai_interpretability .
+hi:chain_of_thought hi:relatedTo hi:ai_alignment .
+hi:chain_of_thought hi:relatedTo hi:gen_ai .
+hi:neuralese hi:relatedTo hi:latent_space .
+hi:neuralese hi:relatedTo hi:embeddings .
+hi:neuralese hi:relatedTo hi:chain_of_thought .
+hi:neuralese hi:relatedTo hi:interpretability .
+hi:neuralese hi:relatedTo hi:ai_interpretability .
+hi:neuralese hi:relatedTo hi:llm .
+hi:neuralese hi:relatedTo hi:neural_networks .
+hi:neuralese hi:relatedTo hi:transformers .
+hi:neuralese hi:relatedTo hi:umwelt .
+hi:neuralese hi:relatedTo hi:model_introspection .
+hi:neuralese hi:relatedTo hi:synthetic_psychology .
+hi:neuralese hi:relatedTo hi:ai_alignment .
+hi:interpretability hi:relatedTo hi:ai_interpretability .
+hi:interpretability hi:relatedTo hi:interspecies_interpretability .
+hi:interpretability hi:relatedTo hi:model_introspection .
+hi:interpretability hi:relatedTo hi:neuralese .
+hi:interpretability hi:relatedTo hi:chain_of_thought .
+hi:interpretability hi:relatedTo hi:latent_space .
+hi:interpretability hi:relatedTo hi:umwelt .
+hi:interpretability hi:relatedTo hi:interior .
+hi:interpretability hi:relatedTo hi:epistemology .
+hi:interpretability hi:relatedTo hi:ai .
+hi:interpretability hi:relatedTo hi:llm .
 hi:gpt hi:relatedTo hi:llm .
 hi:gpt hi:relatedTo hi:gen_ai .
 hi:gpt hi:relatedTo hi:transformers .
@@ -7817,10 +8134,14 @@ hi:video_mini_brains_150k hi:relatedTo hi:distributed .
 hi:video_mini_brains_150k hi:relatedTo hi:embodied .
 hi:video_mini_brains_150k hi:relatedTo hi:consciousness .
 hi:video_understanding_ai_inner_thoughts hi:relatedTo hi:ai_interpretability .
+hi:video_understanding_ai_inner_thoughts hi:relatedTo hi:interpretability .
+hi:video_understanding_ai_inner_thoughts hi:relatedTo hi:neuralese .
+hi:video_understanding_ai_inner_thoughts hi:relatedTo hi:chain_of_thought .
 hi:video_understanding_ai_inner_thoughts hi:relatedTo hi:llm .
 hi:video_understanding_ai_inner_thoughts hi:relatedTo hi:neural_networks .
 hi:video_understanding_ai_inner_thoughts hi:relatedTo hi:aguilera_arcas .
 hi:video_visualizing_transformers_attention hi:relatedTo hi:transformers .
+hi:video_visualizing_transformers_attention hi:relatedTo hi:attention_is_all_you_need .
 hi:video_visualizing_transformers_attention hi:relatedTo hi:llm .
 hi:video_visualizing_transformers_attention hi:relatedTo hi:neural_networks .
 hi:video_visualizing_transformers_attention hi:relatedTo hi:machine_learning .
@@ -8402,6 +8723,8 @@ hi:synthetic_sociology hi:relatedTo hi:llm .
 hi:synthetic_sociology hi:relatedTo hi:interior .
 hi:interior hi:relatedTo hi:hi_hub .
 hi:interior hi:relatedTo hi:ai_interpretability .
+hi:interior hi:relatedTo hi:interpretability .
+hi:interior hi:relatedTo hi:neuralese .
 hi:interior hi:relatedTo hi:synthetic_psychology .
 hi:interior hi:relatedTo hi:synthetic_sociology .
 hi:interior hi:relatedTo hi:latent_space .
@@ -8815,6 +9138,25 @@ hi:frank_coyle hi:relatedTo hi:essay_3 .
 hi:frank_coyle hi:relatedTo hi:hi_hub .
 hi:frank_coyle hi:relatedTo hi:hybrid .
 hi:frank_coyle hi:relatedTo hi:hi_videos .
+hi:turing hi:relatedTo hi:turing_test .
+hi:turing hi:relatedTo hi:ai .
+hi:turing hi:relatedTo hi:cs .
+hi:turing hi:relatedTo hi:eliza .
+hi:turing hi:relatedTo hi:symbolic_ai .
+hi:turing hi:relatedTo hi:philosophy .
+hi:turing hi:relatedTo hi:possible_minds .
+hi:turing hi:relatedTo hi:consciousness .
+hi:turing hi:relatedTo hi:weizenbaum .
+hi:weizenbaum hi:relatedTo hi:eliza .
+hi:weizenbaum hi:relatedTo hi:turing_test .
+hi:weizenbaum hi:relatedTo hi:turing .
+hi:weizenbaum hi:relatedTo hi:conversational_ai .
+hi:weizenbaum hi:relatedTo hi:ai .
+hi:weizenbaum hi:relatedTo hi:cs .
+hi:weizenbaum hi:relatedTo hi:track_ethics .
+hi:weizenbaum hi:relatedTo hi:ethical_imagination .
+hi:weizenbaum hi:relatedTo hi:critical .
+hi:weizenbaum hi:relatedTo hi:philosophy .
 hi:owl hi:relatedTo hi:skos .
 hi:owl hi:relatedTo hi:knowledge_graph .
 hi:owl hi:relatedTo hi:ontology_kb .
@@ -9006,7 +9348,10 @@ hi:video_thompson_embodied_cognition hi:develops hi:enactivism .
 hi:video_varela_god_computers hi:instantiates hi:varela .
 hi:video_varela_god_computers hi:develops hi:enactivism .
 hi:video_understanding_ai_inner_thoughts hi:develops hi:ai_interpretability .
+hi:video_understanding_ai_inner_thoughts hi:develops hi:interpretability .
+hi:video_understanding_ai_inner_thoughts hi:develops hi:neuralese .
 hi:video_visualizing_transformers_attention hi:develops hi:transformers .
+hi:video_visualizing_transformers_attention hi:develops hi:attention_is_all_you_need .
 hi:video_noe_out_of_our_heads hi:instantiates hi:noe .
 hi:video_noe_out_of_our_heads hi:develops hi:enactivism .
 hi:video_aguilera_what_is_intelligence hi:instantiates hi:aguilera_arcas .
@@ -9086,6 +9431,31 @@ hi:essay_3 hi:develops hi:knowledge_graph .
 hi:video_frank_coyle_agentic_ontologies hi:instantiates hi:frank_coyle .
 hi:video_frank_coyle_agentic_ontologies hi:develops hi:ontology .
 hi:video_frank_coyle_agentic_ontologies hi:develops hi:owl .
+hi:turing hi:proposes hi:turing_test .
+hi:weizenbaum hi:proposes hi:eliza .
+hi:weizenbaum hi:critiques hi:turing_test .
+hi:eliza hi:instantiates hi:turing_test .
+hi:conversational_ai hi:emergesFrom hi:eliza .
+hi:eliza hi:instantiates hi:symbolic_ai .
+hi:attention_is_all_you_need hi:proposes hi:transformers .
+hi:transformers hi:emergesFrom hi:neural_networks .
+hi:deep_learning hi:emergesFrom hi:neural_networks .
+hi:backpropagation hi:enables hi:deep_learning .
+hi:gpt hi:emergesFrom hi:transformers .
+hi:gpt hi:instantiates hi:autoregressive .
+hi:llm hi:emergesFrom hi:autoregressive .
+hi:chain_of_thought hi:emergesFrom hi:in_context_learning .
+hi:chain_of_thought hi:develops hi:llm .
+hi:in_context_learning hi:emergesFrom hi:llm .
+hi:embeddings hi:couplesWith hi:latent_space .
+hi:neuralese hi:couplesWith hi:latent_space .
+hi:neuralese hi:critiques hi:chain_of_thought .
+hi:neuralese hi:constrains hi:interpretability .
+hi:ai_interpretability hi:instantiates hi:interpretability .
+hi:interspecies_interpretability hi:instantiates hi:interpretability .
+hi:model_introspection hi:instantiates hi:interpretability .
+hi:synthetic_psychology hi:emergesFrom hi:interpretability .
+hi:symbolic_ai hi:couplesWith hi:ontology .
 hi:begus hi:proposes hi:cross_species_language .
 hi:begus hi:proposes hi:whale_vowels .
 hi:begus hi:develops hi:ai_interpretability .
@@ -9104,6 +9474,7 @@ hi:what_if hi:instantiates hi:two_loops_model .
 hi:what_if hi:participatesIn hi:hi_hub .
 hi:interior hi:participatesIn hi:hi_hub .
 hi:interior hi:develops hi:ai_interpretability .
+hi:interior hi:develops hi:interpretability .
 hi:interior hi:proposes hi:synthetic_psychology .
 hi:interior hi:proposes hi:interspecies_interpretability .
 hi:interior hi:couplesWith hi:umwelt .
@@ -10524,6 +10895,51 @@ hi:rel-ai-transformers a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationTarget hi:transformers ;
   hi:relationStrength "0.9"^^xsd:decimal .
 
+hi:rel-ai-attention_is_all_you_need a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:ai ;
+  hi:relationTarget hi:attention_is_all_you_need ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-ai-eliza a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:ai ;
+  hi:relationTarget hi:eliza ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-ai-turing_test a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:ai ;
+  hi:relationTarget hi:turing_test ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-ai-symbolic_ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:ai ;
+  hi:relationTarget hi:symbolic_ai ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-ai-deep_learning a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:ai ;
+  hi:relationTarget hi:deep_learning ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-ai-autoregressive a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:ai ;
+  hi:relationTarget hi:autoregressive ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-ai-chain_of_thought a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:ai ;
+  hi:relationTarget hi:chain_of_thought ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-ai-neuralese a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:ai ;
+  hi:relationTarget hi:neuralese ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-ai-interpretability a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:ai ;
+  hi:relationTarget hi:interpretability ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
 hi:rel-ai-gpt a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:ai ;
   hi:relationTarget hi:gpt ;
@@ -11033,6 +11449,566 @@ hi:rel-transformers-cameron a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:transformers ;
   hi:relationTarget hi:cameron ;
   hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-transformers-attention_is_all_you_need a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:transformers ;
+  hi:relationTarget hi:attention_is_all_you_need ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-transformers-autoregressive a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:transformers ;
+  hi:relationTarget hi:autoregressive ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-transformers-deep_learning a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:transformers ;
+  hi:relationTarget hi:deep_learning ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-transformers-embeddings a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:transformers ;
+  hi:relationTarget hi:embeddings ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-symbolic_ai-ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:symbolic_ai ;
+  hi:relationTarget hi:ai ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-symbolic_ai-eliza a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:symbolic_ai ;
+  hi:relationTarget hi:eliza ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-symbolic_ai-turing a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:symbolic_ai ;
+  hi:relationTarget hi:turing ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-symbolic_ai-ontology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:symbolic_ai ;
+  hi:relationTarget hi:ontology ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-symbolic_ai-owl a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:symbolic_ai ;
+  hi:relationTarget hi:owl ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-symbolic_ai-knowledge_graph a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:symbolic_ai ;
+  hi:relationTarget hi:knowledge_graph ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-symbolic_ai-cs a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:symbolic_ai ;
+  hi:relationTarget hi:cs ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-symbolic_ai-philosophy a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:symbolic_ai ;
+  hi:relationTarget hi:philosophy ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-symbolic_ai-neural_networks a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:symbolic_ai ;
+  hi:relationTarget hi:neural_networks ;
+  hi:relationStrength "0.7"^^xsd:decimal .
+
+hi:rel-symbolic_ai-brooks a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:symbolic_ai ;
+  hi:relationTarget hi:brooks ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-eliza-weizenbaum a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:eliza ;
+  hi:relationTarget hi:weizenbaum ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-eliza-turing_test a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:eliza ;
+  hi:relationTarget hi:turing_test ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-eliza-conversational_ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:eliza ;
+  hi:relationTarget hi:conversational_ai ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-eliza-symbolic_ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:eliza ;
+  hi:relationTarget hi:symbolic_ai ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-eliza-ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:eliza ;
+  hi:relationTarget hi:ai ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-eliza-llm a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:eliza ;
+  hi:relationTarget hi:llm ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-eliza-mediation a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:eliza ;
+  hi:relationTarget hi:mediation ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-eliza-turing a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:eliza ;
+  hi:relationTarget hi:turing ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-eliza-cs a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:eliza ;
+  hi:relationTarget hi:cs ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-eliza-possible_minds a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:eliza ;
+  hi:relationTarget hi:possible_minds ;
+  hi:relationStrength "0.75"^^xsd:decimal .
+
+hi:rel-turing_test-turing a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:turing_test ;
+  hi:relationTarget hi:turing ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-turing_test-eliza a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:turing_test ;
+  hi:relationTarget hi:eliza ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-turing_test-ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:turing_test ;
+  hi:relationTarget hi:ai ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-turing_test-llm a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:turing_test ;
+  hi:relationTarget hi:llm ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-turing_test-conversational_ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:turing_test ;
+  hi:relationTarget hi:conversational_ai ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-turing_test-consciousness a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:turing_test ;
+  hi:relationTarget hi:consciousness ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-turing_test-philosophy a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:turing_test ;
+  hi:relationTarget hi:philosophy ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-turing_test-possible_minds a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:turing_test ;
+  hi:relationTarget hi:possible_minds ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-turing_test-cs a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:turing_test ;
+  hi:relationTarget hi:cs ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-deep_learning-neural_networks a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:deep_learning ;
+  hi:relationTarget hi:neural_networks ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-deep_learning-machine_learning a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:deep_learning ;
+  hi:relationTarget hi:machine_learning ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-deep_learning-backpropagation a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:deep_learning ;
+  hi:relationTarget hi:backpropagation ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-deep_learning-transformers a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:deep_learning ;
+  hi:relationTarget hi:transformers ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-deep_learning-convolutional_networks a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:deep_learning ;
+  hi:relationTarget hi:convolutional_networks ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-deep_learning-gen_ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:deep_learning ;
+  hi:relationTarget hi:gen_ai ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-deep_learning-llm a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:deep_learning ;
+  hi:relationTarget hi:llm ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-deep_learning-ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:deep_learning ;
+  hi:relationTarget hi:ai ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-deep_learning-cs a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:deep_learning ;
+  hi:relationTarget hi:cs ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-deep_learning-ai_ml a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:deep_learning ;
+  hi:relationTarget hi:ai_ml ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-backpropagation-deep_learning a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:backpropagation ;
+  hi:relationTarget hi:deep_learning ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-backpropagation-neural_networks a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:backpropagation ;
+  hi:relationTarget hi:neural_networks ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-backpropagation-machine_learning a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:backpropagation ;
+  hi:relationTarget hi:machine_learning ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-backpropagation-perceptron a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:backpropagation ;
+  hi:relationTarget hi:perceptron ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-backpropagation-linear_transform a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:backpropagation ;
+  hi:relationTarget hi:linear_transform ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-backpropagation-cs a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:backpropagation ;
+  hi:relationTarget hi:cs ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-attention_is_all_you_need-transformers a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:attention_is_all_you_need ;
+  hi:relationTarget hi:transformers ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-attention_is_all_you_need-neural_networks a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:attention_is_all_you_need ;
+  hi:relationTarget hi:neural_networks ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-attention_is_all_you_need-deep_learning a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:attention_is_all_you_need ;
+  hi:relationTarget hi:deep_learning ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-attention_is_all_you_need-llm a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:attention_is_all_you_need ;
+  hi:relationTarget hi:llm ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-attention_is_all_you_need-gpt a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:attention_is_all_you_need ;
+  hi:relationTarget hi:gpt ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-attention_is_all_you_need-gen_ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:attention_is_all_you_need ;
+  hi:relationTarget hi:gen_ai ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-attention_is_all_you_need-rnn_update a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:attention_is_all_you_need ;
+  hi:relationTarget hi:rnn_update ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-attention_is_all_you_need-ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:attention_is_all_you_need ;
+  hi:relationTarget hi:ai ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-attention_is_all_you_need-cs a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:attention_is_all_you_need ;
+  hi:relationTarget hi:cs ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-autoregressive-gpt a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autoregressive ;
+  hi:relationTarget hi:gpt ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-autoregressive-llm a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autoregressive ;
+  hi:relationTarget hi:llm ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-autoregressive-transformers a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autoregressive ;
+  hi:relationTarget hi:transformers ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-autoregressive-gen_ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autoregressive ;
+  hi:relationTarget hi:gen_ai ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-autoregressive-chain_of_thought a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autoregressive ;
+  hi:relationTarget hi:chain_of_thought ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-autoregressive-neural_networks a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autoregressive ;
+  hi:relationTarget hi:neural_networks ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-autoregressive-machine_learning a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autoregressive ;
+  hi:relationTarget hi:machine_learning ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-autoregressive-ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:autoregressive ;
+  hi:relationTarget hi:ai ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-embeddings-latent_space a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:embeddings ;
+  hi:relationTarget hi:latent_space ;
+  hi:relationStrength "0.96"^^xsd:decimal .
+
+hi:rel-embeddings-neuralese a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:embeddings ;
+  hi:relationTarget hi:neuralese ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-embeddings-neural_networks a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:embeddings ;
+  hi:relationTarget hi:neural_networks ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-embeddings-transformers a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:embeddings ;
+  hi:relationTarget hi:transformers ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-embeddings-llm a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:embeddings ;
+  hi:relationTarget hi:llm ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-embeddings-machine_learning a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:embeddings ;
+  hi:relationTarget hi:machine_learning ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-embeddings-ai_interpretability a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:embeddings ;
+  hi:relationTarget hi:ai_interpretability ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-embeddings-interpretability a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:embeddings ;
+  hi:relationTarget hi:interpretability ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-in_context_learning-llm a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:in_context_learning ;
+  hi:relationTarget hi:llm ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-in_context_learning-gpt a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:in_context_learning ;
+  hi:relationTarget hi:gpt ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-in_context_learning-chain_of_thought a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:in_context_learning ;
+  hi:relationTarget hi:chain_of_thought ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-in_context_learning-gen_ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:in_context_learning ;
+  hi:relationTarget hi:gen_ai ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-in_context_learning-literacies a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:in_context_learning ;
+  hi:relationTarget hi:literacies ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-in_context_learning-mediation a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:in_context_learning ;
+  hi:relationTarget hi:mediation ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-chain_of_thought-llm a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:chain_of_thought ;
+  hi:relationTarget hi:llm ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-chain_of_thought-gpt a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:chain_of_thought ;
+  hi:relationTarget hi:gpt ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-chain_of_thought-in_context_learning a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:chain_of_thought ;
+  hi:relationTarget hi:in_context_learning ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-chain_of_thought-autoregressive a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:chain_of_thought ;
+  hi:relationTarget hi:autoregressive ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-chain_of_thought-neuralese a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:chain_of_thought ;
+  hi:relationTarget hi:neuralese ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-chain_of_thought-interpretability a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:chain_of_thought ;
+  hi:relationTarget hi:interpretability ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-chain_of_thought-ai_interpretability a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:chain_of_thought ;
+  hi:relationTarget hi:ai_interpretability ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-chain_of_thought-ai_alignment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:chain_of_thought ;
+  hi:relationTarget hi:ai_alignment ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-chain_of_thought-gen_ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:chain_of_thought ;
+  hi:relationTarget hi:gen_ai ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-neuralese-latent_space a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:neuralese ;
+  hi:relationTarget hi:latent_space ;
+  hi:relationStrength "0.96"^^xsd:decimal .
+
+hi:rel-neuralese-embeddings a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:neuralese ;
+  hi:relationTarget hi:embeddings ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-neuralese-chain_of_thought a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:neuralese ;
+  hi:relationTarget hi:chain_of_thought ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-neuralese-interpretability a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:neuralese ;
+  hi:relationTarget hi:interpretability ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-neuralese-ai_interpretability a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:neuralese ;
+  hi:relationTarget hi:ai_interpretability ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-neuralese-llm a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:neuralese ;
+  hi:relationTarget hi:llm ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-neuralese-neural_networks a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:neuralese ;
+  hi:relationTarget hi:neural_networks ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-neuralese-transformers a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:neuralese ;
+  hi:relationTarget hi:transformers ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-neuralese-umwelt a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:neuralese ;
+  hi:relationTarget hi:umwelt ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-neuralese-model_introspection a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:neuralese ;
+  hi:relationTarget hi:model_introspection ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-neuralese-synthetic_psychology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:neuralese ;
+  hi:relationTarget hi:synthetic_psychology ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-neuralese-ai_alignment a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:neuralese ;
+  hi:relationTarget hi:ai_alignment ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-interpretability-ai_interpretability a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interpretability ;
+  hi:relationTarget hi:ai_interpretability ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-interpretability-interspecies_interpretability a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interpretability ;
+  hi:relationTarget hi:interspecies_interpretability ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-interpretability-model_introspection a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interpretability ;
+  hi:relationTarget hi:model_introspection ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-interpretability-neuralese a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interpretability ;
+  hi:relationTarget hi:neuralese ;
+  hi:relationStrength "0.92"^^xsd:decimal .
+
+hi:rel-interpretability-chain_of_thought a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interpretability ;
+  hi:relationTarget hi:chain_of_thought ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-interpretability-latent_space a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interpretability ;
+  hi:relationTarget hi:latent_space ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-interpretability-umwelt a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interpretability ;
+  hi:relationTarget hi:umwelt ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-interpretability-interior a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interpretability ;
+  hi:relationTarget hi:interior ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-interpretability-epistemology a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interpretability ;
+  hi:relationTarget hi:epistemology ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-interpretability-ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interpretability ;
+  hi:relationTarget hi:ai ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-interpretability-llm a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interpretability ;
+  hi:relationTarget hi:llm ;
+  hi:relationStrength "0.85"^^xsd:decimal .
 
 hi:rel-gpt-llm a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:gpt ;
@@ -20809,6 +21785,21 @@ hi:rel-video_understanding_ai_inner_thoughts-ai_interpretability a owl:NamedIndi
   hi:relationTarget hi:ai_interpretability ;
   hi:relationStrength "0.95"^^xsd:decimal .
 
+hi:rel-video_understanding_ai_inner_thoughts-interpretability a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_understanding_ai_inner_thoughts ;
+  hi:relationTarget hi:interpretability ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-video_understanding_ai_inner_thoughts-neuralese a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_understanding_ai_inner_thoughts ;
+  hi:relationTarget hi:neuralese ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_understanding_ai_inner_thoughts-chain_of_thought a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_understanding_ai_inner_thoughts ;
+  hi:relationTarget hi:chain_of_thought ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
 hi:rel-video_understanding_ai_inner_thoughts-llm a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:video_understanding_ai_inner_thoughts ;
   hi:relationTarget hi:llm ;
@@ -20828,6 +21819,11 @@ hi:rel-video_visualizing_transformers_attention-transformers a owl:NamedIndividu
   hi:relationSource hi:video_visualizing_transformers_attention ;
   hi:relationTarget hi:transformers ;
   hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-video_visualizing_transformers_attention-attention_is_all_you_need a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_visualizing_transformers_attention ;
+  hi:relationTarget hi:attention_is_all_you_need ;
+  hi:relationStrength "0.95"^^xsd:decimal .
 
 hi:rel-video_visualizing_transformers_attention-llm a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:video_visualizing_transformers_attention ;
@@ -23734,6 +24730,16 @@ hi:rel-interior-ai_interpretability a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationTarget hi:ai_interpretability ;
   hi:relationStrength "0.96"^^xsd:decimal .
 
+hi:rel-interior-interpretability a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interior ;
+  hi:relationTarget hi:interpretability ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-interior-neuralese a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interior ;
+  hi:relationTarget hi:neuralese ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
 hi:rel-interior-synthetic_psychology a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:interior ;
   hi:relationTarget hi:synthetic_psychology ;
@@ -25799,6 +26805,101 @@ hi:rel-frank_coyle-hi_videos a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationTarget hi:hi_videos ;
   hi:relationStrength "0.85"^^xsd:decimal .
 
+hi:rel-turing-turing_test a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:turing ;
+  hi:relationTarget hi:turing_test ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-turing-ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:turing ;
+  hi:relationTarget hi:ai ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-turing-cs a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:turing ;
+  hi:relationTarget hi:cs ;
+  hi:relationStrength "0.95"^^xsd:decimal .
+
+hi:rel-turing-eliza a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:turing ;
+  hi:relationTarget hi:eliza ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-turing-symbolic_ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:turing ;
+  hi:relationTarget hi:symbolic_ai ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-turing-philosophy a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:turing ;
+  hi:relationTarget hi:philosophy ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-turing-possible_minds a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:turing ;
+  hi:relationTarget hi:possible_minds ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-turing-consciousness a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:turing ;
+  hi:relationTarget hi:consciousness ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-turing-weizenbaum a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:turing ;
+  hi:relationTarget hi:weizenbaum ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-weizenbaum-eliza a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:weizenbaum ;
+  hi:relationTarget hi:eliza ;
+  hi:relationStrength "0.98"^^xsd:decimal .
+
+hi:rel-weizenbaum-turing_test a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:weizenbaum ;
+  hi:relationTarget hi:turing_test ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-weizenbaum-turing a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:weizenbaum ;
+  hi:relationTarget hi:turing ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
+hi:rel-weizenbaum-conversational_ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:weizenbaum ;
+  hi:relationTarget hi:conversational_ai ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-weizenbaum-ai a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:weizenbaum ;
+  hi:relationTarget hi:ai ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-weizenbaum-cs a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:weizenbaum ;
+  hi:relationTarget hi:cs ;
+  hi:relationStrength "0.88"^^xsd:decimal .
+
+hi:rel-weizenbaum-track_ethics a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:weizenbaum ;
+  hi:relationTarget hi:track_ethics ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-weizenbaum-ethical_imagination a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:weizenbaum ;
+  hi:relationTarget hi:ethical_imagination ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-weizenbaum-critical a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:weizenbaum ;
+  hi:relationTarget hi:critical ;
+  hi:relationStrength "0.85"^^xsd:decimal .
+
+hi:rel-weizenbaum-philosophy a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:weizenbaum ;
+  hi:relationTarget hi:philosophy ;
+  hi:relationStrength "0.8"^^xsd:decimal .
+
 hi:rel-owl-skos a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:owl ;
   hi:relationTarget hi:skos ;
@@ -26870,9 +27971,27 @@ hi:rel-video_understanding_ai_inner_thoughts-ai_interpretability-develops a owl:
   hi:relationType hi:develops ;
   hi:relationStrength "0.9"^^xsd:decimal .
 
+hi:rel-video_understanding_ai_inner_thoughts-interpretability-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_understanding_ai_inner_thoughts ;
+  hi:relationTarget hi:interpretability ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_understanding_ai_inner_thoughts-neuralese-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_understanding_ai_inner_thoughts ;
+  hi:relationTarget hi:neuralese ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
 hi:rel-video_visualizing_transformers_attention-transformers-develops a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:video_visualizing_transformers_attention ;
   hi:relationTarget hi:transformers ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-video_visualizing_transformers_attention-attention_is_all_you_need-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:video_visualizing_transformers_attention ;
+  hi:relationTarget hi:attention_is_all_you_need ;
   hi:relationType hi:develops ;
   hi:relationStrength "0.9"^^xsd:decimal .
 
@@ -27350,6 +28469,156 @@ hi:rel-video_frank_coyle_agentic_ontologies-owl-develops a owl:NamedIndividual, 
   hi:relationType hi:develops ;
   hi:relationStrength "0.9"^^xsd:decimal .
 
+hi:rel-turing-turing_test-proposes a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:turing ;
+  hi:relationTarget hi:turing_test ;
+  hi:relationType hi:proposes ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-weizenbaum-eliza-proposes a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:weizenbaum ;
+  hi:relationTarget hi:eliza ;
+  hi:relationType hi:proposes ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-weizenbaum-turing_test-critiques a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:weizenbaum ;
+  hi:relationTarget hi:turing_test ;
+  hi:relationType hi:critiques ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-eliza-turing_test-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:eliza ;
+  hi:relationTarget hi:turing_test ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-conversational_ai-eliza-emergesFrom a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:conversational_ai ;
+  hi:relationTarget hi:eliza ;
+  hi:relationType hi:emergesFrom ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-eliza-symbolic_ai-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:eliza ;
+  hi:relationTarget hi:symbolic_ai ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-attention_is_all_you_need-transformers-proposes a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:attention_is_all_you_need ;
+  hi:relationTarget hi:transformers ;
+  hi:relationType hi:proposes ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-transformers-neural_networks-emergesFrom a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:transformers ;
+  hi:relationTarget hi:neural_networks ;
+  hi:relationType hi:emergesFrom ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-deep_learning-neural_networks-emergesFrom a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:deep_learning ;
+  hi:relationTarget hi:neural_networks ;
+  hi:relationType hi:emergesFrom ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-backpropagation-deep_learning-enables a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:backpropagation ;
+  hi:relationTarget hi:deep_learning ;
+  hi:relationType hi:enables ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-gpt-transformers-emergesFrom a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:gpt ;
+  hi:relationTarget hi:transformers ;
+  hi:relationType hi:emergesFrom ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-gpt-autoregressive-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:gpt ;
+  hi:relationTarget hi:autoregressive ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-llm-autoregressive-emergesFrom a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:llm ;
+  hi:relationTarget hi:autoregressive ;
+  hi:relationType hi:emergesFrom ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-chain_of_thought-in_context_learning-emergesFrom a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:chain_of_thought ;
+  hi:relationTarget hi:in_context_learning ;
+  hi:relationType hi:emergesFrom ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-chain_of_thought-llm-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:chain_of_thought ;
+  hi:relationTarget hi:llm ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-in_context_learning-llm-emergesFrom a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:in_context_learning ;
+  hi:relationTarget hi:llm ;
+  hi:relationType hi:emergesFrom ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-embeddings-latent_space-couplesWith a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:embeddings ;
+  hi:relationTarget hi:latent_space ;
+  hi:relationType hi:couplesWith ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-neuralese-latent_space-couplesWith a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:neuralese ;
+  hi:relationTarget hi:latent_space ;
+  hi:relationType hi:couplesWith ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-neuralese-chain_of_thought-critiques a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:neuralese ;
+  hi:relationTarget hi:chain_of_thought ;
+  hi:relationType hi:critiques ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-neuralese-interpretability-constrains a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:neuralese ;
+  hi:relationTarget hi:interpretability ;
+  hi:relationType hi:constrains ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-ai_interpretability-interpretability-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:ai_interpretability ;
+  hi:relationTarget hi:interpretability ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-interspecies_interpretability-interpretability-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interspecies_interpretability ;
+  hi:relationTarget hi:interpretability ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-model_introspection-interpretability-instantiates a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:model_introspection ;
+  hi:relationTarget hi:interpretability ;
+  hi:relationType hi:instantiates ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-synthetic_psychology-interpretability-emergesFrom a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:synthetic_psychology ;
+  hi:relationTarget hi:interpretability ;
+  hi:relationType hi:emergesFrom ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-symbolic_ai-ontology-couplesWith a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:symbolic_ai ;
+  hi:relationTarget hi:ontology ;
+  hi:relationType hi:couplesWith ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
 hi:rel-begus-cross_species_language-proposes a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:begus ;
   hi:relationTarget hi:cross_species_language ;
@@ -27455,6 +28724,12 @@ hi:rel-interior-hi_hub-participatesIn a owl:NamedIndividual, hi:NetworkRelation 
 hi:rel-interior-ai_interpretability-develops a owl:NamedIndividual, hi:NetworkRelation ;
   hi:relationSource hi:interior ;
   hi:relationTarget hi:ai_interpretability ;
+  hi:relationType hi:develops ;
+  hi:relationStrength "0.9"^^xsd:decimal .
+
+hi:rel-interior-interpretability-develops a owl:NamedIndividual, hi:NetworkRelation ;
+  hi:relationSource hi:interior ;
+  hi:relationTarget hi:interpretability ;
   hi:relationType hi:develops ;
   hi:relationStrength "0.9"^^xsd:decimal .
 

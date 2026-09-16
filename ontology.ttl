@@ -12,9 +12,9 @@
   dc:title "Hybrid Intelligences: Embodied Leadership and Creativity in the Era of AI" ;
   owl:versionInfo "1.0.0" ;
   dc:date "2026-09-16"^^xsd:date ;
-  dc:modified "2026-09-16T18:09:05.329Z"^^xsd:dateTime ;
-  hi:nodeCount "362"^^xsd:integer ;
-  hi:edgeCount "3396"^^xsd:integer .
+  dc:modified "2026-09-16T18:18:31.871Z"^^xsd:dateTime ;
+  hi:nodeCount "376"^^xsd:integer ;
+  hi:edgeCount "3542"^^xsd:integer .
 
 hi:scheme a skos:ConceptScheme ;
   skos:prefLabel "Hybrid Intelligences Concept Scheme" ;
@@ -586,9 +586,69 @@ hi:convolutional_networks a skos:Concept, hi:NetworkNode ;
   schema:sameAs <https://en.wikipedia.org/wiki/Convolutional_neural_network>
  .
 
+hi:symbolic_ai a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Symbolic AI" ;
+  skos:definition "Good Old-Fashioned AI: intelligence as explicit symbols, rules, and logic rather than learned weights. ELIZA, expert systems, and knowledge representation sit in this lineage; neural networks are its long counterpart. Coyle’s ontology layer is a contemporary return of symbols outside the model." ;
+  skos:broader hi:category/framework ;
+  skos:inScheme hi:scheme ;
+  hi:category "framework" ;
+  hi:weight "1.45"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Symbolic_artificial_intelligence> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Symbolic_artificial_intelligence>
+ .
+
+hi:eliza a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "ELIZA" ;
+  skos:definition "Joseph Weizenbaum’s 1966 conversational program at MIT—pattern matching that reflected a user’s words back as a Rogerian therapist. The first widely felt chatbot: proof that fluent dialogue can be empty of understanding, and a standing warning that coupling with a machine is not the same as a mind inside it." ;
+  skos:broader hi:category/framework ;
+  skos:inScheme hi:scheme ;
+  hi:category "framework" ;
+  hi:weight "1.5"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/ELIZA> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/ELIZA>
+ .
+
+hi:turing_test a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Turing Test" ;
+  skos:definition "Alan Turing’s imitation game (1950): if a machine’s textual replies cannot be distinguished from a human’s, call it intelligent. A test of performance in language, not of interior. ELIZA appeared to pass in casual encounter; Weizenbaum insisted the appearance was the point—and the danger." ;
+  skos:broader hi:category/framework ;
+  skos:inScheme hi:scheme ;
+  hi:category "framework" ;
+  hi:weight "1.45"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Turing_test> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Turing_test>
+ .
+
+hi:deep_learning a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Deep Learning" ;
+  skos:definition "Neural networks with many layers, trained end-to-end on large data so hierarchical features emerge rather than being hand-designed. The paradigm that turned perceptrons and backpropagation into contemporary vision, speech, and language systems." ;
+  skos:broader hi:category/framework ;
+  skos:inScheme hi:scheme ;
+  hi:category "framework" ;
+  hi:weight "1.6"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Deep_learning> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Deep_learning>
+ .
+
+hi:backpropagation a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Back- propagation" ;
+  skos:definition "The credit-assignment algorithm of deep nets: errors at the output are sent backward through the layers, adjusting weights by gradient descent. Rumelhart, Hinton, and Williams (1986) popularized it; it is how a network learns from examples rather than being programmed with rules." ;
+  skos:broader hi:category/framework ;
+  skos:inScheme hi:scheme ;
+  hi:category "framework" ;
+  hi:weight "1.45"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Backpropagation> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Backpropagation>
+ .
+
 hi:transformers a skos:Concept, hi:NetworkNode ;
-  skos:prefLabel "Transformers (Attention Is All You Need)" ;
-  skos:definition "Vaswani et al. (2017)—architecture built on self-attention rather than recurrence, enabling parallel training and long-range dependency modeling; the foundation of modern language models, GPTs, and multimodal generative systems." ;
+  skos:prefLabel "Transformers" ;
+  skos:definition "Architecture built on self-attention rather than recurrence, enabling parallel training and long-range dependency modeling; the foundation of modern language models, GPTs, and multimodal generative systems. Introduced in Attention Is All You Need (Vaswani et al., 2017)." ;
   skos:broader hi:category/framework ;
   skos:inScheme hi:scheme ;
   hi:category "framework" ;
@@ -596,6 +656,78 @@ hi:transformers a skos:Concept, hi:NetworkNode ;
  ;
   schema:url <https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)>
+ .
+
+hi:attention_is_all_you_need a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Attention Is All You Need" ;
+  skos:definition "Vaswani et al. (2017)—the paper that proposed the Transformer: dispense with recurrence and convolution for sequence transduction; scaled dot-product self-attention is enough. The hinge from RNNs to GPTs, large language models, and the present generative stack." ;
+  skos:broader hi:category/framework ;
+  skos:inScheme hi:scheme ;
+  hi:category "framework" ;
+  hi:weight "1.55"^^xsd:decimal
+ ;
+  schema:url <https://arxiv.org/abs/1706.03762> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)>
+ .
+
+hi:autoregressive a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Autoregressive" ;
+  skos:definition "Generation as next-token prediction: each output is conditioned on what has already been produced. GPTs are autoregressive transformers—fluency as sequential betting on the continuation. Distinct from masked or diffusion generation; the engine of chain-of-thought as a written trace." ;
+  skos:broader hi:category/framework ;
+  skos:inScheme hi:scheme ;
+  hi:category "framework" ;
+  hi:weight "1.5"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Autoregressive_model> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Autoregressive_model>
+ .
+
+hi:embeddings a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Embeddings" ;
+  skos:definition "Vectors that place tokens, images, or concepts in a continuous space so nearness is meaning. The coordinates of latent space; what attention mixes; what neuralese would speak in instead of words." ;
+  skos:broader hi:category/framework ;
+  skos:inScheme hi:scheme ;
+  hi:category "framework" ;
+  hi:weight "1.45"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Word_embedding> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Word_embedding>
+ .
+
+hi:in_context_learning a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "In-Context Learning" ;
+  skos:definition "A model’s ability to pick up a task from examples in the prompt, without updating weights. Brown et al. (GPT-3, 2020): few-shot demonstration as a new regime of coupling. Chain-of-thought is one of its styles." ;
+  skos:broader hi:category/framework ;
+  skos:inScheme hi:scheme ;
+  hi:category "framework" ;
+  hi:weight "1.45"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Prompt_engineering> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Prompt_engineering>
+ .
+
+hi:chain_of_thought a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Chain of Thought" ;
+  skos:definition "Reasoning written as intermediate tokens—the model thinks out loud in language a human can read. Wei et al. (2022): prompting or training for step-by-step traces improves multi-step tasks. A method, and an interface for interpretability: the trace is a window, until the thinking moves off the page into neuralese." ;
+  skos:broader hi:category/framework ;
+  skos:inScheme hi:scheme ;
+  hi:category "framework" ;
+  hi:weight "1.5"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Prompt_engineering#Chain-of-thought> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Prompt_engineering>
+ .
+
+hi:neuralese a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Neuralese" ;
+  skos:definition "A hypothesized internal language of neural networks—high-dimensional activations used for reasoning and coordination rather than tokens of human language. Contrast with chain-of-thought: CoT is thinking in words; neuralese is thinking in latent space. If models shift from English traces to compressed internal codes, interpretability becomes a reading problem across Umwelten." ;
+  skos:broader hi:category/framework ;
+  skos:inScheme hi:scheme ;
+  hi:category "framework" ;
+  hi:weight "1.5"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Latent_space> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Latent_space>
  .
 
 hi:gpt a skos:Concept, hi:NetworkNode ;
@@ -701,6 +833,18 @@ hi:constitutional_ai a skos:Concept, hi:NetworkNode ;
  ;
   schema:url <https://www.anthropic.com/research/constitutional-ai> ;
   schema:sameAs <https://en.wikipedia.org/wiki/Artificial_intelligence_alignment>
+ .
+
+hi:interpretability a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Interpretability" ;
+  skos:definition "The problem of making a system's inner workings legible — how representations, decisions, and couplings can be read without collapsing them into the observer's language. In this Hub: mechanistic interpretability of models, interspecies interpretability of other minds, and the ethics of crossing an Umwelt. Not a dashboard; a comparative science of interiors." ;
+  skos:broader hi:category/framework ;
+  skos:inScheme hi:scheme ;
+  hi:category "framework" ;
+  hi:weight "1.6"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Explainable_artificial_intelligence> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Explainable_artificial_intelligence>
  .
 
 hi:ai_interpretability a skos:Concept, hi:NetworkNode ;
@@ -1734,6 +1878,30 @@ hi:frank_coyle a skos:Concept, hi:NetworkNode ;
   hi:weight "1.25"^^xsd:decimal
  ;
   schema:url <https://codesupreme.ai/>
+ .
+
+hi:turing a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Alan Turing" ;
+  skos:definition "Mathematician and founding figure of computer science and AI—On Computable Numbers, the Turing machine, and Computing Machinery and Intelligence (1950). The imitation game asks whether intelligence can be attributed from conversational performance; a hinge between symbolic procedure, machine, and mind." ;
+  skos:broader hi:category/author ;
+  skos:inScheme hi:scheme ;
+  hi:category "author" ;
+  hi:weight "1.3"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Alan_Turing> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Alan_Turing>
+ .
+
+hi:weizenbaum a skos:Concept, hi:NetworkNode ;
+  skos:prefLabel "Joseph Weizenbaum" ;
+  skos:definition "Computer scientist at MIT—creator of ELIZA (1966). Computer Power and Human Reason argued against confusing linguistic performance with understanding, and against ceding moral judgment to machines. The first great critic from inside the lab." ;
+  skos:broader hi:category/author ;
+  skos:inScheme hi:scheme ;
+  hi:category "author" ;
+  hi:weight "1.25"^^xsd:decimal
+ ;
+  schema:url <https://en.wikipedia.org/wiki/Joseph_Weizenbaum> ;
+  schema:sameAs <https://en.wikipedia.org/wiki/Joseph_Weizenbaum>
  .
 
 hi:sousa_santos a skos:Concept, hi:NetworkNode ;
@@ -6067,6 +6235,60 @@ hi:rel-ai-transformers a hi:Relation ;
   hi:strength "0.9"^^xsd:decimal ;
   skos:relatedMatch hi:transformers .
 
+hi:rel-ai-attention_is_all_you_need a hi:Relation ;
+  hi:source hi:ai ;
+  hi:target hi:attention_is_all_you_need ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:attention_is_all_you_need .
+
+hi:rel-ai-eliza a hi:Relation ;
+  hi:source hi:ai ;
+  hi:target hi:eliza ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:eliza .
+
+hi:rel-ai-turing_test a hi:Relation ;
+  hi:source hi:ai ;
+  hi:target hi:turing_test ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:turing_test .
+
+hi:rel-ai-symbolic_ai a hi:Relation ;
+  hi:source hi:ai ;
+  hi:target hi:symbolic_ai ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:symbolic_ai .
+
+hi:rel-ai-deep_learning a hi:Relation ;
+  hi:source hi:ai ;
+  hi:target hi:deep_learning ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:deep_learning .
+
+hi:rel-ai-autoregressive a hi:Relation ;
+  hi:source hi:ai ;
+  hi:target hi:autoregressive ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:autoregressive .
+
+hi:rel-ai-chain_of_thought a hi:Relation ;
+  hi:source hi:ai ;
+  hi:target hi:chain_of_thought ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:chain_of_thought .
+
+hi:rel-ai-neuralese a hi:Relation ;
+  hi:source hi:ai ;
+  hi:target hi:neuralese ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:neuralese .
+
+hi:rel-ai-interpretability a hi:Relation ;
+  hi:source hi:ai ;
+  hi:target hi:interpretability ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:interpretability .
+
 hi:rel-ai-gpt a hi:Relation ;
   hi:source hi:ai ;
   hi:target hi:gpt ;
@@ -6678,6 +6900,678 @@ hi:rel-transformers-cameron a hi:Relation ;
   hi:target hi:cameron ;
   hi:strength "0.75"^^xsd:decimal ;
   skos:relatedMatch hi:cameron .
+
+hi:rel-transformers-attention_is_all_you_need a hi:Relation ;
+  hi:source hi:transformers ;
+  hi:target hi:attention_is_all_you_need ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:attention_is_all_you_need .
+
+hi:rel-transformers-autoregressive a hi:Relation ;
+  hi:source hi:transformers ;
+  hi:target hi:autoregressive ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:autoregressive .
+
+hi:rel-transformers-deep_learning a hi:Relation ;
+  hi:source hi:transformers ;
+  hi:target hi:deep_learning ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:deep_learning .
+
+hi:rel-transformers-embeddings a hi:Relation ;
+  hi:source hi:transformers ;
+  hi:target hi:embeddings ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:embeddings .
+
+hi:rel-symbolic_ai-ai a hi:Relation ;
+  hi:source hi:symbolic_ai ;
+  hi:target hi:ai ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-symbolic_ai-eliza a hi:Relation ;
+  hi:source hi:symbolic_ai ;
+  hi:target hi:eliza ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:eliza .
+
+hi:rel-symbolic_ai-turing a hi:Relation ;
+  hi:source hi:symbolic_ai ;
+  hi:target hi:turing ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:turing .
+
+hi:rel-symbolic_ai-ontology a hi:Relation ;
+  hi:source hi:symbolic_ai ;
+  hi:target hi:ontology ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:ontology .
+
+hi:rel-symbolic_ai-owl a hi:Relation ;
+  hi:source hi:symbolic_ai ;
+  hi:target hi:owl ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:owl .
+
+hi:rel-symbolic_ai-knowledge_graph a hi:Relation ;
+  hi:source hi:symbolic_ai ;
+  hi:target hi:knowledge_graph ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:knowledge_graph .
+
+hi:rel-symbolic_ai-cs a hi:Relation ;
+  hi:source hi:symbolic_ai ;
+  hi:target hi:cs ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:cs .
+
+hi:rel-symbolic_ai-philosophy a hi:Relation ;
+  hi:source hi:symbolic_ai ;
+  hi:target hi:philosophy ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:philosophy .
+
+hi:rel-symbolic_ai-neural_networks a hi:Relation ;
+  hi:source hi:symbolic_ai ;
+  hi:target hi:neural_networks ;
+  hi:strength "0.7"^^xsd:decimal ;
+  skos:relatedMatch hi:neural_networks .
+
+hi:rel-symbolic_ai-brooks a hi:Relation ;
+  hi:source hi:symbolic_ai ;
+  hi:target hi:brooks ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:brooks .
+
+hi:rel-eliza-weizenbaum a hi:Relation ;
+  hi:source hi:eliza ;
+  hi:target hi:weizenbaum ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:weizenbaum .
+
+hi:rel-eliza-turing_test a hi:Relation ;
+  hi:source hi:eliza ;
+  hi:target hi:turing_test ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:turing_test .
+
+hi:rel-eliza-conversational_ai a hi:Relation ;
+  hi:source hi:eliza ;
+  hi:target hi:conversational_ai ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:conversational_ai .
+
+hi:rel-eliza-symbolic_ai a hi:Relation ;
+  hi:source hi:eliza ;
+  hi:target hi:symbolic_ai ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:symbolic_ai .
+
+hi:rel-eliza-ai a hi:Relation ;
+  hi:source hi:eliza ;
+  hi:target hi:ai ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-eliza-llm a hi:Relation ;
+  hi:source hi:eliza ;
+  hi:target hi:llm ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:llm .
+
+hi:rel-eliza-mediation a hi:Relation ;
+  hi:source hi:eliza ;
+  hi:target hi:mediation ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:mediation .
+
+hi:rel-eliza-turing a hi:Relation ;
+  hi:source hi:eliza ;
+  hi:target hi:turing ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:turing .
+
+hi:rel-eliza-cs a hi:Relation ;
+  hi:source hi:eliza ;
+  hi:target hi:cs ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:cs .
+
+hi:rel-eliza-possible_minds a hi:Relation ;
+  hi:source hi:eliza ;
+  hi:target hi:possible_minds ;
+  hi:strength "0.75"^^xsd:decimal ;
+  skos:relatedMatch hi:possible_minds .
+
+hi:rel-turing_test-turing a hi:Relation ;
+  hi:source hi:turing_test ;
+  hi:target hi:turing ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:turing .
+
+hi:rel-turing_test-eliza a hi:Relation ;
+  hi:source hi:turing_test ;
+  hi:target hi:eliza ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:eliza .
+
+hi:rel-turing_test-ai a hi:Relation ;
+  hi:source hi:turing_test ;
+  hi:target hi:ai ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-turing_test-llm a hi:Relation ;
+  hi:source hi:turing_test ;
+  hi:target hi:llm ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:llm .
+
+hi:rel-turing_test-conversational_ai a hi:Relation ;
+  hi:source hi:turing_test ;
+  hi:target hi:conversational_ai ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:conversational_ai .
+
+hi:rel-turing_test-consciousness a hi:Relation ;
+  hi:source hi:turing_test ;
+  hi:target hi:consciousness ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:consciousness .
+
+hi:rel-turing_test-philosophy a hi:Relation ;
+  hi:source hi:turing_test ;
+  hi:target hi:philosophy ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:philosophy .
+
+hi:rel-turing_test-possible_minds a hi:Relation ;
+  hi:source hi:turing_test ;
+  hi:target hi:possible_minds ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:possible_minds .
+
+hi:rel-turing_test-cs a hi:Relation ;
+  hi:source hi:turing_test ;
+  hi:target hi:cs ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:cs .
+
+hi:rel-deep_learning-neural_networks a hi:Relation ;
+  hi:source hi:deep_learning ;
+  hi:target hi:neural_networks ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:neural_networks .
+
+hi:rel-deep_learning-machine_learning a hi:Relation ;
+  hi:source hi:deep_learning ;
+  hi:target hi:machine_learning ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:machine_learning .
+
+hi:rel-deep_learning-backpropagation a hi:Relation ;
+  hi:source hi:deep_learning ;
+  hi:target hi:backpropagation ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:backpropagation .
+
+hi:rel-deep_learning-transformers a hi:Relation ;
+  hi:source hi:deep_learning ;
+  hi:target hi:transformers ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:transformers .
+
+hi:rel-deep_learning-convolutional_networks a hi:Relation ;
+  hi:source hi:deep_learning ;
+  hi:target hi:convolutional_networks ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:convolutional_networks .
+
+hi:rel-deep_learning-gen_ai a hi:Relation ;
+  hi:source hi:deep_learning ;
+  hi:target hi:gen_ai ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:gen_ai .
+
+hi:rel-deep_learning-llm a hi:Relation ;
+  hi:source hi:deep_learning ;
+  hi:target hi:llm ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:llm .
+
+hi:rel-deep_learning-ai a hi:Relation ;
+  hi:source hi:deep_learning ;
+  hi:target hi:ai ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-deep_learning-cs a hi:Relation ;
+  hi:source hi:deep_learning ;
+  hi:target hi:cs ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:cs .
+
+hi:rel-deep_learning-ai_ml a hi:Relation ;
+  hi:source hi:deep_learning ;
+  hi:target hi:ai_ml ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_ml .
+
+hi:rel-backpropagation-deep_learning a hi:Relation ;
+  hi:source hi:backpropagation ;
+  hi:target hi:deep_learning ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:deep_learning .
+
+hi:rel-backpropagation-neural_networks a hi:Relation ;
+  hi:source hi:backpropagation ;
+  hi:target hi:neural_networks ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:neural_networks .
+
+hi:rel-backpropagation-machine_learning a hi:Relation ;
+  hi:source hi:backpropagation ;
+  hi:target hi:machine_learning ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:machine_learning .
+
+hi:rel-backpropagation-perceptron a hi:Relation ;
+  hi:source hi:backpropagation ;
+  hi:target hi:perceptron ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:perceptron .
+
+hi:rel-backpropagation-linear_transform a hi:Relation ;
+  hi:source hi:backpropagation ;
+  hi:target hi:linear_transform ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:linear_transform .
+
+hi:rel-backpropagation-cs a hi:Relation ;
+  hi:source hi:backpropagation ;
+  hi:target hi:cs ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:cs .
+
+hi:rel-attention_is_all_you_need-transformers a hi:Relation ;
+  hi:source hi:attention_is_all_you_need ;
+  hi:target hi:transformers ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:transformers .
+
+hi:rel-attention_is_all_you_need-neural_networks a hi:Relation ;
+  hi:source hi:attention_is_all_you_need ;
+  hi:target hi:neural_networks ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:neural_networks .
+
+hi:rel-attention_is_all_you_need-deep_learning a hi:Relation ;
+  hi:source hi:attention_is_all_you_need ;
+  hi:target hi:deep_learning ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:deep_learning .
+
+hi:rel-attention_is_all_you_need-llm a hi:Relation ;
+  hi:source hi:attention_is_all_you_need ;
+  hi:target hi:llm ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:llm .
+
+hi:rel-attention_is_all_you_need-gpt a hi:Relation ;
+  hi:source hi:attention_is_all_you_need ;
+  hi:target hi:gpt ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:gpt .
+
+hi:rel-attention_is_all_you_need-gen_ai a hi:Relation ;
+  hi:source hi:attention_is_all_you_need ;
+  hi:target hi:gen_ai ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:gen_ai .
+
+hi:rel-attention_is_all_you_need-rnn_update a hi:Relation ;
+  hi:source hi:attention_is_all_you_need ;
+  hi:target hi:rnn_update ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:rnn_update .
+
+hi:rel-attention_is_all_you_need-ai a hi:Relation ;
+  hi:source hi:attention_is_all_you_need ;
+  hi:target hi:ai ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-attention_is_all_you_need-cs a hi:Relation ;
+  hi:source hi:attention_is_all_you_need ;
+  hi:target hi:cs ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:cs .
+
+hi:rel-autoregressive-gpt a hi:Relation ;
+  hi:source hi:autoregressive ;
+  hi:target hi:gpt ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:gpt .
+
+hi:rel-autoregressive-llm a hi:Relation ;
+  hi:source hi:autoregressive ;
+  hi:target hi:llm ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:llm .
+
+hi:rel-autoregressive-transformers a hi:Relation ;
+  hi:source hi:autoregressive ;
+  hi:target hi:transformers ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:transformers .
+
+hi:rel-autoregressive-gen_ai a hi:Relation ;
+  hi:source hi:autoregressive ;
+  hi:target hi:gen_ai ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:gen_ai .
+
+hi:rel-autoregressive-chain_of_thought a hi:Relation ;
+  hi:source hi:autoregressive ;
+  hi:target hi:chain_of_thought ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:chain_of_thought .
+
+hi:rel-autoregressive-neural_networks a hi:Relation ;
+  hi:source hi:autoregressive ;
+  hi:target hi:neural_networks ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:neural_networks .
+
+hi:rel-autoregressive-machine_learning a hi:Relation ;
+  hi:source hi:autoregressive ;
+  hi:target hi:machine_learning ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:machine_learning .
+
+hi:rel-autoregressive-ai a hi:Relation ;
+  hi:source hi:autoregressive ;
+  hi:target hi:ai ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-embeddings-latent_space a hi:Relation ;
+  hi:source hi:embeddings ;
+  hi:target hi:latent_space ;
+  hi:strength "0.96"^^xsd:decimal ;
+  skos:relatedMatch hi:latent_space .
+
+hi:rel-embeddings-neuralese a hi:Relation ;
+  hi:source hi:embeddings ;
+  hi:target hi:neuralese ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:neuralese .
+
+hi:rel-embeddings-neural_networks a hi:Relation ;
+  hi:source hi:embeddings ;
+  hi:target hi:neural_networks ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:neural_networks .
+
+hi:rel-embeddings-transformers a hi:Relation ;
+  hi:source hi:embeddings ;
+  hi:target hi:transformers ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:transformers .
+
+hi:rel-embeddings-llm a hi:Relation ;
+  hi:source hi:embeddings ;
+  hi:target hi:llm ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:llm .
+
+hi:rel-embeddings-machine_learning a hi:Relation ;
+  hi:source hi:embeddings ;
+  hi:target hi:machine_learning ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:machine_learning .
+
+hi:rel-embeddings-ai_interpretability a hi:Relation ;
+  hi:source hi:embeddings ;
+  hi:target hi:ai_interpretability ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_interpretability .
+
+hi:rel-embeddings-interpretability a hi:Relation ;
+  hi:source hi:embeddings ;
+  hi:target hi:interpretability ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:interpretability .
+
+hi:rel-in_context_learning-llm a hi:Relation ;
+  hi:source hi:in_context_learning ;
+  hi:target hi:llm ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:llm .
+
+hi:rel-in_context_learning-gpt a hi:Relation ;
+  hi:source hi:in_context_learning ;
+  hi:target hi:gpt ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:gpt .
+
+hi:rel-in_context_learning-chain_of_thought a hi:Relation ;
+  hi:source hi:in_context_learning ;
+  hi:target hi:chain_of_thought ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:chain_of_thought .
+
+hi:rel-in_context_learning-gen_ai a hi:Relation ;
+  hi:source hi:in_context_learning ;
+  hi:target hi:gen_ai ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:gen_ai .
+
+hi:rel-in_context_learning-literacies a hi:Relation ;
+  hi:source hi:in_context_learning ;
+  hi:target hi:literacies ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:literacies .
+
+hi:rel-in_context_learning-mediation a hi:Relation ;
+  hi:source hi:in_context_learning ;
+  hi:target hi:mediation ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:mediation .
+
+hi:rel-chain_of_thought-llm a hi:Relation ;
+  hi:source hi:chain_of_thought ;
+  hi:target hi:llm ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:llm .
+
+hi:rel-chain_of_thought-gpt a hi:Relation ;
+  hi:source hi:chain_of_thought ;
+  hi:target hi:gpt ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:gpt .
+
+hi:rel-chain_of_thought-in_context_learning a hi:Relation ;
+  hi:source hi:chain_of_thought ;
+  hi:target hi:in_context_learning ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:in_context_learning .
+
+hi:rel-chain_of_thought-autoregressive a hi:Relation ;
+  hi:source hi:chain_of_thought ;
+  hi:target hi:autoregressive ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:autoregressive .
+
+hi:rel-chain_of_thought-neuralese a hi:Relation ;
+  hi:source hi:chain_of_thought ;
+  hi:target hi:neuralese ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:neuralese .
+
+hi:rel-chain_of_thought-interpretability a hi:Relation ;
+  hi:source hi:chain_of_thought ;
+  hi:target hi:interpretability ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:interpretability .
+
+hi:rel-chain_of_thought-ai_interpretability a hi:Relation ;
+  hi:source hi:chain_of_thought ;
+  hi:target hi:ai_interpretability ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_interpretability .
+
+hi:rel-chain_of_thought-ai_alignment a hi:Relation ;
+  hi:source hi:chain_of_thought ;
+  hi:target hi:ai_alignment ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_alignment .
+
+hi:rel-chain_of_thought-gen_ai a hi:Relation ;
+  hi:source hi:chain_of_thought ;
+  hi:target hi:gen_ai ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:gen_ai .
+
+hi:rel-neuralese-latent_space a hi:Relation ;
+  hi:source hi:neuralese ;
+  hi:target hi:latent_space ;
+  hi:strength "0.96"^^xsd:decimal ;
+  skos:relatedMatch hi:latent_space .
+
+hi:rel-neuralese-embeddings a hi:Relation ;
+  hi:source hi:neuralese ;
+  hi:target hi:embeddings ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:embeddings .
+
+hi:rel-neuralese-chain_of_thought a hi:Relation ;
+  hi:source hi:neuralese ;
+  hi:target hi:chain_of_thought ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:chain_of_thought .
+
+hi:rel-neuralese-interpretability a hi:Relation ;
+  hi:source hi:neuralese ;
+  hi:target hi:interpretability ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:interpretability .
+
+hi:rel-neuralese-ai_interpretability a hi:Relation ;
+  hi:source hi:neuralese ;
+  hi:target hi:ai_interpretability ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_interpretability .
+
+hi:rel-neuralese-llm a hi:Relation ;
+  hi:source hi:neuralese ;
+  hi:target hi:llm ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:llm .
+
+hi:rel-neuralese-neural_networks a hi:Relation ;
+  hi:source hi:neuralese ;
+  hi:target hi:neural_networks ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:neural_networks .
+
+hi:rel-neuralese-transformers a hi:Relation ;
+  hi:source hi:neuralese ;
+  hi:target hi:transformers ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:transformers .
+
+hi:rel-neuralese-umwelt a hi:Relation ;
+  hi:source hi:neuralese ;
+  hi:target hi:umwelt ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:umwelt .
+
+hi:rel-neuralese-model_introspection a hi:Relation ;
+  hi:source hi:neuralese ;
+  hi:target hi:model_introspection ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:model_introspection .
+
+hi:rel-neuralese-synthetic_psychology a hi:Relation ;
+  hi:source hi:neuralese ;
+  hi:target hi:synthetic_psychology ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:synthetic_psychology .
+
+hi:rel-neuralese-ai_alignment a hi:Relation ;
+  hi:source hi:neuralese ;
+  hi:target hi:ai_alignment ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_alignment .
+
+hi:rel-interpretability-ai_interpretability a hi:Relation ;
+  hi:source hi:interpretability ;
+  hi:target hi:ai_interpretability ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:ai_interpretability .
+
+hi:rel-interpretability-interspecies_interpretability a hi:Relation ;
+  hi:source hi:interpretability ;
+  hi:target hi:interspecies_interpretability ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:interspecies_interpretability .
+
+hi:rel-interpretability-model_introspection a hi:Relation ;
+  hi:source hi:interpretability ;
+  hi:target hi:model_introspection ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:model_introspection .
+
+hi:rel-interpretability-neuralese a hi:Relation ;
+  hi:source hi:interpretability ;
+  hi:target hi:neuralese ;
+  hi:strength "0.92"^^xsd:decimal ;
+  skos:relatedMatch hi:neuralese .
+
+hi:rel-interpretability-chain_of_thought a hi:Relation ;
+  hi:source hi:interpretability ;
+  hi:target hi:chain_of_thought ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:chain_of_thought .
+
+hi:rel-interpretability-latent_space a hi:Relation ;
+  hi:source hi:interpretability ;
+  hi:target hi:latent_space ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:latent_space .
+
+hi:rel-interpretability-umwelt a hi:Relation ;
+  hi:source hi:interpretability ;
+  hi:target hi:umwelt ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:umwelt .
+
+hi:rel-interpretability-interior a hi:Relation ;
+  hi:source hi:interpretability ;
+  hi:target hi:interior ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:interior .
+
+hi:rel-interpretability-epistemology a hi:Relation ;
+  hi:source hi:interpretability ;
+  hi:target hi:epistemology ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:epistemology .
+
+hi:rel-interpretability-ai a hi:Relation ;
+  hi:source hi:interpretability ;
+  hi:target hi:ai ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-interpretability-llm a hi:Relation ;
+  hi:source hi:interpretability ;
+  hi:target hi:llm ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:llm .
 
 hi:rel-gpt-llm a hi:Relation ;
   hi:source hi:gpt ;
@@ -18409,6 +19303,24 @@ hi:rel-video_understanding_ai_inner_thoughts-ai_interpretability a hi:Relation ;
   hi:strength "0.95"^^xsd:decimal ;
   skos:relatedMatch hi:ai_interpretability .
 
+hi:rel-video_understanding_ai_inner_thoughts-interpretability a hi:Relation ;
+  hi:source hi:video_understanding_ai_inner_thoughts ;
+  hi:target hi:interpretability ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:interpretability .
+
+hi:rel-video_understanding_ai_inner_thoughts-neuralese a hi:Relation ;
+  hi:source hi:video_understanding_ai_inner_thoughts ;
+  hi:target hi:neuralese ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:neuralese .
+
+hi:rel-video_understanding_ai_inner_thoughts-chain_of_thought a hi:Relation ;
+  hi:source hi:video_understanding_ai_inner_thoughts ;
+  hi:target hi:chain_of_thought ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:chain_of_thought .
+
 hi:rel-video_understanding_ai_inner_thoughts-llm a hi:Relation ;
   hi:source hi:video_understanding_ai_inner_thoughts ;
   hi:target hi:llm ;
@@ -18432,6 +19344,12 @@ hi:rel-video_visualizing_transformers_attention-transformers a hi:Relation ;
   hi:target hi:transformers ;
   hi:strength "0.98"^^xsd:decimal ;
   skos:relatedMatch hi:transformers .
+
+hi:rel-video_visualizing_transformers_attention-attention_is_all_you_need a hi:Relation ;
+  hi:source hi:video_visualizing_transformers_attention ;
+  hi:target hi:attention_is_all_you_need ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:attention_is_all_you_need .
 
 hi:rel-video_visualizing_transformers_attention-llm a hi:Relation ;
   hi:source hi:video_visualizing_transformers_attention ;
@@ -21919,6 +22837,18 @@ hi:rel-interior-ai_interpretability a hi:Relation ;
   hi:strength "0.96"^^xsd:decimal ;
   skos:relatedMatch hi:ai_interpretability .
 
+hi:rel-interior-interpretability a hi:Relation ;
+  hi:source hi:interior ;
+  hi:target hi:interpretability ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:interpretability .
+
+hi:rel-interior-neuralese a hi:Relation ;
+  hi:source hi:interior ;
+  hi:target hi:neuralese ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:neuralese .
+
 hi:rel-interior-synthetic_psychology a hi:Relation ;
   hi:source hi:interior ;
   hi:target hi:synthetic_psychology ;
@@ -24397,6 +25327,120 @@ hi:rel-frank_coyle-hi_videos a hi:Relation ;
   hi:strength "0.85"^^xsd:decimal ;
   skos:relatedMatch hi:hi_videos .
 
+hi:rel-turing-turing_test a hi:Relation ;
+  hi:source hi:turing ;
+  hi:target hi:turing_test ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:turing_test .
+
+hi:rel-turing-ai a hi:Relation ;
+  hi:source hi:turing ;
+  hi:target hi:ai ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-turing-cs a hi:Relation ;
+  hi:source hi:turing ;
+  hi:target hi:cs ;
+  hi:strength "0.95"^^xsd:decimal ;
+  skos:relatedMatch hi:cs .
+
+hi:rel-turing-eliza a hi:Relation ;
+  hi:source hi:turing ;
+  hi:target hi:eliza ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:eliza .
+
+hi:rel-turing-symbolic_ai a hi:Relation ;
+  hi:source hi:turing ;
+  hi:target hi:symbolic_ai ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:symbolic_ai .
+
+hi:rel-turing-philosophy a hi:Relation ;
+  hi:source hi:turing ;
+  hi:target hi:philosophy ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:philosophy .
+
+hi:rel-turing-possible_minds a hi:Relation ;
+  hi:source hi:turing ;
+  hi:target hi:possible_minds ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:possible_minds .
+
+hi:rel-turing-consciousness a hi:Relation ;
+  hi:source hi:turing ;
+  hi:target hi:consciousness ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:consciousness .
+
+hi:rel-turing-weizenbaum a hi:Relation ;
+  hi:source hi:turing ;
+  hi:target hi:weizenbaum ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:weizenbaum .
+
+hi:rel-weizenbaum-eliza a hi:Relation ;
+  hi:source hi:weizenbaum ;
+  hi:target hi:eliza ;
+  hi:strength "0.98"^^xsd:decimal ;
+  skos:relatedMatch hi:eliza .
+
+hi:rel-weizenbaum-turing_test a hi:Relation ;
+  hi:source hi:weizenbaum ;
+  hi:target hi:turing_test ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:turing_test .
+
+hi:rel-weizenbaum-turing a hi:Relation ;
+  hi:source hi:weizenbaum ;
+  hi:target hi:turing ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:turing .
+
+hi:rel-weizenbaum-conversational_ai a hi:Relation ;
+  hi:source hi:weizenbaum ;
+  hi:target hi:conversational_ai ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:conversational_ai .
+
+hi:rel-weizenbaum-ai a hi:Relation ;
+  hi:source hi:weizenbaum ;
+  hi:target hi:ai ;
+  hi:strength "0.9"^^xsd:decimal ;
+  skos:relatedMatch hi:ai .
+
+hi:rel-weizenbaum-cs a hi:Relation ;
+  hi:source hi:weizenbaum ;
+  hi:target hi:cs ;
+  hi:strength "0.88"^^xsd:decimal ;
+  skos:relatedMatch hi:cs .
+
+hi:rel-weizenbaum-track_ethics a hi:Relation ;
+  hi:source hi:weizenbaum ;
+  hi:target hi:track_ethics ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:track_ethics .
+
+hi:rel-weizenbaum-ethical_imagination a hi:Relation ;
+  hi:source hi:weizenbaum ;
+  hi:target hi:ethical_imagination ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:ethical_imagination .
+
+hi:rel-weizenbaum-critical a hi:Relation ;
+  hi:source hi:weizenbaum ;
+  hi:target hi:critical ;
+  hi:strength "0.85"^^xsd:decimal ;
+  skos:relatedMatch hi:critical .
+
+hi:rel-weizenbaum-philosophy a hi:Relation ;
+  hi:source hi:weizenbaum ;
+  hi:target hi:philosophy ;
+  hi:strength "0.8"^^xsd:decimal ;
+  skos:relatedMatch hi:philosophy .
+
 hi:rel-owl-skos a hi:Relation ;
   hi:source hi:owl ;
   hi:target hi:skos ;
@@ -25416,9 +26460,24 @@ hi:rel-video_understanding_ai_inner_thoughts-ai_interpretability-develops a hi:R
   hi:target hi:ai_interpretability ;
   hi:relationType hi:develops .
 
+hi:rel-video_understanding_ai_inner_thoughts-interpretability-develops a hi:Relation ;
+  hi:source hi:video_understanding_ai_inner_thoughts ;
+  hi:target hi:interpretability ;
+  hi:relationType hi:develops .
+
+hi:rel-video_understanding_ai_inner_thoughts-neuralese-develops a hi:Relation ;
+  hi:source hi:video_understanding_ai_inner_thoughts ;
+  hi:target hi:neuralese ;
+  hi:relationType hi:develops .
+
 hi:rel-video_visualizing_transformers_attention-transformers-develops a hi:Relation ;
   hi:source hi:video_visualizing_transformers_attention ;
   hi:target hi:transformers ;
+  hi:relationType hi:develops .
+
+hi:rel-video_visualizing_transformers_attention-attention_is_all_you_need-develops a hi:Relation ;
+  hi:source hi:video_visualizing_transformers_attention ;
+  hi:target hi:attention_is_all_you_need ;
   hi:relationType hi:develops .
 
 hi:rel-video_noe_out_of_our_heads-noe-instantiates a hi:Relation ;
@@ -25816,6 +26875,131 @@ hi:rel-video_frank_coyle_agentic_ontologies-owl-develops a hi:Relation ;
   hi:target hi:owl ;
   hi:relationType hi:develops .
 
+hi:rel-turing-turing_test-proposes a hi:Relation ;
+  hi:source hi:turing ;
+  hi:target hi:turing_test ;
+  hi:relationType hi:proposes .
+
+hi:rel-weizenbaum-eliza-proposes a hi:Relation ;
+  hi:source hi:weizenbaum ;
+  hi:target hi:eliza ;
+  hi:relationType hi:proposes .
+
+hi:rel-weizenbaum-turing_test-critiques a hi:Relation ;
+  hi:source hi:weizenbaum ;
+  hi:target hi:turing_test ;
+  hi:relationType hi:critiques .
+
+hi:rel-eliza-turing_test-instantiates a hi:Relation ;
+  hi:source hi:eliza ;
+  hi:target hi:turing_test ;
+  hi:relationType hi:instantiates .
+
+hi:rel-conversational_ai-eliza-emergesFrom a hi:Relation ;
+  hi:source hi:conversational_ai ;
+  hi:target hi:eliza ;
+  hi:relationType hi:emergesFrom .
+
+hi:rel-eliza-symbolic_ai-instantiates a hi:Relation ;
+  hi:source hi:eliza ;
+  hi:target hi:symbolic_ai ;
+  hi:relationType hi:instantiates .
+
+hi:rel-attention_is_all_you_need-transformers-proposes a hi:Relation ;
+  hi:source hi:attention_is_all_you_need ;
+  hi:target hi:transformers ;
+  hi:relationType hi:proposes .
+
+hi:rel-transformers-neural_networks-emergesFrom a hi:Relation ;
+  hi:source hi:transformers ;
+  hi:target hi:neural_networks ;
+  hi:relationType hi:emergesFrom .
+
+hi:rel-deep_learning-neural_networks-emergesFrom a hi:Relation ;
+  hi:source hi:deep_learning ;
+  hi:target hi:neural_networks ;
+  hi:relationType hi:emergesFrom .
+
+hi:rel-backpropagation-deep_learning-enables a hi:Relation ;
+  hi:source hi:backpropagation ;
+  hi:target hi:deep_learning ;
+  hi:relationType hi:enables .
+
+hi:rel-gpt-transformers-emergesFrom a hi:Relation ;
+  hi:source hi:gpt ;
+  hi:target hi:transformers ;
+  hi:relationType hi:emergesFrom .
+
+hi:rel-gpt-autoregressive-instantiates a hi:Relation ;
+  hi:source hi:gpt ;
+  hi:target hi:autoregressive ;
+  hi:relationType hi:instantiates .
+
+hi:rel-llm-autoregressive-emergesFrom a hi:Relation ;
+  hi:source hi:llm ;
+  hi:target hi:autoregressive ;
+  hi:relationType hi:emergesFrom .
+
+hi:rel-chain_of_thought-in_context_learning-emergesFrom a hi:Relation ;
+  hi:source hi:chain_of_thought ;
+  hi:target hi:in_context_learning ;
+  hi:relationType hi:emergesFrom .
+
+hi:rel-chain_of_thought-llm-develops a hi:Relation ;
+  hi:source hi:chain_of_thought ;
+  hi:target hi:llm ;
+  hi:relationType hi:develops .
+
+hi:rel-in_context_learning-llm-emergesFrom a hi:Relation ;
+  hi:source hi:in_context_learning ;
+  hi:target hi:llm ;
+  hi:relationType hi:emergesFrom .
+
+hi:rel-embeddings-latent_space-couplesWith a hi:Relation ;
+  hi:source hi:embeddings ;
+  hi:target hi:latent_space ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-neuralese-latent_space-couplesWith a hi:Relation ;
+  hi:source hi:neuralese ;
+  hi:target hi:latent_space ;
+  hi:relationType hi:couplesWith .
+
+hi:rel-neuralese-chain_of_thought-critiques a hi:Relation ;
+  hi:source hi:neuralese ;
+  hi:target hi:chain_of_thought ;
+  hi:relationType hi:critiques .
+
+hi:rel-neuralese-interpretability-constrains a hi:Relation ;
+  hi:source hi:neuralese ;
+  hi:target hi:interpretability ;
+  hi:relationType hi:constrains .
+
+hi:rel-ai_interpretability-interpretability-instantiates a hi:Relation ;
+  hi:source hi:ai_interpretability ;
+  hi:target hi:interpretability ;
+  hi:relationType hi:instantiates .
+
+hi:rel-interspecies_interpretability-interpretability-instantiates a hi:Relation ;
+  hi:source hi:interspecies_interpretability ;
+  hi:target hi:interpretability ;
+  hi:relationType hi:instantiates .
+
+hi:rel-model_introspection-interpretability-instantiates a hi:Relation ;
+  hi:source hi:model_introspection ;
+  hi:target hi:interpretability ;
+  hi:relationType hi:instantiates .
+
+hi:rel-synthetic_psychology-interpretability-emergesFrom a hi:Relation ;
+  hi:source hi:synthetic_psychology ;
+  hi:target hi:interpretability ;
+  hi:relationType hi:emergesFrom .
+
+hi:rel-symbolic_ai-ontology-couplesWith a hi:Relation ;
+  hi:source hi:symbolic_ai ;
+  hi:target hi:ontology ;
+  hi:relationType hi:couplesWith .
+
 hi:rel-begus-cross_species_language-proposes a hi:Relation ;
   hi:source hi:begus ;
   hi:target hi:cross_species_language ;
@@ -25904,6 +27088,11 @@ hi:rel-interior-hi_hub-participatesIn a hi:Relation ;
 hi:rel-interior-ai_interpretability-develops a hi:Relation ;
   hi:source hi:interior ;
   hi:target hi:ai_interpretability ;
+  hi:relationType hi:develops .
+
+hi:rel-interior-interpretability-develops a hi:Relation ;
+  hi:source hi:interior ;
+  hi:target hi:interpretability ;
   hi:relationType hi:develops .
 
 hi:rel-interior-synthetic_psychology-proposes a hi:Relation ;

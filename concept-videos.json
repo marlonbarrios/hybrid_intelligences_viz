@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-16T18:09:05.186Z",
+  "generated": "2026-09-16T18:18:31.968Z",
   "byConcept": {
     "hayles": [
       {
@@ -332,13 +332,6 @@
       }
     ],
     "machine_learning": [
-      {
-        "id": "visualizing-transformers-attention",
-        "title": "Visualizing transformers and attention",
-        "speaker": "",
-        "url": "video-visualizing-transformers-attention.html",
-        "poster": "screenshots/visualizing-transformers-attention.jpg"
-      },
       {
         "id": "ai-fluency-generative-ai",
         "title": "What is generative AI? (Deep Dive) — AI Fluency",
@@ -761,13 +754,6 @@
     ],
     "neural_networks": [
       {
-        "id": "understanding-ai-inner-thoughts",
-        "title": "Understanding the inner thoughts of AI",
-        "speaker": "",
-        "url": "video-understanding-ai-inner-thoughts.html",
-        "poster": "screenshots/understanding-ai-inner-thoughts.jpg"
-      },
-      {
         "id": "visualizing-transformers-attention",
         "title": "Visualizing transformers and attention",
         "speaker": "",
@@ -782,14 +768,7 @@
         "poster": "screenshots/mini-brains-150k.jpg"
       }
     ],
-    "ai_interpretability": [
-      {
-        "id": "begus-mystery-language",
-        "title": "The Mystery of Language in Humans, Animals & AI | Gašper Beguš",
-        "speaker": "Gašper Beguš",
-        "url": "video-begus-mystery-language.html",
-        "poster": "screenshots/begus-mystery-language.jpg"
-      },
+    "interpretability": [
       {
         "id": "understanding-ai-inner-thoughts",
         "title": "Understanding the inner thoughts of AI",
@@ -798,20 +777,31 @@
         "poster": "screenshots/understanding-ai-inner-thoughts.jpg"
       }
     ],
-    "aguilera_arcas": [
+    "neuralese": [
       {
         "id": "understanding-ai-inner-thoughts",
         "title": "Understanding the inner thoughts of AI",
         "speaker": "",
         "url": "video-understanding-ai-inner-thoughts.html",
         "poster": "screenshots/understanding-ai-inner-thoughts.jpg"
-      },
+      }
+    ],
+    "chain_of_thought": [
       {
-        "id": "aguilera-what-is-intelligence",
-        "title": "What is Intelligence? — Blaise Agüera y Arcas",
-        "speaker": "Blaise Agüera y Arcas",
-        "url": "video-aguilera-what-is-intelligence.html",
-        "poster": "screenshots/aguilera-what-is-intelligence.jpg"
+        "id": "understanding-ai-inner-thoughts",
+        "title": "Understanding the inner thoughts of AI",
+        "speaker": "",
+        "url": "video-understanding-ai-inner-thoughts.html",
+        "poster": "screenshots/understanding-ai-inner-thoughts.jpg"
+      }
+    ],
+    "attention_is_all_you_need": [
+      {
+        "id": "visualizing-transformers-attention",
+        "title": "Visualizing transformers and attention",
+        "speaker": "",
+        "url": "video-visualizing-transformers-attention.html",
+        "poster": "screenshots/visualizing-transformers-attention.jpg"
       }
     ],
     "transformers": [
@@ -982,6 +972,15 @@
         "speaker": "Alva Noë",
         "url": "video-noe-out-of-our-heads.html",
         "poster": "screenshots/noe-out-of-our-heads.jpg"
+      }
+    ],
+    "aguilera_arcas": [
+      {
+        "id": "aguilera-what-is-intelligence",
+        "title": "What is Intelligence? — Blaise Agüera y Arcas",
+        "speaker": "Blaise Agüera y Arcas",
+        "url": "video-aguilera-what-is-intelligence.html",
+        "poster": "screenshots/aguilera-what-is-intelligence.jpg"
       }
     ],
     "ana_mendieta": [
@@ -2368,6 +2367,15 @@
       }
     ],
     "whale_vowels": [
+      {
+        "id": "begus-mystery-language",
+        "title": "The Mystery of Language in Humans, Animals & AI | Gašper Beguš",
+        "speaker": "Gašper Beguš",
+        "url": "video-begus-mystery-language.html",
+        "poster": "screenshots/begus-mystery-language.jpg"
+      }
+    ],
+    "ai_interpretability": [
       {
         "id": "begus-mystery-language",
         "title": "The Mystery of Language in Humans, Animals & AI | Gašper Beguš",

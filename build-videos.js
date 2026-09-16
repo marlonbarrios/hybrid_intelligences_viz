@@ -296,16 +296,16 @@ const VIDEO_FALLBACK_CONCEPTS = {
     { conceptId: "consciousness", label: "Consciousness" },
   ],
   "understanding-ai-inner-thoughts": [
-    { conceptId: "ai_interpretability", label: "AI Interpretability" },
+    { conceptId: "interpretability", label: "Interpretability" },
+    { conceptId: "neuralese", label: "Neuralese" },
+    { conceptId: "chain_of_thought", label: "Chain of Thought" },
     { conceptId: "llm", label: "LLM" },
-    { conceptId: "neural_networks", label: "Neural Networks" },
-    { conceptId: "aguilera_arcas", label: "Blaise Agüera y Arcas" },
   ],
   "visualizing-transformers-attention": [
+    { conceptId: "attention_is_all_you_need", label: "Attention Is All You Need" },
     { conceptId: "transformers", label: "Transformers" },
     { conceptId: "llm", label: "LLM" },
     { conceptId: "neural_networks", label: "Neural Networks" },
-    { conceptId: "machine_learning", label: "Machine Learning" },
   ],
   "am-i-ai-consciousness-doc": [
     { conceptId: "consciousness", label: "Consciousness" },
